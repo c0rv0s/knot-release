@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F46A95A5766C88F41ED55B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770ABEB83565023F547CADA0 /* libPods.a */; };
+		430293B51C24F0580071E11D /* listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430293B41C24F0580071E11D /* listing.swift */; };
+		430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE11C4E485300C29254 /* PersonalTableCell.swift */; };
+		430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE31C4E696C00C29254 /* AccountView.swift */; };
+		430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9071BFAFF3500839F37 /* libsqlite3.tbd */; };
+		430DF90B1BFAFF3500839F37 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9081BFAFF3500839F37 /* libz.tbd */; };
+		430DF90C1BFAFF3500839F37 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9091BFAFF3500839F37 /* SystemConfiguration.framework */; };
+		431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431853451BF9892F000C6ED4 /* AppDelegate.swift */; };
+		4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */; };
+		431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4318534F1BF9892F000C6ED4 /* Assets.xcassets */; };
+		431853531BF9892F000C6ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */; };
+		4318535E1BF9892F000C6ED4 /* KnotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318535D1BF9892F000C6ED4 /* KnotTests.swift */; };
+		431853691BF9892F000C6ED4 /* KnotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431853681BF9892F000C6ED4 /* KnotUITests.swift */; };
+		431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942821C4E8D2F000373B3 /* accountSettingsView.swift */; };
+		431942871C4EBB14000373B3 /* AddScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942861C4EBB14000373B3 /* AddScene.swift */; };
+		431F1A481C11279000EDB1A8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A471C11279000EDB1A8 /* AudioToolbox.framework */; };
+		431F1A4A1C11279700EDB1A8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A491C11279700EDB1A8 /* CFNetwork.framework */; };
+		431F1A4C1C11279F00EDB1A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A4B1C11279F00EDB1A8 /* CoreGraphics.framework */; };
+		431F1A4E1C1127A800EDB1A8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A4D1C1127A800EDB1A8 /* CoreLocation.framework */; };
+		431F1A501C1127B000EDB1A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A4F1C1127B000EDB1A8 /* QuartzCore.framework */; };
+		431F1A521C1127B700EDB1A8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A511C1127B700EDB1A8 /* Security.framework */; };
+		431F1A561C1127F600EDB1A8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A551C1127F600EDB1A8 /* Accounts.framework */; };
+		431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A571C1127FB00EDB1A8 /* Social.framework */; };
+		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
+		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
+		436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */; };
+		436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */; };
+		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
+		43869C611C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
+		43869C621C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
+		43869C631C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
+		438E05841C646C5800856C52 /* SendBirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E05831C646C5800856C52 /* SendBirdSDK.framework */; };
+		438E05891C646D3600856C52 /* SendBird in Resources */ = {isa = PBXBuildFile; fileRef = 438E05881C646D3600856C52 /* SendBird */; };
+		438E058A1C646F0F00856C52 /* SendBird in Sources */ = {isa = PBXBuildFile; fileRef = 438E05881C646D3600856C52 /* SendBird */; };
+		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
+		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
+		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
+		438E05931C6473AA00856C52 /* SBMessageClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 438E05921C6473A900856C52 /* SBMessageClass.m */; };
+		43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */; };
+		43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */; };
+		43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4FC381BF996F00003748E /* ItemDetail.swift */; };
+		43C777F71C1A53BB005A7641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F61C1A53BB005A7641 /* Foundation.framework */; };
+		43C777F91C1A53CA005A7641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F81C1A53CA005A7641 /* UIKit.framework */; };
+		43C924971C084BA40006E181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C924951C084BA40006E181 /* Main.storyboard */; };
+		43CF595B1C28C66B0071CCE8 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59551C28C66B0071CCE8 /* Bolts.framework */; };
+		43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 43CF59561C28C66B0071CCE8 /* FacebookSDKStrings.bundle */; };
+		43CF595D1C28C66B0071CCE8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59571C28C66B0071CCE8 /* FBSDKCoreKit.framework */; };
+		43CF595E1C28C66B0071CCE8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59581C28C66B0071CCE8 /* FBSDKLoginKit.framework */; };
+		43CF595F1C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */; };
+		43CF59601C28C66B0071CCE8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */; };
+		43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E8BB1C59ED9B00609D37 /* Messaging.swift */; };
+		43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */; };
+		43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */; };
+		43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */; };
+		43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4318535A1BF9892F000C6ED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4318533A1BF9892F000C6ED4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431853411BF9892F000C6ED4;
+			remoteInfo = Knot;
+		};
+		431853651BF9892F000C6ED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4318533A1BF9892F000C6ED4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 431853411BF9892F000C6ED4;
+			remoteInfo = Knot;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		430293B41C24F0580071E11D /* listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listing.swift; sourceTree = "<group>"; };
+		430D1CE11C4E485300C29254 /* PersonalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableCell.swift; sourceTree = "<group>"; };
+		430D1CE31C4E696C00C29254 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		430DF9071BFAFF3500839F37 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		430DF9081BFAFF3500839F37 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		430DF9091BFAFF3500839F37 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		431853421BF9892F000C6ED4 /* Knot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		431853451BF9892F000C6ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4318534D1BF9892F000C6ED4 /* Knot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Knot.xcdatamodel; sourceTree = "<group>"; };
+		4318534F1BF9892F000C6ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		431853521BF9892F000C6ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		431853541BF9892F000C6ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431853591BF9892F000C6ED4 /* KnotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4318535D1BF9892F000C6ED4 /* KnotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnotTests.swift; sourceTree = "<group>"; };
+		4318535F1BF9892F000C6ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431853641BF9892F000C6ED4 /* KnotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		431853681BF9892F000C6ED4 /* KnotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnotUITests.swift; sourceTree = "<group>"; };
+		4318536A1BF9892F000C6ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431942821C4E8D2F000373B3 /* accountSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accountSettingsView.swift; sourceTree = "<group>"; };
+		431942861C4EBB14000373B3 /* AddScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScene.swift; sourceTree = "<group>"; };
+		431F1A471C11279000EDB1A8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		431F1A491C11279700EDB1A8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		431F1A4B1C11279F00EDB1A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		431F1A4D1C1127A800EDB1A8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		431F1A4F1C1127B000EDB1A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		431F1A511C1127B700EDB1A8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		431F1A551C1127F600EDB1A8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		431F1A571C1127FB00EDB1A8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
+		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
+		436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
+		436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
+		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
+		43869C601C052E07008E6056 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		438E05831C646C5800856C52 /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendBirdSDK.framework; sourceTree = "<group>"; };
+		438E05881C646D3600856C52 /* SendBird */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SendBird; sourceTree = "<group>"; };
+		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		438E05911C6473A900856C52 /* SBMessageClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMessageClass.h; sourceTree = "<group>"; };
+		438E05921C6473A900856C52 /* SBMessageClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMessageClass.m; sourceTree = "<group>"; };
+		43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeed.swift; sourceTree = "<group>"; };
+		43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storeTableCell.xib; sourceTree = "<group>"; };
+		43A4FC381BF996F00003748E /* ItemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		43C777F61C1A53BB005A7641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		43C777F81C1A53CA005A7641 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		43C924941C0818220006E181 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
+		43C924961C084BA40006E181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43CF59551C28C66B0071CCE8 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		43CF59561C28C66B0071CCE8 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
+		43CF59571C28C66B0071CCE8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		43CF59581C28C66B0071CCE8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
+		43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		43D1E8BB1C59ED9B00609D37 /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
+		43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
+		43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
+		43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
+		770ABEB83565023F547CADA0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4318533F1BF9892F000C6ED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */,
+				438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */,
+				438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */,
+				43CF595E1C28C66B0071CCE8 /* FBSDKLoginKit.framework in Frameworks */,
+				43CF595B1C28C66B0071CCE8 /* Bolts.framework in Frameworks */,
+				43C777F91C1A53CA005A7641 /* UIKit.framework in Frameworks */,
+				43CF595F1C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework in Frameworks */,
+				430DF90C1BFAFF3500839F37 /* SystemConfiguration.framework in Frameworks */,
+				43C777F71C1A53BB005A7641 /* Foundation.framework in Frameworks */,
+				431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */,
+				431F1A561C1127F600EDB1A8 /* Accounts.framework in Frameworks */,
+				431F1A521C1127B700EDB1A8 /* Security.framework in Frameworks */,
+				431F1A501C1127B000EDB1A8 /* QuartzCore.framework in Frameworks */,
+				438E05841C646C5800856C52 /* SendBirdSDK.framework in Frameworks */,
+				431F1A4E1C1127A800EDB1A8 /* CoreLocation.framework in Frameworks */,
+				43CF59601C28C66B0071CCE8 /* FBSDKShareKit.framework in Frameworks */,
+				431F1A4C1C11279F00EDB1A8 /* CoreGraphics.framework in Frameworks */,
+				431F1A4A1C11279700EDB1A8 /* CFNetwork.framework in Frameworks */,
+				431F1A481C11279000EDB1A8 /* AudioToolbox.framework in Frameworks */,
+				43CF595D1C28C66B0071CCE8 /* FBSDKCoreKit.framework in Frameworks */,
+				430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */,
+				430DF90B1BFAFF3500839F37 /* libz.tbd in Frameworks */,
+				1F46A95A5766C88F41ED55B4 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853561BF9892F000C6ED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853611BF9892F000C6ED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		085B8A7EEC2DC4D5536681F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				438E058F1C646F9600856C52 /* libicucore.tbd */,
+				438E058D1C646F4E00856C52 /* AdSupport.framework */,
+				438E058B1C646F2F00856C52 /* MobileCoreServices.framework */,
+				438E05831C646C5800856C52 /* SendBirdSDK.framework */,
+				43CF59551C28C66B0071CCE8 /* Bolts.framework */,
+				43CF59561C28C66B0071CCE8 /* FacebookSDKStrings.bundle */,
+				43CF59571C28C66B0071CCE8 /* FBSDKCoreKit.framework */,
+				43CF59581C28C66B0071CCE8 /* FBSDKLoginKit.framework */,
+				43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */,
+				43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */,
+				43C777F81C1A53CA005A7641 /* UIKit.framework */,
+				43C777F61C1A53BB005A7641 /* Foundation.framework */,
+				431F1A571C1127FB00EDB1A8 /* Social.framework */,
+				431F1A551C1127F600EDB1A8 /* Accounts.framework */,
+				431F1A511C1127B700EDB1A8 /* Security.framework */,
+				431F1A4F1C1127B000EDB1A8 /* QuartzCore.framework */,
+				431F1A4D1C1127A800EDB1A8 /* CoreLocation.framework */,
+				431F1A4B1C11279F00EDB1A8 /* CoreGraphics.framework */,
+				431F1A491C11279700EDB1A8 /* CFNetwork.framework */,
+				431F1A471C11279000EDB1A8 /* AudioToolbox.framework */,
+				430DF9071BFAFF3500839F37 /* libsqlite3.tbd */,
+				430DF9081BFAFF3500839F37 /* libz.tbd */,
+				430DF9091BFAFF3500839F37 /* SystemConfiguration.framework */,
+				770ABEB83565023F547CADA0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		24453253DF813CAFD6017F43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */,
+				E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		431853391BF9892F000C6ED4 = {
+			isa = PBXGroup;
+			children = (
+				431853441BF9892F000C6ED4 /* Knot */,
+				4318535C1BF9892F000C6ED4 /* KnotTests */,
+				431853671BF9892F000C6ED4 /* KnotUITests */,
+				431853431BF9892F000C6ED4 /* Products */,
+				085B8A7EEC2DC4D5536681F5 /* Frameworks */,
+				24453253DF813CAFD6017F43 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		431853431BF9892F000C6ED4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				431853421BF9892F000C6ED4 /* Knot.app */,
+				431853591BF9892F000C6ED4 /* KnotTests.xctest */,
+				431853641BF9892F000C6ED4 /* KnotUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		431853441BF9892F000C6ED4 /* Knot */ = {
+			isa = PBXGroup;
+			children = (
+				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
+				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
+				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
+				431942821C4E8D2F000373B3 /* accountSettingsView.swift */,
+				433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */,
+				43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */,
+				433F04091C240C6A0011DAF1 /* Knot.entitlements */,
+				43C924941C0818220006E181 /* Bridging-Header.h */,
+				43869C601C052E07008E6056 /* LoginView.swift */,
+				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
+				438E05881C646D3600856C52 /* SendBird */,
+				43C924951C084BA40006E181 /* Main.storyboard */,
+				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
+				431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */,
+				431853541BF9892F000C6ED4 /* Info.plist */,
+				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
+				43A4FC381BF996F00003748E /* ItemDetail.swift */,
+				43869C5A1C03CE36008E6056 /* NewItemView.swift */,
+				434BE01C1C0CD628007479AB /* string-extension.swift */,
+				430293B41C24F0580071E11D /* listing.swift */,
+				43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */,
+				43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */,
+				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
+				430D1CE31C4E696C00C29254 /* AccountView.swift */,
+				431942861C4EBB14000373B3 /* AddScene.swift */,
+				436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */,
+				436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */,
+				43D1E8BB1C59ED9B00609D37 /* Messaging.swift */,
+				438E05911C6473A900856C52 /* SBMessageClass.h */,
+				438E05921C6473A900856C52 /* SBMessageClass.m */,
+			);
+			path = Knot;
+			sourceTree = "<group>";
+		};
+		4318535C1BF9892F000C6ED4 /* KnotTests */ = {
+			isa = PBXGroup;
+			children = (
+				4318535D1BF9892F000C6ED4 /* KnotTests.swift */,
+				4318535F1BF9892F000C6ED4 /* Info.plist */,
+			);
+			path = KnotTests;
+			sourceTree = "<group>";
+		};
+		431853671BF9892F000C6ED4 /* KnotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				431853681BF9892F000C6ED4 /* KnotUITests.swift */,
+				4318536A1BF9892F000C6ED4 /* Info.plist */,
+			);
+			path = KnotUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		431853411BF9892F000C6ED4 /* Knot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4318536D1BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "Knot" */;
+			buildPhases = (
+				E250699713370CBEBF85AA4D /* Check Pods Manifest.lock */,
+				4318533E1BF9892F000C6ED4 /* Sources */,
+				4318533F1BF9892F000C6ED4 /* Frameworks */,
+				431853401BF9892F000C6ED4 /* Resources */,
+				6E07DC74A62BB42CF8E3FA61 /* Embed Pods Frameworks */,
+				29BA0A7F9EEBD499DFB6B310 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Knot;
+			productName = Knot;
+			productReference = 431853421BF9892F000C6ED4 /* Knot.app */;
+			productType = "com.apple.product-type.application";
+		};
+		431853581BF9892F000C6ED4 /* KnotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431853701BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "KnotTests" */;
+			buildPhases = (
+				431853551BF9892F000C6ED4 /* Sources */,
+				431853561BF9892F000C6ED4 /* Frameworks */,
+				431853571BF9892F000C6ED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4318535B1BF9892F000C6ED4 /* PBXTargetDependency */,
+			);
+			name = KnotTests;
+			productName = KnotTests;
+			productReference = 431853591BF9892F000C6ED4 /* KnotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		431853631BF9892F000C6ED4 /* KnotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 431853731BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "KnotUITests" */;
+			buildPhases = (
+				431853601BF9892F000C6ED4 /* Sources */,
+				431853611BF9892F000C6ED4 /* Frameworks */,
+				431853621BF9892F000C6ED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				431853661BF9892F000C6ED4 /* PBXTargetDependency */,
+			);
+			name = KnotUITests;
+			productName = KnotUITests;
+			productReference = 431853641BF9892F000C6ED4 /* KnotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4318533A1BF9892F000C6ED4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Knot App";
+				TargetAttributes = {
+					431853411BF9892F000C6ED4 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = JBMX4N8785;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
+					};
+					431853581BF9892F000C6ED4 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GEH3T74M46;
+						TestTargetID = 431853411BF9892F000C6ED4;
+					};
+					431853631BF9892F000C6ED4 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = GEH3T74M46;
+						TestTargetID = 431853411BF9892F000C6ED4;
+					};
+				};
+			};
+			buildConfigurationList = 4318533D1BF9892F000C6ED4 /* Build configuration list for PBXProject "Knot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 431853391BF9892F000C6ED4;
+			productRefGroup = 431853431BF9892F000C6ED4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				431853411BF9892F000C6ED4 /* Knot */,
+				431853581BF9892F000C6ED4 /* KnotTests */,
+				431853631BF9892F000C6ED4 /* KnotUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		431853401BF9892F000C6ED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431853531BF9892F000C6ED4 /* LaunchScreen.storyboard in Resources */,
+				438E05891C646D3600856C52 /* SendBird in Resources */,
+				43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */,
+				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
+				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
+				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853571BF9892F000C6ED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853621BF9892F000C6ED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		29BA0A7F9EEBD499DFB6B310 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E07DC74A62BB42CF8E3FA61 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E250699713370CBEBF85AA4D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4318533E1BF9892F000C6ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438E058A1C646F0F00856C52 /* SendBird in Sources */,
+				43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */,
+				43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */,
+				430293B51C24F0580071E11D /* listing.swift in Sources */,
+				434BE01D1C0CD628007479AB /* string-extension.swift in Sources */,
+				43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */,
+				430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */,
+				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
+				438E05931C6473AA00856C52 /* SBMessageClass.m in Sources */,
+				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,
+				43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */,
+				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
+				43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */,
+				431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */,
+				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
+				431942871C4EBB14000373B3 /* AddScene.swift in Sources */,
+				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,
+				43869C611C052E07008E6056 /* LoginView.swift in Sources */,
+				431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */,
+				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
+				436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */,
+				43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853551BF9892F000C6ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4318535E1BF9892F000C6ED4 /* KnotTests.swift in Sources */,
+				43869C621C052E07008E6056 /* LoginView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		431853601BF9892F000C6ED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				431853691BF9892F000C6ED4 /* KnotUITests.swift in Sources */,
+				43869C631C052E07008E6056 /* LoginView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4318535B1BF9892F000C6ED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431853411BF9892F000C6ED4 /* Knot */;
+			targetProxy = 4318535A1BF9892F000C6ED4 /* PBXContainerItemProxy */;
+		};
+		431853661BF9892F000C6ED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 431853411BF9892F000C6ED4 /* Knot */;
+			targetProxy = 431853651BF9892F000C6ED4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				431853521BF9892F000C6ED4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		43C924951C084BA40006E181 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43C924961C084BA40006E181 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4318536B1BF9892F000C6ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/AWSAPIGateway.framework\"",
+					"\"$(SRCROOT)/AWSAutoScaling.framework\"",
+					"\"$(SRCROOT)/AWSCloudWatch.framework\"",
+					"\"$(SRCROOT)/AWSCore.framework\"",
+					"\"$(SRCROOT)/AWSDynamoDB.framework\"",
+					"\"$(SRCROOT)/AWSEC2.framework\"",
+					"\"$(SRCROOT)/AWSElasticLoadBalancing.framework\"",
+					"\"$(SRCROOT)/AWSKinesis.framework\"",
+					"\"$(SRCROOT)/AWSLambda.framework\"",
+					"\"$(SRCROOT)/AWSMachineLearning.framework\"",
+					"\"$(SRCROOT)/AWSMobileAnalytics.framework\"",
+					"\"$(SRCROOT)/AWSS3.framework\"",
+					"\"$(SRCROOT)/AWSSES.framework\"",
+					"\"$(SRCROOT)/AWSSimpleDB.framework\"",
+					"\"$(SRCROOT)/AWSSNS.framework\"",
+					"\"$(SRCROOT)/AWSSQS.framework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Knot/Amazon-Bridging.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4318536C1BF9892F000C6ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SRCROOT)/AWSAPIGateway.framework\"",
+					"\"$(SRCROOT)/AWSAutoScaling.framework\"",
+					"\"$(SRCROOT)/AWSCloudWatch.framework\"",
+					"\"$(SRCROOT)/AWSCore.framework\"",
+					"\"$(SRCROOT)/AWSDynamoDB.framework\"",
+					"\"$(SRCROOT)/AWSEC2.framework\"",
+					"\"$(SRCROOT)/AWSElasticLoadBalancing.framework\"",
+					"\"$(SRCROOT)/AWSKinesis.framework\"",
+					"\"$(SRCROOT)/AWSLambda.framework\"",
+					"\"$(SRCROOT)/AWSMachineLearning.framework\"",
+					"\"$(SRCROOT)/AWSMobileAnalytics.framework\"",
+					"\"$(SRCROOT)/AWSS3.framework\"",
+					"\"$(SRCROOT)/AWSSES.framework\"",
+					"\"$(SRCROOT)/AWSSimpleDB.framework\"",
+					"\"$(SRCROOT)/AWSSNS.framework\"",
+					"\"$(SRCROOT)/AWSSQS.framework\"",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Knot/Amazon-Bridging.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4318536E1BF9892F000C6ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Knot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4318536F1BF9892F000C6ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Knot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		431853711BF9892F000C6ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KnotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KnotApp.KnotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Knot.app/Knot";
+			};
+			name = Debug;
+		};
+		431853721BF9892F000C6ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KnotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KnotApp.KnotTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Knot.app/Knot";
+			};
+			name = Release;
+		};
+		431853741BF9892F000C6ED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KnotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KnotApp.KnotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Knot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		431853751BF9892F000C6ED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = KnotUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = KnotApp.KnotUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Knot;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4318533D1BF9892F000C6ED4 /* Build configuration list for PBXProject "Knot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4318536B1BF9892F000C6ED4 /* Debug */,
+				4318536C1BF9892F000C6ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4318536D1BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "Knot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4318536E1BF9892F000C6ED4 /* Debug */,
+				4318536F1BF9892F000C6ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431853701BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "KnotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431853711BF9892F000C6ED4 /* Debug */,
+				431853721BF9892F000C6ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		431853731BF9892F000C6ED4 /* Build configuration list for PBXNativeTarget "KnotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				431853741BF9892F000C6ED4 /* Debug */,
+				431853751BF9892F000C6ED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4318534D1BF9892F000C6ED4 /* Knot.xcdatamodel */,
+			);
+			currentVersion = 4318534D1BF9892F000C6ED4 /* Knot.xcdatamodel */;
+			path = Knot.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4318533A1BF9892F000C6ED4 /* Project object */;
+}
