@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IxZ-p6-6nh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IxZ-p6-6nh">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -10,6 +9,7 @@
         <scene sceneID="wKy-cm-CCD">
             <objects>
                 <tabBarController storyboardIdentifier="MainRootView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IxZ-p6-6nh" customClass="HomeTabBarController" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -210,6 +210,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="No7-vI-DDg" id="VAM-NL-v22"/>
+                                        </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-El-hu4">
                                         <rect key="frame" x="24" y="690" width="327" height="21"/>
@@ -320,7 +323,6 @@
                         <outlet property="scrollView" destination="9kf-b3-a9c" id="Jq8-kw-8mI"/>
                         <outlet property="sellerName" destination="zF7-d4-PZp" id="Dmh-az-fCG"/>
                         <outlet property="timeLabel" destination="fqN-zo-Vf5" id="e5K-Ma-NYz"/>
-                        <segue destination="00D-5U-fKp" kind="show" identifier="paySegue" id="Oxv-7N-7ot"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-z6-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,20 +488,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMy-g0-WNV">
-                                <rect key="frame" x="147" y="157" width="208" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="r77-Kq-mrs"/>
                     <connections>
-                        <outlet property="Name" destination="geJ-zz-sjA" id="nxg-qg-qk8"/>
-                        <outlet property="emial" destination="BMy-g0-WNV" id="h0I-RX-4yq"/>
-                        <outlet property="profPic" destination="ozD-3a-JZu" id="FFE-Am-hpn"/>
+                        <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
+                        <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
                         <outlet property="walletText" destination="uor-Ld-e4b" id="dNL-mG-HKh"/>
                     </connections>
@@ -564,21 +559,29 @@
                     <view key="view" contentMode="scaleToFill" id="5cc-Ux-WKV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svf-Sg-si9">
+                                <rect key="frame" x="133" y="291" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ni5-G0-S7u"/>
+                    <navigationItem key="navigationItem" title="Messaging" id="ni5-G0-S7u"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmB-QQ-Cy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.5" y="2042.5"/>
+            <point key="canvasLocation" x="1049.5" y="2048.5"/>
         </scene>
-        <!--Account-->
+        <!--Navsub-->
         <scene sceneID="zx1-YQ-VVH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qP0-zv-SaE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="avatar83" id="rtB-iq-Die"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qP0-zv-SaE" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="avatar83" id="rtB-iq-Die"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Of6-4j-p4M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -593,11 +596,11 @@
             </objects>
             <point key="canvasLocation" x="383.5" y="3724.5"/>
         </scene>
-        <!--Chat-->
+        <!--Navsub-->
         <scene sceneID="qAI-ba-m9T">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3S-hv-G5h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="chat" id="jgq-l6-SCt"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3S-hv-G5h" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="chat55" id="jgq-l6-SCt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="flW-fK-6zz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -645,11 +648,11 @@
             </objects>
             <point key="canvasLocation" x="1379.5" y="2876.5"/>
         </scene>
-        <!--Store-->
+        <!--Navsub-->
         <scene sceneID="FiD-c7-ZN7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="b5W-76-OeN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" image="home" id="LlL-5R-NSt"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="b5W-76-OeN" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="food-store" id="LlL-5R-NSt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dqo-1N-guE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -668,11 +671,11 @@
             </objects>
             <point key="canvasLocation" x="568" y="2877"/>
         </scene>
-        <!--Add-->
+        <!--Navsub-->
         <scene sceneID="VJN-6r-Th5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YkT-l8-NF1" customClass="AddScene" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add" image="plus" id="710-gZ-tHf"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YkT-l8-NF1" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="add139" id="710-gZ-tHf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uKO-Dz-L8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -680,18 +683,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7ah-zJ-hsL" kind="presentation" identifier="PresentNewItemView" id="1nY-h7-P4x"/>
+                        <segue destination="7ah-zJ-hsL" kind="presentation" id="FrA-Jb-l3D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSk-M1-2eb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="495.5" y="1108.5"/>
         </scene>
-        <!--Home-->
+        <!--Navsub-->
         <scene sceneID="j3X-St-9FU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOh-Dv-xNd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="yR5-94-30U"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOh-Dv-xNd" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="house158" id="yR5-94-30U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KoH-Sf-fkF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -712,11 +715,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add139" width="32" height="32"/>
         <image name="avatar83" width="32" height="32"/>
-        <image name="chat" width="32" height="32"/>
+        <image name="chat55" width="32" height="32"/>
         <image name="flag27" width="32" height="32"/>
-        <image name="home" width="23" height="24"/>
-        <image name="plus" width="24" height="24"/>
+        <image name="food-store" width="32" height="32"/>
+        <image name="house158" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yTs-ay-f60"/>

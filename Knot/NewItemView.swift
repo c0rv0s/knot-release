@@ -529,10 +529,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
         SwiftSpinner.hide()
         if succ1 == 2 || succ2 == 2 || succ3 == 2 {
-            let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
-                self.priceField.text = ""
-                self.nameField.text = ""
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -540,8 +538,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print("Upload successful")
         let alert = UIAlertController(title: "Success", message: "Your upload has completed.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            self.priceField.text = ""
-            self.nameField.text = ""
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
             self.presentViewController(vc, animated: true, completion: nil)
         }))

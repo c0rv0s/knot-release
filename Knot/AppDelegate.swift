@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var cognitoId: AnyObject?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
+        
+        UINavigationBar.appearance().barStyle = .Black
         // Initialize the Amazon Cognito credentials provider
         
         credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,

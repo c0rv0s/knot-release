@@ -11,7 +11,7 @@ import CoreLocation
 import MapKit
 import MessageUI
 
-class ItemDetail: UIViewController, UITextViewDelegate, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
+class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
     
     /*
     @IBOutlet weak var imageScroll: UIScrollView!
@@ -38,10 +38,7 @@ class ItemDetail: UIViewController, UITextViewDelegate, MFMailComposeViewControl
 
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-
-    @IBOutlet weak var payButton: UIButton!
     
-    var dict : NSDictionary!
     
     var picView: UIImageView!
     var pic : UIImage = UIImage()
@@ -134,38 +131,7 @@ class ItemDetail: UIViewController, UITextViewDelegate, MFMailComposeViewControl
             return nil
         }
         
-        if itemSeller != cognitoID || sold == "true" {
-            payButton.hidden = true
-        }
-        
-        FBSDKGraphRequest(graphPath: fbID, parameters: ["fields": "name, first_name, last_name, picture.type(large), email"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-            if (error == nil){
-                self.dict = result as! NSDictionary
-                print(self.dict)
-                NSLog(self.dict.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String)
-                
-                
-                if let url = NSURL(string: self.dict.objectForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
-                    if let data = NSData(contentsOfURL: url){
-                        var profilePicture = UIImage(data: data)
-                        /*
-                        self.profPic.layer.borderWidth = 1.0
-                        self.profPic.layer.masksToBounds = false
-                        self.profPic.layer.borderColor = UIColor.whiteColor().CGColor
-                        self.profPic.layer.cornerRadius = profilePicture.frame.size.width/2
-                        self.profPic.clipsToBounds = true
-                        */
-                        self.profPic.image = profilePicture
-                    }
-                }
-                let nametext = (self.dict.objectForKey("first_name") as! String) + " " + (self.dict.objectForKey("last_name") as! String)
-                self.selleremail = (self.dict.objectForKey("email") as! String)
-                self.sellerName.text = nametext
-                //self.emial.text = (self.dict.objectForKey("email") as! String)
-                
-            }
-        })
-        
+        self.returnUserData()
         self.updateLocation()
         
         picView = UIImageView(frame:CGRectMake(0, 0, 380, 506))
@@ -179,23 +145,45 @@ class ItemDetail: UIViewController, UITextViewDelegate, MFMailComposeViewControl
         
         //set up countdown and timer stuff
 
-        let overDate = dateFormatter.dateFromString(time)!
-        let currentDate = NSDate()
-
-        secondsUntil = secondsFrom(currentDate, endDate: overDate)
-        
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        //let overDate =
+        //let currentDate =
         
         self.scrollView.addSubview(picView)
         self.scrollView.sendSubviewToBack(picView)
-        
+        self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
-
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    func returnUserData() {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: fbID, parameters: ["fields": "id, name, picture.type(large), email"])
+        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("Error: \(error)")
+            }
+            else
+            {
+                print("fetched user: \(result)")
+                let userName : NSString = result.valueForKey("name") as! NSString
+                self.sellerName.text = userName as String
+                /*
+                let userEmail : NSString = result.valueForKey("email") as! NSString
+                self.selleremail = userEmail as String
+                */
+                if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
+                    if let data = NSData(contentsOfURL: url){
+                        var profilePicture = UIImage(data: data)
+                        
+                        self.profPic.image = profilePicture
+                    }
+                }
+                
+            }
+        })
     }
+    
     func update() {
         
         self.setTextColor(secondsUntil)

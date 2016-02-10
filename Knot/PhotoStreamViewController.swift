@@ -215,6 +215,7 @@ class PhotoStreamViewController: UICollectionViewController{
             else {
                 viewController.owned = false
             }
+
         }
     }
     

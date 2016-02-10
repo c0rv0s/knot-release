@@ -38,9 +38,9 @@ class Messaging: UIViewController {
         let viewController = MessagingTableViewController()
     */
         
-        var sbmessage: SBMessageClass = SBMessageClass()
+        //var sbmessage: SBMessageClass = SBMessageClass()
         
-        sbmessage.startSendBirdMessaging()
+        //sbmessage.startSendBirdMessaging()
     }
 
 }
