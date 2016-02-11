@@ -73,7 +73,6 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         lock = NSLock()
         self.refreshList(true)
         
-        
     }
     
     func refresh(){
@@ -92,7 +91,6 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         if self.needsToRefresh {
             self.refreshList(true)
             self.needsToRefresh = false

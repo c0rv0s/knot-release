@@ -74,7 +74,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:375, height: 1100)
+        self.scrollView.contentSize = CGSize(width:375, height: 1140)
         self.downloadImage(IDNum)
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
