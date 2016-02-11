@@ -59,6 +59,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.contentSize = CGSize(width:375, height: 800)
+        self.tabBarController?.tabBar.hidden = true
         picOneView.image = UIImage(named: "grey")
         
         picker.delegate = self
@@ -398,7 +399,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             if photoNum == 1 {
                 picOne = chosenImage
                 picOneView.image = chosenImage
-                addphoto2.hidden = false
+                //addphoto2.hidden = false
                 addphoto1.setTitle("Change", forState: .Normal)
                 one = true
                 picTwoView.image = UIImage(named: "grey")
@@ -460,7 +461,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let imageData = picOne.mediumQualityJPEGNSData
+                let imageData = picOne.lowestQualityJPEGNSData
                 let dataOne = UIImageJPEGRepresentation(UIImage(data: imageData)!, 0.5)
                 dataOne!.writeToURL(testFileURL1, atomically: true)
                 uploadRequest1.bucket = "knotcompleximages"
@@ -549,6 +550,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
+        self.tabBarController?.tabBar.hidden = false
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
     }
