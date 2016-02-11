@@ -581,7 +581,13 @@
         <scene sceneID="zx1-YQ-VVH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qP0-zv-SaE" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="avatar83" id="rtB-iq-Die"/>
+                    <tabBarItem key="tabBarItem" title="" image="avatar83" id="rtB-iq-Die">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Of6-4j-p4M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -600,7 +606,13 @@
         <scene sceneID="qAI-ba-m9T">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R3S-hv-G5h" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="chat55" id="jgq-l6-SCt"/>
+                    <tabBarItem key="tabBarItem" title="" image="chat55" id="jgq-l6-SCt">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="flW-fK-6zz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -628,7 +640,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" tag="11" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-3v-wBD">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="M6E-l8-oPy" id="Htj-c3-GvD"/>
@@ -652,7 +664,13 @@
         <scene sceneID="FiD-c7-ZN7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="b5W-76-OeN" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="food-store" id="LlL-5R-NSt"/>
+                    <tabBarItem key="tabBarItem" title="" image="food-store" id="LlL-5R-NSt">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dqo-1N-guE">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -674,14 +692,24 @@
         <!--Navsub-->
         <scene sceneID="VJN-6r-Th5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="YkT-l8-NF1" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="add139" id="710-gZ-tHf"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YkT-l8-NF1" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="add139" id="710-gZ-tHf">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uKO-Dz-L8e">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="q45-jz-6NP">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="7ah-zJ-hsL" kind="presentation" id="FrA-Jb-l3D"/>
                     </connections>
@@ -694,7 +722,13 @@
         <scene sceneID="j3X-St-9FU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOh-Dv-xNd" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="house158" id="yR5-94-30U"/>
+                    <tabBarItem key="tabBarItem" title="" image="house158" id="yR5-94-30U">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KoH-Sf-fkF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -723,6 +757,6 @@
         <image name="house158" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yTs-ay-f60"/>
+        <segue reference="eRe-hd-sWy"/>
     </inferredMetricsTieBreakers>
 </document>

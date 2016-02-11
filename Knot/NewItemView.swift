@@ -460,7 +460,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+                let imageData = picOne.mediumQualityJPEGNSData
+                let dataOne = UIImageJPEGRepresentation(UIImage(data: imageData)!, 0.5)
                 dataOne!.writeToURL(testFileURL1, atomically: true)
                 uploadRequest1.bucket = "knotcompleximages"
                 uploadRequest1.key = uniqueID
@@ -477,7 +478,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                             print("two is on")
                             let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                             let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                            let dataTwo = UIImageJPEGRepresentation(self.picTwo, 0.5)
+                            let imageDataTwo = self.picTwo.mediumQualityJPEGNSData
+                            let dataTwo = UIImageJPEGRepresentation(UIImage(data: imageDataTwo)!, 0.5)
                             dataTwo!.writeToURL(testFileURL2, atomically: true)
                             uploadRequest2.bucket = "knotcompleximage2"
                             uploadRequest2.key = uniqueID
@@ -493,7 +495,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                                         print("three is on")
                                         let testFileURL3 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                                         let uploadRequest3 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                                        let dataThree = UIImageJPEGRepresentation(self.picThree, 0.5)
+                                        let imageDataThree = self.picThree.mediumQualityJPEGNSData
+                                        let dataThree = UIImageJPEGRepresentation(UIImage(data: imageDataThree)!, 0.5)
                                         dataThree!.writeToURL(testFileURL3, atomically: true)
                                         uploadRequest3.bucket = "knotcompleximage3"
                                         uploadRequest3.key = uniqueID
