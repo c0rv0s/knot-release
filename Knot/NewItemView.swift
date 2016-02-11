@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import CoreLocation
 
-class NewItemView: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate,
+class NewItemView: UIViewController, UITextFieldDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -56,7 +55,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var uniqueID = ""
     
     //location
-    var locationManager: OneShotLocationManager?
     var locString = ""
     
     override func viewDidLoad() {
@@ -97,19 +95,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         conditionView.delegate = self
         conditionField.inputView = conditionView
         
-        locationManager = OneShotLocationManager()
-        locationManager!.fetchWithCompletion {location, error in
-            // fetch location or an error
-            if let loc = location {
-                print(location)
+            let location = appDelegate.locCurrent
                 var construct = String(location!.coordinate.latitude) + " "
                 construct += String(location!.coordinate.longitude)
                 self.locString = construct
-            } else if let err = error {
-                print(err.localizedDescription)
-            }
-            self.locationManager = nil
-        }
+            
         
         priceField.delegate = self
         priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
@@ -256,13 +246,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
         if pickerView.tag == 2 {
             conditionField.text = conditionOption[row]
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager,didChangeAuthorizationStatus status: CLAuthorizationStatus)
-    {
-        if status == .AuthorizedWhenInUse {
-            manager.startUpdatingLocation()
         }
     }
     
@@ -588,7 +571,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var maxWidth = CGFloat(500.00)
     var imgRatio = CGFloat(actualWidth/actualHeight)
     var maxRatio = CGFloat(maxWidth/maxHeight)
-    var compressionQuality = CGFloat(0.50)//50 percent compression
+    var compressionQuality = CGFloat(0.40)//40 percent compression
     
     if (actualHeight > maxHeight || actualWidth > maxWidth)
     {

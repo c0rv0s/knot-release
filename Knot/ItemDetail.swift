@@ -40,6 +40,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     @IBOutlet weak var sellerName: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     
+    @IBOutlet weak var distanceLabel: UILabel!
     
     var picView: UIImageView!
     var pic : UIImage!
@@ -69,6 +70,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     let dateFormatter = NSDateFormatter()
     var latitude :Double = 0.0
     var longitude: Double = 0.0
+    var locCurrent: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +78,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.downloadImage(IDNum)
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
+        self.locCurrent = appDelegate.locCurrent
         /*
         //paging
         // 1
@@ -113,16 +116,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         //paging done
         */
         
+        
+        //set button state
         if self.owned {
             self.alternatingButton.setTitle("Mark As Sold", forState: .Normal)
         }
         else {
             self.alternatingButton.setTitle("Contact", forState: .Normal)
         }
-
+        
+        //set labels
         descripText.text = descript
         descripText.editable = false
         
+        //something important here
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
                 print("Error: " + task.error!.localizedDescription)
@@ -134,6 +141,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             return nil
         }
         
+        //do some more setup stuff
         self.returnUserData()
         self.updateLocation()
         
@@ -323,6 +331,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         }
         centerMapOnLocation(initialLocation)
         
+        let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+        self.distanceLabel.text = String(format: "%.1f", distanceBetween) + " miles away"
+        
         var address = ""
         var streetHolder = ""
         var cityHolder = ""
@@ -358,6 +369,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 address = streetHolder + ", " + cityHolder
                 self.addressLabel.text = address
         }
+        
     }
     
     

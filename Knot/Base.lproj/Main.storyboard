@@ -66,7 +66,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttf-P0-PHp">
                                         <rect key="frame" x="21" y="225" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                         <connections>
                                             <outlet property="delegate" destination="7ah-zJ-hsL" id="Ak4-BE-oqz"/>
                                         </connections>
@@ -234,11 +234,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-Av-Vl2">
-                                        <rect key="frame" x="17" y="749" width="339" height="151"/>
+                                        <rect key="frame" x="0.0" y="749" width="375" height="151"/>
                                     </mapView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-u0-kIR">
-                                        <rect key="frame" x="149" y="878" width="75" height="75"/>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2I-Nv-fuf">
                                         <rect key="frame" x="24" y="990" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -246,9 +243,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-tZ-BTi">
-                                        <rect key="frame" x="-51" y="1019" width="463" height="332"/>
+                                        <rect key="frame" x="-51" y="1039" width="463" height="312"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="9pH-za-5bw">
-                                            <rect key="frame" x="0.0" y="0.0" width="463" height="332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="463" height="312"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="009-m9-of2">
@@ -281,7 +278,7 @@
                                         <blurEffect style="light"/>
                                     </visualEffectView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWs-ch-uCU">
-                                        <rect key="frame" x="17" y="749" width="339" height="129"/>
+                                        <rect key="frame" x="0.0" y="749" width="375" height="127"/>
                                         <connections>
                                             <action selector="openMaps:" destination="No7-vI-DDg" eventType="touchUpInside" id="RxG-2V-kkG"/>
                                         </connections>
@@ -290,6 +287,26 @@
                                         <rect key="frame" x="24" y="711" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-43-9Av" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
+                                        <rect key="frame" x="145" y="868" width="85" height="85"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-u0-kIR">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-uL-zQp">
+                                        <rect key="frame" x="123" y="1010" width="128" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -323,6 +340,7 @@
                         <outlet property="categoryLabel" destination="CUP-El-hu4" id="zMA-Sf-UFq"/>
                         <outlet property="conditionLabel" destination="y0w-TC-w8L" id="W2y-gQ-Azf"/>
                         <outlet property="descripText" destination="xy5-dd-Hb5" id="wOc-bJ-Hma"/>
+                        <outlet property="distanceLabel" destination="D9h-uL-zQp" id="zRu-dg-nj4"/>
                         <outlet property="map" destination="fuK-Av-Vl2" id="ID7-01-Qc8"/>
                         <outlet property="nameLabel" destination="LFw-rw-427" id="8rg-k1-jh5"/>
                         <outlet property="openMaps" destination="MWs-ch-uCU" id="dcd-Rv-j6g"/>

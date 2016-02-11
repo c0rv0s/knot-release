@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class PhotoStreamViewController: UICollectionViewController{
+class PhotoStreamViewController: UICollectionViewController {
     var lock:NSLock?
     var lastEvaluatedKey:[NSObject : AnyObject]!
     
@@ -42,7 +42,7 @@ class PhotoStreamViewController: UICollectionViewController{
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
         self.collectionItems = []
-        //self.loadPhotos()
+        self.colView.reloadData()
         
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {

@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var credentialsProvider = AWSCognitoCredentialsProvider()
     var cognitoId: AnyObject?
     
+    //location
+    var locationManager: OneShotLocationManager!
+    var locCurrent: CLLocation!
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         UINavigationBar.appearance().barStyle = .Black
@@ -36,6 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             mobileAnalyticsForAppId: @"8a8ff18d8fa242df8a62add92ba837ab" //Amazon Mobile Analytics App ID
         identityPoolId: @"us-east-1:249a3e7c-13c2-4289-9ef2-2467fd930e4f"] //Amazon Cognito Identity Pool ID
 */
+        //calculate distance
+        locationManager = OneShotLocationManager()
+        locationManager!.fetchWithCompletion {location, error in
+            // fetch location or an error
+            if let loc = location {
+                self.locCurrent = loc
+            } else if let err = error {
+                print(err.localizedDescription)
+            }
+            self.locationManager = nil
+        }
+        
         //return facebook data
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -50,7 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 sourceApplication: sourceApplication,
                 annotation: annotation)
     }
-
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
