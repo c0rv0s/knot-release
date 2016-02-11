@@ -23,6 +23,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var picOne: UIImage!
     var picTwo: UIImage!
     var picThree: UIImage!
+    var thumbnail: UIImage!
     
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var nameField: UITextField!
@@ -52,6 +53,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    var uniqueID = ""
+    
     //location
     var locationManager: OneShotLocationManager?
     var locString = ""
@@ -60,12 +63,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         self.scrollView.contentSize = CGSize(width:375, height: 800)
         self.tabBarController?.tabBar.hidden = true
-        picOneView.image = UIImage(named: "grey")
+        
         
         picker.delegate = self
         // Do any additional setup after loading the view, typically from a nib
         addphoto2.hidden = true
         addphoto3.hidden = true
+        self.uniqueID = randomStringWithLength(16) as String
         
         if((FBSDKAccessToken.currentAccessToken()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -398,7 +402,29 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             //myImageView.contentMode = .ScaleAspectFit //3
             if photoNum == 1 {
                 picOne = chosenImage
-                picOneView.image = chosenImage
+                thumbnail = self.resizeImage(chosenImage)
+                
+                //upload thumbnail
+                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+                let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+                let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
+                dataThumb!.writeToURL(testFileURL1, atomically: true)
+                uploadRequest1.bucket = "knotcomplexthumbnails"
+                uploadRequest1.key = self.uniqueID
+                uploadRequest1.body = testFileURL1
+                let task1 = transferManager.upload(uploadRequest1)
+                task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                    if task.error != nil {
+                        print("Error: \(task.error)")
+                    } else {
+                        print("thumbnail added")
+                    }
+                    return nil
+                }
+                //done uploading
+                
+                picOneView.image = self.cropToSquare(image: chosenImage)
                 //addphoto2.hidden = false
                 addphoto1.setTitle("Change", forState: .Normal)
                 one = true
@@ -435,7 +461,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         else {
             SwiftSpinner.show("Uploading \(self.nameField.text!)")
             
-            let uniqueID = randomStringWithLength(16) as String
             self.insertItem(uniqueID).continueWithBlock({
                 (task: BFTask!) -> BFTask! in
                 
@@ -456,16 +481,16 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             var success1 = 0
             var success2 = 0
             var success3 = 0
+        
             
             if one {
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let imageData = picOne.lowestQualityJPEGNSData
-                let dataOne = UIImageJPEGRepresentation(UIImage(data: imageData)!, 0.5)
+                let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
                 dataOne!.writeToURL(testFileURL1, atomically: true)
                 uploadRequest1.bucket = "knotcompleximages"
-                uploadRequest1.key = uniqueID
+                uploadRequest1.key = self.uniqueID
                 uploadRequest1.body = testFileURL1
                 let task1 = transferManager.upload(uploadRequest1)
                 task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -475,6 +500,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     } else {
                         success1 = 1
                         self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                        //these two are a mess, fix before implementing
                         if self.two {
                             print("two is on")
                             let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -483,7 +509,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                             let dataTwo = UIImageJPEGRepresentation(UIImage(data: imageDataTwo)!, 0.5)
                             dataTwo!.writeToURL(testFileURL2, atomically: true)
                             uploadRequest2.bucket = "knotcompleximage2"
-                            uploadRequest2.key = uniqueID
+                            uploadRequest2.key = self.uniqueID
                             uploadRequest2.body = testFileURL2
                             let task2 = transferManager.upload(uploadRequest2)
                             task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -500,7 +526,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                                         let dataThree = UIImageJPEGRepresentation(UIImage(data: imageDataThree)!, 0.5)
                                         dataThree!.writeToURL(testFileURL3, atomically: true)
                                         uploadRequest3.bucket = "knotcompleximage3"
-                                        uploadRequest3.key = uniqueID
+                                        uploadRequest3.key = self.uniqueID
                                         uploadRequest3.body = testFileURL3
                                         let task3 = transferManager.upload(uploadRequest3)
                                         task3.continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -553,5 +579,85 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.tabBarController?.tabBar.hidden = false
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func resizeImage(image: UIImage) -> UIImage {
+    var actualHeight = CGFloat(image.size.height)
+    var actualWidth = CGFloat(image.size.width)
+    var maxHeight = CGFloat(300.0)
+    var maxWidth = CGFloat(500.00)
+    var imgRatio = CGFloat(actualWidth/actualHeight)
+    var maxRatio = CGFloat(maxWidth/maxHeight)
+    var compressionQuality = CGFloat(0.50)//50 percent compression
+    
+    if (actualHeight > maxHeight || actualWidth > maxWidth)
+    {
+    if(imgRatio < maxRatio)
+    {
+    //adjust width according to maxHeight
+    imgRatio = maxHeight / actualHeight;
+    actualWidth = imgRatio * actualWidth;
+    actualHeight = maxHeight;
+    }
+    else if(imgRatio > maxRatio)
+    {
+    //adjust height according to maxWidth
+    imgRatio = maxWidth / actualWidth;
+    actualHeight = imgRatio * actualHeight;
+    actualWidth = maxWidth;
+    }
+    else
+    {
+    actualHeight = maxHeight;
+    actualWidth = maxWidth;
+    }
+    }
+    
+    let rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+    UIGraphicsBeginImageContext(rect.size);
+    image.drawInRect(rect)
+        //[image drawInRect:rect];
+    let img = UIGraphicsGetImageFromCurrentImageContext();
+    let imageData = UIImageJPEGRepresentation(img, compressionQuality);
+    UIGraphicsEndImageContext();
+    
+    return UIImage(data:imageData!)!
+    
+    }
+    
+    func cropToSquare(image originalImage: UIImage) -> UIImage {
+        // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
+        let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
+        
+        // Get the size of the contextImage
+        let contextSize: CGSize = contextImage.size
+        
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
+        
+        // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
     }
 }

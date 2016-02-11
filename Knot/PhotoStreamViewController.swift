@@ -119,7 +119,7 @@ class PhotoStreamViewController: UICollectionViewController{
         //downloading image
         
         
-        let S3BucketName: String = "knotcompleximages"
+        let S3BucketName: String = "knotcomplexthumbnails"
         let S3DownloadKeyName: String = key
         
         let expression = AWSS3TransferUtilityDownloadExpression()
@@ -149,6 +149,7 @@ class PhotoStreamViewController: UICollectionViewController{
                 else{
                     //    self.statusLabel.text = "Success"
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
+                    self.colView.reloadData()
                 }
             })
         }
@@ -173,7 +174,7 @@ class PhotoStreamViewController: UICollectionViewController{
                     self.colView.reloadData()
                 })
                 */
-                self.colView.reloadData()
+                
             }
             return nil;
         }
