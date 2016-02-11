@@ -216,13 +216,7 @@
                                         </connections>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-El-hu4">
-                                        <rect key="frame" x="24" y="690" width="327" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-TC-w8L">
-                                        <rect key="frame" x="24" y="728" width="327" height="21"/>
+                                        <rect key="frame" x="24" y="682" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -240,7 +234,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-Av-Vl2">
-                                        <rect key="frame" x="17" y="776" width="339" height="124"/>
+                                        <rect key="frame" x="17" y="749" width="339" height="151"/>
                                     </mapView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-u0-kIR">
                                         <rect key="frame" x="149" y="878" width="75" height="75"/>
@@ -286,6 +280,18 @@
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWs-ch-uCU">
+                                        <rect key="frame" x="17" y="749" width="339" height="129"/>
+                                        <connections>
+                                            <action selector="openMaps:" destination="No7-vI-DDg" eventType="touchUpInside" id="RxG-2V-kkG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-TC-w8L">
+                                        <rect key="frame" x="24" y="711" width="327" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="No7-vI-DDg" id="p5l-uL-FDB"/>
@@ -319,6 +325,7 @@
                         <outlet property="descripText" destination="xy5-dd-Hb5" id="wOc-bJ-Hma"/>
                         <outlet property="map" destination="fuK-Av-Vl2" id="ID7-01-Qc8"/>
                         <outlet property="nameLabel" destination="LFw-rw-427" id="8rg-k1-jh5"/>
+                        <outlet property="openMaps" destination="MWs-ch-uCU" id="dcd-Rv-j6g"/>
                         <outlet property="priceLabel" destination="lX8-Hz-rsP" id="3Tt-5d-s9s"/>
                         <outlet property="profPic" destination="4Rp-u0-kIR" id="Wli-3A-Vrk"/>
                         <outlet property="scrollView" destination="9kf-b3-a9c" id="Jq8-kw-8mI"/>

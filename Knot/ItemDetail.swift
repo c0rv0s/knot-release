@@ -20,6 +20,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
 */
+    @IBOutlet weak var openMaps: UIButton!
     
     @IBOutlet weak var alternatingButton: UIButton!
     
@@ -66,7 +67,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     let dateFormatter = NSDateFormatter()
-
+    var latitude :Double = 0.0
+    var longitude: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -309,10 +311,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     func updateLocation()
     {
         let coordinatesArr = self.location.characters.split{$0 == " "}.map(String.init)
-        let latitude = Double(coordinatesArr[0])
-        let longitude = Double(coordinatesArr[1])
+        self.latitude = Double(coordinatesArr[0])!
+        self.longitude = Double(coordinatesArr[1])!
         
-        let initialLocation = CLLocation(latitude: latitude!, longitude: longitude!)
+        let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
         let regionRadius: CLLocationDistance = 500
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -326,7 +328,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         var cityHolder = ""
         
         let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: latitude!, longitude: longitude!)
+        let location = CLLocation(latitude: latitude, longitude: longitude)
         geoCoder.reverseGeocodeLocation(location)
             {
                 (placemarks, error) -> Void in
@@ -458,7 +460,31 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             }
         }
     }
-
+    
+    @IBAction func openMaps(sender: AnyObject) {
+        self.openMapForPlace()
+    }
+    func openMapForPlace() {
+        /*
+        var lat1 : NSString = self.latitude
+        var lng1 : NSString = self.longitude
+        */
+        var latitute:CLLocationDegrees =  self.latitude
+        var longitute:CLLocationDegrees =  self.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        var coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        var options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+        ]
+        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        var mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "\(self.name)"
+        mapItem.openInMapsWithLaunchOptions(options)
+        
+    }
     
     /*
     //download iamge
