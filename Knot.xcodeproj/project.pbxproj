@@ -53,6 +53,7 @@
 		43CF595F1C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */; };
 		43CF59601C28C66B0071CCE8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */; };
 		43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E8BB1C59ED9B00609D37 /* Messaging.swift */; };
+		43D780AA1C6D54F1007715ED /* LoginViewPt2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D780A91C6D54F1007715ED /* LoginViewPt2.swift */; };
 		43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */; };
 		43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */; };
 		43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */; };
@@ -109,6 +110,7 @@
 		43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		43D1E8BB1C59ED9B00609D37 /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
+		43D780A91C6D54F1007715ED /* LoginViewPt2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewPt2.swift; sourceTree = "<group>"; };
 		43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
 		43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				431D133A1C6AA1E300E8D887 /* gradient-extension.swift */,
 				431D133C1C6ABC6D00E8D887 /* navsub.swift */,
 				431D13451C6C133400E8D887 /* image-extension.swift */,
+				43D780A91C6D54F1007715ED /* LoginViewPt2.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -292,7 +295,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.SafariKeychain = {
 								enabled = 0;
@@ -394,6 +397,7 @@
 				434BE01D1C0CD628007479AB /* string-extension.swift in Sources */,
 				431D13461C6C133400E8D887 /* image-extension.swift in Sources */,
 				43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */,
+				43D780AA1C6D54F1007715ED /* LoginViewPt2.swift in Sources */,
 				430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */,
 				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
 				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,

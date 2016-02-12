@@ -25,9 +25,8 @@ class PhotoStreamViewController: UICollectionViewController {
     
     var selectedRow: Int!
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+    var refreshControl = UIRefreshControl()
+    var needsToRefresh = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +41,13 @@ class PhotoStreamViewController: UICollectionViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
         self.collectionItems = []
-        self.colView.reloadData()
+        
+        // set up the refresh control
+        refreshControl = UIRefreshControl()
+        colView.addSubview(refreshControl)
+        
+        // When activated, invoke our refresh function
+        self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
@@ -54,15 +59,38 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
+        //self.colView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.colView.reloadData()
-        self.loadPhotos()
+        UIApplication.sharedApplication().statusBarHidden=false
+        
+        //self.colView.reloadData()
+        if needsToRefresh {
+            self.loadPhotos()
+            needsToRefresh = false
+        }
         
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
+    func refresh(){
+        
+        // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
+        // This is where you'll make requests to an API, reload data, or process information
+        self.loadPhotos()
+        var delayInSeconds = 2.0;
+        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+            // When done requesting/reloading/processing invoke endRefreshing, to close the control
+            self.refreshControl.endRefreshing()
+        }
+        // -- FINISHED SOMETHING AWESOME, WOO! --
+    }
     
     func loadPhotos() {
         if (self.lock?.tryLock() != nil) {
@@ -97,11 +125,11 @@ class PhotoStreamViewController: UICollectionViewController {
                 
                 self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
             }
-            
+            /*
             dispatch_async(dispatch_get_main_queue(), {
                 self.colView.reloadData()
             })
-            
+            */
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
             if ((task.error) != nil) {
@@ -149,9 +177,10 @@ class PhotoStreamViewController: UICollectionViewController {
                 else{
                     //    self.statusLabel.text = "Success"
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
-                    self.colView.reloadData()
+                    //self.colView.reloadData()
                 }
             })
+            self.colView.reloadData()
         }
         
         let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
@@ -169,11 +198,11 @@ class PhotoStreamViewController: UICollectionViewController {
                 //    self.statusLabel.text = "Starting Download"
                 //NSLog("Download Starting!")
                 // Do something with uploadTask.
-                /*
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.colView.reloadData()
-                })
-                */
+                
+                //dispatch_async(dispatch_get_main_queue(), {
+                
+                //})
+                
                 
             }
             return nil;
@@ -244,7 +273,9 @@ class PhotoStreamViewController: UICollectionViewController {
         }
         cell.titleLabel.text = cell.cellItem.name
         cell.imageView.image = cell.cellPic
-
+        cell.alpha = 0
+        
+        UICollectionViewCell.animateWithDuration(0.4, animations: { cell.alpha = 1 })
         print("cell made")
         return cell
     }
@@ -283,24 +314,24 @@ class PhotoStreamViewController: UICollectionViewController {
         return NSCalendar.currentCalendar().components(.Second, fromDate: startDate, toDate: endDate, options: []).second
     }
     
-    /*
-func fadeInNewImage(newImage: UIImage) {
-let tmpImageView = UIImageView(image: newImage)
-tmpImageView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
-tmpImageView.contentMode = photoImageView.contentMode
-tmpImageView.frame = photoImageView.bounds
-tmpImageView.alpha = 0.0
-photoImageView.addSubview(tmpImageView)
+    
+    func imageFadeIn(imageView: UIImageView) {
+        
+        let secondImageView = UIImageView(image: UIImage(named: "bg02.png"))
+        secondImageView.frame = view.frame
+        secondImageView.alpha = 0.0
+        
+        view.insertSubview(secondImageView, aboveSubview: imageView)
+        
+        UIView.animateWithDuration(2.0, delay: 2.0, options: .CurveEaseOut, animations: {
+            secondImageView.alpha = 1.0
+            }, completion: {_ in
+                imageView.image = secondImageView.image
+                secondImageView.removeFromSuperview()
+        })
+        
+    }
 
-UIView.animateWithDuration(0.75, animations: {
-tmpImageView.alpha = 1.0
-}, completion: {
-finished in
-self.photoImageView.image = newImage
-tmpImageView.removeFromSuperview()
-})
-}
-*/
 }
 
 extension PhotoStreamViewController : FeedLayoutDelegate {

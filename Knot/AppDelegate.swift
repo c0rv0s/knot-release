@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         UINavigationBar.appearance().barStyle = .Black
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         // Initialize the Amazon Cognito credentials provider
         
         credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
