@@ -510,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5A-Vp-mm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1544.5" y="2369.5"/>
+            <point key="canvasLocation" x="-2202.5" y="2385.5"/>
         </scene>
         <!--Login View Pt2-->
         <scene sceneID="Riq-ui-VaY">
@@ -536,12 +536,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWB-uB-nfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1832.5" y="3215.5"/>
+            <point key="canvasLocation" x="-2490.5" y="3231.5"/>
         </scene>
-        <!--Login View Pt2-->
+        <!--Sign Up-->
         <scene sceneID="yof-FW-i4W">
             <objects>
-                <viewController id="xN7-XG-DRQ" customClass="LoginViewPt2" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xN7-XG-DRQ" customClass="SignUp" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3x6-Am-V24"/>
                         <viewControllerLayoutGuide type="bottom" id="3Dx-KL-lA0"/>
@@ -562,7 +562,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCr-bw-o0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1182.5" y="3215.5"/>
+            <point key="canvasLocation" x="-1840.5" y="3231.5"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="fTc-nb-7Uq">
+            <objects>
+                <viewController storyboardIdentifier="tutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1yO-Ww-DKC" customClass="tutorial" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ssy-pu-CkS"/>
+                        <viewControllerLayoutGuide type="bottom" id="hzT-Ct-E67"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yGq-cC-3ip">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home-1" translatesAutoresizingMaskIntoConstraints="NO" id="Y85-NF-but">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b47-zD-Jl9">
+                                <rect key="frame" x="115" y="35" width="240" height="165"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AGr-a0-iTa">
+                                <rect key="frame" x="20" y="216" width="307" height="143"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-2f-GwY">
+                                <rect key="frame" x="115" y="367" width="240" height="149"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrK-Ue-eZO">
+                                <rect key="frame" x="0.0" y="538" width="375" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Tap Here to Continue">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="contButton:" destination="1yO-Ww-DKC" eventType="touchUpInside" id="Vh4-vj-uU8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="contButton" destination="KrK-Ue-eZO" id="nAV-ZG-FNe"/>
+                        <outlet property="imageView" destination="Y85-NF-but" id="2lO-mG-8SE"/>
+                        <outlet property="secondLabel" destination="AGr-a0-iTa" id="Qc7-GQ-bOu"/>
+                        <outlet property="thirdLabel" destination="rHu-2f-GwY" id="s6Q-7z-uOY"/>
+                        <outlet property="topLabel" destination="b47-zD-Jl9" id="hzy-0b-oiy"/>
+                        <segue destination="IxZ-p6-6nh" kind="show" identifier="tutorialDone" id="jAC-6W-Yyh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyH-b8-GtH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1164.5" y="2817.5"/>
         </scene>
         <!--Knot-->
         <scene sceneID="VbA-Xp-wh6">
@@ -666,6 +730,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
+                                <rect key="frame" x="122" y="178" width="131" height="30"/>
+                                <state key="normal" title="View Tutorial Again"/>
+                                <connections>
+                                    <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -922,11 +993,13 @@
         <image name="chat55" width="32" height="32"/>
         <image name="flag27" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
+        <image name="home-1" width="376" height="667"/>
         <image name="house158" width="32" height="32"/>
         <image name="splash no lines" width="1125" height="2001"/>
         <image name="stars and lines" width="1074" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="yTs-ay-f60"/>
+        <segue reference="jAC-6W-Yyh"/>
     </inferredMetricsTieBreakers>
 </document>

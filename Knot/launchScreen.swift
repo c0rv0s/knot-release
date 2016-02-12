@@ -99,7 +99,7 @@ class launchScreen: UIViewController {
                 
                 // Basic Animation
                 pathAnimation = CABasicAnimation(keyPath: "strokeEnd")
-                pathAnimation.duration = 0.5
+                pathAnimation.duration = 0.7
                 pathAnimation.fromValue = NSNumber(float: 0.0)
                 pathAnimation.toValue = NSNumber(float:1.0)
                 

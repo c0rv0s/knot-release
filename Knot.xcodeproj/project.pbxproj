@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F46A95A5766C88F41ED55B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770ABEB83565023F547CADA0 /* libPods.a */; };
 		430293B51C24F0580071E11D /* listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430293B41C24F0580071E11D /* listing.swift */; };
+		430D11B31C6DCA060028AB63 /* tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D11B21C6DCA060028AB63 /* tutorial.swift */; };
+		430D11B51C6E73240028AB63 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D11B41C6E73240028AB63 /* SignUp.swift */; };
+		430D11B71C6E7B0A0028AB63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 430D11B61C6E7B0A0028AB63 /* LaunchScreen.xib */; };
 		430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE11C4E485300C29254 /* PersonalTableCell.swift */; };
 		430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE31C4E696C00C29254 /* AccountView.swift */; };
 		430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9071BFAFF3500839F37 /* libsqlite3.tbd */; };
@@ -33,7 +36,6 @@
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
 		434C95EF1C6D934200426449 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C95EE1C6D934200426449 /* launchScreen.swift */; };
-		434C95F31C6DAC5400426449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */; };
 		436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */; };
 		436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */; };
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
@@ -63,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		430293B41C24F0580071E11D /* listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listing.swift; sourceTree = "<group>"; };
+		430D11B21C6DCA060028AB63 /* tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial.swift; sourceTree = "<group>"; };
+		430D11B41C6E73240028AB63 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		430D11B61C6E7B0A0028AB63 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		430D1CE11C4E485300C29254 /* PersonalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableCell.swift; sourceTree = "<group>"; };
 		430D1CE31C4E696C00C29254 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		430DF9071BFAFF3500839F37 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -90,7 +95,6 @@
 		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
 		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
 		434C95EE1C6D934200426449 /* launchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
-		434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
@@ -246,7 +250,9 @@
 				431D13451C6C133400E8D887 /* image-extension.swift */,
 				43D780A91C6D54F1007715ED /* LoginViewPt2.swift */,
 				434C95EE1C6D934200426449 /* launchScreen.swift */,
-				434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */,
+				430D11B21C6DCA060028AB63 /* tutorial.swift */,
+				430D11B41C6E73240028AB63 /* SignUp.swift */,
+				430D11B61C6E7B0A0028AB63 /* LaunchScreen.xib */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -333,7 +339,7 @@
 				43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
-				434C95F31C6DAC5400426449 /* LaunchScreen.storyboard in Resources */,
+				430D11B71C6E7B0A0028AB63 /* LaunchScreen.xib in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +406,7 @@
 				434BE01D1C0CD628007479AB /* string-extension.swift in Sources */,
 				431D13461C6C133400E8D887 /* image-extension.swift in Sources */,
 				43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */,
+				430D11B31C6DCA060028AB63 /* tutorial.swift in Sources */,
 				43D780AA1C6D54F1007715ED /* LoginViewPt2.swift in Sources */,
 				430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */,
 				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
@@ -408,6 +415,7 @@
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */,
 				431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */,
+				430D11B51C6E73240028AB63 /* SignUp.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
 				431942871C4EBB14000373B3 /* AddScene.swift in Sources */,
 				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,

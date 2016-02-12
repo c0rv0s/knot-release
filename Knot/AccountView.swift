@@ -46,6 +46,10 @@ class AccountView: UIViewController {
         })
     }
 
+    @IBAction func viewTutorial(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
     
 
 }
