@@ -5,6 +5,38 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Launch Screen-->
+        <scene sceneID="2lx-IC-7gg">
+            <objects>
+                <viewController id="LYu-mU-Nvn" customClass="launchScreen" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oXl-VB-ebw"/>
+                        <viewControllerLayoutGuide type="bottom" id="KO2-hh-vNW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="obh-3Q-odA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash no lines" translatesAutoresizingMaskIntoConstraints="NO" id="Pt7-aS-SFx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="IxZ-p6-6nh" kind="show" identifier="startApp" id="ZxO-bs-lmd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zn2-Ls-DVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1722.5" y="1563.5"/>
+        </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="wKy-cm-CCD">
             <objects>
@@ -25,6 +57,7 @@
                         <segue destination="zOG-ZE-vWr" kind="relationship" relationship="viewControllers" id="yoO-M1-zeb"/>
                         <segue destination="b5W-76-OeN" kind="relationship" relationship="viewControllers" id="PRf-tF-q6K"/>
                         <segue destination="qP0-zv-SaE" kind="relationship" relationship="viewControllers" id="HGM-xA-oXf"/>
+                        <segue destination="LYu-mU-Nvn" kind="show" identifier="launchScreen" animates="NO" id="RnG-R1-gjD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGN-TA-Jdk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -890,6 +923,7 @@
         <image name="flag27" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
         <image name="house158" width="32" height="32"/>
+        <image name="splash no lines" width="1125" height="2001"/>
         <image name="stars and lines" width="1074" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>

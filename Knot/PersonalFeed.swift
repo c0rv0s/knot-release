@@ -85,6 +85,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             // When done requesting/reloading/processing invoke endRefreshing, to close the control
             self.refreshControl.endRefreshing()
+            self.tableView.reloadData()
         }
         // -- FINISHED SOMETHING AWESOME, WOO! --
     }
@@ -182,6 +183,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                     //    self.statusLabel.text = "Success"
                     self.tableImages[S3DownloadKeyName] = UIImage(data: data!)
                     self.cropImages[S3DownloadKeyName] = self.cropToSquare(image: UIImage(data: data!)!)
+                    self.tableView.reloadData()
                 }
             })
         }

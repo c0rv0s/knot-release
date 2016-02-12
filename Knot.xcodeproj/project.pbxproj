@@ -17,7 +17,6 @@
 		431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431853451BF9892F000C6ED4 /* AppDelegate.swift */; };
 		4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */; };
 		431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4318534F1BF9892F000C6ED4 /* Assets.xcassets */; };
-		431853531BF9892F000C6ED4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */; };
 		431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942821C4E8D2F000373B3 /* accountSettingsView.swift */; };
 		431942871C4EBB14000373B3 /* AddScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942861C4EBB14000373B3 /* AddScene.swift */; };
 		431D133B1C6AA1E300E8D887 /* gradient-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D133A1C6AA1E300E8D887 /* gradient-extension.swift */; };
@@ -33,6 +32,8 @@
 		431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A571C1127FB00EDB1A8 /* Social.framework */; };
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
+		434C95EF1C6D934200426449 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C95EE1C6D934200426449 /* launchScreen.swift */; };
+		434C95F31C6DAC5400426449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */; };
 		436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */; };
 		436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */; };
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
@@ -71,7 +72,6 @@
 		431853451BF9892F000C6ED4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4318534D1BF9892F000C6ED4 /* Knot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Knot.xcdatamodel; sourceTree = "<group>"; };
 		4318534F1BF9892F000C6ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		431853521BF9892F000C6ED4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		431853541BF9892F000C6ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		431942821C4E8D2F000373B3 /* accountSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accountSettingsView.swift; sourceTree = "<group>"; };
 		431942861C4EBB14000373B3 /* AddScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScene.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
 		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
+		434C95EE1C6D934200426449 /* launchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
+		434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
@@ -225,7 +227,6 @@
 				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
 				43C924951C084BA40006E181 /* Main.storyboard */,
 				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
-				431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */,
 				431853541BF9892F000C6ED4 /* Info.plist */,
 				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
 				43A4FC381BF996F00003748E /* ItemDetail.swift */,
@@ -244,6 +245,8 @@
 				431D133C1C6ABC6D00E8D887 /* navsub.swift */,
 				431D13451C6C133400E8D887 /* image-extension.swift */,
 				43D780A91C6D54F1007715ED /* LoginViewPt2.swift */,
+				434C95EE1C6D934200426449 /* launchScreen.swift */,
+				434C95F21C6DAC5400426449 /* LaunchScreen.storyboard */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -327,10 +330,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				431853531BF9892F000C6ED4 /* LaunchScreen.storyboard in Resources */,
 				43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
+				434C95F31C6DAC5400426449 /* LaunchScreen.storyboard in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +415,7 @@
 				431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */,
 				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
 				431D133B1C6AA1E300E8D887 /* gradient-extension.swift in Sources */,
+				434C95EF1C6D934200426449 /* launchScreen.swift in Sources */,
 				436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */,
 				43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */,
 			);
@@ -420,14 +424,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		431853511BF9892F000C6ED4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				431853521BF9892F000C6ED4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 		43C924951C084BA40006E181 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

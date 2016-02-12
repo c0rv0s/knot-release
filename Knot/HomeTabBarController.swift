@@ -13,12 +13,18 @@ class HomeTabBarController: UITabBarController {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    //var startApp = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        if appDelegate.startApp {
         print("checking fb token status")
         if (FBSDKAccessToken.currentAccessToken() == nil) {
             print("user not logged in")
@@ -45,6 +51,10 @@ class HomeTabBarController: UITabBarController {
                 }
                 return nil
             }
+        }
+        }
+        else {
+                    self.performSegueWithIdentifier("launchScreen", sender: self)
         }
     }
 }

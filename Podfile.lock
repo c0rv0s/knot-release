@@ -1,36 +1,36 @@
 PODS:
-  - AWSAutoScaling (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSCloudWatch (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSCognito (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSCore (2.3.4)
-  - AWSDynamoDB (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSEC2 (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSElasticLoadBalancing (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSKinesis (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSLambda (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSMachineLearning (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSMobileAnalytics (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSS3 (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSSES (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSSimpleDB (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSSNS (2.3.4):
-    - AWSCore (= 2.3.4)
-  - AWSSQS (2.3.4):
-    - AWSCore (= 2.3.4)
-  - Instabug (5.0.2)
+  - AWSAutoScaling (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSCloudWatch (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSCognito (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSCore (2.3.5)
+  - AWSDynamoDB (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSEC2 (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSElasticLoadBalancing (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSKinesis (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSLambda (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSMachineLearning (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSMobileAnalytics (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSS3 (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSSES (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSSimpleDB (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSSNS (2.3.5):
+    - AWSCore (= 2.3.5)
+  - AWSSQS (2.3.5):
+    - AWSCore (= 2.3.5)
+  - Instabug (5.1.0)
 
 DEPENDENCIES:
   - AWSAutoScaling
@@ -52,22 +52,22 @@ DEPENDENCIES:
   - Instabug
 
 SPEC CHECKSUMS:
-  AWSAutoScaling: 58757e3fae42c8ba72ca742863c7bf7db879352d
-  AWSCloudWatch: 3990aa0432b66662b10436676c3a514c4dc36ce7
-  AWSCognito: 8ea24f9261967a108131106585c832ab48f12540
-  AWSCore: 926eb781459b58d4319b0fa4f5f3bffb6b28b112
-  AWSDynamoDB: 9a823a84100dd2fb440b3d2e738489641822e4e1
-  AWSEC2: 8ec96ab79521215d281f65ad92a5484d50b9c870
-  AWSElasticLoadBalancing: 407db0d5c2965302ad6d099e158d22ecdd1f9827
-  AWSKinesis: d9bc7858c01a4ba7f201abf2d0129c0beaa921ea
-  AWSLambda: 6932d78bb67eb9b659ac30bb0631bad75d774430
-  AWSMachineLearning: 1ccb5fd051acae788bd861d31a7714c40f9a7f7f
-  AWSMobileAnalytics: f4fc6b1e36f6c2fe70ebedff989835433e4ca142
-  AWSS3: f49fde807d6cfc373f1bdb8150c9770d470ca2fd
-  AWSSES: 3c976fc58abfc92bc301b0af2d8f1164bf8ecf62
-  AWSSimpleDB: 4fe05ca1f857d7b7e9c03504f1140ff7c713ce5c
-  AWSSNS: f00c29631df2c3a37653f9f1d3d0f736daf95133
-  AWSSQS: 96d02b4c65dc518af539dff0e751e595d48ee904
-  Instabug: 013515c3a318b87e650f875cad2b1784fd2372cf
+  AWSAutoScaling: cf0ce6c6caa67bef1f52494e89e19cd28fca7f1e
+  AWSCloudWatch: cac31e0299db593955acbe43b789dc511c6d6d5a
+  AWSCognito: f12700b4781897b2913544b36d6283f04ae72a44
+  AWSCore: 8022eda5778fd7b87c9182709d8a27388e1a31fb
+  AWSDynamoDB: 00123cb4cc540768dc4aef89f41b36a474de9363
+  AWSEC2: e22d75ea1bbc539d0a0c1b8fa2537cd530da2342
+  AWSElasticLoadBalancing: fbb914973d73f16c0d5dcbca6cc702386e5eb8e0
+  AWSKinesis: 07493131735e156c575f3401c4f9c731c3a7b661
+  AWSLambda: edf348943ce81d52a9e95dace7293fb7bd42732d
+  AWSMachineLearning: 0e6d52239490b644e35668756215f33d175379f0
+  AWSMobileAnalytics: 6bfd7ef10008c936746ca1a96d0b72e9a543e166
+  AWSS3: 967f4ad3c91f1ed2c9dca09a9dcf905111232a87
+  AWSSES: 9267db16cae7c5349a4ec5a695ab445801e0e1d8
+  AWSSimpleDB: a523844c8b027c850688ffa6f79f33b06abbef9d
+  AWSSNS: d95b17f039776ec0dd9cd9237313779d174b0215
+  AWSSQS: f7a6f8cf225d469313150f8070e07bd7137218dd
+  Instabug: 19604e58b970de072933800c3cd92ad2f3a019f8
 
 COCOAPODS: 0.39.0

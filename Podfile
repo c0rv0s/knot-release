@@ -17,5 +17,3 @@ pod 'AWSSQS'
 pod 'AWSCognito'
 
 pod 'Instabug'
-
-

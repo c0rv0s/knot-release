@@ -61,7 +61,7 @@ class PhotoStreamViewController: UICollectionViewController {
         }
         
         if needsToRefresh {
-            self.refresh()
+            self.loadPhotos()
             needsToRefresh = false
         }
     }
@@ -69,6 +69,7 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
+        self.loadPhotos()
         self.colView.reloadData()
 
     }
@@ -129,7 +130,8 @@ class PhotoStreamViewController: UICollectionViewController {
             dispatch_async(dispatch_get_main_queue(), {
                 self.colView.reloadData()
             })
-            */
+*/
+
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
             if ((task.error) != nil) {

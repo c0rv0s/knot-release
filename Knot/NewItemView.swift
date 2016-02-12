@@ -532,7 +532,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                         }
                     }
                     return nil
-                
+            
 
                 }
             }
@@ -642,5 +642,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
         
         return image
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if (segue!.identifier == "returnHome") {
+            let viewController:HomeTabBarController = segue!.destinationViewController as! HomeTabBarController
+            //viewController.startApp = true
+        }
     }
 }
