@@ -59,19 +59,22 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-        //self.colView.reloadData()
+        
+        if needsToRefresh {
+            self.refresh()
+            needsToRefresh = false
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
-        
-        //self.colView.reloadData()
-        if needsToRefresh {
-            self.loadPhotos()
-            needsToRefresh = false
-        }
-        
+        self.colView.reloadData()
+
+    }
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.colView.reloadData()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -83,11 +86,12 @@ class PhotoStreamViewController: UICollectionViewController {
         // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
         // This is where you'll make requests to an API, reload data, or process information
         self.loadPhotos()
-        var delayInSeconds = 2.0;
+        var delayInSeconds = 3.0;
         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             // When done requesting/reloading/processing invoke endRefreshing, to close the control
             self.refreshControl.endRefreshing()
+            self.colView.reloadData()
         }
         // -- FINISHED SOMETHING AWESOME, WOO! --
     }
@@ -113,13 +117,9 @@ class PhotoStreamViewController: UICollectionViewController {
                 let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                 for item in paginatedOutput.items as! [ListItem] {
                     if item.sold == "false" {
-                        
-                        self.collectionItems?.append(item)
-                        self.downloadImage(item.ID)
-                        //let newPhoto = Photo(litem: item, image: self.collectionImages[item.ID]!)
-                        //self.photos.append(newPhoto)
-
-                        print("\(item.ID) added")
+                        self.collectionItems!.append(item)
+                        //self.colView.reloadData()
+                        self.downloadImage(item)
                     }
                 }
                 
@@ -140,7 +140,7 @@ class PhotoStreamViewController: UICollectionViewController {
         }
     }
     
-    func downloadImage(key: String){
+    func downloadImage(item: ListItem){
         
         var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
         
@@ -148,7 +148,7 @@ class PhotoStreamViewController: UICollectionViewController {
         
         
         let S3BucketName: String = "knotcomplexthumbnails"
-        let S3DownloadKeyName: String = key
+        let S3DownloadKeyName: String = item.ID
         
         let expression = AWSS3TransferUtilityDownloadExpression()
         expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
@@ -175,12 +175,19 @@ class PhotoStreamViewController: UICollectionViewController {
                     NSLog("Error: Failed - Likely due to invalid region / filename")
                     }   */
                 else{
-                    //    self.statusLabel.text = "Success"
+                    
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
+                    
+                    /*
+                    let count = (self.collectionItems.indexOf(item)! - 1)
+                    print("count = \(count)")
+                    let indexPath = NSIndexPath(forItem: count, inSection: 0)
+                    //self.colView.reloadItemsAtIndexPaths([indexPath])
                     //self.colView.reloadData()
+*/
                 }
             })
-            self.colView.reloadData()
+
         }
         
         let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
@@ -198,12 +205,6 @@ class PhotoStreamViewController: UICollectionViewController {
                 //    self.statusLabel.text = "Starting Download"
                 //NSLog("Download Starting!")
                 // Do something with uploadTask.
-                
-                //dispatch_async(dispatch_get_main_queue(), {
-                
-                //})
-                
-                
             }
             return nil;
         }
@@ -275,7 +276,7 @@ class PhotoStreamViewController: UICollectionViewController {
         cell.imageView.image = cell.cellPic
         cell.alpha = 0
         
-        UICollectionViewCell.animateWithDuration(0.4, animations: { cell.alpha = 1 })
+        UICollectionViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
         print("cell made")
         return cell
     }
@@ -314,7 +315,7 @@ class PhotoStreamViewController: UICollectionViewController {
         return NSCalendar.currentCalendar().components(.Second, fromDate: startDate, toDate: endDate, options: []).second
     }
     
-    
+    /*
     func imageFadeIn(imageView: UIImageView) {
         
         let secondImageView = UIImageView(image: UIImage(named: "bg02.png"))
@@ -331,6 +332,7 @@ class PhotoStreamViewController: UICollectionViewController {
         })
         
     }
+*/
 
 }
 

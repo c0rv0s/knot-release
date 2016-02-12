@@ -15,7 +15,7 @@ class LoginView: UIViewController{
     @IBOutlet weak var loginbutton: UIButton!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-    var locationManager: OneShotLocationManager?
+    //var locationManager: OneShotLocationManager?
     @IBOutlet weak var signupbuttin: UIButton!
     
     override func viewDidLoad() {
@@ -40,7 +40,7 @@ class LoginView: UIViewController{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        /*
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
             // fetch location or an error
@@ -50,6 +50,7 @@ class LoginView: UIViewController{
             }
             self.locationManager = nil
         }
+*/
     }
     
     private func imageLayerForGradientBackground() -> UIImage {
