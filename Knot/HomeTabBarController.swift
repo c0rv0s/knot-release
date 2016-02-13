@@ -30,7 +30,7 @@ class HomeTabBarController: UITabBarController {
             print("user not logged in")
             
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.presentViewController(vc, animated: false, completion: nil)
         }
         else {
             print("user logged in")
@@ -54,7 +54,8 @@ class HomeTabBarController: UITabBarController {
         }
         }
         else {
-                    self.performSegueWithIdentifier("launchScreen", sender: self)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController
+            self.presentViewController(vc, animated: false, completion: nil)
         }
     }
 }

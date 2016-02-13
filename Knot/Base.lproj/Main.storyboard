@@ -8,7 +8,7 @@
         <!--Launch Screen-->
         <scene sceneID="2lx-IC-7gg">
             <objects>
-                <viewController id="LYu-mU-Nvn" customClass="launchScreen" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="launchScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LYu-mU-Nvn" customClass="launchScreen" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oXl-VB-ebw"/>
                         <viewControllerLayoutGuide type="bottom" id="KO2-hh-vNW"/>
@@ -999,7 +999,7 @@
         <image name="stars and lines" width="1074" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ZxO-bs-lmd"/>
         <segue reference="yTs-ay-f60"/>
-        <segue reference="jAC-6W-Yyh"/>
     </inferredMetricsTieBreakers>
 </document>
