@@ -448,44 +448,6 @@
                                     <action selector="login:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="TQD-EZ-0d2"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p1H-cb-gNE">
-                                <rect key="frame" x="0.0" y="503" width="375" height="50"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="ynU-Wt-FFe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-kD-Lug">
-                                            <rect key="frame" x="-188" y="0.0" width="750" height="50"/>
-                                            <state key="normal" title="Login">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="Fvq-4p-3er" kind="show" id="Kmf-9m-fgH"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W6W-Gf-7PW">
-                                <rect key="frame" x="0.0" y="553" width="375" height="50"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="fDj-7e-CMh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yc-hO-uwt">
-                                            <rect key="frame" x="-188" y="0.0" width="750" height="50"/>
-                                            <state key="normal" title="Sign Up">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </state>
-                                            <connections>
-                                                <segue destination="xN7-XG-DRQ" kind="show" id="Jin-Vc-c30"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stars and lines" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-tq-Ewf">
                                 <rect key="frame" x="37" y="184" width="300" height="300"/>
                             </imageView>
@@ -495,6 +457,10 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOR-kE-0dM">
+                                <rect key="frame" x="185" y="551" width="3" height="3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -504,39 +470,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="loginbutton" destination="E6p-kD-Lug" id="aEO-Hf-SRw"/>
-                        <outlet property="signupbuttin" destination="0yc-hO-uwt" id="pPX-uj-8zI"/>
+                        <outlet property="buttonView" destination="dOR-kE-0dM" id="7Od-6h-tP0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5A-Vp-mm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2202.5" y="2385.5"/>
-        </scene>
-        <!--Login View Pt2-->
-        <scene sceneID="Riq-ui-VaY">
-            <objects>
-                <viewController id="Fvq-4p-3er" customClass="LoginViewPt2" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Zaq-tm-B9e"/>
-                        <viewControllerLayoutGuide type="bottom" id="hvQ-7P-19P"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="s64-QD-VTu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDo-5k-K4f">
-                                <rect key="frame" x="83" y="36" width="209" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HWB-uB-nfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2490.5" y="3231.5"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="yof-FW-i4W">
@@ -559,6 +498,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCr-bw-o0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -731,7 +672,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
-                                <rect key="frame" x="122" y="178" width="131" height="30"/>
+                                <rect key="frame" x="-84" y="178" width="542" height="47"/>
                                 <state key="normal" title="View Tutorial Again"/>
                                 <connections>
                                     <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
@@ -745,6 +686,7 @@
                         <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
+                        <outlet property="tutButton" destination="IQM-yo-TQc" id="cf6-5v-FPN"/>
                         <outlet property="walletText" destination="uor-Ld-e4b" id="dNL-mG-HKh"/>
                     </connections>
                 </viewController>
@@ -795,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-3D-qQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1548.5" y="3715.5"/>
+            <point key="canvasLocation" x="1797" y="3690"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">

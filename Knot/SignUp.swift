@@ -1,65 +1,53 @@
 //
-//  AccountView.swift
+//  File.swift
 //  Knot
 //
-//  Created by Nathan Mueller on 1/19/16.
+//  Created by Nathan Mueller on 2/12/16.
 //  Copyright © 2016 Knot App. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
-class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
-
-    @IBOutlet weak var Name: UILabel!
-    @IBOutlet weak var profPic: UIImageView!
-    var dict : NSDictionary!
+class SignUp: UIViewController, FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tutButton.layer.borderWidth = 1;
-        self.tutButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
+        self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
         loginView.center = self.view.center
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
-        
-        self.returnUserDataForProf()
-    }
-    
-    func returnUserDataForProf() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"])
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
+        /*
+        for view in loginView.subviews as [UIView]
+        {
+            if view.isKindOfClass(UIButton)
             {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                self.Name.text = userName as String
+                var btn = view as! UIButton;
+                let image = UIImage(named: "name") as UIImage?
+                btn.setBackgroundImage(image, forState: .Normal)
+                btn.setBackgroundImage(image, forState: .Selected)
+                btn.setBackgroundImage(image, forState: .Highlighted)
                 
-                if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
-                    if let data = NSData(contentsOfURL: url){
-                        var profilePicture = UIImage(data: data)
-
-                        self.profPic.image = profilePicture
-                    }
-                }
-
             }
-        })
+            if view.isKindOfClass(UILabel)
+            {
+                var lbl = view as! UILabel;
+                //lbl.text = "Log in to facebook";
+                
+            }
+        }
+*/
+        
     }
+
+
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User Logged In")
@@ -93,7 +81,7 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         }))
         self.presentViewController(alert, animated: true, completion: nil)
         
-        
+
         
         //error handling
         if ((error) != nil)
@@ -137,11 +125,18 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
             }
         })
     }
-
-    @IBAction func viewTutorial(sender: AnyObject) {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+    
+    private func imageLayerForGradientBackground() -> UIImage {
+        
+        var updatedFrame = self.view.bounds
+        // take into account the status bar
+        updatedFrame.size.height += 20
+        var layer = CAGradientLayer.gradientLayerForBounds(updatedFrame)
+        UIGraphicsBeginImageContext(layer.bounds.size)
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
     
-
 }

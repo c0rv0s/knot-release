@@ -11,7 +11,7 @@ import CoreData
 import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate  {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     var window: UIWindow?
     var credentialsProvider = AWSCognitoCredentialsProvider()

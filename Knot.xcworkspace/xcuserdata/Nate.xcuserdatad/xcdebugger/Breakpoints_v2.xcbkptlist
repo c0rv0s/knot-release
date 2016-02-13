@@ -13,22 +13,6 @@
             timestampString = "476950932.591438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Knot/AppDelegate.swift"
-            timestampString = "476950932.591438"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
             endingLineNumber = "34"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
@@ -609,38 +593,6 @@
             endingLineNumber = "207"
             landmarkName = "downloadImage(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Knot.PhotoStreamViewController.(downloadImage (Knot.PhotoStreamViewController) -&gt; (Swift.String) -&gt; ()).(closure #3)"
-                  moduleName = "Knot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.085747"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "282"
-                  endingLineNumber = "282"
-                  offsetFromSymbolStart = "708">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Knot.PhotoStreamViewController.(downloadImage (Knot.PhotoStreamViewController) -&gt; (Swift.String) -&gt; ()).(closure #3).(closure #1)"
-                  moduleName = "Knot"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.085946"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "283"
-                  endingLineNumber = "283"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -666,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476937884.401311"
+            timestampString = "477052442.640808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -682,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476937884.401311"
+            timestampString = "477052442.640808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -967,7 +919,7 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.09383"
+                  timestampString = "477096029.327065"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -982,7 +934,7 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.093999"
+                  timestampString = "477096029.327177"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -997,7 +949,7 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.094133"
+                  timestampString = "477096029.327276"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -1012,12 +964,12 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/PhotoStreamViewController.swift"
-                  timestampString = "476930724.094261"
+                  timestampString = "477096029.327372"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "60">
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -2746,6 +2698,22 @@
             startingLineNumber = "228"
             endingLineNumber = "228"
             landmarkName = "downloadImage(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/LoginView.swift"
+            timestampString = "477095710.544902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
