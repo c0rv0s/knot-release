@@ -3527,12 +3527,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0D7336ABA5EBA1BC6402B683DF819E55 /* Debug */ = {
+		08B8F0C87C3BB96DCAEB0D0B449A27D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C852AFB3AC5B7170E349E9DE50B5974 /* AWSSimpleDB.xcconfig */;
+			baseConfigurationReference = F1C4233B1350361737BF05CD8A34D17C /* AWSElasticLoadBalancing.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSimpleDB/AWSSimpleDB-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSElasticLoadBalancing/AWSElasticLoadBalancing-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -3545,154 +3549,14 @@
 			};
 			name = Debug;
 		};
-		1672AB17FF95EEF105239DC338501F32 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 025E3CB1D7F9A5C785901C119EAB8A81 /* AWSCore.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		1CBDBD81ABC2576A93016F5269FCC3C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66102CB8674E55F786CB3473E8FDA946 /* AWSAutoScaling.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSAutoScaling/AWSAutoScaling-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		1E2886ABD14E916DEA91798AB82F38C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A424F33E01094189D7A65B3DF16B7ED7 /* AWSSNS.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSNS/AWSSNS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		27D860CEE622F1381269582C759742AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66102CB8674E55F786CB3473E8FDA946 /* AWSAutoScaling.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSAutoScaling/AWSAutoScaling-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		29620CBAA034518ED267A3DCE9A777EA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CD72C0EF9944BA6B348F0753001F6CC /* AWSKinesis.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSKinesis/AWSKinesis-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		2BE0D5E5C892429125442E0B18421CA6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C9B4A8B419A6D5EF8264EB57962AA37 /* AWSSES.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSES/AWSSES-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		2F7FC119A797710EC3491D36A9788879 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C9B4A8B419A6D5EF8264EB57962AA37 /* AWSSES.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSES/AWSSES-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		3D9166BBB8D7C39600E76A07DF0E4A2B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C35692BD16B6FE8A2FFDFCD8B189BB7 /* AWSLambda.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSLambda/AWSLambda-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		4206CA8A7726F0C222214970213A93E4 /* Debug */ = {
+		0ACD9532C98F3DEE0EEF47E1B7EAF028 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D155C70B5320BC867F628DED2848311 /* AWSMachineLearning.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AWSMachineLearning/AWSMachineLearning-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3707,10 +3571,168 @@
 			};
 			name = Debug;
 		};
-		4B5B5A6750050E02509ABD07B9BD64D9 /* Release */ = {
+		0E20DE906BFC5B2A98EB52695321E583 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD72C0EF9944BA6B348F0753001F6CC /* AWSKinesis.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSKinesis/AWSKinesis-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0E45022CE222B89FDF3880E5A51540EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9B4A8B419A6D5EF8264EB57962AA37 /* AWSSES.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSES/AWSSES-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		114CC2B694622B16F8B73EF413106FC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C9D07E7DCD0D7463A3853DED742C17F /* AWSSQS.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSQS/AWSSQS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1A64939D189B180C6930E0322041A023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CD72C0EF9944BA6B348F0753001F6CC /* AWSKinesis.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSKinesis/AWSKinesis-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		1F6FE04AF6EDFB63AAF0762552D2B565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1C4233B1350361737BF05CD8A34D17C /* AWSElasticLoadBalancing.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSElasticLoadBalancing/AWSElasticLoadBalancing-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		216DB888C197A8A1F27D2AB4619CA1FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 902F073D0268532B765E289ADDD8BAD0 /* AWSDynamoDB.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSDynamoDB/AWSDynamoDB-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2246FC6127E34B2797D87BDAB04A9650 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C35692BD16B6FE8A2FFDFCD8B189BB7 /* AWSLambda.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSLambda/AWSLambda-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3B5701E5F4E884D3C7C13667D497EBEA /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C24EDB1FC5AF5043F9AD338D786F6726 /* AWSCloudWatch.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AWSCloudWatch/AWSCloudWatch-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3725,15 +3747,18 @@
 			};
 			name = Release;
 		};
-		58C4A1BEB6175272768977317A6B95BC /* Debug */ = {
+		481395C98FE7D8B65A2FAE767656862C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D0E1994017DB031CF1E93A2373CFACD /* AFNetworking.xcconfig */;
+			baseConfigurationReference = 7865E79C68490D3FC18B573C75EC57D1 /* AWSEC2.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSEC2/AWSEC2-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -3744,12 +3769,38 @@
 			};
 			name = Debug;
 		};
-		59B25BFF0C11EC76671F600F6D339983 /* Debug */ = {
+		55FC242F04DA8FEE07B8DAF00CCD3E58 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7865E79C68490D3FC18B573C75EC57D1 /* AWSEC2.xcconfig */;
+			baseConfigurationReference = 2D0E1994017DB031CF1E93A2373CFACD /* AFNetworking.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSEC2/AWSEC2-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5B7798E528E185D5A1DEA1C72FCF43F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC3AB283D3D82C50E54D8758E1FDE57 /* AWSCognito.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -3795,36 +3846,22 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		683F0B6DE94C1B250BA37BAE113382C8 /* Debug */ = {
+		5E1DBA633AB18E6D1E2286DA0838C829 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C9D07E7DCD0D7463A3853DED742C17F /* AWSSQS.xcconfig */;
+			baseConfigurationReference = 902F073D0268532B765E289ADDD8BAD0 /* AWSDynamoDB.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSQS/AWSSQS-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		6CB7D399CC1F77D5AA3519C308B5E22B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9EB173C319CDC0F79354722EC0B247B0 /* AWSS3.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSS3/AWSS3-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSDynamoDB/AWSDynamoDB-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -3837,37 +3874,22 @@
 			};
 			name = Release;
 		};
-		6DAF122F70FF6E2285E8AEE96726C059 /* Debug */ = {
+		62E72A92436FD4749A800ECCA8BDEB63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 025E3CB1D7F9A5C785901C119EAB8A81 /* AWSCore.xcconfig */;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		719CAD804D61C67522334C0E666635CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C35692BD16B6FE8A2FFDFCD8B189BB7 /* AWSLambda.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSLambda/AWSLambda-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
@@ -3901,89 +3923,41 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		8B648ADC5758BD18CEC2CDF76D51FD90 /* Release */ = {
+		7580B24789D1458209871A1FEBC17DC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C9D07E7DCD0D7463A3853DED742C17F /* AWSSQS.xcconfig */;
+			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSQS/AWSSQS-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		8CB9BE1FFBA93B6AE258E292C9DE0281 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C4233B1350361737BF05CD8A34D17C /* AWSElasticLoadBalancing.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSElasticLoadBalancing/AWSElasticLoadBalancing-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		8DF09148B5EE7709C1903704FF65AAF9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13C13D6F501920ABAEDA403007BDB691 /* AWSMobileAnalytics.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		9202A0C36F4B47AF5064C20DB62E93E0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13C13D6F501920ABAEDA403007BDB691 /* AWSMobileAnalytics.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		9D9424AFBDCAFB59047122C7FA6CB267 /* Debug */ = {
+		760066628CF5FBC42E8823E017C4745D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A424F33E01094189D7A65B3DF16B7ED7 /* AWSSNS.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AWSSNS/AWSSNS-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -3998,12 +3972,16 @@
 			};
 			name = Debug;
 		};
-		A2174231B76041EE930ACD57DEF1BBF3 /* Release */ = {
+		8215BAAF49942CFE62E00EF4F9C161D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BC3AB283D3D82C50E54D8758E1FDE57 /* AWSCognito.xcconfig */;
+			baseConfigurationReference = A424F33E01094189D7A65B3DF16B7ED7 /* AWSSNS.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSNS/AWSSNS-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -4016,65 +3994,16 @@
 			};
 			name = Release;
 		};
-		BE4E9E952A2067D5AA03BC6A51A221BF /* Debug */ = {
+		87F864581F6F31E747F6A1EC0F386AF1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 902F073D0268532B765E289ADDD8BAD0 /* AWSDynamoDB.xcconfig */;
+			baseConfigurationReference = 13C13D6F501920ABAEDA403007BDB691 /* AWSMobileAnalytics.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSDynamoDB/AWSDynamoDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		C484D5B9E2DCCB5463084A702DF08035 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		CDB8F38829071F310367F96EF9E93359 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9BC3AB283D3D82C50E54D8758E1FDE57 /* AWSCognito.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		D5A1AD136A2DFE30CB10945C71E1F099 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C852AFB3AC5B7170E349E9DE50B5974 /* AWSSimpleDB.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSSimpleDB/AWSSimpleDB-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -4087,136 +4016,14 @@
 			};
 			name = Release;
 		};
-		D833C57B4AF5776007D02257C2C81EB6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C24EDB1FC5AF5043F9AD338D786F6726 /* AWSCloudWatch.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSCloudWatch/AWSCloudWatch-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		DCB5464771E7C98F8B8748FB648EBB38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		E8A5A8C3E0182D76E2C9576CDB04CF71 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 902F073D0268532B765E289ADDD8BAD0 /* AWSDynamoDB.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSDynamoDB/AWSDynamoDB-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		EDF443A464E7F876261DE33E2116AC8D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C4233B1350361737BF05CD8A34D17C /* AWSElasticLoadBalancing.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSElasticLoadBalancing/AWSElasticLoadBalancing-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F3481C67C32D754E411C14135740B19A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7865E79C68490D3FC18B573C75EC57D1 /* AWSEC2.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSEC2/AWSEC2-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F5B4A0769A0F65D61E17816537517C51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D0E1994017DB031CF1E93A2373CFACD /* AFNetworking.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F65432E906021024777050F2B63CE562 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4D155C70B5320BC867F628DED2848311 /* AWSMachineLearning.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSMachineLearning/AWSMachineLearning-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		F791621CA60CEE34960152E43440004B /* Debug */ = {
+		92F5A474C041716419E68593EA1E2CD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9EB173C319CDC0F79354722EC0B247B0 /* AWSS3.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AWSS3/AWSS3-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -4231,12 +4038,346 @@
 			};
 			name = Debug;
 		};
-		F93170E9121FBA1241A54480A69D7EA9 /* Debug */ = {
+		93C5CDC4846B8CCC3A1AF9CEEC118C42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9CD72C0EF9944BA6B348F0753001F6CC /* AWSKinesis.xcconfig */;
+			baseConfigurationReference = 0C35692BD16B6FE8A2FFDFCD8B189BB7 /* AWSLambda.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AWSKinesis/AWSKinesis-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/AWSLambda/AWSLambda-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9D50FF33318967BFA7C403C73189BBEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7865E79C68490D3FC18B573C75EC57D1 /* AWSEC2.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSEC2/AWSEC2-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A0394C5A08FA9DB0B82C6AA8763DBDC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC3AB283D3D82C50E54D8758E1FDE57 /* AWSCognito.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCognito/AWSCognito-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A17A6D0E9DEE18E4080C2E00A2A8F285 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 025E3CB1D7F9A5C785901C119EAB8A81 /* AWSCore.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A91C2F68704D28689C94A0D98B6434F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C9B4A8B419A6D5EF8264EB57962AA37 /* AWSSES.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSES/AWSSES-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AA63AC6213E24C2821D199E2AA68DE3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66102CB8674E55F786CB3473E8FDA946 /* AWSAutoScaling.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSAutoScaling/AWSAutoScaling-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		AE326FB094B67E1CAF167392363059F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C9D07E7DCD0D7463A3853DED742C17F /* AWSSQS.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSQS/AWSSQS-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		BEAF700859701CA15CF9987D7643F9D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EB173C319CDC0F79354722EC0B247B0 /* AWSS3.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSS3/AWSS3-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C062328BBB930E700E5F9D2E3DF45CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66102CB8674E55F786CB3473E8FDA946 /* AWSAutoScaling.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSAutoScaling/AWSAutoScaling-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CD6684CC55E7DBCBDEC2B97A17857742 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C852AFB3AC5B7170E349E9DE50B5974 /* AWSSimpleDB.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSimpleDB/AWSSimpleDB-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D0B9F3627B52BA33574190188A82B973 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D155C70B5320BC867F628DED2848311 /* AWSMachineLearning.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSMachineLearning/AWSMachineLearning-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DE69FFF4336E26C3903AF9E777A47EF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 025E3CB1D7F9A5C785901C119EAB8A81 /* AWSCore.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCore/AWSCore-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EEF3FCF045D2A8C9BED4178F3CCBD6E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13C13D6F501920ABAEDA403007BDB691 /* AWSMobileAnalytics.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSMobileAnalytics/AWSMobileAnalytics-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F361DEB7FE4140565859601D740EDB22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D0E1994017DB031CF1E93A2373CFACD /* AFNetworking.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F3E1FA7F3189BAAEE34DDC03B9C1810B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C852AFB3AC5B7170E349E9DE50B5974 /* AWSSimpleDB.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSSimpleDB/AWSSimpleDB-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F8875F73E060C18D54EE494FF9C35100 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C24EDB1FC5AF5043F9AD338D786F6726 /* AWSCloudWatch.xcconfig */;
+			buildSettings = {
+				ARCHS = (
+					arm64,
+					armv7s,
+				);
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AWSCloudWatch/AWSCloudWatch-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -4255,8 +4396,8 @@
 		012E9263AD77533E3DAC0E907B1E9B52 /* Build configuration list for PBXNativeTarget "AWSCloudWatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D833C57B4AF5776007D02257C2C81EB6 /* Debug */,
-				4B5B5A6750050E02509ABD07B9BD64D9 /* Release */,
+				F8875F73E060C18D54EE494FF9C35100 /* Debug */,
+				3B5701E5F4E884D3C7C13667D497EBEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4264,8 +4405,8 @@
 		016E8CB826527AE4F1714AFE0842EEC1 /* Build configuration list for PBXNativeTarget "AWSMobileAnalytics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8DF09148B5EE7709C1903704FF65AAF9 /* Debug */,
-				9202A0C36F4B47AF5064C20DB62E93E0 /* Release */,
+				EEF3FCF045D2A8C9BED4178F3CCBD6E7 /* Debug */,
+				87F864581F6F31E747F6A1EC0F386AF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4273,8 +4414,8 @@
 		0B0A08D3A47B1739EF63F9333DE509AD /* Build configuration list for PBXNativeTarget "AWSSES" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F7FC119A797710EC3491D36A9788879 /* Debug */,
-				2BE0D5E5C892429125442E0B18421CA6 /* Release */,
+				0E45022CE222B89FDF3880E5A51540EF /* Debug */,
+				A91C2F68704D28689C94A0D98B6434F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4282,8 +4423,8 @@
 		254FFEE076CC10F8E2B7CB7E08BB9C2E /* Build configuration list for PBXNativeTarget "AWSAutoScaling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1CBDBD81ABC2576A93016F5269FCC3C3 /* Debug */,
-				27D860CEE622F1381269582C759742AD /* Release */,
+				C062328BBB930E700E5F9D2E3DF45CA8 /* Debug */,
+				AA63AC6213E24C2821D199E2AA68DE3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4300,8 +4441,8 @@
 		4092AC2676A57E20500D8EFBEA43EE43 /* Build configuration list for PBXNativeTarget "AWSSimpleDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0D7336ABA5EBA1BC6402B683DF819E55 /* Debug */,
-				D5A1AD136A2DFE30CB10945C71E1F099 /* Release */,
+				CD6684CC55E7DBCBDEC2B97A17857742 /* Debug */,
+				F3E1FA7F3189BAAEE34DDC03B9C1810B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4309,8 +4450,8 @@
 		6BB5B5973FD6A49A080D6941971605D7 /* Build configuration list for PBXNativeTarget "AWSElasticLoadBalancing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CB9BE1FFBA93B6AE258E292C9DE0281 /* Debug */,
-				EDF443A464E7F876261DE33E2116AC8D /* Release */,
+				08B8F0C87C3BB96DCAEB0D0B449A27D0 /* Debug */,
+				1F6FE04AF6EDFB63AAF0762552D2B565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4318,8 +4459,8 @@
 		6BECC861CEB98A2DF8F3997D4978FE4B /* Build configuration list for PBXNativeTarget "AWSKinesis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F93170E9121FBA1241A54480A69D7EA9 /* Debug */,
-				29620CBAA034518ED267A3DCE9A777EA /* Release */,
+				0E20DE906BFC5B2A98EB52695321E583 /* Debug */,
+				1A64939D189B180C6930E0322041A023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4327,8 +4468,8 @@
 		77ABA34161EF35D0469392BA38B27FD6 /* Build configuration list for PBXNativeTarget "AWSSQS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				683F0B6DE94C1B250BA37BAE113382C8 /* Debug */,
-				8B648ADC5758BD18CEC2CDF76D51FD90 /* Release */,
+				114CC2B694622B16F8B73EF413106FC1 /* Debug */,
+				AE326FB094B67E1CAF167392363059F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4336,8 +4477,8 @@
 		77CF2A7107BC61A2E90025871305961D /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58C4A1BEB6175272768977317A6B95BC /* Debug */,
-				F5B4A0769A0F65D61E17816537517C51 /* Release */,
+				F361DEB7FE4140565859601D740EDB22 /* Debug */,
+				55FC242F04DA8FEE07B8DAF00CCD3E58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4345,8 +4486,8 @@
 		845319E5CE9278FB91EC8B8C16F1FFF9 /* Build configuration list for PBXNativeTarget "AWSDynamoDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BE4E9E952A2067D5AA03BC6A51A221BF /* Debug */,
-				E8A5A8C3E0182D76E2C9576CDB04CF71 /* Release */,
+				216DB888C197A8A1F27D2AB4619CA1FC /* Debug */,
+				5E1DBA633AB18E6D1E2286DA0838C829 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4354,8 +4495,8 @@
 		8AFD8088B1E87E2130098284976DF553 /* Build configuration list for PBXNativeTarget "AWSEC2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B25BFF0C11EC76671F600F6D339983 /* Debug */,
-				F3481C67C32D754E411C14135740B19A /* Release */,
+				481395C98FE7D8B65A2FAE767656862C /* Debug */,
+				9D50FF33318967BFA7C403C73189BBEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4363,8 +4504,8 @@
 		8D53CD8F77CDAB872543FFC5D56DA838 /* Build configuration list for PBXNativeTarget "AWSS3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F791621CA60CEE34960152E43440004B /* Debug */,
-				6CB7D399CC1F77D5AA3519C308B5E22B /* Release */,
+				92F5A474C041716419E68593EA1E2CD4 /* Debug */,
+				BEAF700859701CA15CF9987D7643F9D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4372,8 +4513,8 @@
 		98F3F6820D21CAB3DDEC7034E686DD6F /* Build configuration list for PBXNativeTarget "AWSMachineLearning" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4206CA8A7726F0C222214970213A93E4 /* Debug */,
-				F65432E906021024777050F2B63CE562 /* Release */,
+				0ACD9532C98F3DEE0EEF47E1B7EAF028 /* Debug */,
+				D0B9F3627B52BA33574190188A82B973 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4381,8 +4522,8 @@
 		B01801AD08ABB7E0365CB09AF22E0481 /* Build configuration list for PBXNativeTarget "AWSLambda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				719CAD804D61C67522334C0E666635CA /* Debug */,
-				3D9166BBB8D7C39600E76A07DF0E4A2B /* Release */,
+				2246FC6127E34B2797D87BDAB04A9650 /* Debug */,
+				93C5CDC4846B8CCC3A1AF9CEEC118C42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4390,8 +4531,8 @@
 		BE3CC7359A2E456817E2B64357E17CC9 /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C484D5B9E2DCCB5463084A702DF08035 /* Debug */,
-				DCB5464771E7C98F8B8748FB648EBB38 /* Release */,
+				62E72A92436FD4749A800ECCA8BDEB63 /* Debug */,
+				7580B24789D1458209871A1FEBC17DC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4399,8 +4540,8 @@
 		CF10E5D0BFBF932E11D5FF16762B1853 /* Build configuration list for PBXNativeTarget "AWSCognito" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDB8F38829071F310367F96EF9E93359 /* Debug */,
-				A2174231B76041EE930ACD57DEF1BBF3 /* Release */,
+				5B7798E528E185D5A1DEA1C72FCF43F2 /* Debug */,
+				A0394C5A08FA9DB0B82C6AA8763DBDC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4408,8 +4549,8 @@
 		D2B39C9B6999E294E33ADBAABFD82621 /* Build configuration list for PBXNativeTarget "AWSSNS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9D9424AFBDCAFB59047122C7FA6CB267 /* Debug */,
-				1E2886ABD14E916DEA91798AB82F38C5 /* Release */,
+				760066628CF5FBC42E8823E017C4745D /* Debug */,
+				8215BAAF49942CFE62E00EF4F9C161D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -4417,8 +4558,8 @@
 		E7E5A4F29423DC07A1381B22C27A028F /* Build configuration list for PBXNativeTarget "AWSCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6DAF122F70FF6E2285E8AEE96726C059 /* Debug */,
-				1672AB17FF95EEF105239DC338501F32 /* Release */,
+				DE69FFF4336E26C3903AF9E777A47EF1 /* Debug */,
+				A17A6D0E9DEE18E4080C2E00A2A8F285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

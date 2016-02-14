@@ -668,6 +668,7 @@
 				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -680,11 +681,54 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSAutoScaling\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCloudWatch\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCognito\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCore\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSDynamoDB\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSEC2\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSElasticLoadBalancing\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSKinesis\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSLambda\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSMachineLearning\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSMobileAnalytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSS3\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSES\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSNS\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSQS\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSimpleDB\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Instabug\"",
+					"-fembed-bitcode",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -696,6 +740,7 @@
 				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -708,11 +753,54 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSAutoScaling\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCloudWatch\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCognito\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSCore\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSDynamoDB\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSEC2\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSElasticLoadBalancing\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSKinesis\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSLambda\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSMachineLearning\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSMobileAnalytics\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSS3\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSES\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSNS\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSQS\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/AWSSimpleDB\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/Instabug\"",
+					"-fembed-bitcode",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Release;
 		};
