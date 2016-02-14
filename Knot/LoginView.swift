@@ -16,6 +16,12 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBOutlet weak var buttonView: UIView!
     
+    //fb data
+    var fbname = ""
+    var fbemail = ""
+    var fbday = ""
+    var fbgender = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().statusBarHidden=true
@@ -67,18 +73,8 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
             return nil
         }
         
-        let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-        
-        
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("SignUp") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
         
         //error handling
         if ((error) != nil)
@@ -93,7 +89,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
             // should check if specific permissions missing
             if result.grantedPermissions.contains("email")
             {
-                // Do work
+
             }
         }
     }
@@ -101,30 +97,9 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
     }
-    
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
-            }
-        })
-    }
-    
+
     private func imageLayerForGradientBackground() -> UIImage {
-        
+
         var updatedFrame = self.view.bounds
         // take into account the status bar
         updatedFrame.size.height += 20

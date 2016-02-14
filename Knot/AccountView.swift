@@ -14,6 +14,7 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
     @IBOutlet weak var profPic: UIImageView!
     var dict : NSDictionary!
     
+    @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
@@ -24,6 +25,9 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         
         self.tutButton.layer.borderWidth = 1;
         self.tutButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
+        
+        self.savedButton.layer.borderWidth = 1;
+        self.savedButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)

@@ -25,33 +25,44 @@ class HomeTabBarController: UITabBarController {
         super.viewDidAppear(animated)
         
         if appDelegate.startApp {
-        print("checking fb token status")
-        if (FBSDKAccessToken.currentAccessToken() == nil) {
-            print("user not logged in")
+            print("checking fb token status")
+            if (FBSDKAccessToken.currentAccessToken() == nil) {
+                print("user not logged in")
             
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-            self.presentViewController(vc, animated: false, completion: nil)
-        }
-        else {
-            print("user logged in")
-            let token = FBSDKAccessToken.currentAccessToken().tokenString
-            appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
-            
-            // Retrieve your Amazon Cognito ID
-            appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                
-                if (task.error != nil) {
-                    print("CognitoID Error: " + task.error!.localizedDescription)
-                    
-                } else {
-                    // the task result will contain the identity id
-                    self.appDelegate.cognitoId = task.result
-                    print("Cognito ID: ")
-                    print (self.appDelegate.cognitoId)
-                }
-                return nil
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                self.presentViewController(vc, animated: false, completion: nil)
             }
-        }
+            else {
+                print("user logged in")
+                let token = FBSDKAccessToken.currentAccessToken().tokenString
+                appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
+            
+                // Retrieve your Amazon Cognito ID
+                appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                
+                    if (task.error != nil) {
+                        print("CognitoID Error: " + task.error!.localizedDescription)
+                    
+                    } else {
+                        // the task result will contain the identity id
+                        self.appDelegate.cognitoId = task.result
+                        print("Cognito ID: ")
+                        print (self.appDelegate.cognitoId)
+                    }
+                    return nil
+                }
+                //fetch profile
+                let syncClient = AWSCognito.defaultCognito()
+                let dataset = syncClient.openOrCreateDataset("profileInfo")
+                let value = dataset.stringForKey("gender")
+                if (value == nil) {
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                    self.presentViewController(vc, animated: false, completion: nil)
+                }
+                else {
+                    print("profile found!")
+                }
+            }
         }
         else {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController

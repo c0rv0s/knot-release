@@ -13,6 +13,8 @@ import MessageUI
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
     
+    @IBOutlet weak var savelabel: UILabel!
+    @IBOutlet weak var favButton: DOFavoriteButton!
     /*
     @IBOutlet weak var imageScroll: UIScrollView!
     @IBOutlet var pageControl: UIPageControl!
@@ -79,6 +81,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
+        
+        favButton.addTarget(self, action: Selector("tapped:"), forControlEvents: .TouchUpInside)
+        //fetch favorite status
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("favorites")
+        let value = dataset.stringForKey(self.IDNum)
+        if (value == nil) {
+            //no action necessary
+        }
+        else {
+            self.favButton.select()
+            self.savelabel.text = "Saved!"
+            
+        }
         /*
         //paging
         // 1
@@ -496,6 +512,59 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         mapItem.name = "\(self.name)"
         mapItem.openInMapsWithLaunchOptions(options)
         
+    }
+    
+    func tapped(sender: DOFavoriteButton) {
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("favorites")
+        let value = dataset.stringForKey(self.IDNum)
+        
+        if sender.selected {
+            // deselect
+            sender.deselect()
+            dataset.removeObjectForKey(self.IDNum)
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                if task.cancelled {
+                    // Task cancelled.
+                    SwiftSpinner.hide()
+                    
+                } else if task.error != nil {
+                    SwiftSpinner.hide()
+                    // Error while executing task
+                    
+                } else {
+                    SwiftSpinner.hide()
+                    // Task succeeded. The data was saved in the sync store.
+                    
+                    
+                }
+                return nil
+            }
+        } else {
+            // select with animation
+            self.savelabel.text = "Saved!"
+            sender.select()
+            
+            dataset.setString("true", forKey:self.IDNum)
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                if task.cancelled {
+                    // Task cancelled.
+                    SwiftSpinner.hide()
+                    
+                } else if task.error != nil {
+                    SwiftSpinner.hide()
+                    // Error while executing task
+                    
+                } else {
+                    SwiftSpinner.hide()
+                    // Task succeeded. The data was saved in the sync store.
+                    
+                    
+                }
+                return nil
+            }
+
+        }
     }
     
     /*

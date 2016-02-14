@@ -9,105 +9,26 @@
 import Foundation
 import UIKit
 
-class SignUp: UIViewController, FBSDKLoginButtonDelegate {
-    
-    @IBOutlet weak var loginButton: FBSDKLoginButton!
+class SignUp: UIViewController{
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    @IBOutlet weak var profPicView: UIImageView!
+    @IBOutlet weak var genderLabel: UITextField!
+    @IBOutlet weak var ageLabel: UITextField!
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var nameLabel: UITextField!
+    
+    @IBOutlet weak var doneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
-        let loginView : FBSDKLoginButton = FBSDKLoginButton()
-        self.view.addSubview(loginView)
-        loginView.center = self.view.center
-        loginView.readPermissions = ["user_friends"]
-        loginView.delegate = self
-        /*
-        for view in loginView.subviews as [UIView]
-        {
-            if view.isKindOfClass(UIButton)
-            {
-                var btn = view as! UIButton;
-                let image = UIImage(named: "name") as UIImage?
-                btn.setBackgroundImage(image, forState: .Normal)
-                btn.setBackgroundImage(image, forState: .Selected)
-                btn.setBackgroundImage(image, forState: .Highlighted)
-                
-            }
-            if view.isKindOfClass(UILabel)
-            {
-                var lbl = view as! UILabel;
-                //lbl.text = "Log in to facebook";
-                
-            }
-        }
-*/
-        
+        self.returnUserData()
     }
-
-
-    
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        print("User Logged In")
-        
-        let token = FBSDKAccessToken.currentAccessToken().tokenString
-        appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
-        
-        // Retrieve your Amazon Cognito ID
-        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            
-            if (task.error != nil) {
-                print("CognitoID Error: " + task.error!.localizedDescription)
-                
-            } else {
-                // the task result will contain the identity id
-                self.appDelegate.cognitoId = task.result
-                print("Cognito ID: ")
-                print (self.appDelegate.cognitoId)
-            }
-            return nil
-        }
-        
-        let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }))
-        alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-        
-
-        
-        //error handling
-        if ((error) != nil)
-        {
-            // Process error
-        }
-        else if result.isCancelled {
-            // Handle cancellations
-        }
-        else {
-            // If you ask for multiple permissions at once, you
-            // should check if specific permissions missing
-            if result.grantedPermissions.contains("email")
-            {
-                // Do work
-            }
-        }
-    }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
-    }
-    
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, age_range, gender"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -120,12 +41,81 @@ class SignUp: UIViewController, FBSDKLoginButtonDelegate {
                 print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
                 print("User Name is: \(userName)")
+                self.nameLabel.text = "\(userName)"
+                self.nameLabel.enabled = false
+                
                 let userEmail : NSString = result.valueForKey("email") as! NSString
                 print("User Email is: \(userEmail)")
+                self.emailLabel.text = "\(userEmail)"
+                self.emailLabel.enabled = false
+                
+                let birthday : NSNumber = result.valueForKey("age_range")!.objectForKey("max") as! NSNumber
+                print("User age is: \(birthday)")
+                self.ageLabel.text = "\(birthday)"
+                self.ageLabel.enabled = false
+                
+                let gender : NSString = result.valueForKey("gender") as! NSString
+                print("User gender is: \(gender)")
+                self.genderLabel.text = "\(gender)"
+                self.genderLabel.enabled = false
+                
+                if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
+                    if let data = NSData(contentsOfURL: url){
+                        var profilePicture = UIImage(data: data)
+                        
+                        self.profPicView.image = profilePicture
+                    }
+                }
+                
             }
         })
+        
     }
-    
+
+    @IBAction func doneButtonAction(sender: AnyObject) {
+        
+        if (self.nameLabel.text == "" || self.genderLabel.text == "" || self.ageLabel.text == "" || self.emailLabel.text == "" ) {
+            let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            //upload profile
+            let syncClient = AWSCognito.defaultCognito()
+            let dataset = syncClient.openOrCreateDataset("profileInfo")
+            dataset.setString(self.nameLabel.text, forKey:"name")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            dataset.setString(self.ageLabel.text, forKey:"age")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            dataset.setString(self.genderLabel.text, forKey:"gender")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            dataset.setString(self.emailLabel.text, forKey:"email")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            
+            let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        
+
+        
+    }
     private func imageLayerForGradientBackground() -> UIImage {
         
         var updatedFrame = self.view.bounds
