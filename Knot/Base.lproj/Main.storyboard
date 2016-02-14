@@ -338,16 +338,26 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3z-Ib-hra" customClass="DOFavoriteButton" customModule="Knot" customModuleProvider="target">
                                         <rect key="frame" x="229" y="521" width="40" height="40"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="star"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="heart"/>
                                             <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
-                                                <color key="value" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
                                                 <color key="value" red="0.5727193813" green="0.5727193813" blue="0.5727193813" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="duration">
                                                 <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </button>
@@ -1084,10 +1094,10 @@
         <image name="chat55" width="32" height="32"/>
         <image name="flag27" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
+        <image name="heart" width="128" height="128"/>
         <image name="home-1" width="376" height="667"/>
         <image name="house158" width="32" height="32"/>
         <image name="splash no lines" width="1125" height="2001"/>
-        <image name="star" width="256" height="256"/>
         <image name="stars and lines" width="1074" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
