@@ -17,3 +17,5 @@ pod 'AWSSQS'
 pod 'AWSCognito'
 
 pod 'Instabug'
+
+pod 'AFNetworking'

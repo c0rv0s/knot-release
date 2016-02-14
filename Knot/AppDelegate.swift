@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             }
             self.locationManager = nil
         }
+
         
         //return facebook data
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SendBirdSDK
 
 class HomeTabBarController: UITabBarController {
     
@@ -61,6 +62,9 @@ class HomeTabBarController: UITabBarController {
                 }
                 else {
                     print("profile found!")
+                    let APP_ID: String = "6D1F1F00-D8E0-4574-A738-4BDB61AF0411"
+                    
+                    SendBird.initAppId(APP_ID, withDeviceId: SendBird.deviceUniqueID())
                 }
             }
         }

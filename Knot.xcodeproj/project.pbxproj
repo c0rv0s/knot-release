@@ -35,6 +35,21 @@
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
 		434C95EF1C6D934200426449 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C95EE1C6D934200426449 /* launchScreen.swift */; };
+		43665D161C702D4E0069A3AA /* SendBirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43665D151C702D4E0069A3AA /* SendBirdSDK.framework */; };
+		43665D191C702FC00069A3AA /* SendBirdCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D181C702FC00069A3AA /* SendBirdCommon.swift */; };
+		43665D211C70302C0069A3AA /* MessagingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D201C70302C0069A3AA /* MessagingTableViewController.swift */; };
+		43665D2E1C7030370069A3AA /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D221C7030370069A3AA /* MemberTableViewCell.swift */; };
+		43665D2F1C7030370069A3AA /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D231C7030370069A3AA /* MessageInputView.swift */; };
+		43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D241C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift */; };
+		43665D311C7030370069A3AA /* MessagingChannelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D251C7030370069A3AA /* MessagingChannelTableViewCell.swift */; };
+		43665D321C7030370069A3AA /* MessagingFileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D261C7030370069A3AA /* MessagingFileLinkTableViewCell.swift */; };
+		43665D331C7030370069A3AA /* MessagingFileMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D271C7030370069A3AA /* MessagingFileMessageTableViewCell.swift */; };
+		43665D341C7030370069A3AA /* MessagingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D281C7030370069A3AA /* MessagingIndicatorView.swift */; };
+		43665D351C7030370069A3AA /* MessagingMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D291C7030370069A3AA /* MessagingMessageTableViewCell.swift */; };
+		43665D361C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D2A1C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift */; };
+		43665D371C7030370069A3AA /* MessagingMyMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D2B1C7030370069A3AA /* MessagingMyMessageTableViewCell.swift */; };
+		43665D381C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D2C1C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift */; };
+		43665D391C7030370069A3AA /* TypingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D2D1C7030370069A3AA /* TypingNowView.swift */; };
 		436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */; };
 		436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */; };
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
@@ -95,6 +110,21 @@
 		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
 		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
 		434C95EE1C6D934200426449 /* launchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
+		43665D151C702D4E0069A3AA /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendBirdSDK.framework; sourceTree = "<group>"; };
+		43665D181C702FC00069A3AA /* SendBirdCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendBirdCommon.swift; path = SendBird/SendBirdCommon.swift; sourceTree = "<group>"; };
+		43665D201C70302C0069A3AA /* MessagingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingTableViewController.swift; path = SendBird/SendBirdMessaging/ViewController/MessagingTableViewController.swift; sourceTree = "<group>"; };
+		43665D221C7030370069A3AA /* MemberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MemberTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MemberTableViewCell.swift; sourceTree = "<group>"; };
+		43665D231C7030370069A3AA /* MessageInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageInputView.swift; path = SendBird/SendBirdMessaging/View/MessageInputView.swift; sourceTree = "<group>"; };
+		43665D241C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingBroadcastMessageTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingBroadcastMessageTableViewCell.swift; sourceTree = "<group>"; };
+		43665D251C7030370069A3AA /* MessagingChannelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingChannelTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingChannelTableViewCell.swift; sourceTree = "<group>"; };
+		43665D261C7030370069A3AA /* MessagingFileLinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingFileLinkTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingFileLinkTableViewCell.swift; sourceTree = "<group>"; };
+		43665D271C7030370069A3AA /* MessagingFileMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingFileMessageTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingFileMessageTableViewCell.swift; sourceTree = "<group>"; };
+		43665D281C7030370069A3AA /* MessagingIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingIndicatorView.swift; path = SendBird/SendBirdMessaging/View/MessagingIndicatorView.swift; sourceTree = "<group>"; };
+		43665D291C7030370069A3AA /* MessagingMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingMessageTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingMessageTableViewCell.swift; sourceTree = "<group>"; };
+		43665D2A1C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingMyFileLinkTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingMyFileLinkTableViewCell.swift; sourceTree = "<group>"; };
+		43665D2B1C7030370069A3AA /* MessagingMyMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingMyMessageTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingMyMessageTableViewCell.swift; sourceTree = "<group>"; };
+		43665D2C1C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingSystemMessageTableViewCell.swift; path = SendBird/SendBirdMessaging/View/MessagingSystemMessageTableViewCell.swift; sourceTree = "<group>"; };
+		43665D2D1C7030370069A3AA /* TypingNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypingNowView.swift; path = SendBird/SendBirdMessaging/View/TypingNowView.swift; sourceTree = "<group>"; };
 		436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
@@ -140,6 +170,7 @@
 				43CF595B1C28C66B0071CCE8 /* Bolts.framework in Frameworks */,
 				43C777F91C1A53CA005A7641 /* UIKit.framework in Frameworks */,
 				43CF595F1C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework in Frameworks */,
+				43665D161C702D4E0069A3AA /* SendBirdSDK.framework in Frameworks */,
 				430DF90C1BFAFF3500839F37 /* SystemConfiguration.framework in Frameworks */,
 				43C777F71C1A53BB005A7641 /* Foundation.framework in Frameworks */,
 				431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */,
@@ -164,6 +195,7 @@
 		085B8A7EEC2DC4D5536681F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43665D151C702D4E0069A3AA /* SendBirdSDK.framework */,
 				438E058F1C646F9600856C52 /* libicucore.tbd */,
 				438E058D1C646F4E00856C52 /* AdSupport.framework */,
 				438E058B1C646F2F00856C52 /* MobileCoreServices.framework */,
@@ -221,6 +253,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				43665D171C702FAE0069A3AA /* SendBird */,
 				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
 				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
@@ -258,6 +291,51 @@
 				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
 			);
 			path = Knot;
+			sourceTree = "<group>";
+		};
+		43665D171C702FAE0069A3AA /* SendBird */ = {
+			isa = PBXGroup;
+			children = (
+				43665D1B1C702FDA0069A3AA /* SendBirdMessaging */,
+				43665D181C702FC00069A3AA /* SendBirdCommon.swift */,
+			);
+			name = SendBird;
+			sourceTree = "<group>";
+		};
+		43665D1B1C702FDA0069A3AA /* SendBirdMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				43665D1D1C702FF50069A3AA /* ViewController */,
+				43665D1C1C702FEF0069A3AA /* View */,
+			);
+			name = SendBirdMessaging;
+			sourceTree = "<group>";
+		};
+		43665D1C1C702FEF0069A3AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43665D221C7030370069A3AA /* MemberTableViewCell.swift */,
+				43665D231C7030370069A3AA /* MessageInputView.swift */,
+				43665D241C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift */,
+				43665D251C7030370069A3AA /* MessagingChannelTableViewCell.swift */,
+				43665D261C7030370069A3AA /* MessagingFileLinkTableViewCell.swift */,
+				43665D271C7030370069A3AA /* MessagingFileMessageTableViewCell.swift */,
+				43665D281C7030370069A3AA /* MessagingIndicatorView.swift */,
+				43665D291C7030370069A3AA /* MessagingMessageTableViewCell.swift */,
+				43665D2A1C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift */,
+				43665D2B1C7030370069A3AA /* MessagingMyMessageTableViewCell.swift */,
+				43665D2C1C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift */,
+				43665D2D1C7030370069A3AA /* TypingNowView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		43665D1D1C702FF50069A3AA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				43665D201C70302C0069A3AA /* MessagingTableViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,12 +480,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43665D321C7030370069A3AA /* MessagingFileLinkTableViewCell.swift in Sources */,
 				43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */,
+				43665D2F1C7030370069A3AA /* MessageInputView.swift in Sources */,
 				43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */,
 				430293B51C24F0580071E11D /* listing.swift in Sources */,
 				431D133D1C6ABC6D00E8D887 /* navsub.swift in Sources */,
+				43665D351C7030370069A3AA /* MessagingMessageTableViewCell.swift in Sources */,
+				43665D211C70302C0069A3AA /* MessagingTableViewController.swift in Sources */,
 				434BE01D1C0CD628007479AB /* string-extension.swift in Sources */,
 				431D13461C6C133400E8D887 /* image-extension.swift in Sources */,
+				43665D311C7030370069A3AA /* MessagingChannelTableViewCell.swift in Sources */,
+				43665D381C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift in Sources */,
+				43665D341C7030370069A3AA /* MessagingIndicatorView.swift in Sources */,
 				43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */,
 				430D11B31C6DCA060028AB63 /* tutorial.swift in Sources */,
 				430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */,
@@ -418,14 +503,21 @@
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,
 				43DD8ECC1C7007AB00F9D8A1 /* savedListings.swift in Sources */,
 				43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */,
+				43665D331C7030370069A3AA /* MessagingFileMessageTableViewCell.swift in Sources */,
 				431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */,
 				430D11B51C6E73240028AB63 /* SignUp.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
 				431942871C4EBB14000373B3 /* AddScene.swift in Sources */,
+				43665D361C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift in Sources */,
+				43665D371C7030370069A3AA /* MessagingMyMessageTableViewCell.swift in Sources */,
+				43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */,
 				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,
 				43869C611C052E07008E6056 /* LoginView.swift in Sources */,
+				43665D191C702FC00069A3AA /* SendBirdCommon.swift in Sources */,
 				431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */,
 				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
+				43665D391C7030370069A3AA /* TypingNowView.swift in Sources */,
+				43665D2E1C7030370069A3AA /* MemberTableViewCell.swift in Sources */,
 				431D133B1C6AA1E300E8D887 /* gradient-extension.swift in Sources */,
 				434C95EF1C6D934200426449 /* launchScreen.swift in Sources */,
 				436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */,
