@@ -24,6 +24,7 @@ class ListItem : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var category : String = "placeholder"
     var international : Bool = false
     var numberOfPics : Int = 1
+    var sellerSBID : String = "0"
     
     /*
     override init!() { super.init() }

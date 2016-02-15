@@ -281,6 +281,7 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
             viewController.descript = tableRows![indexPath!.row].descriptionKnot
             viewController.condition = tableRows![indexPath!.row].condition
             viewController.category = tableRows![indexPath!.row].category
+            viewController.sellerSBID = tableRows![indexPath!.row].sellerSBID
             
             if self.cognitoID == tableRows![indexPath!.row].seller {
                 viewController.owned = true

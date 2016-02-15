@@ -901,7 +901,7 @@
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">
             <objects>
-                <viewController id="vvZ-zI-IKU" customClass="Messaging" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Messaging" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vvZ-zI-IKU" customClass="Messaging" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nh1-A1-jKB"/>
                         <viewControllerLayoutGuide type="bottom" id="bW1-T1-l0q"/>

@@ -123,8 +123,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func dismissModal(sender: AnyObject) {
-        setTabBarVisible(!tabBarIsVisible(), animated: true)
-        self.navigationController?.popViewControllerAnimated(false)
+        //self.navigationController?.popViewControllerAnimated(false)
     }
     
     func aboutSendBird(sender: AnyObject) {
@@ -162,9 +161,10 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func goBack(sender: AnyObject) {
-        self.viewMode = kMessagingChannelListViewMode
-        self.setNavigationButton()
-        self.messagingChannelListTableView?.reloadData()
+        setTabBarVisible(true, animated: true)
+        self.navigationController?.pushViewController(Messaging(), animated: false)
+        setTabBarVisible(true, animated: true)
+        
     }
     
     func leaveChannel(sender: AnyObject) {
@@ -250,10 +250,11 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func setNavigationButton() {
+        
         if self.viewMode == kMessagingChannelListViewMode {
             self.navigationItem.rightBarButtonItems = Array()
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissModal:")
-            self.navigationItem.leftBarButtonItem!.tintColor = UIColor.whiteColor()
+            //self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissModal:")
+            //self.navigationItem.leftBarButtonItem!.tintColor = UIColor.whiteColor()
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_sendbird_btn_list_edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editMessagingChannel:")
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
@@ -278,7 +279,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             self.navigationItem.rightBarButtonItems = Array()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "openMenuActionSheet:")
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissModal:")
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
             self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         }
         else if self.viewMode == kMessagingMemberForGroupChatViewMode {
@@ -570,6 +571,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             SendBird.connect()
         }
         else if viewMode == kMessagingViewMode {
+            setTabBarVisible(false, animated: true)
             self.startMessagingWithUser(self.targetUserId as! String)
         }
     }
@@ -1337,22 +1339,8 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if tableView == self.channelMemberListTableView {
-            if self.viewMode == kMessagingMemberForGroupChatViewMode {
-                tableView.cellForRowAtIndexPath(indexPath)?.selected = true
-                self.navigationItem.rightBarButtonItem?.enabled = true
-                for item in self.navigationItem.rightBarButtonItems! {
-                    (item as UIBarButtonItem).enabled = true
-                }
-            }
-            else {
-                tableView.hidden = true
-                self.tableView?.hidden = false
-                let member: SendBirdAppUser = self.membersInChannel?.objectAtIndex(indexPath.row) as! SendBirdAppUser
-                SendBird.startMessagingWithUserId(member.guestId)
-            }
-        }
-        else if tableView == self.messagingChannelListTableView {
+        setTabBarVisible(false, animated: true)
+        if tableView == self.messagingChannelListTableView {
             if self.viewMode == kMessagingChannelListEditViewMode {
                 tableView.cellForRowAtIndexPath(indexPath)?.selected = true
                 self.navigationItem.rightBarButtonItem?.enabled = true

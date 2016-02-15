@@ -241,6 +241,7 @@ class PhotoStreamViewController: UICollectionViewController {
             viewController.condition = collectionItems![self.selectedRow].condition
             viewController.category = collectionItems![self.selectedRow].category
             viewController.numPics = collectionItems![self.selectedRow].numberOfPics
+            viewController.sellerSBID = collectionItems![self.selectedRow].sellerSBID
             
             if self.cognitoID == collectionItems![self.selectedRow].seller {
                 viewController.owned = true

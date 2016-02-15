@@ -39,6 +39,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var photoNum : Int = 1
     let picker = UIImagePickerController()
     var fbID = "error"
+    var SBID = ""
     
     var one = false
     var two = false
@@ -53,6 +54,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var uniqueID = ""
+    
+    var preUploadComplete = false
     
     //location
     var locString = ""
@@ -110,8 +113,23 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+        //fetch favorite status
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("profileInfo")
+        let value = dataset.stringForKey("SBID")
+        if (value == nil) {
+            //no action necessary
+        }
+        else {
+            self.SBID = value
+        }
+        
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.preUploadComplete = false
+    }
     
     func randomStringWithLength (len : Int) -> NSString {
         
@@ -169,6 +187,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.category = categoryField.text!
         item.condition = conditionField.text!
         item.numberOfPics = photoNum
+        item.sellerSBID = self.SBID
         print(item)
         let task = mapper.save(item)
         
@@ -406,6 +425,25 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     return nil
                 }
                 //done uploading
+                //upload pic
+                let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+                let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let data = UIImageJPEGRepresentation(thumbnail, 0.5)
+                data!.writeToURL(testFileURL2, atomically: true)
+                uploadRequest2.bucket = "knotcompleximages"
+                uploadRequest2.key = self.uniqueID
+                uploadRequest2.body = testFileURL2
+                let task2 = transferManager.upload(uploadRequest2)
+                task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                    if task.error != nil {
+                        print("Error: \(task.error)")
+                    } else {
+                        print("pic uploaded")
+                        self.preUploadComplete = true
+                    }
+                    return nil
+                }
+                //done uploading
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 //addphoto2.hidden = false
@@ -464,8 +502,20 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             var success1 = 0
             var success2 = 0
             var success3 = 0
-        
             
+            if preUploadComplete {
+                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+            }
+            else {
+                var delayInSeconds = 1.5;
+                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                    // When done requesting/reloading/processing invoke endRefreshing, to close the control
+                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                }
+            }
+        
+            /*
             if one {
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -535,7 +585,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
 
                 }
-            }
+            }*/
         }
     }
     

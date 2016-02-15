@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SendBirdSDK
 
 class SignUp: UIViewController{
     
@@ -96,6 +97,12 @@ class SignUp: UIViewController{
                 return nil
             }
             dataset.setString(self.emailLabel.text, forKey:"email")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            //set SendBird ID
+            dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil
             }

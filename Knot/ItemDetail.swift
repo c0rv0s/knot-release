@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import MessageUI
+import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
     
@@ -59,6 +60,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var condition: String = ""
     var category: String = ""
     var numPics: Int = 1
+    var sellerSBID: String = ""
     
     var selleremail: String = ""
     
@@ -475,6 +477,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            /*
             if MFMailComposeViewController.canSendMail() {
                 let mail = MFMailComposeViewController()
                 mail.mailComposeDelegate = self
@@ -485,6 +488,21 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 presentViewController(mail, animated: true, completion: nil)
             } else {
                 // show failure alert
+            }
+*/
+            if self.sellerSBID.characters.count < 3 {
+                let alert = UIAlertController(title: "Oops!", message: "There was an error reaching this user. They probably aren't available for contact.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alertAction) -> Void in
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else {
+                let viewController: Messaging = Messaging()
+            
+                viewController.viewMode = kMessagingViewMode
+                viewController.messagingTargetUserId = sellerSBID
+            
+                self.navigationController?.pushViewController(viewController, animated: false)
             }
         }
     }
