@@ -428,7 +428,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 //upload pic
                 let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let data = UIImageJPEGRepresentation(thumbnail, 0.5)
+                let data = UIImageJPEGRepresentation(chosenImage, 0.5)
                 data!.writeToURL(testFileURL2, atomically: true)
                 uploadRequest2.bucket = "knotcompleximages"
                 uploadRequest2.key = self.uniqueID
