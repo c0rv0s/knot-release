@@ -425,6 +425,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     return nil
                 }
                 //done uploading
+                /*
                 //upload pic
                 let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
@@ -444,6 +445,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     return nil
                 }
                 //done uploading
+*/
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 //addphoto2.hidden = false
@@ -503,19 +505,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             var success2 = 0
             var success3 = 0
             
-            if preUploadComplete {
-                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-            }
-            else {
-                var delayInSeconds = 1.5;
-                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    // When done requesting/reloading/processing invoke endRefreshing, to close the control
-                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                }
-            }
-        
-            /*
             if one {
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -585,7 +574,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
 
                 }
-            }*/
+            }
         }
     }
     

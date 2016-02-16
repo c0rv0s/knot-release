@@ -31,7 +31,7 @@ class HomeTabBarController: UITabBarController {
                 print("user not logged in")
             
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-                self.presentViewController(vc, animated: false, completion: nil)
+                self.presentViewController(vc, animated: true, completion: nil)
             }
             else {
                 print("user logged in")

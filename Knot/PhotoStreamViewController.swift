@@ -63,6 +63,7 @@ class PhotoStreamViewController: UICollectionViewController {
         lock = NSLock()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
+        /*
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -73,7 +74,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }
+        }*/
 
         //reset aray
         self.collectionItems = []
@@ -164,7 +165,7 @@ class PhotoStreamViewController: UICollectionViewController {
                         self.totalCounter++
                         //self.colView.reloadData()
                         self.downloadImage(item)
-                        
+                        /*
                         let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                         let latitude = Double(coordinatesArr[0])!
                         let longitude = Double(coordinatesArr[1])!
@@ -200,7 +201,7 @@ class PhotoStreamViewController: UICollectionViewController {
                         else  {
                             self.collectionItems2Miles!.append(item)
                             self.TwoMiCounter++
-                        }
+                        }*/
                     }
                 }
                 
