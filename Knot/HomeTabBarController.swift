@@ -44,7 +44,9 @@ class HomeTabBarController: UITabBarController {
                     if (task.error != nil) {
                         print("CognitoID Error: " + task.error!.localizedDescription)
                     
-                    } else {
+                    }
+                    else {
+                        
                         // the task result will contain the identity id
                         self.appDelegate.cognitoId = task.result
                         print("Cognito ID: ")
@@ -52,8 +54,8 @@ class HomeTabBarController: UITabBarController {
                         //fetch profile
                         let syncClient = AWSCognito.defaultCognito()
                         let dataset = syncClient.openOrCreateDataset("profileInfo")
-                        let value = dataset.stringForKey("email")
-                        if (value == nil || value.rangeOfString(".com") == nil) {
+                        let value = dataset.stringForKey("gender")
+                        if (value == nil || value.rangeOfString("male") == nil) {
                             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                             self.presentViewController(vc, animated: false, completion: nil)
                         }
@@ -73,7 +75,7 @@ class HomeTabBarController: UITabBarController {
                                 print("dataset shows: " + dataset.stringForKey("SBID"))
                             }
                             print("profile found!")
-                        }
+                        }   
                     }
                     return nil
                 }

@@ -346,9 +346,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         }
         centerMapOnLocation(initialLocation)
         
+        //find the distance
         let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
         self.distanceLabel.text = String(format: "%.1f", distanceBetween) + " miles away"
         
+        //now print out the address
         var address = ""
         var streetHolder = ""
         var cityHolder = ""

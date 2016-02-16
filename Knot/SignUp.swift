@@ -34,7 +34,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
     }
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), age_range, gender"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, age_range, gender"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -44,21 +44,30 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }
             else
             {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
-                self.nameLabel.text = "\(userName)"
-                self.nameLabel.enabled = false
                 
-                let birthday : NSNumber = result.valueForKey("age_range")!.objectForKey("max") as! NSNumber
-                print("User age is: \(birthday)")
-                self.ageLabel.text = "\(birthday)"
-                self.ageLabel.enabled = false
+                if (result.valueForKey("name") != nil) {
+                    let userName : NSString = result.valueForKey("name") as! NSString
+                    print("User Name is: \(userName)")
+                    self.nameLabel.text = "\(userName)"
+                }
                 
-                let gender : NSString = result.valueForKey("gender") as! NSString
-                print("User gender is: \(gender)")
-                self.genderLabel.text = "\(gender)"
-                self.genderLabel.enabled = false
+                if (result.valueForKey("age_range") != nil) {
+                    let birthday : NSNumber = result.valueForKey("age_range")!.objectForKey("min") as! NSNumber
+                    print("User age is: \(birthday)")
+                    self.ageLabel.text = "\(birthday)"
+                }
+                
+                if (result.valueForKey("gender") != nil) {
+                    let gender : NSString = result.valueForKey("gender") as! NSString
+                    print("User gender is: \(gender)")
+                    self.genderLabel.text = "\(gender)"
+                }
+                
+                if (result.valueForKey("email") != nil) {
+                    let userEmail : NSString = result.valueForKey("email") as! NSString
+                    print("User email is: \(userEmail)")
+                    self.emailLabel.text = "\(userEmail)"
+                }
                 
                 if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
                     if let data = NSData(contentsOfURL: url){

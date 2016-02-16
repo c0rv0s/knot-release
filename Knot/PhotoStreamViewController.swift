@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreLocation
 
 class PhotoStreamViewController: UICollectionViewController {
     var lock:NSLock?
@@ -15,7 +16,25 @@ class PhotoStreamViewController: UICollectionViewController {
     
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
+    
+    //distance filters
+    var collectionItems2Miles: Array<ListItem>!
+    var collectionItems5Miles: Array<ListItem>!
+    var collectionItems10Miles: Array<ListItem>!
+    var collectionItems25Miles: Array<ListItem>!
+    var collectionItems50Miles: Array<ListItem>!
+    var collectionItems100Miles: Array<ListItem>!
+    var collectionItemsOver100Miles: Array<ListItem>!
     var collectionImages = [String: UIImage]()
+    
+    var TwoMiCounter = 0
+    var FiveMiCounter = 0
+    var TenMiCounter = 0
+    var TwentyFiveMiCounter = 0
+    var FiftyMiCounter = 0
+    var HunMiCounter = 0
+    var OverHunMiCounter = 0
+    var totalCounter = 0
     
     let currentDate = NSDate()
     let dateFormatter = NSDateFormatter()
@@ -27,6 +46,10 @@ class PhotoStreamViewController: UICollectionViewController {
     
     var refreshControl = UIRefreshControl()
     var needsToRefresh = true
+    
+    //location
+    var locationManager: OneShotLocationManager!
+    var locCurrent: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +63,27 @@ class PhotoStreamViewController: UICollectionViewController {
         lock = NSLock()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
+        //calculate distance
+        locationManager = OneShotLocationManager()
+        locationManager!.fetchWithCompletion {location, error in
+            // fetch location or an error
+            if let loc = location {
+                self.locCurrent = loc
+            } else if let err = error {
+                print(err.localizedDescription)
+            }
+            self.locationManager = nil
+        }
+
+        //reset aray
         self.collectionItems = []
+        self.collectionItems2Miles = []
+        self.collectionItems5Miles = []
+        self.collectionItems10Miles = []
+        self.collectionItems25Miles = []
+        self.collectionItems50Miles = []
+        self.collectionItems100Miles = []
+        self.collectionItemsOver100Miles = []
         
         // set up the refresh control
         refreshControl = UIRefreshControl()
@@ -59,7 +102,6 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-        
         if needsToRefresh {
             self.loadPhotos()
             needsToRefresh = false
@@ -119,8 +161,46 @@ class PhotoStreamViewController: UICollectionViewController {
                 for item in paginatedOutput.items as! [ListItem] {
                     if item.sold == "false" {
                         self.collectionItems!.append(item)
+                        self.totalCounter++
                         //self.colView.reloadData()
                         self.downloadImage(item)
+                        
+                        let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
+                        let latitude = Double(coordinatesArr[0])!
+                        let longitude = Double(coordinatesArr[1])!
+                        
+                        let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
+                        let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+                        print(String(format: "%.1f", distanceBetween) + " miles away")
+                        
+                        if distanceBetween > 100 {
+                            self.collectionItemsOver100Miles!.append(item)
+                            self.OverHunMiCounter++
+                        }
+                        else if distanceBetween > 50 {
+                            self.collectionItems100Miles!.append(item)
+                            self.HunMiCounter++
+                        }
+                        else if distanceBetween > 25 {
+                            self.collectionItems50Miles!.append(item)
+                            self.FiftyMiCounter++
+                        }
+                        else if distanceBetween > 10 {
+                            self.collectionItems25Miles!.append(item)
+                            self.TwentyFiveMiCounter++
+                        }
+                        else if distanceBetween > 5 {
+                            self.collectionItems10Miles!.append(item)
+                            self.TenMiCounter++
+                        }
+                        else if distanceBetween > 2 {
+                            self.collectionItems5Miles!.append(item)
+                            self.FiveMiCounter++
+                        }
+                        else  {
+                            self.collectionItems2Miles!.append(item)
+                            self.TwoMiCounter++
+                        }
                     }
                 }
                 
@@ -140,6 +220,7 @@ class PhotoStreamViewController: UICollectionViewController {
             return nil
         })
         }
+
     }
     
     func downloadImage(item: ListItem){
@@ -255,6 +336,8 @@ class PhotoStreamViewController: UICollectionViewController {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
+        
+        
         cell.cellItem = collectionItems![indexPath.row]
         
         cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]

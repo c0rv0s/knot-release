@@ -538,11 +538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948510.691447"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "loadPhotos()"
             landmarkType = "5">
          </BreakpointContent>
@@ -554,11 +554,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476930905.885978"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -570,11 +570,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948583.096719"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
             landmarkName = "downloadImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948583.096719"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "288"
+            endingLineNumber = "288"
             landmarkName = "downloadImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948583.096719"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -618,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "477052442.640808"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "477052442.640808"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "PhotoStreamViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -650,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948510.691447"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "PhotoStreamViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948510.691447"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "loadPhotos()"
             landmarkType = "5">
          </BreakpointContent>
@@ -682,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948510.691447"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "loadPhotos()"
             landmarkType = "5">
          </BreakpointContent>
@@ -887,11 +887,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476865262.508014"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "PhotoStreamViewController"
             landmarkType = "3">
             <Locations>
@@ -965,11 +965,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/PhotoStreamViewController.swift"
-            timestampString = "476948583.096719"
+            timestampString = "477291738.580921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "downloadImage(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2516,11 +2516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/ItemDetail.swift"
-            timestampString = "477270913.758269"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "383"
-            endingLineNumber = "383"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
             landmarkName = "updateLocation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2532,11 +2532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/ItemDetail.swift"
-            timestampString = "477270913.758269"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
             landmarkName = "ItemDetail"
             landmarkType = "3">
          </BreakpointContent>
@@ -2596,11 +2596,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/ItemDetail.swift"
-            timestampString = "477270913.758269"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "351"
-            endingLineNumber = "351"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "updateLocation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2612,11 +2612,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/ItemDetail.swift"
-            timestampString = "477270913.758269"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "updateLocation()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2628,11 +2628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/ItemDetail.swift"
-            timestampString = "477270913.758269"
+            timestampString = "477275327.424485"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "updateLocation()"
             landmarkType = "5">
          </BreakpointContent>
