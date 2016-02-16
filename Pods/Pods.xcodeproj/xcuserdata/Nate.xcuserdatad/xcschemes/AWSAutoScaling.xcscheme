@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '00930AF3A3587830EEF89E83'
+               BlueprintIdentifier = '8C554DC7C6CF43612CDA62EA'
                BlueprintName = 'AWSAutoScaling'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libAWSAutoScaling.a'>

@@ -47,6 +47,11 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
 
     }
     
+    @IBAction func SeePrivacy(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/privacy.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }

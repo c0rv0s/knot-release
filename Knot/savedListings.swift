@@ -101,6 +101,7 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func refreshList(startFromBeginning: Bool)  {
+        let dataset = self.syncClient.openOrCreateDataset("favorites")
             if startFromBeginning {
                 self.lastEvaluatedKey = nil;
                 self.doneLoading = false
@@ -122,7 +123,6 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                     for item in paginatedOutput.items as! [ListItem] {
                         
-                        let dataset = self.syncClient.openOrCreateDataset("favorites")
                         let value = dataset.stringForKey(item.ID)
                         if (value == nil) {
                         }

@@ -49,20 +49,35 @@ class HomeTabBarController: UITabBarController {
                         self.appDelegate.cognitoId = task.result
                         print("Cognito ID: ")
                         print (self.appDelegate.cognitoId)
+                        //fetch profile
+                        let syncClient = AWSCognito.defaultCognito()
+                        let dataset = syncClient.openOrCreateDataset("profileInfo")
+                        let value = dataset.stringForKey("email")
+                        if (value == nil || value.rangeOfString(".com") == nil) {
+                            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                            self.presentViewController(vc, animated: false, completion: nil)
+                        }
+                        else {
+                            
+                            print("Now lets take a look at the SendBird ID")
+                            print(dataset.stringForKey("SBID"))
+                            //set SendBird ID
+                            if (dataset.stringForKey("SBID") == nil) {
+                                dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+                                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                                    return nil
+                                }
+                                print("new SBID uploaded")
+                            }
+                            else {
+                                print("dataset shows: " + dataset.stringForKey("SBID"))
+                            }
+                            print("profile found!")
+                        }
                     }
                     return nil
                 }
-                //fetch profile
-                let syncClient = AWSCognito.defaultCognito()
-                let dataset = syncClient.openOrCreateDataset("profileInfo")
-                let value = dataset.stringForKey("gender")
-                if (value == nil) {
-                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-                    self.presentViewController(vc, animated: false, completion: nil)
-                }
-                else {
-                    print("profile found!")
-                }
+
             }
         }
         else {

@@ -364,7 +364,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-3g-jLb">
                                         <rect key="frame" x="277" y="530" width="62" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-zo-Vf5">
@@ -477,6 +477,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="SeePrivacy:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="ZdX-me-jqk"/>
                                     <action selector="TermsOfService:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="x8Y-FL-hx8"/>
                                     <action selector="login:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="TQD-EZ-0d2"/>
                                 </connections>
@@ -547,8 +548,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-1h-zca">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-1h-zca">
                                 <rect key="frame" x="140" y="178" width="215" height="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -804,12 +806,20 @@
                                     <segue destination="yAF-rD-IKu" kind="show" id="71b-gp-nrh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
+                                <rect key="frame" x="-88" y="448" width="550" height="30"/>
+                                <state key="normal" title="Legal"/>
+                                <connections>
+                                    <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="r77-Kq-mrs"/>
                     <connections>
                         <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
+                        <outlet property="legalButton" destination="SUp-Ho-bwJ" id="X2A-No-Mku"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="savedButton" destination="uFM-fR-gEy" id="Hab-5i-X6o"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>

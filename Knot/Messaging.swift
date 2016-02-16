@@ -62,16 +62,8 @@ class Messaging: UIViewController, UITextFieldDelegate {
         let dataset = syncClient.openOrCreateDataset("profileInfo")
         let value = dataset.stringForKey("SBID")
         self.userName = dataset.stringForKey("name")
-        if (value == nil) {
-            dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
-            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                return nil
-            }
-            self.SendBirdUserID = SendBird.deviceUniqueID()
-        }
-        else {
-            self.SendBirdUserID = value
-        }
+        self.SendBirdUserID = value
+        
         NSLog("launching the channel list view :D:D:D:D:D")
         self.startSendBird(self.userName, chatMode: kChatModeMessaging, viewMode: self.viewMode)
 
@@ -155,16 +147,15 @@ class Messaging: UIViewController, UITextFieldDelegate {
     
     private func startSendBird(userName: String, chatMode: Int, viewMode: Int) {
         let APP_ID: String = "6D1F1F00-D8E0-4574-A738-4BDB61AF0411"
-        let USER_ID: String = self.SendBirdUserID //SendBird.deviceUniqueID()
+        let USER_ID: String = self.SendBirdUserID
         let USER_NAME: String = userName
         
-        print("SendBirdUserID = " + self.SendBirdUserID)
-        print("device ID = " + SendBird.deviceUniqueID())
+        print("SendBirdUserID = " + USER_ID)
         
         self.messagingUserName = USER_NAME
         self.messagingUserId = USER_ID
             let viewController: MessagingTableViewController = MessagingTableViewController()
-            SendBird.initAppId(APP_ID, withDeviceId: self.SendBirdUserID)
+            SendBird.initAppId(APP_ID, withDeviceId: USER_ID)
             
             viewController.setViewMode(viewMode)
             viewController.initChannelTitle()

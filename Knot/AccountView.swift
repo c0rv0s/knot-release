@@ -18,6 +18,7 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
     @IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
+    @IBOutlet weak var legalButton: UIButton!
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -28,7 +29,10 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         
         self.savedButton.layer.borderWidth = 1;
         self.savedButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
-        
+
+        self.legalButton.layer.borderWidth = 1;
+        self.legalButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
+
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
         loginView.center = self.view.center
@@ -119,6 +123,11 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
+    }
+    @IBAction func LegalButton(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/privacy.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
     }
     
     func returnUserData()

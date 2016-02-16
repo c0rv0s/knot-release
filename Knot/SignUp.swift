@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import SendBirdSDK
 
-class SignUp: UIViewController{
+class SignUp: UIViewController, UITextFieldDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -25,11 +25,16 @@ class SignUp: UIViewController{
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
+        self.emailLabel.delegate = self;
+        self.genderLabel.delegate = self;
+        self.ageLabel.delegate = self;
+        self.nameLabel.delegate = self;
+        
         self.returnUserData()
     }
     func returnUserData()
     {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, age_range, gender"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), age_range, gender"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
             if ((error) != nil)
@@ -44,11 +49,6 @@ class SignUp: UIViewController{
                 print("User Name is: \(userName)")
                 self.nameLabel.text = "\(userName)"
                 self.nameLabel.enabled = false
-                
-                let userEmail : NSString = result.valueForKey("email") as! NSString
-                print("User Email is: \(userEmail)")
-                self.emailLabel.text = "\(userEmail)"
-                self.emailLabel.enabled = false
                 
                 let birthday : NSNumber = result.valueForKey("age_range")!.objectForKey("max") as! NSNumber
                 print("User age is: \(birthday)")
@@ -75,7 +75,7 @@ class SignUp: UIViewController{
 
     @IBAction func doneButtonAction(sender: AnyObject) {
         
-        if (self.nameLabel.text == "" || self.genderLabel.text == "" || self.ageLabel.text == "" || self.emailLabel.text == "" ) {
+        if (self.nameLabel.text == "Name" || self.genderLabel.text == "Gender" || self.ageLabel.text == "Birthday" || self.emailLabel.text == "Enter your email" || emailLabel.text == "" ) {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -101,13 +101,6 @@ class SignUp: UIViewController{
                 return nil
             }
             
-            //set SendBird ID
-            dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
-            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                return nil
-            }
-            
-            
             let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -123,6 +116,17 @@ class SignUp: UIViewController{
 
         
     }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     private func imageLayerForGradientBackground() -> UIImage {
         
         var updatedFrame = self.view.bounds

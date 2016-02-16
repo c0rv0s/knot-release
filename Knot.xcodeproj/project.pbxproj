@@ -254,8 +254,8 @@
 			isa = PBXGroup;
 			children = (
 				43665D171C702FAE0069A3AA /* SendBird */,
-				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
 				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
+				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
 				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
 				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
