@@ -14,9 +14,12 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
     @IBOutlet weak var profPic: UIImageView!
     var dict : NSDictionary!
     
+    @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
+    
+    @IBOutlet weak var buttonView: UIView!
     
     @IBOutlet weak var legalButton: UIButton!
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -25,17 +28,21 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         super.viewDidLoad()
         
         self.tutButton.layer.borderWidth = 1;
-        self.tutButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
+        self.tutButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
         
         self.savedButton.layer.borderWidth = 1;
-        self.savedButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
+        self.savedButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
 
         self.legalButton.layer.borderWidth = 1;
-        self.legalButton.layer.borderColor = UIColor(red: 0.46, green: 0.44, blue: 0.40, alpha: 1.0).CGColor
-
+        self.legalButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
+        
+        self.editProfile.layer.borderWidth = 1;
+        self.editProfile.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
+        self.editProfile.hidden = true
+        
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
-        loginView.center = self.view.center
+        loginView.center = buttonView.center
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
         
@@ -119,6 +126,15 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
                 // Do work
             }
         }
+    }
+    
+    @IBAction func editProfileButton(sender: AnyObject) {
+        let viewController: SignUp = SignUp()
+
+        viewController.signUp = false
+        print("signUp Bool is set, prepare to push edit profile view")
+        
+        self.navigationController?.pushViewController(viewController, animated: false)
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {

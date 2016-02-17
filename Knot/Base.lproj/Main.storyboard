@@ -530,7 +530,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McP-D1-H4l" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                <rect key="frame" x="20" y="126" width="112" height="112"/>
+                                <rect key="frame" x="129" y="112" width="112" height="112"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDc-Nt-ON5">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
@@ -539,39 +539,51 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="13"/>
+                                        <real key="value" value="50"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1I-hh-xJ6">
-                                <rect key="frame" x="140" y="133" width="215" height="30"/>
+                                <rect key="frame" x="49" y="269" width="273" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="mPa-ZU-XDe"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-1h-zca">
-                                <rect key="frame" x="140" y="178" width="215" height="30"/>
+                                <rect key="frame" x="49" y="330" width="273" height="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="l5a-9V-snM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We won't send you emails unless you ask us to!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtZ-uP-ld1">
-                                <rect key="frame" x="140" y="216" width="213" height="21"/>
+                                <rect key="frame" x="81" y="372" width="213" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myS-OC-ZuM">
-                                <rect key="frame" x="20" y="263" width="186" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myS-OC-ZuM">
+                                <rect key="frame" x="49" y="407" width="95" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="Yyz-sb-qP6"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-bn-sfc">
-                                <rect key="frame" x="256" y="263" width="97" height="30"/>
+                                <rect key="frame" x="227" y="407" width="95" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="tXZ-l6-8V8"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-rm-kKg" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                <rect key="frame" x="97" y="417" width="180" height="50"/>
+                                <rect key="frame" x="97" y="503" width="180" height="50"/>
                                 <subviews>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-uZ-qmA">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
@@ -601,8 +613,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This helps us find stuff you'll like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-7p-wUq">
-                                <rect key="frame" x="20" y="301" width="152" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="These help us find stuff you'll like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-7p-wUq">
+                                <rect key="frame" x="49" y="445" width="152" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -617,7 +629,7 @@
                         <outlet property="ageLabel" destination="myS-OC-ZuM" id="G6C-of-2df"/>
                         <outlet property="doneButton" destination="lvj-t4-cIo" id="g83-T5-mf9"/>
                         <outlet property="emailLabel" destination="zS0-1h-zca" id="oIp-fr-eP5"/>
-                        <outlet property="genderLabel" destination="PHD-bn-sfc" id="3rD-4j-gTa"/>
+                        <outlet property="genderLabel" destination="PHD-bn-sfc" id="UgU-Cn-Tyt"/>
                         <outlet property="nameLabel" destination="Y1I-hh-xJ6" id="2Ro-fk-fuf"/>
                         <outlet property="profPicView" destination="IDc-Nt-ON5" id="ucU-w2-lN3"/>
                     </connections>
@@ -793,32 +805,45 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
-                                <rect key="frame" x="-84" y="178" width="542" height="47"/>
+                                <rect key="frame" x="-84" y="152" width="542" height="47"/>
                                 <state key="normal" title="View Tutorial Again"/>
                                 <connections>
                                     <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFM-fR-gEy">
-                                <rect key="frame" x="-124" y="233" width="622" height="47"/>
+                                <rect key="frame" x="-124" y="207" width="622" height="47"/>
                                 <state key="normal" title="Saved Listings"/>
                                 <connections>
                                     <segue destination="yAF-rD-IKu" kind="show" id="71b-gp-nrh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
-                                <rect key="frame" x="-88" y="448" width="550" height="30"/>
+                                <rect key="frame" x="-88" y="320" width="550" height="50"/>
                                 <state key="normal" title="Legal"/>
                                 <connections>
                                     <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
+                                <rect key="frame" x="-104" y="262" width="582" height="50"/>
+                                <state key="normal" title="Edit Profile Info"/>
+                                <connections>
+                                    <action selector="editProfileButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="ovi-P2-t99"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH7-q1-fBX">
+                                <rect key="frame" x="182" y="403" width="10" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Account" id="r77-Kq-mrs"/>
                     <connections>
                         <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
+                        <outlet property="buttonView" destination="vH7-q1-fBX" id="sC2-fS-RhL"/>
+                        <outlet property="editProfile" destination="HxE-fU-heu" id="0a1-hY-6qe"/>
                         <outlet property="legalButton" destination="SUp-Ho-bwJ" id="X2A-No-Mku"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="savedButton" destination="uFM-fR-gEy" id="Hab-5i-X6o"/>

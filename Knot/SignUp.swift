@@ -21,9 +21,15 @@ class SignUp: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameLabel: UITextField!
     
     @IBOutlet weak var doneButton: UIButton!
+    
+    var signUp = true
+    
     override func viewDidLoad() {
+        print("view loaded, signup Bool value is: ")
+        print(signUp)
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
+        
         
         self.emailLabel.delegate = self;
         self.genderLabel.delegate = self;
@@ -110,16 +116,22 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 return nil
             }
             
-            let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            if self.signUp {
+                let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }))
+                alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+            else {
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
-            }))
-            alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
         
 
