@@ -29,7 +29,7 @@
 #import "AFNetworking.h"
 
 //Sendbird
-#import "SBMessageClass.h"
-#import "MemberTableViewCell.h"
+//#import "SBMessageClass.h"
+//#import "MemberTableViewCell.h"
 
 #endif /* Bridging_Header_h */
