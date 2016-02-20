@@ -44,6 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         identityPoolId: @"us-east-1:249a3e7c-13c2-4289-9ef2-2467fd930e4f"] //Amazon Cognito Identity Pool ID
 */
         //calculate distance
+        //remember to switch this b4 release
+        
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
             // fetch location or an error
@@ -54,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             }
             self.locationManager = nil
         }
+    
+        //self.locCurrent = CLLocation(latitude: 37.3653032084585, longitude: -122.133118002751)
+        
 
         
         //return facebook data

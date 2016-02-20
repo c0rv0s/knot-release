@@ -725,7 +725,7 @@
                         <view key="backgroundView" contentMode="scaleToFill" id="IF9-G0-QKc">
                             <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AnnotatedPhotoCell" reuseIdentifier="AnnotatedPhotoCell" id="zyI-2L-8di" customClass="AnnotatedPhotoCell" customModule="Knot" customModuleProvider="target">
@@ -1221,6 +1221,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jAC-6W-Yyh"/>
-        <segue reference="eRe-hd-sWy"/>
+        <segue reference="yTs-ay-f60"/>
     </inferredMetricsTieBreakers>
 </document>

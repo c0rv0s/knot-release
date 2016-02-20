@@ -75,6 +75,7 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             self.locationManager = nil
         }*/
+        self.locCurrent = appDelegate.locCurrent
 
         //reset aray
         self.collectionItems = []
@@ -103,6 +104,7 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
+        
         if needsToRefresh {
             self.loadPhotos()
             needsToRefresh = false
@@ -163,11 +165,11 @@ class PhotoStreamViewController: UICollectionViewController {
                     if item.sold == "false" {
                         var secondsUntil = self.secondsFrom(NSDate(), endDate: self.dateFormatter.dateFromString(item.time)!)
                         if (secondsUntil > 0) {
-                            self.collectionItems!.append(item)
+                            //self.collectionItems!.append(item)
                             self.totalCounter++
                             //self.colView.reloadData()
                             self.downloadImage(item)
-                            /*
+                            
                             let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                             let latitude = Double(coordinatesArr[0])!
                             let longitude = Double(coordinatesArr[1])!
@@ -177,44 +179,45 @@ class PhotoStreamViewController: UICollectionViewController {
                             print(String(format: "%.1f", distanceBetween) + " miles away")
                             
                             if distanceBetween > 100 {
-                            self.collectionItemsOver100Miles!.append(item)
+                                self.collectionItemsOver100Miles!.append(item)
                             self.OverHunMiCounter++
                             }
                             else if distanceBetween > 50 {
-                            self.collectionItems100Miles!.append(item)
-                            self.HunMiCounter++
+                                self.collectionItems100Miles!.append(item)
+                                self.HunMiCounter++
                             }
                             else if distanceBetween > 25 {
-                            self.collectionItems50Miles!.append(item)
-                            self.FiftyMiCounter++
+                                self.collectionItems50Miles!.append(item)
+                                self.FiftyMiCounter++
                             }
                             else if distanceBetween > 10 {
-                            self.collectionItems25Miles!.append(item)
-                            self.TwentyFiveMiCounter++
+                                self.collectionItems25Miles!.append(item)
+                                self.TwentyFiveMiCounter++
                             }
                             else if distanceBetween > 5 {
-                            self.collectionItems10Miles!.append(item)
-                            self.TenMiCounter++
+                                self.collectionItems10Miles!.append(item)
+                                self.TenMiCounter++
                             }
                             else if distanceBetween > 2 {
-                            self.collectionItems5Miles!.append(item)
-                            self.FiveMiCounter++
+                                self.collectionItems5Miles!.append(item)
+                                self.FiveMiCounter++
                             }
                             else  {
-                            self.collectionItems2Miles!.append(item)
-                            self.TwoMiCounter++
-                            }*/
+                                self.collectionItems2Miles!.append(item)
+                                self.TwoMiCounter++
+                            }
                         }
                     }
                 }
                 
                 self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
             }
-            /*
+            
             dispatch_async(dispatch_get_main_queue(), {
+                self.organizeData()
                 self.colView.reloadData()
             })
-*/
+
 
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
@@ -225,7 +228,30 @@ class PhotoStreamViewController: UICollectionViewController {
             return nil
         })
         }
-
+    }
+    
+    func organizeData() {
+        for item in collectionItems2Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItems5Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItems10Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItems25Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItems50Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItems100Miles {
+            self.collectionItems!.append(item)
+        }
+        for item in collectionItemsOver100Miles {
+            self.collectionItems!.append(item)
+        }
     }
     
     func downloadImage(item: ListItem){
