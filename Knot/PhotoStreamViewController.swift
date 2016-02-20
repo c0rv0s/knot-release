@@ -161,47 +161,50 @@ class PhotoStreamViewController: UICollectionViewController {
                 let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                 for item in paginatedOutput.items as! [ListItem] {
                     if item.sold == "false" {
-                        self.collectionItems!.append(item)
-                        self.totalCounter++
-                        //self.colView.reloadData()
-                        self.downloadImage(item)
-                        /*
-                        let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
-                        let latitude = Double(coordinatesArr[0])!
-                        let longitude = Double(coordinatesArr[1])!
-                        
-                        let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
-                        let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-                        print(String(format: "%.1f", distanceBetween) + " miles away")
-                        
-                        if distanceBetween > 100 {
+                        var secondsUntil = self.secondsFrom(NSDate(), endDate: self.dateFormatter.dateFromString(item.time)!)
+                        if (secondsUntil > 0) {
+                            self.collectionItems!.append(item)
+                            self.totalCounter++
+                            //self.colView.reloadData()
+                            self.downloadImage(item)
+                            /*
+                            let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
+                            let latitude = Double(coordinatesArr[0])!
+                            let longitude = Double(coordinatesArr[1])!
+                            
+                            let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
+                            let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+                            print(String(format: "%.1f", distanceBetween) + " miles away")
+                            
+                            if distanceBetween > 100 {
                             self.collectionItemsOver100Miles!.append(item)
                             self.OverHunMiCounter++
-                        }
-                        else if distanceBetween > 50 {
+                            }
+                            else if distanceBetween > 50 {
                             self.collectionItems100Miles!.append(item)
                             self.HunMiCounter++
-                        }
-                        else if distanceBetween > 25 {
+                            }
+                            else if distanceBetween > 25 {
                             self.collectionItems50Miles!.append(item)
                             self.FiftyMiCounter++
-                        }
-                        else if distanceBetween > 10 {
+                            }
+                            else if distanceBetween > 10 {
                             self.collectionItems25Miles!.append(item)
                             self.TwentyFiveMiCounter++
-                        }
-                        else if distanceBetween > 5 {
+                            }
+                            else if distanceBetween > 5 {
                             self.collectionItems10Miles!.append(item)
                             self.TenMiCounter++
-                        }
-                        else if distanceBetween > 2 {
+                            }
+                            else if distanceBetween > 2 {
                             self.collectionItems5Miles!.append(item)
                             self.FiveMiCounter++
-                        }
-                        else  {
+                            }
+                            else  {
                             self.collectionItems2Miles!.append(item)
                             self.TwoMiCounter++
-                        }*/
+                            }*/
+                        }
                     }
                 }
                 
