@@ -55,15 +55,6 @@ class PhotoStreamViewController: UICollectionViewController {
         super.viewDidLoad()
         // Set the PinterestLayout delegate
         
-        if let layout = self.colView.collectionViewLayout as? FeedLayout {
-            print("delegated")
-            layout.delegate = self
-        }
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-        lock = NSLock()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-
-        /*
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -74,8 +65,17 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }*/
-        self.locCurrent = appDelegate.locCurrent
+        }
+        
+        if let layout = self.colView.collectionViewLayout as? FeedLayout {
+            print("delegated")
+            layout.delegate = self
+        }
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        lock = NSLock()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+
+        //self.locCurrent = appDelegate.locCurrent
 
         //reset aray
         self.collectionItems = []
@@ -106,8 +106,30 @@ class PhotoStreamViewController: UICollectionViewController {
         }
         
         if needsToRefresh {
-            self.loadPhotos()
-            needsToRefresh = false
+            if self.locCurrent != nil {
+                self.loadPhotos()
+                needsToRefresh = false
+            }
+            else {
+                if self.locCurrent != nil {
+                    var delayInSeconds = 1.0;
+                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        // When done requesting/reloading/processing invoke endRefreshing, to close the control
+                        self.loadPhotos()
+                        self.needsToRefresh = false
+                    }
+                }
+                else {
+                    var delayInSeconds = 0.5;
+                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        // When done requesting/reloading/processing invoke endRefreshing, to close the control
+                        self.loadPhotos()
+                        self.needsToRefresh = false
+                    }
+                }
+            }
         }
     }
     
