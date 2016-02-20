@@ -38,7 +38,7 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         
         self.editProfile.layer.borderWidth = 1;
         self.editProfile.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
-        self.editProfile.hidden = true
+        //self.editProfile.hidden = true
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
@@ -129,12 +129,15 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
     }
     
     @IBAction func editProfileButton(sender: AnyObject) {
-        let viewController: SignUp = SignUp()
-
-        viewController.signUp = false
-        print("signUp Bool is set, prepare to push edit profile view")
-        
-        self.navigationController?.pushViewController(viewController, animated: false)
+        self.performSegueWithIdentifier("editProfile", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if (segue!.identifier == "editProfile") {
+            let viewController:EditProfile = segue!.destinationViewController as! EditProfile
+            
+            //viewController.signUp = false
+        }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {

@@ -57,6 +57,8 @@
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
+		43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A31C611C7808580026D8A2 /* TimeoutView.xib */; };
+		43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A31C631C7818B60026D8A2 /* EditProfile.swift */; };
 		43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */; };
 		43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */; };
 		43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4FC381BF996F00003748E /* ItemDetail.swift */; };
@@ -132,6 +134,8 @@
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		43A31C611C7808580026D8A2 /* TimeoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeoutView.xib; sourceTree = "<group>"; };
+		43A31C631C7818B60026D8A2 /* EditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeed.swift; sourceTree = "<group>"; };
 		43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storeTableCell.xib; sourceTree = "<group>"; };
 		43A4FC381BF996F00003748E /* ItemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
@@ -289,6 +293,8 @@
 				430D11B21C6DCA060028AB63 /* tutorial.swift */,
 				430D11B41C6E73240028AB63 /* SignUp.swift */,
 				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
+				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
+				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -419,6 +425,7 @@
 			files = (
 				43DD8EC81C6F3F2A00F9D8A1 /* LaunchScreen.xib in Resources */,
 				43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */,
+				43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
@@ -498,6 +505,7 @@
 				430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */,
 				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
 				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,
+				43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */,
 				43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */,
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,
@@ -726,7 +734,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s";
 			};
@@ -798,7 +806,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplex.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s";
 			};

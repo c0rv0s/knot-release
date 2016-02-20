@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import SendBirdSDK
+
 
 class HomeTabBarController: UITabBarController {
     
@@ -60,20 +60,6 @@ class HomeTabBarController: UITabBarController {
                             self.presentViewController(vc, animated: false, completion: nil)
                         }
                         else {
-                            
-                            print("Now lets take a look at the SendBird ID")
-                            print(dataset.stringForKey("SBID"))
-                            //set SendBird ID
-                            if (dataset.stringForKey("SBID") == nil) {
-                                dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
-                                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                                    return nil
-                                }
-                                print("new SBID uploaded")
-                            }
-                            else {
-                                print("dataset shows: " + dataset.stringForKey("SBID"))
-                            }
                             print("profile found!")
                         }   
                     }

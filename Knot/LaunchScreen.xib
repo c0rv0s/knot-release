@@ -10,11 +10,17 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="splash no lines" translatesAutoresizingMaskIntoConstraints="NO" id="lDL-RO-hjs">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash no lines" translatesAutoresizingMaskIntoConstraints="NO" id="lDL-RO-hjs">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lDL-RO-hjs" secondAttribute="trailing" id="St9-li-y4m"/>
+                <constraint firstAttribute="bottom" secondItem="lDL-RO-hjs" secondAttribute="bottom" id="TVg-Pu-VSK"/>
+                <constraint firstItem="lDL-RO-hjs" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UKA-W6-jKg"/>
+                <constraint firstItem="lDL-RO-hjs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cVx-nr-eMO"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

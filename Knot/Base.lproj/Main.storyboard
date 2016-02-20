@@ -530,7 +530,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McP-D1-H4l" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                <rect key="frame" x="129" y="112" width="112" height="112"/>
+                                <rect key="frame" x="131" y="112" width="112" height="112"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDc-Nt-ON5">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
@@ -539,18 +539,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="50"/>
+                                        <real key="value" value="52"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y1I-hh-xJ6">
-                                <rect key="frame" x="49" y="269" width="273" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="mPa-ZU-XDe"/>
-                                </connections>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-1h-zca">
                                 <rect key="frame" x="49" y="330" width="273" height="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -619,24 +611,43 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-xb-vpp">
+                                <rect key="frame" x="51" y="284" width="273" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="lJq-u0-fme"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IzJ-RF-HQi">
+                                <rect key="frame" x="51" y="237" width="273" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xN7-XG-DRQ" id="S6x-gg-q9V"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="ageLabel" destination="myS-OC-ZuM" id="G6C-of-2df"/>
+                        <outlet property="ageLabel" destination="myS-OC-ZuM" id="Fu7-nk-XrE"/>
                         <outlet property="doneButton" destination="lvj-t4-cIo" id="g83-T5-mf9"/>
-                        <outlet property="emailLabel" destination="zS0-1h-zca" id="oIp-fr-eP5"/>
-                        <outlet property="genderLabel" destination="PHD-bn-sfc" id="UgU-Cn-Tyt"/>
-                        <outlet property="nameLabel" destination="Y1I-hh-xJ6" id="2Ro-fk-fuf"/>
+                        <outlet property="emailLabel" destination="zS0-1h-zca" id="esq-QP-gqs"/>
+                        <outlet property="firstNameLabel" destination="IzJ-RF-HQi" id="YtS-Nr-80s"/>
+                        <outlet property="genderLabel" destination="PHD-bn-sfc" id="2Yo-VH-2pv"/>
+                        <outlet property="lastNameLabel" destination="Qhp-xb-vpp" id="cIF-fz-qFq"/>
                         <outlet property="profPicView" destination="IDc-Nt-ON5" id="ucU-w2-lN3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCr-bw-o0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1900.5" y="3205.5"/>
+            <point key="canvasLocation" x="-1732.5" y="2945.5"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="fTc-nb-7Uq">
@@ -711,6 +722,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewLayout key="collectionViewLayout" id="2KM-6L-0cV" customClass="FeedLayout" customModule="Knot" customModuleProvider="target"/>
+                        <view key="backgroundView" contentMode="scaleToFill" id="IF9-G0-QKc">
+                            <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AnnotatedPhotoCell" reuseIdentifier="AnnotatedPhotoCell" id="zyI-2L-8di" customClass="AnnotatedPhotoCell" customModule="Knot" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="170" height="273"/>
@@ -775,7 +791,7 @@
         <!--Account-->
         <scene sceneID="fCq-nB-kO6">
             <objects>
-                <viewController storyboardIdentifier="PersonalFeedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dik-Ra-Gc8" customClass="AccountView" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dik-Ra-Gc8" customClass="AccountView" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fwT-i9-E5P"/>
                         <viewControllerLayoutGuide type="bottom" id="twb-a5-NLP"/>
@@ -850,6 +866,7 @@
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
                         <outlet property="tutButton" destination="IQM-yo-TQc" id="cf6-5v-FPN"/>
                         <outlet property="walletText" destination="uor-Ld-e4b" id="dNL-mG-HKh"/>
+                        <segue destination="Yn6-Mw-DUA" kind="show" identifier="editProfile" id="fm6-7q-Gp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GP5-wd-0DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -886,7 +903,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usZ-v2-PBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5" y="3737.5"/>
+            <point key="canvasLocation" x="1691.5" y="3723.5"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="HD7-ec-7sw">
+            <objects>
+                <viewController storyboardIdentifier="EditProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yn6-Mw-DUA" customClass="EditProfile" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jaq-EZ-bMM"/>
+                        <viewControllerLayoutGuide type="bottom" id="sNB-Rf-EL0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yjl-Vz-Uqa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-Yj-niw">
+                                <rect key="frame" x="20" y="98" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yn6-Mw-DUA" id="Uvj-As-F6p"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bja-kG-uYm">
+                                <rect key="frame" x="20" y="148" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yn6-Mw-DUA" id="UAg-wz-Sp0"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0z4-Jx-are">
+                                <rect key="frame" x="20" y="249" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yn6-Mw-DUA" id="smd-nc-XT8"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-yU-8dm">
+                                <rect key="frame" x="164" y="312" width="46" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="Yn6-Mw-DUA" eventType="touchUpInside" id="hBD-HK-feH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFX-kt-dN9">
+                                <rect key="frame" x="20" y="198" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yn6-Mw-DUA" id="gA4-eS-fj3"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-dg-I1n">
+                                <rect key="frame" x="258" y="249" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yn6-Mw-DUA" id="Euh-JN-TfI"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="ageLabel" destination="0z4-Jx-are" id="bXp-Kq-vuY"/>
+                        <outlet property="emailLabel" destination="OFX-kt-dN9" id="UNI-eU-d2d"/>
+                        <outlet property="firstNameLabel" destination="PrV-Yj-niw" id="4v2-H5-ZLm"/>
+                        <outlet property="genderLabel" destination="ezc-dg-I1n" id="AlB-mI-nd1"/>
+                        <outlet property="lastNameLabel" destination="Bja-kG-uYm" id="rfC-B4-iKT"/>
+                        <outlet property="saveButton" destination="CUP-yU-8dm" id="FmZ-Oh-q9K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jEG-6x-pYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1545.5" y="4523.5"/>
         </scene>
         <!--Account Settings View-->
         <scene sceneID="CB3-C8-uRQ">
@@ -931,7 +1023,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-3D-qQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933" y="4540"/>
+            <point key="canvasLocation" x="2617" y="5198"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">
@@ -1129,6 +1221,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jAC-6W-Yyh"/>
-        <segue reference="7Zm-rD-AiS"/>
+        <segue reference="eRe-hd-sWy"/>
     </inferredMetricsTieBreakers>
 </document>

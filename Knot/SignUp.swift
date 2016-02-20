@@ -18,7 +18,8 @@ class SignUp: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var genderLabel: UITextField!
     @IBOutlet weak var ageLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
-    @IBOutlet weak var nameLabel: UITextField!
+    @IBOutlet weak var firstNameLabel: UITextField!
+    @IBOutlet weak var lastNameLabel: UITextField!
     
     @IBOutlet weak var doneButton: UIButton!
     
@@ -31,13 +32,15 @@ class SignUp: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
         
-        self.emailLabel.delegate = self;
-        self.genderLabel.delegate = self;
-        self.ageLabel.delegate = self;
-        self.nameLabel.delegate = self;
-        
+        emailLabel.delegate = self;
+        genderLabel.delegate = self;
+        ageLabel.delegate = self;
+        firstNameLabel.delegate = self;
+        lastNameLabel.delegate = self
+
         self.returnUserData()
     }
+        
     func returnUserData()
     {
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, age_range, gender"])
@@ -53,8 +56,15 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 
                 if (result.valueForKey("name") != nil) {
                     let userName : NSString = result.valueForKey("name") as! NSString
+                    let fullNameArr = userName.componentsSeparatedByString(" ")
+                    
+                    var firstName: String = fullNameArr[0]
+                    var lastName: String? = fullNameArr[1]
+                    
                     print("User Name is: \(userName)")
-                    self.nameLabel.text = "\(userName)"
+                    
+                    self.firstNameLabel.text = "\(firstName)"
+                    self.lastNameLabel.text = "\(lastName)"
                 }
                 
                 if (result.valueForKey("age_range") != nil) {
@@ -87,10 +97,30 @@ class SignUp: UIViewController, UITextFieldDelegate {
         })
         
     }
+    
+    func fillFields() {
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("profileInfo")
+        if (dataset.stringForKey("firstName") != nil) {
+            self.firstNameLabel.text = dataset.stringForKey("firstName")
+        }
+        if (dataset.stringForKey("lastName") != nil) {
+            self.lastNameLabel.text = dataset.stringForKey("lastName")
+        }
+        if (dataset.stringForKey("email") != nil) {
+            self.emailLabel.text = dataset.stringForKey("email")
+        }
+        if (dataset.stringForKey("age") != nil) {
+            self.ageLabel.text = dataset.stringForKey("age")
+        }
+        if (dataset.stringForKey("gender") != nil) {
+            self.genderLabel.text = dataset.stringForKey("gender")
+        }
+    }
 
     @IBAction func doneButtonAction(sender: AnyObject) {
         
-        if (self.nameLabel.text == "Name" || self.genderLabel.text == "Gender" || self.ageLabel.text == "Birthday" || self.emailLabel.text == "Enter your email" || emailLabel.text == "" ) {
+        if (self.firstNameLabel.text == "" || self.lastNameLabel.text == "" || self.genderLabel.text == "" || self.ageLabel.text == "" || emailLabel.text == "" ) {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -99,7 +129,8 @@ class SignUp: UIViewController, UITextFieldDelegate {
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
-            dataset.setString(self.nameLabel.text, forKey:"name")
+            dataset.setString(self.firstNameLabel.text, forKey:"firstName")
+            dataset.setString(self.lastNameLabel.text, forKey:"lastName")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil
             }
@@ -117,6 +148,19 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }
             
             if self.signUp {
+                print("Now lets take a look at the SendBird ID")
+                //set SendBird ID
+                if (dataset.stringForKey("SBID") == nil) {
+                    dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+                    dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                        return nil
+                    }
+                    print("new SBID uploaded")
+                }
+                else {
+                    print("dataset shows: " + dataset.stringForKey("SBID"))
+                }
+                
                 let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
                     let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController

@@ -112,7 +112,7 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
-        self.loadPhotos()
+        //self.loadPhotos()
         self.colView.reloadData()
 
     }
@@ -217,6 +217,7 @@ class PhotoStreamViewController: UICollectionViewController {
             
             if ((task.error) != nil) {
                 print("Error: \(task.error)")
+                self.loadPhotos()
             }
             return nil
         })

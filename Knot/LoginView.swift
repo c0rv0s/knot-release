@@ -78,8 +78,20 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
             return nil
         }
         
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("SignUp") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+        //fetch profile
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("profileInfo")
+        let value = dataset.stringForKey("gender")
+        if (value == nil || value.rangeOfString("male") == nil) {
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("SignUp") as! UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        else {
+            print("facebook authentication successful!")
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+
         
         //error handling
         if ((error) != nil)
