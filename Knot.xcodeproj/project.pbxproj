@@ -62,6 +62,7 @@
 		43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */; };
 		43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */; };
 		43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4FC381BF996F00003748E /* ItemDetail.swift */; };
+		43B3C4F11C799CE4006FEB7E /* extends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3C4F01C799CE4006FEB7E /* extends.swift */; };
 		43C777F71C1A53BB005A7641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F61C1A53BB005A7641 /* Foundation.framework */; };
 		43C777F91C1A53CA005A7641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F81C1A53CA005A7641 /* UIKit.framework */; };
 		43C924971C084BA40006E181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C924951C084BA40006E181 /* Main.storyboard */; };
@@ -139,6 +140,7 @@
 		43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeed.swift; sourceTree = "<group>"; };
 		43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storeTableCell.xib; sourceTree = "<group>"; };
 		43A4FC381BF996F00003748E /* ItemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
+		43B3C4F01C799CE4006FEB7E /* extends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extends.swift; sourceTree = "<group>"; };
 		43C777F61C1A53BB005A7641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43C777F81C1A53CA005A7641 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		43C924941C0818220006E181 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
 				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
 				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
+				43B3C4F01C799CE4006FEB7E /* extends.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
 				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,
 				43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */,
+				43B3C4F11C799CE4006FEB7E /* extends.swift in Sources */,
 				43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */,
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,

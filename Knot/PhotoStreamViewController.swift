@@ -53,8 +53,7 @@ class PhotoStreamViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Set the PinterestLayout delegate
-        
+       /*
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -66,7 +65,10 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             self.locationManager = nil
         }
+*/
+        self.locCurrent = appDelegate.locCurrent
         
+         // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
             print("delegated")
             layout.delegate = self

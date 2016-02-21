@@ -12,7 +12,7 @@ import MapKit
 import MessageUI
 import SendBirdSDK
 
-class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate {
+class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var savelabel: UILabel!
     @IBOutlet weak var favButton: DOFavoriteButton!
@@ -41,7 +41,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var sellerName: UILabel!
-    @IBOutlet weak var addressLabel: UILabel!
+    //@IBOutlet weak var addressLabel: UILabel!
     
     @IBOutlet weak var distanceLabel: UILabel!
     
@@ -83,6 +83,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
+        self.openMaps.hidden = true
         
         favButton.addTarget(self, action: Selector("tapped:"), forControlEvents: .TouchUpInside)
         //fetch favorite status
@@ -341,14 +342,16 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         let regionRadius: CLLocationDistance = 500
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                regionRadius * 2.0, regionRadius * 2.0)
+                regionRadius * 3.5, regionRadius * 3.5)
             map.setRegion(coordinateRegion, animated: true)
         }
-        centerMapOnLocation(initialLocation)
+        let location = self.scrambleLoc(latitude, longitude: longitude)
+
+        centerMapOnLocation(location)
         
         //find the distance
         let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-        self.distanceLabel.text = String(format: "%.1f", distanceBetween) + " miles away"
+        self.distanceLabel.text = "About " + String(format: "%.0f", distanceBetween + 1) + " miles away"
         
         //now print out the address
         var address = ""
@@ -356,7 +359,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         var cityHolder = ""
         
         let geoCoder = CLGeocoder()
-        let location = CLLocation(latitude: latitude, longitude: longitude)
+        self.addRadiusCircle(location)
+        /*
         geoCoder.reverseGeocodeLocation(location)
             {
                 (placemarks, error) -> Void in
@@ -385,8 +389,21 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 }
                 address = streetHolder + ", " + cityHolder
                 self.addressLabel.text = address
-        }
+        }*/
         
+    }
+    
+    func scrambleLoc(var latitude: Double, var longitude: Double) -> CLLocation {
+        var newLat = latitude - 0.005
+        var newLon = longitude + 0.005
+        
+        return CLLocation(latitude: newLat, longitude: newLon)
+    }
+    
+    func addRadiusCircle(location: CLLocation){
+        self.map.delegate = self
+        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
+        self.map.addOverlay(circle)
     }
     
     
@@ -476,19 +493,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
-            /*
-            if MFMailComposeViewController.canSendMail() {
-                let mail = MFMailComposeViewController()
-                mail.mailComposeDelegate = self
-                mail.setToRecipients([selleremail])
-                var body = "Hey, I'm interested in " + name + ". Can I learn more?"
-                mail.setMessageBody(body, isHTML: false)
-                
-                presentViewController(mail, animated: true, completion: nil)
-            } else {
-                // show failure alert
-            }
-*/
             if self.sellerSBID.characters.count < 3 {
                 let alert = UIAlertController(title: "Oops!", message: "There was an error reaching this user. They probably aren't available for contact.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alertAction) -> Void in
@@ -509,13 +513,14 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     @IBAction func openMaps(sender: AnyObject) {
         self.openMapForPlace()
     }
+    
     func openMapForPlace() {
         /*
         var lat1 : NSString = self.latitude
         var lng1 : NSString = self.longitude
         */
-        var latitute:CLLocationDegrees =  self.latitude
-        var longitute:CLLocationDegrees =  self.longitude
+        var latitute:CLLocationDegrees =  self.latitude - 0.01
+        var longitute:CLLocationDegrees =  self.longitude + 0.01
         
         let regionDistance:CLLocationDistance = 10000
         var coordinates = CLLocationCoordinate2DMake(latitute, longitute)

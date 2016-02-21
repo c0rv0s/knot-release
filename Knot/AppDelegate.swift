@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 */
         //calculate distance
         //remember to switch this b4 release
-        
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
             // fetch location or an error
