@@ -523,6 +523,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                         success1 = 1
                         self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
                         //these two are a mess, fix before implementing
+                        /*
                         if self.two {
                             print("two is on")
                             let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -568,7 +569,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                                 return nil
                             }
                             
-                        }
+                        }*/
                     }
                     return nil
             

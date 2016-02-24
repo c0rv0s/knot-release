@@ -20,6 +20,7 @@ class launchScreen: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
         var path: UIBezierPath = UIBezierPath()
         path.moveToPoint(CGPointMake(76, 407))
@@ -125,6 +126,19 @@ class launchScreen: UIViewController {
             let viewController:HomeTabBarController = segue!.destinationViewController as! HomeTabBarController
             //viewController.startApp = true
         }
+    }
+    
+    private func imageLayerForGradientBackground() -> UIImage {
+        
+        var updatedFrame = self.view.bounds
+        // take into account the status bar
+        updatedFrame.size.height += 20
+        var layer = CAGradientLayer.gradientLayerForBounds(updatedFrame)
+        UIGraphicsBeginImageContext(layer.bounds.size)
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
     
 }

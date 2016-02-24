@@ -148,18 +148,6 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }
             
             if self.signUp {
-                print("Now lets take a look at the SendBird ID")
-                //set SendBird ID
-                if (dataset.stringForKey("SBID") == nil) {
-                    dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
-                    dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                        return nil
-                    }
-                    print("new SBID uploaded")
-                }
-                else {
-                    print("dataset shows: " + dataset.stringForKey("SBID"))
-                }
                 
                 let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in

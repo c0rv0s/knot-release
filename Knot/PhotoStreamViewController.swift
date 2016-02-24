@@ -18,23 +18,11 @@ class PhotoStreamViewController: UICollectionViewController {
     var collectionItems: Array<ListItem>!
     
     //distance filters
-    var collectionItems2Miles: Array<ListItem>!
-    var collectionItems5Miles: Array<ListItem>!
-    var collectionItems10Miles: Array<ListItem>!
-    var collectionItems25Miles: Array<ListItem>!
-    var collectionItems50Miles: Array<ListItem>!
-    var collectionItems100Miles: Array<ListItem>!
+    var collectionItemsUnder10: Array<ListItem>!
+    var collectionItemsUnder50: Array<ListItem>!
+    var collectionItemsUnder100: Array<ListItem>!
     var collectionItemsOver100Miles: Array<ListItem>!
     var collectionImages = [String: UIImage]()
-    
-    var TwoMiCounter = 0
-    var FiveMiCounter = 0
-    var TenMiCounter = 0
-    var TwentyFiveMiCounter = 0
-    var FiftyMiCounter = 0
-    var HunMiCounter = 0
-    var OverHunMiCounter = 0
-    var totalCounter = 0
     
     let currentDate = NSDate()
     let dateFormatter = NSDateFormatter()
@@ -53,7 +41,14 @@ class PhotoStreamViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       /*
+        
+         // Set the PinterestLayout delegate
+        if let layout = self.colView.collectionViewLayout as? FeedLayout {
+            print("delegated")
+            layout.delegate = self
+        }
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        /*
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -64,29 +59,17 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }
-*/
-        self.locCurrent = appDelegate.locCurrent
+        }*/
         
-         // Set the PinterestLayout delegate
-        if let layout = self.colView.collectionViewLayout as? FeedLayout {
-            print("delegated")
-            layout.delegate = self
-        }
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        
         lock = NSLock()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
 
-        //self.locCurrent = appDelegate.locCurrent
-
         //reset aray
         self.collectionItems = []
-        self.collectionItems2Miles = []
-        self.collectionItems5Miles = []
-        self.collectionItems10Miles = []
-        self.collectionItems25Miles = []
-        self.collectionItems50Miles = []
-        self.collectionItems100Miles = []
+        self.collectionItemsUnder10 = []
+        self.collectionItemsUnder50 = []
+        self.collectionItemsUnder100 = []
         self.collectionItemsOver100Miles = []
         
         // set up the refresh control
@@ -107,44 +90,46 @@ class PhotoStreamViewController: UICollectionViewController {
             return nil
         }
         
+        print(needsToRefresh)
+        /*
+        //testcode
         if needsToRefresh {
-            if self.locCurrent != nil {
+            self.locCurrent = appDelegate.locCurrent
+            self.loadPhotos()
+        }
+        */
+        if needsToRefresh {
+            if self.appDelegate.locCurrent != nil {
+                self.locCurrent = appDelegate.locCurrent
                 self.loadPhotos()
-                needsToRefresh = false
             }
             else {
-                if self.locCurrent != nil {
-                    var delayInSeconds = 1.0;
-                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                        // When done requesting/reloading/processing invoke endRefreshing, to close the control
+                var delayInSeconds = 1.5;
+                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                    if self.appDelegate.locCurrent != nil {
+                        self.locCurrent = self.appDelegate.locCurrent
                         self.loadPhotos()
-                        self.needsToRefresh = false
-                    }
-                }
-                else {
-                    var delayInSeconds = 0.5;
-                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                        // When done requesting/reloading/processing invoke endRefreshing, to close the control
-                        self.loadPhotos()
-                        self.needsToRefresh = false
                     }
                 }
             }
         }
+        self.colView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
-        //self.loadPhotos()
+        
+        if needsToRefresh {
+            self.loadPhotos()
+        }
         self.colView.reloadData()
 
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.colView.reloadData()
+        //self.colView.reloadData()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -168,114 +153,90 @@ class PhotoStreamViewController: UICollectionViewController {
     
     func loadPhotos() {
         if (self.lock?.tryLock() != nil) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        print("finna fetch those photos")
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            print("finna fetch those photos")
         
-        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let queryExpression = AWSDynamoDBScanExpression()
-        queryExpression.exclusiveStartKey = self.lastEvaluatedKey
-        queryExpression.limit = 20;
+            let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+            let queryExpression = AWSDynamoDBScanExpression()
+            queryExpression.exclusiveStartKey = self.lastEvaluatedKey
+            queryExpression.limit = 500;
+            print("fuck")
         
-        //load left
-        dynamoDBObjectMapper.scan(ListItem.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+            dynamoDBObjectMapper.scan(ListItem.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
             
-            if self.lastEvaluatedKey == nil {
-                self.collectionItems?.removeAll(keepCapacity: true)
-            }
+                if self.lastEvaluatedKey == nil {
+                    self.collectionItems?.removeAll(keepCapacity: true)
+                }
             
-            if task.result != nil {
-                let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
-                for item in paginatedOutput.items as! [ListItem] {
-                    if item.sold == "false" {
-                        var secondsUntil = self.secondsFrom(NSDate(), endDate: self.dateFormatter.dateFromString(item.time)!)
-                        if (secondsUntil > 0) {
-                            //self.collectionItems!.append(item)
-                            self.totalCounter++
-                            //self.colView.reloadData()
-                            self.downloadImage(item)
+                if task.result != nil {
+                    let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
+                    for item in paginatedOutput.items as! [ListItem] {
+                        if item.sold == "false" {
+                            var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
+                            if (secondsUntil > 0) {
+                                self.downloadImage(item)
                             
-                            let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
-                            let latitude = Double(coordinatesArr[0])!
-                            let longitude = Double(coordinatesArr[1])!
+                                let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
+                                let latitude = Double(coordinatesArr[0])!
+                                let longitude = Double(coordinatesArr[1])!
                             
-                            let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
-                            let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-                            print(String(format: "%.1f", distanceBetween) + " miles away")
+                                let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
+                                let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+                                print(String(format: "%.1f", distanceBetween) + " miles away")
                             
-                            if distanceBetween > 100 {
-                                self.collectionItemsOver100Miles!.append(item)
-                            self.OverHunMiCounter++
-                            }
-                            else if distanceBetween > 50 {
-                                self.collectionItems100Miles!.append(item)
-                                self.HunMiCounter++
-                            }
-                            else if distanceBetween > 25 {
-                                self.collectionItems50Miles!.append(item)
-                                self.FiftyMiCounter++
-                            }
-                            else if distanceBetween > 10 {
-                                self.collectionItems25Miles!.append(item)
-                                self.TwentyFiveMiCounter++
-                            }
-                            else if distanceBetween > 5 {
-                                self.collectionItems10Miles!.append(item)
-                                self.TenMiCounter++
-                            }
-                            else if distanceBetween > 2 {
-                                self.collectionItems5Miles!.append(item)
-                                self.FiveMiCounter++
-                            }
-                            else  {
-                                self.collectionItems2Miles!.append(item)
-                                self.TwoMiCounter++
+                                if distanceBetween < 10 {
+                                    self.collectionItemsUnder10.append(item)
+                                }
+                                else if distanceBetween >= 10 && distanceBetween < 50 {
+                                    self.collectionItemsUnder50.append(item)
+                                }
+                                else if distanceBetween >= 50 && distanceBetween < 100 {
+                                    self.collectionItemsUnder100.append(item)
+                                }
+                                else {
+                                    self.collectionItemsOver100Miles.append(item)
+                                }
                             }
                         }
+                        //store data
+                        //self.dataStash(item.ID, itemCondition: 3)
                     }
+                
+                    self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
                 }
                 
-                self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
-            }
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.organizeData()
+                    self.colView.reloadData()
+                })
+
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             
-            dispatch_async(dispatch_get_main_queue(), {
-                self.organizeData()
-                self.colView.reloadData()
+                if ((task.error) != nil) {
+                    print("Error: \(task.error)")
+                    self.loadPhotos()
+                }
+                return nil
             })
 
-
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
-            if ((task.error) != nil) {
-                print("Error: \(task.error)")
-                self.loadPhotos()
-            }
-            return nil
-        })
         }
     }
     
     func organizeData() {
-        for item in collectionItems2Miles {
+        print("organize data")
+        for item in collectionItemsUnder10 {
             self.collectionItems!.append(item)
         }
-        for item in collectionItems5Miles {
+        for item in collectionItemsUnder50 {
             self.collectionItems!.append(item)
         }
-        for item in collectionItems10Miles {
-            self.collectionItems!.append(item)
-        }
-        for item in collectionItems25Miles {
-            self.collectionItems!.append(item)
-        }
-        for item in collectionItems50Miles {
-            self.collectionItems!.append(item)
-        }
-        for item in collectionItems100Miles {
+        for item in collectionItemsUnder100 {
             self.collectionItems!.append(item)
         }
         for item in collectionItemsOver100Miles {
             self.collectionItems!.append(item)
         }
+        self.needsToRefresh = false
     }
     
     func downloadImage(item: ListItem){
@@ -418,7 +379,8 @@ class PhotoStreamViewController: UICollectionViewController {
         cell.alpha = 0
         
         UICollectionViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
-        print("cell made")
+        //print("cell made")
+        
         return cell
     }
     
@@ -454,6 +416,28 @@ class PhotoStreamViewController: UICollectionViewController {
     
     func secondsFrom(startDate:NSDate, endDate:NSDate) -> Int{
         return NSCalendar.currentCalendar().components(.Second, fromDate: startDate, toDate: endDate, options: []).second
+    }
+    
+    //store user data
+    func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        /***CONVERT FROM NSDate to String ****/
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        
+        let item = sessionData()
+        item.userID = "\(self.cognitoID)"
+        item.itemID = itemId
+        item.timeStamp = dateString
+        item.condition = itemCondition
+        
+        print(item)
+        let task = mapper.save(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
     }
     
     /*

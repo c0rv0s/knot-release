@@ -27,6 +27,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     @IBOutlet weak var alternatingButton: UIButton!
     
+    //@IBOutlet weak var alternatingButton: UIBarButtonItem!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -78,9 +80,12 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:375, height: 1140)
+        self.scrollView.contentSize = CGSize(width:375, height: 1100)
         self.downloadImage(IDNum)
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        
+        //collect view info
+        self.dataStash(IDNum, itemCondition: 2)
         
         self.locCurrent = appDelegate.locCurrent
         self.openMaps.hidden = true
@@ -294,7 +299,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         else {
             updateSoldStatus("ended")
             timeLabel.text = "Ended"
-            self.alternatingButton.hidden = true
+            //self.alternatingButton.hidden = true
         }
 
     }
@@ -342,7 +347,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         let regionRadius: CLLocationDistance = 500
         func centerMapOnLocation(location: CLLocation) {
             let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                regionRadius * 3.5, regionRadius * 3.5)
+                regionRadius * 3.75, regionRadius * 3.75)
             map.setRegion(coordinateRegion, animated: true)
         }
         let location = self.scrambleLoc(latitude, longitude: longitude)
@@ -351,46 +356,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         //find the distance
         let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-        self.distanceLabel.text = "About " + String(format: "%.0f", distanceBetween + 1) + " miles away"
+        var stringFormat = String(format: "%.0f", distanceBetween + 1)
+        if stringFormat == "1" {
+            self.distanceLabel.text = "About " + stringFormat + " mile away"
+        }
+        else {
+            self.distanceLabel.text = "About " + stringFormat + " miles away"
+        }
         
         //now print out the address
         var address = ""
         var streetHolder = ""
         var cityHolder = ""
         
-        let geoCoder = CLGeocoder()
-        self.addRadiusCircle(location)
-        /*
-        geoCoder.reverseGeocodeLocation(location)
-            {
-                (placemarks, error) -> Void in
-                
-                let placeArray = placemarks as [CLPlacemark]!
-                
-                // Place details
-                var placeMark: CLPlacemark!
-                placeMark = placeArray?[0]
-                
-                // Address dictionary
-                print(placeMark.addressDictionary)
-                
-                // Street address
-                if let street = placeMark.addressDictionary?["Thoroughfare"] as? NSString
-                {
-                    print(street)
-                    streetHolder = street as String
-                }
-                // City
-                if let city = placeMark.addressDictionary?["City"] as? NSString
-                {
-                    print(city)
-                    
-                    cityHolder = (city as String)
-                }
-                address = streetHolder + ", " + cityHolder
-                self.addressLabel.text = address
-        }*/
-        
+        self.map.addOverlay(MKCircle(centerCoordinate: location.coordinate, radius: 850))
     }
     
     func scrambleLoc(var latitude: Double, var longitude: Double) -> CLLocation {
@@ -400,10 +379,13 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         return CLLocation(latitude: newLat, longitude: newLon)
     }
     
-    func addRadiusCircle(location: CLLocation){
-        self.map.delegate = self
-        var circle = MKCircle(centerCoordinate: location.coordinate, radius: 50 as CLLocationDistance)
-        self.map.addOverlay(circle)
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        let overlay = overlay as? MKCircle
+            let circleRenderer = MKCircleRenderer(circle: overlay!)
+            let blue = UIColor(red: 56.1/255, green: 119.85/255, blue: 229.5/255, alpha: 0.25)
+            circleRenderer.fillColor = blue
+            return circleRenderer
+        
     }
     
     
@@ -543,6 +525,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         if sender.selected {
             // deselect
+            self.dataStash(IDNum, itemCondition: 4)
+            
             sender.deselect()
             dataset.removeObjectForKey(self.IDNum)
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
@@ -567,6 +551,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.savelabel.text = "Saved!"
             sender.select()
             
+            self.dataStash(IDNum, itemCondition: 1)
+            
             dataset.setString("true", forKey:self.IDNum)
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 if task.cancelled {
@@ -587,6 +573,28 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             }
 
         }
+    }
+    
+    //store user data
+    func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        /***CONVERT FROM NSDate to String ****/
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        
+        let item = sessionData()
+        item.userID = "\(self.cognitoID)"
+        item.itemID = itemId
+        item.timeStamp = dateString
+        item.condition = itemCondition
+        
+        print(item)
+        let task = mapper.save(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
     }
     
     /*

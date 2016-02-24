@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F46A95A5766C88F41ED55B4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 770ABEB83565023F547CADA0 /* libPods.a */; };
 		430293B51C24F0580071E11D /* listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430293B41C24F0580071E11D /* listing.swift */; };
+		4303762A1C7C543D00B571A1 /* sessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430376291C7C543D00B571A1 /* sessionData.swift */; };
 		430D11B31C6DCA060028AB63 /* tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D11B21C6DCA060028AB63 /* tutorial.swift */; };
 		430D11B51C6E73240028AB63 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D11B41C6E73240028AB63 /* SignUp.swift */; };
 		430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE11C4E485300C29254 /* PersonalTableCell.swift */; };
@@ -84,6 +85,7 @@
 
 /* Begin PBXFileReference section */
 		430293B41C24F0580071E11D /* listing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = listing.swift; sourceTree = "<group>"; };
+		430376291C7C543D00B571A1 /* sessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sessionData.swift; sourceTree = "<group>"; };
 		430D11B21C6DCA060028AB63 /* tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tutorial.swift; sourceTree = "<group>"; };
 		430D11B41C6E73240028AB63 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		430D1CE11C4E485300C29254 /* PersonalTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalTableCell.swift; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
 				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
 				43B3C4F01C799CE4006FEB7E /* extends.swift */,
+				430376291C7C543D00B571A1 /* sessionData.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				43DD8ECC1C7007AB00F9D8A1 /* savedListings.swift in Sources */,
 				43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */,
 				43665D331C7030370069A3AA /* MessagingFileMessageTableViewCell.swift in Sources */,
+				4303762A1C7C543D00B571A1 /* sessionData.swift in Sources */,
 				431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */,
 				430D11B51C6E73240028AB63 /* SignUp.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,

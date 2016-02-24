@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import SendBirdSDK
 
 class HomeTabBarController: UITabBarController {
     
@@ -51,6 +51,7 @@ class HomeTabBarController: UITabBarController {
                         self.appDelegate.cognitoId = task.result
                         print("Cognito ID: ")
                         print (self.appDelegate.cognitoId)
+
                         //fetch profile
                         let syncClient = AWSCognito.defaultCognito()
                         let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -61,6 +62,18 @@ class HomeTabBarController: UITabBarController {
                         }
                         else {
                             print("profile found!")
+                            print("Now lets take a look at the SendBird ID")
+                            //set SendBird ID
+                            if (dataset.stringForKey("SBID") == nil) {
+                                dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+                                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                                    return nil
+                                }
+                                print("new SBID uploaded")
+                            }
+                            else {
+                                print("dataset shows: " + dataset.stringForKey("SBID"))
+                            }
                         }   
                     }
                     return nil
