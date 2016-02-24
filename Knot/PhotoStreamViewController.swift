@@ -48,7 +48,7 @@ class PhotoStreamViewController: UICollectionViewController {
             layout.delegate = self
         }
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-        /*
+        
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -59,7 +59,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }*/
+        }
         
         
         lock = NSLock()
@@ -89,31 +89,31 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-        
-        print(needsToRefresh)
+
         /*
         //testcode
         if needsToRefresh {
             self.locCurrent = appDelegate.locCurrent
             self.loadPhotos()
-        }
-        */
+        }*/
+
         if needsToRefresh {
-            if self.appDelegate.locCurrent != nil {
-                self.locCurrent = appDelegate.locCurrent
+            if self.locCurrent != nil {
+                //self.locCurrent = appDelegate.locCurrent
                 self.loadPhotos()
             }
             else {
                 var delayInSeconds = 1.5;
                 var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    if self.appDelegate.locCurrent != nil {
-                        self.locCurrent = self.appDelegate.locCurrent
+                    if self.locCurrent != nil {
+                        //self.locCurrent = self.appDelegate.locCurrent
                         self.loadPhotos()
                     }
                 }
             }
         }
+
         self.colView.reloadData()
     }
     
@@ -198,8 +198,19 @@ class PhotoStreamViewController: UICollectionViewController {
                                 }
                             }
                         }
+                        /*
                         //store data
-                        //self.dataStash(item.ID, itemCondition: 3)
+                        self.dataStash(IDNum, itemCondition: 3).continueWithBlock({
+                            (task: BFTask!) -> BFTask! in
+                            
+                            if (task.error != nil) {
+                                print(task.error!.description)
+                            } else {
+                                print("DynamoDB save succeeded")
+                            }
+                            
+                            return nil;
+                        })*/
                     }
                 
                     self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
@@ -422,16 +433,28 @@ class PhotoStreamViewController: UICollectionViewController {
     func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
+        var cogID = ""
+        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if (task.error != nil) {
+                print("Error: " + task.error!.localizedDescription)
+            }
+            else {
+                // the task result will contain the identity id
+                cogID = task.result as! String
+            }
+            return nil
+        }
+        
         /***CONVERT FROM NSDate to String ****/
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
         let item = sessionData()
-        item.userID = "\(self.cognitoID)"
+        item.userID = cogID
         item.itemID = itemId
-        item.timeStamp = dateString
-        item.condition = itemCondition
+        item.timestamp = dateString
+        item.status = itemCondition
         
         print(item)
         let task = mapper.save(item)

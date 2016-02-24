@@ -191,8 +191,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print(item)
         let task = mapper.save(item)
         
-        
-        
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
     }

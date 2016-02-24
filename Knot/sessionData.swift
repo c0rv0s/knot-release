@@ -12,8 +12,8 @@ class sessionData : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"
     var itemID : String = "placeholder"
-    var timeStamp  : String = "placeholder"
-    var condition   : Int = 0
+    var timestamp  : String = "placeholder"
+    var status   : Int = 0
 
     
     /*
@@ -24,10 +24,10 @@ class sessionData : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     }
     */
     class func dynamoDBTableName() -> String! {
-        return "training-data"
+        return "Training-Data"
     }
     class func hashKeyAttribute() -> String! {
-        return "userID"
+        return "timestamp"
     }
     
     /*

@@ -85,7 +85,17 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         //collect view info
-        self.dataStash(IDNum, itemCondition: 2)
+        self.dataStash(IDNum, itemCondition: 2).continueWithBlock({
+            (task: BFTask!) -> BFTask! in
+            
+            if (task.error != nil) {
+                print(task.error!.description)
+            } else {
+                print("DynamoDB save succeeded")
+            }
+            
+            return nil;
+        })
         
         self.locCurrent = appDelegate.locCurrent
         self.openMaps.hidden = true
@@ -525,7 +535,18 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         if sender.selected {
             // deselect
-            self.dataStash(IDNum, itemCondition: 4)
+            //collect view info
+            self.dataStash(IDNum, itemCondition: 4).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
             
             sender.deselect()
             dataset.removeObjectForKey(self.IDNum)
@@ -551,7 +572,18 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.savelabel.text = "Saved!"
             sender.select()
             
-            self.dataStash(IDNum, itemCondition: 1)
+            //collect view info
+            self.dataStash(IDNum, itemCondition: 1).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
             
             dataset.setString("true", forKey:self.IDNum)
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
@@ -579,16 +611,28 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
+        var cogID = ""
+        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if (task.error != nil) {
+                print("Error: " + task.error!.localizedDescription)
+            }
+            else {
+                // the task result will contain the identity id
+                cogID = task.result as! String
+            }
+            return nil
+        }
+        
         /***CONVERT FROM NSDate to String ****/
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
         let item = sessionData()
-        item.userID = "\(self.cognitoID)"
+        item.userID = cogID
         item.itemID = itemId
-        item.timeStamp = dateString
-        item.condition = itemCondition
+        item.timestamp = dateString
+        item.status = itemCondition
         
         print(item)
         let task = mapper.save(item)
@@ -596,6 +640,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
     }
+
     
     /*
     //download iamge
