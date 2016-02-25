@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import MessageUI
 
-class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
+class AccountView: UIViewController, FBSDKLoginButtonDelegate,  MFMailComposeViewControllerDelegate  {
 
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     var dict : NSDictionary!
     
+    @IBOutlet weak var supportButon: UIButton!
     @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var savedButton: UIButton!
     @IBOutlet weak var tutButton: UIButton!
@@ -28,17 +30,19 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         super.viewDidLoad()
         
         self.tutButton.layer.borderWidth = 1;
-        self.tutButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
+        self.tutButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
         self.savedButton.layer.borderWidth = 1;
-        self.savedButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
+        self.savedButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
 
         self.legalButton.layer.borderWidth = 1;
-        self.legalButton.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
+        self.legalButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
         self.editProfile.layer.borderWidth = 1;
-        self.editProfile.layer.borderColor = UIColor(red: 0.89, green: 0.89, blue: 0.89, alpha: 1.0).CGColor
-        //self.editProfile.hidden = true
+        self.editProfile.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
+        
+        self.supportButon.layer.borderWidth = 1;
+        self.supportButon.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
@@ -175,5 +179,23 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate  {
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    @IBAction func contactSupport(sender: AnyObject) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["support@knotcomplex.com"])
+            
+            var body = ""
+            mail.setMessageBody(body, isHTML: false)
+            
+            presentViewController(mail, animated: true, completion: nil)
+        } else {
+            // show failure alert
+        }
+    }
+
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

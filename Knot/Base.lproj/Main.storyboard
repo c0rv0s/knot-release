@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IxZ-p6-6nh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LYu-mU-Nvn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -830,37 +830,54 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
-                                <rect key="frame" x="-84" y="152" width="542" height="47"/>
-                                <state key="normal" title="View Tutorial Again"/>
+                                <rect key="frame" x="-88" y="207" width="542" height="47"/>
+                                <state key="normal" title="View Tutorial Again">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFM-fR-gEy">
-                                <rect key="frame" x="-124" y="207" width="622" height="47"/>
-                                <state key="normal" title="Saved Listings"/>
-                                <connections>
-                                    <segue destination="yAF-rD-IKu" kind="show" id="71b-gp-nrh"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
-                                <rect key="frame" x="-88" y="320" width="550" height="50"/>
-                                <state key="normal" title="Legal"/>
+                                <rect key="frame" x="-88" y="378" width="550" height="50"/>
+                                <state key="normal" title="Legal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
                                 <rect key="frame" x="-104" y="262" width="582" height="50"/>
-                                <state key="normal" title="Edit Profile Info"/>
+                                <state key="normal" title="Edit Profile Info">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="editProfileButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="ovi-P2-t99"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH7-q1-fBX">
-                                <rect key="frame" x="182" y="403" width="10" height="10"/>
+                                <rect key="frame" x="182" y="552" width="10" height="10"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
+                                <rect key="frame" x="-97" y="320" width="568" height="50"/>
+                                <state key="normal" title="Contact Support">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactSupport:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="QnP-83-uhi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFM-fR-gEy">
+                                <rect key="frame" x="-124" y="152" width="622" height="47"/>
+                                <state key="normal" title="Saved Listings">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yAF-rD-IKu" kind="show" id="71b-gp-nrh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -872,6 +889,7 @@
                         <outlet property="legalButton" destination="SUp-Ho-bwJ" id="X2A-No-Mku"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="savedButton" destination="uFM-fR-gEy" id="Hab-5i-X6o"/>
+                        <outlet property="supportButon" destination="4cD-dC-0Dc" id="SWX-RQ-GcE"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
                         <outlet property="tutButton" destination="IQM-yo-TQc" id="cf6-5v-FPN"/>
                         <outlet property="walletText" destination="uor-Ld-e4b" id="dNL-mG-HKh"/>

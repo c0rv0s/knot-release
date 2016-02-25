@@ -39,6 +39,9 @@ class PhotoStreamViewController: UICollectionViewController {
     var locationManager: OneShotLocationManager!
     var locCurrent: CLLocation!
     
+    //data harvesting
+    var performHarvest = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,7 +51,7 @@ class PhotoStreamViewController: UICollectionViewController {
             layout.delegate = self
         }
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-        
+        /*
         //calculate distance
         locationManager = OneShotLocationManager()
         locationManager!.fetchWithCompletion {location, error in
@@ -59,7 +62,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }
+        }*/
         
         
         lock = NSLock()
@@ -95,19 +98,19 @@ class PhotoStreamViewController: UICollectionViewController {
         if needsToRefresh {
             self.locCurrent = appDelegate.locCurrent
             self.loadPhotos()
-        }*/
-
+        }
+*/
         if needsToRefresh {
-            if self.locCurrent != nil {
-                //self.locCurrent = appDelegate.locCurrent
+            if self.appDelegate.locCurrent != nil {
+                self.locCurrent = appDelegate.locCurrent
                 self.loadPhotos()
             }
             else {
                 var delayInSeconds = 1.5;
                 var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    if self.locCurrent != nil {
-                        //self.locCurrent = self.appDelegate.locCurrent
+                    if self.appDelegate.locCurrent != nil {
+                        self.locCurrent = self.appDelegate.locCurrent
                         self.loadPhotos()
                     }
                 }
@@ -120,10 +123,10 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
-        
+        /*
         if needsToRefresh {
             self.loadPhotos()
-        }
+        }*/
         self.colView.reloadData()
 
     }
@@ -198,19 +201,6 @@ class PhotoStreamViewController: UICollectionViewController {
                                 }
                             }
                         }
-                        /*
-                        //store data
-                        self.dataStash(IDNum, itemCondition: 3).continueWithBlock({
-                            (task: BFTask!) -> BFTask! in
-                            
-                            if (task.error != nil) {
-                                print(task.error!.description)
-                            } else {
-                                print("DynamoDB save succeeded")
-                            }
-                            
-                            return nil;
-                        })*/
                     }
                 
                     self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
@@ -231,23 +221,29 @@ class PhotoStreamViewController: UICollectionViewController {
             })
 
         }
+        self.colView.reloadData()
     }
     
     func organizeData() {
         print("organize data")
         for item in collectionItemsUnder10 {
+            appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsUnder50 {
+            appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsUnder100 {
+           appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsOver100Miles {
+            appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         self.needsToRefresh = false
+        self.performHarvest = false
     }
     
     func downloadImage(item: ListItem){
@@ -357,6 +353,22 @@ class PhotoStreamViewController: UICollectionViewController {
             else {
                 viewController.owned = false
             }
+            
+            //remove item from untapped
+            appDelegate.untapped.removeAtIndex(self.selectedRow)
+            
+            //collect view info
+            self.dataStash(collectionItems![self.selectedRow].ID, itemCondition: 2).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
 
         }
     }

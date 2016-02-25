@@ -84,19 +84,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.downloadImage(IDNum)
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
-        //collect view info
-        self.dataStash(IDNum, itemCondition: 2).continueWithBlock({
-            (task: BFTask!) -> BFTask! in
-            
-            if (task.error != nil) {
-                print(task.error!.description)
-            } else {
-                print("DynamoDB save succeeded")
-            }
-            
-            return nil;
-        })
-        
         self.locCurrent = appDelegate.locCurrent
         self.openMaps.hidden = true
         
@@ -457,7 +444,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-            mail.setToRecipients(["hashwage@gmail.com"])
+             mail.setToRecipients(["support@knotcomplex.com"])
             var body = "Reporting item " + IDNum + " for " + why + " (add any other details here)" + "\n Thanks!"
             mail.setMessageBody(body, isHTML: false)
             

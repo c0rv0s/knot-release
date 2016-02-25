@@ -25,7 +25,7 @@ class HomeTabBarController: UITabBarController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if appDelegate.startApp {
+       // if appDelegate.startApp {
             print("checking fb token status")
             if (FBSDKAccessToken.currentAccessToken() == nil) {
                 print("user not logged in")
@@ -80,10 +80,10 @@ class HomeTabBarController: UITabBarController {
                 }
 
             }
-        }
-        else {
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController
-            self.presentViewController(vc, animated: false, completion: nil)
-        }
+        //}
+        //else {
+          //  let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController
+            //self.presentViewController(vc, animated: false, completion: nil)
+        //}
     }
 }
