@@ -45,7 +45,7 @@ PODS:
     - AWSCore (= 2.3.5)
   - AWSSQS (2.3.5):
     - AWSCore (= 2.3.5)
-  - Instabug (5.1.0)
+  - Instabug (5.1.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -85,6 +85,6 @@ SPEC CHECKSUMS:
   AWSSimpleDB: a523844c8b027c850688ffa6f79f33b06abbef9d
   AWSSNS: d95b17f039776ec0dd9cd9237313779d174b0215
   AWSSQS: f7a6f8cf225d469313150f8070e07bd7137218dd
-  Instabug: 19604e58b970de072933800c3cd92ad2f3a019f8
+  Instabug: 9373b1c10cf902a9c1fc0c7a5f8302291910168d
 
 COCOAPODS: 0.39.0
