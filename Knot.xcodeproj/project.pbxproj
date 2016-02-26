@@ -63,7 +63,6 @@
 		43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */; };
 		43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */; };
 		43A4FC391BF996F00003748E /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A4FC381BF996F00003748E /* ItemDetail.swift */; };
-		43B3C4F11C799CE4006FEB7E /* extends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B3C4F01C799CE4006FEB7E /* extends.swift */; };
 		43C777F71C1A53BB005A7641 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F61C1A53BB005A7641 /* Foundation.framework */; };
 		43C777F91C1A53CA005A7641 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C777F81C1A53CA005A7641 /* UIKit.framework */; };
 		43C924971C084BA40006E181 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43C924951C084BA40006E181 /* Main.storyboard */; };
@@ -142,7 +141,6 @@
 		43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeed.swift; sourceTree = "<group>"; };
 		43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = storeTableCell.xib; sourceTree = "<group>"; };
 		43A4FC381BF996F00003748E /* ItemDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
-		43B3C4F01C799CE4006FEB7E /* extends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extends.swift; sourceTree = "<group>"; };
 		43C777F61C1A53BB005A7641 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43C777F81C1A53CA005A7641 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		43C924941C0818220006E181 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "../Bridging-Header.h"; sourceTree = "<group>"; };
@@ -262,45 +260,23 @@
 			isa = PBXGroup;
 			children = (
 				43665D171C702FAE0069A3AA /* SendBird */,
-				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
-				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
+				43F206471C7F8ED300CEEDFF /* Third Party Extensions */,
+				43F206481C7F8F0A00CEEDFF /* data extensions */,
+				43F2064B1C7F8FD400CEEDFF /* nav controllers */,
+				43F2064A1C7F8FC000CEEDFF /* dynamoData */,
+				43F206491C7F8F5300CEEDFF /* viewcontrollers */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
-				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
-				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
-				431942821C4E8D2F000373B3 /* accountSettingsView.swift */,
-				433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */,
-				43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */,
-				433F04091C240C6A0011DAF1 /* Knot.entitlements */,
+				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
+				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
 				43C924941C0818220006E181 /* Bridging-Header.h */,
-				43869C601C052E07008E6056 /* LoginView.swift */,
 				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
 				43C924951C084BA40006E181 /* Main.storyboard */,
-				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
+				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
+				43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */,
+				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
+				433F04091C240C6A0011DAF1 /* Knot.entitlements */,
 				431853541BF9892F000C6ED4 /* Info.plist */,
 				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
-				43A4FC381BF996F00003748E /* ItemDetail.swift */,
-				43869C5A1C03CE36008E6056 /* NewItemView.swift */,
-				434BE01C1C0CD628007479AB /* string-extension.swift */,
-				430293B41C24F0580071E11D /* listing.swift */,
-				43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */,
-				43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */,
-				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
-				430D1CE31C4E696C00C29254 /* AccountView.swift */,
-				431942861C4EBB14000373B3 /* AddScene.swift */,
-				436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */,
-				436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */,
-				43D1E8BB1C59ED9B00609D37 /* Messaging.swift */,
-				431D133A1C6AA1E300E8D887 /* gradient-extension.swift */,
-				431D133C1C6ABC6D00E8D887 /* navsub.swift */,
-				431D13451C6C133400E8D887 /* image-extension.swift */,
-				434C95EE1C6D934200426449 /* launchScreen.swift */,
-				430D11B21C6DCA060028AB63 /* tutorial.swift */,
-				430D11B41C6E73240028AB63 /* SignUp.swift */,
-				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
-				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
-				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
-				43B3C4F01C799CE4006FEB7E /* extends.swift */,
-				430376291C7C543D00B571A1 /* sessionData.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -348,6 +324,67 @@
 				43665D201C70302C0069A3AA /* MessagingTableViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		43F206471C7F8ED300CEEDFF /* Third Party Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
+				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
+				436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */,
+				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
+				433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */,
+				43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */,
+			);
+			name = "Third Party Extensions";
+			sourceTree = "<group>";
+		};
+		43F206481C7F8F0A00CEEDFF /* data extensions */ = {
+			isa = PBXGroup;
+			children = (
+				434BE01C1C0CD628007479AB /* string-extension.swift */,
+				431D133A1C6AA1E300E8D887 /* gradient-extension.swift */,
+				431D13451C6C133400E8D887 /* image-extension.swift */,
+			);
+			name = "data extensions";
+			sourceTree = "<group>";
+		};
+		43F206491C7F8F5300CEEDFF /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
+				431942821C4E8D2F000373B3 /* accountSettingsView.swift */,
+				43869C601C052E07008E6056 /* LoginView.swift */,
+				43A4FC381BF996F00003748E /* ItemDetail.swift */,
+				43869C5A1C03CE36008E6056 /* NewItemView.swift */,
+				43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */,
+				430D1CE31C4E696C00C29254 /* AccountView.swift */,
+				436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */,
+				43D1E8BB1C59ED9B00609D37 /* Messaging.swift */,
+				434C95EE1C6D934200426449 /* launchScreen.swift */,
+				430D11B21C6DCA060028AB63 /* tutorial.swift */,
+				430D11B41C6E73240028AB63 /* SignUp.swift */,
+				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		43F2064A1C7F8FC000CEEDFF /* dynamoData */ = {
+			isa = PBXGroup;
+			children = (
+				430293B41C24F0580071E11D /* listing.swift */,
+				430376291C7C543D00B571A1 /* sessionData.swift */,
+			);
+			name = dynamoData;
+			sourceTree = "<group>";
+		};
+		43F2064B1C7F8FD400CEEDFF /* nav controllers */ = {
+			isa = PBXGroup;
+			children = (
+				431942861C4EBB14000373B3 /* AddScene.swift */,
+				431D133C1C6ABC6D00E8D887 /* navsub.swift */,
+			);
+			name = "nav controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,7 +552,6 @@
 				433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */,
 				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,
 				43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */,
-				43B3C4F11C799CE4006FEB7E /* extends.swift in Sources */,
 				43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */,
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,

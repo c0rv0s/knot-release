@@ -29,6 +29,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     //@IBOutlet weak var alternatingButton: UIBarButtonItem!
     
+    @IBOutlet weak var alterButtonView: UIVisualEffectView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -144,6 +145,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         }
         else {
             self.alternatingButton.setTitle("Contact", forState: .Normal)
+        }
+        
+        if self.sold != "false" {
+            self.alterButtonView.hidden = true
         }
         
         //set labels

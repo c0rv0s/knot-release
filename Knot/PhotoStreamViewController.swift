@@ -42,6 +42,8 @@ class PhotoStreamViewController: UICollectionViewController {
     //data harvesting
     var performHarvest = true
     
+    var colecViewLenTrack = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,18 +53,6 @@ class PhotoStreamViewController: UICollectionViewController {
             layout.delegate = self
         }
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-        /*
-        //calculate distance
-        locationManager = OneShotLocationManager()
-        locationManager!.fetchWithCompletion {location, error in
-            // fetch location or an error
-            if let loc = location {
-                self.locCurrent = loc
-            } else if let err = error {
-                print(err.localizedDescription)
-            }
-            self.locationManager = nil
-        }*/
         
         
         lock = NSLock()
@@ -92,14 +82,7 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-
-        /*
-        //testcode
-        if needsToRefresh {
-            self.locCurrent = appDelegate.locCurrent
-            self.loadPhotos()
-        }
-*/
+        
         if needsToRefresh {
             if self.appDelegate.locCurrent != nil {
                 self.locCurrent = appDelegate.locCurrent
@@ -117,7 +100,7 @@ class PhotoStreamViewController: UICollectionViewController {
             }
         }
 
-        self.colView.reloadData()
+        //self.colView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -149,13 +132,14 @@ class PhotoStreamViewController: UICollectionViewController {
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             // When done requesting/reloading/processing invoke endRefreshing, to close the control
             self.refreshControl.endRefreshing()
-            self.colView.reloadData()
+            //self.colView.reloadData()
         }
         // -- FINISHED SOMETHING AWESOME, WOO! --
     }
     
     func loadPhotos() {
         if (self.lock?.tryLock() != nil) {
+            self.needsToRefresh = true
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             print("finna fetch those photos")
         
@@ -163,7 +147,6 @@ class PhotoStreamViewController: UICollectionViewController {
             let queryExpression = AWSDynamoDBScanExpression()
             queryExpression.exclusiveStartKey = self.lastEvaluatedKey
             queryExpression.limit = 500;
-            print("fuck")
         
             dynamoDBObjectMapper.scan(ListItem.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
             
@@ -176,7 +159,7 @@ class PhotoStreamViewController: UICollectionViewController {
                     for item in paginatedOutput.items as! [ListItem] {
                         if item.sold == "false" {
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
-                            if (secondsUntil > 0) {
+                            if (secondsUntil > (0 - 5 * 60)) {
                                 self.downloadImage(item)
                             
                                 let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
@@ -208,7 +191,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     self.organizeData()
-                    self.colView.reloadData()
+                    //self.colView.reloadData()
                 })
 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -221,27 +204,32 @@ class PhotoStreamViewController: UICollectionViewController {
             })
 
         }
-        self.colView.reloadData()
+        //self.colView.reloadData()
     }
     
     func organizeData() {
         print("organize data")
         for item in collectionItemsUnder10 {
+            print(item.ID)
             appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsUnder50 {
+            print(item.ID)
             appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsUnder100 {
+            print(item.ID)
            appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
         for item in collectionItemsOver100Miles {
+            print(item.ID)
             appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
+        self.colView.reloadData()
         self.needsToRefresh = false
         self.performHarvest = false
     }
@@ -283,14 +271,21 @@ class PhotoStreamViewController: UICollectionViewController {
                 else{
                     
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
-                    
-                    /*
-                    let count = (self.collectionItems.indexOf(item)! - 1)
-                    print("count = \(count)")
-                    let indexPath = NSIndexPath(forItem: count, inSection: 0)
-                    //self.colView.reloadItemsAtIndexPaths([indexPath])
-                    //self.colView.reloadData()
-*/
+                    if self.needsToRefresh == false {
+                        //print("number of items in collectionItems = \(self.collectionItems.count)")
+                        if let count = (self.collectionItems.indexOf(item)) {
+                            print("count = \(count)")
+                            print("itemID = \(item.ID)")
+                            let indexPath = NSIndexPath(forItem: count, inSection: 0)
+                            print("no issues with index path")
+                            if count < 6 {
+                                self.colView.reloadItemsAtIndexPaths([indexPath])
+                            }
+                        }
+                        else {
+                            self.colView.reloadData()
+                        }
+                    }
                 }
             })
 
@@ -402,7 +397,9 @@ class PhotoStreamViewController: UICollectionViewController {
         cell.alpha = 0
         
         UICollectionViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
-        //print("cell made")
+        print("cell made")
+        colecViewLenTrack++
+        
         
         return cell
     }
