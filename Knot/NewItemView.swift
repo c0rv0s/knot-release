@@ -46,8 +46,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var three = false
     
     var timeHoursInt = 1
-    var hours = [1,3,5,12,24,72,120,168]
-    var lengthOption = ["1 Hour", "3 Hours", "5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days"]
+    var hours = [5,12,24,72,120,168, 288]
+    var lengthOption = ["5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
     var conditionOption = ["New", "Manufacturer refurbished", "Seller refurbished", "Used", "For parts or not working"]
     var categoryOption = ["Art and Antiques", "Baby and Child", "Books, Movies and Music", "Games and Consoles", "Electronics", "Cameras and Photo", "Fashion and Accessories", "Sport and Leisure", "Cars and Motor", "Furniture", "Appliances", "Services", "Other"]
     
@@ -217,9 +217,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
         if lengthField.text == lengthOption[6] {
             self.timeHoursInt = hours[6]
-        }
-        if lengthField.text == lengthOption[7] {
-            self.timeHoursInt = hours[7]
         }
         print(timeHoursInt)
     }
@@ -403,7 +400,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             if photoNum == 1 {
                 picOne = chosenImage
                 thumbnail = self.resizeImage(chosenImage)
-                
+                /*
                 //upload thumbnail
                 let transferManager = AWSS3TransferManager.defaultS3TransferManager()
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -423,27 +420,27 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     return nil
                 }
                 //done uploading
-                /*
+                */
                 //upload pic
-                let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-                let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let data = UIImageJPEGRepresentation(chosenImage, 0.5)
-                data!.writeToURL(testFileURL2, atomically: true)
-                uploadRequest2.bucket = "knotcompleximages"
-                uploadRequest2.key = self.uniqueID
-                uploadRequest2.body = testFileURL2
-                let task2 = transferManager.upload(uploadRequest2)
-                task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+                let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+                let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+                dataOne!.writeToURL(testFileURL1, atomically: true)
+                uploadRequest1.bucket = "knotcompleximages"
+                uploadRequest1.key = self.uniqueID
+                uploadRequest1.body = testFileURL1
+                let task1 = transferManager.upload(uploadRequest1)
+                task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
                     if task.error != nil {
                         print("Error: \(task.error)")
                     } else {
-                        print("pic uploaded")
                         self.preUploadComplete = true
                     }
                     return nil
                 }
                 //done uploading
-*/
+
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 //addphoto2.hidden = false
@@ -503,6 +500,47 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             var success2 = 0
             var success3 = 0
             
+            //upload thumbnail
+            SwiftSpinner.show("Finishing Upload")
+            self.thumbnail = self.resizeImage(self.picOne)
+            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
+            dataThumb!.writeToURL(testFileURL1, atomically: true)
+            uploadRequest1.bucket = "knotcomplexthumbnails"
+            uploadRequest1.key = self.uniqueID
+            uploadRequest1.body = testFileURL1
+            let task1 = transferManager.upload(uploadRequest1)
+            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                if task.error != nil {
+                    print("Error: \(task.error)")
+                } else {
+                    print("thumbnail added")
+                    if self.preUploadComplete {
+                        self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                    }
+                    else {
+                        var delayInSeconds = 1.5;
+                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            if self.preUploadComplete {
+                                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                            }
+                            else {
+                                var delayInSeconds = 3.0;
+                                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                                }
+                            }
+                        }
+                    }
+                }
+                return nil
+            }
+            //done uploading
+            
+            /*
             if one {
                 print("one is one")
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -570,16 +608,14 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                         }*/
                     }
                     return nil
-            
-
                 }
-            }
+            }*/
         }
     }
     
     func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
         SwiftSpinner.hide()
-        if succ1 == 2 || succ2 == 2 || succ3 == 2 {
+        if succ1 == 2 || succ2 == 2 || succ3 == 2 || self.preUploadComplete == false {
             let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
             }))

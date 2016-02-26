@@ -122,8 +122,11 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                     for item in paginatedOutput.items as! [ListItem] {
                         print(item.seller)
                         if item.seller == self.cognitoID {
-                            self.tableRows?.append(item)
-                            self.downloadImage(item.ID)
+                            var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
+                            if (secondsUntil > (0 - 60 * 60 * 24 * 7)) {
+                                self.tableRows?.append(item)
+                                self.downloadImage(item.ID)
+                            }
                         }
                         
                     }
