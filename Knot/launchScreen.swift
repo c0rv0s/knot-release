@@ -21,7 +21,7 @@ class launchScreen: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         
         var path: UIBezierPath = UIBezierPath()
         path.moveToPoint(CGPointMake(76, 407))
@@ -112,14 +112,14 @@ class launchScreen: UIViewController {
                 popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                     
-                    self.presentViewController(vc, animated: true, completion: nil)
+                    //self.presentViewController(vc, animated: true, completion: nil)
                     
-                    //self.performSegueWithIdentifier("startApp", sender: self)
+                    self.performSegueWithIdentifier("startApp", sender: self)
                 }
             }
         }
     }
-    /*
+    
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "startApp") {
             appDelegate.startApp = true
@@ -127,7 +127,7 @@ class launchScreen: UIViewController {
             //viewController.startApp = true
         }
     }
-    */
+    
     private func imageLayerForGradientBackground() -> UIImage {
         
         var updatedFrame = self.view.bounds

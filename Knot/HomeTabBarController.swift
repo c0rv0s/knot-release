@@ -18,18 +18,17 @@ class HomeTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-       // if appDelegate.startApp {
+        if appDelegate.startApp {
             print("checking fb token status")
             if (FBSDKAccessToken.currentAccessToken() == nil) {
                 print("user not logged in")
-            
+                
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }
@@ -37,13 +36,13 @@ class HomeTabBarController: UITabBarController {
                 print("user logged in")
                 let token = FBSDKAccessToken.currentAccessToken().tokenString
                 appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
-            
+                
                 // Retrieve your Amazon Cognito ID
                 appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                
+                    
                     if (task.error != nil) {
                         print("CognitoID Error: " + task.error!.localizedDescription)
-                    
+                        
                     }
                     else {
                         
@@ -51,7 +50,7 @@ class HomeTabBarController: UITabBarController {
                         self.appDelegate.cognitoId = task.result
                         print("Cognito ID: ")
                         print (self.appDelegate.cognitoId)
-
+                        
                         //fetch profile
                         let syncClient = AWSCognito.defaultCognito()
                         let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -74,16 +73,18 @@ class HomeTabBarController: UITabBarController {
                             else {
                                 print("dataset shows: " + dataset.stringForKey("SBID"))
                             }
-                        }   
+                        }
                     }
                     return nil
                 }
-
+                
             }
-        //}
-        //else {
-          //  let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController
-            //self.presentViewController(vc, animated: false, completion: nil)
-        //}
+        }
+        else {
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController
+            self.presentViewController(vc, animated: false, completion: nil)
+        }
+
+        
     }
 }

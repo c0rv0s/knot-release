@@ -42,8 +42,6 @@ class PhotoStreamViewController: UICollectionViewController {
     //data harvesting
     var performHarvest = true
     
-    var colecViewLenTrack = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,12 +87,22 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.loadPhotos()
             }
             else {
-                var delayInSeconds = 1.5;
+                var delayInSeconds = 1.0;
                 var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                     if self.appDelegate.locCurrent != nil {
                         self.locCurrent = self.appDelegate.locCurrent
                         self.loadPhotos()
+                    }
+                    else {
+                        var delayInSeconds = 0.5;
+                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            if self.appDelegate.locCurrent != nil {
+                                self.locCurrent = self.appDelegate.locCurrent
+                                self.loadPhotos()
+                            }
+                        }
                     }
                 }
             }
@@ -168,7 +176,7 @@ class PhotoStreamViewController: UICollectionViewController {
                             
                                 let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
                                 let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-                                print(String(format: "%.1f", distanceBetween) + " miles away")
+                                //print(String(format: "%.1f", distanceBetween) + " miles away")
                             
                                 if distanceBetween < 10 {
                                     self.collectionItemsUnder10.append(item)
@@ -271,17 +279,14 @@ class PhotoStreamViewController: UICollectionViewController {
                 else{
                     
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
+                    
                     if self.needsToRefresh == false {
-                        //print("number of items in collectionItems = \(self.collectionItems.count)")
                         if let count = (self.collectionItems.indexOf(item)) {
-                            print("count = \(count)")
-                            print("itemID = \(item.ID)")
-                            let indexPath = NSIndexPath(forItem: count, inSection: 0)
-                            print("no issues with index path")
                             if count < 6 {
-                                self.colView.reloadItemsAtIndexPaths([indexPath])
+                                self.colView.reloadItemsAtIndexPaths([NSIndexPath(forItem: count, inSection: 0)])
                             }
                         }
+                            
                         else {
                             self.colView.reloadData()
                         }
@@ -310,6 +315,25 @@ class PhotoStreamViewController: UICollectionViewController {
             return nil;
         }
         
+    }
+    
+    func indexPathIsValid(indexPath: NSIndexPath) -> Bool
+    {
+        //let section = indexPath.section
+       let row = indexPath.row
+        /*
+        let lastSectionIndex =
+        numberOfSectionsInCollectionView(self.colView) - 1
+        
+        //Make sure the specified section exists
+        if section > lastSectionIndex
+        {
+            return false
+        }*/
+        let rowCount = self.collectionView(
+            self.colView, numberOfItemsInSection: indexPath.section) - 1
+        
+        return row <= rowCount
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -397,8 +421,6 @@ class PhotoStreamViewController: UICollectionViewController {
         cell.alpha = 0
         
         UICollectionViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
-        print("cell made")
-        colecViewLenTrack++
         
         
         return cell
