@@ -189,8 +189,9 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                     
                     if self.needsToRefresh == false {
                         if let count = (self.tableRows!.indexOf(item)) {
-                            if count < 6 {
-                                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forItem: count, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+                            var indexPath = NSIndexPath(forItem: count, inSection: 0)
+                            if self.tableView.cellForRowAtIndexPath(indexPath) != nil {
+                                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
                             }
                         }
                             

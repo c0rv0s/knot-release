@@ -20,7 +20,6 @@
 		431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431853451BF9892F000C6ED4 /* AppDelegate.swift */; };
 		4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */; };
 		431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4318534F1BF9892F000C6ED4 /* Assets.xcassets */; };
-		431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942821C4E8D2F000373B3 /* accountSettingsView.swift */; };
 		431942871C4EBB14000373B3 /* AddScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431942861C4EBB14000373B3 /* AddScene.swift */; };
 		431D133B1C6AA1E300E8D887 /* gradient-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D133A1C6AA1E300E8D887 /* gradient-extension.swift */; };
 		431D133D1C6ABC6D00E8D887 /* navsub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D133C1C6ABC6D00E8D887 /* navsub.swift */; };
@@ -97,7 +96,6 @@
 		4318534D1BF9892F000C6ED4 /* Knot.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Knot.xcdatamodel; sourceTree = "<group>"; };
 		4318534F1BF9892F000C6ED4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		431853541BF9892F000C6ED4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		431942821C4E8D2F000373B3 /* accountSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = accountSettingsView.swift; sourceTree = "<group>"; };
 		431942861C4EBB14000373B3 /* AddScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddScene.swift; sourceTree = "<group>"; };
 		431D133A1C6AA1E300E8D887 /* gradient-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "gradient-extension.swift"; sourceTree = "<group>"; };
 		431D133C1C6ABC6D00E8D887 /* navsub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navsub.swift; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 			isa = PBXGroup;
 			children = (
 				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
-				431942821C4E8D2F000373B3 /* accountSettingsView.swift */,
 				43869C601C052E07008E6056 /* LoginView.swift */,
 				43A4FC381BF996F00003748E /* ItemDetail.swift */,
 				43869C5A1C03CE36008E6056 /* NewItemView.swift */,
@@ -569,7 +566,6 @@
 				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,
 				43869C611C052E07008E6056 /* LoginView.swift in Sources */,
 				43665D191C702FC00069A3AA /* SendBirdCommon.swift in Sources */,
-				431942841C4E8D2F000373B3 /* accountSettingsView.swift in Sources */,
 				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
 				43665D391C7030370069A3AA /* TypingNowView.swift in Sources */,
 				43665D2E1C7030370069A3AA /* MemberTableViewCell.swift in Sources */,

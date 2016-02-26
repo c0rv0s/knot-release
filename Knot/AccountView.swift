@@ -71,8 +71,11 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate,  MFMailComposeVie
                 if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
                     if let data = NSData(contentsOfURL: url){
                         var profilePicture = UIImage(data: data)
-
+                        
                         self.profPic.image = profilePicture
+
+                        //self.imageFadeIn(self.profPic, image: profilePicture!)
+                        
                     }
                 }
 
@@ -196,6 +199,23 @@ class AccountView: UIViewController, FBSDKLoginButtonDelegate,  MFMailComposeVie
 
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imageFadeIn(imageView: UIImageView, image: UIImage) {
+        
+        let secondImageView = UIImageView(image: image)
+        secondImageView.frame = imageView.frame
+        secondImageView.alpha = 0.0
+        
+        view.insertSubview(secondImageView, aboveSubview: imageView)
+        
+        UIView.animateWithDuration(0.4, delay: 0, options: .CurveEaseOut, animations: {
+            secondImageView.alpha = 1.0
+            }, completion: {_ in
+                imageView.image = secondImageView.image
+                secondImageView.removeFromSuperview()
+        })
+        
     }
 
 }

@@ -45,6 +45,8 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
             print("delegated")
@@ -282,8 +284,10 @@ class PhotoStreamViewController: UICollectionViewController {
                     
                     if self.needsToRefresh == false {
                         if let count = (self.collectionItems.indexOf(item)) {
-                            if count < 6 {
-                                self.colView.reloadItemsAtIndexPaths([NSIndexPath(forItem: count, inSection: 0)])
+                            var indexPath = NSIndexPath(forItem: count, inSection: 0)
+                            if self.colView.cellForItemAtIndexPath(indexPath) != nil {
+                                self.colView.reloadItemsAtIndexPaths([indexPath])
+                                UIApplication.sharedApplication().endIgnoringInteractionEvents()
                             }
                         }
                             
@@ -493,25 +497,6 @@ class PhotoStreamViewController: UICollectionViewController {
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
     }
-    
-    /*
-    func imageFadeIn(imageView: UIImageView) {
-        
-        let secondImageView = UIImageView(image: UIImage(named: "bg02.png"))
-        secondImageView.frame = view.frame
-        secondImageView.alpha = 0.0
-        
-        view.insertSubview(secondImageView, aboveSubview: imageView)
-        
-        UIView.animateWithDuration(2.0, delay: 2.0, options: .CurveEaseOut, animations: {
-            secondImageView.alpha = 1.0
-            }, completion: {_ in
-                imageView.image = secondImageView.image
-                secondImageView.removeFromSuperview()
-        })
-        
-    }
-*/
 
 }
 
