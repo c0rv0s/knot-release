@@ -23,7 +23,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
 */
-    @IBOutlet weak var openMaps: UIButton!
     
     @IBOutlet weak var alternatingButton: UIButton!
     
@@ -86,7 +85,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
-        self.openMaps.hidden = true
         
         favButton.addTarget(self, action: Selector("tapped:"), forControlEvents: .TouchUpInside)
         //fetch favorite status
@@ -492,10 +490,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 self.navigationController?.pushViewController(viewController, animated: false)
             }
         }
-    }
-    
-    @IBAction func openMaps(sender: AnyObject) {
-        self.openMapForPlace()
     }
     
     func openMapForPlace() {

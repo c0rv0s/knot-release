@@ -223,7 +223,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BT-rx-S2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847.5" y="1916"/>
+            <point key="canvasLocation" x="1295.5" y="1860"/>
         </scene>
         <!--Detail-->
         <scene sceneID="JkG-WJ-f92">
@@ -288,12 +288,6 @@
                                         </view>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWs-ch-uCU">
-                                        <rect key="frame" x="0.0" y="749" width="375" height="127"/>
-                                        <connections>
-                                            <action selector="openMaps:" destination="No7-vI-DDg" eventType="touchUpInside" id="RxG-2V-kkG"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-TC-w8L">
                                         <rect key="frame" x="24" y="720" width="327" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -418,7 +412,6 @@
                         <outlet property="favButton" destination="v3z-Ib-hra" id="P7w-HM-8Ho"/>
                         <outlet property="map" destination="fuK-Av-Vl2" id="ID7-01-Qc8"/>
                         <outlet property="nameLabel" destination="LFw-rw-427" id="8rg-k1-jh5"/>
-                        <outlet property="openMaps" destination="MWs-ch-uCU" id="dcd-Rv-j6g"/>
                         <outlet property="priceLabel" destination="lX8-Hz-rsP" id="3Tt-5d-s9s"/>
                         <outlet property="profPic" destination="4Rp-u0-kIR" id="Wli-3A-Vrk"/>
                         <outlet property="savelabel" destination="qxe-3g-jLb" id="CDS-dD-1Ca"/>
@@ -429,38 +422,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-z6-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3202.5" y="255"/>
-        </scene>
-        <!--Pay-->
-        <scene sceneID="TkV-vu-CZS">
-            <objects>
-                <viewController storyboardIdentifier="QRView" id="00D-5U-fKp" customClass="QRView" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="TaN-Xh-ym0"/>
-                        <viewControllerLayoutGuide type="bottom" id="FQH-Ox-5uF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="jdL-UQ-PXx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yT-r3-Ojx">
-                                <rect key="frame" x="122" y="537" width="130" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="FINISHED"/>
-                                <connections>
-                                    <action selector="paymentComplete:" destination="00D-5U-fKp" eventType="touchUpInside" id="1gB-Fp-ePd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Pay" id="hLp-OJ-ibi"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="667"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Do-Zm-u32" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3901.5" y="735.5"/>
+            <point key="canvasLocation" x="2394.5" y="243"/>
         </scene>
         <!--Login View-->
         <scene sceneID="EMn-uU-yz8">
@@ -519,7 +481,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5A-Vp-mm3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2202.5" y="2385.5"/>
+            <point key="canvasLocation" x="-2314.5" y="2833.5"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="yof-FW-i4W">
@@ -657,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCr-bw-o0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1732.5" y="2945.5"/>
+            <point key="canvasLocation" x="-1732.5" y="2833.5"/>
         </scene>
         <!--Tutorial-->
         <scene sceneID="fTc-nb-7Uq">
@@ -893,13 +855,12 @@
                         <outlet property="supportButon" destination="4cD-dC-0Dc" id="SWX-RQ-GcE"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
                         <outlet property="tutButton" destination="IQM-yo-TQc" id="cf6-5v-FPN"/>
-                        <outlet property="walletText" destination="uor-Ld-e4b" id="dNL-mG-HKh"/>
                         <segue destination="Yn6-Mw-DUA" kind="show" identifier="editProfile" id="fm6-7q-Gp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GP5-wd-0DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="933.5" y="3776.5"/>
+            <point key="canvasLocation" x="1295.5" y="3739.5"/>
         </scene>
         <!--Saved Listings-->
         <scene sceneID="CDM-ve-Qgz">
@@ -931,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usZ-v2-PBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691.5" y="3723.5"/>
+            <point key="canvasLocation" x="1859.5" y="3688.5"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="HD7-ec-7sw">
@@ -1006,52 +967,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEG-6x-pYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545.5" y="4523.5"/>
-        </scene>
-        <!--Account Settings View-->
-        <scene sceneID="CB3-C8-uRQ">
-            <objects>
-                <viewController id="lr9-qa-Shr" customClass="accountSettingsView" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2Gm-U2-iFp"/>
-                        <viewControllerLayoutGuide type="bottom" id="gub-JM-4BN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6oa-D0-2S2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your BTC wallet ID: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbt-Ua-ZtJ">
-                                <rect key="frame" x="55" y="110" width="194" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wallet ID..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uor-Ld-e4b">
-                                <rect key="frame" x="31" y="161" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="lr9-qa-Shr" id="XPV-JP-nUY"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-yf-CTW">
-                                <rect key="frame" x="135" y="219" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="savewallet:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="IdE-LK-SLu"/>
-                                    <action selector="savewallet:" destination="lr9-qa-Shr" eventType="touchUpInside" id="gd4-8o-3sd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="walletText" destination="uor-Ld-e4b" id="yxi-Kp-dGX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kIl-3D-qQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2617" y="5198"/>
+            <point key="canvasLocation" x="1287.5" y="4603.5"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">
@@ -1072,7 +988,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmB-QQ-Cy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087.5" y="1002.5"/>
+            <point key="canvasLocation" x="1287.5" y="978.5"/>
         </scene>
         <!--Navsub-->
         <scene sceneID="zx1-YQ-VVH">
@@ -1097,7 +1013,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH3-EJ-glI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="285" y="3724"/>
+            <point key="canvasLocation" x="458.5" y="3739.5"/>
         </scene>
         <!--Navsub-->
         <scene sceneID="qAI-ba-m9T">
@@ -1161,7 +1077,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZAh-Wh-KFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1379.5" y="2876.5"/>
+            <point key="canvasLocation" x="1295.5" y="2817.5"/>
         </scene>
         <!--Navsub-->
         <scene sceneID="FiD-c7-ZN7">
@@ -1190,7 +1106,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxf-mR-GV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="568" y="2877"/>
+            <point key="canvasLocation" x="468.5" y="2812.5"/>
         </scene>
         <!--Navsub-->
         <scene sceneID="j3X-St-9FU">
@@ -1238,7 +1154,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IsX-hO-x8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330.5" y="1923.5"/>
+            <point key="canvasLocation" x="458.5" y="1819.5"/>
         </scene>
     </scenes>
     <resources>
@@ -1255,6 +1171,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxO-bs-lmd"/>
-        <segue reference="yTs-ay-f60"/>
+        <segue reference="7Zm-rD-AiS"/>
     </inferredMetricsTieBreakers>
 </document>
