@@ -125,7 +125,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
                             if (secondsUntil > (0 - 60 * 60 * 24 * 7)) {
                                 self.tableRows?.append(item)
-                                self.downloadImage(item.ID)
+                                self.downloadImage(item)
                             }
                         }
                         
@@ -148,7 +148,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func downloadImage(key: String){
+    func downloadImage(item: ListItem){
         
         var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
         
@@ -156,7 +156,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         
         let S3BucketName: String = "knotcomplexthumbnails"
-        let S3DownloadKeyName: String = key
+        let S3DownloadKeyName: String = item.ID
         
         let expression = AWSS3TransferUtilityDownloadExpression()
         expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
@@ -186,7 +186,19 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                     //    self.statusLabel.text = "Success"
                     self.tableImages[S3DownloadKeyName] = UIImage(data: data!)
                     self.cropImages[S3DownloadKeyName] = self.cropToSquare(image: UIImage(data: data!)!)
-                    self.tableView.reloadData()
+                    
+                    if self.needsToRefresh == false {
+                        if let count = (self.tableRows!.indexOf(item)) {
+                            if count < 6 {
+                                self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forItem: count, inSection: 0)], withRowAnimation: UITableViewRowAnimation.None)
+                            }
+                        }
+                            
+                        else {
+                            self.tableView.reloadData()
+                        }
+                    }
+                    //self.tableView.reloadData()
                 }
             })
         }
@@ -254,6 +266,10 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                 cell.timeLabel.text = "Ended"
             }
         }
+        
+        cell.alpha = 0
+        
+        UITableViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
         return cell
         
     }
