@@ -242,6 +242,7 @@ class PhotoStreamViewController: UICollectionViewController {
         self.colView.reloadData()
         self.needsToRefresh = false
         self.performHarvest = false
+        UIApplication.sharedApplication().endIgnoringInteractionEvents()
     }
     
     func downloadImage(item: ListItem){
@@ -287,7 +288,7 @@ class PhotoStreamViewController: UICollectionViewController {
                             var indexPath = NSIndexPath(forItem: count, inSection: 0)
                             if self.colView.cellForItemAtIndexPath(indexPath) != nil {
                                 self.colView.reloadItemsAtIndexPaths([indexPath])
-                                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                                
                             }
                         }
                             
