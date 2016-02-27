@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         }
 
         //self.locCurrent = CLLocation(latitude: 37.3653032084585, longitude: -122.133118002751)
+        self.initializeNotificationServices()
         
         untapped = []
         
@@ -66,10 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
-        sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(
                 application,
                 openURL: url,
@@ -88,9 +86,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         // Fail = didFailToRegisterForRemoteNotificationsWithError
         UIApplication.sharedApplication().registerForRemoteNotifications()
     }
-
+    
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         let deviceTokenStr = convertDeviceTokenToString(deviceToken)
+        print(deviceTokenStr)
         // ...register device token with our Time Entry API server via REST
     }
     
@@ -103,8 +102,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         // display the userInfo
         if let notification = userInfo["aps"] as? NSDictionary,
             let alert = notification["alert"] as? String {
-                var alertCtrl = UIAlertController(title: "Test", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
-                alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                var alertCtrl = UIAlertController(title: "You received a message!", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
+                //alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                 // Find the presented VC...
                 var presentedVC = self.window?.rootViewController
                 while (presentedVC!.presentedViewController != nil)  {
@@ -117,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
                 completionHandler(UIBackgroundFetchResult.NoData)
         }
     }
-
+    
     private func convertDeviceTokenToString(deviceToken:NSData) -> String {
         //  Convert binary Device Token to a String (and remove the <,> and white space charaters).
         var deviceTokenStr = deviceToken.description.stringByReplacingOccurrencesOfString(">", withString: "")
@@ -129,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         deviceTokenStr = deviceTokenStr.uppercaseString
         return deviceTokenStr
     }
-
+    
     //end notifications
     
 

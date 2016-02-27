@@ -31,7 +31,6 @@ class SignUp: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
-        
         emailLabel.delegate = self;
         genderLabel.delegate = self;
         ageLabel.delegate = self;

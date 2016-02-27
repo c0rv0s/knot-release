@@ -350,7 +350,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 regionRadius * 3.75, regionRadius * 3.75)
             map.setRegion(coordinateRegion, animated: true)
         }
-        let location = self.scrambleLoc(latitude, longitude: longitude)
+        let location = CLLocation(latitude: latitude, longitude: longitude)
 
         centerMapOnLocation(location)
         
@@ -369,14 +369,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         var streetHolder = ""
         var cityHolder = ""
         
-        self.map.addOverlay(MKCircle(centerCoordinate: location.coordinate, radius: 850))
-    }
-    
-    func scrambleLoc(var latitude: Double, var longitude: Double) -> CLLocation {
-        var newLat = latitude - 0.005
-        var newLon = longitude + 0.005
-        
-        return CLLocation(latitude: newLat, longitude: newLon)
+        self.map.addOverlay(MKCircle(centerCoordinate: location.coordinate, radius: 900))
     }
     
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
@@ -387,8 +380,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             return circleRenderer
         
     }
-    
-    
     
     func updateSoldStatus(type: String) {
         var hashValue: AWSDynamoDBAttributeValue = AWSDynamoDBAttributeValue()

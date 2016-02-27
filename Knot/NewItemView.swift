@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class NewItemView: UIViewController, UITextFieldDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -98,10 +99,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         conditionView.delegate = self
         conditionField.inputView = conditionView
         
-            let location = appDelegate.locCurrent
-                var construct = String(location!.coordinate.latitude) + " "
-                construct += String(location!.coordinate.longitude)
-                self.locString = construct
+        let location = appDelegate.locCurrent
+        self.makeScrambledLocation(location)
             
         
         priceField.delegate = self
@@ -129,6 +128,37 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         self.preUploadComplete = false
+    }
+    
+    func makeScrambledLocation(location: CLLocation) {
+        var newLat = location.coordinate.latitude
+        var newLon = location.coordinate.longitude
+        
+        var lower : UInt32 = 1
+        var upper : UInt32 = 5
+        let randomNumber = Double(arc4random_uniform(upper - lower) + lower)
+        
+        lower = 0
+        upper = 2
+        let randomNumber2 = arc4random_uniform(upper - lower) + lower
+        let randomNumber3 = arc4random_uniform(upper - lower) + lower
+        
+        if randomNumber2  == 0 {
+            newLat = newLat - Double(randomNumber / 1000)
+        }
+        else {
+            newLat = newLat + Double(randomNumber / 1000)
+        }
+        
+        if randomNumber3 == 0 {
+            newLon = newLon + Double(randomNumber / 1000)
+        }
+        else {
+            newLon = newLon -  Double(randomNumber / 1000)        }
+        
+        var construct = String(newLat) + " "
+        construct += String(newLon)
+        self.locString = construct
     }
     
     func randomStringWithLength (len : Int) -> NSString {
