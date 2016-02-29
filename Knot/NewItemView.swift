@@ -37,6 +37,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var conditionField: UITextField!
     
+    
+    @IBOutlet weak var descripFieldView: RoundedCornersView!
+    
     var photoNum : Int = 1
     let picker = UIImagePickerController()
     var fbID = "error"
@@ -47,8 +50,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var three = false
     
     var timeHoursInt = 1
-    var hours = [5,12,24,72,120,168, 288]
-    var lengthOption = ["5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
+    var hours = [3,5,12,24,72,120,168, 288]
+    var lengthOption = ["3 Hours", "5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
     var conditionOption = ["New", "Manufacturer refurbished", "Seller refurbished", "Used", "For parts or not working"]
     var categoryOption = ["Art and Antiques", "Baby and Child", "Books, Movies and Music", "Games and Consoles", "Electronics", "Cameras and Photo", "Fashion and Accessories", "Sport and Leisure", "Cars and Motor", "Furniture", "Appliances", "Services", "Other"]
     
@@ -65,6 +68,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         super.viewDidLoad()
         self.scrollView.contentSize = CGSize(width:375, height: 800)
         self.tabBarController?.tabBar.hidden = true
+        
+        self.descripFieldView.layer.borderWidth = 1;
+        self.descripFieldView.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
         
         picker.delegate = self

@@ -54,16 +54,15 @@ class PhotoStreamViewController: UICollectionViewController {
         }
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
         
-        
-        lock = NSLock()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-
         //reset aray
         self.collectionItems = []
         self.collectionItemsUnder10 = []
         self.collectionItemsUnder50 = []
         self.collectionItemsUnder100 = []
         self.collectionItemsOver100Miles = []
+        
+        lock = NSLock()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         // set up the refresh control
         refreshControl = UIRefreshControl()
@@ -109,23 +108,96 @@ class PhotoStreamViewController: UICollectionViewController {
                 }
             }
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWasOpened:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+    }
+    
+    func appWasOpened(notification: NSNotification!)
+    {
+        if needsToRefresh == false {
+            print("app was opened")
+            //reset aray
+            self.collectionItems = []
+            self.collectionItemsUnder10 = []
+            self.collectionItemsUnder50 = []
+            self.collectionItemsUnder100 = []
+            self.collectionItemsOver100Miles = []
+            if self.appDelegate.locCurrent != nil {
+                self.locCurrent = appDelegate.locCurrent
+                self.loadPhotos()
+            }
+            else {
+                var delayInSeconds = 1.0;
+                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                    if self.appDelegate.locCurrent != nil {
+                        self.locCurrent = self.appDelegate.locCurrent
+                        self.loadPhotos()
+                    }
+                    else {
+                        var delayInSeconds = 0.5;
+                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            if self.appDelegate.locCurrent != nil {
+                                self.locCurrent = self.appDelegate.locCurrent
+                                self.loadPhotos()
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-        //self.colView.reloadData()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
+        
         /*
         if needsToRefresh {
-            self.loadPhotos()
+            //reset aray
+            self.collectionItems = []
+            self.collectionItemsUnder10 = []
+            self.collectionItemsUnder50 = []
+            self.collectionItemsUnder100 = []
+            self.collectionItemsOver100Miles = []
+            if self.appDelegate.locCurrent != nil {
+                self.locCurrent = appDelegate.locCurrent
+                self.loadPhotos()
+            }
+            else {
+                var delayInSeconds = 1.0;
+                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                    if self.appDelegate.locCurrent != nil {
+                        self.locCurrent = self.appDelegate.locCurrent
+                        self.loadPhotos()
+                    }
+                    else {
+                        var delayInSeconds = 0.5;
+                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            if self.appDelegate.locCurrent != nil {
+                                self.locCurrent = self.appDelegate.locCurrent
+                                self.loadPhotos()
+                            }
+                        }
+                    }
+                }
+            }
         }*/
+
         self.colView.reloadData()
 
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //self.colView.reloadData()
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -218,6 +290,7 @@ class PhotoStreamViewController: UICollectionViewController {
     }
     
     func organizeData() {
+        appDelegate.untapped = []
         print("organize data")
         for item in collectionItemsUnder10 {
             print(item.ID)
@@ -242,6 +315,7 @@ class PhotoStreamViewController: UICollectionViewController {
         self.colView.reloadData()
         self.needsToRefresh = false
         self.performHarvest = false
+
         UIApplication.sharedApplication().endIgnoringInteractionEvents()
     }
     
