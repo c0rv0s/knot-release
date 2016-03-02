@@ -1,0 +1,1022 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "TypingNowView"
+provides-nominal:
+- "C4Knot13TypingNowView"
+provides-member:
+- ["C4Knot13TypingNowView", ""]
+provides-dynamic-lookup:
+- "typingLabel"
+- "setModel"
+- "typingImageView"
+depends-top-level:
+- "TypingNowView"
+- !private "NSLayoutRelation"
+- !private "NSLineBreakMode"
+- !private "NSLayoutConstraint"
+- !private "Array"
+- !private "UIFont"
+- !private "StringLiteralType"
+- !private "Int"
+- !private "NSLayoutAttribute"
+- !private "fatalError"
+- "CGRect"
+- "UIImageView"
+- !private "UIColor"
+- "NSCoder"
+- "UILabel"
+- !private "String"
+- !private "BooleanLiteralType"
+- "UIView"
+- !private "SendBirdUtils"
+- !private "UIImage"
+- "NSDictionary"
+depends-member:
+- !private ["PSs9AnyObject", "CGRect"]
+- !private ["PSs9AnyObject", "NSLayoutAttribute"]
+- !private ["PSs9AnyObject", "NSLayoutConstraint"]
+- !private ["PSs9AnyObject", "NSLayoutRelation"]
+- !private ["PSs9AnyObject", "NSLineBreakMode"]
+- !private ["PSs9AnyObject", "SendBirdUtils"]
+- !private ["PSs9AnyObject", "String"]
+- !private ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIColorFromRGB"]
+- !private ["PSs9AnyObject", "UIFont"]
+- !private ["PSs9AnyObject", "UIImage"]
+- !private ["PSs9AnyObject", "UIImageView"]
+- !private ["PSs9AnyObject", "UILabel"]
+- !private ["PSs9AnyObject", "addConstraint"]
+- !private ["PSs9AnyObject", "addSubview"]
+- !private ["PSs9AnyObject", "animationDuration"]
+- !private ["PSs9AnyObject", "animationImages"]
+- !private ["PSs9AnyObject", "animationRepeatCount"]
+- !private ["PSs9AnyObject", "backgroundColor"]
+- !private ["PSs9AnyObject", "count"]
+- !private ["PSs9AnyObject", "fatalError"]
+- !private ["PSs9AnyObject", "font"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "initView"]
+- !private ["PSs9AnyObject", "italicSystemFontOfSize"]
+- !private ["PSs9AnyObject", "lineBreakMode"]
+- !private ["PSs9AnyObject", "numberOfLines"]
+- ["PSs9AnyObject", "setModel"]
+- !private ["PSs9AnyObject", "startAnimating"]
+- !private ["PSs9AnyObject", "text"]
+- !private ["PSs9AnyObject", "textColor"]
+- !private ["PSs9AnyObject", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs9AnyObject", "typingImageView"]
+- ["PSs9AnyObject", "typingLabel"]
+- !private ["PSs9AnyObject", "whiteColor"]
+- ["PSs9AnyObject", ""]
+- !private ["Sa", "Element"]
+- !private ["PSs23ArrayLiteralConvertible", "Element"]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["VSC6CGRect", "zero"]
+- !private ["PSs11CVarArgType", "CGRect"]
+- !private ["PSs11CVarArgType", "NSLayoutAttribute"]
+- !private ["PSs11CVarArgType", "NSLayoutConstraint"]
+- !private ["PSs11CVarArgType", "NSLayoutRelation"]
+- !private ["PSs11CVarArgType", "NSLineBreakMode"]
+- !private ["PSs11CVarArgType", "SendBirdUtils"]
+- !private ["PSs11CVarArgType", "String"]
+- !private ["PSs11CVarArgType", "UIColor"]
+- !private ["PSs11CVarArgType", "UIFont"]
+- !private ["PSs11CVarArgType", "UIImage"]
+- !private ["PSs11CVarArgType", "UIImageView"]
+- !private ["PSs11CVarArgType", "UILabel"]
+- !private ["PSs11CVarArgType", "addConstraint"]
+- !private ["PSs11CVarArgType", "addSubview"]
+- !private ["PSs11CVarArgType", "animationDuration"]
+- !private ["PSs11CVarArgType", "animationImages"]
+- !private ["PSs11CVarArgType", "animationRepeatCount"]
+- !private ["PSs11CVarArgType", "backgroundColor"]
+- !private ["PSs11CVarArgType", "count"]
+- !private ["PSs11CVarArgType", "fatalError"]
+- !private ["PSs11CVarArgType", "font"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "initView"]
+- !private ["PSs11CVarArgType", "italicSystemFontOfSize"]
+- !private ["PSs11CVarArgType", "lineBreakMode"]
+- !private ["PSs11CVarArgType", "numberOfLines"]
+- ["PSs11CVarArgType", "setModel"]
+- !private ["PSs11CVarArgType", "startAnimating"]
+- !private ["PSs11CVarArgType", "text"]
+- !private ["PSs11CVarArgType", "textColor"]
+- !private ["PSs11CVarArgType", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs11CVarArgType", "typingImageView"]
+- ["PSs11CVarArgType", "typingLabel"]
+- !private ["PSs11CVarArgType", "whiteColor"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs14CollectionType", "Element"]
+- !private ["PSs10Comparable", "init"]
+- !private ["PSs28CustomDebugStringConvertible", "Element"]
+- !private ["PSs28CustomDebugStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "CGRect"]
+- !private ["PSs23CustomStringConvertible", "Element"]
+- !private ["PSs23CustomStringConvertible", "NSLayoutAttribute"]
+- !private ["PSs23CustomStringConvertible", "NSLayoutConstraint"]
+- !private ["PSs23CustomStringConvertible", "NSLayoutRelation"]
+- !private ["PSs23CustomStringConvertible", "NSLineBreakMode"]
+- !private ["PSs23CustomStringConvertible", "SendBirdUtils"]
+- !private ["PSs23CustomStringConvertible", "String"]
+- !private ["PSs23CustomStringConvertible", "UIColor"]
+- !private ["PSs23CustomStringConvertible", "UIFont"]
+- !private ["PSs23CustomStringConvertible", "UIImage"]
+- !private ["PSs23CustomStringConvertible", "UIImageView"]
+- !private ["PSs23CustomStringConvertible", "UILabel"]
+- !private ["PSs23CustomStringConvertible", "addConstraint"]
+- !private ["PSs23CustomStringConvertible", "addSubview"]
+- !private ["PSs23CustomStringConvertible", "animationDuration"]
+- !private ["PSs23CustomStringConvertible", "animationImages"]
+- !private ["PSs23CustomStringConvertible", "animationRepeatCount"]
+- !private ["PSs23CustomStringConvertible", "backgroundColor"]
+- !private ["PSs23CustomStringConvertible", "count"]
+- !private ["PSs23CustomStringConvertible", "fatalError"]
+- !private ["PSs23CustomStringConvertible", "font"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "initView"]
+- !private ["PSs23CustomStringConvertible", "italicSystemFontOfSize"]
+- !private ["PSs23CustomStringConvertible", "lineBreakMode"]
+- !private ["PSs23CustomStringConvertible", "numberOfLines"]
+- ["PSs23CustomStringConvertible", "setModel"]
+- !private ["PSs23CustomStringConvertible", "startAnimating"]
+- !private ["PSs23CustomStringConvertible", "text"]
+- !private ["PSs23CustomStringConvertible", "textColor"]
+- !private ["PSs23CustomStringConvertible", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs23CustomStringConvertible", "typingImageView"]
+- ["PSs23CustomStringConvertible", "typingLabel"]
+- !private ["PSs23CustomStringConvertible", "whiteColor"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["PSs28DictionaryLiteralConvertible", "count"]
+- !private ["PSs9Equatable", "Bottom"]
+- !private ["PSs9Equatable", "ByCharWrapping"]
+- !private ["PSs9Equatable", "CGRect"]
+- !private ["PSs9Equatable", "CenterY"]
+- !private ["PSs9Equatable", "Equal"]
+- !private ["PSs9Equatable", "Height"]
+- !private ["PSs9Equatable", "Leading"]
+- !private ["PSs9Equatable", "NSLayoutAttribute"]
+- !private ["PSs9Equatable", "NSLayoutConstraint"]
+- !private ["PSs9Equatable", "NSLayoutRelation"]
+- !private ["PSs9Equatable", "NSLineBreakMode"]
+- !private ["PSs9Equatable", "NotAnAttribute"]
+- !private ["PSs9Equatable", "SendBirdUtils"]
+- !private ["PSs9Equatable", "String"]
+- !private ["PSs9Equatable", "Trailing"]
+- !private ["PSs9Equatable", "UIColor"]
+- !private ["PSs9Equatable", "UIFont"]
+- !private ["PSs9Equatable", "UIImage"]
+- !private ["PSs9Equatable", "UIImageView"]
+- !private ["PSs9Equatable", "UILabel"]
+- !private ["PSs9Equatable", "Width"]
+- !private ["PSs9Equatable", "addConstraint"]
+- !private ["PSs9Equatable", "addSubview"]
+- !private ["PSs9Equatable", "animationDuration"]
+- !private ["PSs9Equatable", "animationImages"]
+- !private ["PSs9Equatable", "animationRepeatCount"]
+- !private ["PSs9Equatable", "backgroundColor"]
+- !private ["PSs9Equatable", "count"]
+- !private ["PSs9Equatable", "fatalError"]
+- !private ["PSs9Equatable", "font"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "initView"]
+- !private ["PSs9Equatable", "italicSystemFontOfSize"]
+- !private ["PSs9Equatable", "lineBreakMode"]
+- !private ["PSs9Equatable", "numberOfLines"]
+- ["PSs9Equatable", "setModel"]
+- !private ["PSs9Equatable", "startAnimating"]
+- !private ["PSs9Equatable", "text"]
+- !private ["PSs9Equatable", "textColor"]
+- !private ["PSs9Equatable", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs9Equatable", "typingImageView"]
+- ["PSs9Equatable", "typingLabel"]
+- !private ["PSs9Equatable", "whiteColor"]
+- !private ["PSs9Equatable", "zero"]
+- ["PSs9Equatable", ""]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs8Hashable", "Bottom"]
+- !private ["PSs8Hashable", "ByCharWrapping"]
+- !private ["PSs8Hashable", "CGRect"]
+- !private ["PSs8Hashable", "CenterY"]
+- !private ["PSs8Hashable", "Equal"]
+- !private ["PSs8Hashable", "Height"]
+- !private ["PSs8Hashable", "Leading"]
+- !private ["PSs8Hashable", "NSLayoutAttribute"]
+- !private ["PSs8Hashable", "NSLayoutConstraint"]
+- !private ["PSs8Hashable", "NSLayoutRelation"]
+- !private ["PSs8Hashable", "NSLineBreakMode"]
+- !private ["PSs8Hashable", "NotAnAttribute"]
+- !private ["PSs8Hashable", "SendBirdUtils"]
+- !private ["PSs8Hashable", "String"]
+- !private ["PSs8Hashable", "Trailing"]
+- !private ["PSs8Hashable", "UIColor"]
+- !private ["PSs8Hashable", "UIFont"]
+- !private ["PSs8Hashable", "UIImage"]
+- !private ["PSs8Hashable", "UIImageView"]
+- !private ["PSs8Hashable", "UILabel"]
+- !private ["PSs8Hashable", "Width"]
+- !private ["PSs8Hashable", "addConstraint"]
+- !private ["PSs8Hashable", "addSubview"]
+- !private ["PSs8Hashable", "animationDuration"]
+- !private ["PSs8Hashable", "animationImages"]
+- !private ["PSs8Hashable", "animationRepeatCount"]
+- !private ["PSs8Hashable", "backgroundColor"]
+- !private ["PSs8Hashable", "count"]
+- !private ["PSs8Hashable", "fatalError"]
+- !private ["PSs8Hashable", "font"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "initView"]
+- !private ["PSs8Hashable", "italicSystemFontOfSize"]
+- !private ["PSs8Hashable", "lineBreakMode"]
+- !private ["PSs8Hashable", "numberOfLines"]
+- ["PSs8Hashable", "setModel"]
+- !private ["PSs8Hashable", "startAnimating"]
+- !private ["PSs8Hashable", "text"]
+- !private ["PSs8Hashable", "textColor"]
+- !private ["PSs8Hashable", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs8Hashable", "typingImageView"]
+- ["PSs8Hashable", "typingLabel"]
+- !private ["PSs8Hashable", "whiteColor"]
+- ["PSs8Hashable", ""]
+- !private ["PSs9Indexable", "Element"]
+- !private ["PSs14MirrorPathType", "init"]
+- !private ["PSs21MutableCollectionType", "Element"]
+- !private ["PSs16MutableIndexable", "Element"]
+- !private ["PSs16MutableSliceable", "Element"]
+- !private ["PSo8NSCoding", "CGRect"]
+- !private ["PSo8NSCoding", "NSLayoutAttribute"]
+- !private ["PSo8NSCoding", "NSLayoutConstraint"]
+- !private ["PSo8NSCoding", "NSLayoutRelation"]
+- !private ["PSo8NSCoding", "NSLineBreakMode"]
+- !private ["PSo8NSCoding", "SendBirdUtils"]
+- !private ["PSo8NSCoding", "String"]
+- !private ["PSo8NSCoding", "UIColor"]
+- !private ["PSo8NSCoding", "UIFont"]
+- !private ["PSo8NSCoding", "UIImage"]
+- !private ["PSo8NSCoding", "UIImageView"]
+- !private ["PSo8NSCoding", "UILabel"]
+- !private ["PSo8NSCoding", "addConstraint"]
+- !private ["PSo8NSCoding", "addSubview"]
+- !private ["PSo8NSCoding", "animationDuration"]
+- !private ["PSo8NSCoding", "animationImages"]
+- !private ["PSo8NSCoding", "animationRepeatCount"]
+- !private ["PSo8NSCoding", "backgroundColor"]
+- !private ["PSo8NSCoding", "count"]
+- !private ["PSo8NSCoding", "fatalError"]
+- !private ["PSo8NSCoding", "font"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "initView"]
+- !private ["PSo8NSCoding", "lineBreakMode"]
+- !private ["PSo8NSCoding", "numberOfLines"]
+- ["PSo8NSCoding", "setModel"]
+- !private ["PSo8NSCoding", "startAnimating"]
+- !private ["PSo8NSCoding", "text"]
+- !private ["PSo8NSCoding", "textColor"]
+- !private ["PSo8NSCoding", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo8NSCoding", "typingImageView"]
+- ["PSo8NSCoding", "typingLabel"]
+- !private ["PSo8NSCoding", "whiteColor"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "count"]
+- !private ["PSo9NSCopying", "italicSystemFontOfSize"]
+- !private ["PSo9NSCopying", "whiteColor"]
+- !private ["CSo12NSDictionary", "count"]
+- !private ["PSo17NSFastEnumeration", "count"]
+- !private ["OSC17NSLayoutAttribute", "Bottom"]
+- !private ["OSC17NSLayoutAttribute", "CenterY"]
+- !private ["OSC17NSLayoutAttribute", "Height"]
+- !private ["OSC17NSLayoutAttribute", "Leading"]
+- !private ["OSC17NSLayoutAttribute", "NotAnAttribute"]
+- !private ["OSC17NSLayoutAttribute", "Trailing"]
+- !private ["OSC17NSLayoutAttribute", "Width"]
+- !private ["CSo18NSLayoutConstraint", "init"]
+- !private ["OSC16NSLayoutRelation", "Equal"]
+- !private ["OSC15NSLineBreakMode", "ByCharWrapping"]
+- !private ["PSo16NSMutableCopying", "count"]
+- ["CSo8NSObject", "CGRect"]
+- !private ["CSo8NSObject", "Int"]
+- ["CSo8NSObject", "NSCoder"]
+- ["CSo8NSObject", "NSDictionary"]
+- !private ["CSo8NSObject", "NSLayoutAttribute"]
+- !private ["CSo8NSObject", "NSLayoutConstraint"]
+- !private ["CSo8NSObject", "NSLayoutRelation"]
+- !private ["CSo8NSObject", "NSLineBreakMode"]
+- !private ["CSo8NSObject", "SendBirdUtils"]
+- !private ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIFont"]
+- !private ["CSo8NSObject", "UIImage"]
+- ["CSo8NSObject", "UIImageView"]
+- ["CSo8NSObject", "UILabel"]
+- !private ["CSo8NSObject", "addConstraint"]
+- !private ["CSo8NSObject", "addSubview"]
+- !private ["CSo8NSObject", "animationDuration"]
+- !private ["CSo8NSObject", "animationImages"]
+- !private ["CSo8NSObject", "animationRepeatCount"]
+- !private ["CSo8NSObject", "backgroundColor"]
+- !private ["CSo8NSObject", "count"]
+- !private ["CSo8NSObject", "fatalError"]
+- !private ["CSo8NSObject", "font"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "initView"]
+- !private ["CSo8NSObject", "italicSystemFontOfSize"]
+- !private ["CSo8NSObject", "lineBreakMode"]
+- !private ["CSo8NSObject", "numberOfLines"]
+- ["CSo8NSObject", "setModel"]
+- !private ["CSo8NSObject", "startAnimating"]
+- !private ["CSo8NSObject", "text"]
+- !private ["CSo8NSObject", "textColor"]
+- !private ["CSo8NSObject", "translatesAutoresizingMaskIntoConstraints"]
+- ["CSo8NSObject", "typingImageView"]
+- ["CSo8NSObject", "typingLabel"]
+- !private ["CSo8NSObject", "whiteColor"]
+- !private ["PSo16NSObjectProtocol", "CGRect"]
+- !private ["PSo16NSObjectProtocol", "NSLayoutAttribute"]
+- !private ["PSo16NSObjectProtocol", "NSLayoutConstraint"]
+- !private ["PSo16NSObjectProtocol", "NSLayoutRelation"]
+- !private ["PSo16NSObjectProtocol", "NSLineBreakMode"]
+- !private ["PSo16NSObjectProtocol", "SendBirdUtils"]
+- !private ["PSo16NSObjectProtocol", "String"]
+- !private ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIFont"]
+- !private ["PSo16NSObjectProtocol", "UIImage"]
+- !private ["PSo16NSObjectProtocol", "UIImageView"]
+- !private ["PSo16NSObjectProtocol", "UILabel"]
+- !private ["PSo16NSObjectProtocol", "addConstraint"]
+- !private ["PSo16NSObjectProtocol", "addSubview"]
+- !private ["PSo16NSObjectProtocol", "animationDuration"]
+- !private ["PSo16NSObjectProtocol", "animationImages"]
+- !private ["PSo16NSObjectProtocol", "animationRepeatCount"]
+- !private ["PSo16NSObjectProtocol", "backgroundColor"]
+- !private ["PSo16NSObjectProtocol", "count"]
+- !private ["PSo16NSObjectProtocol", "fatalError"]
+- !private ["PSo16NSObjectProtocol", "font"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "initView"]
+- !private ["PSo16NSObjectProtocol", "italicSystemFontOfSize"]
+- !private ["PSo16NSObjectProtocol", "lineBreakMode"]
+- !private ["PSo16NSObjectProtocol", "numberOfLines"]
+- ["PSo16NSObjectProtocol", "setModel"]
+- !private ["PSo16NSObjectProtocol", "startAnimating"]
+- !private ["PSo16NSObjectProtocol", "text"]
+- !private ["PSo16NSObjectProtocol", "textColor"]
+- !private ["PSo16NSObjectProtocol", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo16NSObjectProtocol", "typingImageView"]
+- ["PSo16NSObjectProtocol", "typingLabel"]
+- !private ["PSo16NSObjectProtocol", "whiteColor"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "count"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "whiteColor"]
+- !private ["Sq", "deinit"]
+- !private ["PSs16OutputStreamType", "init"]
+- !private ["PSs30RangeReplaceableCollectionType", "Element"]
+- !private ["PSs16RawRepresentable", "Bottom"]
+- !private ["PSs16RawRepresentable", "ByCharWrapping"]
+- !private ["PSs16RawRepresentable", "CenterY"]
+- !private ["PSs16RawRepresentable", "Equal"]
+- !private ["PSs16RawRepresentable", "Height"]
+- !private ["PSs16RawRepresentable", "Leading"]
+- !private ["PSs16RawRepresentable", "NotAnAttribute"]
+- !private ["PSs16RawRepresentable", "Trailing"]
+- !private ["PSs16RawRepresentable", "Width"]
+- !private ["C4Knot13SendBirdUtils", "UIColorFromRGB"]
+- !private ["PSs12SequenceType", "Element"]
+- !private ["PSs12SequenceType", "count"]
+- !private ["VSs12StaticString", "deinit"]
+- !private ["PSs10Streamable", "init"]
+- !private ["SS", "init"]
+- !private ["PSs30StringInterpolationConvertible", "init"]
+- !private ["PSs24StringLiteralConvertible", "init"]
+- ["C4Knot13TypingNowView", "CGRect"]
+- !private ["C4Knot13TypingNowView", "Int"]
+- ["C4Knot13TypingNowView", "NSCoder"]
+- ["C4Knot13TypingNowView", "NSDictionary"]
+- !private ["C4Knot13TypingNowView", "NSLayoutAttribute"]
+- !private ["C4Knot13TypingNowView", "NSLayoutConstraint"]
+- !private ["C4Knot13TypingNowView", "NSLayoutRelation"]
+- !private ["C4Knot13TypingNowView", "NSLineBreakMode"]
+- !private ["C4Knot13TypingNowView", "SendBirdUtils"]
+- !private ["C4Knot13TypingNowView", "String"]
+- !private ["C4Knot13TypingNowView", "UIColor"]
+- !private ["C4Knot13TypingNowView", "UIFont"]
+- !private ["C4Knot13TypingNowView", "UIImage"]
+- ["C4Knot13TypingNowView", "UIImageView"]
+- ["C4Knot13TypingNowView", "UILabel"]
+- !private ["C4Knot13TypingNowView", "addConstraint"]
+- !private ["C4Knot13TypingNowView", "addSubview"]
+- !private ["C4Knot13TypingNowView", "backgroundColor"]
+- ["C4Knot13TypingNowView", "deinit"]
+- !private ["C4Knot13TypingNowView", "fatalError"]
+- ["C4Knot13TypingNowView", "init"]
+- !private ["C4Knot13TypingNowView", "initView"]
+- ["C4Knot13TypingNowView", "setModel"]
+- ["C4Knot13TypingNowView", "typingImageView"]
+- ["C4Knot13TypingNowView", "typingLabel"]
+- !private ["PSo29UIAccessibilityIdentification", "CGRect"]
+- !private ["PSo29UIAccessibilityIdentification", "NSLayoutAttribute"]
+- !private ["PSo29UIAccessibilityIdentification", "NSLayoutConstraint"]
+- !private ["PSo29UIAccessibilityIdentification", "NSLayoutRelation"]
+- !private ["PSo29UIAccessibilityIdentification", "NSLineBreakMode"]
+- !private ["PSo29UIAccessibilityIdentification", "SendBirdUtils"]
+- !private ["PSo29UIAccessibilityIdentification", "String"]
+- !private ["PSo29UIAccessibilityIdentification", "UIColor"]
+- !private ["PSo29UIAccessibilityIdentification", "UIFont"]
+- !private ["PSo29UIAccessibilityIdentification", "UIImage"]
+- !private ["PSo29UIAccessibilityIdentification", "UIImageView"]
+- !private ["PSo29UIAccessibilityIdentification", "UILabel"]
+- !private ["PSo29UIAccessibilityIdentification", "addConstraint"]
+- !private ["PSo29UIAccessibilityIdentification", "addSubview"]
+- !private ["PSo29UIAccessibilityIdentification", "animationDuration"]
+- !private ["PSo29UIAccessibilityIdentification", "animationImages"]
+- !private ["PSo29UIAccessibilityIdentification", "animationRepeatCount"]
+- !private ["PSo29UIAccessibilityIdentification", "backgroundColor"]
+- !private ["PSo29UIAccessibilityIdentification", "fatalError"]
+- !private ["PSo29UIAccessibilityIdentification", "font"]
+- ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", "initView"]
+- !private ["PSo29UIAccessibilityIdentification", "lineBreakMode"]
+- !private ["PSo29UIAccessibilityIdentification", "numberOfLines"]
+- ["PSo29UIAccessibilityIdentification", "setModel"]
+- !private ["PSo29UIAccessibilityIdentification", "startAnimating"]
+- !private ["PSo29UIAccessibilityIdentification", "text"]
+- !private ["PSo29UIAccessibilityIdentification", "textColor"]
+- !private ["PSo29UIAccessibilityIdentification", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo29UIAccessibilityIdentification", "typingImageView"]
+- ["PSo29UIAccessibilityIdentification", "typingLabel"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- !private ["PSo12UIAppearance", "CGRect"]
+- !private ["PSo12UIAppearance", "NSLayoutAttribute"]
+- !private ["PSo12UIAppearance", "NSLayoutConstraint"]
+- !private ["PSo12UIAppearance", "NSLayoutRelation"]
+- !private ["PSo12UIAppearance", "NSLineBreakMode"]
+- !private ["PSo12UIAppearance", "SendBirdUtils"]
+- !private ["PSo12UIAppearance", "String"]
+- !private ["PSo12UIAppearance", "UIColor"]
+- !private ["PSo12UIAppearance", "UIFont"]
+- !private ["PSo12UIAppearance", "UIImage"]
+- !private ["PSo12UIAppearance", "UIImageView"]
+- !private ["PSo12UIAppearance", "UILabel"]
+- !private ["PSo12UIAppearance", "addConstraint"]
+- !private ["PSo12UIAppearance", "addSubview"]
+- !private ["PSo12UIAppearance", "animationDuration"]
+- !private ["PSo12UIAppearance", "animationImages"]
+- !private ["PSo12UIAppearance", "animationRepeatCount"]
+- !private ["PSo12UIAppearance", "backgroundColor"]
+- !private ["PSo12UIAppearance", "fatalError"]
+- !private ["PSo12UIAppearance", "font"]
+- ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", "initView"]
+- !private ["PSo12UIAppearance", "lineBreakMode"]
+- !private ["PSo12UIAppearance", "numberOfLines"]
+- ["PSo12UIAppearance", "setModel"]
+- !private ["PSo12UIAppearance", "startAnimating"]
+- !private ["PSo12UIAppearance", "text"]
+- !private ["PSo12UIAppearance", "textColor"]
+- !private ["PSo12UIAppearance", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo12UIAppearance", "typingImageView"]
+- ["PSo12UIAppearance", "typingLabel"]
+- ["PSo12UIAppearance", ""]
+- !private ["PSo21UIAppearanceContainer", "CGRect"]
+- !private ["PSo21UIAppearanceContainer", "NSLayoutAttribute"]
+- !private ["PSo21UIAppearanceContainer", "NSLayoutConstraint"]
+- !private ["PSo21UIAppearanceContainer", "NSLayoutRelation"]
+- !private ["PSo21UIAppearanceContainer", "NSLineBreakMode"]
+- !private ["PSo21UIAppearanceContainer", "SendBirdUtils"]
+- !private ["PSo21UIAppearanceContainer", "String"]
+- !private ["PSo21UIAppearanceContainer", "UIColor"]
+- !private ["PSo21UIAppearanceContainer", "UIFont"]
+- !private ["PSo21UIAppearanceContainer", "UIImage"]
+- !private ["PSo21UIAppearanceContainer", "UIImageView"]
+- !private ["PSo21UIAppearanceContainer", "UILabel"]
+- !private ["PSo21UIAppearanceContainer", "addConstraint"]
+- !private ["PSo21UIAppearanceContainer", "addSubview"]
+- !private ["PSo21UIAppearanceContainer", "animationDuration"]
+- !private ["PSo21UIAppearanceContainer", "animationImages"]
+- !private ["PSo21UIAppearanceContainer", "animationRepeatCount"]
+- !private ["PSo21UIAppearanceContainer", "backgroundColor"]
+- !private ["PSo21UIAppearanceContainer", "fatalError"]
+- !private ["PSo21UIAppearanceContainer", "font"]
+- ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", "initView"]
+- !private ["PSo21UIAppearanceContainer", "lineBreakMode"]
+- !private ["PSo21UIAppearanceContainer", "numberOfLines"]
+- ["PSo21UIAppearanceContainer", "setModel"]
+- !private ["PSo21UIAppearanceContainer", "startAnimating"]
+- !private ["PSo21UIAppearanceContainer", "text"]
+- !private ["PSo21UIAppearanceContainer", "textColor"]
+- !private ["PSo21UIAppearanceContainer", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo21UIAppearanceContainer", "typingImageView"]
+- ["PSo21UIAppearanceContainer", "typingLabel"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["CSo7UIColor", "whiteColor"]
+- !private ["PSo17UICoordinateSpace", "CGRect"]
+- !private ["PSo17UICoordinateSpace", "NSLayoutAttribute"]
+- !private ["PSo17UICoordinateSpace", "NSLayoutConstraint"]
+- !private ["PSo17UICoordinateSpace", "NSLayoutRelation"]
+- !private ["PSo17UICoordinateSpace", "NSLineBreakMode"]
+- !private ["PSo17UICoordinateSpace", "SendBirdUtils"]
+- !private ["PSo17UICoordinateSpace", "String"]
+- !private ["PSo17UICoordinateSpace", "UIColor"]
+- !private ["PSo17UICoordinateSpace", "UIFont"]
+- !private ["PSo17UICoordinateSpace", "UIImage"]
+- !private ["PSo17UICoordinateSpace", "UIImageView"]
+- !private ["PSo17UICoordinateSpace", "UILabel"]
+- !private ["PSo17UICoordinateSpace", "addConstraint"]
+- !private ["PSo17UICoordinateSpace", "addSubview"]
+- !private ["PSo17UICoordinateSpace", "animationDuration"]
+- !private ["PSo17UICoordinateSpace", "animationImages"]
+- !private ["PSo17UICoordinateSpace", "animationRepeatCount"]
+- !private ["PSo17UICoordinateSpace", "backgroundColor"]
+- !private ["PSo17UICoordinateSpace", "fatalError"]
+- !private ["PSo17UICoordinateSpace", "font"]
+- ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", "initView"]
+- !private ["PSo17UICoordinateSpace", "lineBreakMode"]
+- !private ["PSo17UICoordinateSpace", "numberOfLines"]
+- ["PSo17UICoordinateSpace", "setModel"]
+- !private ["PSo17UICoordinateSpace", "startAnimating"]
+- !private ["PSo17UICoordinateSpace", "text"]
+- !private ["PSo17UICoordinateSpace", "textColor"]
+- !private ["PSo17UICoordinateSpace", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo17UICoordinateSpace", "typingImageView"]
+- ["PSo17UICoordinateSpace", "typingLabel"]
+- ["PSo17UICoordinateSpace", ""]
+- !private ["PSo13UIDynamicItem", "CGRect"]
+- !private ["PSo13UIDynamicItem", "NSLayoutAttribute"]
+- !private ["PSo13UIDynamicItem", "NSLayoutConstraint"]
+- !private ["PSo13UIDynamicItem", "NSLayoutRelation"]
+- !private ["PSo13UIDynamicItem", "NSLineBreakMode"]
+- !private ["PSo13UIDynamicItem", "SendBirdUtils"]
+- !private ["PSo13UIDynamicItem", "String"]
+- !private ["PSo13UIDynamicItem", "UIColor"]
+- !private ["PSo13UIDynamicItem", "UIFont"]
+- !private ["PSo13UIDynamicItem", "UIImage"]
+- !private ["PSo13UIDynamicItem", "UIImageView"]
+- !private ["PSo13UIDynamicItem", "UILabel"]
+- !private ["PSo13UIDynamicItem", "addConstraint"]
+- !private ["PSo13UIDynamicItem", "addSubview"]
+- !private ["PSo13UIDynamicItem", "animationDuration"]
+- !private ["PSo13UIDynamicItem", "animationImages"]
+- !private ["PSo13UIDynamicItem", "animationRepeatCount"]
+- !private ["PSo13UIDynamicItem", "backgroundColor"]
+- !private ["PSo13UIDynamicItem", "fatalError"]
+- !private ["PSo13UIDynamicItem", "font"]
+- ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", "initView"]
+- !private ["PSo13UIDynamicItem", "lineBreakMode"]
+- !private ["PSo13UIDynamicItem", "numberOfLines"]
+- ["PSo13UIDynamicItem", "setModel"]
+- !private ["PSo13UIDynamicItem", "startAnimating"]
+- !private ["PSo13UIDynamicItem", "text"]
+- !private ["PSo13UIDynamicItem", "textColor"]
+- !private ["PSo13UIDynamicItem", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo13UIDynamicItem", "typingImageView"]
+- ["PSo13UIDynamicItem", "typingLabel"]
+- ["PSo13UIDynamicItem", ""]
+- !private ["PSo18UIFocusEnvironment", "CGRect"]
+- !private ["PSo18UIFocusEnvironment", "NSLayoutAttribute"]
+- !private ["PSo18UIFocusEnvironment", "NSLayoutConstraint"]
+- !private ["PSo18UIFocusEnvironment", "NSLayoutRelation"]
+- !private ["PSo18UIFocusEnvironment", "NSLineBreakMode"]
+- !private ["PSo18UIFocusEnvironment", "SendBirdUtils"]
+- !private ["PSo18UIFocusEnvironment", "String"]
+- !private ["PSo18UIFocusEnvironment", "UIColor"]
+- !private ["PSo18UIFocusEnvironment", "UIFont"]
+- !private ["PSo18UIFocusEnvironment", "UIImage"]
+- !private ["PSo18UIFocusEnvironment", "UIImageView"]
+- !private ["PSo18UIFocusEnvironment", "UILabel"]
+- !private ["PSo18UIFocusEnvironment", "addConstraint"]
+- !private ["PSo18UIFocusEnvironment", "addSubview"]
+- !private ["PSo18UIFocusEnvironment", "animationDuration"]
+- !private ["PSo18UIFocusEnvironment", "animationImages"]
+- !private ["PSo18UIFocusEnvironment", "animationRepeatCount"]
+- !private ["PSo18UIFocusEnvironment", "backgroundColor"]
+- !private ["PSo18UIFocusEnvironment", "fatalError"]
+- !private ["PSo18UIFocusEnvironment", "font"]
+- ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", "initView"]
+- !private ["PSo18UIFocusEnvironment", "lineBreakMode"]
+- !private ["PSo18UIFocusEnvironment", "numberOfLines"]
+- ["PSo18UIFocusEnvironment", "setModel"]
+- !private ["PSo18UIFocusEnvironment", "startAnimating"]
+- !private ["PSo18UIFocusEnvironment", "text"]
+- !private ["PSo18UIFocusEnvironment", "textColor"]
+- !private ["PSo18UIFocusEnvironment", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo18UIFocusEnvironment", "typingImageView"]
+- ["PSo18UIFocusEnvironment", "typingLabel"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["CSo6UIFont", "italicSystemFontOfSize"]
+- !private ["CSo7UIImage", "init"]
+- !private ["CSo11UIImageView", "animationDuration"]
+- !private ["CSo11UIImageView", "animationImages"]
+- !private ["CSo11UIImageView", "animationRepeatCount"]
+- !private ["CSo11UIImageView", "init"]
+- !private ["CSo11UIImageView", "startAnimating"]
+- !private ["CSo11UIImageView", "translatesAutoresizingMaskIntoConstraints"]
+- !private ["CSo7UILabel", "font"]
+- !private ["CSo7UILabel", "init"]
+- !private ["CSo7UILabel", "lineBreakMode"]
+- !private ["CSo7UILabel", "numberOfLines"]
+- !private ["CSo7UILabel", "text"]
+- !private ["CSo7UILabel", "textColor"]
+- !private ["CSo7UILabel", "translatesAutoresizingMaskIntoConstraints"]
+- ["CSo11UIResponder", "CGRect"]
+- !private ["CSo11UIResponder", "Int"]
+- ["CSo11UIResponder", "NSCoder"]
+- ["CSo11UIResponder", "NSDictionary"]
+- !private ["CSo11UIResponder", "NSLayoutAttribute"]
+- !private ["CSo11UIResponder", "NSLayoutConstraint"]
+- !private ["CSo11UIResponder", "NSLayoutRelation"]
+- !private ["CSo11UIResponder", "NSLineBreakMode"]
+- !private ["CSo11UIResponder", "SendBirdUtils"]
+- !private ["CSo11UIResponder", "String"]
+- !private ["CSo11UIResponder", "UIColor"]
+- !private ["CSo11UIResponder", "UIFont"]
+- !private ["CSo11UIResponder", "UIImage"]
+- ["CSo11UIResponder", "UIImageView"]
+- ["CSo11UIResponder", "UILabel"]
+- !private ["CSo11UIResponder", "addConstraint"]
+- !private ["CSo11UIResponder", "addSubview"]
+- !private ["CSo11UIResponder", "animationDuration"]
+- !private ["CSo11UIResponder", "animationImages"]
+- !private ["CSo11UIResponder", "animationRepeatCount"]
+- !private ["CSo11UIResponder", "backgroundColor"]
+- !private ["CSo11UIResponder", "fatalError"]
+- !private ["CSo11UIResponder", "font"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "initView"]
+- !private ["CSo11UIResponder", "lineBreakMode"]
+- !private ["CSo11UIResponder", "numberOfLines"]
+- ["CSo11UIResponder", "setModel"]
+- !private ["CSo11UIResponder", "startAnimating"]
+- !private ["CSo11UIResponder", "text"]
+- !private ["CSo11UIResponder", "textColor"]
+- !private ["CSo11UIResponder", "translatesAutoresizingMaskIntoConstraints"]
+- ["CSo11UIResponder", "typingImageView"]
+- ["CSo11UIResponder", "typingLabel"]
+- !private ["PSo18UITraitEnvironment", "CGRect"]
+- !private ["PSo18UITraitEnvironment", "NSLayoutAttribute"]
+- !private ["PSo18UITraitEnvironment", "NSLayoutConstraint"]
+- !private ["PSo18UITraitEnvironment", "NSLayoutRelation"]
+- !private ["PSo18UITraitEnvironment", "NSLineBreakMode"]
+- !private ["PSo18UITraitEnvironment", "SendBirdUtils"]
+- !private ["PSo18UITraitEnvironment", "String"]
+- !private ["PSo18UITraitEnvironment", "UIColor"]
+- !private ["PSo18UITraitEnvironment", "UIFont"]
+- !private ["PSo18UITraitEnvironment", "UIImage"]
+- !private ["PSo18UITraitEnvironment", "UIImageView"]
+- !private ["PSo18UITraitEnvironment", "UILabel"]
+- !private ["PSo18UITraitEnvironment", "addConstraint"]
+- !private ["PSo18UITraitEnvironment", "addSubview"]
+- !private ["PSo18UITraitEnvironment", "animationDuration"]
+- !private ["PSo18UITraitEnvironment", "animationImages"]
+- !private ["PSo18UITraitEnvironment", "animationRepeatCount"]
+- !private ["PSo18UITraitEnvironment", "backgroundColor"]
+- !private ["PSo18UITraitEnvironment", "fatalError"]
+- !private ["PSo18UITraitEnvironment", "font"]
+- ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", "initView"]
+- !private ["PSo18UITraitEnvironment", "lineBreakMode"]
+- !private ["PSo18UITraitEnvironment", "numberOfLines"]
+- ["PSo18UITraitEnvironment", "setModel"]
+- !private ["PSo18UITraitEnvironment", "startAnimating"]
+- !private ["PSo18UITraitEnvironment", "text"]
+- !private ["PSo18UITraitEnvironment", "textColor"]
+- !private ["PSo18UITraitEnvironment", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSo18UITraitEnvironment", "typingImageView"]
+- ["PSo18UITraitEnvironment", "typingLabel"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "CGRect"]
+- !private ["CSo6UIView", "Int"]
+- ["CSo6UIView", "NSCoder"]
+- ["CSo6UIView", "NSDictionary"]
+- !private ["CSo6UIView", "NSLayoutAttribute"]
+- !private ["CSo6UIView", "NSLayoutConstraint"]
+- !private ["CSo6UIView", "NSLayoutRelation"]
+- !private ["CSo6UIView", "NSLineBreakMode"]
+- !private ["CSo6UIView", "SendBirdUtils"]
+- !private ["CSo6UIView", "String"]
+- !private ["CSo6UIView", "UIColor"]
+- !private ["CSo6UIView", "UIFont"]
+- !private ["CSo6UIView", "UIImage"]
+- ["CSo6UIView", "UIImageView"]
+- ["CSo6UIView", "UILabel"]
+- !private ["CSo6UIView", "addConstraint"]
+- !private ["CSo6UIView", "addSubview"]
+- !private ["CSo6UIView", "animationDuration"]
+- !private ["CSo6UIView", "animationImages"]
+- !private ["CSo6UIView", "animationRepeatCount"]
+- !private ["CSo6UIView", "backgroundColor"]
+- !private ["CSo6UIView", "fatalError"]
+- !private ["CSo6UIView", "font"]
+- ["CSo6UIView", "init"]
+- ["CSo6UIView", "initView"]
+- !private ["CSo6UIView", "lineBreakMode"]
+- !private ["CSo6UIView", "numberOfLines"]
+- ["CSo6UIView", "setModel"]
+- !private ["CSo6UIView", "startAnimating"]
+- !private ["CSo6UIView", "text"]
+- !private ["CSo6UIView", "textColor"]
+- !private ["CSo6UIView", "translatesAutoresizingMaskIntoConstraints"]
+- ["CSo6UIView", "typingImageView"]
+- ["CSo6UIView", "typingLabel"]
+- ["CSo6UIView", ""]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs10_ArrayType", "Element"]
+- !private ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs32_BuiltinStringLiteralConvertible", "init"]
+- !private ["PSs37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs24_ColorLiteralConvertible", "whiteColor"]
+- !private ["PSs24_DestructorSafeContainer", "Element"]
+- !private ["PSs24_ImageLiteralConvertible", "init"]
+- !private ["PSs21_ObjectiveCBridgeable", "Element"]
+- !private ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs12_Reflectable", "CGRect"]
+- !private ["PSs12_Reflectable", "Element"]
+- !private ["PSs12_Reflectable", "NSLayoutAttribute"]
+- !private ["PSs12_Reflectable", "NSLayoutConstraint"]
+- !private ["PSs12_Reflectable", "NSLayoutRelation"]
+- !private ["PSs12_Reflectable", "NSLineBreakMode"]
+- !private ["PSs12_Reflectable", "SendBirdUtils"]
+- !private ["PSs12_Reflectable", "String"]
+- !private ["PSs12_Reflectable", "UIColor"]
+- !private ["PSs12_Reflectable", "UIFont"]
+- !private ["PSs12_Reflectable", "UIImage"]
+- !private ["PSs12_Reflectable", "UIImageView"]
+- !private ["PSs12_Reflectable", "UILabel"]
+- !private ["PSs12_Reflectable", "addConstraint"]
+- !private ["PSs12_Reflectable", "addSubview"]
+- !private ["PSs12_Reflectable", "animationDuration"]
+- !private ["PSs12_Reflectable", "animationImages"]
+- !private ["PSs12_Reflectable", "animationRepeatCount"]
+- !private ["PSs12_Reflectable", "backgroundColor"]
+- !private ["PSs12_Reflectable", "count"]
+- !private ["PSs12_Reflectable", "fatalError"]
+- !private ["PSs12_Reflectable", "font"]
+- ["PSs12_Reflectable", "init"]
+- ["PSs12_Reflectable", "initView"]
+- !private ["PSs12_Reflectable", "lineBreakMode"]
+- !private ["PSs12_Reflectable", "numberOfLines"]
+- ["PSs12_Reflectable", "setModel"]
+- !private ["PSs12_Reflectable", "startAnimating"]
+- !private ["PSs12_Reflectable", "text"]
+- !private ["PSs12_Reflectable", "textColor"]
+- !private ["PSs12_Reflectable", "translatesAutoresizingMaskIntoConstraints"]
+- ["PSs12_Reflectable", "typingImageView"]
+- ["PSs12_Reflectable", "typingLabel"]
+- !private ["PSs12_Reflectable", "zero"]
+- ["PSs12_Reflectable", ""]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "Sa"
+- !private "PSs23ArrayLiteralConvertible"
+- !private "V12CoreGraphics7CGFloat"
+- !private "VSC6CGRect"
+- "PSs11CVarArgType"
+- !private "PSs14CollectionType"
+- !private "PSs10Comparable"
+- !private "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- !private "PSs28DictionaryLiteralConvertible"
+- "PSs9Equatable"
+- !private "PSs41ExtendedGraphemeClusterLiteralConvertible"
+- "PSs8Hashable"
+- !private "PSs9Indexable"
+- !private "PSs14MirrorPathType"
+- !private "PSs21MutableCollectionType"
+- !private "PSs16MutableIndexable"
+- !private "PSs16MutableSliceable"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo12NSDictionary"
+- !private "PSo17NSFastEnumeration"
+- !private "OSC17NSLayoutAttribute"
+- !private "CSo18NSLayoutConstraint"
+- !private "OSC16NSLayoutRelation"
+- !private "OSC15NSLineBreakMode"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "Sq"
+- !private "PSs16OutputStreamType"
+- !private "PSs30RangeReplaceableCollectionType"
+- !private "PSs16RawRepresentable"
+- !private "C4Knot13SendBirdUtils"
+- !private "PSs12SequenceType"
+- !private "VSs12StaticString"
+- !private "PSs10Streamable"
+- !private "SS"
+- !private "PSs30StringInterpolationConvertible"
+- !private "PSs24StringLiteralConvertible"
+- "C4Knot13TypingNowView"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- !private "CSo7UIColor"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "CSo6UIFont"
+- !private "CSo7UIImage"
+- !private "CSo11UIImageView"
+- !private "CSo7UILabel"
+- "CSo11UIResponder"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- !private "PSs31UnicodeScalarLiteralConvertible"
+- !private "PSs10_ArrayType"
+- !private "PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "PSs32_BuiltinStringLiteralConvertible"
+- !private "PSs37_BuiltinUTF16StringLiteralConvertible"
+- !private "PSs39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "PSs24_ColorLiteralConvertible"
+- !private "PSs24_DestructorSafeContainer"
+- !private "PSs24_ImageLiteralConvertible"
+- !private "PSs21_ObjectiveCBridgeable"
+- "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFDefines.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/BoltsVersion.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCore.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSServiceEnum.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMantle.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLJSONAdapter.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLManagedObjectAdapter.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel+NSCoding.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLValueTransformer.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCredentialsProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSIdentityProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCategory.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSLogging.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSClientContext.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSynchronizedMutableDictionary.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSignature.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBolts.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBoltsVersion.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationToken.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenRegistration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSExecutor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTask.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTaskCompletionSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSGZIP.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabase.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMResultSet.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabasePool.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseQueue.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTS.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentity.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognito.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoHandlers.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoDataset.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoRecord.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoConflict.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalytics.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Service.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Model.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3PreSignedURL.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferUtility.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/Instabug.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/IBGEnums.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDKUtils.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAppUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelUpdate.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberInMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingUnreadCountQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdStructuredMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMention.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMember.h"
+- "./SendBirdSDK.framework/Headers/SendBirdError.h"
+- "./SendBirdSDK.framework/Headers/SendBirdTypeStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdReadStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBroadcastMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdCommand.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSRWebSocket.h"
+- "./SendBirdSDK.framework/Headers/SendBirdWSClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileInfo.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileLink.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSystemMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSender.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageModel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdClient.h"
+- "./SendBirdSDK.framework/Headers/SendBird.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAPIClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDK.h"
+- "./SendBirdSDK.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreAudio.swiftmodule"
+interface-hash: "d1c19983ab52eb78db4de432523d5036"

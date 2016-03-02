@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         AWSMobileAnalytics *analytics = [AWSMobileAnalytics
             mobileAnalyticsForAppId: @"8a8ff18d8fa242df8a62add92ba837ab" //Amazon Mobile Analytics App ID
         identityPoolId: @"us-east-1:249a3e7c-13c2-4289-9ef2-2467fd930e4f"] //Amazon Cognito Identity Pool ID
-*/
+
         
         //calculate distance
         //remember to switch this b4 release
@@ -57,9 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
                 print(err.localizedDescription)
             }
             self.locationManager = nil
-        }
+        }*/
 
-        //self.locCurrent = CLLocation(latitude: 37.3653032084585, longitude: -122.133118002751)
+        self.locCurrent = CLLocation(latitude: 37.3653032084585, longitude: -122.133118002751)
         self.initializeNotificationServices()
         
         untapped = []

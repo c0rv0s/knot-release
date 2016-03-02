@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 class NewItemView: UIViewController, UITextFieldDelegate,
-UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -107,7 +107,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         let location = appDelegate.locCurrent
         self.makeScrambledLocation(location)
-            
+        
         
         priceField.delegate = self
         priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
@@ -415,6 +415,30 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     }
     
     func showCamera() {
+        let alert = UIAlertController(title: "Select Option:", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (alertAction) -> Void in
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                self.picker.allowsEditing = false
+                self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                self.picker.cameraCaptureMode = .Photo
+                self.picker.modalPresentationStyle = .FullScreen
+                self.presentViewController(self.picker,
+                    animated: true,
+                    completion: nil)
+            }
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Photos", style: .Default, handler: { (alertAction) -> Void in
+            self.picker.allowsEditing = true
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.picker.modalPresentationStyle = .FullScreen
+            self.presentViewController(self.picker,
+                animated: true,
+                completion: nil)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
         if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
             picker.allowsEditing = false
             picker.sourceType = UIImagePickerControllerSourceType.Camera
@@ -448,12 +472,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 uploadRequest1.body = testFileURL1
                 let task1 = transferManager.upload(uploadRequest1)
                 task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                    if task.error != nil {
-                        print("Error: \(task.error)")
-                    } else {
-                        print("thumbnail added")
-                    }
-                    return nil
+                if task.error != nil {
+                print("Error: \(task.error)")
+                } else {
+                print("thumbnail added")
+                }
+                return nil
                 }
                 //done uploading
                 */
@@ -476,7 +500,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     return nil
                 }
                 //done uploading
-
+                
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 //addphoto2.hidden = false
@@ -578,73 +602,73 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
             /*
             if one {
-                print("one is one")
-                let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-                let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
-                dataOne!.writeToURL(testFileURL1, atomically: true)
-                uploadRequest1.bucket = "knotcompleximages"
-                uploadRequest1.key = self.uniqueID
-                uploadRequest1.body = testFileURL1
-                let task1 = transferManager.upload(uploadRequest1)
-                task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                    if task.error != nil {
-                        print("Error: \(task.error)")
-                        success1 = 2
-                    } else {
-                        success1 = 1
-                        self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                        //these two are a mess, fix before implementing
-                        /*
-                        if self.two {
-                            print("two is on")
-                            let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-                            let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                            let imageDataTwo = self.picTwo.mediumQualityJPEGNSData
-                            let dataTwo = UIImageJPEGRepresentation(UIImage(data: imageDataTwo)!, 0.5)
-                            dataTwo!.writeToURL(testFileURL2, atomically: true)
-                            uploadRequest2.bucket = "knotcompleximage2"
-                            uploadRequest2.key = self.uniqueID
-                            uploadRequest2.body = testFileURL2
-                            let task2 = transferManager.upload(uploadRequest2)
-                            task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                                if task.error != nil {
-                                    print("Error: \(task.error)")
-                                    success2 = 2
-                                } else {
-                                    success2 = 1
-                                    if self.three {
-                                        print("three is on")
-                                        let testFileURL3 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-                                        let uploadRequest3 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                                        let imageDataThree = self.picThree.mediumQualityJPEGNSData
-                                        let dataThree = UIImageJPEGRepresentation(UIImage(data: imageDataThree)!, 0.5)
-                                        dataThree!.writeToURL(testFileURL3, atomically: true)
-                                        uploadRequest3.bucket = "knotcompleximage3"
-                                        uploadRequest3.key = self.uniqueID
-                                        uploadRequest3.body = testFileURL3
-                                        let task3 = transferManager.upload(uploadRequest3)
-                                        task3.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                                            if task.error != nil {
-                                                print("Error: \(task.error)")
-                                                success3 = 2
-                                            }
-                                            else {
-                                                print("Upload successful")
-                                              
-                                            }
-                                            return nil
-                                        }
-                                        
-                                    }
-                                }
-                                return nil
-                            }
-                            
-                        }*/
-                    }
-                    return nil
-                }
+            print("one is one")
+            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+            dataOne!.writeToURL(testFileURL1, atomically: true)
+            uploadRequest1.bucket = "knotcompleximages"
+            uploadRequest1.key = self.uniqueID
+            uploadRequest1.body = testFileURL1
+            let task1 = transferManager.upload(uploadRequest1)
+            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if task.error != nil {
+            print("Error: \(task.error)")
+            success1 = 2
+            } else {
+            success1 = 1
+            self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+            //these two are a mess, fix before implementing
+            /*
+            if self.two {
+            print("two is on")
+            let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let imageDataTwo = self.picTwo.mediumQualityJPEGNSData
+            let dataTwo = UIImageJPEGRepresentation(UIImage(data: imageDataTwo)!, 0.5)
+            dataTwo!.writeToURL(testFileURL2, atomically: true)
+            uploadRequest2.bucket = "knotcompleximage2"
+            uploadRequest2.key = self.uniqueID
+            uploadRequest2.body = testFileURL2
+            let task2 = transferManager.upload(uploadRequest2)
+            task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if task.error != nil {
+            print("Error: \(task.error)")
+            success2 = 2
+            } else {
+            success2 = 1
+            if self.three {
+            print("three is on")
+            let testFileURL3 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest3 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let imageDataThree = self.picThree.mediumQualityJPEGNSData
+            let dataThree = UIImageJPEGRepresentation(UIImage(data: imageDataThree)!, 0.5)
+            dataThree!.writeToURL(testFileURL3, atomically: true)
+            uploadRequest3.bucket = "knotcompleximage3"
+            uploadRequest3.key = self.uniqueID
+            uploadRequest3.body = testFileURL3
+            let task3 = transferManager.upload(uploadRequest3)
+            task3.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if task.error != nil {
+            print("Error: \(task.error)")
+            success3 = 2
+            }
+            else {
+            print("Upload successful")
+            
+            }
+            return nil
+            }
+            
+            }
+            }
+            return nil
+            }
+            
+            }*/
+            }
+            return nil
+            }
             }*/
         }
     }
@@ -675,47 +699,47 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     }
     
     func resizeImage(image: UIImage) -> UIImage {
-    var actualHeight = CGFloat(image.size.height)
-    var actualWidth = CGFloat(image.size.width)
-    var maxHeight = CGFloat(300.0)
-    var maxWidth = CGFloat(500.00)
-    var imgRatio = CGFloat(actualWidth/actualHeight)
-    var maxRatio = CGFloat(maxWidth/maxHeight)
-    var compressionQuality = CGFloat(0.40)//40 percent compression
-    
-    if (actualHeight > maxHeight || actualWidth > maxWidth)
-    {
-    if(imgRatio < maxRatio)
-    {
-    //adjust width according to maxHeight
-    imgRatio = maxHeight / actualHeight;
-    actualWidth = imgRatio * actualWidth;
-    actualHeight = maxHeight;
-    }
-    else if(imgRatio > maxRatio)
-    {
-    //adjust height according to maxWidth
-    imgRatio = maxWidth / actualWidth;
-    actualHeight = imgRatio * actualHeight;
-    actualWidth = maxWidth;
-    }
-    else
-    {
-    actualHeight = maxHeight;
-    actualWidth = maxWidth;
-    }
-    }
-    
-    let rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
-    UIGraphicsBeginImageContext(rect.size);
-    image.drawInRect(rect)
+        var actualHeight = CGFloat(image.size.height)
+        var actualWidth = CGFloat(image.size.width)
+        var maxHeight = CGFloat(300.0)
+        var maxWidth = CGFloat(500.00)
+        var imgRatio = CGFloat(actualWidth/actualHeight)
+        var maxRatio = CGFloat(maxWidth/maxHeight)
+        var compressionQuality = CGFloat(0.40)//40 percent compression
+        
+        if (actualHeight > maxHeight || actualWidth > maxWidth)
+        {
+            if(imgRatio < maxRatio)
+            {
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight;
+                actualWidth = imgRatio * actualWidth;
+                actualHeight = maxHeight;
+            }
+            else if(imgRatio > maxRatio)
+            {
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth;
+                actualHeight = imgRatio * actualHeight;
+                actualWidth = maxWidth;
+            }
+            else
+            {
+                actualHeight = maxHeight;
+                actualWidth = maxWidth;
+            }
+        }
+        
+        let rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+        UIGraphicsBeginImageContext(rect.size);
+        image.drawInRect(rect)
         //[image drawInRect:rect];
-    let img = UIGraphicsGetImageFromCurrentImageContext();
-    let imageData = UIImageJPEGRepresentation(img, compressionQuality);
-    UIGraphicsEndImageContext();
-    
-    return UIImage(data:imageData!)!
-    
+        let img = UIGraphicsGetImageFromCurrentImageContext();
+        let imageData = UIImageJPEGRepresentation(img, compressionQuality);
+        UIGraphicsEndImageContext();
+        
+        return UIImage(data:imageData!)!
+        
     }
     
     func cropToSquare(image originalImage: UIImage) -> UIImage {
