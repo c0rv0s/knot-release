@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             self.locationManager = nil
         }*/
 
-        self.locCurrent = CLLocation(latitude: 37.3653032084585, longitude: -122.133118002751)
+        self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751)
         self.initializeNotificationServices()
         
         untapped = []
