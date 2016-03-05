@@ -1191,8 +1191,8 @@
     </scenes>
     <resources>
         <image name="add139" width="32" height="32"/>
-        <image name="avatar83" width="32" height="32"/>
-        <image name="chat55" width="32" height="32"/>
+        <image name="avatar83" width="60" height="60"/>
+        <image name="chat55" width="60" height="60"/>
         <image name="flag27" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
         <image name="heart" width="128" height="128"/>

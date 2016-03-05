@@ -1,0 +1,658 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "OneShotLocationManagerErrors"
+- "OneShotLocationManager"
+provides-nominal:
+- "O4Knot28OneShotLocationManagerErrors"
+- "C4Knot22OneShotLocationManager"
+provides-member:
+- ["O4Knot28OneShotLocationManagerErrors", ""]
+- ["C4Knot22OneShotLocationManager", ""]
+provides-dynamic-lookup:
+- "fetchWithCompletion"
+- "locationManager"
+- "locationManager"
+- "locationManager"
+depends-top-level:
+- "CLLocationManager"
+- "CLLocation"
+- !private "fatalError"
+- !private "NSBundle"
+- "NSError"
+- !private "!="
+- "OneShotLocationManagerErrors"
+- "OneShotLocationManager"
+- "NSObject"
+- "CLLocationManagerDelegate"
+- "Int"
+- !private "~="
+- "=="
+- !private "StringLiteralType"
+- "CLAuthorizationStatus"
+depends-member:
+- !private ["PSs9AnyObject", "CLLocationManager"]
+- !private ["PSs9AnyObject", "NSBundle"]
+- !private ["PSs9AnyObject", "NSError"]
+- !private ["PSs9AnyObject", "OneShotLocationManagerErrors"]
+- ["PSs9AnyObject", "_didComplete"]
+- !private ["PSs9AnyObject", "classForCoder"]
+- !private ["PSs9AnyObject", "deinit"]
+- !private ["PSs9AnyObject", "delegate"]
+- !private ["PSs9AnyObject", "description"]
+- ["PSs9AnyObject", "didComplete"]
+- !private ["PSs9AnyObject", "fatalError"]
+- ["PSs9AnyObject", "fetchWithCompletion"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "locationManager"]
+- ["PSs9AnyObject", "locationManagerDidPauseLocationUpdates"]
+- ["PSs9AnyObject", "locationManagerDidResumeLocationUpdates"]
+- ["PSs9AnyObject", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSs9AnyObject", "mainBundle"]
+- !private ["PSs9AnyObject", "objectForInfoDictionaryKey"]
+- !private ["PSs9AnyObject", "requestAlwaysAuthorization"]
+- !private ["PSs9AnyObject", "requestWhenInUseAuthorization"]
+- !private ["PSs9AnyObject", "startUpdatingLocation"]
+- !private ["PSs9AnyObject", "stopUpdatingLocation"]
+- ["PSs9AnyObject", ""]
+- !private ["Sa", "Index"]
+- !private ["Sa", "deinit"]
+- !private ["Sa", "subscript"]
+- !private ["PSs23ArrayLiteralConvertible", "Index"]
+- !private ["PSs23ArrayLiteralConvertible", "subscript"]
+- !private ["PSs22BidirectionalIndexType", "Distance"]
+- !private ["PSs22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["PSs22BidirectionalIndexType", "hashValue"]
+- !private ["PSs21BitwiseOperationsType", "Distance"]
+- !private ["PSs21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["PSs21BitwiseOperationsType", "hashValue"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- ["OSC21CLAuthorizationStatus", "AuthorizedWhenInUse"]
+- ["OSC21CLAuthorizationStatus", "Denied"]
+- !private ["CSo17CLLocationManager", "delegate"]
+- !private ["CSo17CLLocationManager", "init"]
+- !private ["CSo17CLLocationManager", "requestAlwaysAuthorization"]
+- !private ["CSo17CLLocationManager", "requestWhenInUseAuthorization"]
+- !private ["CSo17CLLocationManager", "startUpdatingLocation"]
+- !private ["CSo17CLLocationManager", "stopUpdatingLocation"]
+- !private ["PSo25CLLocationManagerDelegate", "CLLocationManager"]
+- !private ["PSo25CLLocationManagerDelegate", "NSBundle"]
+- !private ["PSo25CLLocationManagerDelegate", "NSError"]
+- !private ["PSo25CLLocationManagerDelegate", "OneShotLocationManagerErrors"]
+- !private ["PSo25CLLocationManagerDelegate", "_didComplete"]
+- !private ["PSo25CLLocationManagerDelegate", "classForCoder"]
+- !private ["PSo25CLLocationManagerDelegate", "didComplete"]
+- !private ["PSo25CLLocationManagerDelegate", "fatalError"]
+- ["PSo25CLLocationManagerDelegate", "locationManager"]
+- ["PSo25CLLocationManagerDelegate", "locationManagerDidPauseLocationUpdates"]
+- ["PSo25CLLocationManagerDelegate", "locationManagerDidResumeLocationUpdates"]
+- ["PSo25CLLocationManagerDelegate", "locationManagerShouldDisplayHeadingCalibration"]
+- ["PSo25CLLocationManagerDelegate", ""]
+- !private ["PSs11CVarArgType", "CLLocationManager"]
+- !private ["PSs11CVarArgType", "Distance"]
+- !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- !private ["PSs11CVarArgType", "NSBundle"]
+- !private ["PSs11CVarArgType", "NSError"]
+- !private ["PSs11CVarArgType", "OneShotLocationManagerErrors"]
+- ["PSs11CVarArgType", "_didComplete"]
+- !private ["PSs11CVarArgType", "classForCoder"]
+- !private ["PSs11CVarArgType", "delegate"]
+- ["PSs11CVarArgType", "didComplete"]
+- !private ["PSs11CVarArgType", "fatalError"]
+- ["PSs11CVarArgType", "fetchWithCompletion"]
+- !private ["PSs11CVarArgType", "hashValue"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "locationManager"]
+- ["PSs11CVarArgType", "locationManagerDidPauseLocationUpdates"]
+- ["PSs11CVarArgType", "locationManagerDidResumeLocationUpdates"]
+- ["PSs11CVarArgType", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSs11CVarArgType", "mainBundle"]
+- !private ["PSs11CVarArgType", "objectForInfoDictionaryKey"]
+- !private ["PSs11CVarArgType", "requestAlwaysAuthorization"]
+- !private ["PSs11CVarArgType", "requestWhenInUseAuthorization"]
+- !private ["PSs11CVarArgType", "startUpdatingLocation"]
+- !private ["PSs11CVarArgType", "stopUpdatingLocation"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs14CollectionType", "Generator"]
+- !private ["PSs14CollectionType", "Index"]
+- !private ["PSs14CollectionType", "SubSequence"]
+- !private ["PSs14CollectionType", "_Element"]
+- !private ["PSs14CollectionType", "subscript"]
+- !private ["PSs10Comparable", "Distance"]
+- !private ["PSs10Comparable", "IntegerLiteralType"]
+- !private ["PSs10Comparable", "hashValue"]
+- !private ["PSs28CustomDebugStringConvertible", "Index"]
+- !private ["PSs28CustomDebugStringConvertible", "subscript"]
+- !private ["PSs23CustomStringConvertible", "CLLocationManager"]
+- !private ["PSs23CustomStringConvertible", "Distance"]
+- !private ["PSs23CustomStringConvertible", "Index"]
+- !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["PSs23CustomStringConvertible", "NSBundle"]
+- !private ["PSs23CustomStringConvertible", "NSError"]
+- !private ["PSs23CustomStringConvertible", "OneShotLocationManagerErrors"]
+- ["PSs23CustomStringConvertible", "_didComplete"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "classForCoder"]
+- !private ["PSs23CustomStringConvertible", "delegate"]
+- ["PSs23CustomStringConvertible", "didComplete"]
+- !private ["PSs23CustomStringConvertible", "fatalError"]
+- ["PSs23CustomStringConvertible", "fetchWithCompletion"]
+- !private ["PSs23CustomStringConvertible", "hashValue"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "locationManager"]
+- ["PSs23CustomStringConvertible", "locationManagerDidPauseLocationUpdates"]
+- ["PSs23CustomStringConvertible", "locationManagerDidResumeLocationUpdates"]
+- ["PSs23CustomStringConvertible", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSs23CustomStringConvertible", "mainBundle"]
+- !private ["PSs23CustomStringConvertible", "objectForInfoDictionaryKey"]
+- !private ["PSs23CustomStringConvertible", "requestAlwaysAuthorization"]
+- !private ["PSs23CustomStringConvertible", "requestWhenInUseAuthorization"]
+- !private ["PSs23CustomStringConvertible", "startUpdatingLocation"]
+- !private ["PSs23CustomStringConvertible", "stopUpdatingLocation"]
+- !private ["PSs23CustomStringConvertible", "subscript"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["Sd", "deinit"]
+- !private ["PSs9Equatable", "AuthorizationDenied"]
+- ["PSs9Equatable", "AuthorizedWhenInUse"]
+- !private ["PSs9Equatable", "CLLocationManager"]
+- ["PSs9Equatable", "Denied"]
+- !private ["PSs9Equatable", "Distance"]
+- !private ["PSs9Equatable", "IntegerLiteralType"]
+- !private ["PSs9Equatable", "NSBundle"]
+- !private ["PSs9Equatable", "NSError"]
+- !private ["PSs9Equatable", "OneShotLocationManagerErrors"]
+- ["PSs9Equatable", "RawValue"]
+- ["PSs9Equatable", "_didComplete"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "classForCoder"]
+- !private ["PSs9Equatable", "delegate"]
+- ["PSs9Equatable", "didComplete"]
+- !private ["PSs9Equatable", "fatalError"]
+- ["PSs9Equatable", "fetchWithCompletion"]
+- ["PSs9Equatable", "hashValue"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "locationManager"]
+- ["PSs9Equatable", "locationManagerDidPauseLocationUpdates"]
+- ["PSs9Equatable", "locationManagerDidResumeLocationUpdates"]
+- ["PSs9Equatable", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSs9Equatable", "mainBundle"]
+- !private ["PSs9Equatable", "objectForInfoDictionaryKey"]
+- ["PSs9Equatable", "rawValue"]
+- !private ["PSs9Equatable", "requestAlwaysAuthorization"]
+- !private ["PSs9Equatable", "requestWhenInUseAuthorization"]
+- !private ["PSs9Equatable", "startUpdatingLocation"]
+- !private ["PSs9Equatable", "stopUpdatingLocation"]
+- ["PSs9Equatable", ""]
+- !private ["PSs9ErrorType", "init"]
+- !private ["PSs16ForwardIndexType", "Distance"]
+- !private ["PSs16ForwardIndexType", "IntegerLiteralType"]
+- !private ["PSs16ForwardIndexType", "hashValue"]
+- !private ["PSs13GeneratorType", "Element"]
+- !private ["PSs8Hashable", "AuthorizationDenied"]
+- ["PSs8Hashable", "AuthorizedWhenInUse"]
+- !private ["PSs8Hashable", "CLLocationManager"]
+- ["PSs8Hashable", "Denied"]
+- !private ["PSs8Hashable", "Distance"]
+- !private ["PSs8Hashable", "IntegerLiteralType"]
+- !private ["PSs8Hashable", "NSBundle"]
+- !private ["PSs8Hashable", "NSError"]
+- !private ["PSs8Hashable", "OneShotLocationManagerErrors"]
+- ["PSs8Hashable", "RawValue"]
+- ["PSs8Hashable", "_didComplete"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "classForCoder"]
+- !private ["PSs8Hashable", "delegate"]
+- ["PSs8Hashable", "didComplete"]
+- !private ["PSs8Hashable", "fatalError"]
+- ["PSs8Hashable", "fetchWithCompletion"]
+- ["PSs8Hashable", "hashValue"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "locationManager"]
+- ["PSs8Hashable", "locationManagerDidPauseLocationUpdates"]
+- ["PSs8Hashable", "locationManagerDidResumeLocationUpdates"]
+- ["PSs8Hashable", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSs8Hashable", "mainBundle"]
+- !private ["PSs8Hashable", "objectForInfoDictionaryKey"]
+- ["PSs8Hashable", "rawValue"]
+- !private ["PSs8Hashable", "requestAlwaysAuthorization"]
+- !private ["PSs8Hashable", "requestWhenInUseAuthorization"]
+- !private ["PSs8Hashable", "startUpdatingLocation"]
+- !private ["PSs8Hashable", "stopUpdatingLocation"]
+- ["PSs8Hashable", ""]
+- !private ["PSs9Indexable", "Generator"]
+- !private ["PSs9Indexable", "Index"]
+- !private ["PSs9Indexable", "SubSequence"]
+- !private ["PSs9Indexable", "_Element"]
+- !private ["PSs9Indexable", "subscript"]
+- !private ["VSs17IndexingGenerator", "Element"]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "deinit"]
+- !private ["Si", "hashValue"]
+- !private ["PSs21IntegerArithmeticType", "Distance"]
+- !private ["PSs21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs21IntegerArithmeticType", "hashValue"]
+- !private ["PSs25IntegerLiteralConvertible", "Distance"]
+- !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs25IntegerLiteralConvertible", "hashValue"]
+- !private ["PSs11IntegerType", "Distance"]
+- !private ["PSs11IntegerType", "IntegerLiteralType"]
+- !private ["PSs11IntegerType", "hashValue"]
+- !private ["PSs14MirrorPathType", "Distance"]
+- !private ["PSs14MirrorPathType", "IntegerLiteralType"]
+- !private ["PSs14MirrorPathType", "hashValue"]
+- !private ["PSs21MutableCollectionType", "Index"]
+- !private ["PSs21MutableCollectionType", "subscript"]
+- !private ["PSs16MutableIndexable", "Index"]
+- !private ["PSs16MutableIndexable", "subscript"]
+- !private ["PSs16MutableSliceable", "Index"]
+- !private ["PSs16MutableSliceable", "subscript"]
+- !private ["CSo8NSBundle", "mainBundle"]
+- !private ["CSo8NSBundle", "objectForInfoDictionaryKey"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["CSo7NSError", "init"]
+- !private ["CSo8NSNumber", "deinit"]
+- ["CSo8NSObject", "CLAuthorizationStatus"]
+- ["CSo8NSObject", "CLLocation"]
+- ["CSo8NSObject", "CLLocationManager"]
+- ["CSo8NSObject", "LocationClosure"]
+- !private ["CSo8NSObject", "NSBundle"]
+- ["CSo8NSObject", "NSError"]
+- !private ["CSo8NSObject", "OneShotLocationManagerErrors"]
+- ["CSo8NSObject", "_didComplete"]
+- !private ["CSo8NSObject", "classForCoder"]
+- !private ["CSo8NSObject", "deinit"]
+- !private ["CSo8NSObject", "delegate"]
+- ["CSo8NSObject", "didComplete"]
+- !private ["CSo8NSObject", "fatalError"]
+- ["CSo8NSObject", "fetchWithCompletion"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "locationManager"]
+- ["CSo8NSObject", "locationManagerDidPauseLocationUpdates"]
+- ["CSo8NSObject", "locationManagerDidResumeLocationUpdates"]
+- ["CSo8NSObject", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["CSo8NSObject", "mainBundle"]
+- !private ["CSo8NSObject", "objectForInfoDictionaryKey"]
+- !private ["CSo8NSObject", "requestAlwaysAuthorization"]
+- !private ["CSo8NSObject", "requestWhenInUseAuthorization"]
+- !private ["CSo8NSObject", "startUpdatingLocation"]
+- !private ["CSo8NSObject", "stopUpdatingLocation"]
+- ["CSo8NSObject", ""]
+- !private ["PSo16NSObjectProtocol", "CLLocationManager"]
+- !private ["PSo16NSObjectProtocol", "NSBundle"]
+- !private ["PSo16NSObjectProtocol", "NSError"]
+- !private ["PSo16NSObjectProtocol", "OneShotLocationManagerErrors"]
+- ["PSo16NSObjectProtocol", "_didComplete"]
+- !private ["PSo16NSObjectProtocol", "classForCoder"]
+- !private ["PSo16NSObjectProtocol", "delegate"]
+- ["PSo16NSObjectProtocol", "didComplete"]
+- !private ["PSo16NSObjectProtocol", "fatalError"]
+- ["PSo16NSObjectProtocol", "fetchWithCompletion"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "locationManager"]
+- ["PSo16NSObjectProtocol", "locationManagerDidPauseLocationUpdates"]
+- ["PSo16NSObjectProtocol", "locationManagerDidResumeLocationUpdates"]
+- ["PSo16NSObjectProtocol", "locationManagerShouldDisplayHeadingCalibration"]
+- !private ["PSo16NSObjectProtocol", "mainBundle"]
+- !private ["PSo16NSObjectProtocol", "objectForInfoDictionaryKey"]
+- !private ["PSo16NSObjectProtocol", "requestAlwaysAuthorization"]
+- !private ["PSo16NSObjectProtocol", "requestWhenInUseAuthorization"]
+- !private ["PSo16NSObjectProtocol", "startUpdatingLocation"]
+- !private ["PSo16NSObjectProtocol", "stopUpdatingLocation"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo7NSValue", "deinit"]
+- ["C4Knot22OneShotLocationManager", "CLAuthorizationStatus"]
+- ["C4Knot22OneShotLocationManager", "CLLocation"]
+- ["C4Knot22OneShotLocationManager", "CLLocationManager"]
+- ["C4Knot22OneShotLocationManager", "LocationClosure"]
+- !private ["C4Knot22OneShotLocationManager", "NSBundle"]
+- ["C4Knot22OneShotLocationManager", "NSError"]
+- !private ["C4Knot22OneShotLocationManager", "OneShotLocationManagerErrors"]
+- !private ["C4Knot22OneShotLocationManager", "_didComplete"]
+- !private ["C4Knot22OneShotLocationManager", "classForCoder"]
+- ["C4Knot22OneShotLocationManager", "deinit"]
+- !private ["C4Knot22OneShotLocationManager", "didComplete"]
+- !private ["C4Knot22OneShotLocationManager", "fatalError"]
+- ["C4Knot22OneShotLocationManager", "fetchWithCompletion"]
+- ["C4Knot22OneShotLocationManager", "init"]
+- ["C4Knot22OneShotLocationManager", "locationManager"]
+- ["C4Knot22OneShotLocationManager", "locationManagerDidPauseLocationUpdates"]
+- ["C4Knot22OneShotLocationManager", "locationManagerDidResumeLocationUpdates"]
+- ["C4Knot22OneShotLocationManager", "locationManagerShouldDisplayHeadingCalibration"]
+- ["O4Knot28OneShotLocationManagerErrors", "AuthorizationDenied"]
+- ["O4Knot28OneShotLocationManagerErrors", "AuthorizationNotDetermined"]
+- ["O4Knot28OneShotLocationManagerErrors", "InvalidLocation"]
+- ["O4Knot28OneShotLocationManagerErrors", "RawValue"]
+- ["O4Knot28OneShotLocationManagerErrors", "deinit"]
+- ["O4Knot28OneShotLocationManagerErrors", "hashValue"]
+- ["O4Knot28OneShotLocationManagerErrors", "init"]
+- ["O4Knot28OneShotLocationManagerErrors", "rawValue"]
+- !private ["Sq", "deinit"]
+- !private ["PSs21RandomAccessIndexType", "Distance"]
+- !private ["PSs21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["PSs21RandomAccessIndexType", "hashValue"]
+- !private ["VSs5Range", "deinit"]
+- !private ["PSs30RangeReplaceableCollectionType", "Index"]
+- !private ["PSs30RangeReplaceableCollectionType", "subscript"]
+- !private ["PSs16RawRepresentable", "AuthorizationDenied"]
+- ["PSs16RawRepresentable", "AuthorizedWhenInUse"]
+- ["PSs16RawRepresentable", "Denied"]
+- ["PSs16RawRepresentable", "RawValue"]
+- ["PSs16RawRepresentable", "hashValue"]
+- ["PSs16RawRepresentable", "init"]
+- ["PSs16RawRepresentable", "rawValue"]
+- ["PSs16RawRepresentable", ""]
+- !private ["PSs12SequenceType", "Element"]
+- !private ["PSs12SequenceType", "Generator"]
+- !private ["PSs12SequenceType", "Index"]
+- !private ["PSs12SequenceType", "SubSequence"]
+- !private ["PSs12SequenceType", "_Element"]
+- !private ["PSs12SequenceType", "subscript"]
+- !private ["PSs17SignedIntegerType", "Distance"]
+- !private ["PSs17SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs17SignedIntegerType", "hashValue"]
+- !private ["PSs16SignedNumberType", "Distance"]
+- !private ["PSs16SignedNumberType", "IntegerLiteralType"]
+- !private ["PSs16SignedNumberType", "hashValue"]
+- !private ["VSs5Slice", "Generator"]
+- !private ["VSs5Slice", "Index"]
+- !private ["VSs5Slice", "SubSequence"]
+- !private ["VSs5Slice", "_Element"]
+- !private ["VSs12StaticString", "deinit"]
+- !private ["PSs10Strideable", "Distance"]
+- !private ["PSs10Strideable", "IntegerLiteralType"]
+- !private ["PSs10Strideable", "hashValue"]
+- !private ["PSs10_ArrayType", "Index"]
+- !private ["PSs10_ArrayType", "subscript"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "hashValue"]
+- !private ["PSs24_DestructorSafeContainer", "Index"]
+- !private ["PSs24_DestructorSafeContainer", "subscript"]
+- !private ["PSs14_Incrementable", "Distance"]
+- !private ["PSs14_Incrementable", "IntegerLiteralType"]
+- !private ["PSs14_Incrementable", "hashValue"]
+- !private ["PSs22_IntegerArithmeticType", "Distance"]
+- !private ["PSs22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs22_IntegerArithmeticType", "hashValue"]
+- !private ["PSs12_IntegerType", "Distance"]
+- !private ["PSs12_IntegerType", "IntegerLiteralType"]
+- !private ["PSs12_IntegerType", "hashValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "Distance"]
+- !private ["PSs21_ObjectiveCBridgeable", "Index"]
+- !private ["PSs21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "hashValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "subscript"]
+- !private ["VSs26_OptionalNilComparisonType", "deinit"]
+- !private ["PSs22_RandomAccessAmbiguity", "Distance"]
+- !private ["PSs22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["PSs22_RandomAccessAmbiguity", "hashValue"]
+- !private ["PSs12_Reflectable", "Distance"]
+- !private ["PSs12_Reflectable", "Index"]
+- !private ["PSs12_Reflectable", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "hashValue"]
+- !private ["PSs12_Reflectable", "subscript"]
+- !private ["PSs18_SignedIntegerType", "Distance"]
+- !private ["PSs18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs18_SignedIntegerType", "hashValue"]
+- !private ["PSs11_Strideable", "Distance"]
+- !private ["PSs11_Strideable", "IntegerLiteralType"]
+- !private ["PSs11_Strideable", "hashValue"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "Sa"
+- !private "PSs23ArrayLiteralConvertible"
+- !private "PSs22BidirectionalIndexType"
+- !private "PSs21BitwiseOperationsType"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- "OSC21CLAuthorizationStatus"
+- !private "CSo17CLLocationManager"
+- "PSo25CLLocationManagerDelegate"
+- "PSs11CVarArgType"
+- !private "PSs14CollectionType"
+- !private "PSs10Comparable"
+- !private "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- !private "Sd"
+- "PSs9Equatable"
+- !private "PSs9ErrorType"
+- !private "PSs16ForwardIndexType"
+- !private "PSs13GeneratorType"
+- "PSs8Hashable"
+- !private "PSs9Indexable"
+- !private "VSs17IndexingGenerator"
+- !private "Si"
+- !private "PSs21IntegerArithmeticType"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs11IntegerType"
+- !private "PSs14MirrorPathType"
+- !private "PSs21MutableCollectionType"
+- !private "PSs16MutableIndexable"
+- !private "PSs16MutableSliceable"
+- !private "CSo8NSBundle"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo7NSError"
+- !private "CSo8NSNumber"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo7NSValue"
+- "C4Knot22OneShotLocationManager"
+- "O4Knot28OneShotLocationManagerErrors"
+- !private "Sq"
+- !private "PSs21RandomAccessIndexType"
+- !private "VSs5Range"
+- !private "PSs30RangeReplaceableCollectionType"
+- "PSs16RawRepresentable"
+- !private "PSs12SequenceType"
+- !private "PSs17SignedIntegerType"
+- !private "PSs16SignedNumberType"
+- !private "VSs5Slice"
+- !private "VSs12StaticString"
+- !private "PSs10Strideable"
+- !private "PSs10_ArrayType"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- !private "PSs24_DestructorSafeContainer"
+- !private "PSs14_Incrementable"
+- !private "PSs22_IntegerArithmeticType"
+- !private "PSs12_IntegerType"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "VSs26_OptionalNilComparisonType"
+- !private "PSs22_RandomAccessAmbiguity"
+- !private "PSs12_Reflectable"
+- !private "PSs18_SignedIntegerType"
+- !private "PSs11_Strideable"
+depends-dynamic-lookup:
+- !private "description"
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFDefines.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/BoltsVersion.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCore.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSServiceEnum.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMantle.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLJSONAdapter.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLManagedObjectAdapter.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel+NSCoding.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLValueTransformer.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCredentialsProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSIdentityProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCategory.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSLogging.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSClientContext.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSynchronizedMutableDictionary.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSignature.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBolts.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBoltsVersion.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationToken.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenRegistration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSExecutor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTask.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTaskCompletionSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSGZIP.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabase.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMResultSet.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabasePool.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseQueue.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTS.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentity.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognito.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoHandlers.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoDataset.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoRecord.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoConflict.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalytics.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Service.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Model.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3PreSignedURL.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferUtility.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/Instabug.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/IBGEnums.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDKUtils.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAppUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelUpdate.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberInMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingUnreadCountQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdStructuredMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMention.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMember.h"
+- "./SendBirdSDK.framework/Headers/SendBirdError.h"
+- "./SendBirdSDK.framework/Headers/SendBirdTypeStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdReadStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBroadcastMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdCommand.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSRWebSocket.h"
+- "./SendBirdSDK.framework/Headers/SendBirdWSClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileInfo.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileLink.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSystemMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSender.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageModel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdClient.h"
+- "./SendBirdSDK.framework/Headers/SendBird.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAPIClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDK.h"
+- "./SendBirdSDK.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreAudio.swiftmodule"
+interface-hash: "0282de2e0a554d10371b5564d22d09cd"

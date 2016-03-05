@@ -1,0 +1,1916 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "AppDelegate"
+provides-nominal:
+- "C4Knot11AppDelegate"
+provides-member:
+- ["C4Knot11AppDelegate", ""]
+provides-dynamic-lookup:
+- "applicationWillTerminate"
+- "managedObjectContext"
+- "managedObjectModel"
+- "startApp"
+- "dataStash"
+- "saveContext"
+- "persistentStoreCoordinator"
+- "credentialsProvider"
+- "applicationDidBecomeActive"
+- "applicationDidEnterBackground"
+- "applicationDocumentsDirectory"
+- "application"
+- "application"
+- "application"
+- "application"
+- "application"
+- "locationManager"
+- "untapped"
+- "applicationWillEnterForeground"
+- "locCurrent"
+- "applicationWillResignActive"
+- "window"
+- "initializeNotificationServices"
+- "cognitoId"
+depends-top-level:
+- "AWSCognitoCredentialsProvider"
+- "AppDelegate"
+- !private "NSFileManager"
+- "UIResponder"
+- "Bool"
+- "Int"
+- "UIApplication"
+- "NSObject"
+- "NSData"
+- !private "AWSTask"
+- !private "NSDateFormatter"
+- !private "NSUnderlyingErrorKey"
+- !private "IBGInvocationEventShake"
+- "Void"
+- "CLLocation"
+- "Array"
+- !private "UIUserNotificationSettings"
+- !private "AWSServiceConfiguration"
+- "NSError"
+- "UIWindow"
+- "NSManagedObjectModel"
+- !private "AWSDynamoDBObjectMapper"
+- !private "!="
+- "UIBackgroundFetchResult"
+- "OneShotLocationManager"
+- !private "UINavigationBar"
+- !private "UIAlertController"
+- !private "NSLog"
+- "NSURL"
+- !private "NSDate"
+- "String"
+- !private "AWSServiceManager"
+- "NSPersistentStoreCoordinator"
+- !private "UnicodeScalarType"
+- !private "NSLocalizedDescriptionKey"
+- !private "NSDictionary"
+- !private "abort"
+- "StringLiteralType"
+- !private "-"
+- "NSManagedObjectContext"
+- !private "UIAlertControllerStyle"
+- !private "NSBundle"
+- !private "NSSQLiteStoreType"
+- "BFTask"
+- !private "Instabug"
+- "AnyObject"
+- !private "print"
+- !private "NSLocalizedFailureReasonErrorKey"
+- !private "+"
+- "UIApplicationDelegate"
+- "BooleanLiteralType"
+- !private "sessionData"
+- !private "FBSDKApplicationDelegate"
+depends-member:
+- !private ["CSo29AWSCognitoCredentialsProvider", "getIdentityId"]
+- ["CSo29AWSCognitoCredentialsProvider", "init"]
+- !private ["PSo22AWSCredentialsProvider", "getIdentityId"]
+- ["PSo22AWSCredentialsProvider", "init"]
+- !private ["CSo16AWSDynamoDBModel", "itemID"]
+- !private ["CSo16AWSDynamoDBModel", "status"]
+- !private ["CSo16AWSDynamoDBModel", "timestamp"]
+- !private ["CSo16AWSDynamoDBModel", "userID"]
+- !private ["PSo19AWSDynamoDBModeling", "init"]
+- !private ["PSo19AWSDynamoDBModeling", "itemID"]
+- !private ["PSo19AWSDynamoDBModeling", "status"]
+- !private ["PSo19AWSDynamoDBModeling", "timestamp"]
+- !private ["PSo19AWSDynamoDBModeling", "userID"]
+- !private ["CSo23AWSDynamoDBObjectMapper", "defaultDynamoDBObjectMapper"]
+- !private ["CSo23AWSDynamoDBObjectMapper", "save"]
+- !private ["CSo22AWSDynamoDBObjectModel", "init"]
+- !private ["CSo22AWSDynamoDBObjectModel", "itemID"]
+- !private ["CSo22AWSDynamoDBObjectModel", "status"]
+- !private ["CSo22AWSDynamoDBObjectModel", "timestamp"]
+- !private ["CSo22AWSDynamoDBObjectModel", "userID"]
+- !private ["PSo21AWSMTLJSONSerializing", "init"]
+- !private ["PSo21AWSMTLJSONSerializing", "itemID"]
+- !private ["PSo21AWSMTLJSONSerializing", "status"]
+- !private ["PSo21AWSMTLJSONSerializing", "timestamp"]
+- !private ["PSo21AWSMTLJSONSerializing", "userID"]
+- !private ["CSo11AWSMTLModel", "itemID"]
+- !private ["CSo11AWSMTLModel", "status"]
+- !private ["CSo11AWSMTLModel", "timestamp"]
+- !private ["CSo11AWSMTLModel", "userID"]
+- !private ["CSo26AWSNetworkingConfiguration", "init"]
+- !private ["OSC13AWSRegionType", "USEast1"]
+- !private ["CSo10AWSService", "defaultDynamoDBObjectMapper"]
+- !private ["CSo10AWSService", "save"]
+- !private ["CSo23AWSServiceConfiguration", "init"]
+- !private ["CSo17AWSServiceManager", "defaultServiceConfiguration"]
+- !private ["CSo17AWSServiceManager", "defaultServiceManager"]
+- !private ["CSo7AWSTask", "continueWithBlock"]
+- !private ["CSo7AWSTask", "error"]
+- !private ["CSo7AWSTask", "result"]
+- ["PSs9AnyObject", "AWSCognitoCredentialsProvider"]
+- !private ["PSs9AnyObject", "AWSDynamoDBObjectMapper"]
+- !private ["PSs9AnyObject", "AWSServiceConfiguration"]
+- !private ["PSs9AnyObject", "AWSServiceManager"]
+- !private ["PSs9AnyObject", "AnyObject"]
+- !private ["PSs9AnyObject", "BFTask"]
+- !private ["PSs9AnyObject", "CLLocation"]
+- !private ["PSs9AnyObject", "FBSDKApplicationDelegate"]
+- !private ["PSs9AnyObject", "IBGInvocationEventShake"]
+- !private ["PSs9AnyObject", "Instabug"]
+- !private ["PSs9AnyObject", "NSBundle"]
+- !private ["PSs9AnyObject", "NSDate"]
+- !private ["PSs9AnyObject", "NSDateFormatter"]
+- !private ["PSs9AnyObject", "NSError"]
+- !private ["PSs9AnyObject", "NSFileManager"]
+- !private ["PSs9AnyObject", "NSLocalizedDescriptionKey"]
+- !private ["PSs9AnyObject", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSs9AnyObject", "NSLog"]
+- !private ["PSs9AnyObject", "NSManagedObjectContext"]
+- !private ["PSs9AnyObject", "NSManagedObjectModel"]
+- !private ["PSs9AnyObject", "NSPersistentStoreCoordinator"]
+- !private ["PSs9AnyObject", "NSSQLiteStoreType"]
+- !private ["PSs9AnyObject", "NSUnderlyingErrorKey"]
+- !private ["PSs9AnyObject", "String"]
+- !private ["PSs9AnyObject", "UIAlertController"]
+- !private ["PSs9AnyObject", "UIAlertControllerStyle"]
+- !private ["PSs9AnyObject", "UIApplication"]
+- !private ["PSs9AnyObject", "UIBackgroundFetchResult"]
+- !private ["PSs9AnyObject", "UINavigationBar"]
+- !private ["PSs9AnyObject", "UIUserNotificationSettings"]
+- !private ["PSs9AnyObject", "URLByAppendingPathComponent"]
+- !private ["PSs9AnyObject", "URLForResource"]
+- !private ["PSs9AnyObject", "URLsForDirectory"]
+- !private ["PSs9AnyObject", "abort"]
+- !private ["PSs9AnyObject", "addPersistentStoreWithType"]
+- !private ["PSs9AnyObject", "appearance"]
+- ["PSs9AnyObject", "application"]
+- ["PSs9AnyObject", "applicationDidBecomeActive"]
+- ["PSs9AnyObject", "applicationDidEnterBackground"]
+- ["PSs9AnyObject", "applicationDidFinishLaunching"]
+- ["PSs9AnyObject", "applicationDidReceiveMemoryWarning"]
+- ["PSs9AnyObject", "applicationDocumentsDirectory"]
+- ["PSs9AnyObject", "applicationDocumentsDirectory.storage"]
+- ["PSs9AnyObject", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSs9AnyObject", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSs9AnyObject", "applicationShouldRequestHealthAuthorization"]
+- ["PSs9AnyObject", "applicationSignificantTimeChange"]
+- ["PSs9AnyObject", "applicationWillEnterForeground"]
+- ["PSs9AnyObject", "applicationWillResignActive"]
+- ["PSs9AnyObject", "applicationWillTerminate"]
+- !private ["PSs9AnyObject", "barStyle"]
+- ["PSs9AnyObject", "cognitoId"]
+- !private ["PSs9AnyObject", "continueWithBlock"]
+- ["PSs9AnyObject", "convertDeviceTokenToString"]
+- ["PSs9AnyObject", "credentialsProvider"]
+- ["PSs9AnyObject", "dataStash"]
+- !private ["PSs9AnyObject", "dateFormat"]
+- !private ["PSs9AnyObject", "defaultDynamoDBObjectMapper"]
+- !private ["PSs9AnyObject", "defaultManager"]
+- !private ["PSs9AnyObject", "defaultServiceConfiguration"]
+- !private ["PSs9AnyObject", "defaultServiceManager"]
+- !private ["PSs9AnyObject", "deinit"]
+- !private ["PSs9AnyObject", "description"]
+- !private ["PSs9AnyObject", "error"]
+- !private ["PSs9AnyObject", "getIdentityId"]
+- !private ["PSs9AnyObject", "hasChanges"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "initializeNotificationServices"]
+- !private ["PSs9AnyObject", "itemID"]
+- ["PSs9AnyObject", "locCurrent"]
+- !private ["PSs9AnyObject", "localizedDescription"]
+- ["PSs9AnyObject", "locationManager"]
+- !private ["PSs9AnyObject", "mainBundle"]
+- ["PSs9AnyObject", "managedObjectContext"]
+- ["PSs9AnyObject", "managedObjectContext.storage"]
+- ["PSs9AnyObject", "managedObjectModel"]
+- ["PSs9AnyObject", "managedObjectModel.storage"]
+- ["PSs9AnyObject", "persistentStoreCoordinator"]
+- ["PSs9AnyObject", "persistentStoreCoordinator.storage"]
+- !private ["PSs9AnyObject", "presentViewController"]
+- !private ["PSs9AnyObject", "presentedViewController"]
+- !private ["PSs9AnyObject", "print"]
+- !private ["PSs9AnyObject", "registerForRemoteNotifications"]
+- !private ["PSs9AnyObject", "registerUserNotificationSettings"]
+- !private ["PSs9AnyObject", "result"]
+- !private ["PSs9AnyObject", "rootViewController"]
+- !private ["PSs9AnyObject", "save"]
+- ["PSs9AnyObject", "saveContext"]
+- !private ["PSs9AnyObject", "sessionData"]
+- !private ["PSs9AnyObject", "sharedApplication"]
+- !private ["PSs9AnyObject", "sharedInstance"]
+- ["PSs9AnyObject", "startApp"]
+- !private ["PSs9AnyObject", "startWithToken"]
+- !private ["PSs9AnyObject", "status"]
+- !private ["PSs9AnyObject", "statusBarStyle"]
+- !private ["PSs9AnyObject", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs9AnyObject", "stringFromDate"]
+- !private ["PSs9AnyObject", "subscript"]
+- !private ["PSs9AnyObject", "timestamp"]
+- ["PSs9AnyObject", "untapped"]
+- !private ["PSs9AnyObject", "uppercaseString"]
+- !private ["PSs9AnyObject", "userID"]
+- !private ["PSs9AnyObject", "userInfo"]
+- ["PSs9AnyObject", "window"]
+- ["PSs9AnyObject", ""]
+- ["C4Knot11AppDelegate", "AWSCognitoCredentialsProvider"]
+- !private ["C4Knot11AppDelegate", "AWSDynamoDBObjectMapper"]
+- !private ["C4Knot11AppDelegate", "AWSServiceConfiguration"]
+- !private ["C4Knot11AppDelegate", "AWSServiceManager"]
+- !private ["C4Knot11AppDelegate", "AWSTask"]
+- ["C4Knot11AppDelegate", "AnyObject"]
+- ["C4Knot11AppDelegate", "Array"]
+- ["C4Knot11AppDelegate", "BFTask"]
+- ["C4Knot11AppDelegate", "Bool"]
+- ["C4Knot11AppDelegate", "CLLocation"]
+- !private ["C4Knot11AppDelegate", "FBSDKApplicationDelegate"]
+- !private ["C4Knot11AppDelegate", "IBGInvocationEventShake"]
+- !private ["C4Knot11AppDelegate", "Instabug"]
+- ["C4Knot11AppDelegate", "Int"]
+- !private ["C4Knot11AppDelegate", "NSBundle"]
+- ["C4Knot11AppDelegate", "NSData"]
+- !private ["C4Knot11AppDelegate", "NSDate"]
+- !private ["C4Knot11AppDelegate", "NSDateFormatter"]
+- !private ["C4Knot11AppDelegate", "NSDictionary"]
+- ["C4Knot11AppDelegate", "NSError"]
+- !private ["C4Knot11AppDelegate", "NSFileManager"]
+- !private ["C4Knot11AppDelegate", "NSLocalizedDescriptionKey"]
+- !private ["C4Knot11AppDelegate", "NSLocalizedFailureReasonErrorKey"]
+- !private ["C4Knot11AppDelegate", "NSLog"]
+- ["C4Knot11AppDelegate", "NSManagedObjectContext"]
+- ["C4Knot11AppDelegate", "NSManagedObjectModel"]
+- ["C4Knot11AppDelegate", "NSObject"]
+- ["C4Knot11AppDelegate", "NSPersistentStoreCoordinator"]
+- !private ["C4Knot11AppDelegate", "NSSQLiteStoreType"]
+- ["C4Knot11AppDelegate", "NSURL"]
+- !private ["C4Knot11AppDelegate", "NSUnderlyingErrorKey"]
+- ["C4Knot11AppDelegate", "OneShotLocationManager"]
+- ["C4Knot11AppDelegate", "String"]
+- !private ["C4Knot11AppDelegate", "UIAlertController"]
+- !private ["C4Knot11AppDelegate", "UIAlertControllerStyle"]
+- ["C4Knot11AppDelegate", "UIApplication"]
+- ["C4Knot11AppDelegate", "UIBackgroundFetchResult"]
+- !private ["C4Knot11AppDelegate", "UINavigationBar"]
+- !private ["C4Knot11AppDelegate", "UIUserNotificationSettings"]
+- ["C4Knot11AppDelegate", "UIWindow"]
+- ["C4Knot11AppDelegate", "Void"]
+- !private ["C4Knot11AppDelegate", "abort"]
+- ["C4Knot11AppDelegate", "application"]
+- ["C4Knot11AppDelegate", "applicationDidBecomeActive"]
+- ["C4Knot11AppDelegate", "applicationDidEnterBackground"]
+- ["C4Knot11AppDelegate", "applicationDidFinishLaunching"]
+- ["C4Knot11AppDelegate", "applicationDidReceiveMemoryWarning"]
+- ["C4Knot11AppDelegate", "applicationDocumentsDirectory"]
+- !private ["C4Knot11AppDelegate", "applicationDocumentsDirectory.storage"]
+- ["C4Knot11AppDelegate", "applicationProtectedDataDidBecomeAvailable"]
+- ["C4Knot11AppDelegate", "applicationProtectedDataWillBecomeUnavailable"]
+- ["C4Knot11AppDelegate", "applicationShouldRequestHealthAuthorization"]
+- ["C4Knot11AppDelegate", "applicationSignificantTimeChange"]
+- ["C4Knot11AppDelegate", "applicationWillEnterForeground"]
+- ["C4Knot11AppDelegate", "applicationWillResignActive"]
+- ["C4Knot11AppDelegate", "applicationWillTerminate"]
+- ["C4Knot11AppDelegate", "cognitoId"]
+- !private ["C4Knot11AppDelegate", "convertDeviceTokenToString"]
+- ["C4Knot11AppDelegate", "credentialsProvider"]
+- ["C4Knot11AppDelegate", "dataStash"]
+- ["C4Knot11AppDelegate", "deinit"]
+- ["C4Knot11AppDelegate", "init"]
+- ["C4Knot11AppDelegate", "initializeNotificationServices"]
+- ["C4Knot11AppDelegate", "locCurrent"]
+- ["C4Knot11AppDelegate", "locationManager"]
+- ["C4Knot11AppDelegate", "managedObjectContext"]
+- !private ["C4Knot11AppDelegate", "managedObjectContext.storage"]
+- ["C4Knot11AppDelegate", "managedObjectModel"]
+- !private ["C4Knot11AppDelegate", "managedObjectModel.storage"]
+- ["C4Knot11AppDelegate", "persistentStoreCoordinator"]
+- !private ["C4Knot11AppDelegate", "persistentStoreCoordinator.storage"]
+- !private ["C4Knot11AppDelegate", "print"]
+- ["C4Knot11AppDelegate", "saveContext"]
+- !private ["C4Knot11AppDelegate", "sessionData"]
+- ["C4Knot11AppDelegate", "startApp"]
+- ["C4Knot11AppDelegate", "untapped"]
+- ["C4Knot11AppDelegate", "window"]
+- !private ["Sa", "Element"]
+- !private ["Sa", "Generator"]
+- !private ["Sa", "Index"]
+- !private ["Sa", "SubSequence"]
+- !private ["Sa", "_Element"]
+- !private ["Sa", "count"]
+- !private ["Sa", "deinit"]
+- !private ["Sa", "subscript"]
+- !private ["PSs23ArrayLiteralConvertible", "Alert"]
+- !private ["PSs23ArrayLiteralConvertible", "Badge"]
+- !private ["PSs23ArrayLiteralConvertible", "Element"]
+- !private ["PSs23ArrayLiteralConvertible", "Generator"]
+- !private ["PSs23ArrayLiteralConvertible", "Index"]
+- !private ["PSs23ArrayLiteralConvertible", "Sound"]
+- !private ["PSs23ArrayLiteralConvertible", "SubSequence"]
+- !private ["PSs23ArrayLiteralConvertible", "UserDomainMask"]
+- !private ["PSs23ArrayLiteralConvertible", "_Element"]
+- !private ["PSs23ArrayLiteralConvertible", "count"]
+- !private ["PSs23ArrayLiteralConvertible", "subscript"]
+- !private ["VSs10ArraySlice", "Generator"]
+- !private ["VSs10ArraySlice", "Index"]
+- !private ["CSo6BFTask", "continueWithBlock"]
+- !private ["CSo6BFTask", "error"]
+- !private ["CSo6BFTask", "init"]
+- !private ["PSs22BidirectionalIndexType", "Distance"]
+- !private ["PSs22BidirectionalIndexType", "IntegerLiteralType"]
+- !private ["PSs21BitwiseOperationsType", "Distance"]
+- !private ["PSs21BitwiseOperationsType", "IntegerLiteralType"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["Sb", "deinit"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["CSo10CLLocation", "init"]
+- ["PSs11CVarArgType", "AWSCognitoCredentialsProvider"]
+- !private ["PSs11CVarArgType", "AWSDynamoDBObjectMapper"]
+- !private ["PSs11CVarArgType", "AWSServiceConfiguration"]
+- !private ["PSs11CVarArgType", "AWSServiceManager"]
+- !private ["PSs11CVarArgType", "AnyObject"]
+- !private ["PSs11CVarArgType", "BFTask"]
+- !private ["PSs11CVarArgType", "CLLocation"]
+- !private ["PSs11CVarArgType", "Distance"]
+- !private ["PSs11CVarArgType", "FBSDKApplicationDelegate"]
+- !private ["PSs11CVarArgType", "IBGInvocationEventShake"]
+- !private ["PSs11CVarArgType", "Instabug"]
+- !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- !private ["PSs11CVarArgType", "NSBundle"]
+- !private ["PSs11CVarArgType", "NSDate"]
+- !private ["PSs11CVarArgType", "NSDateFormatter"]
+- !private ["PSs11CVarArgType", "NSError"]
+- !private ["PSs11CVarArgType", "NSFileManager"]
+- !private ["PSs11CVarArgType", "NSLocalizedDescriptionKey"]
+- !private ["PSs11CVarArgType", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSs11CVarArgType", "NSLog"]
+- !private ["PSs11CVarArgType", "NSManagedObjectContext"]
+- !private ["PSs11CVarArgType", "NSManagedObjectModel"]
+- !private ["PSs11CVarArgType", "NSPersistentStoreCoordinator"]
+- !private ["PSs11CVarArgType", "NSSQLiteStoreType"]
+- !private ["PSs11CVarArgType", "NSUnderlyingErrorKey"]
+- !private ["PSs11CVarArgType", "String"]
+- !private ["PSs11CVarArgType", "UIAlertController"]
+- !private ["PSs11CVarArgType", "UIAlertControllerStyle"]
+- !private ["PSs11CVarArgType", "UIApplication"]
+- !private ["PSs11CVarArgType", "UIBackgroundFetchResult"]
+- !private ["PSs11CVarArgType", "UINavigationBar"]
+- !private ["PSs11CVarArgType", "UIUserNotificationSettings"]
+- !private ["PSs11CVarArgType", "URLByAppendingPathComponent"]
+- !private ["PSs11CVarArgType", "URLForResource"]
+- !private ["PSs11CVarArgType", "URLsForDirectory"]
+- !private ["PSs11CVarArgType", "abort"]
+- !private ["PSs11CVarArgType", "addPersistentStoreWithType"]
+- !private ["PSs11CVarArgType", "appearance"]
+- ["PSs11CVarArgType", "application"]
+- ["PSs11CVarArgType", "applicationDidBecomeActive"]
+- ["PSs11CVarArgType", "applicationDidEnterBackground"]
+- ["PSs11CVarArgType", "applicationDidFinishLaunching"]
+- ["PSs11CVarArgType", "applicationDidReceiveMemoryWarning"]
+- ["PSs11CVarArgType", "applicationDocumentsDirectory"]
+- ["PSs11CVarArgType", "applicationDocumentsDirectory.storage"]
+- ["PSs11CVarArgType", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSs11CVarArgType", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSs11CVarArgType", "applicationShouldRequestHealthAuthorization"]
+- ["PSs11CVarArgType", "applicationSignificantTimeChange"]
+- ["PSs11CVarArgType", "applicationWillEnterForeground"]
+- ["PSs11CVarArgType", "applicationWillResignActive"]
+- ["PSs11CVarArgType", "applicationWillTerminate"]
+- !private ["PSs11CVarArgType", "barStyle"]
+- ["PSs11CVarArgType", "cognitoId"]
+- !private ["PSs11CVarArgType", "continueWithBlock"]
+- ["PSs11CVarArgType", "convertDeviceTokenToString"]
+- ["PSs11CVarArgType", "credentialsProvider"]
+- ["PSs11CVarArgType", "dataStash"]
+- !private ["PSs11CVarArgType", "dateFormat"]
+- !private ["PSs11CVarArgType", "defaultDynamoDBObjectMapper"]
+- !private ["PSs11CVarArgType", "defaultManager"]
+- !private ["PSs11CVarArgType", "defaultServiceConfiguration"]
+- !private ["PSs11CVarArgType", "defaultServiceManager"]
+- !private ["PSs11CVarArgType", "description"]
+- !private ["PSs11CVarArgType", "error"]
+- !private ["PSs11CVarArgType", "getIdentityId"]
+- !private ["PSs11CVarArgType", "hasChanges"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "initializeNotificationServices"]
+- !private ["PSs11CVarArgType", "itemID"]
+- ["PSs11CVarArgType", "locCurrent"]
+- !private ["PSs11CVarArgType", "localizedDescription"]
+- ["PSs11CVarArgType", "locationManager"]
+- !private ["PSs11CVarArgType", "mainBundle"]
+- ["PSs11CVarArgType", "managedObjectContext"]
+- ["PSs11CVarArgType", "managedObjectContext.storage"]
+- ["PSs11CVarArgType", "managedObjectModel"]
+- ["PSs11CVarArgType", "managedObjectModel.storage"]
+- ["PSs11CVarArgType", "persistentStoreCoordinator"]
+- ["PSs11CVarArgType", "persistentStoreCoordinator.storage"]
+- !private ["PSs11CVarArgType", "presentViewController"]
+- !private ["PSs11CVarArgType", "presentedViewController"]
+- !private ["PSs11CVarArgType", "print"]
+- !private ["PSs11CVarArgType", "registerForRemoteNotifications"]
+- !private ["PSs11CVarArgType", "registerUserNotificationSettings"]
+- !private ["PSs11CVarArgType", "result"]
+- !private ["PSs11CVarArgType", "rootViewController"]
+- !private ["PSs11CVarArgType", "save"]
+- ["PSs11CVarArgType", "saveContext"]
+- !private ["PSs11CVarArgType", "sessionData"]
+- !private ["PSs11CVarArgType", "sharedApplication"]
+- !private ["PSs11CVarArgType", "sharedInstance"]
+- ["PSs11CVarArgType", "startApp"]
+- !private ["PSs11CVarArgType", "startWithToken"]
+- !private ["PSs11CVarArgType", "status"]
+- !private ["PSs11CVarArgType", "statusBarStyle"]
+- !private ["PSs11CVarArgType", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs11CVarArgType", "stringFromDate"]
+- !private ["PSs11CVarArgType", "subscript"]
+- !private ["PSs11CVarArgType", "timestamp"]
+- ["PSs11CVarArgType", "untapped"]
+- !private ["PSs11CVarArgType", "uppercaseString"]
+- !private ["PSs11CVarArgType", "userID"]
+- !private ["PSs11CVarArgType", "userInfo"]
+- ["PSs11CVarArgType", "window"]
+- ["PSs11CVarArgType", ""]
+- !private ["VSs9Character", "deinit"]
+- !private ["PSs14CollectionType", "Element"]
+- !private ["PSs14CollectionType", "Generator"]
+- !private ["PSs14CollectionType", "Index"]
+- !private ["PSs14CollectionType", "SubSequence"]
+- !private ["PSs14CollectionType", "_Element"]
+- !private ["PSs14CollectionType", "count"]
+- !private ["PSs14CollectionType", "init"]
+- !private ["PSs14CollectionType", "subscript"]
+- !private ["PSs10Comparable", "Distance"]
+- !private ["PSs10Comparable", "IntegerLiteralType"]
+- !private ["PSs10Comparable", "_DisabledRangeIndex"]
+- !private ["PSs10Comparable", "init"]
+- !private ["PSs10Comparable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs10Comparable", "uppercaseString"]
+- !private ["PSs28CustomDebugStringConvertible", "Element"]
+- !private ["PSs28CustomDebugStringConvertible", "Generator"]
+- !private ["PSs28CustomDebugStringConvertible", "Index"]
+- ["PSs28CustomDebugStringConvertible", "Some"]
+- !private ["PSs28CustomDebugStringConvertible", "SubSequence"]
+- !private ["PSs28CustomDebugStringConvertible", "_Element"]
+- !private ["PSs28CustomDebugStringConvertible", "count"]
+- !private ["PSs28CustomDebugStringConvertible", "init"]
+- !private ["PSs28CustomDebugStringConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs28CustomDebugStringConvertible", "subscript"]
+- !private ["PSs28CustomDebugStringConvertible", "uppercaseString"]
+- ["PSs23CustomStringConvertible", "AWSCognitoCredentialsProvider"]
+- !private ["PSs23CustomStringConvertible", "AWSDynamoDBObjectMapper"]
+- !private ["PSs23CustomStringConvertible", "AWSServiceConfiguration"]
+- !private ["PSs23CustomStringConvertible", "AWSServiceManager"]
+- !private ["PSs23CustomStringConvertible", "AnyObject"]
+- !private ["PSs23CustomStringConvertible", "BFTask"]
+- !private ["PSs23CustomStringConvertible", "CLLocation"]
+- !private ["PSs23CustomStringConvertible", "Distance"]
+- !private ["PSs23CustomStringConvertible", "Element"]
+- !private ["PSs23CustomStringConvertible", "FBSDKApplicationDelegate"]
+- !private ["PSs23CustomStringConvertible", "Generator"]
+- !private ["PSs23CustomStringConvertible", "IBGInvocationEventShake"]
+- !private ["PSs23CustomStringConvertible", "Index"]
+- !private ["PSs23CustomStringConvertible", "Instabug"]
+- !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
+- !private ["PSs23CustomStringConvertible", "NSBundle"]
+- !private ["PSs23CustomStringConvertible", "NSDate"]
+- !private ["PSs23CustomStringConvertible", "NSDateFormatter"]
+- !private ["PSs23CustomStringConvertible", "NSError"]
+- !private ["PSs23CustomStringConvertible", "NSFileManager"]
+- !private ["PSs23CustomStringConvertible", "NSLocalizedDescriptionKey"]
+- !private ["PSs23CustomStringConvertible", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSs23CustomStringConvertible", "NSLog"]
+- !private ["PSs23CustomStringConvertible", "NSManagedObjectContext"]
+- !private ["PSs23CustomStringConvertible", "NSManagedObjectModel"]
+- !private ["PSs23CustomStringConvertible", "NSPersistentStoreCoordinator"]
+- !private ["PSs23CustomStringConvertible", "NSSQLiteStoreType"]
+- !private ["PSs23CustomStringConvertible", "NSUnderlyingErrorKey"]
+- !private ["PSs23CustomStringConvertible", "String"]
+- !private ["PSs23CustomStringConvertible", "SubSequence"]
+- !private ["PSs23CustomStringConvertible", "UIAlertController"]
+- !private ["PSs23CustomStringConvertible", "UIAlertControllerStyle"]
+- !private ["PSs23CustomStringConvertible", "UIApplication"]
+- !private ["PSs23CustomStringConvertible", "UIBackgroundFetchResult"]
+- !private ["PSs23CustomStringConvertible", "UINavigationBar"]
+- !private ["PSs23CustomStringConvertible", "UIUserNotificationSettings"]
+- !private ["PSs23CustomStringConvertible", "URLByAppendingPathComponent"]
+- !private ["PSs23CustomStringConvertible", "URLForResource"]
+- !private ["PSs23CustomStringConvertible", "URLsForDirectory"]
+- !private ["PSs23CustomStringConvertible", "_Element"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "abort"]
+- !private ["PSs23CustomStringConvertible", "addPersistentStoreWithType"]
+- !private ["PSs23CustomStringConvertible", "appearance"]
+- ["PSs23CustomStringConvertible", "application"]
+- ["PSs23CustomStringConvertible", "applicationDidBecomeActive"]
+- ["PSs23CustomStringConvertible", "applicationDidEnterBackground"]
+- ["PSs23CustomStringConvertible", "applicationDidFinishLaunching"]
+- ["PSs23CustomStringConvertible", "applicationDidReceiveMemoryWarning"]
+- ["PSs23CustomStringConvertible", "applicationDocumentsDirectory"]
+- ["PSs23CustomStringConvertible", "applicationDocumentsDirectory.storage"]
+- ["PSs23CustomStringConvertible", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSs23CustomStringConvertible", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSs23CustomStringConvertible", "applicationShouldRequestHealthAuthorization"]
+- ["PSs23CustomStringConvertible", "applicationSignificantTimeChange"]
+- ["PSs23CustomStringConvertible", "applicationWillEnterForeground"]
+- ["PSs23CustomStringConvertible", "applicationWillResignActive"]
+- ["PSs23CustomStringConvertible", "applicationWillTerminate"]
+- !private ["PSs23CustomStringConvertible", "barStyle"]
+- ["PSs23CustomStringConvertible", "cognitoId"]
+- !private ["PSs23CustomStringConvertible", "continueWithBlock"]
+- ["PSs23CustomStringConvertible", "convertDeviceTokenToString"]
+- !private ["PSs23CustomStringConvertible", "count"]
+- ["PSs23CustomStringConvertible", "credentialsProvider"]
+- ["PSs23CustomStringConvertible", "dataStash"]
+- !private ["PSs23CustomStringConvertible", "dateFormat"]
+- !private ["PSs23CustomStringConvertible", "defaultDynamoDBObjectMapper"]
+- !private ["PSs23CustomStringConvertible", "defaultManager"]
+- !private ["PSs23CustomStringConvertible", "defaultServiceConfiguration"]
+- !private ["PSs23CustomStringConvertible", "defaultServiceManager"]
+- !private ["PSs23CustomStringConvertible", "description"]
+- !private ["PSs23CustomStringConvertible", "error"]
+- !private ["PSs23CustomStringConvertible", "getIdentityId"]
+- !private ["PSs23CustomStringConvertible", "hasChanges"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "initializeNotificationServices"]
+- !private ["PSs23CustomStringConvertible", "itemID"]
+- ["PSs23CustomStringConvertible", "locCurrent"]
+- !private ["PSs23CustomStringConvertible", "localizedDescription"]
+- ["PSs23CustomStringConvertible", "locationManager"]
+- !private ["PSs23CustomStringConvertible", "mainBundle"]
+- ["PSs23CustomStringConvertible", "managedObjectContext"]
+- ["PSs23CustomStringConvertible", "managedObjectContext.storage"]
+- ["PSs23CustomStringConvertible", "managedObjectModel"]
+- ["PSs23CustomStringConvertible", "managedObjectModel.storage"]
+- ["PSs23CustomStringConvertible", "persistentStoreCoordinator"]
+- ["PSs23CustomStringConvertible", "persistentStoreCoordinator.storage"]
+- !private ["PSs23CustomStringConvertible", "presentViewController"]
+- !private ["PSs23CustomStringConvertible", "presentedViewController"]
+- !private ["PSs23CustomStringConvertible", "print"]
+- !private ["PSs23CustomStringConvertible", "registerForRemoteNotifications"]
+- !private ["PSs23CustomStringConvertible", "registerUserNotificationSettings"]
+- !private ["PSs23CustomStringConvertible", "result"]
+- !private ["PSs23CustomStringConvertible", "rootViewController"]
+- !private ["PSs23CustomStringConvertible", "save"]
+- ["PSs23CustomStringConvertible", "saveContext"]
+- !private ["PSs23CustomStringConvertible", "sessionData"]
+- !private ["PSs23CustomStringConvertible", "sharedApplication"]
+- !private ["PSs23CustomStringConvertible", "sharedInstance"]
+- ["PSs23CustomStringConvertible", "startApp"]
+- !private ["PSs23CustomStringConvertible", "startWithToken"]
+- !private ["PSs23CustomStringConvertible", "status"]
+- !private ["PSs23CustomStringConvertible", "statusBarStyle"]
+- !private ["PSs23CustomStringConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs23CustomStringConvertible", "stringFromDate"]
+- !private ["PSs23CustomStringConvertible", "subscript"]
+- !private ["PSs23CustomStringConvertible", "timestamp"]
+- ["PSs23CustomStringConvertible", "untapped"]
+- !private ["PSs23CustomStringConvertible", "uppercaseString"]
+- !private ["PSs23CustomStringConvertible", "userID"]
+- !private ["PSs23CustomStringConvertible", "userInfo"]
+- ["PSs23CustomStringConvertible", "window"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["VSs10Dictionary", "Generator"]
+- !private ["VSs10Dictionary", "Index"]
+- !private ["VSs10Dictionary", "SubSequence"]
+- !private ["VSs10Dictionary", "_Element"]
+- !private ["VSs10Dictionary", "deinit"]
+- !private ["VSs10Dictionary", "init"]
+- !private ["VSs10Dictionary", "subscript"]
+- !private ["VSs15DictionaryIndex", "Distance"]
+- !private ["VSs15DictionaryIndex", "_DisabledRangeIndex"]
+- !private ["VSs15DictionaryIndex", "deinit"]
+- !private ["PSs28DictionaryLiteralConvertible", "Generator"]
+- !private ["PSs28DictionaryLiteralConvertible", "Index"]
+- !private ["PSs28DictionaryLiteralConvertible", "SubSequence"]
+- !private ["PSs28DictionaryLiteralConvertible", "_Element"]
+- !private ["PSs28DictionaryLiteralConvertible", "init"]
+- !private ["PSs28DictionaryLiteralConvertible", "subscript"]
+- !private ["Sd", "deinit"]
+- ["PSs9Equatable", "AWSCognitoCredentialsProvider"]
+- !private ["PSs9Equatable", "AWSDynamoDBObjectMapper"]
+- !private ["PSs9Equatable", "AWSServiceConfiguration"]
+- !private ["PSs9Equatable", "AWSServiceManager"]
+- !private ["PSs9Equatable", "Alert"]
+- !private ["PSs9Equatable", "AnyObject"]
+- !private ["PSs9Equatable", "BFTask"]
+- !private ["PSs9Equatable", "Badge"]
+- !private ["PSs9Equatable", "Black"]
+- !private ["PSs9Equatable", "CLLocation"]
+- !private ["PSs9Equatable", "Distance"]
+- !private ["PSs9Equatable", "DocumentDirectory"]
+- !private ["PSs9Equatable", "Element"]
+- !private ["PSs9Equatable", "FBSDKApplicationDelegate"]
+- !private ["PSs9Equatable", "IBGInvocationEventShake"]
+- !private ["PSs9Equatable", "Instabug"]
+- !private ["PSs9Equatable", "IntegerLiteralType"]
+- !private ["PSs9Equatable", "LightContent"]
+- !private ["PSs9Equatable", "MainQueueConcurrencyType"]
+- !private ["PSs9Equatable", "NSBundle"]
+- !private ["PSs9Equatable", "NSDate"]
+- !private ["PSs9Equatable", "NSDateFormatter"]
+- !private ["PSs9Equatable", "NSError"]
+- !private ["PSs9Equatable", "NSFileManager"]
+- !private ["PSs9Equatable", "NSLocalizedDescriptionKey"]
+- !private ["PSs9Equatable", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSs9Equatable", "NSLog"]
+- !private ["PSs9Equatable", "NSManagedObjectContext"]
+- !private ["PSs9Equatable", "NSManagedObjectModel"]
+- !private ["PSs9Equatable", "NSPersistentStoreCoordinator"]
+- !private ["PSs9Equatable", "NSSQLiteStoreType"]
+- !private ["PSs9Equatable", "NSUnderlyingErrorKey"]
+- !private ["PSs9Equatable", "NoData"]
+- !private ["PSs9Equatable", "Sound"]
+- !private ["PSs9Equatable", "String"]
+- !private ["PSs9Equatable", "UIAlertController"]
+- !private ["PSs9Equatable", "UIAlertControllerStyle"]
+- !private ["PSs9Equatable", "UIApplication"]
+- !private ["PSs9Equatable", "UIBackgroundFetchResult"]
+- !private ["PSs9Equatable", "UINavigationBar"]
+- !private ["PSs9Equatable", "UIUserNotificationSettings"]
+- !private ["PSs9Equatable", "URLByAppendingPathComponent"]
+- !private ["PSs9Equatable", "URLForResource"]
+- !private ["PSs9Equatable", "URLsForDirectory"]
+- !private ["PSs9Equatable", "USEast1"]
+- !private ["PSs9Equatable", "UserDomainMask"]
+- !private ["PSs9Equatable", "_DisabledRangeIndex"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "abort"]
+- !private ["PSs9Equatable", "addPersistentStoreWithType"]
+- !private ["PSs9Equatable", "appearance"]
+- ["PSs9Equatable", "application"]
+- ["PSs9Equatable", "applicationDidBecomeActive"]
+- ["PSs9Equatable", "applicationDidEnterBackground"]
+- ["PSs9Equatable", "applicationDidFinishLaunching"]
+- ["PSs9Equatable", "applicationDidReceiveMemoryWarning"]
+- ["PSs9Equatable", "applicationDocumentsDirectory"]
+- ["PSs9Equatable", "applicationDocumentsDirectory.storage"]
+- ["PSs9Equatable", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSs9Equatable", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSs9Equatable", "applicationShouldRequestHealthAuthorization"]
+- ["PSs9Equatable", "applicationSignificantTimeChange"]
+- ["PSs9Equatable", "applicationWillEnterForeground"]
+- ["PSs9Equatable", "applicationWillResignActive"]
+- ["PSs9Equatable", "applicationWillTerminate"]
+- !private ["PSs9Equatable", "barStyle"]
+- ["PSs9Equatable", "cognitoId"]
+- !private ["PSs9Equatable", "continueWithBlock"]
+- ["PSs9Equatable", "convertDeviceTokenToString"]
+- ["PSs9Equatable", "credentialsProvider"]
+- ["PSs9Equatable", "dataStash"]
+- !private ["PSs9Equatable", "dateFormat"]
+- !private ["PSs9Equatable", "defaultDynamoDBObjectMapper"]
+- !private ["PSs9Equatable", "defaultManager"]
+- !private ["PSs9Equatable", "defaultServiceConfiguration"]
+- !private ["PSs9Equatable", "defaultServiceManager"]
+- !private ["PSs9Equatable", "description"]
+- !private ["PSs9Equatable", "error"]
+- !private ["PSs9Equatable", "getIdentityId"]
+- !private ["PSs9Equatable", "hasChanges"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "initializeNotificationServices"]
+- !private ["PSs9Equatable", "itemID"]
+- ["PSs9Equatable", "locCurrent"]
+- !private ["PSs9Equatable", "localizedDescription"]
+- ["PSs9Equatable", "locationManager"]
+- !private ["PSs9Equatable", "mainBundle"]
+- ["PSs9Equatable", "managedObjectContext"]
+- ["PSs9Equatable", "managedObjectContext.storage"]
+- ["PSs9Equatable", "managedObjectModel"]
+- ["PSs9Equatable", "managedObjectModel.storage"]
+- ["PSs9Equatable", "persistentStoreCoordinator"]
+- ["PSs9Equatable", "persistentStoreCoordinator.storage"]
+- !private ["PSs9Equatable", "presentViewController"]
+- !private ["PSs9Equatable", "presentedViewController"]
+- !private ["PSs9Equatable", "print"]
+- !private ["PSs9Equatable", "registerForRemoteNotifications"]
+- !private ["PSs9Equatable", "registerUserNotificationSettings"]
+- !private ["PSs9Equatable", "result"]
+- !private ["PSs9Equatable", "rootViewController"]
+- !private ["PSs9Equatable", "save"]
+- ["PSs9Equatable", "saveContext"]
+- !private ["PSs9Equatable", "sessionData"]
+- !private ["PSs9Equatable", "sharedApplication"]
+- !private ["PSs9Equatable", "sharedInstance"]
+- ["PSs9Equatable", "startApp"]
+- !private ["PSs9Equatable", "startWithToken"]
+- !private ["PSs9Equatable", "status"]
+- !private ["PSs9Equatable", "statusBarStyle"]
+- !private ["PSs9Equatable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs9Equatable", "stringFromDate"]
+- !private ["PSs9Equatable", "subscript"]
+- !private ["PSs9Equatable", "timestamp"]
+- ["PSs9Equatable", "untapped"]
+- !private ["PSs9Equatable", "uppercaseString"]
+- !private ["PSs9Equatable", "userID"]
+- !private ["PSs9Equatable", "userInfo"]
+- ["PSs9Equatable", "window"]
+- ["PSs9Equatable", ""]
+- !private ["PSs9ErrorType", "description"]
+- !private ["PSs9ErrorType", "init"]
+- !private ["PSs9ErrorType", "localizedDescription"]
+- !private ["PSs9ErrorType", "userInfo"]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs41ExtendedGraphemeClusterLiteralConvertible", "uppercaseString"]
+- !private ["CSo24FBSDKApplicationDelegate", "application"]
+- !private ["CSo24FBSDKApplicationDelegate", "sharedInstance"]
+- !private ["Sf", "deinit"]
+- !private ["PSs16ForwardIndexType", "Distance"]
+- !private ["PSs16ForwardIndexType", "IntegerLiteralType"]
+- !private ["PSs16ForwardIndexType", "_DisabledRangeIndex"]
+- !private ["PSs13GeneratorType", "Element"]
+- ["PSs8Hashable", "AWSCognitoCredentialsProvider"]
+- !private ["PSs8Hashable", "AWSDynamoDBObjectMapper"]
+- !private ["PSs8Hashable", "AWSServiceConfiguration"]
+- !private ["PSs8Hashable", "AWSServiceManager"]
+- !private ["PSs8Hashable", "Alert"]
+- !private ["PSs8Hashable", "AnyObject"]
+- !private ["PSs8Hashable", "BFTask"]
+- !private ["PSs8Hashable", "Black"]
+- !private ["PSs8Hashable", "CLLocation"]
+- !private ["PSs8Hashable", "Distance"]
+- !private ["PSs8Hashable", "DocumentDirectory"]
+- !private ["PSs8Hashable", "FBSDKApplicationDelegate"]
+- !private ["PSs8Hashable", "IBGInvocationEventShake"]
+- !private ["PSs8Hashable", "Instabug"]
+- !private ["PSs8Hashable", "IntegerLiteralType"]
+- !private ["PSs8Hashable", "LightContent"]
+- !private ["PSs8Hashable", "MainQueueConcurrencyType"]
+- !private ["PSs8Hashable", "NSBundle"]
+- !private ["PSs8Hashable", "NSDate"]
+- !private ["PSs8Hashable", "NSDateFormatter"]
+- !private ["PSs8Hashable", "NSError"]
+- !private ["PSs8Hashable", "NSFileManager"]
+- !private ["PSs8Hashable", "NSLocalizedDescriptionKey"]
+- !private ["PSs8Hashable", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSs8Hashable", "NSLog"]
+- !private ["PSs8Hashable", "NSManagedObjectContext"]
+- !private ["PSs8Hashable", "NSManagedObjectModel"]
+- !private ["PSs8Hashable", "NSPersistentStoreCoordinator"]
+- !private ["PSs8Hashable", "NSSQLiteStoreType"]
+- !private ["PSs8Hashable", "NSUnderlyingErrorKey"]
+- !private ["PSs8Hashable", "NoData"]
+- !private ["PSs8Hashable", "String"]
+- !private ["PSs8Hashable", "UIAlertController"]
+- !private ["PSs8Hashable", "UIAlertControllerStyle"]
+- !private ["PSs8Hashable", "UIApplication"]
+- !private ["PSs8Hashable", "UIBackgroundFetchResult"]
+- !private ["PSs8Hashable", "UINavigationBar"]
+- !private ["PSs8Hashable", "UIUserNotificationSettings"]
+- !private ["PSs8Hashable", "URLByAppendingPathComponent"]
+- !private ["PSs8Hashable", "URLForResource"]
+- !private ["PSs8Hashable", "URLsForDirectory"]
+- !private ["PSs8Hashable", "USEast1"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "abort"]
+- !private ["PSs8Hashable", "addPersistentStoreWithType"]
+- !private ["PSs8Hashable", "appearance"]
+- ["PSs8Hashable", "application"]
+- ["PSs8Hashable", "applicationDidBecomeActive"]
+- ["PSs8Hashable", "applicationDidEnterBackground"]
+- ["PSs8Hashable", "applicationDidFinishLaunching"]
+- ["PSs8Hashable", "applicationDidReceiveMemoryWarning"]
+- ["PSs8Hashable", "applicationDocumentsDirectory"]
+- ["PSs8Hashable", "applicationDocumentsDirectory.storage"]
+- ["PSs8Hashable", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSs8Hashable", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSs8Hashable", "applicationShouldRequestHealthAuthorization"]
+- ["PSs8Hashable", "applicationSignificantTimeChange"]
+- ["PSs8Hashable", "applicationWillEnterForeground"]
+- ["PSs8Hashable", "applicationWillResignActive"]
+- ["PSs8Hashable", "applicationWillTerminate"]
+- !private ["PSs8Hashable", "barStyle"]
+- ["PSs8Hashable", "cognitoId"]
+- !private ["PSs8Hashable", "continueWithBlock"]
+- ["PSs8Hashable", "convertDeviceTokenToString"]
+- ["PSs8Hashable", "credentialsProvider"]
+- ["PSs8Hashable", "dataStash"]
+- !private ["PSs8Hashable", "dateFormat"]
+- !private ["PSs8Hashable", "defaultDynamoDBObjectMapper"]
+- !private ["PSs8Hashable", "defaultManager"]
+- !private ["PSs8Hashable", "defaultServiceConfiguration"]
+- !private ["PSs8Hashable", "defaultServiceManager"]
+- !private ["PSs8Hashable", "description"]
+- !private ["PSs8Hashable", "error"]
+- !private ["PSs8Hashable", "getIdentityId"]
+- !private ["PSs8Hashable", "hasChanges"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "initializeNotificationServices"]
+- !private ["PSs8Hashable", "itemID"]
+- ["PSs8Hashable", "locCurrent"]
+- !private ["PSs8Hashable", "localizedDescription"]
+- ["PSs8Hashable", "locationManager"]
+- !private ["PSs8Hashable", "mainBundle"]
+- ["PSs8Hashable", "managedObjectContext"]
+- ["PSs8Hashable", "managedObjectContext.storage"]
+- ["PSs8Hashable", "managedObjectModel"]
+- ["PSs8Hashable", "managedObjectModel.storage"]
+- ["PSs8Hashable", "persistentStoreCoordinator"]
+- ["PSs8Hashable", "persistentStoreCoordinator.storage"]
+- !private ["PSs8Hashable", "presentViewController"]
+- !private ["PSs8Hashable", "presentedViewController"]
+- !private ["PSs8Hashable", "print"]
+- !private ["PSs8Hashable", "registerForRemoteNotifications"]
+- !private ["PSs8Hashable", "registerUserNotificationSettings"]
+- !private ["PSs8Hashable", "result"]
+- !private ["PSs8Hashable", "rootViewController"]
+- !private ["PSs8Hashable", "save"]
+- ["PSs8Hashable", "saveContext"]
+- !private ["PSs8Hashable", "sessionData"]
+- !private ["PSs8Hashable", "sharedApplication"]
+- !private ["PSs8Hashable", "sharedInstance"]
+- ["PSs8Hashable", "startApp"]
+- !private ["PSs8Hashable", "startWithToken"]
+- !private ["PSs8Hashable", "status"]
+- !private ["PSs8Hashable", "statusBarStyle"]
+- !private ["PSs8Hashable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs8Hashable", "stringFromDate"]
+- !private ["PSs8Hashable", "subscript"]
+- !private ["PSs8Hashable", "timestamp"]
+- ["PSs8Hashable", "untapped"]
+- !private ["PSs8Hashable", "uppercaseString"]
+- !private ["PSs8Hashable", "userID"]
+- !private ["PSs8Hashable", "userInfo"]
+- ["PSs8Hashable", "window"]
+- ["PSs8Hashable", ""]
+- !private ["SQ", "Generator"]
+- !private ["SQ", "deinit"]
+- !private ["PSs9Indexable", "Element"]
+- !private ["PSs9Indexable", "Generator"]
+- !private ["PSs9Indexable", "Index"]
+- !private ["PSs9Indexable", "SubSequence"]
+- !private ["PSs9Indexable", "_Element"]
+- !private ["PSs9Indexable", "count"]
+- !private ["PSs9Indexable", "init"]
+- !private ["PSs9Indexable", "subscript"]
+- !private ["VSs17IndexingGenerator", "Element"]
+- !private ["CSo8Instabug", "startWithToken"]
+- !private ["Si", "Distance"]
+- !private ["Si", "IntegerLiteralType"]
+- !private ["Si", "deinit"]
+- !private ["VSs5Int16", "deinit"]
+- !private ["VSs5Int32", "deinit"]
+- !private ["VSs5Int64", "deinit"]
+- !private ["VSs4Int8", "deinit"]
+- !private ["PSs21IntegerArithmeticType", "Distance"]
+- !private ["PSs21IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs25IntegerLiteralConvertible", "Distance"]
+- !private ["PSs25IntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs11IntegerType", "Distance"]
+- !private ["PSs11IntegerType", "IntegerLiteralType"]
+- !private ["PSs14MirrorPathType", "Distance"]
+- !private ["PSs14MirrorPathType", "IntegerLiteralType"]
+- !private ["PSs14MirrorPathType", "init"]
+- !private ["PSs14MirrorPathType", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs14MirrorPathType", "uppercaseString"]
+- !private ["PSs21MutableCollectionType", "Element"]
+- !private ["PSs21MutableCollectionType", "Generator"]
+- !private ["PSs21MutableCollectionType", "Index"]
+- !private ["PSs21MutableCollectionType", "SubSequence"]
+- !private ["PSs21MutableCollectionType", "_Element"]
+- !private ["PSs21MutableCollectionType", "count"]
+- !private ["PSs21MutableCollectionType", "subscript"]
+- !private ["PSs16MutableIndexable", "Element"]
+- !private ["PSs16MutableIndexable", "Generator"]
+- !private ["PSs16MutableIndexable", "Index"]
+- !private ["PSs16MutableIndexable", "SubSequence"]
+- !private ["PSs16MutableIndexable", "_Element"]
+- !private ["PSs16MutableIndexable", "count"]
+- !private ["PSs16MutableIndexable", "subscript"]
+- !private ["PSs16MutableSliceable", "Element"]
+- !private ["PSs16MutableSliceable", "Generator"]
+- !private ["PSs16MutableSliceable", "Index"]
+- !private ["PSs16MutableSliceable", "SubSequence"]
+- !private ["PSs16MutableSliceable", "_Element"]
+- !private ["PSs16MutableSliceable", "count"]
+- !private ["PSs16MutableSliceable", "subscript"]
+- !private ["CSo8NSBundle", "URLForResource"]
+- !private ["CSo8NSBundle", "mainBundle"]
+- !private ["PSo8NSCoding", "URLByAppendingPathComponent"]
+- !private ["PSo8NSCoding", "appearance"]
+- !private ["PSo8NSCoding", "barStyle"]
+- !private ["PSo8NSCoding", "dateFormat"]
+- !private ["PSo8NSCoding", "description"]
+- !private ["PSo8NSCoding", "hasChanges"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "itemID"]
+- !private ["PSo8NSCoding", "localizedDescription"]
+- !private ["PSo8NSCoding", "persistentStoreCoordinator"]
+- !private ["PSo8NSCoding", "presentViewController"]
+- !private ["PSo8NSCoding", "presentedViewController"]
+- !private ["PSo8NSCoding", "rootViewController"]
+- !private ["PSo8NSCoding", "save"]
+- !private ["PSo8NSCoding", "status"]
+- !private ["PSo8NSCoding", "stringByReplacingOccurrencesOfString"]
+- !private ["PSo8NSCoding", "stringFromDate"]
+- !private ["PSo8NSCoding", "subscript"]
+- !private ["PSo8NSCoding", "timestamp"]
+- !private ["PSo8NSCoding", "uppercaseString"]
+- !private ["PSo8NSCoding", "userID"]
+- !private ["PSo8NSCoding", "userInfo"]
+- !private ["PSo9NSCopying", "URLByAppendingPathComponent"]
+- !private ["PSo9NSCopying", "dateFormat"]
+- !private ["PSo9NSCopying", "deinit"]
+- !private ["PSo9NSCopying", "description"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "itemID"]
+- !private ["PSo9NSCopying", "localizedDescription"]
+- !private ["PSo9NSCopying", "status"]
+- !private ["PSo9NSCopying", "stringByReplacingOccurrencesOfString"]
+- !private ["PSo9NSCopying", "stringFromDate"]
+- !private ["PSo9NSCopying", "subscript"]
+- !private ["PSo9NSCopying", "timestamp"]
+- !private ["PSo9NSCopying", "uppercaseString"]
+- !private ["PSo9NSCopying", "userID"]
+- !private ["PSo9NSCopying", "userInfo"]
+- !private ["CSo6NSData", "description"]
+- !private ["CSo6NSDate", "init"]
+- !private ["CSo15NSDateFormatter", "dateFormat"]
+- !private ["CSo15NSDateFormatter", "init"]
+- !private ["CSo15NSDateFormatter", "stringFromDate"]
+- !private ["CSo12NSDictionary", "subscript"]
+- !private ["CSo7NSError", "deinit"]
+- !private ["CSo7NSError", "description"]
+- !private ["CSo7NSError", "init"]
+- !private ["CSo7NSError", "localizedDescription"]
+- !private ["CSo7NSError", "userInfo"]
+- !private ["PSo26NSExtensionRequestHandling", "init"]
+- !private ["PSo26NSExtensionRequestHandling", "presentViewController"]
+- !private ["PSo26NSExtensionRequestHandling", "presentedViewController"]
+- !private ["PSo17NSFastEnumeration", "init"]
+- !private ["PSo17NSFastEnumeration", "subscript"]
+- !private ["CSo13NSFileManager", "URLsForDirectory"]
+- !private ["CSo13NSFileManager", "defaultManager"]
+- !private ["CSo11NSFormatter", "dateFormat"]
+- !private ["CSo11NSFormatter", "init"]
+- !private ["CSo11NSFormatter", "stringFromDate"]
+- !private ["PSo9NSLocking", "addPersistentStoreWithType"]
+- !private ["PSo9NSLocking", "hasChanges"]
+- !private ["PSo9NSLocking", "init"]
+- !private ["PSo9NSLocking", "persistentStoreCoordinator"]
+- !private ["PSo9NSLocking", "save"]
+- !private ["CSo22NSManagedObjectContext", "hasChanges"]
+- !private ["CSo22NSManagedObjectContext", "init"]
+- !private ["CSo22NSManagedObjectContext", "persistentStoreCoordinator"]
+- !private ["CSo22NSManagedObjectContext", "save"]
+- !private ["OSC37NSManagedObjectContextConcurrencyType", "MainQueueConcurrencyType"]
+- !private ["CSo20NSManagedObjectModel", "init"]
+- !private ["PSo16NSMutableCopying", "description"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "stringByReplacingOccurrencesOfString"]
+- !private ["PSo16NSMutableCopying", "subscript"]
+- !private ["PSo16NSMutableCopying", "uppercaseString"]
+- ["CSo8NSObject", "AWSCognitoCredentialsProvider"]
+- !private ["CSo8NSObject", "AWSDynamoDBObjectMapper"]
+- !private ["CSo8NSObject", "AWSServiceConfiguration"]
+- !private ["CSo8NSObject", "AWSServiceManager"]
+- !private ["CSo8NSObject", "AWSTask"]
+- ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Array"]
+- ["CSo8NSObject", "BFTask"]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "CLLocation"]
+- !private ["CSo8NSObject", "FBSDKApplicationDelegate"]
+- !private ["CSo8NSObject", "IBGInvocationEventShake"]
+- !private ["CSo8NSObject", "Instabug"]
+- ["CSo8NSObject", "Int"]
+- !private ["CSo8NSObject", "NSBundle"]
+- ["CSo8NSObject", "NSData"]
+- !private ["CSo8NSObject", "NSDate"]
+- !private ["CSo8NSObject", "NSDateFormatter"]
+- !private ["CSo8NSObject", "NSDictionary"]
+- ["CSo8NSObject", "NSError"]
+- !private ["CSo8NSObject", "NSFileManager"]
+- !private ["CSo8NSObject", "NSLocalizedDescriptionKey"]
+- !private ["CSo8NSObject", "NSLocalizedFailureReasonErrorKey"]
+- !private ["CSo8NSObject", "NSLog"]
+- ["CSo8NSObject", "NSManagedObjectContext"]
+- ["CSo8NSObject", "NSManagedObjectModel"]
+- ["CSo8NSObject", "NSObject"]
+- ["CSo8NSObject", "NSPersistentStoreCoordinator"]
+- !private ["CSo8NSObject", "NSSQLiteStoreType"]
+- ["CSo8NSObject", "NSURL"]
+- !private ["CSo8NSObject", "NSUnderlyingErrorKey"]
+- ["CSo8NSObject", "OneShotLocationManager"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "UIAlertController"]
+- !private ["CSo8NSObject", "UIAlertControllerStyle"]
+- ["CSo8NSObject", "UIApplication"]
+- ["CSo8NSObject", "UIBackgroundFetchResult"]
+- !private ["CSo8NSObject", "UINavigationBar"]
+- !private ["CSo8NSObject", "UIUserNotificationSettings"]
+- ["CSo8NSObject", "UIWindow"]
+- !private ["CSo8NSObject", "URLByAppendingPathComponent"]
+- !private ["CSo8NSObject", "URLForResource"]
+- !private ["CSo8NSObject", "URLsForDirectory"]
+- ["CSo8NSObject", "Void"]
+- !private ["CSo8NSObject", "abort"]
+- !private ["CSo8NSObject", "addPersistentStoreWithType"]
+- !private ["CSo8NSObject", "appearance"]
+- ["CSo8NSObject", "application"]
+- ["CSo8NSObject", "applicationDidBecomeActive"]
+- ["CSo8NSObject", "applicationDidEnterBackground"]
+- ["CSo8NSObject", "applicationDidFinishLaunching"]
+- ["CSo8NSObject", "applicationDidReceiveMemoryWarning"]
+- ["CSo8NSObject", "applicationDocumentsDirectory"]
+- ["CSo8NSObject", "applicationDocumentsDirectory.storage"]
+- ["CSo8NSObject", "applicationProtectedDataDidBecomeAvailable"]
+- ["CSo8NSObject", "applicationProtectedDataWillBecomeUnavailable"]
+- ["CSo8NSObject", "applicationShouldRequestHealthAuthorization"]
+- ["CSo8NSObject", "applicationSignificantTimeChange"]
+- ["CSo8NSObject", "applicationWillEnterForeground"]
+- ["CSo8NSObject", "applicationWillResignActive"]
+- ["CSo8NSObject", "applicationWillTerminate"]
+- !private ["CSo8NSObject", "barStyle"]
+- ["CSo8NSObject", "cognitoId"]
+- !private ["CSo8NSObject", "continueWithBlock"]
+- ["CSo8NSObject", "convertDeviceTokenToString"]
+- ["CSo8NSObject", "credentialsProvider"]
+- ["CSo8NSObject", "dataStash"]
+- !private ["CSo8NSObject", "dateFormat"]
+- !private ["CSo8NSObject", "defaultDynamoDBObjectMapper"]
+- !private ["CSo8NSObject", "defaultManager"]
+- !private ["CSo8NSObject", "defaultServiceConfiguration"]
+- !private ["CSo8NSObject", "defaultServiceManager"]
+- !private ["CSo8NSObject", "deinit"]
+- !private ["CSo8NSObject", "description"]
+- !private ["CSo8NSObject", "error"]
+- !private ["CSo8NSObject", "getIdentityId"]
+- !private ["CSo8NSObject", "hasChanges"]
+- ["CSo8NSObject", "init"]
+- ["CSo8NSObject", "initializeNotificationServices"]
+- !private ["CSo8NSObject", "itemID"]
+- ["CSo8NSObject", "locCurrent"]
+- !private ["CSo8NSObject", "localizedDescription"]
+- ["CSo8NSObject", "locationManager"]
+- !private ["CSo8NSObject", "mainBundle"]
+- ["CSo8NSObject", "managedObjectContext"]
+- ["CSo8NSObject", "managedObjectContext.storage"]
+- ["CSo8NSObject", "managedObjectModel"]
+- ["CSo8NSObject", "managedObjectModel.storage"]
+- ["CSo8NSObject", "persistentStoreCoordinator"]
+- ["CSo8NSObject", "persistentStoreCoordinator.storage"]
+- !private ["CSo8NSObject", "presentViewController"]
+- !private ["CSo8NSObject", "presentedViewController"]
+- !private ["CSo8NSObject", "print"]
+- !private ["CSo8NSObject", "registerForRemoteNotifications"]
+- !private ["CSo8NSObject", "registerUserNotificationSettings"]
+- !private ["CSo8NSObject", "result"]
+- !private ["CSo8NSObject", "rootViewController"]
+- !private ["CSo8NSObject", "save"]
+- ["CSo8NSObject", "saveContext"]
+- !private ["CSo8NSObject", "sessionData"]
+- !private ["CSo8NSObject", "sharedApplication"]
+- !private ["CSo8NSObject", "sharedInstance"]
+- ["CSo8NSObject", "startApp"]
+- !private ["CSo8NSObject", "startWithToken"]
+- !private ["CSo8NSObject", "status"]
+- !private ["CSo8NSObject", "statusBarStyle"]
+- !private ["CSo8NSObject", "stringByReplacingOccurrencesOfString"]
+- !private ["CSo8NSObject", "stringFromDate"]
+- !private ["CSo8NSObject", "subscript"]
+- !private ["CSo8NSObject", "timestamp"]
+- ["CSo8NSObject", "untapped"]
+- !private ["CSo8NSObject", "uppercaseString"]
+- !private ["CSo8NSObject", "userID"]
+- !private ["CSo8NSObject", "userInfo"]
+- ["CSo8NSObject", "window"]
+- ["PSo16NSObjectProtocol", "AWSCognitoCredentialsProvider"]
+- !private ["PSo16NSObjectProtocol", "AWSDynamoDBObjectMapper"]
+- !private ["PSo16NSObjectProtocol", "AWSServiceConfiguration"]
+- !private ["PSo16NSObjectProtocol", "AWSServiceManager"]
+- !private ["PSo16NSObjectProtocol", "AnyObject"]
+- !private ["PSo16NSObjectProtocol", "BFTask"]
+- !private ["PSo16NSObjectProtocol", "CLLocation"]
+- !private ["PSo16NSObjectProtocol", "FBSDKApplicationDelegate"]
+- !private ["PSo16NSObjectProtocol", "IBGInvocationEventShake"]
+- !private ["PSo16NSObjectProtocol", "Instabug"]
+- !private ["PSo16NSObjectProtocol", "NSBundle"]
+- !private ["PSo16NSObjectProtocol", "NSDate"]
+- !private ["PSo16NSObjectProtocol", "NSDateFormatter"]
+- !private ["PSo16NSObjectProtocol", "NSError"]
+- !private ["PSo16NSObjectProtocol", "NSFileManager"]
+- !private ["PSo16NSObjectProtocol", "NSLocalizedDescriptionKey"]
+- !private ["PSo16NSObjectProtocol", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSo16NSObjectProtocol", "NSLog"]
+- !private ["PSo16NSObjectProtocol", "NSManagedObjectContext"]
+- !private ["PSo16NSObjectProtocol", "NSManagedObjectModel"]
+- !private ["PSo16NSObjectProtocol", "NSPersistentStoreCoordinator"]
+- !private ["PSo16NSObjectProtocol", "NSSQLiteStoreType"]
+- !private ["PSo16NSObjectProtocol", "NSUnderlyingErrorKey"]
+- !private ["PSo16NSObjectProtocol", "String"]
+- !private ["PSo16NSObjectProtocol", "UIAlertController"]
+- !private ["PSo16NSObjectProtocol", "UIAlertControllerStyle"]
+- !private ["PSo16NSObjectProtocol", "UIApplication"]
+- !private ["PSo16NSObjectProtocol", "UIBackgroundFetchResult"]
+- !private ["PSo16NSObjectProtocol", "UINavigationBar"]
+- !private ["PSo16NSObjectProtocol", "UIUserNotificationSettings"]
+- !private ["PSo16NSObjectProtocol", "URLByAppendingPathComponent"]
+- !private ["PSo16NSObjectProtocol", "URLForResource"]
+- !private ["PSo16NSObjectProtocol", "URLsForDirectory"]
+- !private ["PSo16NSObjectProtocol", "abort"]
+- !private ["PSo16NSObjectProtocol", "addPersistentStoreWithType"]
+- !private ["PSo16NSObjectProtocol", "appearance"]
+- ["PSo16NSObjectProtocol", "application"]
+- ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
+- ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
+- ["PSo16NSObjectProtocol", "applicationDidFinishLaunching"]
+- ["PSo16NSObjectProtocol", "applicationDidReceiveMemoryWarning"]
+- ["PSo16NSObjectProtocol", "applicationDocumentsDirectory"]
+- ["PSo16NSObjectProtocol", "applicationDocumentsDirectory.storage"]
+- ["PSo16NSObjectProtocol", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo16NSObjectProtocol", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo16NSObjectProtocol", "applicationShouldRequestHealthAuthorization"]
+- ["PSo16NSObjectProtocol", "applicationSignificantTimeChange"]
+- ["PSo16NSObjectProtocol", "applicationWillEnterForeground"]
+- ["PSo16NSObjectProtocol", "applicationWillResignActive"]
+- ["PSo16NSObjectProtocol", "applicationWillTerminate"]
+- !private ["PSo16NSObjectProtocol", "barStyle"]
+- ["PSo16NSObjectProtocol", "cognitoId"]
+- !private ["PSo16NSObjectProtocol", "continueWithBlock"]
+- ["PSo16NSObjectProtocol", "convertDeviceTokenToString"]
+- ["PSo16NSObjectProtocol", "credentialsProvider"]
+- ["PSo16NSObjectProtocol", "dataStash"]
+- !private ["PSo16NSObjectProtocol", "dateFormat"]
+- !private ["PSo16NSObjectProtocol", "defaultDynamoDBObjectMapper"]
+- !private ["PSo16NSObjectProtocol", "defaultManager"]
+- !private ["PSo16NSObjectProtocol", "defaultServiceConfiguration"]
+- !private ["PSo16NSObjectProtocol", "defaultServiceManager"]
+- !private ["PSo16NSObjectProtocol", "description"]
+- !private ["PSo16NSObjectProtocol", "error"]
+- !private ["PSo16NSObjectProtocol", "getIdentityId"]
+- !private ["PSo16NSObjectProtocol", "hasChanges"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "initializeNotificationServices"]
+- !private ["PSo16NSObjectProtocol", "itemID"]
+- ["PSo16NSObjectProtocol", "locCurrent"]
+- !private ["PSo16NSObjectProtocol", "localizedDescription"]
+- ["PSo16NSObjectProtocol", "locationManager"]
+- !private ["PSo16NSObjectProtocol", "mainBundle"]
+- ["PSo16NSObjectProtocol", "managedObjectContext"]
+- ["PSo16NSObjectProtocol", "managedObjectContext.storage"]
+- ["PSo16NSObjectProtocol", "managedObjectModel"]
+- ["PSo16NSObjectProtocol", "managedObjectModel.storage"]
+- ["PSo16NSObjectProtocol", "persistentStoreCoordinator"]
+- ["PSo16NSObjectProtocol", "persistentStoreCoordinator.storage"]
+- !private ["PSo16NSObjectProtocol", "presentViewController"]
+- !private ["PSo16NSObjectProtocol", "presentedViewController"]
+- !private ["PSo16NSObjectProtocol", "print"]
+- !private ["PSo16NSObjectProtocol", "registerForRemoteNotifications"]
+- !private ["PSo16NSObjectProtocol", "registerUserNotificationSettings"]
+- !private ["PSo16NSObjectProtocol", "result"]
+- !private ["PSo16NSObjectProtocol", "rootViewController"]
+- !private ["PSo16NSObjectProtocol", "save"]
+- ["PSo16NSObjectProtocol", "saveContext"]
+- !private ["PSo16NSObjectProtocol", "sessionData"]
+- !private ["PSo16NSObjectProtocol", "sharedApplication"]
+- !private ["PSo16NSObjectProtocol", "sharedInstance"]
+- ["PSo16NSObjectProtocol", "startApp"]
+- !private ["PSo16NSObjectProtocol", "startWithToken"]
+- !private ["PSo16NSObjectProtocol", "status"]
+- !private ["PSo16NSObjectProtocol", "statusBarStyle"]
+- !private ["PSo16NSObjectProtocol", "stringByReplacingOccurrencesOfString"]
+- !private ["PSo16NSObjectProtocol", "stringFromDate"]
+- !private ["PSo16NSObjectProtocol", "subscript"]
+- !private ["PSo16NSObjectProtocol", "timestamp"]
+- ["PSo16NSObjectProtocol", "untapped"]
+- !private ["PSo16NSObjectProtocol", "uppercaseString"]
+- !private ["PSo16NSObjectProtocol", "userID"]
+- !private ["PSo16NSObjectProtocol", "userInfo"]
+- ["PSo16NSObjectProtocol", "window"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["CSo28NSPersistentStoreCoordinator", "addPersistentStoreWithType"]
+- !private ["CSo28NSPersistentStoreCoordinator", "init"]
+- !private ["OSC21NSSearchPathDirectory", "DocumentDirectory"]
+- !private ["VSC22NSSearchPathDomainMask", "UserDomainMask"]
+- !private ["PSo14NSSecureCoding", "URLByAppendingPathComponent"]
+- !private ["PSo14NSSecureCoding", "description"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "localizedDescription"]
+- !private ["PSo14NSSecureCoding", "stringByReplacingOccurrencesOfString"]
+- !private ["PSo14NSSecureCoding", "subscript"]
+- !private ["PSo14NSSecureCoding", "uppercaseString"]
+- !private ["PSo14NSSecureCoding", "userInfo"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "stringByReplacingOccurrencesOfString"]
+- !private ["CSo8NSString", "uppercaseString"]
+- !private ["CSo5NSURL", "URLByAppendingPathComponent"]
+- !private ["PSs21NilLiteralConvertible", "Generator"]
+- ["PSs21NilLiteralConvertible", "Some"]
+- !private ["PSs13OptionSetType", "Alert"]
+- !private ["PSs13OptionSetType", "Badge"]
+- !private ["PSs13OptionSetType", "Element"]
+- !private ["PSs13OptionSetType", "Sound"]
+- !private ["PSs13OptionSetType", "UserDomainMask"]
+- ["Sq", "Some"]
+- !private ["Sq", "deinit"]
+- !private ["PSs16OutputStreamType", "init"]
+- !private ["PSs16OutputStreamType", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs16OutputStreamType", "uppercaseString"]
+- !private ["PSs21RandomAccessIndexType", "Distance"]
+- !private ["PSs21RandomAccessIndexType", "IntegerLiteralType"]
+- !private ["VSs5Range", "deinit"]
+- !private ["PSs30RangeReplaceableCollectionType", "Element"]
+- !private ["PSs30RangeReplaceableCollectionType", "Generator"]
+- !private ["PSs30RangeReplaceableCollectionType", "Index"]
+- !private ["PSs30RangeReplaceableCollectionType", "SubSequence"]
+- !private ["PSs30RangeReplaceableCollectionType", "_Element"]
+- !private ["PSs30RangeReplaceableCollectionType", "count"]
+- !private ["PSs30RangeReplaceableCollectionType", "subscript"]
+- !private ["PSs16RawRepresentable", "Alert"]
+- !private ["PSs16RawRepresentable", "Badge"]
+- !private ["PSs16RawRepresentable", "Black"]
+- !private ["PSs16RawRepresentable", "DocumentDirectory"]
+- !private ["PSs16RawRepresentable", "Element"]
+- !private ["PSs16RawRepresentable", "LightContent"]
+- !private ["PSs16RawRepresentable", "MainQueueConcurrencyType"]
+- !private ["PSs16RawRepresentable", "NoData"]
+- !private ["PSs16RawRepresentable", "Sound"]
+- !private ["PSs16RawRepresentable", "USEast1"]
+- !private ["PSs16RawRepresentable", "UserDomainMask"]
+- !private ["PSs12SequenceType", "Element"]
+- !private ["PSs12SequenceType", "Generator"]
+- !private ["PSs12SequenceType", "Index"]
+- !private ["PSs12SequenceType", "SubSequence"]
+- !private ["PSs12SequenceType", "_Element"]
+- !private ["PSs12SequenceType", "count"]
+- !private ["PSs12SequenceType", "init"]
+- !private ["PSs12SequenceType", "subscript"]
+- !private ["PSs14SetAlgebraType", "Alert"]
+- !private ["PSs14SetAlgebraType", "Badge"]
+- !private ["PSs14SetAlgebraType", "Element"]
+- !private ["PSs14SetAlgebraType", "Sound"]
+- !private ["PSs14SetAlgebraType", "UserDomainMask"]
+- !private ["PSs17SignedIntegerType", "Distance"]
+- !private ["PSs17SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs16SignedNumberType", "Distance"]
+- !private ["PSs16SignedNumberType", "IntegerLiteralType"]
+- !private ["VSs5Slice", "Generator"]
+- !private ["VSs5Slice", "Index"]
+- !private ["VSs5Slice", "SubSequence"]
+- !private ["VSs5Slice", "_Element"]
+- !private ["PSs10Streamable", "init"]
+- !private ["PSs10Streamable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs10Streamable", "uppercaseString"]
+- !private ["PSs10Strideable", "Distance"]
+- !private ["PSs10Strideable", "IntegerLiteralType"]
+- !private ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["SS", "stringByReplacingOccurrencesOfString"]
+- !private ["SS", "uppercaseString"]
+- !private ["PSs30StringInterpolationConvertible", "init"]
+- !private ["PSs30StringInterpolationConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs30StringInterpolationConvertible", "uppercaseString"]
+- !private ["PSs24StringLiteralConvertible", "init"]
+- !private ["PSs24StringLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs24StringLiteralConvertible", "uppercaseString"]
+- !private ["PSo29UIAccessibilityIdentification", "appearance"]
+- !private ["PSo29UIAccessibilityIdentification", "barStyle"]
+- !private ["PSo29UIAccessibilityIdentification", "rootViewController"]
+- !private ["CSo17UIAlertController", "init"]
+- !private ["OSC22UIAlertControllerStyle", "Alert"]
+- !private ["PSo12UIAppearance", "appearance"]
+- !private ["PSo12UIAppearance", "barStyle"]
+- !private ["PSo12UIAppearance", "rootViewController"]
+- !private ["PSo21UIAppearanceContainer", "appearance"]
+- !private ["PSo21UIAppearanceContainer", "barStyle"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- !private ["PSo21UIAppearanceContainer", "presentViewController"]
+- !private ["PSo21UIAppearanceContainer", "presentedViewController"]
+- !private ["PSo21UIAppearanceContainer", "rootViewController"]
+- !private ["CSo13UIApplication", "registerForRemoteNotifications"]
+- !private ["CSo13UIApplication", "registerUserNotificationSettings"]
+- !private ["CSo13UIApplication", "sharedApplication"]
+- !private ["CSo13UIApplication", "statusBarStyle"]
+- ["PSo21UIApplicationDelegate", "AWSCognitoCredentialsProvider"]
+- !private ["PSo21UIApplicationDelegate", "AWSDynamoDBObjectMapper"]
+- !private ["PSo21UIApplicationDelegate", "AWSServiceConfiguration"]
+- !private ["PSo21UIApplicationDelegate", "AWSServiceManager"]
+- !private ["PSo21UIApplicationDelegate", "AnyObject"]
+- !private ["PSo21UIApplicationDelegate", "BFTask"]
+- !private ["PSo21UIApplicationDelegate", "CLLocation"]
+- !private ["PSo21UIApplicationDelegate", "FBSDKApplicationDelegate"]
+- !private ["PSo21UIApplicationDelegate", "IBGInvocationEventShake"]
+- !private ["PSo21UIApplicationDelegate", "Instabug"]
+- !private ["PSo21UIApplicationDelegate", "NSBundle"]
+- !private ["PSo21UIApplicationDelegate", "NSDate"]
+- !private ["PSo21UIApplicationDelegate", "NSDateFormatter"]
+- !private ["PSo21UIApplicationDelegate", "NSError"]
+- !private ["PSo21UIApplicationDelegate", "NSFileManager"]
+- !private ["PSo21UIApplicationDelegate", "NSLocalizedDescriptionKey"]
+- !private ["PSo21UIApplicationDelegate", "NSLocalizedFailureReasonErrorKey"]
+- !private ["PSo21UIApplicationDelegate", "NSLog"]
+- !private ["PSo21UIApplicationDelegate", "NSManagedObjectContext"]
+- !private ["PSo21UIApplicationDelegate", "NSManagedObjectModel"]
+- !private ["PSo21UIApplicationDelegate", "NSPersistentStoreCoordinator"]
+- !private ["PSo21UIApplicationDelegate", "NSSQLiteStoreType"]
+- !private ["PSo21UIApplicationDelegate", "NSUnderlyingErrorKey"]
+- !private ["PSo21UIApplicationDelegate", "String"]
+- !private ["PSo21UIApplicationDelegate", "UIAlertController"]
+- !private ["PSo21UIApplicationDelegate", "UIAlertControllerStyle"]
+- !private ["PSo21UIApplicationDelegate", "UIApplication"]
+- !private ["PSo21UIApplicationDelegate", "UIBackgroundFetchResult"]
+- !private ["PSo21UIApplicationDelegate", "UINavigationBar"]
+- !private ["PSo21UIApplicationDelegate", "UIUserNotificationSettings"]
+- !private ["PSo21UIApplicationDelegate", "abort"]
+- ["PSo21UIApplicationDelegate", "application"]
+- ["PSo21UIApplicationDelegate", "applicationDidBecomeActive"]
+- ["PSo21UIApplicationDelegate", "applicationDidEnterBackground"]
+- ["PSo21UIApplicationDelegate", "applicationDidFinishLaunching"]
+- ["PSo21UIApplicationDelegate", "applicationDidReceiveMemoryWarning"]
+- !private ["PSo21UIApplicationDelegate", "applicationDocumentsDirectory"]
+- ["PSo21UIApplicationDelegate", "applicationProtectedDataDidBecomeAvailable"]
+- ["PSo21UIApplicationDelegate", "applicationProtectedDataWillBecomeUnavailable"]
+- ["PSo21UIApplicationDelegate", "applicationShouldRequestHealthAuthorization"]
+- ["PSo21UIApplicationDelegate", "applicationSignificantTimeChange"]
+- ["PSo21UIApplicationDelegate", "applicationWillEnterForeground"]
+- ["PSo21UIApplicationDelegate", "applicationWillResignActive"]
+- ["PSo21UIApplicationDelegate", "applicationWillTerminate"]
+- !private ["PSo21UIApplicationDelegate", "convertDeviceTokenToString"]
+- !private ["PSo21UIApplicationDelegate", "credentialsProvider"]
+- !private ["PSo21UIApplicationDelegate", "dataStash"]
+- !private ["PSo21UIApplicationDelegate", "initializeNotificationServices"]
+- !private ["PSo21UIApplicationDelegate", "locCurrent"]
+- !private ["PSo21UIApplicationDelegate", "managedObjectContext"]
+- !private ["PSo21UIApplicationDelegate", "managedObjectModel"]
+- !private ["PSo21UIApplicationDelegate", "persistentStoreCoordinator"]
+- !private ["PSo21UIApplicationDelegate", "print"]
+- !private ["PSo21UIApplicationDelegate", "saveContext"]
+- !private ["PSo21UIApplicationDelegate", "sessionData"]
+- !private ["PSo21UIApplicationDelegate", "untapped"]
+- ["PSo21UIApplicationDelegate", "window"]
+- ["PSo21UIApplicationDelegate", ""]
+- !private ["OSC23UIBackgroundFetchResult", "NoData"]
+- !private ["PSo16UIBarPositioning", "appearance"]
+- !private ["PSo16UIBarPositioning", "barStyle"]
+- !private ["OSC10UIBarStyle", "Black"]
+- !private ["PSo18UIContentContainer", "init"]
+- !private ["PSo18UIContentContainer", "presentViewController"]
+- !private ["PSo18UIContentContainer", "presentedViewController"]
+- !private ["PSo17UICoordinateSpace", "appearance"]
+- !private ["PSo17UICoordinateSpace", "barStyle"]
+- !private ["PSo17UICoordinateSpace", "rootViewController"]
+- !private ["PSo13UIDynamicItem", "appearance"]
+- !private ["PSo13UIDynamicItem", "barStyle"]
+- !private ["PSo13UIDynamicItem", "rootViewController"]
+- !private ["PSo18UIFocusEnvironment", "appearance"]
+- !private ["PSo18UIFocusEnvironment", "barStyle"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- !private ["PSo18UIFocusEnvironment", "presentViewController"]
+- !private ["PSo18UIFocusEnvironment", "presentedViewController"]
+- !private ["PSo18UIFocusEnvironment", "rootViewController"]
+- !private ["CSo15UINavigationBar", "appearance"]
+- !private ["CSo15UINavigationBar", "barStyle"]
+- ["CSo11UIResponder", "AWSCognitoCredentialsProvider"]
+- !private ["CSo11UIResponder", "AWSDynamoDBObjectMapper"]
+- !private ["CSo11UIResponder", "AWSServiceConfiguration"]
+- !private ["CSo11UIResponder", "AWSServiceManager"]
+- !private ["CSo11UIResponder", "AWSTask"]
+- ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "Array"]
+- ["CSo11UIResponder", "BFTask"]
+- ["CSo11UIResponder", "Bool"]
+- ["CSo11UIResponder", "CLLocation"]
+- !private ["CSo11UIResponder", "FBSDKApplicationDelegate"]
+- !private ["CSo11UIResponder", "IBGInvocationEventShake"]
+- !private ["CSo11UIResponder", "Instabug"]
+- ["CSo11UIResponder", "Int"]
+- !private ["CSo11UIResponder", "NSBundle"]
+- ["CSo11UIResponder", "NSData"]
+- !private ["CSo11UIResponder", "NSDate"]
+- !private ["CSo11UIResponder", "NSDateFormatter"]
+- !private ["CSo11UIResponder", "NSDictionary"]
+- ["CSo11UIResponder", "NSError"]
+- !private ["CSo11UIResponder", "NSFileManager"]
+- !private ["CSo11UIResponder", "NSLocalizedDescriptionKey"]
+- !private ["CSo11UIResponder", "NSLocalizedFailureReasonErrorKey"]
+- !private ["CSo11UIResponder", "NSLog"]
+- ["CSo11UIResponder", "NSManagedObjectContext"]
+- ["CSo11UIResponder", "NSManagedObjectModel"]
+- ["CSo11UIResponder", "NSObject"]
+- ["CSo11UIResponder", "NSPersistentStoreCoordinator"]
+- !private ["CSo11UIResponder", "NSSQLiteStoreType"]
+- ["CSo11UIResponder", "NSURL"]
+- !private ["CSo11UIResponder", "NSUnderlyingErrorKey"]
+- ["CSo11UIResponder", "OneShotLocationManager"]
+- ["CSo11UIResponder", "String"]
+- !private ["CSo11UIResponder", "UIAlertController"]
+- !private ["CSo11UIResponder", "UIAlertControllerStyle"]
+- ["CSo11UIResponder", "UIApplication"]
+- ["CSo11UIResponder", "UIBackgroundFetchResult"]
+- !private ["CSo11UIResponder", "UINavigationBar"]
+- !private ["CSo11UIResponder", "UIUserNotificationSettings"]
+- ["CSo11UIResponder", "UIWindow"]
+- ["CSo11UIResponder", "Void"]
+- !private ["CSo11UIResponder", "abort"]
+- !private ["CSo11UIResponder", "appearance"]
+- ["CSo11UIResponder", "application"]
+- ["CSo11UIResponder", "applicationDidBecomeActive"]
+- ["CSo11UIResponder", "applicationDidEnterBackground"]
+- ["CSo11UIResponder", "applicationDidFinishLaunching"]
+- ["CSo11UIResponder", "applicationDidReceiveMemoryWarning"]
+- ["CSo11UIResponder", "applicationDocumentsDirectory"]
+- ["CSo11UIResponder", "applicationDocumentsDirectory.storage"]
+- ["CSo11UIResponder", "applicationProtectedDataDidBecomeAvailable"]
+- ["CSo11UIResponder", "applicationProtectedDataWillBecomeUnavailable"]
+- ["CSo11UIResponder", "applicationShouldRequestHealthAuthorization"]
+- ["CSo11UIResponder", "applicationSignificantTimeChange"]
+- ["CSo11UIResponder", "applicationWillEnterForeground"]
+- ["CSo11UIResponder", "applicationWillResignActive"]
+- ["CSo11UIResponder", "applicationWillTerminate"]
+- !private ["CSo11UIResponder", "barStyle"]
+- ["CSo11UIResponder", "cognitoId"]
+- ["CSo11UIResponder", "convertDeviceTokenToString"]
+- ["CSo11UIResponder", "credentialsProvider"]
+- ["CSo11UIResponder", "dataStash"]
+- ["CSo11UIResponder", "init"]
+- ["CSo11UIResponder", "initializeNotificationServices"]
+- ["CSo11UIResponder", "locCurrent"]
+- ["CSo11UIResponder", "locationManager"]
+- ["CSo11UIResponder", "managedObjectContext"]
+- ["CSo11UIResponder", "managedObjectContext.storage"]
+- ["CSo11UIResponder", "managedObjectModel"]
+- ["CSo11UIResponder", "managedObjectModel.storage"]
+- ["CSo11UIResponder", "persistentStoreCoordinator"]
+- ["CSo11UIResponder", "persistentStoreCoordinator.storage"]
+- !private ["CSo11UIResponder", "presentViewController"]
+- !private ["CSo11UIResponder", "presentedViewController"]
+- !private ["CSo11UIResponder", "print"]
+- !private ["CSo11UIResponder", "registerForRemoteNotifications"]
+- !private ["CSo11UIResponder", "registerUserNotificationSettings"]
+- !private ["CSo11UIResponder", "rootViewController"]
+- ["CSo11UIResponder", "saveContext"]
+- !private ["CSo11UIResponder", "sessionData"]
+- !private ["CSo11UIResponder", "sharedApplication"]
+- ["CSo11UIResponder", "startApp"]
+- !private ["CSo11UIResponder", "statusBarStyle"]
+- ["CSo11UIResponder", "untapped"]
+- ["CSo11UIResponder", "window"]
+- ["CSo11UIResponder", ""]
+- !private ["PSo16UIStateRestoring", "init"]
+- !private ["PSo16UIStateRestoring", "presentViewController"]
+- !private ["PSo16UIStateRestoring", "presentedViewController"]
+- !private ["OSC16UIStatusBarStyle", "LightContent"]
+- !private ["PSo18UITraitEnvironment", "appearance"]
+- !private ["PSo18UITraitEnvironment", "barStyle"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- !private ["PSo18UITraitEnvironment", "presentViewController"]
+- !private ["PSo18UITraitEnvironment", "presentedViewController"]
+- !private ["PSo18UITraitEnvironment", "rootViewController"]
+- !private ["CSo26UIUserNotificationSettings", "init"]
+- !private ["VSC22UIUserNotificationType", "Alert"]
+- !private ["VSC22UIUserNotificationType", "Badge"]
+- !private ["VSC22UIUserNotificationType", "Element"]
+- !private ["VSC22UIUserNotificationType", "Sound"]
+- !private ["CSo6UIView", "appearance"]
+- !private ["CSo6UIView", "barStyle"]
+- !private ["CSo6UIView", "rootViewController"]
+- !private ["CSo16UIViewController", "init"]
+- !private ["CSo16UIViewController", "presentViewController"]
+- !private ["CSo16UIViewController", "presentedViewController"]
+- !private ["CSo8UIWindow", "rootViewController"]
+- !private ["Su", "deinit"]
+- !private ["VSs6UInt16", "deinit"]
+- !private ["VSs6UInt32", "deinit"]
+- !private ["VSs6UInt64", "deinit"]
+- !private ["VSs5UInt8", "deinit"]
+- !private ["Sc", "deinit"]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs31UnicodeScalarLiteralConvertible", "uppercaseString"]
+- !private ["PSs10_ArrayType", "Element"]
+- !private ["PSs10_ArrayType", "Generator"]
+- !private ["PSs10_ArrayType", "Index"]
+- !private ["PSs10_ArrayType", "SubSequence"]
+- !private ["PSs10_ArrayType", "_Element"]
+- !private ["PSs10_ArrayType", "count"]
+- !private ["PSs10_ArrayType", "subscript"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "init"]
+- !private ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible", "uppercaseString"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "Distance"]
+- !private ["PSs33_BuiltinIntegerLiteralConvertible", "IntegerLiteralType"]
+- !private ["PSs32_BuiltinStringLiteralConvertible", "init"]
+- !private ["PSs32_BuiltinStringLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs32_BuiltinStringLiteralConvertible", "uppercaseString"]
+- !private ["PSs37_BuiltinUTF16StringLiteralConvertible", "init"]
+- !private ["PSs37_BuiltinUTF16StringLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs37_BuiltinUTF16StringLiteralConvertible", "uppercaseString"]
+- !private ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "init"]
+- !private ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs39_BuiltinUnicodeScalarLiteralConvertible", "uppercaseString"]
+- !private ["PSs16_CocoaStringType", "init"]
+- !private ["PSs16_CocoaStringType", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs16_CocoaStringType", "uppercaseString"]
+- !private ["PSs24_DestructorSafeContainer", "Element"]
+- !private ["PSs24_DestructorSafeContainer", "Generator"]
+- !private ["PSs24_DestructorSafeContainer", "Index"]
+- !private ["PSs24_DestructorSafeContainer", "SubSequence"]
+- !private ["PSs24_DestructorSafeContainer", "_Element"]
+- !private ["PSs24_DestructorSafeContainer", "count"]
+- !private ["PSs24_DestructorSafeContainer", "subscript"]
+- !private ["PSs32_FileReferenceLiteralConvertible", "URLByAppendingPathComponent"]
+- !private ["PSs14_Incrementable", "Distance"]
+- !private ["PSs14_Incrementable", "IntegerLiteralType"]
+- !private ["PSs14_Incrementable", "_DisabledRangeIndex"]
+- !private ["PSs22_IntegerArithmeticType", "Distance"]
+- !private ["PSs22_IntegerArithmeticType", "IntegerLiteralType"]
+- !private ["PSs12_IntegerType", "Distance"]
+- !private ["PSs12_IntegerType", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "Distance"]
+- !private ["PSs21_ObjectiveCBridgeable", "Element"]
+- !private ["PSs21_ObjectiveCBridgeable", "Generator"]
+- !private ["PSs21_ObjectiveCBridgeable", "Index"]
+- !private ["PSs21_ObjectiveCBridgeable", "IntegerLiteralType"]
+- !private ["PSs21_ObjectiveCBridgeable", "SubSequence"]
+- !private ["PSs21_ObjectiveCBridgeable", "_Element"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "count"]
+- !private ["PSs21_ObjectiveCBridgeable", "init"]
+- !private ["PSs21_ObjectiveCBridgeable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs21_ObjectiveCBridgeable", "subscript"]
+- !private ["PSs21_ObjectiveCBridgeable", "uppercaseString"]
+- !private ["VSs26_OptionalNilComparisonType", "deinit"]
+- !private ["PSs22_RandomAccessAmbiguity", "Distance"]
+- !private ["PSs22_RandomAccessAmbiguity", "IntegerLiteralType"]
+- !private ["PSs12_Reflectable", "Distance"]
+- !private ["PSs12_Reflectable", "Element"]
+- !private ["PSs12_Reflectable", "Generator"]
+- !private ["PSs12_Reflectable", "Index"]
+- !private ["PSs12_Reflectable", "IntegerLiteralType"]
+- ["PSs12_Reflectable", "Some"]
+- !private ["PSs12_Reflectable", "SubSequence"]
+- !private ["PSs12_Reflectable", "URLByAppendingPathComponent"]
+- !private ["PSs12_Reflectable", "_Element"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "appearance"]
+- !private ["PSs12_Reflectable", "barStyle"]
+- !private ["PSs12_Reflectable", "count"]
+- !private ["PSs12_Reflectable", "init"]
+- !private ["PSs12_Reflectable", "rootViewController"]
+- !private ["PSs12_Reflectable", "stringByReplacingOccurrencesOfString"]
+- !private ["PSs12_Reflectable", "subscript"]
+- !private ["PSs12_Reflectable", "uppercaseString"]
+- !private ["PSs18_SignedIntegerType", "Distance"]
+- !private ["PSs18_SignedIntegerType", "IntegerLiteralType"]
+- !private ["PSs11_Strideable", "Distance"]
+- !private ["PSs11_Strideable", "IntegerLiteralType"]
+- !private ["C4Knot11sessionData", "init"]
+- !private ["C4Knot11sessionData", "itemID"]
+- !private ["C4Knot11sessionData", "status"]
+- !private ["C4Knot11sessionData", "timestamp"]
+- !private ["C4Knot11sessionData", "userID"]
+depends-nominal:
+- "CSo29AWSCognitoCredentialsProvider"
+- "PSo22AWSCredentialsProvider"
+- !private "CSo16AWSDynamoDBModel"
+- !private "PSo19AWSDynamoDBModeling"
+- !private "CSo23AWSDynamoDBObjectMapper"
+- !private "CSo22AWSDynamoDBObjectModel"
+- !private "PSo21AWSMTLJSONSerializing"
+- !private "CSo11AWSMTLModel"
+- !private "CSo26AWSNetworkingConfiguration"
+- !private "OSC13AWSRegionType"
+- !private "CSo10AWSService"
+- !private "CSo23AWSServiceConfiguration"
+- !private "CSo17AWSServiceManager"
+- !private "CSo7AWSTask"
+- "PSs9AnyObject"
+- "C4Knot11AppDelegate"
+- !private "Sa"
+- !private "PSs23ArrayLiteralConvertible"
+- !private "VSs10ArraySlice"
+- !private "CSo6BFTask"
+- !private "PSs22BidirectionalIndexType"
+- !private "PSs21BitwiseOperationsType"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- !private "CSo10CLLocation"
+- "PSs11CVarArgType"
+- !private "VSs9Character"
+- !private "PSs14CollectionType"
+- !private "PSs10Comparable"
+- "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- !private "VSs10Dictionary"
+- !private "VSs15DictionaryIndex"
+- !private "PSs28DictionaryLiteralConvertible"
+- !private "Sd"
+- "PSs9Equatable"
+- !private "PSs9ErrorType"
+- !private "PSs41ExtendedGraphemeClusterLiteralConvertible"
+- !private "CSo24FBSDKApplicationDelegate"
+- !private "Sf"
+- !private "PSs16ForwardIndexType"
+- !private "PSs13GeneratorType"
+- "PSs8Hashable"
+- !private "SQ"
+- !private "PSs9Indexable"
+- !private "VSs17IndexingGenerator"
+- !private "CSo8Instabug"
+- !private "Si"
+- !private "VSs5Int16"
+- !private "VSs5Int32"
+- !private "VSs5Int64"
+- !private "VSs4Int8"
+- !private "PSs21IntegerArithmeticType"
+- !private "PSs25IntegerLiteralConvertible"
+- !private "PSs11IntegerType"
+- !private "PSs14MirrorPathType"
+- !private "PSs21MutableCollectionType"
+- !private "PSs16MutableIndexable"
+- !private "PSs16MutableSliceable"
+- !private "CSo8NSBundle"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo6NSData"
+- !private "CSo6NSDate"
+- !private "CSo15NSDateFormatter"
+- !private "CSo12NSDictionary"
+- !private "CSo7NSError"
+- !private "PSo26NSExtensionRequestHandling"
+- !private "PSo17NSFastEnumeration"
+- !private "CSo13NSFileManager"
+- !private "CSo11NSFormatter"
+- !private "PSo9NSLocking"
+- !private "CSo22NSManagedObjectContext"
+- !private "OSC37NSManagedObjectContextConcurrencyType"
+- !private "CSo20NSManagedObjectModel"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "CSo28NSPersistentStoreCoordinator"
+- !private "OSC21NSSearchPathDirectory"
+- !private "VSC22NSSearchPathDomainMask"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "CSo5NSURL"
+- "PSs21NilLiteralConvertible"
+- !private "PSs13OptionSetType"
+- "Sq"
+- !private "PSs16OutputStreamType"
+- !private "PSs21RandomAccessIndexType"
+- !private "VSs5Range"
+- !private "PSs30RangeReplaceableCollectionType"
+- !private "PSs16RawRepresentable"
+- !private "PSs12SequenceType"
+- !private "PSs14SetAlgebraType"
+- !private "PSs17SignedIntegerType"
+- !private "PSs16SignedNumberType"
+- !private "VSs5Slice"
+- !private "PSs10Streamable"
+- !private "PSs10Strideable"
+- !private "SS"
+- !private "PSs30StringInterpolationConvertible"
+- !private "PSs24StringLiteralConvertible"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "CSo17UIAlertController"
+- !private "OSC22UIAlertControllerStyle"
+- !private "PSo12UIAppearance"
+- !private "PSo21UIAppearanceContainer"
+- !private "CSo13UIApplication"
+- "PSo21UIApplicationDelegate"
+- !private "OSC23UIBackgroundFetchResult"
+- !private "PSo16UIBarPositioning"
+- !private "OSC10UIBarStyle"
+- !private "PSo18UIContentContainer"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- !private "PSo18UIFocusEnvironment"
+- !private "CSo15UINavigationBar"
+- "CSo11UIResponder"
+- !private "PSo16UIStateRestoring"
+- !private "OSC16UIStatusBarStyle"
+- !private "PSo18UITraitEnvironment"
+- !private "CSo26UIUserNotificationSettings"
+- !private "VSC22UIUserNotificationType"
+- !private "CSo6UIView"
+- !private "CSo16UIViewController"
+- !private "CSo8UIWindow"
+- !private "Su"
+- !private "VSs6UInt16"
+- !private "VSs6UInt32"
+- !private "VSs6UInt64"
+- !private "VSs5UInt8"
+- !private "Sc"
+- !private "PSs31UnicodeScalarLiteralConvertible"
+- !private "PSs10_ArrayType"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs49_BuiltinExtendedGraphemeClusterLiteralConvertible"
+- !private "PSs33_BuiltinIntegerLiteralConvertible"
+- !private "PSs32_BuiltinStringLiteralConvertible"
+- !private "PSs37_BuiltinUTF16StringLiteralConvertible"
+- !private "PSs39_BuiltinUnicodeScalarLiteralConvertible"
+- !private "PSs16_CocoaStringType"
+- !private "PSs24_DestructorSafeContainer"
+- !private "PSs32_FileReferenceLiteralConvertible"
+- !private "PSs14_Incrementable"
+- !private "PSs22_IntegerArithmeticType"
+- !private "PSs12_IntegerType"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "VSs26_OptionalNilComparisonType"
+- !private "PSs22_RandomAccessAmbiguity"
+- "PSs12_Reflectable"
+- !private "PSs18_SignedIntegerType"
+- !private "PSs11_Strideable"
+- !private "C4Knot11sessionData"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFDefines.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/BoltsVersion.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCore.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSServiceEnum.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMantle.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLJSONAdapter.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLManagedObjectAdapter.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel+NSCoding.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLValueTransformer.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCredentialsProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSIdentityProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCategory.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSLogging.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSClientContext.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSynchronizedMutableDictionary.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSignature.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBolts.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBoltsVersion.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationToken.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenRegistration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSExecutor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTask.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTaskCompletionSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSGZIP.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabase.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMResultSet.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabasePool.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseQueue.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTS.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentity.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognito.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoHandlers.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoDataset.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoRecord.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoConflict.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalytics.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Service.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Model.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3PreSignedURL.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferUtility.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/Instabug.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/IBGEnums.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDKUtils.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAppUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelUpdate.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberInMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingUnreadCountQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdStructuredMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMention.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMember.h"
+- "./SendBirdSDK.framework/Headers/SendBirdError.h"
+- "./SendBirdSDK.framework/Headers/SendBirdTypeStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdReadStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBroadcastMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdCommand.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSRWebSocket.h"
+- "./SendBirdSDK.framework/Headers/SendBirdWSClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileInfo.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileLink.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSystemMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSender.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageModel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdClient.h"
+- "./SendBirdSDK.framework/Headers/SendBird.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAPIClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDK.h"
+- "./SendBirdSDK.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+interface-hash: "de139615b20fc83af892348296dcf343"

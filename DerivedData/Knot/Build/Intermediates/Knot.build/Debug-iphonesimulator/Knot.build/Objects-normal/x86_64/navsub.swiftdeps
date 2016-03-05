@@ -1,0 +1,656 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "navsub"
+provides-nominal:
+- "C4Knot6navsub"
+provides-member:
+- ["C4Knot6navsub", ""]
+provides-dynamic-lookup:
+- "viewDidLoad"
+depends-top-level:
+- "navsub"
+- !private "UIGraphicsGetCurrentContext"
+- "UINavigationController"
+- !private "+="
+- !private "UIGraphicsEndImageContext"
+- !private "CAGradientLayer"
+- !private "UIColor"
+- !private "NSForegroundColorAttributeName"
+- !private "UIGraphicsBeginImageContext"
+- !private "UIImage"
+- !private "BooleanLiteralType"
+- !private "UIGraphicsGetImageFromCurrentImageContext"
+- !private "Dictionary"
+- !private "UIBarMetrics"
+depends-member:
+- !private ["PSs9AnyObject", "CAGradientLayer"]
+- !private ["PSs9AnyObject", "NSForegroundColorAttributeName"]
+- !private ["PSs9AnyObject", "UIBarMetrics"]
+- !private ["PSs9AnyObject", "UIColor"]
+- !private ["PSs9AnyObject", "UIGraphicsBeginImageContext"]
+- !private ["PSs9AnyObject", "UIGraphicsEndImageContext"]
+- !private ["PSs9AnyObject", "UIGraphicsGetCurrentContext"]
+- !private ["PSs9AnyObject", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSs9AnyObject", "bounds"]
+- !private ["PSs9AnyObject", "gradientLayerForBounds"]
+- ["PSs9AnyObject", "imageLayerForGradientBackground"]
+- ["PSs9AnyObject", "init"]
+- !private ["PSs9AnyObject", "navigationBar"]
+- !private ["PSs9AnyObject", "renderInContext"]
+- !private ["PSs9AnyObject", "setBackgroundImage"]
+- !private ["PSs9AnyObject", "tintColor"]
+- !private ["PSs9AnyObject", "titleTextAttributes"]
+- !private ["PSs9AnyObject", "translucent"]
+- ["PSs9AnyObject", "viewDidLoad"]
+- !private ["PSs9AnyObject", "whiteColor"]
+- ["PSs9AnyObject", ""]
+- !private ["CSo15CAGradientLayer", "bounds"]
+- !private ["CSo15CAGradientLayer", "gradientLayerForBounds"]
+- !private ["CSo15CAGradientLayer", "renderInContext"]
+- !private ["CSo7CALayer", "bounds"]
+- !private ["CSo7CALayer", "gradientLayerForBounds"]
+- !private ["CSo7CALayer", "renderInContext"]
+- !private ["PSo13CAMediaTiming", "bounds"]
+- !private ["PSo13CAMediaTiming", "gradientLayerForBounds"]
+- !private ["PSo13CAMediaTiming", "renderInContext"]
+- !private ["V12CoreGraphics7CGFloat", "deinit"]
+- !private ["VSC6CGRect", "size"]
+- !private ["VSC6CGSize", "height"]
+- !private ["PSs11CVarArgType", "CAGradientLayer"]
+- !private ["PSs11CVarArgType", "NSForegroundColorAttributeName"]
+- !private ["PSs11CVarArgType", "UIBarMetrics"]
+- !private ["PSs11CVarArgType", "UIColor"]
+- !private ["PSs11CVarArgType", "UIGraphicsBeginImageContext"]
+- !private ["PSs11CVarArgType", "UIGraphicsEndImageContext"]
+- !private ["PSs11CVarArgType", "UIGraphicsGetCurrentContext"]
+- !private ["PSs11CVarArgType", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSs11CVarArgType", "bounds"]
+- !private ["PSs11CVarArgType", "gradientLayerForBounds"]
+- ["PSs11CVarArgType", "imageLayerForGradientBackground"]
+- ["PSs11CVarArgType", "init"]
+- !private ["PSs11CVarArgType", "navigationBar"]
+- !private ["PSs11CVarArgType", "renderInContext"]
+- !private ["PSs11CVarArgType", "setBackgroundImage"]
+- !private ["PSs11CVarArgType", "tintColor"]
+- !private ["PSs11CVarArgType", "titleTextAttributes"]
+- !private ["PSs11CVarArgType", "translucent"]
+- ["PSs11CVarArgType", "viewDidLoad"]
+- !private ["PSs11CVarArgType", "whiteColor"]
+- ["PSs11CVarArgType", ""]
+- !private ["PSs14CollectionType", "Key"]
+- !private ["PSs14CollectionType", "Value"]
+- !private ["PSs28CustomDebugStringConvertible", "Key"]
+- !private ["PSs28CustomDebugStringConvertible", "Value"]
+- !private ["PSs23CustomStringConvertible", "CAGradientLayer"]
+- !private ["PSs23CustomStringConvertible", "Key"]
+- !private ["PSs23CustomStringConvertible", "NSForegroundColorAttributeName"]
+- !private ["PSs23CustomStringConvertible", "UIBarMetrics"]
+- !private ["PSs23CustomStringConvertible", "UIColor"]
+- !private ["PSs23CustomStringConvertible", "UIGraphicsBeginImageContext"]
+- !private ["PSs23CustomStringConvertible", "UIGraphicsEndImageContext"]
+- !private ["PSs23CustomStringConvertible", "UIGraphicsGetCurrentContext"]
+- !private ["PSs23CustomStringConvertible", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSs23CustomStringConvertible", "Value"]
+- !private ["PSs23CustomStringConvertible", "bounds"]
+- !private ["PSs23CustomStringConvertible", "gradientLayerForBounds"]
+- ["PSs23CustomStringConvertible", "imageLayerForGradientBackground"]
+- ["PSs23CustomStringConvertible", "init"]
+- !private ["PSs23CustomStringConvertible", "navigationBar"]
+- !private ["PSs23CustomStringConvertible", "renderInContext"]
+- !private ["PSs23CustomStringConvertible", "setBackgroundImage"]
+- !private ["PSs23CustomStringConvertible", "tintColor"]
+- !private ["PSs23CustomStringConvertible", "titleTextAttributes"]
+- !private ["PSs23CustomStringConvertible", "translucent"]
+- ["PSs23CustomStringConvertible", "viewDidLoad"]
+- !private ["PSs23CustomStringConvertible", "whiteColor"]
+- ["PSs23CustomStringConvertible", ""]
+- !private ["VSs10Dictionary", "Key"]
+- !private ["VSs10Dictionary", "Value"]
+- !private ["PSs28DictionaryLiteralConvertible", "Key"]
+- !private ["PSs28DictionaryLiteralConvertible", "Value"]
+- !private ["PSs9Equatable", "CAGradientLayer"]
+- !private ["PSs9Equatable", "Default"]
+- !private ["PSs9Equatable", "NSForegroundColorAttributeName"]
+- !private ["PSs9Equatable", "UIBarMetrics"]
+- !private ["PSs9Equatable", "UIColor"]
+- !private ["PSs9Equatable", "UIGraphicsBeginImageContext"]
+- !private ["PSs9Equatable", "UIGraphicsEndImageContext"]
+- !private ["PSs9Equatable", "UIGraphicsGetCurrentContext"]
+- !private ["PSs9Equatable", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSs9Equatable", "bounds"]
+- !private ["PSs9Equatable", "gradientLayerForBounds"]
+- !private ["PSs9Equatable", "height"]
+- ["PSs9Equatable", "imageLayerForGradientBackground"]
+- ["PSs9Equatable", "init"]
+- !private ["PSs9Equatable", "navigationBar"]
+- !private ["PSs9Equatable", "renderInContext"]
+- !private ["PSs9Equatable", "setBackgroundImage"]
+- !private ["PSs9Equatable", "size"]
+- !private ["PSs9Equatable", "tintColor"]
+- !private ["PSs9Equatable", "titleTextAttributes"]
+- !private ["PSs9Equatable", "translucent"]
+- ["PSs9Equatable", "viewDidLoad"]
+- !private ["PSs9Equatable", "whiteColor"]
+- ["PSs9Equatable", ""]
+- !private ["PSs8Hashable", "CAGradientLayer"]
+- !private ["PSs8Hashable", "Default"]
+- !private ["PSs8Hashable", "NSForegroundColorAttributeName"]
+- !private ["PSs8Hashable", "UIBarMetrics"]
+- !private ["PSs8Hashable", "UIColor"]
+- !private ["PSs8Hashable", "UIGraphicsBeginImageContext"]
+- !private ["PSs8Hashable", "UIGraphicsEndImageContext"]
+- !private ["PSs8Hashable", "UIGraphicsGetCurrentContext"]
+- !private ["PSs8Hashable", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSs8Hashable", "bounds"]
+- !private ["PSs8Hashable", "gradientLayerForBounds"]
+- ["PSs8Hashable", "imageLayerForGradientBackground"]
+- ["PSs8Hashable", "init"]
+- !private ["PSs8Hashable", "navigationBar"]
+- !private ["PSs8Hashable", "renderInContext"]
+- !private ["PSs8Hashable", "setBackgroundImage"]
+- !private ["PSs8Hashable", "tintColor"]
+- !private ["PSs8Hashable", "titleTextAttributes"]
+- !private ["PSs8Hashable", "translucent"]
+- ["PSs8Hashable", "viewDidLoad"]
+- !private ["PSs8Hashable", "whiteColor"]
+- ["PSs8Hashable", ""]
+- !private ["PSs9Indexable", "Key"]
+- !private ["PSs9Indexable", "Value"]
+- !private ["PSo8NSCoding", "CAGradientLayer"]
+- !private ["PSo8NSCoding", "NSForegroundColorAttributeName"]
+- !private ["PSo8NSCoding", "UIBarMetrics"]
+- !private ["PSo8NSCoding", "UIColor"]
+- !private ["PSo8NSCoding", "UIGraphicsBeginImageContext"]
+- !private ["PSo8NSCoding", "UIGraphicsEndImageContext"]
+- !private ["PSo8NSCoding", "UIGraphicsGetCurrentContext"]
+- !private ["PSo8NSCoding", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSo8NSCoding", "bounds"]
+- !private ["PSo8NSCoding", "gradientLayerForBounds"]
+- ["PSo8NSCoding", "imageLayerForGradientBackground"]
+- ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "navigationBar"]
+- !private ["PSo8NSCoding", "renderInContext"]
+- !private ["PSo8NSCoding", "setBackgroundImage"]
+- !private ["PSo8NSCoding", "tintColor"]
+- !private ["PSo8NSCoding", "titleTextAttributes"]
+- !private ["PSo8NSCoding", "translucent"]
+- ["PSo8NSCoding", "viewDidLoad"]
+- !private ["PSo8NSCoding", "whiteColor"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "whiteColor"]
+- !private ["PSo26NSExtensionRequestHandling", "CAGradientLayer"]
+- !private ["PSo26NSExtensionRequestHandling", "NSForegroundColorAttributeName"]
+- !private ["PSo26NSExtensionRequestHandling", "UIBarMetrics"]
+- !private ["PSo26NSExtensionRequestHandling", "UIColor"]
+- !private ["PSo26NSExtensionRequestHandling", "UIGraphicsBeginImageContext"]
+- !private ["PSo26NSExtensionRequestHandling", "UIGraphicsEndImageContext"]
+- !private ["PSo26NSExtensionRequestHandling", "UIGraphicsGetCurrentContext"]
+- !private ["PSo26NSExtensionRequestHandling", "UIGraphicsGetImageFromCurrentImageContext"]
+- ["PSo26NSExtensionRequestHandling", "imageLayerForGradientBackground"]
+- ["PSo26NSExtensionRequestHandling", "init"]
+- !private ["PSo26NSExtensionRequestHandling", "navigationBar"]
+- ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
+- ["PSo26NSExtensionRequestHandling", ""]
+- !private ["CSo8NSObject", "CAGradientLayer"]
+- !private ["CSo8NSObject", "NSForegroundColorAttributeName"]
+- !private ["CSo8NSObject", "UIBarMetrics"]
+- !private ["CSo8NSObject", "UIColor"]
+- !private ["CSo8NSObject", "UIGraphicsBeginImageContext"]
+- !private ["CSo8NSObject", "UIGraphicsEndImageContext"]
+- !private ["CSo8NSObject", "UIGraphicsGetCurrentContext"]
+- !private ["CSo8NSObject", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["CSo8NSObject", "UIImage"]
+- !private ["CSo8NSObject", "bounds"]
+- !private ["CSo8NSObject", "gradientLayerForBounds"]
+- ["CSo8NSObject", "imageLayerForGradientBackground"]
+- ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "navigationBar"]
+- !private ["CSo8NSObject", "renderInContext"]
+- !private ["CSo8NSObject", "setBackgroundImage"]
+- !private ["CSo8NSObject", "tintColor"]
+- !private ["CSo8NSObject", "titleTextAttributes"]
+- !private ["CSo8NSObject", "translucent"]
+- ["CSo8NSObject", "viewDidLoad"]
+- !private ["CSo8NSObject", "whiteColor"]
+- !private ["PSo16NSObjectProtocol", "CAGradientLayer"]
+- !private ["PSo16NSObjectProtocol", "NSForegroundColorAttributeName"]
+- !private ["PSo16NSObjectProtocol", "UIBarMetrics"]
+- !private ["PSo16NSObjectProtocol", "UIColor"]
+- !private ["PSo16NSObjectProtocol", "UIGraphicsBeginImageContext"]
+- !private ["PSo16NSObjectProtocol", "UIGraphicsEndImageContext"]
+- !private ["PSo16NSObjectProtocol", "UIGraphicsGetCurrentContext"]
+- !private ["PSo16NSObjectProtocol", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSo16NSObjectProtocol", "bounds"]
+- !private ["PSo16NSObjectProtocol", "gradientLayerForBounds"]
+- ["PSo16NSObjectProtocol", "imageLayerForGradientBackground"]
+- ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "navigationBar"]
+- !private ["PSo16NSObjectProtocol", "renderInContext"]
+- !private ["PSo16NSObjectProtocol", "setBackgroundImage"]
+- !private ["PSo16NSObjectProtocol", "tintColor"]
+- !private ["PSo16NSObjectProtocol", "titleTextAttributes"]
+- !private ["PSo16NSObjectProtocol", "translucent"]
+- ["PSo16NSObjectProtocol", "viewDidLoad"]
+- !private ["PSo16NSObjectProtocol", "whiteColor"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "whiteColor"]
+- !private ["PSs16RawRepresentable", "Default"]
+- !private ["PSs12SequenceType", "Key"]
+- !private ["PSs12SequenceType", "Value"]
+- !private ["PSo29UIAccessibilityIdentification", "bounds"]
+- !private ["PSo29UIAccessibilityIdentification", "setBackgroundImage"]
+- !private ["PSo29UIAccessibilityIdentification", "tintColor"]
+- !private ["PSo29UIAccessibilityIdentification", "titleTextAttributes"]
+- !private ["PSo29UIAccessibilityIdentification", "translucent"]
+- !private ["PSo12UIAppearance", "bounds"]
+- !private ["PSo12UIAppearance", "setBackgroundImage"]
+- !private ["PSo12UIAppearance", "tintColor"]
+- !private ["PSo12UIAppearance", "titleTextAttributes"]
+- !private ["PSo12UIAppearance", "translucent"]
+- !private ["PSo21UIAppearanceContainer", "CAGradientLayer"]
+- !private ["PSo21UIAppearanceContainer", "NSForegroundColorAttributeName"]
+- !private ["PSo21UIAppearanceContainer", "UIBarMetrics"]
+- !private ["PSo21UIAppearanceContainer", "UIColor"]
+- !private ["PSo21UIAppearanceContainer", "UIGraphicsBeginImageContext"]
+- !private ["PSo21UIAppearanceContainer", "UIGraphicsEndImageContext"]
+- !private ["PSo21UIAppearanceContainer", "UIGraphicsGetCurrentContext"]
+- !private ["PSo21UIAppearanceContainer", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSo21UIAppearanceContainer", "bounds"]
+- ["PSo21UIAppearanceContainer", "imageLayerForGradientBackground"]
+- ["PSo21UIAppearanceContainer", "init"]
+- !private ["PSo21UIAppearanceContainer", "navigationBar"]
+- !private ["PSo21UIAppearanceContainer", "setBackgroundImage"]
+- !private ["PSo21UIAppearanceContainer", "tintColor"]
+- !private ["PSo21UIAppearanceContainer", "titleTextAttributes"]
+- !private ["PSo21UIAppearanceContainer", "translucent"]
+- ["PSo21UIAppearanceContainer", "viewDidLoad"]
+- ["PSo21UIAppearanceContainer", ""]
+- !private ["OSC12UIBarMetrics", "Default"]
+- !private ["PSo16UIBarPositioning", "bounds"]
+- !private ["PSo16UIBarPositioning", "setBackgroundImage"]
+- !private ["PSo16UIBarPositioning", "tintColor"]
+- !private ["PSo16UIBarPositioning", "titleTextAttributes"]
+- !private ["PSo16UIBarPositioning", "translucent"]
+- !private ["CSo7UIColor", "whiteColor"]
+- !private ["PSo18UIContentContainer", "CAGradientLayer"]
+- !private ["PSo18UIContentContainer", "NSForegroundColorAttributeName"]
+- !private ["PSo18UIContentContainer", "UIBarMetrics"]
+- !private ["PSo18UIContentContainer", "UIColor"]
+- !private ["PSo18UIContentContainer", "UIGraphicsBeginImageContext"]
+- !private ["PSo18UIContentContainer", "UIGraphicsEndImageContext"]
+- !private ["PSo18UIContentContainer", "UIGraphicsGetCurrentContext"]
+- !private ["PSo18UIContentContainer", "UIGraphicsGetImageFromCurrentImageContext"]
+- ["PSo18UIContentContainer", "imageLayerForGradientBackground"]
+- ["PSo18UIContentContainer", "init"]
+- !private ["PSo18UIContentContainer", "navigationBar"]
+- ["PSo18UIContentContainer", "viewDidLoad"]
+- ["PSo18UIContentContainer", ""]
+- !private ["PSo17UICoordinateSpace", "bounds"]
+- !private ["PSo17UICoordinateSpace", "setBackgroundImage"]
+- !private ["PSo17UICoordinateSpace", "tintColor"]
+- !private ["PSo17UICoordinateSpace", "titleTextAttributes"]
+- !private ["PSo17UICoordinateSpace", "translucent"]
+- !private ["PSo13UIDynamicItem", "bounds"]
+- !private ["PSo13UIDynamicItem", "setBackgroundImage"]
+- !private ["PSo13UIDynamicItem", "tintColor"]
+- !private ["PSo13UIDynamicItem", "titleTextAttributes"]
+- !private ["PSo13UIDynamicItem", "translucent"]
+- !private ["PSo18UIFocusEnvironment", "CAGradientLayer"]
+- !private ["PSo18UIFocusEnvironment", "NSForegroundColorAttributeName"]
+- !private ["PSo18UIFocusEnvironment", "UIBarMetrics"]
+- !private ["PSo18UIFocusEnvironment", "UIColor"]
+- !private ["PSo18UIFocusEnvironment", "UIGraphicsBeginImageContext"]
+- !private ["PSo18UIFocusEnvironment", "UIGraphicsEndImageContext"]
+- !private ["PSo18UIFocusEnvironment", "UIGraphicsGetCurrentContext"]
+- !private ["PSo18UIFocusEnvironment", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSo18UIFocusEnvironment", "bounds"]
+- ["PSo18UIFocusEnvironment", "imageLayerForGradientBackground"]
+- ["PSo18UIFocusEnvironment", "init"]
+- !private ["PSo18UIFocusEnvironment", "navigationBar"]
+- !private ["PSo18UIFocusEnvironment", "setBackgroundImage"]
+- !private ["PSo18UIFocusEnvironment", "tintColor"]
+- !private ["PSo18UIFocusEnvironment", "titleTextAttributes"]
+- !private ["PSo18UIFocusEnvironment", "translucent"]
+- ["PSo18UIFocusEnvironment", "viewDidLoad"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["CSo15UINavigationBar", "bounds"]
+- !private ["CSo15UINavigationBar", "setBackgroundImage"]
+- !private ["CSo15UINavigationBar", "tintColor"]
+- !private ["CSo15UINavigationBar", "titleTextAttributes"]
+- !private ["CSo15UINavigationBar", "translucent"]
+- !private ["CSo22UINavigationController", "CAGradientLayer"]
+- !private ["CSo22UINavigationController", "NSForegroundColorAttributeName"]
+- !private ["CSo22UINavigationController", "UIBarMetrics"]
+- !private ["CSo22UINavigationController", "UIColor"]
+- !private ["CSo22UINavigationController", "UIGraphicsBeginImageContext"]
+- !private ["CSo22UINavigationController", "UIGraphicsEndImageContext"]
+- !private ["CSo22UINavigationController", "UIGraphicsGetCurrentContext"]
+- !private ["CSo22UINavigationController", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["CSo22UINavigationController", "UIImage"]
+- ["CSo22UINavigationController", "imageLayerForGradientBackground"]
+- ["CSo22UINavigationController", "init"]
+- !private ["CSo22UINavigationController", "navigationBar"]
+- ["CSo22UINavigationController", "viewDidLoad"]
+- ["CSo22UINavigationController", ""]
+- !private ["CSo11UIResponder", "CAGradientLayer"]
+- !private ["CSo11UIResponder", "NSForegroundColorAttributeName"]
+- !private ["CSo11UIResponder", "UIBarMetrics"]
+- !private ["CSo11UIResponder", "UIColor"]
+- !private ["CSo11UIResponder", "UIGraphicsBeginImageContext"]
+- !private ["CSo11UIResponder", "UIGraphicsEndImageContext"]
+- !private ["CSo11UIResponder", "UIGraphicsGetCurrentContext"]
+- !private ["CSo11UIResponder", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["CSo11UIResponder", "UIImage"]
+- !private ["CSo11UIResponder", "bounds"]
+- ["CSo11UIResponder", "imageLayerForGradientBackground"]
+- ["CSo11UIResponder", "init"]
+- !private ["CSo11UIResponder", "navigationBar"]
+- !private ["CSo11UIResponder", "setBackgroundImage"]
+- !private ["CSo11UIResponder", "tintColor"]
+- !private ["CSo11UIResponder", "titleTextAttributes"]
+- !private ["CSo11UIResponder", "translucent"]
+- ["CSo11UIResponder", "viewDidLoad"]
+- !private ["PSo16UIStateRestoring", "CAGradientLayer"]
+- !private ["PSo16UIStateRestoring", "NSForegroundColorAttributeName"]
+- !private ["PSo16UIStateRestoring", "UIBarMetrics"]
+- !private ["PSo16UIStateRestoring", "UIColor"]
+- !private ["PSo16UIStateRestoring", "UIGraphicsBeginImageContext"]
+- !private ["PSo16UIStateRestoring", "UIGraphicsEndImageContext"]
+- !private ["PSo16UIStateRestoring", "UIGraphicsGetCurrentContext"]
+- !private ["PSo16UIStateRestoring", "UIGraphicsGetImageFromCurrentImageContext"]
+- ["PSo16UIStateRestoring", "imageLayerForGradientBackground"]
+- ["PSo16UIStateRestoring", "init"]
+- !private ["PSo16UIStateRestoring", "navigationBar"]
+- ["PSo16UIStateRestoring", "viewDidLoad"]
+- ["PSo16UIStateRestoring", ""]
+- !private ["PSo18UITraitEnvironment", "CAGradientLayer"]
+- !private ["PSo18UITraitEnvironment", "NSForegroundColorAttributeName"]
+- !private ["PSo18UITraitEnvironment", "UIBarMetrics"]
+- !private ["PSo18UITraitEnvironment", "UIColor"]
+- !private ["PSo18UITraitEnvironment", "UIGraphicsBeginImageContext"]
+- !private ["PSo18UITraitEnvironment", "UIGraphicsEndImageContext"]
+- !private ["PSo18UITraitEnvironment", "UIGraphicsGetCurrentContext"]
+- !private ["PSo18UITraitEnvironment", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["PSo18UITraitEnvironment", "bounds"]
+- ["PSo18UITraitEnvironment", "imageLayerForGradientBackground"]
+- ["PSo18UITraitEnvironment", "init"]
+- !private ["PSo18UITraitEnvironment", "navigationBar"]
+- !private ["PSo18UITraitEnvironment", "setBackgroundImage"]
+- !private ["PSo18UITraitEnvironment", "tintColor"]
+- !private ["PSo18UITraitEnvironment", "titleTextAttributes"]
+- !private ["PSo18UITraitEnvironment", "translucent"]
+- ["PSo18UITraitEnvironment", "viewDidLoad"]
+- ["PSo18UITraitEnvironment", ""]
+- !private ["CSo6UIView", "bounds"]
+- !private ["CSo6UIView", "setBackgroundImage"]
+- !private ["CSo6UIView", "tintColor"]
+- !private ["CSo6UIView", "titleTextAttributes"]
+- !private ["CSo6UIView", "translucent"]
+- !private ["CSo16UIViewController", "CAGradientLayer"]
+- !private ["CSo16UIViewController", "NSForegroundColorAttributeName"]
+- !private ["CSo16UIViewController", "UIBarMetrics"]
+- !private ["CSo16UIViewController", "UIColor"]
+- !private ["CSo16UIViewController", "UIGraphicsBeginImageContext"]
+- !private ["CSo16UIViewController", "UIGraphicsEndImageContext"]
+- !private ["CSo16UIViewController", "UIGraphicsGetCurrentContext"]
+- !private ["CSo16UIViewController", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["CSo16UIViewController", "UIImage"]
+- ["CSo16UIViewController", "imageLayerForGradientBackground"]
+- ["CSo16UIViewController", "init"]
+- !private ["CSo16UIViewController", "navigationBar"]
+- ["CSo16UIViewController", "viewDidLoad"]
+- !private ["PSs24_ColorLiteralConvertible", "whiteColor"]
+- !private ["PSs21_ObjectiveCBridgeable", "Key"]
+- !private ["PSs21_ObjectiveCBridgeable", "Value"]
+- !private ["PSs12_Reflectable", "Key"]
+- !private ["PSs12_Reflectable", "Value"]
+- !private ["PSs12_Reflectable", "bounds"]
+- !private ["PSs12_Reflectable", "height"]
+- !private ["PSs12_Reflectable", "setBackgroundImage"]
+- !private ["PSs12_Reflectable", "size"]
+- !private ["PSs12_Reflectable", "tintColor"]
+- !private ["PSs12_Reflectable", "titleTextAttributes"]
+- !private ["PSs12_Reflectable", "translucent"]
+- !private ["C4Knot6navsub", "CAGradientLayer"]
+- !private ["C4Knot6navsub", "NSForegroundColorAttributeName"]
+- !private ["C4Knot6navsub", "UIBarMetrics"]
+- !private ["C4Knot6navsub", "UIColor"]
+- !private ["C4Knot6navsub", "UIGraphicsBeginImageContext"]
+- !private ["C4Knot6navsub", "UIGraphicsEndImageContext"]
+- !private ["C4Knot6navsub", "UIGraphicsGetCurrentContext"]
+- !private ["C4Knot6navsub", "UIGraphicsGetImageFromCurrentImageContext"]
+- !private ["C4Knot6navsub", "UIImage"]
+- ["C4Knot6navsub", "deinit"]
+- !private ["C4Knot6navsub", "imageLayerForGradientBackground"]
+- ["C4Knot6navsub", "init"]
+- !private ["C4Knot6navsub", "navigationBar"]
+- ["C4Knot6navsub", "viewDidLoad"]
+depends-nominal:
+- "PSs9AnyObject"
+- !private "CSo15CAGradientLayer"
+- !private "CSo7CALayer"
+- !private "PSo13CAMediaTiming"
+- !private "V12CoreGraphics7CGFloat"
+- !private "VSC6CGRect"
+- !private "VSC6CGSize"
+- "PSs11CVarArgType"
+- !private "PSs14CollectionType"
+- !private "PSs28CustomDebugStringConvertible"
+- "PSs23CustomStringConvertible"
+- !private "VSs10Dictionary"
+- !private "PSs28DictionaryLiteralConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- !private "PSs9Indexable"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "PSo26NSExtensionRequestHandling"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "PSs16RawRepresentable"
+- !private "PSs12SequenceType"
+- !private "PSo29UIAccessibilityIdentification"
+- !private "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- !private "OSC12UIBarMetrics"
+- !private "PSo16UIBarPositioning"
+- !private "CSo7UIColor"
+- "PSo18UIContentContainer"
+- !private "PSo17UICoordinateSpace"
+- !private "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- !private "CSo15UINavigationBar"
+- "CSo22UINavigationController"
+- "CSo11UIResponder"
+- "PSo16UIStateRestoring"
+- "PSo18UITraitEnvironment"
+- !private "CSo6UIView"
+- "CSo16UIViewController"
+- !private "PSs24_ColorLiteralConvertible"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "PSs12_Reflectable"
+- "C4Knot6navsub"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFDefines.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/BoltsVersion.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCore.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSServiceEnum.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMantle.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLJSONAdapter.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLManagedObjectAdapter.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel+NSCoding.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLValueTransformer.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCredentialsProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSIdentityProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCategory.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSLogging.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSClientContext.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSynchronizedMutableDictionary.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSignature.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBolts.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBoltsVersion.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationToken.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenRegistration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSExecutor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTask.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTaskCompletionSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSGZIP.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabase.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMResultSet.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabasePool.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseQueue.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTS.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentity.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognito.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoHandlers.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoDataset.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoRecord.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoConflict.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalytics.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Service.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Model.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3PreSignedURL.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferUtility.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/Instabug.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/IBGEnums.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDKUtils.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAppUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelUpdate.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberInMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingUnreadCountQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdStructuredMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMention.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMember.h"
+- "./SendBirdSDK.framework/Headers/SendBirdError.h"
+- "./SendBirdSDK.framework/Headers/SendBirdTypeStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdReadStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBroadcastMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdCommand.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSRWebSocket.h"
+- "./SendBirdSDK.framework/Headers/SendBirdWSClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileInfo.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileLink.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSystemMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSender.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageModel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdClient.h"
+- "./SendBirdSDK.framework/Headers/SendBird.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAPIClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDK.h"
+- "./SendBirdSDK.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreAudio.swiftmodule"
+interface-hash: "ebe2a191d4eac32cf3439f3039dd13c4"

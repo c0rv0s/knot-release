@@ -16,6 +16,6 @@ pod 'AWSSNS'
 pod 'AWSSQS'
 pod 'AWSCognito'
 
-pod 'Instabug'
+pod 'Instabug', '5.1.1'
 
 pod 'AFNetworking'

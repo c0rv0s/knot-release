@@ -1,0 +1,416 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "sessionData"
+provides-nominal:
+- "C4Knot11sessionData"
+provides-member:
+- ["C4Knot11sessionData", ""]
+provides-dynamic-lookup:
+- "hashKeyAttribute"
+- "status"
+- "itemID"
+- "self"
+- "timestamp"
+- "isEqual"
+- "dynamoDBTableName"
+- "userID"
+depends-top-level:
+- "Bool"
+- "String"
+- "StringLiteralType"
+- "AnyObject"
+- "sessionData"
+- "AWSDynamoDBObjectModel"
+- "AWSDynamoDBModeling"
+- "Int"
+depends-member:
+- ["CSo16AWSDynamoDBModel", "AnyObject"]
+- ["CSo16AWSDynamoDBModel", "Bool"]
+- ["CSo16AWSDynamoDBModel", "Int"]
+- ["CSo16AWSDynamoDBModel", "String"]
+- ["CSo16AWSDynamoDBModel", "dynamoDBTableName"]
+- ["CSo16AWSDynamoDBModel", "hashKeyAttribute"]
+- ["CSo16AWSDynamoDBModel", "ignoreAttributes"]
+- ["CSo16AWSDynamoDBModel", "isEqual"]
+- ["CSo16AWSDynamoDBModel", "itemID"]
+- ["CSo16AWSDynamoDBModel", "rangeKeyAttribute"]
+- ["CSo16AWSDynamoDBModel", "self"]
+- ["CSo16AWSDynamoDBModel", "status"]
+- ["CSo16AWSDynamoDBModel", "timestamp"]
+- ["CSo16AWSDynamoDBModel", "userID"]
+- ["PSo19AWSDynamoDBModeling", "dynamoDBTableName"]
+- ["PSo19AWSDynamoDBModeling", "hashKeyAttribute"]
+- ["PSo19AWSDynamoDBModeling", "ignoreAttributes"]
+- ["PSo19AWSDynamoDBModeling", "rangeKeyAttribute"]
+- ["PSo19AWSDynamoDBModeling", ""]
+- ["CSo22AWSDynamoDBObjectModel", "AnyObject"]
+- ["CSo22AWSDynamoDBObjectModel", "Bool"]
+- ["CSo22AWSDynamoDBObjectModel", "Int"]
+- ["CSo22AWSDynamoDBObjectModel", "String"]
+- ["CSo22AWSDynamoDBObjectModel", "dynamoDBTableName"]
+- ["CSo22AWSDynamoDBObjectModel", "hashKeyAttribute"]
+- ["CSo22AWSDynamoDBObjectModel", "ignoreAttributes"]
+- ["CSo22AWSDynamoDBObjectModel", "init"]
+- ["CSo22AWSDynamoDBObjectModel", "isEqual"]
+- ["CSo22AWSDynamoDBObjectModel", "itemID"]
+- ["CSo22AWSDynamoDBObjectModel", "rangeKeyAttribute"]
+- ["CSo22AWSDynamoDBObjectModel", "self"]
+- ["CSo22AWSDynamoDBObjectModel", "status"]
+- ["CSo22AWSDynamoDBObjectModel", "timestamp"]
+- ["CSo22AWSDynamoDBObjectModel", "userID"]
+- ["CSo22AWSDynamoDBObjectModel", ""]
+- ["PSo21AWSMTLJSONSerializing", "dynamoDBTableName"]
+- ["PSo21AWSMTLJSONSerializing", "hashKeyAttribute"]
+- ["PSo21AWSMTLJSONSerializing", "ignoreAttributes"]
+- ["PSo21AWSMTLJSONSerializing", "init"]
+- ["PSo21AWSMTLJSONSerializing", "isEqual"]
+- ["PSo21AWSMTLJSONSerializing", "itemID"]
+- ["PSo21AWSMTLJSONSerializing", "rangeKeyAttribute"]
+- ["PSo21AWSMTLJSONSerializing", "self"]
+- ["PSo21AWSMTLJSONSerializing", "status"]
+- ["PSo21AWSMTLJSONSerializing", "timestamp"]
+- ["PSo21AWSMTLJSONSerializing", "userID"]
+- ["PSo21AWSMTLJSONSerializing", ""]
+- ["CSo11AWSMTLModel", "AnyObject"]
+- ["CSo11AWSMTLModel", "Bool"]
+- ["CSo11AWSMTLModel", "Int"]
+- ["CSo11AWSMTLModel", "String"]
+- ["CSo11AWSMTLModel", "dynamoDBTableName"]
+- ["CSo11AWSMTLModel", "hashKeyAttribute"]
+- ["CSo11AWSMTLModel", "ignoreAttributes"]
+- ["CSo11AWSMTLModel", "isEqual"]
+- ["CSo11AWSMTLModel", "itemID"]
+- ["CSo11AWSMTLModel", "rangeKeyAttribute"]
+- ["CSo11AWSMTLModel", "self"]
+- ["CSo11AWSMTLModel", "status"]
+- ["CSo11AWSMTLModel", "timestamp"]
+- ["CSo11AWSMTLModel", "userID"]
+- ["PSs9AnyObject", "dynamoDBTableName"]
+- ["PSs9AnyObject", "hashKeyAttribute"]
+- ["PSs9AnyObject", "ignoreAttributes"]
+- ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", "isEqual"]
+- ["PSs9AnyObject", "itemID"]
+- ["PSs9AnyObject", "rangeKeyAttribute"]
+- ["PSs9AnyObject", "self"]
+- ["PSs9AnyObject", "status"]
+- ["PSs9AnyObject", "timestamp"]
+- ["PSs9AnyObject", "userID"]
+- ["PSs9AnyObject", ""]
+- ["PSs11CVarArgType", "dynamoDBTableName"]
+- ["PSs11CVarArgType", "hashKeyAttribute"]
+- ["PSs11CVarArgType", "ignoreAttributes"]
+- ["PSs11CVarArgType", "init"]
+- ["PSs11CVarArgType", "isEqual"]
+- ["PSs11CVarArgType", "itemID"]
+- ["PSs11CVarArgType", "rangeKeyAttribute"]
+- ["PSs11CVarArgType", "self"]
+- ["PSs11CVarArgType", "status"]
+- ["PSs11CVarArgType", "timestamp"]
+- ["PSs11CVarArgType", "userID"]
+- ["PSs11CVarArgType", ""]
+- ["PSs23CustomStringConvertible", "dynamoDBTableName"]
+- ["PSs23CustomStringConvertible", "hashKeyAttribute"]
+- ["PSs23CustomStringConvertible", "ignoreAttributes"]
+- ["PSs23CustomStringConvertible", "init"]
+- ["PSs23CustomStringConvertible", "isEqual"]
+- ["PSs23CustomStringConvertible", "itemID"]
+- ["PSs23CustomStringConvertible", "rangeKeyAttribute"]
+- ["PSs23CustomStringConvertible", "self"]
+- ["PSs23CustomStringConvertible", "status"]
+- ["PSs23CustomStringConvertible", "timestamp"]
+- ["PSs23CustomStringConvertible", "userID"]
+- ["PSs23CustomStringConvertible", ""]
+- ["PSs9Equatable", "dynamoDBTableName"]
+- ["PSs9Equatable", "hashKeyAttribute"]
+- ["PSs9Equatable", "ignoreAttributes"]
+- ["PSs9Equatable", "init"]
+- ["PSs9Equatable", "isEqual"]
+- ["PSs9Equatable", "itemID"]
+- ["PSs9Equatable", "rangeKeyAttribute"]
+- ["PSs9Equatable", "self"]
+- ["PSs9Equatable", "status"]
+- ["PSs9Equatable", "timestamp"]
+- ["PSs9Equatable", "userID"]
+- ["PSs9Equatable", ""]
+- ["PSs8Hashable", "dynamoDBTableName"]
+- ["PSs8Hashable", "hashKeyAttribute"]
+- ["PSs8Hashable", "ignoreAttributes"]
+- ["PSs8Hashable", "init"]
+- ["PSs8Hashable", "isEqual"]
+- ["PSs8Hashable", "itemID"]
+- ["PSs8Hashable", "rangeKeyAttribute"]
+- ["PSs8Hashable", "self"]
+- ["PSs8Hashable", "status"]
+- ["PSs8Hashable", "timestamp"]
+- ["PSs8Hashable", "userID"]
+- ["PSs8Hashable", ""]
+- !private ["SQ", "deinit"]
+- ["PSo8NSCoding", "dynamoDBTableName"]
+- ["PSo8NSCoding", "hashKeyAttribute"]
+- ["PSo8NSCoding", "ignoreAttributes"]
+- ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", "isEqual"]
+- ["PSo8NSCoding", "itemID"]
+- ["PSo8NSCoding", "rangeKeyAttribute"]
+- ["PSo8NSCoding", "self"]
+- ["PSo8NSCoding", "status"]
+- ["PSo8NSCoding", "timestamp"]
+- ["PSo8NSCoding", "userID"]
+- ["PSo8NSCoding", ""]
+- ["PSo9NSCopying", "dynamoDBTableName"]
+- ["PSo9NSCopying", "hashKeyAttribute"]
+- ["PSo9NSCopying", "ignoreAttributes"]
+- ["PSo9NSCopying", "init"]
+- ["PSo9NSCopying", "isEqual"]
+- ["PSo9NSCopying", "itemID"]
+- ["PSo9NSCopying", "rangeKeyAttribute"]
+- ["PSo9NSCopying", "self"]
+- ["PSo9NSCopying", "status"]
+- ["PSo9NSCopying", "timestamp"]
+- ["PSo9NSCopying", "userID"]
+- ["PSo9NSCopying", ""]
+- ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
+- ["CSo8NSObject", "Int"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "dynamoDBTableName"]
+- ["CSo8NSObject", "hashKeyAttribute"]
+- ["CSo8NSObject", "ignoreAttributes"]
+- ["CSo8NSObject", "isEqual"]
+- ["CSo8NSObject", "itemID"]
+- ["CSo8NSObject", "rangeKeyAttribute"]
+- ["CSo8NSObject", "self"]
+- ["CSo8NSObject", "status"]
+- ["CSo8NSObject", "timestamp"]
+- ["CSo8NSObject", "userID"]
+- ["PSo16NSObjectProtocol", "dynamoDBTableName"]
+- ["PSo16NSObjectProtocol", "hashKeyAttribute"]
+- ["PSo16NSObjectProtocol", "ignoreAttributes"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", "isEqual"]
+- ["PSo16NSObjectProtocol", "itemID"]
+- ["PSo16NSObjectProtocol", "rangeKeyAttribute"]
+- ["PSo16NSObjectProtocol", "self"]
+- ["PSo16NSObjectProtocol", "status"]
+- ["PSo16NSObjectProtocol", "timestamp"]
+- ["PSo16NSObjectProtocol", "userID"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["Sq", "deinit"]
+- ["C4Knot11sessionData", "AnyObject"]
+- ["C4Knot11sessionData", "Bool"]
+- ["C4Knot11sessionData", "Int"]
+- ["C4Knot11sessionData", "String"]
+- ["C4Knot11sessionData", "deinit"]
+- ["C4Knot11sessionData", "dynamoDBTableName"]
+- ["C4Knot11sessionData", "hashKeyAttribute"]
+- ["C4Knot11sessionData", "ignoreAttributes"]
+- ["C4Knot11sessionData", "init"]
+- ["C4Knot11sessionData", "isEqual"]
+- ["C4Knot11sessionData", "itemID"]
+- ["C4Knot11sessionData", "rangeKeyAttribute"]
+- ["C4Knot11sessionData", "self"]
+- ["C4Knot11sessionData", "status"]
+- ["C4Knot11sessionData", "timestamp"]
+- ["C4Knot11sessionData", "userID"]
+depends-nominal:
+- "CSo16AWSDynamoDBModel"
+- "PSo19AWSDynamoDBModeling"
+- "CSo22AWSDynamoDBObjectModel"
+- "PSo21AWSMTLJSONSerializing"
+- "CSo11AWSMTLModel"
+- "PSs9AnyObject"
+- "PSs11CVarArgType"
+- "PSs23CustomStringConvertible"
+- "PSs9Equatable"
+- "PSs8Hashable"
+- !private "SQ"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "Sq"
+- "C4Knot11sessionData"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h"
+- "./Bolts.framework/Headers/BFWebViewAppLinkResolver.h"
+- "./Bolts.framework/Headers/BFURL.h"
+- "./Bolts.framework/Headers/BFMeasurementEvent.h"
+- "./Bolts.framework/Headers/BFAppLinkTarget.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererView.h"
+- "./Bolts.framework/Headers/BFAppLinkReturnToRefererController.h"
+- "./Bolts.framework/Headers/BFAppLinkResolving.h"
+- "./Bolts.framework/Headers/BFAppLinkNavigation.h"
+- "./Bolts.framework/Headers/BFAppLink.h"
+- "./Bolts.framework/Headers/BFTaskCompletionSource.h"
+- "./Bolts.framework/Headers/BFTask.h"
+- "./Bolts.framework/Headers/BFExecutor.h"
+- "./Bolts.framework/Headers/BFDefines.h"
+- "./Bolts.framework/Headers/BFCancellationTokenSource.h"
+- "./Bolts.framework/Headers/BFCancellationTokenRegistration.h"
+- "./Bolts.framework/Headers/BFCancellationToken.h"
+- "./Bolts.framework/Headers/BoltsVersion.h"
+- "./Bolts.framework/Headers/Bolts.h"
+- "./Bolts.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestDataAttachment.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphErrorRecoveryProcessor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bolts.framework/Modules/module.modulemap"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkResolver.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKButton.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKTestUsersManager.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKSettings.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfilePictureView.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKProfile.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMutableCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequest.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKConstants.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKApplicationDelegate.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppLinkUtility.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAppEvents.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKMacros.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKGraphRequestConnection.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCopying.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKAccessToken.h"
+- "./FBSDKCoreKit.framework/Headers/FBSDKCoreKit.h"
+- "./FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManagerLoginResult.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginConstants.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKTooltipView.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/FBSDKCoreKit.framework/Modules/module.modulemap"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginButton.h"
+- "./FBSDKLoginKit.framework/Headers/FBSDKLoginKit.h"
+- "./FBSDKLoginKit.framework/Modules/module.modulemap"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCore.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSServiceEnum.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMantle.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLJSONAdapter.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLManagedObjectAdapter.h"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreData.swiftmodule"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLModel+NSCoding.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSMTLValueTransformer.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSArray+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSDictionary+AWSMTLManipulationAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSObject+AWSMTLComparisonAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLInversionAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/NSValueTransformer+AWSMTLPredefinedTransformerAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCredentialsProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSIdentityProvider.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCategory.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSLogging.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSClientContext.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSynchronizedMutableDictionary.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSignature.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBolts.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSBoltsVersion.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationToken.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenRegistration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCancellationTokenSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSExecutor.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTask.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSTaskCompletionSource.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSGZIP.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabase.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMResultSet.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabasePool.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseAdditions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSFMDatabaseQueue.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTS.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSSTSModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentity.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCore/AWSCognitoIdentityModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognito.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoHandlers.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoSyncModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoDataset.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoRecord.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSCognito/AWSCognitoConflict.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalytics.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsOptions.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEventClient.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsEvent.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsConfiguration.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsAppleMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSMobileAnalytics/AWSMobileAnalyticsVirtualMonetizationEventBuilder.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Service.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3Model.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3PreSignedURL.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSS3/AWSS3TransferUtility.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDB.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBService.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBModel.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AWSDynamoDB/AWSDynamoDBObjectMapper.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/Instabug.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Instabug/Instabug.framework/Headers/IBGEnums.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworking.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h"
+- "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDKUtils.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAppUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelUpdate.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberInMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUserListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingUnreadCountQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMemberListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannelListQuery.h"
+- "./SendBirdSDK.framework/Headers/SendBirdStructuredMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMention.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMember.h"
+- "./SendBirdSDK.framework/Headers/SendBirdError.h"
+- "./SendBirdSDK.framework/Headers/SendBirdTypeStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdReadStatus.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessagingChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBroadcastMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdCommand.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSRWebSocket.h"
+- "./SendBirdSDK.framework/Headers/SendBirdWSClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdBlockedUser.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileInfo.h"
+- "./SendBirdSDK.framework/Headers/SendBirdFileLink.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSystemMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSender.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessage.h"
+- "./SendBirdSDK.framework/Headers/SendBirdMessageModel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdChannel.h"
+- "./SendBirdSDK.framework/Headers/SendBirdClient.h"
+- "./SendBirdSDK.framework/Headers/SendBird.h"
+- "./SendBirdSDK.framework/Headers/SendBirdAPIClient.h"
+- "./SendBirdSDK.framework/Headers/SendBirdSDK.h"
+- "./SendBirdSDK.framework/Modules/module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreLocation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/AVFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreMedia.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreAudio.swiftmodule"
+interface-hash: "04b98753aa20baa9738f7c1e2805fb7d"
