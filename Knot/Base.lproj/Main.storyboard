@@ -1144,7 +1144,7 @@
         <scene sceneID="j3X-St-9FU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOh-Dv-xNd" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="house158" id="yR5-94-30U">
+                    <tabBarItem key="tabBarItem" title="" image="home-1" id="yR5-94-30U">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1191,13 +1191,12 @@
     </scenes>
     <resources>
         <image name="add139" width="32" height="32"/>
-        <image name="avatar83" width="60" height="60"/>
-        <image name="chat55" width="60" height="60"/>
+        <image name="avatar83" width="32" height="32"/>
+        <image name="chat55" width="32" height="32"/>
         <image name="flag27" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
         <image name="heart" width="128" height="128"/>
         <image name="home-1" width="376" height="667"/>
-        <image name="house158" width="32" height="32"/>
         <image name="stars" width="265" height="265"/>
         <image name="stars and lines" width="300" height="300"/>
     </resources>

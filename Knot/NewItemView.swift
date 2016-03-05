@@ -576,25 +576,17 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     print("Error: \(task.error)")
                 } else {
                     print("thumbnail added")
-                    if self.preUploadComplete {
-                        self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                    }
-                    else {
+                    
+                    while(self.preUploadComplete == false) {
                         var delayInSeconds = 1.5;
                         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                             if self.preUploadComplete {
                                 self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
                             }
-                            else {
-                                var delayInSeconds = 3.0;
-                                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                                }
-                            }
                         }
                     }
+                    
                 }
                 return nil
             }

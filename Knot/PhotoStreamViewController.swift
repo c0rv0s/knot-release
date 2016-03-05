@@ -45,7 +45,7 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        //UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
@@ -88,21 +88,13 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.loadPhotos()
             }
             else {
-                var delayInSeconds = 1.0;
-                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    if self.appDelegate.locCurrent != nil {
-                        self.locCurrent = self.appDelegate.locCurrent
-                        self.loadPhotos()
-                    }
-                    else {
-                        var delayInSeconds = 0.5;
-                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                            if self.appDelegate.locCurrent != nil {
-                                self.locCurrent = self.appDelegate.locCurrent
-                                self.loadPhotos()
-                            }
+                while(self.appDelegate.locCurrent == nil) {
+                    var delayInSeconds = 1.0;
+                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        if self.appDelegate.locCurrent != nil {
+                            self.locCurrent = self.appDelegate.locCurrent
+                            self.loadPhotos()
                         }
                     }
                 }
@@ -127,22 +119,15 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.locCurrent = appDelegate.locCurrent
                 self.loadPhotos()
             }
+                
             else {
-                var delayInSeconds = 1.0;
-                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    if self.appDelegate.locCurrent != nil {
-                        self.locCurrent = self.appDelegate.locCurrent
-                        self.loadPhotos()
-                    }
-                    else {
-                        var delayInSeconds = 0.5;
-                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                            if self.appDelegate.locCurrent != nil {
-                                self.locCurrent = self.appDelegate.locCurrent
-                                self.loadPhotos()
-                            }
+                while(self.appDelegate.locCurrent == nil) {
+                    var delayInSeconds = 1.0;
+                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        if self.appDelegate.locCurrent != nil {
+                            self.locCurrent = self.appDelegate.locCurrent
+                            self.loadPhotos()
                         }
                     }
                 }
@@ -154,40 +139,6 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden=false
-        
-        /*
-        if needsToRefresh {
-            //reset aray
-            self.collectionItems = []
-            self.collectionItemsUnder10 = []
-            self.collectionItemsUnder50 = []
-            self.collectionItemsUnder100 = []
-            self.collectionItemsOver100Miles = []
-            if self.appDelegate.locCurrent != nil {
-                self.locCurrent = appDelegate.locCurrent
-                self.loadPhotos()
-            }
-            else {
-                var delayInSeconds = 1.0;
-                var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                    if self.appDelegate.locCurrent != nil {
-                        self.locCurrent = self.appDelegate.locCurrent
-                        self.loadPhotos()
-                    }
-                    else {
-                        var delayInSeconds = 0.5;
-                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                            if self.appDelegate.locCurrent != nil {
-                                self.locCurrent = self.appDelegate.locCurrent
-                                self.loadPhotos()
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
 
         self.colView.reloadData()
 
@@ -234,6 +185,10 @@ class PhotoStreamViewController: UICollectionViewController {
             
                 if self.lastEvaluatedKey == nil {
                     self.collectionItems?.removeAll(keepCapacity: true)
+                    self.collectionItemsUnder10?.removeAll(keepCapacity: true)
+                    self.collectionItemsUnder50?.removeAll(keepCapacity: true)
+                    self.collectionItemsUnder100?.removeAll(keepCapacity: true)
+                    self.collectionItemsOver100Miles?.removeAll(keepCapacity: true)
                 }
             
                 if task.result != nil {
