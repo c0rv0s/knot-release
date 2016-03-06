@@ -25,14 +25,7 @@ class HomeTabBarController: UITabBarController {
         super.viewDidAppear(animated)
         
         if appDelegate.startApp {
-            print("checking fb token status")
-            if (FBSDKAccessToken.currentAccessToken() == nil) {
-                print("user not logged in")
-                
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
-            }
-            else {
+                print("checking fb token status")
                 print("user logged in")
                 let token = FBSDKAccessToken.currentAccessToken().tokenString
                 appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
@@ -77,8 +70,6 @@ class HomeTabBarController: UITabBarController {
                     }
                     return nil
                 }
-                
-            }
         }
         else {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("launchScreen") as! UIViewController

@@ -45,8 +45,6 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
             print("delegated")
@@ -68,20 +66,6 @@ class PhotoStreamViewController: UICollectionViewController {
         refreshControl = UIRefreshControl()
         colView.addSubview(refreshControl)
         
-        /*
-        locationManager = OneShotLocationManager()
-        locationManager!.fetchWithCompletion {location, error in
-            // fetch location or an error
-            if let loc = location {
-                self.locCurrent = loc
-            } else if let err = error {
-                print(err.localizedDescription)
-            }
-            self.locationManager = nil
-        }
-*/
-        self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751)
-        
         // When activated, invoke our refresh function
         self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         
@@ -95,9 +79,22 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-        
-        if needsToRefresh {
-                self.loadPhotos()
+
+        if needsToRefresh && self.appDelegate.loggedIn {
+            //calculate distance
+            //remember to switch this b4 release
+            locationManager = OneShotLocationManager()
+            locationManager!.fetchWithCompletion {location, error in
+                // fetch location or an error
+                if let loc = location {
+                    self.locCurrent = loc
+                    self.appDelegate.locCurrent = loc
+                } else if let err = error {
+                    print(err.localizedDescription)
+                }
+                self.locationManager = nil
+            }
+            self.loadPhotos()
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWasOpened:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -163,7 +160,7 @@ class PhotoStreamViewController: UICollectionViewController {
             let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
             let queryExpression = AWSDynamoDBScanExpression()
             queryExpression.exclusiveStartKey = self.lastEvaluatedKey
-            queryExpression.limit = 500;
+            queryExpression.limit = 50;
         
             dynamoDBObjectMapper.scan(ListItem.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
             
@@ -182,27 +179,29 @@ class PhotoStreamViewController: UICollectionViewController {
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
                             if (secondsUntil > (0 - 5 * 60)) {
                                 self.downloadImage(item)
-                            
-                                let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
-                                let latitude = Double(coordinatesArr[0])!
-                                let longitude = Double(coordinatesArr[1])!
-                            
-                                let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
-                                let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-                                //print(String(format: "%.1f", distanceBetween) + " miles away")
-                            
-                                if distanceBetween < 10 {
-                                    self.collectionItemsUnder10.append(item)
-                                }
-                                else if distanceBetween >= 10 && distanceBetween < 50 {
-                                    self.collectionItemsUnder50.append(item)
-                                }
-                                else if distanceBetween >= 50 && distanceBetween < 100 {
-                                    self.collectionItemsUnder100.append(item)
-                                }
-                                else {
-                                    self.collectionItemsOver100Miles.append(item)
-                                }
+                                
+                                    let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
+                                    let latitude = Double(coordinatesArr[0])!
+                                    let longitude = Double(coordinatesArr[1])!
+                                    
+                                    let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
+                                    let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+                                    //print(String(format: "%.1f", distanceBetween) + " miles away")
+                                    
+                                    if distanceBetween < 10 {
+                                        self.collectionItemsUnder10.append(item)
+                                    }
+                                    else if distanceBetween >= 10 && distanceBetween < 50 {
+                                        self.collectionItemsUnder50.append(item)
+                                    }
+                                    else if distanceBetween >= 50 && distanceBetween < 100 {
+                                        self.collectionItemsUnder100.append(item)
+                                    }
+                                    else {
+                                        self.collectionItemsOver100Miles.append(item)
+                                    }
+                                    
+                                
                             }
                         }
                     }

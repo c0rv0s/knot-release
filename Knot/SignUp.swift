@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import SendBirdSDK
+import CoreLocation
 
 class SignUp: UIViewController, UITextFieldDelegate {
     
@@ -24,6 +25,10 @@ class SignUp: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var doneButton: UIButton!
     
     var signUp = true
+    
+    //location
+    var locationManager: OneShotLocationManager!
+
     
     override func viewDidLoad() {
         print("view loaded, signup Bool value is: ")
@@ -148,6 +153,23 @@ class SignUp: UIViewController, UITextFieldDelegate {
             
             if self.signUp {
                 
+                self.appDelegate.loggedIn = true
+                //calculate distance
+                //remember to switch this b4 release
+                locationManager = OneShotLocationManager()
+                locationManager!.fetchWithCompletion {location, error in
+                    // fetch location or an error
+                    if let loc = location {
+                        self.appDelegate.locCurrent = loc
+                    } else if let err = error {
+                        print(err.localizedDescription)
+                    }
+                    self.locationManager = nil
+                }
+                
+                self.appDelegate.initializeNotificationServices()
+                
+                
                 let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
                     let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -158,6 +180,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
                     self.presentViewController(vc, animated: true, completion: nil)
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
+
             }
             else {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController

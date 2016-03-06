@@ -17,12 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var credentialsProvider = AWSCognitoCredentialsProvider()
     var cognitoId: AnyObject?
     
-    //location
-    var locationManager: OneShotLocationManager!
-    var locCurrent: CLLocation!
-    
     var startApp = false
+    var loggedIn = false
     var untapped: Array<String>!
+    
+    var locCurrent: CLLocation!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -45,22 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             mobileAnalyticsForAppId: @"8a8ff18d8fa242df8a62add92ba837ab" //Amazon Mobile Analytics App ID
         identityPoolId: @"us-east-1:249a3e7c-13c2-4289-9ef2-2467fd930e4f"] //Amazon Cognito Identity Pool ID
 
-
-        //calculate distance
-        //remember to switch this b4 release
-        locationManager = OneShotLocationManager()
-        locationManager!.fetchWithCompletion {location, error in
-            // fetch location or an error
-            if let loc = location {
-                self.locCurrent = loc
-            } else if let err = error {
-                print(err.localizedDescription)
-            }
-            self.locationManager = nil
-        }*/
-
-        self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751)
-        self.initializeNotificationServices()
+*/
         
         untapped = []
         
@@ -74,6 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            self.loggedIn = true
+        }
     }
     
     //notifications

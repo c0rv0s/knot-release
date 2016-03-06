@@ -19,6 +19,10 @@ class launchScreen: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            self.appDelegate.loggedIn = true
+        }
+
         super.viewDidAppear(animated)
         self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -112,9 +116,15 @@ class launchScreen: UIViewController {
                 popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                     
-                    //self.presentViewController(vc, animated: true, completion: nil)
+                    if (self.appDelegate.loggedIn) {
+                        self.performSegueWithIdentifier("startApp", sender: self)
+                    }
+                    else {
+                        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                        self.presentViewController(vc, animated: true, completion: nil)
+                        
+                    }
                     
-                    self.performSegueWithIdentifier("startApp", sender: self)
                 }
             }
         }
