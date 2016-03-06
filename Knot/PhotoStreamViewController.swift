@@ -68,6 +68,20 @@ class PhotoStreamViewController: UICollectionViewController {
         refreshControl = UIRefreshControl()
         colView.addSubview(refreshControl)
         
+        /*
+        locationManager = OneShotLocationManager()
+        locationManager!.fetchWithCompletion {location, error in
+            // fetch location or an error
+            if let loc = location {
+                self.locCurrent = loc
+            } else if let err = error {
+                print(err.localizedDescription)
+            }
+            self.locationManager = nil
+        }
+*/
+        self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751)
+        
         // When activated, invoke our refresh function
         self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         
@@ -83,22 +97,7 @@ class PhotoStreamViewController: UICollectionViewController {
         }
         
         if needsToRefresh {
-            if self.appDelegate.locCurrent != nil {
-                self.locCurrent = appDelegate.locCurrent
                 self.loadPhotos()
-            }
-            else {
-                while(self.appDelegate.locCurrent == nil) {
-                    var delayInSeconds = 1.0;
-                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                        if self.appDelegate.locCurrent != nil {
-                            self.locCurrent = self.appDelegate.locCurrent
-                            self.loadPhotos()
-                        }
-                    }
-                }
-            }
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWasOpened:", name: UIApplicationWillEnterForegroundNotification, object: nil)
@@ -115,23 +114,8 @@ class PhotoStreamViewController: UICollectionViewController {
             self.collectionItemsUnder50 = []
             self.collectionItemsUnder100 = []
             self.collectionItemsOver100Miles = []
-            if self.appDelegate.locCurrent != nil {
-                self.locCurrent = appDelegate.locCurrent
-                self.loadPhotos()
-            }
-                
-            else {
-                while(self.appDelegate.locCurrent == nil) {
-                    var delayInSeconds = 1.0;
-                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                        if self.appDelegate.locCurrent != nil {
-                            self.locCurrent = self.appDelegate.locCurrent
-                            self.loadPhotos()
-                        }
-                    }
-                }
-            }
+            self.loadPhotos()
+
         }
 
     }
@@ -271,7 +255,7 @@ class PhotoStreamViewController: UICollectionViewController {
         self.needsToRefresh = false
         self.performHarvest = false
 
-        UIApplication.sharedApplication().endIgnoringInteractionEvents()
+        //UIApplication.sharedApplication().endIgnoringInteractionEvents()
     }
     
     func downloadImage(item: ListItem){

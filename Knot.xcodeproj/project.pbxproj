@@ -79,6 +79,7 @@
 		43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */; };
 		43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */; };
 		43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */; };
+		43F12ADA1C8BF8BA00CE808B /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +158,7 @@
 		43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedPhotoCell.swift; sourceTree = "<group>"; };
 		43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
+		43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
 		770ABEB83565023F547CADA0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				430D11B21C6DCA060028AB63 /* tutorial.swift */,
 				430D11B41C6E73240028AB63 /* SignUp.swift */,
 				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
+				43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			files = (
 				43665D321C7030370069A3AA /* MessagingFileLinkTableViewCell.swift in Sources */,
 				43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */,
+				43F12ADA1C8BF8BA00CE808B /* AccountSettings.swift in Sources */,
 				43665D2F1C7030370069A3AA /* MessageInputView.swift in Sources */,
 				43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */,
 				430293B51C24F0580071E11D /* listing.swift in Sources */,

@@ -49,7 +49,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var two = false
     var three = false
     
-    var timeHoursInt = 1
+    var timeHoursInt = 288
     var hours = [3,5,12,24,72,120,168, 288]
     var lengthOption = ["3 Hours", "5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
     var conditionOption = ["New", "Manufacturer refurbished", "Seller refurbished", "Used", "For parts or not working"]
@@ -577,8 +577,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 } else {
                     print("thumbnail added")
                     
-                    while(self.preUploadComplete == false) {
-                        var delayInSeconds = 1.5;
+                    repeat {
+                        var delayInSeconds = 1.0;
                         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                             if self.preUploadComplete {
@@ -586,7 +586,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                             }
                         }
                     }
-                    
+                    while(self.preUploadComplete == false)
                 }
                 return nil
             }

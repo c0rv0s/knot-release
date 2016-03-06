@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Launch Screen-->
@@ -818,76 +819,46 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
-                                <rect key="frame" x="-88" y="207" width="542" height="47"/>
-                                <state key="normal" title="View Tutorial Again">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
-                                <rect key="frame" x="-88" y="378" width="550" height="50"/>
-                                <state key="normal" title="Legal">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
-                                <rect key="frame" x="-104" y="262" width="582" height="50"/>
-                                <state key="normal" title="Edit Profile Info">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="editProfileButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="ovi-P2-t99"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH7-q1-fBX">
-                                <rect key="frame" x="182" y="470" width="10" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
-                                <rect key="frame" x="-97" y="320" width="568" height="50"/>
-                                <state key="normal" title="Contact Support">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="contactSupport:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="QnP-83-uhi"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFM-fR-gEy">
-                                <rect key="frame" x="-124" y="152" width="622" height="47"/>
-                                <state key="normal" title="Saved Listings">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="yAF-rD-IKu" kind="show" id="71b-gp-nrh"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geJ-zz-sjA">
                                 <rect key="frame" x="140" y="36" width="209" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lvl. 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-tO-znm">
+                                <rect key="frame" x="140" y="84" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Account" id="r77-Kq-mrs"/>
+                    <navigationItem key="navigationItem" title="Account" id="r77-Kq-mrs">
+                        <rightBarButtonItems>
+                            <barButtonItem image="tool305" id="jT7-SV-nXq">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="gBp-3q-FPr" kind="show" id="iwf-cK-sme"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="night" id="7LL-wG-Xdj">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="yAF-rD-IKu" kind="show" id="Q1h-8a-IJS"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
                         <outlet property="buttonView" destination="vH7-q1-fBX" id="sC2-fS-RhL"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="0a1-hY-6qe"/>
                         <outlet property="legalButton" destination="SUp-Ho-bwJ" id="X2A-No-Mku"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
-                        <outlet property="savedButton" destination="uFM-fR-gEy" id="Hab-5i-X6o"/>
                         <outlet property="supportButon" destination="4cD-dC-0Dc" id="SWX-RQ-GcE"/>
                         <outlet property="tableView" destination="hWR-3v-wBD" id="KmC-FW-kV6"/>
                         <outlet property="tutButton" destination="IQM-yo-TQc" id="cf6-5v-FPN"/>
-                        <segue destination="Yn6-Mw-DUA" kind="show" identifier="editProfile" id="fm6-7q-Gp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GP5-wd-0DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -924,7 +895,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usZ-v2-PBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1859.5" y="3688.5"/>
+            <point key="canvasLocation" x="1915.5" y="3408.5"/>
+        </scene>
+        <!--Account Settings-->
+        <scene sceneID="gHF-68-XOf">
+            <objects>
+                <viewController id="gBp-3q-FPr" customClass="AccountSettings" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UhK-5f-KHi"/>
+                        <viewControllerLayoutGuide type="bottom" id="GHe-bz-z0q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2hE-O9-2iO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
+                                <rect key="frame" x="-84" y="214" width="542" height="48"/>
+                                <state key="normal" title="View Tutorial Again">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewTutorial:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="OUh-u5-laa"/>
+                                    <action selector="viewTutorial:" destination="gBp-3q-FPr" eventType="touchUpInside" id="SkH-uV-qHQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
+                                <rect key="frame" x="-88" y="270" width="550" height="50"/>
+                                <state key="normal" title="Legal">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
+                                    <action selector="LegalButton:" destination="gBp-3q-FPr" eventType="touchUpInside" id="Tkn-cZ-J26"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
+                                <rect key="frame" x="-104" y="156" width="582" height="50"/>
+                                <state key="normal" title="Edit Profile Info">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editProfileButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="ovi-P2-t99"/>
+                                    <segue destination="Yn6-Mw-DUA" kind="show" id="0ON-VF-o3k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
+                                <rect key="frame" x="-97" y="98" width="568" height="50"/>
+                                <state key="normal" title="Contact Support">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="contactSupport:" destination="gBp-3q-FPr" eventType="touchUpInside" id="9nz-fa-HtQ"/>
+                                    <action selector="contactSupport:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="QnP-83-uhi"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vH7-q1-fBX">
+                                <rect key="frame" x="182" y="376" width="10" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonView" destination="vH7-q1-fBX" id="QnQ-rG-dwT"/>
+                        <outlet property="editProfile" destination="HxE-fU-heu" id="QaO-GJ-5c2"/>
+                        <outlet property="legalButton" destination="SUp-Ho-bwJ" id="PZO-gc-vWO"/>
+                        <outlet property="supportButon" destination="4cD-dC-0Dc" id="FUv-UX-pzN"/>
+                        <outlet property="tutButton" destination="IQM-yo-TQc" id="PbZ-xD-K33"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmg-Cw-knA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2033" y="4246"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="HD7-ec-7sw">
@@ -999,7 +1041,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEG-6x-pYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1287.5" y="4603.5"/>
+            <point key="canvasLocation" x="2032.5" y="5049.5"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">
@@ -1045,7 +1087,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wH3-EJ-glI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="458.5" y="3739.5"/>
+            <point key="canvasLocation" x="-93.5" y="3709.5"/>
         </scene>
         <!--Navsub-->
         <scene sceneID="qAI-ba-m9T">
@@ -1144,7 +1186,7 @@
         <scene sceneID="j3X-St-9FU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gOh-Dv-xNd" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home-1" id="yR5-94-30U">
+                    <tabBarItem key="tabBarItem" title="" image="house158" id="yR5-94-30U">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -1197,8 +1239,11 @@
         <image name="food-store" width="32" height="32"/>
         <image name="heart" width="128" height="128"/>
         <image name="home-1" width="376" height="667"/>
+        <image name="house158" width="32" height="32"/>
+        <image name="night" width="32" height="32"/>
         <image name="stars" width="265" height="265"/>
         <image name="stars and lines" width="300" height="300"/>
+        <image name="tool305" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxO-bs-lmd"/>
