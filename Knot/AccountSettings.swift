@@ -24,7 +24,7 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         self.tutButton.layer.borderWidth = 1;
         self.tutButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
 
@@ -36,6 +36,7 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
         
         self.supportButon.layer.borderWidth = 1;
         self.supportButon.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
+*/
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)

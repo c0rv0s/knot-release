@@ -118,7 +118,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
-        //fetch favorite status
+        //fetch sbid
         let syncClient = AWSCognito.defaultCognito()
         let dataset = syncClient.openOrCreateDataset("profileInfo")
         let value = dataset.stringForKey("SBID")
@@ -128,6 +128,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         else {
             self.SBID = value
         }
+        
+        self.scrollView.directionalLockEnabled = true
         
     }
     

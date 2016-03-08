@@ -56,7 +56,7 @@ class PhotoStreamViewController: UICollectionViewController {
         self.collectionItems = []
         self.collectionItemsUnder10 = []
         self.collectionItemsUnder50 = []
-        self.collectionItemsUnder100 = []
+        self.collectionItemsUnder100 = [    ]
         self.collectionItemsOver100Miles = []
         
         lock = NSLock()
@@ -81,6 +81,7 @@ class PhotoStreamViewController: UICollectionViewController {
         }
 
         if needsToRefresh && self.appDelegate.loggedIn {
+            /*
             //calculate distance
             //remember to switch this b4 release
             locationManager = OneShotLocationManager()
@@ -94,6 +95,9 @@ class PhotoStreamViewController: UICollectionViewController {
                 }
                 self.locationManager = nil
             }
+*/
+            self.locCurrent = CLLocation(latitude: 120.123456789, longitude: 120.123456789)
+            self.appDelegate.locCurrent = CLLocation(latitude: 120.123456789, longitude: 120.123456789)
             self.loadPhotos()
         }
         
@@ -186,7 +190,7 @@ class PhotoStreamViewController: UICollectionViewController {
                                     
                                     let itemLocation = CLLocation(latitude: latitude, longitude: longitude)
                                     let distanceBetween = itemLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-                                    //print(String(format: "%.1f", distanceBetween) + " miles away")
+                                    print(String(format: "%.1f", distanceBetween) + " miles away")
                                     
                                     if distanceBetween < 10 {
                                         self.collectionItemsUnder10.append(item)

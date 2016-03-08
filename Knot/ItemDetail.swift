@@ -169,7 +169,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.returnUserData()
         self.updateLocation()
         
-        picView = UIImageView(frame:CGRectMake(0, 0, 380, 506))
+        var sizeRect = UIScreen.mainScreen().applicationFrame
+        var width    = sizeRect.size.width
+        
+        picView = UIImageView(frame:CGRectMake(0, 0, width, 506 * (width/380)))
         
         nameLabel.text = name
         priceLabel.text = "$" + price
