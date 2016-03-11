@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CoreLocation
+//import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate  {
@@ -38,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
         
         Instabug.startWithToken("78c16dde6a35093640aa82c7114f0526", invocationEvent: IBGInvocationEventShake)
+        
+        let mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
 
         /*
         AWSMobileAnalytics *analytics = [AWSMobileAnalytics

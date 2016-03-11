@@ -372,6 +372,8 @@ class PhotoStreamViewController: UICollectionViewController {
             viewController.hidesBottomBarWhenPushed = true
             
             viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
+            
+            viewController.DetailItem = collectionItems![self.selectedRow]
 
             viewController.name = collectionItems![self.selectedRow].name
             viewController.price = collectionItems![self.selectedRow].price
@@ -383,7 +385,7 @@ class PhotoStreamViewController: UICollectionViewController {
             viewController.fbID = collectionItems![self.selectedRow].sellerFBID
             viewController.descript = collectionItems![self.selectedRow].descriptionKnot
             viewController.condition = collectionItems![self.selectedRow].condition
-            viewController.category = collectionItems![self.selectedRow].category
+            //viewController.category = collectionItems![self.selectedRow].category
             viewController.numPics = collectionItems![self.selectedRow].numberOfPics
             viewController.sellerSBID = collectionItems![self.selectedRow].sellerSBID
             

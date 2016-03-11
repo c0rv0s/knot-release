@@ -284,6 +284,8 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
             
+            viewController.DetailItem = tableRows![indexPath!.row]
+            
             viewController.name = tableRows![indexPath!.row].name
             viewController.price = tableRows![indexPath!.row].price
             viewController.time = tableRows![indexPath!.row].time
@@ -294,7 +296,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             viewController.fbID = tableRows![indexPath!.row].sellerFBID
             viewController.descript = tableRows![indexPath!.row].descriptionKnot
             viewController.condition = tableRows![indexPath!.row].condition
-            viewController.category = tableRows![indexPath!.row].category
+            //viewController.category = tableRows![indexPath!.row].category
             viewController.owned = true
         }
         

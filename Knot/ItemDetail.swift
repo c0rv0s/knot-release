@@ -14,6 +14,7 @@ import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var reportSlashEdit: UIBarButtonItem!
     @IBOutlet weak var savelabel: UILabel!
     @IBOutlet weak var favButton: DOFavoriteButton!
     /*
@@ -23,10 +24,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
 */
+    //@IBOutlet weak var itemPic: UIImageView!
     
     @IBOutlet weak var alternatingButton: UIButton!
-    
-    //@IBOutlet weak var alternatingButton: UIBarButtonItem!
     
     @IBOutlet weak var alterButtonView: UIVisualEffectView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -43,10 +43,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var sellerName: UILabel!
-    //@IBOutlet weak var addressLabel: UILabel!
     
+    @IBOutlet weak var frontView: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    var DetailItem: ListItem!
     var picView: UIImageView!
     var pic : UIImage!
     var name : String = "Text"
@@ -140,6 +141,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         //set button state
         if self.owned {
             self.alternatingButton.setTitle("Mark As Sold", forState: .Normal)
+            self.reportSlashEdit.title = "Edit"
         }
         else {
             self.alternatingButton.setTitle("Contact", forState: .Normal)
@@ -147,11 +149,14 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         if self.sold != "false" {
             self.alterButtonView.hidden = true
+            self.reportSlashEdit.title = ""
         }
         
         //set labels
         descripText.text = descript
         descripText.editable = false
+        
+        
         
         //something important here
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -172,12 +177,13 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         var sizeRect = UIScreen.mainScreen().applicationFrame
         var width    = sizeRect.size.width
         
-        picView = UIImageView(frame:CGRectMake(0, 0, width, 506 * (width/380)))
+        picView = UIImageView(frame:CGRectMake(0, 0, 380, 506 ))//* (width/380)))
         
         nameLabel.text = name
         priceLabel.text = "$" + price
-        categoryLabel.text = self.category
+        categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
+        //itemPic.image = pic
         picView.image = pic
         
         
@@ -186,8 +192,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         //let overDate =
         //let currentDate =
         
-        self.scrollView.addSubview(picView)
-        self.scrollView.sendSubviewToBack(picView)
+        self.frontView.addSubview(picView)
+        self.frontView.sendSubviewToBack(picView)
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
@@ -255,6 +261,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     }   */
                 else{
                     //    self.statusLabel.text = "Success"
+                    //self.itemPic.image = UIImage(data: data!)
                     self.picView.image = UIImage(data: data!)
                 }
             })
@@ -404,35 +411,40 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.sold = "Sold!"
         AWSDynamoDB.defaultDynamoDB().updateItem(updateInput).waitUntilFinished()
     }
-    /*
+    
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        if (segue!.identifier == "paySegue") {
-            let viewController:QRView = segue!.destinationViewController as! QRView
-            viewController.price = price
-            viewController.ID = IDNum
-            viewController.time = time
+        if (segue!.identifier == "editListing") {
+            let viewController:EditListing = segue!.destinationViewController as! EditListing
+            //viewController.picOne = self.itemPic.image
+            
+            viewController.DetailItem = self.DetailItem
         }
         
     }
-    */
-    @IBAction func reportuser(sender: AnyObject) {
-        var why = "Cancel"
-        let alert = UIAlertController(title: "Report Item", message: "Please select an option: ", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Violence", style: .Default, handler: { (alertAction) -> Void in
-            why = "Violence"
-            self.sendEmail(why)
-        }))
-        alert.addAction(UIAlertAction(title: "Nudity", style: .Default, handler: { (alertAction) -> Void in
-            why = "Nudity"
-            self.sendEmail(why)
-        }))
-        alert.addAction(UIAlertAction(title: "Illicit Goods (Drugs, Weapons)", style: .Default, handler: { (alertAction) -> Void in
-            why = "Nudity"
-            self.sendEmail(why)
-        }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
+    
+    @IBAction func reportOrEdit(sender: AnyObject) {
+        if self.owned {
+            self.performSegueWithIdentifier("editListing", sender: self)
+        }
+        else {
+            var why = "Cancel"
+            let alert = UIAlertController(title: "Report Item", message: "Please select an option: ", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Violence", style: .Default, handler: { (alertAction) -> Void in
+                why = "Violence"
+                self.sendEmail(why)
+            }))
+            alert.addAction(UIAlertAction(title: "Nudity", style: .Default, handler: { (alertAction) -> Void in
+                why = "Nudity"
+                self.sendEmail(why)
+            }))
+            alert.addAction(UIAlertAction(title: "Illicit Goods (Drugs, Weapons)", style: .Default, handler: { (alertAction) -> Void in
+                why = "Nudity"
+                self.sendEmail(why)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
         
     }
     

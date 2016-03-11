@@ -27,6 +27,7 @@
 //AFNetworking
 //#import <AFNetworking/AFNetworking.h>
 #import "AFNetworking.h"
+#import "Mixpanel/Mixpanel.h"
 
 //Sendbird
 //#import "SBMessageClass.h"
