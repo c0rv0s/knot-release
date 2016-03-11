@@ -116,14 +116,14 @@ class launchScreen: UIViewController {
                 popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                 dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                     
-                    if (self.appDelegate.loggedIn) {
+                    //if (self.appDelegate.loggedIn) {
                         self.performSegueWithIdentifier("startApp", sender: self)
-                    }
-                    else {
-                        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
-                        self.presentViewController(vc, animated: true, completion: nil)
+                    //}
+                    //else {
+                      //  let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                        //self.presentViewController(vc, animated: true, completion: nil)
                         
-                    }
+                    //}
                     
                 }
             }

@@ -423,6 +423,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     }
     
     @IBAction func reportOrEdit(sender: AnyObject) {
+        //user id stuff
+        if self.appDelegate.loggedIn {}
+        else {
+            let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+        }
+        
         if self.owned {
             self.performSegueWithIdentifier("editListing", sender: self)
         }
@@ -468,6 +482,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     }
 
     @IBAction func alternatingButton(sender: AnyObject) {
+        //user id stuff
+        if self.appDelegate.loggedIn {}
+        else {
+            let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+        }
+        
         if owned {
             //self.performSegueWithIdentifier("paySegue", sender: self)
             let alert = UIAlertController(title: "Are You Sure?", message: "Is this transaction completed?", preferredStyle: UIAlertControllerStyle.Alert)

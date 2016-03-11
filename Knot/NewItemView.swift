@@ -79,15 +79,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         addphoto3.hidden = true
         self.uniqueID = randomStringWithLength(16) as String
         
-        if((FBSDKAccessToken.currentAccessToken()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                if (error == nil){
-                    let dict = result as! NSDictionary
-                    self.fbID = dict.objectForKey("id") as! String
-                }
-            })
-        }
-        
         nameField.delegate = self;
         
         let lengthView = UIPickerView()
@@ -117,6 +108,27 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        //user id stuff
+        if((FBSDKAccessToken.currentAccessToken()) != nil){
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+                if (error == nil){
+                    let dict = result as! NSDictionary
+                    self.fbID = dict.objectForKey("id") as! String
+                }
+            })
+        }
+        else {
+            let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+        }
         
         //fetch sbid
         let syncClient = AWSCognito.defaultCognito()

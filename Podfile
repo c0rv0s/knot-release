@@ -18,4 +18,6 @@ pod 'AWSCognito'
 
 pod 'Instabug', '5.1.1'
 
+pod 'Venmo-iOS-SDK'
+
 pod 'AFNetworking'
