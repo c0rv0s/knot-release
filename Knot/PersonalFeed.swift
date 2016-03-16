@@ -41,8 +41,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
         
         //user id stuff
-        if self.appDelegate.loggedIn {}
-        else {
+        if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -52,6 +51,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+                    self.presentViewController(alert, animated: true, completion: nil)
         }
         
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -65,6 +65,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
             return nil
         }
+        //self.cognitoID = appDelegate.cognitoId!
         
         
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"

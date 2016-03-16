@@ -4824,6 +4824,10 @@ and the Eclipse Distribution License is available at
   http://www.eclipse.org/org/documents/edl-v10.php.
 
 
+## Buglife
+
+See http://www.buglife.com/terms-of-service
+
 ## CMDQueryStringSerialization
 
 The MIT License (MIT)

@@ -36,14 +36,16 @@ class Messaging: UIViewController, UITextFieldDelegate {
     
     var userName = ""
     
+    var contacted = false
+    var needUndoContact = false
+    
     var viewMode = kMessagingChannelListViewMode
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //user id stuff
-        if self.appDelegate.loggedIn {}
-        else {
+        if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -53,36 +55,42 @@ class Messaging: UIViewController, UITextFieldDelegate {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        
+        else {
         // Do any additional setup after loading the view, typically from a nib.
         setTabBarVisible(true, animated: true)
         
-        // Retrieve your Amazon Cognito ID
-        
-        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             
-            if (task.error != nil) {
-                print("Error: " + task.error!.localizedDescription)
-                
-            } else {
-                // the task result will contain the identity id
-                self.cognitoID = task.result as! String
+        // Retrieve your Amazon Cognito ID
+            appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                if (task.error != nil) {
+                    print("Error: " + task.error!.localizedDescription)
+                }
+                else {
+                    // the task result will contain the identity id
+                    self.cognitoID = task.result as! String
+                    //fetch SendBird ID
+                    let syncClient = AWSCognito.defaultCognito()
+                    let dataset = syncClient.openOrCreateDataset("profileInfo")
+                    let value = dataset.stringForKey("SBID")
+                    let firstName = dataset.stringForKey("firstName")
+                    let lastName = dataset.stringForKey("lastName")
+                    self.userName = firstName + " " + lastName
+                    self.SendBirdUserID = value
+                    
+                    NSLog("launching the channel list view :D:D:D:D:D")
+                    self.startSendBird(self.userName, chatMode: kChatModeMessaging, viewMode: self.viewMode)
+
+                }
+                return nil
             }
-            return nil
-        }
+
+        //self.cognitoID = appDelegate.cognitoId!
         
-        //fetch SendBird ID
-        let syncClient = AWSCognito.defaultCognito()
-        let dataset = syncClient.openOrCreateDataset("profileInfo")
-        let value = dataset.stringForKey("SBID")
-        self.userName = dataset.stringForKey("name")
-        self.SendBirdUserID = value
-        
-        NSLog("launching the channel list view :D:D:D:D:D")
-        self.startSendBird(self.userName, chatMode: kChatModeMessaging, viewMode: self.viewMode)
 
         //self.initView()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -92,12 +100,14 @@ class Messaging: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //setTabBarVisible(true, animated: true)
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "startMessagingWithUser:", name: "open_messaging", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        setTabBarVisible(true, animated: false)
         if self.startMessagingFromOpenChat == true {
             let viewController: MessagingTableViewController = MessagingTableViewController()
             viewController.setViewMode(kMessagingViewMode)
@@ -177,6 +187,7 @@ class Messaging: UIViewController, UITextFieldDelegate {
             viewController.userName = USER_NAME
             viewController.userId = USER_ID
             viewController.targetUserId = self.messagingTargetUserId
+            viewController.contacted = self.contacted
             
             self.navigationController?.pushViewController(viewController, animated: false)
     }

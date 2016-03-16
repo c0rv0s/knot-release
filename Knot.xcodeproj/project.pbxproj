@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E605B50383E8C259E4262A4 /* Pods_Knot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A314E474FE13645424E4F251 /* Pods_Knot.framework */; };
 		2DA96D1B80EBAC9A7ECB7C31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8474F1D48A2AE0C7985EA4A6 /* libPods.a */; };
 		430293B51C24F0580071E11D /* listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430293B41C24F0580071E11D /* listing.swift */; };
 		4303762A1C7C543D00B571A1 /* sessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430376291C7C543D00B571A1 /* sessionData.swift */; };
@@ -398,7 +397,6 @@
 				43CF595D1C28C66B0071CCE8 /* FBSDKCoreKit.framework in Frameworks */,
 				430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */,
 				430DF90B1BFAFF3500839F37 /* libz.tbd in Frameworks */,
-				1E605B50383E8C259E4262A4 /* Pods_Knot.framework in Frameworks */,
 				2DA96D1B80EBAC9A7ECB7C31 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,6 +1075,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Knot/Amazon-Bridging.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Debug;
 		};
@@ -1135,6 +1134,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/Knot/Knot/Amazon-Bridging.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7s";
 			};
 			name = Release;
 		};

@@ -13,10 +13,15 @@ http://stackoverflow.com/questions/27388957/pods-was-rejected-as-an-implicit-dep
 
 # Using the Simulator
 
-The simulator can’t use location data so go ‘AppDelegate.swift’, find the two lines commented:   
-//calculate distance
-//remember to switch this b4 release
+The simulator can’t use location data so go ‘PhotoStreamViewController.swift’, find the two lines commented:   
 
-To run on the simulator comment the next 10 lines, up until the line: self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751)) and then uncomment self.locCurrent = CLLocation(latitude: 37.3853032084585, longitude: -122.153118002751).
+self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+
+to run on the simulator simply uncomment these lines, for running locally comment them again.
 
 To run locally and also before pushing to GitHub be sure to reverse this.
+
+#other issues
+
+If you experience error messages with "nil" and "NSURL" not being compatable, check the "Link Binaries With Libraries " and remove the Pods_Knot_framework file from the list

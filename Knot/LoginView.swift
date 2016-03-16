@@ -59,6 +59,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("User Logged In")
+        self.appDelegate.loggedIn = true
         
         let token = FBSDKAccessToken.currentAccessToken().tokenString
         appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
@@ -71,7 +72,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
                 
             } else {
                 // the task result will contain the identity id
-                self.appDelegate.cognitoId = task.result
+                self.appDelegate.cognitoId = task.result as! String
                 print("Cognito ID: ")
                 print (self.appDelegate.cognitoId)
             }

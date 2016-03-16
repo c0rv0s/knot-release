@@ -66,48 +66,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:375, height: 800)
-        self.tabBarController?.tabBar.hidden = true
-        
-        self.descripFieldView.layer.borderWidth = 1;
-        self.descripFieldView.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
-        
-        
-        picker.delegate = self
-        // Do any additional setup after loading the view, typically from a nib
-        addphoto2.hidden = true
-        addphoto3.hidden = true
-        self.uniqueID = randomStringWithLength(16) as String
-        
-        nameField.delegate = self;
-        
-        let lengthView = UIPickerView()
-        lengthView.tag = 0
-        lengthView.delegate = self
-        lengthField.inputView = lengthView
-        
-        let categoryView = UIPickerView()
-        categoryView.tag = 1
-        categoryView.delegate = self
-        categoryField.inputView = categoryView
-        
-        let conditionView = UIPickerView()
-        conditionView.tag = 2
-        conditionView.delegate = self
-        conditionField.inputView = conditionView
-        
-        let location = appDelegate.locCurrent
-        self.makeScrambledLocation(location)
-        
-        
-        priceField.delegate = self
-        priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-        
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
         
         //user id stuff
         if((FBSDKAccessToken.currentAccessToken()) != nil){
@@ -117,7 +75,63 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     self.fbID = dict.objectForKey("id") as! String
                 }
             })
+            
+            self.scrollView.contentSize = CGSize(width:375, height: 800)
+            self.tabBarController?.tabBar.hidden = true
+            
+            self.descripFieldView.layer.borderWidth = 1;
+            self.descripFieldView.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
+            
+            
+            picker.delegate = self
+            // Do any additional setup after loading the view, typically from a nib
+            addphoto2.hidden = true
+            addphoto3.hidden = true
+            self.uniqueID = randomStringWithLength(16) as String
+            
+            nameField.delegate = self;
+            
+            let lengthView = UIPickerView()
+            lengthView.tag = 0
+            lengthView.delegate = self
+            lengthField.inputView = lengthView
+            
+            let categoryView = UIPickerView()
+            categoryView.tag = 1
+            categoryView.delegate = self
+            categoryField.inputView = categoryView
+            
+            let conditionView = UIPickerView()
+            conditionView.tag = 2
+            conditionView.delegate = self
+            conditionField.inputView = conditionView
+            
+            //let location = appDelegate.locCurrent
+            
+            
+            priceField.delegate = self
+            priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+            
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+            view.addGestureRecognizer(tap)
+            
+            //fetch sbid
+            let syncClient = AWSCognito.defaultCognito()
+            let dataset = syncClient.openOrCreateDataset("profileInfo")
+            let value = dataset.stringForKey("SBID")
+            if (value == nil) {
+                //no action necessary
+            }
+            else {
+                self.SBID = value
+            }
+            
+            self.scrollView.directionalLockEnabled = true
         }
+        
         else {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
@@ -128,20 +142,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        
-        //fetch sbid
-        let syncClient = AWSCognito.defaultCognito()
-        let dataset = syncClient.openOrCreateDataset("profileInfo")
-        let value = dataset.stringForKey("SBID")
-        if (value == nil) {
-            //no action necessary
-        }
-        else {
-            self.SBID = value
-        }
-        
-        self.scrollView.directionalLockEnabled = true
+
         
     }
     
@@ -208,10 +211,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(overDate!)
         
+        self.makeScrambledLocation(self.appDelegate.locCurrent)
+        
         
         // Create a record in a dataset and synchronize with the server
         // Retrieve your Amazon Cognito ID
-        var cognitoID = ""
+        var cognitoID = appDelegate.cognitoId
+        /*
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
                 print("Error: " + task.error!.localizedDescription)
@@ -221,7 +227,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 cognitoID = task.result as! String
             }
             return nil
-        }
+        }*/
         
         let item = ListItem()
         
@@ -231,7 +237,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.location =  locString
         item.time  = dateString
         item.sold = "false"
-        item.seller = cognitoID
+        item.seller = cognitoID!
         item.sellerFBID = self.fbID
         item.descriptionKnot = self.descriptionField.text
         item.category = categoryField.text!
@@ -689,7 +695,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
         
         print("Upload successful")
-        let alert = UIAlertController(title: "Success", message: "Your upload has completed.", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Success", message: "Your upload has completed. It should be visible in the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
             self.presentViewController(vc, animated: true, completion: nil)

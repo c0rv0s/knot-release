@@ -457,7 +457,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     @IBAction func doneAction(sender: AnyObject) {
         
-        if (self.nameField.text == "" || self.priceField.text == "" || self.descripText.text == "" || self.categoryField.text == "Category" || self.conditionField.text == "Item Condition" || self.picOne == nil) {
+        if (self.nameField.text == "" || self.priceField.text == "" || self.descripText.text == "" || self.categoryField.text == "Category" || self.conditionField.text == "Item Condition") {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -549,5 +549,14 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
     }
+    
+    @IBOutlet weak var cancelEdit: UIButton!
+    
+    @IBAction func cancelEdit(sender: AnyObject) {
+        self.tabBarController?.tabBar.hidden = false
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
 
 }

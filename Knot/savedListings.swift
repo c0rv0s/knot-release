@@ -41,7 +41,7 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        /*
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
                 print("Error: " + task.error!.localizedDescription)
@@ -53,6 +53,8 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
             }
             return nil
         }
+*/
+        self.cognitoID = appDelegate.cognitoId!
         
         
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"

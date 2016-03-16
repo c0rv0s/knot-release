@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import CoreLocation
+import SendBirdSDK
+import Buglife
 //import Mixpanel
 
 @UIApplicationMain
@@ -16,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     var window: UIWindow?
     var credentialsProvider = AWSCognitoCredentialsProvider()
-    var cognitoId: AnyObject?
+    var cognitoId: String?
     
     var startApp = false
     var loggedIn = false
@@ -38,7 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let configuration = AWSServiceConfiguration(region:.USEast1, credentialsProvider:credentialsProvider)
         AWSServiceManager.defaultServiceManager().defaultServiceConfiguration = configuration
         
-        Instabug.startWithToken("78c16dde6a35093640aa82c7114f0526", invocationEvent: IBGInvocationEventShake)
+        //Instabug.startWithToken("78c16dde6a35093640aa82c7114f0526", invocationEvent: IBGInvocationEventShake)
+        
+        Buglife.sharedBuglife().startWithAPIKey("KOKYsfFVmcY33qUJZikmMgtt")
         
         let mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
 
@@ -69,20 +73,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     //notifications
     func initializeNotificationServices() -> Void {
-        let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        //let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
+        let application = UIApplication.sharedApplication()
+        //application.registerUserNotificationSettings(settings)
         
         // This is an asynchronous method to retrieve a Device Token
         // Callbacks are in AppDelegate.swift
         // Success = didRegisterForRemoteNotificationsWithDeviceToken
         // Fail = didFailToRegisterForRemoteNotificationsWithError
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        //UIApplication.sharedApplication().registerForRemoteNotifications()
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }
+        else {
+            application.registerForRemoteNotificationTypes([.Alert, .Sound, .Badge])
+        }
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let deviceTokenStr = convertDeviceTokenToString(deviceToken)
-        print(deviceTokenStr)
-        // ...register device token with our Time Entry API server via REST
+        //let deviceTokenStr = convertDeviceTokenToString(deviceToken)
+        //print(deviceTokenStr)
+        SendBird.registerForRemoteNotifications(deviceToken)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -90,23 +103,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         print(error.description)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        // display the userInfo
-        if let notification = userInfo["aps"] as? NSDictionary,
-            let alert = notification["alert"] as? String {
-                var alertCtrl = UIAlertController(title: "You received a message!", message: alert as String, preferredStyle: UIAlertControllerStyle.Alert)
-                //alertCtrl.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                // Find the presented VC...
-                var presentedVC = self.window?.rootViewController
-                while (presentedVC!.presentedViewController != nil)  {
-                    presentedVC = presentedVC!.presentedViewController
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        let apsNotification = userInfo["aps"] as! NSDictionary
+        let alertMsg       = apsNotification["alert"] as! String
+        let payload         = userInfo["sendbird"] as! NSDictionary
+        // Your custom way to parse data
+        /*
+        if let msg = userInfo["msg"] as? String {
+            if let data = msg.dataUsingEncoding(NSUTF8StringEncoding) {
+                if let jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(), error: nil) {
+                    var data = JSON(jsonObject!)
+                    println(data["data"])
                 }
-                presentedVC!.presentViewController(alertCtrl, animated: true, completion: nil)
-                
-                // call the completion handler
-                // -- pass in NoData, since no new data was fetched from the server.
-                completionHandler(UIBackgroundFetchResult.NoData)
-        }
+            }
+        }*/
+        print(alertMsg)
+        
+        //GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+        NSNotificationCenter.defaultCenter().postNotificationName(alertMsg, object: nil,
+            userInfo: userInfo)
+        
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
     
     private func convertDeviceTokenToString(deviceToken:NSData) -> String {

@@ -45,6 +45,7 @@ PODS:
     - AWSCore (= 2.3.5)
   - AWSSQS (2.3.5):
     - AWSCore (= 2.3.5)
+  - Buglife (1.0.0)
   - CMDQueryStringSerialization (0.2.0)
   - Instabug (5.1.1)
   - SSKeychain (1.2.3)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - AWSSimpleDB
   - AWSSNS
   - AWSSQS
+  - Buglife
   - Instabug (= 5.1.1)
   - Venmo-iOS-SDK
 
@@ -94,6 +96,7 @@ SPEC CHECKSUMS:
   AWSSimpleDB: a523844c8b027c850688ffa6f79f33b06abbef9d
   AWSSNS: d95b17f039776ec0dd9cd9237313779d174b0215
   AWSSQS: f7a6f8cf225d469313150f8070e07bd7137218dd
+  Buglife: 9168a783f7a18ba700b93b5e4d3ffe45dd72b4d0
   CMDQueryStringSerialization: 15f9004212bbc72533bb533f63df79d90a00a7d8
   Instabug: 9373b1c10cf902a9c1fc0c7a5f8302291910168d
   SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d

@@ -26,6 +26,10 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     
     let kTypingViewHeight: CGFloat = 36.0
     
+    //appdelegate, added
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var contacted = false
+    
     var container: UIView?
     var tableView: UITableView?
     var messageInputView: MessageInputView?
@@ -159,12 +163,41 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         self.setNavigationButton()
         self.messagingChannelListTableView?.reloadData()
     }
-    
-    func goBack(sender: AnyObject) {
-        setTabBarVisible(true, animated: true)
-        self.navigationController?.pushViewController(Messaging(), animated: false)
-        setTabBarVisible(true, animated: true)
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
+        if (segue!.identifier == "undoContact") {
+            let viewController:ItemDetail = segue!.destinationViewController as! Messaging
+            
+            viewController.viewMode = kMessagingViewMode
+            viewController.messagingTargetUserId = sellerSBID
+            viewController.contacted = true
+        }
         
+    }*/
+    
+    //modified by Nathan, this goes back to the list view
+    func goBack(sender: AnyObject) {
+        //setTabBarVisible(true, animated: true)
+        if contacted {
+            /*
+            print("checkpoint One")
+            let viewController: Messaging = Messaging()
+            viewController.needUndoContact = true
+            self.navigationController?.pushViewController(viewController, animated: false)
+            print("checkpoint Two")
+*/
+                print("checkpoint three")
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                window.rootViewController = sb.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                self.presentViewController(window.rootViewController!, animated: true, completion: nil)
+                print("checkpoint four ")
+        }
+        else {
+           self.navigationController?.pushViewController(Messaging(), animated: false)
+        }
+        
+        //setTabBarVisible(true, animated: true)
     }
     
     func leaveChannel(sender: AnyObject) {

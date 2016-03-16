@@ -14,6 +14,7 @@ import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var itemPic: UIImageView!
     @IBOutlet weak var reportSlashEdit: UIBarButtonItem!
     @IBOutlet weak var savelabel: UILabel!
     @IBOutlet weak var favButton: DOFavoriteButton!
@@ -24,7 +25,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
 */
-    //@IBOutlet weak var itemPic: UIImageView!
     
     @IBOutlet weak var alternatingButton: UIButton!
     
@@ -48,7 +48,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     @IBOutlet weak var distanceLabel: UILabel!
     
     var DetailItem: ListItem!
-    var picView: UIImageView!
+    //var picView: UIImageView!
     var pic : UIImage!
     var name : String = "Text"
     var price : String = "Text"
@@ -157,7 +157,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         descripText.editable = false
         
         
-        
+        /*
         //something important here
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
@@ -169,6 +169,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             }
             return nil
         }
+*/
+        self.cognitoID = appDelegate.cognitoId!
         
         //do some more setup stuff
         self.returnUserData()
@@ -177,14 +179,16 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         var sizeRect = UIScreen.mainScreen().applicationFrame
         var width    = sizeRect.size.width
         
-        picView = UIImageView(frame:CGRectMake(0, 0, 380, 506 ))//* (width/380)))
+        //picView = UIImageView(frame:CGRectMake(0, 0, 380, 506 ))//* (width/380)))
         
         nameLabel.text = name
         priceLabel.text = "$" + price
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
         //itemPic.image = pic
-        picView.image = pic
+        //picView.image = pic
+        
+        self.itemPic.image = self.cropToSquare(image: pic)
         
         
         //set up countdown and timer stuff
@@ -192,8 +196,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         //let overDate =
         //let currentDate =
         
-        self.frontView.addSubview(picView)
-        self.frontView.sendSubviewToBack(picView)
+        //self.frontView.addSubview(picView)
+        //self.frontView.sendSubviewToBack(picView)
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
@@ -261,8 +265,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     }   */
                 else{
                     //    self.statusLabel.text = "Success"
-                    //self.itemPic.image = UIImage(data: data!)
-                    self.picView.image = UIImage(data: data!)
+                    var newPic = self.cropToSquare(image: UIImage(data: data!)!)
+                    self.itemPic.image = newPic
+                    //self.picView.image = UIImage(data: data!)
                 }
             })
         }
@@ -419,13 +424,19 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             
             viewController.DetailItem = self.DetailItem
         }
+        if (segue!.identifier == "contactSegue") {
+            let viewController:Messaging = segue!.destinationViewController as! Messaging
+            
+            viewController.viewMode = kMessagingViewMode
+            viewController.messagingTargetUserId = sellerSBID
+            viewController.contacted = true
+        }
         
     }
     
     @IBAction func reportOrEdit(sender: AnyObject) {
         //user id stuff
-        if self.appDelegate.loggedIn {}
-        else {
+        if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -435,6 +446,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         if self.owned {
@@ -455,6 +467,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 why = "Nudity"
                 self.sendEmail(why)
             }))
+            alert.addAction(UIAlertAction(title: "Report User", style: .Default, handler: { (alertAction) -> Void in
+                why = "user"
+                self.sendEmail(why)
+            }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
             }))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -464,11 +480,15 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     
     func sendEmail(why: String) {
+        var user = "user"
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
              mail.setToRecipients(["support@knotcomplex.com"])
-            var body = "Reporting item " + IDNum + " for " + why + " (add any other details here)" + "\n Thanks!"
+            var body = "Reporting item " + self.IDNum + " for " + why + " (add any other details here)" + "\n Thanks!"
+            if why == user {
+                body = "Reporting user " + self.itemSeller + " (add any other details here)" + "\n Thanks!"
+            }
             mail.setMessageBody(body, isHTML: false)
             
             presentViewController(mail, animated: true, completion: nil)
@@ -482,9 +502,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     }
 
     @IBAction func alternatingButton(sender: AnyObject) {
-        //user id stuff
-        if self.appDelegate.loggedIn {}
-        else {
+        if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
@@ -494,6 +512,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
         
         if owned {
@@ -516,12 +535,13 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 self.presentViewController(alert, animated: true, completion: nil)
             }
             else {
-                let viewController: Messaging = Messaging()
+                //let viewController: Messaging = Messaging()
             
-                viewController.viewMode = kMessagingViewMode
-                viewController.messagingTargetUserId = sellerSBID
+                //viewController.viewMode = kMessagingViewMode
+                //viewController.messagingTargetUserId = sellerSBID
             
-                self.navigationController?.pushViewController(viewController, animated: false)
+                //self.navigationController?.pushViewController(viewController, animated: true)
+                self.performSegueWithIdentifier("contactSegue", sender: self)
             }
         }
     }
@@ -661,6 +681,41 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         return BFTask(forCompletionOfAllTasks: [task])
     }
 
+    func cropToSquare(image originalImage: UIImage) -> UIImage {
+        // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
+        let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
+        
+        // Get the size of the contextImage
+        let contextSize: CGSize = contextImage.size
+        
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
+        
+        // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
+    }
     
     /*
     //download iamge

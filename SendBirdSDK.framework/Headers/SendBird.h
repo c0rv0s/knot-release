@@ -30,6 +30,7 @@
 #import "SendBirdStructuredMessage.h"
 #import "SendBirdBlockedUser.h"
 #import "SendBirdUserListQuery.h"
+#import "SendBirdOnlineMemberCountQuery.h"
 
 #define kSendBirdInitWithIDFA 0
 #define kSendBirdInitWithIDFV 1
@@ -59,6 +60,7 @@ typedef enum {
 @class SendBirdFileLink;
 @class SendBirdMessagingUnreadCountQuery;
 @class SendBirdUserListQuery;
+@class SendBirdOnlineMemberCountQuery;
 
 /**
  *  `SendBird` is the main class of [SendBird](http://sendBird.com). This class offers connection to SendBird platform, login, setting event callback blocks, message transfers, and others. This class will be defined as a Single Instance in an iOS app. The typical usage order is as the following:
@@ -111,16 +113,15 @@ typedef enum {
  */
 @property (retain) NSString *appId;
 
-/**
- *  Displays connection status with the messaging server
- */
-@property BOOL connected;
+@property BOOL connected DEPRECATED_ATTRIBUTE;
 
 @property BOOL mLoginRequired;
 
 @property (retain) NSOperationQueue *taskQueue;
 
 @property (retain) NSOperationQueue *imageTaskQueue;
+
+@property (retain) NSString *deviceToken;
 
 - (id) initWithAppId:(NSString *)appId;
 
@@ -601,15 +602,28 @@ typedef enum {
 + (enum WSReadyState) connectState;
 
 /**
- *  Create the instance of [`SendBirdUserListQuery`](./SendBirdUserListQuery.html)  to retrieve the users.
+ *  Create the instance of [`SendBirdOnlineMemberCountQuery`](./SendBirdOnlineMemberCountQuery.html) to retrieve the users.
+ *
+ *  @return [`SendBirdOnlineMemberCountQuery`](./SendBirdOnlineMemberCountQuery.html) instance.
+ */
++ (SendBirdOnlineMemberCountQuery *) queryOnlineMemberCount:(NSString *)channelUrl;
+
+/**
+ *  Create the instance of [`SendBirdUserListQuery`](./SendBirdUserListQuery.html) to retrieve the users.
  *
  *  @return [`SendBirdUserListQuery`](./SendBirdUserListQuery.html) instance.
  */
 + (SendBirdUserListQuery *) queryUserList;
 
++ (void) registerForRemoteNotifications:(NSData *)devToken;
+
 /**
  *  For UnitTest
  */
 + (void) testUserBlockListResultBlock:(void (^)(NSDictionary *response, NSError *error))onResult;
+
++ (NSString *) getDeviceToken;
+
++ (void) deleteMessage:(long long)msgId resultBlock:(void (^)(NSDictionary *response, NSError *error))onResult;
 
 @end

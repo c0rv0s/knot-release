@@ -18,6 +18,9 @@ class PhotoStreamViewController: UICollectionViewController {
     var collectionItems: Array<ListItem>!
     
     //distance filters
+    var favItemIDs: Array<String>!
+    
+    var collectionItemsFav: Array<ListItem>!
     var collectionItemsUnder10: Array<ListItem>!
     var collectionItemsUnder50: Array<ListItem>!
     var collectionItemsUnder100: Array<ListItem>!
@@ -53,10 +56,12 @@ class PhotoStreamViewController: UICollectionViewController {
         collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
         
         //reset aray
+        self.favItemIDs = []
         self.collectionItems = []
+        self.collectionItemsFav = []
         self.collectionItemsUnder10 = []
         self.collectionItemsUnder50 = []
-        self.collectionItemsUnder100 = [    ]
+        self.collectionItemsUnder100 = []
         self.collectionItemsOver100Miles = []
         
         lock = NSLock()
@@ -68,6 +73,7 @@ class PhotoStreamViewController: UICollectionViewController {
         
         // When activated, invoke our refresh function
         self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        //self.cognitoID = self.appDelegate.cognitoId!
         
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
             if (task.error != nil) {
@@ -76,14 +82,33 @@ class PhotoStreamViewController: UICollectionViewController {
             else {
                 // the task result will contain the identity id
                 self.cognitoID = task.result as! String
+                print(self.cognitoID)
             }
             return nil
         }
+        /*
+        self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
+            //var alert = UIAlertView(title: "Success!", message: msg, delegate: nil, cancelButtonTitle: "Okay.")
+            if(succeeded) {
+                //alert.title = "Success!"
+                //alert.message = msg
+            }
+            else {
+                //alert.title = "Failed : ("
+                //alert.message = msg
+            }
+            // Move to the UI thread 
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                // Show the alert             
+                //alert.show()
+            })
+        }*/
 
-        if needsToRefresh && self.appDelegate.loggedIn {
-            /*
+        if needsToRefresh && appDelegate.loggedIn {
+            print("this is happening right here")
             //calculate distance
             //remember to switch this b4 release
+            
             locationManager = OneShotLocationManager()
             locationManager!.fetchWithCompletion {location, error in
                 // fetch location or an error
@@ -95,9 +120,9 @@ class PhotoStreamViewController: UICollectionViewController {
                 }
                 self.locationManager = nil
             }
-*/
-            self.locCurrent = CLLocation(latitude: 120.123456789, longitude: 120.123456789)
-            self.appDelegate.locCurrent = CLLocation(latitude: 120.123456789, longitude: 120.123456789)
+
+            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         
@@ -110,6 +135,7 @@ class PhotoStreamViewController: UICollectionViewController {
         if needsToRefresh == false {
             print("app was opened")
             //reset aray
+            self.favItemIDs = []
             self.collectionItems = []
             self.collectionItemsUnder10 = []
             self.collectionItemsUnder50 = []
@@ -145,7 +171,7 @@ class PhotoStreamViewController: UICollectionViewController {
         // -- DO SOMETHING AWESOME (... or just wait 3 seconds) --
         // This is where you'll make requests to an API, reload data, or process information
         self.loadPhotos()
-        var delayInSeconds = 3.0;
+        let delayInSeconds = 3.0;
         var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             // When done requesting/reloading/processing invoke endRefreshing, to close the control
@@ -153,6 +179,75 @@ class PhotoStreamViewController: UICollectionViewController {
             //self.colView.reloadData()
         }
         // -- FINISHED SOMETHING AWESOME, WOO! --
+    }
+    
+    func post(param : String, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
+        var request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        
+        var err: NSError?
+        //request.HTTPBody = NSJSONSerialization.dataWithJSONObject(param, options: nil, error: &err)
+        
+        do {
+            if case let request.HTTPBody! = try NSJSONSerialization.dataWithJSONObject(param, options: []) {
+                print("yay")
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            print("Response: \(response)")
+            var strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("Body: \(strData)")
+            var err: NSError?
+            var json = NSDictionary()
+            
+            do {
+                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
+                    print(json)
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+            
+            var msg = "No message"
+            
+            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+            if(err != nil) {
+                print(err!.localizedDescription)
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: '\(jsonStr)'")
+                postCompleted(succeeded: false, msg: "Error")
+            }
+            else {
+                // The JSONObjectWithData constructor didn't return an error. But, we should still
+                // check and make sure that json has a value using optional binding.
+                do {
+                    //let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+                    if let results = json["result"] as? [[String: AnyObject]] {
+                        for result in results {
+                            if let itemIdent = result["itemID"] as? String
+                            {
+                                self.favItemIDs.append(itemIdent)
+                                print("favorite item added: ")
+                                print(itemIdent)
+                            }
+                        }
+                    }
+                }
+                catch {
+                    print("error serializing JSON: \(error)")
+                }
+            }
+        })
+        
+        task.resume()
     }
     
     func loadPhotos() {
@@ -170,6 +265,7 @@ class PhotoStreamViewController: UICollectionViewController {
             
                 if self.lastEvaluatedKey == nil {
                     self.collectionItems?.removeAll(keepCapacity: true)
+                    self.collectionItemsFav?.removeAll(keepCapacity: true)
                     self.collectionItemsUnder10?.removeAll(keepCapacity: true)
                     self.collectionItemsUnder50?.removeAll(keepCapacity: true)
                     self.collectionItemsUnder100?.removeAll(keepCapacity: true)
@@ -183,6 +279,14 @@ class PhotoStreamViewController: UICollectionViewController {
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
                             if (secondsUntil > (0 - 5 * 60)) {
                                 self.downloadImage(item)
+                                
+                                if self.favItemIDs.count > 0 {
+                                    for idNum in self.favItemIDs {
+                                        if item.ID == idNum {
+                                            self.collectionItemsFav.append(item)
+                                        }
+                                    }
+                                }
                                 
                                     let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                                     let latitude = Double(coordinatesArr[0])!
@@ -234,6 +338,12 @@ class PhotoStreamViewController: UICollectionViewController {
     func organizeData() {
         appDelegate.untapped = []
         print("organize data")
+        for item in collectionItemsFav {
+            print(item.ID)
+            appDelegate.untapped!.append(item.ID)
+            self.collectionItems!.append(item)
+        }
+        
         for item in collectionItemsUnder10 {
             print(item.ID)
             appDelegate.untapped!.append(item.ID)

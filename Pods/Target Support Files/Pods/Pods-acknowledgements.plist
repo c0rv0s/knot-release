@@ -4905,6 +4905,14 @@ and the Eclipse Distribution License is available at
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>See http://www.buglife.com/terms-of-service</string>
+			<key>Title</key>
+			<string>Buglife</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
 Copyright (c) 2014 Caleb Davenport.
