@@ -22,7 +22,7 @@
 #import <AWSDynamoDB/AWSDynamoDB.h>
 
 //Instabug
-#import <Instabug/Instabug.h>
+//#import <Instabug/Instabug.h>
 
 //AFNetworking
 //#import <AFNetworking/AFNetworking.h>

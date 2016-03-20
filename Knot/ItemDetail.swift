@@ -14,6 +14,7 @@ import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
+    //@IBOutlet var profPicGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var itemPic: UIImageView!
     @IBOutlet weak var reportSlashEdit: UIBarButtonItem!
     @IBOutlet weak var savelabel: UILabel!
@@ -26,7 +27,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var pageViews: [UIImageView?] = []
 */
     
-    @IBOutlet weak var alternatingButton: UIButton!
+   @IBOutlet weak var alternatingButton: UIButton!
     
     @IBOutlet weak var alterButtonView: UIVisualEffectView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -44,7 +45,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 
     @IBOutlet weak var sellerName: UILabel!
     
-    @IBOutlet weak var frontView: UIView!
+    //@IBOutlet weak var frontView: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var DetailItem: ListItem!
@@ -81,8 +82,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:375, height: 1100)
+        self.scrollView.contentSize = CGSize(width:375, height: 1011)
         self.downloadImage(IDNum)
+        
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
@@ -176,8 +178,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.returnUserData()
         self.updateLocation()
         
-        var sizeRect = UIScreen.mainScreen().applicationFrame
-        var width    = sizeRect.size.width
+        //var sizeRect = UIScreen.mainScreen().applicationFrame
+        //var width    = sizeRect.size.width
         
         //picView = UIImageView(frame:CGRectMake(0, 0, 380, 506 ))//* (width/380)))
         
@@ -185,16 +187,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         priceLabel.text = "$" + price
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
-        //itemPic.image = pic
-        //picView.image = pic
         
         self.itemPic.image = self.cropToSquare(image: pic)
-        
-        
-        //set up countdown and timer stuff
-
-        //let overDate =
-        //let currentDate =
         
         //self.frontView.addSubview(picView)
         //self.frontView.sendSubviewToBack(picView)
@@ -235,7 +229,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         //downloading image
         
-        
         let S3BucketName: String = "knotcompleximages"
         let S3DownloadKeyName: String = key
         
@@ -248,8 +241,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 NSLog("Progress is: %f",progress)
             })
         }
-        
-        
         
         completionHandler = { (task, location, data, error) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
@@ -314,7 +305,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         else {
             updateSoldStatus("ended")
             timeLabel.text = "Ended"
-            //self.alternatingButton.hidden = true
+            self.alternatingButton.hidden = true
         }
 
     }
@@ -459,12 +450,12 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 why = "Violence"
                 self.sendEmail(why)
             }))
-            alert.addAction(UIAlertAction(title: "Nudity", style: .Default, handler: { (alertAction) -> Void in
-                why = "Nudity"
+            alert.addAction(UIAlertAction(title: "Explicit Material", style: .Default, handler: { (alertAction) -> Void in
+                why = "Explicit Material"
                 self.sendEmail(why)
             }))
             alert.addAction(UIAlertAction(title: "Illicit Goods (Drugs, Weapons)", style: .Default, handler: { (alertAction) -> Void in
-                why = "Nudity"
+                why = "Illicit Goods"
                 self.sendEmail(why)
             }))
             alert.addAction(UIAlertAction(title: "Report User", style: .Default, handler: { (alertAction) -> Void in
@@ -501,6 +492,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    
     @IBAction func alternatingButton(sender: AnyObject) {
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
@@ -545,6 +537,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             }
         }
     }
+
     
     func openMapForPlace() {
         /*

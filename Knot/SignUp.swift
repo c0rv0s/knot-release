@@ -199,6 +199,11 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 self.appDelegate.initializeNotificationServices()
                 
                 
+                dataset.setString("true", forKey:"firstUse")
+                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                    return nil
+                }
+                
                 let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
                     let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController

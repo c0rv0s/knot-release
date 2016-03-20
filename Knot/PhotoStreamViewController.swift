@@ -48,6 +48,15 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            needsToRefresh = false
+            var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
             print("delegated")

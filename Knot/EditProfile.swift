@@ -40,7 +40,7 @@ class EditProfile: UIViewController {
         else {
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
-            let dataset = syncClient.openOrCreateDataset("profileInfo")
+            var dataset = syncClient.openOrCreateDataset("profileInfo")
             dataset.setString(self.firstNameLabel.text, forKey:"firstName")
             dataset.setString(self.lastNameLabel.text, forKey:"lastName")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
@@ -56,6 +56,37 @@ class EditProfile: UIViewController {
             }
             dataset.setString(self.emailLabel.text, forKey:"email")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            dataset = syncClient.openOrCreateDataset("completed-quests")
+            dataset.setString("true", forKey:"finish-profile")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            dataset.setString("true", forKey:"finish-profile")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            dataset = syncClient.openOrCreateDataset("active-quests")
+            dataset.removeObjectForKey("finish-profile")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                if task.cancelled {
+                    // Task cancelled.
+                    SwiftSpinner.hide()
+                    
+                } else if task.error != nil {
+                    SwiftSpinner.hide()
+                    // Error while executing task
+                    
+                } else {
+                    SwiftSpinner.hide()
+                    // Task succeeded. The data was saved in the sync store.
+                    
+                    
+                }
                 return nil
             }
             

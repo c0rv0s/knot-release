@@ -129,6 +129,7 @@
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
+		43A155ED1C9F43DD00AF7B98 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A155EC1C9F43DD00AF7B98 /* Reachability.swift */; };
 		43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A31C611C7808580026D8A2 /* TimeoutView.xib */; };
 		43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A31C631C7818B60026D8A2 /* EditProfile.swift */; };
 		43A3EFBC1C4DF131006B9952 /* PersonalFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */; };
@@ -339,6 +340,7 @@
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		43A155EC1C9F43DD00AF7B98 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		43A31C611C7808580026D8A2 /* TimeoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeoutView.xib; sourceTree = "<group>"; };
 		43A31C631C7818B60026D8A2 /* EditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		43A3EFBB1C4DF131006B9952 /* PersonalFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalFeed.swift; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 				431853541BF9892F000C6ED4 /* Info.plist */,
 				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
 				43DD12101C8F9F730013034E /* itemDetailInfo.xib */,
+				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				431262311C900A3A00A47BFD /* MPObjectSerializerContext.m in Sources */,
 				431262121C900A3A00A47BFD /* MPABTestDesignerConnection.m in Sources */,
 				43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */,
+				43A155ED1C9F43DD00AF7B98 /* Reachability.swift in Sources */,
 				430293B51C24F0580071E11D /* listing.swift in Sources */,
 				431D133D1C6ABC6D00E8D887 /* navsub.swift in Sources */,
 				431262241C900A3A00A47BFD /* MPDesignerEventBindingResponseMesssage.m in Sources */,

@@ -67,6 +67,14 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Reachability.isConnectedToNetwork() == true {
+            print("Internet connection OK")
+        } else {
+            print("Internet connection FAILED")
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        
         //user id stuff
         if((FBSDKAccessToken.currentAccessToken()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -121,13 +129,27 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             //fetch sbid
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
-            let value = dataset.stringForKey("SBID")
+            var value = dataset.stringForKey("SBID")
             if (value == nil) {
                 //no action necessary
             }
             else {
                 self.SBID = value
             }
+            if let value2 = dataset.stringForKey("firstUse") {
+                if value == "true" {
+                    let alert = UIAlertController(title: "Head's Up", message: "There are a few rules involved with posting items to Knot, no drugs, weapons, or explicit material is allowed, you will be banned. \nPlease take a moment to get a really good picture, studies show these sell better :)", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Got it!", style: .Default, handler: { (alertAction) -> Void in
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                
+                    dataset.setString("false", forKey:"firstUse")
+                    dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                        return nil
+                    }
+                }
+            }
+            
             
             self.scrollView.directionalLockEnabled = true
         }

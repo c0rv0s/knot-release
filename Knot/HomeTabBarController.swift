@@ -36,7 +36,7 @@ class HomeTabBarController: UITabBarController {
                 }
                 else {
                     self.appDelegate.cognitoId = task.result as! String
-                    print("login was a success, consider puttign stuff here")
+                    print("login was a success, consider putting stuff here")
                 }
                 return nil
             }

@@ -29,7 +29,7 @@ class launchScreen: UIViewController {
         
         var path: UIBezierPath = UIBezierPath()
         path.moveToPoint(CGPointMake(76, 407))
-        path.addLineToPoint(CGPointMake(130, 326))
+        path.addLineToPoint(CGPointMake(130, 327))
         
         // Create a CAShape Layer
         var pathLayer: CAShapeLayer = CAShapeLayer()
@@ -59,7 +59,7 @@ class launchScreen: UIViewController {
             //2
             path = UIBezierPath()
             path.moveToPoint(CGPointMake(130, 326))
-            path.addLineToPoint(CGPointMake(232, 390))
+            path.addLineToPoint(CGPointMake(236, 396))
             
             // Create a CAShape Layer
             pathLayer = CAShapeLayer()
@@ -88,8 +88,8 @@ class launchScreen: UIViewController {
                 
                 //3
                 path = UIBezierPath()
-                path.moveToPoint(CGPointMake(232, 390))
-                path.addLineToPoint(CGPointMake(300, 286))
+                path.moveToPoint(CGPointMake(236, 396))
+                path.addLineToPoint(CGPointMake(298, 296))
                 
                 // Create a CAShape Layer
                 pathLayer = CAShapeLayer()

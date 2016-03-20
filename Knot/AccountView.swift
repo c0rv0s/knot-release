@@ -11,6 +11,8 @@ import MessageUI
 
 class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
 
+    @IBOutlet weak var completeProfileAlert: UIImageView!
+    @IBOutlet weak var completeProfile: UIButton!
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     var dict : NSDictionary!
@@ -29,6 +31,9 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.completeProfile.hidden = true
+        self.completeProfileAlert.hidden = true
+        
         //user id stuff
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
@@ -43,6 +48,22 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
                     self.presentViewController(alert, animated: true, completion: nil)
         }
         self.returnUserDataForProf()
+        
+        //fetch favorite status
+        let syncClient = AWSCognito.defaultCognito()
+        var dataset = syncClient.openOrCreateDataset("completed-quests")
+        let value = dataset.stringForKey("finish-profile")
+        if (value == nil) {
+            dataset = syncClient.openOrCreateDataset("active-quests")
+            dataset.setString("true", forKey:"finish-profile")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
+            self.completeProfile.hidden = false
+            self.completeProfileAlert.hidden = false
+        }
+
     }
     
     func returnUserDataForProf() {

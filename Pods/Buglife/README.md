@@ -4,7 +4,10 @@
 ![Platform](https://img.shields.io/cocoapods/p/Buglife.svg)
 ![Twitter](https://img.shields.io/badge/twitter-@BuglifeApp-blue.svg)
 
-Buglife is an awesome bug reporting SDK & web platform for iOS apps. For more info, visit [Buglife.com](https://www.buglife.com).
+Buglife is an awesome bug reporting SDK & web platform for iOS apps.
+For more info, visit [Buglife.com](https://www.buglife.com).
+
+In a hurry? Try out our [iOS Demo project](https://github.com/Buglife/Buglife-iOS-Demo)!
 
 ## Installation
 
@@ -62,4 +65,4 @@ $ pod install
 
 Build & run your app; you should see a floating Buglife button. Tap this button to report a bug; bug reports will be sent directly to your email address!
 
-Don't like the floating Buglife button? You can configure Buglife to invoke the bug reporter via manual screenshots or shaking the device. See the header docs in [Buglife.h](Buglife.framework/Versions/A/Headers/Buglife.h) for more info!
+Don't like the floating Buglife button? You can configure Buglife to invoke the bug reporter via manual screenshots or shaking the device. See the header docs in [Buglife.h](Buglife.framework/Versions/A/Headers/Buglife.h) for more info! 
