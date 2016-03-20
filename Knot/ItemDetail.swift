@@ -512,8 +512,16 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             let alert = UIAlertController(title: "Are You Sure?", message: "Is this transaction completed?", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
                 self.updateSoldStatus("Sold!")
+                self.sold = "true"
                 self.timeLabel.text = "Sold!"
                 self.timeLabel.textColor = UIColor.greenColor()
+                
+                let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+                }))
+                self.presentViewController(alert, animated: true, completion: nil)
+
+                
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
             }))

@@ -144,6 +144,7 @@ class PhotoStreamViewController: UICollectionViewController {
         if needsToRefresh == false {
             print("app was opened")
             //reset aray
+            self.collectionImages = [String: UIImage]()
             self.favItemIDs = []
             self.collectionItems = []
             self.collectionItemsUnder10 = []
