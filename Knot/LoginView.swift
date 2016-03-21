@@ -116,6 +116,13 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         print("User Logged Out")
     }
 
+    @IBAction func howUseFB(sender: AnyObject) {
+        let alert = UIAlertController(title: "How we use Facebook", message: "Knot uses your Facebook profile to seamlessly populate your Seller Profile and verify your account. This provides extra security, promotes safety and ease of use.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
     private func imageLayerForGradientBackground() -> UIImage {
 
         var updatedFrame = self.view.bounds

@@ -66,7 +66,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
+        //more testing
         if Reachability.isConnectedToNetwork() == true {
             print("Internet connection OK")
         } else {
@@ -74,6 +75,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
             self.presentViewController(vc, animated: true, completion: nil)
         }
+*/
         
         //user id stuff
         if((FBSDKAccessToken.currentAccessToken()) != nil){

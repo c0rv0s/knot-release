@@ -48,6 +48,8 @@ class PhotoStreamViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+        // more testing needed here
         if Reachability.isConnectedToNetwork() == true {
             print("Internet connection OK")
         } else {
@@ -56,6 +58,7 @@ class PhotoStreamViewController: UICollectionViewController {
             var alert = UIAlertView(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
         }
+*/
         
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
@@ -130,8 +133,8 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.locationManager = nil
             }
 
-            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
-            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         

@@ -616,50 +616,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eqQ-J9-BkT">
-                                <rect key="frame" x="16" y="20" width="303" height="499"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Knot Complex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-gH-8nI">
-                                        <rect key="frame" x="39" y="0.0" width="225" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Connect. Share. Simply and Securely" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYn-Sf-rWf">
-                                        <rect key="frame" x="2" y="53" width="299" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="stars and lines" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-tq-Ewf">
-                                        <rect key="frame" x="1" y="85" width="301" height="300"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOR-kE-0dM">
-                                        <rect key="frame" x="1" y="395" width="301" height="50"/>
-                                        <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="By tapping &quot;Login&quot; you agree to the Knot EULA and Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-bN-MmV">
-                                        <rect key="frame" x="0.0" y="455" width="303" height="11"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-Cr-rit">
-                                        <rect key="frame" x="115" y="476" width="73" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                        <state key="normal" title="Tap here to view">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SeePrivacy:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="ZdX-me-jqk"/>
-                                            <action selector="TermsOfService:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="x8Y-FL-hx8"/>
-                                            <action selector="login:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="TQD-EZ-0d2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Knot Complex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLW-gH-8nI">
+                                <rect key="frame" x="82" y="20" width="157" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="stars and lines" translatesAutoresizingMaskIntoConstraints="NO" id="0gp-tq-Ewf">
+                                <rect key="frame" x="10" y="53" width="301" height="300"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOR-kE-0dM">
+                                <rect key="frame" x="153" y="380" width="15" height="15"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="By tapping &quot;Login&quot; you agree to our " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQx-bN-MmV">
+                                <rect key="frame" x="65" y="422" width="191" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-Cr-rit">
+                                <rect key="frame" x="62" y="438" width="196" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="Terms of Service and Privacy Policy">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SeePrivacy:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="ZdX-me-jqk"/>
+                                    <action selector="TermsOfService:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="x8Y-FL-hx8"/>
+                                    <action selector="login:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="TQD-EZ-0d2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uza-sb-7dS">
+                                <rect key="frame" x="98" y="461" width="124" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="How we use Facebook">
+                                    <color key="titleColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="howUseFB:" destination="SdQ-rf-AsK" eventType="touchUpInside" id="qge-wW-zat"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dOR-kE-0dM" firstAttribute="top" secondItem="0gp-tq-Ewf" secondAttribute="bottom" constant="31" id="G1M-yA-5b1"/>
+                            <constraint firstItem="JLW-gH-8nI" firstAttribute="top" secondItem="c2v-td-hxH" secondAttribute="bottom" constant="20" id="H8D-KS-52e"/>
+                            <constraint firstItem="uza-sb-7dS" firstAttribute="top" secondItem="vRC-Cr-rit" secondAttribute="bottom" constant="2" id="Qae-cu-ccf"/>
+                            <constraint firstItem="vRC-Cr-rit" firstAttribute="top" secondItem="lQx-bN-MmV" secondAttribute="bottom" constant="2" id="fx1-LA-4cf"/>
+                            <constraint firstItem="lQx-bN-MmV" firstAttribute="top" secondItem="dOR-kE-0dM" secondAttribute="bottom" constant="8" id="pFm-Ne-lyX"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
