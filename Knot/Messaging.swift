@@ -73,13 +73,23 @@ class Messaging: UIViewController, UITextFieldDelegate {
                     //fetch SendBird ID
                     let syncClient = AWSCognito.defaultCognito()
                     let dataset = syncClient.openOrCreateDataset("profileInfo")
-                    let value = dataset.stringForKey("SBID")
+                    var value = dataset.stringForKey("SBID")
+                    //if nothing
+                    if value == nil || value == "" {
+                        dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+                        dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                            return nil
+                        }
+                        print("new SBID uploaded")
+                        print(SendBird.deviceUniqueID())
+                    }
                     let firstName = dataset.stringForKey("firstName")
                     let lastName = dataset.stringForKey("lastName")
                     self.userName = firstName + " " + lastName
                     self.SendBirdUserID = value
                     
                     NSLog("launching the channel list view :D:D:D:D:D")
+                    print("SBID = " + value)
                     self.startSendBird(self.userName, chatMode: kChatModeMessaging, viewMode: self.viewMode)
 
                 }

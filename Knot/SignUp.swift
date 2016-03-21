@@ -119,6 +119,9 @@ class SignUp: UIViewController, UITextFieldDelegate {
         if (dataset.stringForKey("lastName") != nil) {
             self.lastNameLabel.text = dataset.stringForKey("lastName")
         }
+        if (dataset.stringForKey("SBID") != nil) {
+            print(dataset.stringForKey("lastName"))
+        }
         /*
         if (dataset.stringForKey("email") != nil) {
             self.emailLabel.text = dataset.stringForKey("email")
@@ -162,24 +165,24 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 return nil
             }
 */
-            
+            /*
             print("Now lets take a look at the SendBird ID")
             //set SendBird ID
             //if let currentSBID = dataset.stringForKey("SBID") {
             let value = dataset.stringForKey("SBID")
-            if value == nil || value == "" {
+            if value != nil {
+                print("dataset shows: " + value)
+
+            }
+            else {
                 dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
                 print("new SBID uploaded")
-            }
-            /*
-            }
-            else {
-                print("dataset shows: " + dataset.stringForKey("SBID"))
-            }
-*/
+                print(SendBird.deviceUniqueID())
+            }*/
+
             if self.signUp {
                 
                 self.appDelegate.loggedIn = true

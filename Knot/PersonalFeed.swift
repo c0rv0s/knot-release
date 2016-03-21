@@ -300,17 +300,19 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             viewController.DetailItem = tableRows![indexPath!.row]
             
+            /*
             viewController.name = tableRows![indexPath!.row].name
             viewController.price = tableRows![indexPath!.row].price
             viewController.time = tableRows![indexPath!.row].time
             viewController.IDNum = tableRows![indexPath!.row].ID
             viewController.itemSeller = tableRows![indexPath!.row].seller
-            viewController.location = tableRows![indexPath!.row].location
+            //viewController.location = tableRows![indexPath!.row].location
             viewController.sold = tableRows![indexPath!.row].sold
             viewController.fbID = tableRows![indexPath!.row].sellerFBID
             viewController.descript = tableRows![indexPath!.row].descriptionKnot
             viewController.condition = tableRows![indexPath!.row].condition
             //viewController.category = tableRows![indexPath!.row].category
+*/
             viewController.owned = true
         }
         

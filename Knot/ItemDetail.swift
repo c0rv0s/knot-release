@@ -28,8 +28,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 */
     
    @IBOutlet weak var alternatingButton: UIButton!
-    
-    @IBOutlet weak var alterButtonView: UIVisualEffectView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -88,6 +86,18 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
+        
+        self.name = self.DetailItem.name
+        self.price = self.DetailItem.price
+        self.time = self.DetailItem.time
+        self.IDNum = self.DetailItem.ID
+        self.itemSeller = self.DetailItem.seller
+        self.location = self.DetailItem.location
+        self.sold = self.DetailItem.sold
+        self.fbID = self.DetailItem.sellerFBID
+        self.descript = self.DetailItem.descriptionKnot
+        self.condition = self.DetailItem.condition
+        self.category = self.DetailItem.category
         
         favButton.addTarget(self, action: Selector("tapped:"), forControlEvents: .TouchUpInside)
         //fetch favorite status
@@ -150,7 +160,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         }
         
         if self.sold != "false" {
-            self.alterButtonView.hidden = true
             self.reportSlashEdit.title = ""
         }
         
@@ -346,8 +355,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     func updateLocation()
     {
         let coordinatesArr = self.location.characters.split{$0 == " "}.map(String.init)
-        self.latitude = Double(coordinatesArr[0])!
-        self.longitude = Double(coordinatesArr[1])!
+        print(self.latitude = Double(coordinatesArr[0])!)
+        print(self.longitude = Double(coordinatesArr[1])!)
         
         let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
         let regionRadius: CLLocationDistance = 500
@@ -411,7 +420,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "editListing") {
             let viewController:EditListing = segue!.destinationViewController as! EditListing
-            //viewController.picOne = self.itemPic.image
+            
+            viewController.picOne = self.itemPic.image
             
             viewController.DetailItem = self.DetailItem
         }

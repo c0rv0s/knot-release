@@ -100,7 +100,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.descripText.text = DetailItem.descriptionKnot
         self.categoryField.text = DetailItem.category
         self.conditionField.text = DetailItem.condition
-        self.photoOne.image = picOne
+        self.photoOne.image = self.resizeImage(picOne)
 
         
     }
@@ -557,6 +557,5 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
     }
-    
 
 }

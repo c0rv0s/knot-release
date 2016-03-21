@@ -133,8 +133,8 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.locationManager = nil
             }
 
-            //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
-            //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         

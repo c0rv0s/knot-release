@@ -49,7 +49,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
         }
         self.returnUserDataForProf()
         
-        //fetch favorite status
+        //fetch quest status
         let syncClient = AWSCognito.defaultCognito()
         var dataset = syncClient.openOrCreateDataset("completed-quests")
         let value = dataset.stringForKey("finish-profile")
@@ -62,6 +62,14 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             
             self.completeProfile.hidden = false
             self.completeProfileAlert.hidden = false
+        }
+        
+        //check for account info
+        dataset = syncClient.openOrCreateDataset("profileInfo")
+        let value2 = dataset.stringForKey("age")
+        if (value2 != nil) {
+            self.completeProfile.hidden = true
+            self.completeProfileAlert.hidden = true
         }
 
     }

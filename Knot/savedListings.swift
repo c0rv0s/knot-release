@@ -270,8 +270,11 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
             let indexPath = self.tableView.indexPathForSelectedRow
             viewController.hidesBottomBarWhenPushed = true
             
+            viewController.DetailItem = tableRows![indexPath!.row]
+            
             viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
             
+            /*
             viewController.name = tableRows![indexPath!.row].name
             viewController.price = tableRows![indexPath!.row].price
             viewController.time = tableRows![indexPath!.row].time
@@ -284,7 +287,7 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
             viewController.condition = tableRows![indexPath!.row].condition
             viewController.category = tableRows![indexPath!.row].category
             viewController.sellerSBID = tableRows![indexPath!.row].sellerSBID
-            
+            */
             if self.cognitoID == tableRows![indexPath!.row].seller {
                 viewController.owned = true
             }
