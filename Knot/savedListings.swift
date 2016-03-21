@@ -272,7 +272,7 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
             
             viewController.DetailItem = tableRows![indexPath!.row]
             
-            viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
+            //viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
             
             /*
             viewController.name = tableRows![indexPath!.row].name

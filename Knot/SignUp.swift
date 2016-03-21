@@ -143,6 +143,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            SwiftSpinner.show("Completing Profile")
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -223,6 +224,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }
+            SwiftSpinner.hide()
         }
         
 

@@ -83,6 +83,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.scrollView.contentSize = CGSize(width:375, height: 1011)
         self.downloadImage(IDNum)
         
+        //self.itemPic.image = self.cropToSquare(image: pic)
+        self.itemPic.image = self.cropToSquare(image: UIImage(named: "placeholder")!)
+        
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         self.locCurrent = appDelegate.locCurrent
@@ -197,7 +200,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
         
-        self.itemPic.image = self.cropToSquare(image: pic)
+
         
         //self.frontView.addSubview(picView)
         //self.frontView.sendSubviewToBack(picView)

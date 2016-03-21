@@ -133,8 +133,8 @@ class PhotoStreamViewController: UICollectionViewController {
                 self.locationManager = nil
             }
 
-            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
-            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         
@@ -494,7 +494,7 @@ class PhotoStreamViewController: UICollectionViewController {
             let viewController:ItemDetail = segue!.destinationViewController as! ItemDetail
             viewController.hidesBottomBarWhenPushed = true
             
-            viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
+            //viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
             
             viewController.DetailItem = collectionItems![self.selectedRow]
 

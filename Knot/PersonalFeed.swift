@@ -296,7 +296,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             let indexPath = self.tableView.indexPathForSelectedRow
             viewController.hidesBottomBarWhenPushed = true
             
-            viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
+            //viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
             
             viewController.DetailItem = tableRows![indexPath!.row]
             
