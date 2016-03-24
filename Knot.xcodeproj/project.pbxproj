@@ -124,6 +124,7 @@
 		43665D391C7030370069A3AA /* TypingNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D2D1C7030370069A3AA /* TypingNowView.swift */; };
 		436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */; };
 		436F5D521C4FC62B009CFCE3 /* FeedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */; };
+		4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */; };
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
 		43869C611C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
@@ -335,6 +336,7 @@
 		43665D2D1C7030370069A3AA /* TypingNowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypingNowView.swift; path = SendBird/SendBirdMessaging/View/TypingNowView.swift; sourceTree = "<group>"; };
 		436F5D4F1C4FC318009CFCE3 /* PhotoStreamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoStreamViewController.swift; sourceTree = "<group>"; };
 		436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedLayout.swift; sourceTree = "<group>"; };
+		4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KRE-data-2.0.swift"; sourceTree = "<group>"; };
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		43869C601C052E07008E6056 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -611,11 +613,11 @@
 				43F206481C7F8F0A00CEEDFF /* data extensions */,
 				43F2064B1C7F8FD400CEEDFF /* nav controllers */,
 				43F2064A1C7F8FC000CEEDFF /* dynamoData */,
-				43F206491C7F8F5300CEEDFF /* viewcontrollers */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
 				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
 				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
 				43C924941C0818220006E181 /* Bridging-Header.h */,
+				43F206491C7F8F5300CEEDFF /* viewcontrollers */,
 				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
 				43C924951C084BA40006E181 /* Main.storyboard */,
 				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
@@ -724,6 +726,7 @@
 			children = (
 				430293B41C24F0580071E11D /* listing.swift */,
 				430376291C7C543D00B571A1 /* sessionData.swift */,
+				4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */,
 			);
 			name = dynamoData;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				4312623A1C900A3A00A47BFD /* MPSwizzler.m in Sources */,
 				4312623F1C900A3A00A47BFD /* MPUIColorToNSStringValueTransformer.m in Sources */,
 				431262341C900A3A00A47BFD /* MPSequenceGenerator.m in Sources */,
+				4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */,
 				431262451C900A3A00A47BFD /* MPVariant.m in Sources */,
 				43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */,
 				431262271C900A3A00A47BFD /* MPEventBinding.m in Sources */,

@@ -56,7 +56,7 @@ class tutorial: UIViewController {
             
         case 1:
             self.hide()
-            imageView.image = UIImage(named: "detail 2")
+            imageView.image = UIImage(named: "detail 1")
             self.topLabel.text = detailTwoTop
             self.topLabel.hidden = false
             break

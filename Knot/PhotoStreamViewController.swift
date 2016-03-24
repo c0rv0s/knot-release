@@ -98,7 +98,8 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
-        /*
+        
+        //fetch KRE data
         self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
             //var alert = UIAlertView(title: "Success!", message: msg, delegate: nil, cancelButtonTitle: "Okay.")
             if(succeeded) {
@@ -114,7 +115,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 // Show the alert             
                 //alert.show()
             })
-        }*/
+        }
 
         if needsToRefresh && appDelegate.loggedIn {
             print("this is happening right here")
@@ -195,42 +196,50 @@ class PhotoStreamViewController: UICollectionViewController {
     }
     
     func post(param : String, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
+        self.favItemIDs = []
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
         var err: NSError?
         //request.HTTPBody = NSJSONSerialization.dataWithJSONObject(param, options: nil, error: &err)
-        
+        /*
         do {
             if case let request.HTTPBody! = try NSJSONSerialization.dataWithJSONObject(param, options: []) {
                 print("yay")
             }
         } catch let error as NSError {
             print(error.localizedDescription)
-        }
-        
-        
+        }*/
+        var jsontext = "{\"userID\": \""  + self.cognitoID + "\"}"
+        request.HTTPBody = jsontext.dataUsingEncoding(NSUTF8StringEncoding)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("w0CrbxlfvCzf6xvOQ35q1wcFXGTO1NY2Ff3mIZjb", forHTTPHeaderField: "x-api-key")
         
         var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
             var strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("Body: \(strData)")
             var err: NSError?
-            var json = NSDictionary()
-            
+
             do {
-                if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary {
-                    print(json)
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                if let results = json["result"] as? [[String: AnyObject]] {
+                    for result in results {
+                        if let item = result["itemID"] as? String {
+                            print("fav item is: ")
+                            print(item)
+                            self.favItemIDs.append(item)
+                        }
+                    }
                 }
+                
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
-            
             var msg = "No message"
             
+            /*
             // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
             if(err != nil) {
                 print(err!.localizedDescription)
@@ -241,26 +250,36 @@ class PhotoStreamViewController: UICollectionViewController {
             else {
                 // The JSONObjectWithData constructor didn't return an error. But, we should still
                 // check and make sure that json has a value using optional binding.
-                do {
-                    //let json = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                    if let results = json["result"] as? [[String: AnyObject]] {
-                        for result in results {
-                            if let itemIdent = result["itemID"] as? String
-                            {
-                                self.favItemIDs.append(itemIdent)
-                                print("favorite item added: ")
-                                print(itemIdent)
+                    do {
+                        
+                        let parsejson = json
+                        //if let body = parsejson["result"] as? [[String: AnyObject]] {
+                            if let results = parsejson!["result"] as? [[String: AnyObject]] {
+                                for result in results {
+                                    if let item = result["itemID"] as? String {
+                                        print("fav item is: ")
+                                        print(item)
+                                        self.favItemIDs.append(item)
+                                    }
+                                }
                             }
-                        }
+                        //}
+ 
+                        //read the dictionary
+                        
                     }
-                }
-                catch {
-                    print("error serializing JSON: \(error)")
-                }
+                    catch {
+                        print("error serializing JSON: \(error)")
+                    }
             }
+ */
+
         })
         
         task.resume()
+        
+        print("favs are")
+        print(favItemIDs)
     }
     
     func loadPhotos() {
@@ -296,11 +315,12 @@ class PhotoStreamViewController: UICollectionViewController {
                                 if self.favItemIDs.count > 0 {
                                     for idNum in self.favItemIDs {
                                         if item.ID == idNum {
+                                            print("new fav added")
                                             self.collectionItemsFav.append(item)
                                         }
                                     }
                                 }
-                                
+                                else {
                                     let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                                     let latitude = Double(coordinatesArr[0])!
                                     let longitude = Double(coordinatesArr[1])!
@@ -321,7 +341,8 @@ class PhotoStreamViewController: UICollectionViewController {
                                     else {
                                         self.collectionItemsOver100Miles.append(item)
                                     }
-                                    
+                                }
+                                
                                 
                             }
                         }
@@ -356,7 +377,7 @@ class PhotoStreamViewController: UICollectionViewController {
             appDelegate.untapped!.append(item.ID)
             self.collectionItems!.append(item)
         }
-        
+        print("done with favs")
         for item in collectionItemsUnder10 {
             print(item.ID)
             appDelegate.untapped!.append(item.ID)
@@ -627,7 +648,7 @@ class PhotoStreamViewController: UICollectionViewController {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
-        let item = sessionData()
+        let item = KREData()
         item.userID = cogID
         item.itemID = itemId
         item.timestamp = dateString

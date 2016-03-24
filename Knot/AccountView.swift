@@ -11,6 +11,7 @@ import MessageUI
 
 class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
 
+    @IBOutlet weak var profCompleteLabel: UILabel!
     @IBOutlet weak var completeProfileAlert: UIImageView!
     @IBOutlet weak var completeProfile: UIButton!
     @IBOutlet weak var Name: UILabel!
@@ -51,6 +52,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
         
         //fetch quest status
         let syncClient = AWSCognito.defaultCognito()
+        /*
         var dataset = syncClient.openOrCreateDataset("completed-quests")
         let value = dataset.stringForKey("finish-profile")
         if (value == nil) {
@@ -62,14 +64,16 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             
             self.completeProfile.hidden = false
             self.completeProfileAlert.hidden = false
-        }
+            self.profCompleteLabel.text = "Profile Incomplete"
+        }*/
         
         //check for account info
-        dataset = syncClient.openOrCreateDataset("profileInfo")
+        var dataset = syncClient.openOrCreateDataset("profileInfo")
         let value2 = dataset.stringForKey("age")
-        if (value2 != nil) {
-            self.completeProfile.hidden = true
-            self.completeProfileAlert.hidden = true
+        if (value2 == nil) {
+            self.completeProfile.hidden = false
+            self.completeProfileAlert.hidden = false
+            self.profCompleteLabel.text = "Profile Incomplete"
         }
 
     }

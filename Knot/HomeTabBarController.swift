@@ -36,6 +36,8 @@ class HomeTabBarController: UITabBarController {
                 }
                 else {
                     self.appDelegate.cognitoId = task.result as! String
+                    
+                    self.appDelegate.mixpanel?.identify(self.appDelegate.cognitoId!)
                     print("login was a success, consider putting stuff here")
                 }
                 return nil

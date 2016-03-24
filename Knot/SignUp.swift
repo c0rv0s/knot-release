@@ -224,7 +224,14 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }
+            
+            self.appDelegate.mixpanel!.track?(
+                "SignUp",
+                properties: ["userID": self.appDelegate.cognitoId!]
+            )
+            
             SwiftSpinner.hide()
+            
         }
         
 

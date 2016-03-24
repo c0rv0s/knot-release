@@ -140,7 +140,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             }
             if let value2 = dataset.stringForKey("firstUse") {
                 if value == "true" {
-                    let alert = UIAlertController(title: "Head's Up", message: "There are a few rules involved with posting items to Knot, no drugs, weapons, or explicit material is allowed, you will be banned. \nPlease take a moment to get a really good picture, studies show these sell better :)", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Head's Up", message: "There are a few rules involved with posting items to Knot, no drugs, weapons, or explicit material is allowed, you will be banned. \n\nTake a moment to take a picture of your item against a contrasting color background with lighting that clearly highlights your item, this helps buyers get a good view.", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "Got it!", style: .Default, handler: { (alertAction) -> Void in
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
@@ -583,6 +583,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         else {
             SwiftSpinner.show("Uploading \(self.nameField.text!)")
             
+            /*
+            self.appDelegate.mixpanel!.track(
+                "New Upload",
+                properties: ["userID": self.cognitoID, "itemID": self.uniqueID]
+            )
+ */
+            
             self.insertItem(uniqueID).continueWithBlock({
                 (task: BFTask!) -> BFTask! in
                 
@@ -725,6 +732,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(vc, animated: true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
+        
+        self.appDelegate.mixpanel!.track?(
+            "Item Upload",
+            properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
+        )
     }
     
     //end upload and submissions
@@ -741,7 +753,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         var maxWidth = CGFloat(500.00)
         var imgRatio = CGFloat(actualWidth/actualHeight)
         var maxRatio = CGFloat(maxWidth/maxHeight)
-        var compressionQuality = CGFloat(0.40)//40 percent compression
+        var compressionQuality = CGFloat(0.40)//40 percent compressio
         
         if (actualHeight > maxHeight || actualWidth > maxWidth)
         {

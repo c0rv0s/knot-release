@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var untapped: Array<String>!
     
     var locCurrent: CLLocation!
+    
+    var mixpanel: AnyObject?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -44,7 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         Buglife.sharedBuglife().startWithAPIKey("KOKYsfFVmcY33qUJZikmMgtt")
         
-        let mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
+        mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
+        
+        mixpanel!.people.increment(
+            [ "Check In": 1]
+        )
 
         /*
         AWSMobileAnalytics *analytics = [AWSMobileAnalytics
@@ -267,7 +273,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
-        let item = sessionData()
+        let item = KREData()
         item.userID = cogID
         item.itemID = itemId
         item.timestamp = dateString

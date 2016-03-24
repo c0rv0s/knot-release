@@ -529,11 +529,21 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 self.timeLabel.text = "Sold!"
                 self.timeLabel.textColor = UIColor.greenColor()
                 
+                self.appDelegate.mixpanel!.track?(
+                    "Transaction Completed",
+                    properties: ["userID": self.appDelegate.cognitoId!, "item": self.IDNum]
+                )
+                
+                let revenue = Int(self.DetailItem.price)!
+                self.appDelegate.mixpanel!.people.increment([
+                    "Number Sold": 1,
+                    "Gross Revenue":  revenue
+                ])
+                
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
-
                 
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
@@ -586,6 +596,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         let syncClient = AWSCognito.defaultCognito()
         let dataset = syncClient.openOrCreateDataset("favorites")
         let value = dataset.stringForKey(self.IDNum)
+        
+        self.appDelegate.mixpanel!.track(
+            "Favorite Button",
+            properties: ["userID": self.cognitoID, "itemID": self.DetailItem.ID]
+        )
         
         if sender.selected {
             // deselect
@@ -682,7 +697,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
+        /*
         let item = sessionData()
+        item.userID = cogID
+        item.itemID = itemId
+        item.timestamp = dateString
+        item.status = itemCondition
+        
+        print(item)
+        let task = mapper.save(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
+ */
+        let item = KREData()
         item.userID = cogID
         item.itemID = itemId
         item.timestamp = dateString
