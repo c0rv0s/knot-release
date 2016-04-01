@@ -130,6 +130,10 @@
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
+		4396E67E1CA4A64900655ED9 /* pageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67D1CA4A64900655ED9 /* pageController.swift */; };
+		4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */; };
+		4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6811CAC9B2C00655ED9 /* collection.swift */; };
+		4396E6841CAC9C9300655ED9 /* onlineListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6831CAC9C9300655ED9 /* onlineListing.swift */; };
 		43A155ED1C9F43DD00AF7B98 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A155EC1C9F43DD00AF7B98 /* Reachability.swift */; };
 		43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A31C611C7808580026D8A2 /* TimeoutView.xib */; };
 		43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A31C631C7818B60026D8A2 /* EditProfile.swift */; };
@@ -342,6 +346,10 @@
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		4396E67D1CA4A64900655ED9 /* pageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pageController.swift; sourceTree = "<group>"; };
+		4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KCRE-data.swift"; sourceTree = "<group>"; };
+		4396E6811CAC9B2C00655ED9 /* collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
+		4396E6831CAC9C9300655ED9 /* onlineListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onlineListing.swift; sourceTree = "<group>"; };
 		43A155EC1C9F43DD00AF7B98 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		43A31C611C7808580026D8A2 /* TimeoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeoutView.xib; sourceTree = "<group>"; };
 		43A31C631C7818B60026D8A2 /* EditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
@@ -717,6 +725,7 @@
 				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
 				43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */,
 				430D6B641C922EA100C7A6A7 /* Editlisting.swift */,
+				4396E67D1CA4A64900655ED9 /* pageController.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -727,6 +736,9 @@
 				430293B41C24F0580071E11D /* listing.swift */,
 				430376291C7C543D00B571A1 /* sessionData.swift */,
 				4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */,
+				4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */,
+				4396E6811CAC9B2C00655ED9 /* collection.swift */,
+				4396E6831CAC9C9300655ED9 /* onlineListing.swift */,
 			);
 			name = dynamoData;
 			sourceTree = "<group>";
@@ -952,6 +964,7 @@
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				431262251C900A3A00A47BFD /* MPDesignerTrackMessage.m in Sources */,
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,
+				4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */,
 				431262381C900A3A00A47BFD /* MPSurveyQuestion.m in Sources */,
 				431262431C900A3A00A47BFD /* MPUIImageToNSDictionaryValueTransformer.m in Sources */,
 				43DD8ECC1C7007AB00F9D8A1 /* savedListings.swift in Sources */,
@@ -966,6 +979,7 @@
 				4303762A1C7C543D00B571A1 /* sessionData.swift in Sources */,
 				431853461BF9892F000C6ED4 /* AppDelegate.swift in Sources */,
 				4312621C1C900A3A00A47BFD /* MPCATransform3DToNSDictionaryValueTransformer.m in Sources */,
+				4396E67E1CA4A64900655ED9 /* pageController.swift in Sources */,
 				430D11B51C6E73240028AB63 /* SignUp.swift in Sources */,
 				4312621F1C900A3A00A47BFD /* MPCGPointToNSDictionaryValueTransformer.m in Sources */,
 				430D6B651C922EA100C7A6A7 /* Editlisting.swift in Sources */,
@@ -979,8 +993,10 @@
 				431262341C900A3A00A47BFD /* MPSequenceGenerator.m in Sources */,
 				4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */,
 				431262451C900A3A00A47BFD /* MPVariant.m in Sources */,
+				4396E6841CAC9C9300655ED9 /* onlineListing.swift in Sources */,
 				43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */,
 				431262271C900A3A00A47BFD /* MPEventBinding.m in Sources */,
+				4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */,
 				4312620A1C900A3A00A47BFD /* Mixpanel.m in Sources */,
 				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,
 				4312620F1C900A3A00A47BFD /* MPABTestDesignerChangeResponseMessage.m in Sources */,
