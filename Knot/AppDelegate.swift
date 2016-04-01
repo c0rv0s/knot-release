@@ -102,6 +102,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         //let deviceTokenStr = convertDeviceTokenToString(deviceToken)
         //print(deviceTokenStr)
         SendBird.registerForRemoteNotifications(deviceToken)
+        mixpanel!.people.addPushDeviceToken(deviceToken)
+        print("success, remote notifications registered")
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
