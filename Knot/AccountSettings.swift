@@ -105,8 +105,14 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
         print("User Logged Out")
     }
     
-    @IBAction func LegalButton(sender: AnyObject) {
-        if let url = NSURL(string: "http://www.knotcomplex.com/privacy.html") {
+    @IBAction func ViewTerms(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/Terms.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func ViewPrivacy(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/Privacy.html") {
             UIApplication.sharedApplication().openURL(url)
         }
     }

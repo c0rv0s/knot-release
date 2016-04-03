@@ -313,7 +313,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             viewController.condition = tableRows![indexPath!.row].condition
             //viewController.category = tableRows![indexPath!.row].category
 */
-            viewController.owned = true
+            //viewController.owned = true
         }
         
     }

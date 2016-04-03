@@ -47,8 +47,14 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
 
     }
     
+    @IBAction func SeeTerms(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/Terms.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+
     @IBAction func SeePrivacy(sender: AnyObject) {
-        if let url = NSURL(string: "http://www.knotcomplex.com/privacy.html") {
+        if let url = NSURL(string: "http://www.knotcomplex.com/Privacy.html") {
             UIApplication.sharedApplication().openURL(url)
         }
     }

@@ -120,7 +120,6 @@ class PhotoStreamViewController: UICollectionViewController {
         if needsToRefresh && appDelegate.loggedIn {
             print("this is happening right here")
             //calculate distance
-            //remember to switch this b4 release
             
             locationManager = OneShotLocationManager()
             locationManager!.fetchWithCompletion {location, error in
@@ -133,7 +132,7 @@ class PhotoStreamViewController: UICollectionViewController {
                 }
                 self.locationManager = nil
             }
-
+            //uncomment these next two lines for running on the simulator
             //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
@@ -150,6 +149,7 @@ class PhotoStreamViewController: UICollectionViewController {
             //reset aray
             self.collectionImages = [String: UIImage]()
             self.favItemIDs = []
+            self.collectionItemsFav = []
             self.collectionItems = []
             self.collectionItemsUnder10 = []
             self.collectionItemsUnder50 = []
@@ -197,20 +197,13 @@ class PhotoStreamViewController: UICollectionViewController {
     
     func post(param : String, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
         self.favItemIDs = []
+        self.collectionItemsFav = []
         var request = NSMutableURLRequest(URL: NSURL(string: url)!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
         var err: NSError?
-        //request.HTTPBody = NSJSONSerialization.dataWithJSONObject(param, options: nil, error: &err)
-        /*
-        do {
-            if case let request.HTTPBody! = try NSJSONSerialization.dataWithJSONObject(param, options: []) {
-                print("yay")
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }*/
+
         var jsontext = "{\"userID\": \""  + self.cognitoID + "\"}"
         request.HTTPBody = jsontext.dataUsingEncoding(NSUTF8StringEncoding)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -227,8 +220,6 @@ class PhotoStreamViewController: UICollectionViewController {
                 if let results = json["result"] as? [[String: AnyObject]] {
                     for result in results {
                         if let item = result["itemID"] as? String {
-                            print("fav item is: ")
-                            print(item)
                             self.favItemIDs.append(item)
                         }
                     }
@@ -238,48 +229,10 @@ class PhotoStreamViewController: UICollectionViewController {
                 print(error.localizedDescription)
             }
             var msg = "No message"
-            
-            /*
-            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
-            if(err != nil) {
-                print(err!.localizedDescription)
-                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print("Error could not parse JSON: '\(jsonStr)'")
-                postCompleted(succeeded: false, msg: "Error")
-            }
-            else {
-                // The JSONObjectWithData constructor didn't return an error. But, we should still
-                // check and make sure that json has a value using optional binding.
-                    do {
-                        
-                        let parsejson = json
-                        //if let body = parsejson["result"] as? [[String: AnyObject]] {
-                            if let results = parsejson!["result"] as? [[String: AnyObject]] {
-                                for result in results {
-                                    if let item = result["itemID"] as? String {
-                                        print("fav item is: ")
-                                        print(item)
-                                        self.favItemIDs.append(item)
-                                    }
-                                }
-                            }
-                        //}
- 
-                        //read the dictionary
-                        
-                    }
-                    catch {
-                        print("error serializing JSON: \(error)")
-                    }
-            }
- */
 
         })
         
         task.resume()
-        
-        print("favs are")
-        print(favItemIDs)
     }
     
     func loadPhotos() {
@@ -312,15 +265,18 @@ class PhotoStreamViewController: UICollectionViewController {
                             if (secondsUntil > (0 - 5 * 60)) {
                                 self.downloadImage(item)
                                 
+                                var itemFaved = false
+                                
                                 if self.favItemIDs.count > 0 {
                                     for idNum in self.favItemIDs {
                                         if item.ID == idNum {
                                             print("new fav added")
                                             self.collectionItemsFav.append(item)
+                                            itemFaved = true
                                         }
                                     }
                                 }
-                                else {
+                               if itemFaved == false {
                                     let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                                     let latitude = Double(coordinatesArr[0])!
                                     let longitude = Double(coordinatesArr[1])!
@@ -342,8 +298,6 @@ class PhotoStreamViewController: UICollectionViewController {
                                         self.collectionItemsOver100Miles.append(item)
                                     }
                                 }
-                                
-                                
                             }
                         }
                     }
@@ -408,10 +362,7 @@ class PhotoStreamViewController: UICollectionViewController {
     func downloadImage(item: ListItem){
         
         var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
-        
-        //downloading image
-        
-        
+
         let S3BucketName: String = "knotcomplexthumbnails"
         let S3DownloadKeyName: String = item.ID
         
@@ -425,20 +376,12 @@ class PhotoStreamViewController: UICollectionViewController {
             })
         }
         
-        
-        
         completionHandler = { (task, location, data, error) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 if ((error) != nil){
                     NSLog("Failed with error")
                     NSLog("Error: %@",error!);
-                    //   self.statusLabel.text = "Failed"
                 }
-                    /*
-                    else if(self.progressView.progress != 1.0) {
-                    //    self.statusLabel.text = "Failed"
-                    NSLog("Error: Failed - Likely due to invalid region / filename")
-                    }   */
                 else{
                     
                     self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
@@ -466,16 +409,12 @@ class PhotoStreamViewController: UICollectionViewController {
         transferUtility.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
             if let error = task.error {
                 NSLog("Error: %@",error.localizedDescription);
-                //  self.statusLabel.text = "Failed"
             }
             if let exception = task.exception {
                 NSLog("Exception: %@",exception.description);
-                //  self.statusLabel.text = "Failed"
             }
             if let _ = task.result {
-                //    self.statusLabel.text = "Starting Download"
-                //NSLog("Download Starting!")
-                // Do something with uploadTask.
+
             }
             return nil;
         }
@@ -484,17 +423,8 @@ class PhotoStreamViewController: UICollectionViewController {
     
     func indexPathIsValid(indexPath: NSIndexPath) -> Bool
     {
-        //let section = indexPath.section
        let row = indexPath.row
-        /*
-        let lastSectionIndex =
-        numberOfSectionsInCollectionView(self.colView) - 1
-        
-        //Make sure the specified section exists
-        if section > lastSectionIndex
-        {
-            return false
-        }*/
+
         let rowCount = self.collectionView(
             self.colView, numberOfItemsInSection: indexPath.section) - 1
         
@@ -518,7 +448,7 @@ class PhotoStreamViewController: UICollectionViewController {
             //viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
             
             viewController.DetailItem = collectionItems![self.selectedRow]
-
+/*
             viewController.name = collectionItems![self.selectedRow].name
             viewController.price = collectionItems![self.selectedRow].price
             viewController.time = collectionItems![self.selectedRow].time
@@ -532,6 +462,7 @@ class PhotoStreamViewController: UICollectionViewController {
             //viewController.category = collectionItems![self.selectedRow].category
             viewController.numPics = collectionItems![self.selectedRow].numberOfPics
             viewController.sellerSBID = collectionItems![self.selectedRow].sellerSBID
+ */
             
             if self.cognitoID == collectionItems![self.selectedRow].seller {
                 viewController.owned = true

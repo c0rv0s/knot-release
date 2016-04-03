@@ -266,8 +266,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.descriptionKnot = self.descriptionField.text
         item.category = categoryField.text!
         item.condition = conditionField.text!
-        item.numberOfPics = photoNum
         item.sellerSBID = self.SBID
+        item.numberOfPics = self.photoNum
         print(item)
         let task = mapper.save(item)
         
@@ -446,15 +446,15 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     //end keyboard
     
     @IBAction func addphoto1(sender: AnyObject) {
-        photoNum = 1
+        self.photoNum = 1
         self.showCamera()
     }
     @IBAction func addphoto2(sender: AnyObject) {
-        photoNum = 2
+        self.photoNum = 2
         self.showCamera()
     }
     @IBAction func addphoto3(sender: AnyObject) {
-        photoNum = 3
+        self.photoNum = 3
         self.showCamera()
     }
     
@@ -501,32 +501,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         didFinishPickingMediaWithInfo info: [String : AnyObject]){
             let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
             //myImageView.contentMode = .ScaleAspectFit //3
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        
             if photoNum == 1 {
-                picOne = chosenImage
-                thumbnail = self.resizeImage(chosenImage)
-                /*
-                //upload thumbnail
-                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-                let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-                let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-                let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
-                dataThumb!.writeToURL(testFileURL1, atomically: true)
-                uploadRequest1.bucket = "knotcomplexthumbnails"
-                uploadRequest1.key = self.uniqueID
-                uploadRequest1.body = testFileURL1
-                let task1 = transferManager.upload(uploadRequest1)
-                task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                if task.error != nil {
-                print("Error: \(task.error)")
-                } else {
-                print("thumbnail added")
-                }
-                return nil
-                }
-                //done uploading
-                */
+                self.picOne = chosenImage
+                self.thumbnail = self.resizeImage(chosenImage)
+
                 //upload pic
-                let transferManager = AWSS3TransferManager.defaultS3TransferManager()
                 let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
                 let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
                 let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
@@ -536,10 +517,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 uploadRequest1.body = testFileURL1
                 let task1 = transferManager.upload(uploadRequest1)
                 task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                    if task.error != nil {
-                        print("Error: \(task.error)")
+                    if task1.error != nil {
+                        print("Error: \(task1.error)")
                     } else {
                         self.preUploadComplete = true
+                        print("photo one done")
                     }
                     return nil
                 }
@@ -547,24 +529,66 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
-                //addphoto2.hidden = false
+                addphoto2.hidden = false
                 addphoto1.setTitle("Change", forState: .Normal)
                 one = true
                 picTwoView.image = UIImage(named: "grey")
             }
             if photoNum == 2 {
-                picTwo = chosenImage
-                picTwoView.image = chosenImage
+                self.picTwo = chosenImage
+                picTwoView.image = self.cropToSquare(image: chosenImage)
                 addphoto3.hidden = false
                 addphoto2.setTitle("Change", forState: .Normal)
                 two = true
                 picThreeView.image = UIImage(named: "grey")
+                
+                //do second photo
+                self.preUploadComplete = false
+                let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+                let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let dataTwo = UIImageJPEGRepresentation(self.picTwo, 0.5)
+                dataTwo!.writeToURL(testFileURL2, atomically: true)
+                uploadRequest2.bucket = "knotcompleximage2"
+                uploadRequest2.key = self.uniqueID
+                uploadRequest2.body = testFileURL2
+                let task2 = transferManager.upload(uploadRequest2)
+                task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                    if task2.error != nil {
+                        print("Error: \(task2.error)")
+                    } else {
+                        self.preUploadComplete = true
+                        print("photo two done")
+                    }
+                    return nil
+                }
+                //second photo done
             }
             if photoNum == 3 {
-                picThree = chosenImage
-                picThreeView.image = chosenImage
+                self.picThree = chosenImage
+                self.picThreeView.image = self.cropToSquare(image: chosenImage)
                 addphoto3.setTitle("Change", forState: .Normal)
                 three = true
+                
+                //do third photo
+                self.preUploadComplete = false
+                let testFileURL3 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+                let uploadRequest3 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+                let dataThree = UIImageJPEGRepresentation(self.picThree, 0.5)
+                dataThree!.writeToURL(testFileURL3, atomically: true)
+                uploadRequest3.bucket = "knotcompleximage3"
+                uploadRequest3.key = self.uniqueID
+                uploadRequest3.body = testFileURL3
+                let task3 = transferManager.upload(uploadRequest3)
+                task3.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                    if task3.error != nil {
+                        print("Error: \(task3.error)")
+                    } else {
+                        self.preUploadComplete = true
+                        print("photo three done")
+                    }
+                    return nil
+                }
+                //third photo done
             }
             dismissViewControllerAnimated(true, completion: nil) //5
     }
@@ -575,7 +599,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func submit(sender: AnyObject) {
-        if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "..." || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition" || self.picOne == nil) {
+        if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "" || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition" || self.picOne == nil) {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -623,10 +647,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             uploadRequest1.body = testFileURL1
             let task1 = transferManager.upload(uploadRequest1)
             task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                if task.error != nil {
-                    print("Error: \(task.error)")
+                if task1.error != nil {
+                    print("Error: \(task1.error)")
                 } else {
                     print("thumbnail added")
+                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
                     
                     repeat {
                         var delayInSeconds = 1.0;
@@ -638,87 +663,17 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                         }
                     }
                     while(self.preUploadComplete == false)
+ 
                 }
                 return nil
             }
             //done uploading
-            
-            /*
-            if one {
-            print("one is one")
-            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-            let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
-            dataOne!.writeToURL(testFileURL1, atomically: true)
-            uploadRequest1.bucket = "knotcompleximages"
-            uploadRequest1.key = self.uniqueID
-            uploadRequest1.body = testFileURL1
-            let task1 = transferManager.upload(uploadRequest1)
-            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if task.error != nil {
-            print("Error: \(task.error)")
-            success1 = 2
-            } else {
-            success1 = 1
-            self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-            //these two are a mess, fix before implementing
-            /*
-            if self.two {
-            print("two is on")
-            let testFileURL2 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-            let uploadRequest2 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-            let imageDataTwo = self.picTwo.mediumQualityJPEGNSData
-            let dataTwo = UIImageJPEGRepresentation(UIImage(data: imageDataTwo)!, 0.5)
-            dataTwo!.writeToURL(testFileURL2, atomically: true)
-            uploadRequest2.bucket = "knotcompleximage2"
-            uploadRequest2.key = self.uniqueID
-            uploadRequest2.body = testFileURL2
-            let task2 = transferManager.upload(uploadRequest2)
-            task2.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if task.error != nil {
-            print("Error: \(task.error)")
-            success2 = 2
-            } else {
-            success2 = 1
-            if self.three {
-            print("three is on")
-            let testFileURL3 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-            let uploadRequest3 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-            let imageDataThree = self.picThree.mediumQualityJPEGNSData
-            let dataThree = UIImageJPEGRepresentation(UIImage(data: imageDataThree)!, 0.5)
-            dataThree!.writeToURL(testFileURL3, atomically: true)
-            uploadRequest3.bucket = "knotcompleximage3"
-            uploadRequest3.key = self.uniqueID
-            uploadRequest3.body = testFileURL3
-            let task3 = transferManager.upload(uploadRequest3)
-            task3.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if task.error != nil {
-            print("Error: \(task.error)")
-            success3 = 2
-            }
-            else {
-            print("Upload successful")
-            
-            }
-            return nil
-            }
-            
-            }
-            }
-            return nil
-            }
-            
-            }*/
-            }
-            return nil
-            }
-            }*/
         }
     }
     
     func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
         SwiftSpinner.hide()
-        if succ1 == 2 || succ2 == 2 || succ3 == 2 || self.preUploadComplete == false {
+        if /*succ1 == 2 || succ2 == 2 || succ3 == 2 ||*/ self.preUploadComplete == false {
             let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
             }))

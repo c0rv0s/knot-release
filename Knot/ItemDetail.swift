@@ -14,18 +14,18 @@ import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var multiplePics: UIButton!
+    //@IBOutlet weak var pageControl: UIPageControl!
+    //@IBOutlet weak var imageScroll: UIScrollView!
     //@IBOutlet var profPicGestureRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var itemPic: UIImageView!
     @IBOutlet weak var reportSlashEdit: UIBarButtonItem!
     @IBOutlet weak var savelabel: UILabel!
     @IBOutlet weak var favButton: DOFavoriteButton!
-    /*
-    @IBOutlet weak var imageScroll: UIScrollView!
-    @IBOutlet var pageControl: UIPageControl!
-    
+
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
-*/
+
     
    @IBOutlet weak var alternatingButton: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
@@ -43,12 +43,14 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 
     @IBOutlet weak var sellerName: UILabel!
     
-    //@IBOutlet weak var frontView: UIView!
     @IBOutlet weak var distanceLabel: UILabel!
     
     var DetailItem: ListItem!
-    //var picView: UIImageView!
+    
     var pic : UIImage!
+    var picTwo : UIImage!
+    var picThree : UIImage!
+    
     var name : String = "Text"
     var price : String = "Text"
     var time: String = "Time"
@@ -80,15 +82,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scrollView.contentSize = CGSize(width:375, height: 1011)
-        self.downloadImage(IDNum)
-        
-        //self.itemPic.image = self.cropToSquare(image: pic)
-        self.itemPic.image = self.cropToSquare(image: UIImage(named: "placeholder")!)
-        
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        
-        self.locCurrent = appDelegate.locCurrent
         
         self.name = self.DetailItem.name
         self.price = self.DetailItem.price
@@ -101,6 +94,23 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.descript = self.DetailItem.descriptionKnot
         self.condition = self.DetailItem.condition
         self.category = self.DetailItem.category
+        
+        if self.DetailItem.seller == self.appDelegate.cognitoId {
+            self.owned = true
+        }
+        
+        self.pic = self.cropToSquare(image: UIImage(named: "placeholder")!)
+        self.picTwo = self.cropToSquare(image: UIImage(named: "placeholder")!)
+        self.picThree = self.cropToSquare(image: UIImage(named: "placeholder")!)
+        
+        self.scrollView.contentSize = CGSize(width:375, height: 1011)
+        
+        //grab pictures
+        self.downloadImage(IDNum, photoNum: 1)
+        
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        
+        self.locCurrent = appDelegate.locCurrent
         
         favButton.addTarget(self, action: Selector("tapped:"), forControlEvents: .TouchUpInside)
         //fetch favorite status
@@ -115,42 +125,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.savelabel.text = "Saved!"
             
         }
-        /*
-        //paging
-        // 1
-        self.pageImages = []
-        self.pageImages.append(pic)
-        //self.pageImages.append(UIImage(named: "Knot380")!)
-        if numPics > 1 {
-            print("two pics yea")
-            self.downloadImage(IDNum, bucketName: "knotcompleximage2")
-            if numPics > 2 {
-                print("three pics yea")
-                self.downloadImage(IDNum, bucketName: "knotcompleximage3")
-            }
-        }
-        
-        let pageCount = numPics
-        
-        // 2
-        pageControl.currentPage = 0
-        pageControl.numberOfPages = pageCount
-        
-        // 3
-        for _ in 0..<pageCount {
-            pageViews.append(nil)
-        }
-        
-        // 4
-        let pagesScrollViewSize = imageScroll.frame.size
-        imageScroll.contentSize = CGSize(width: pagesScrollViewSize.width * CGFloat(pageImages.count),
-            height: pagesScrollViewSize.height)
 
-        // 5
-        loadVisiblePages()
         
-        //paging done
-        */
         
         
         //set button state
@@ -169,41 +145,18 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         //set labels
         descripText.text = descript
         descripText.editable = false
-        
-        
-        /*
-        //something important here
-        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if (task.error != nil) {
-                print("Error: " + task.error!.localizedDescription)
-            }
-            else {
-                // the task result will contain the identity id
-                self.cognitoID = task.result as! String
-            }
-            return nil
-        }
-*/
+
         self.cognitoID = appDelegate.cognitoId!
         
         //do some more setup stuff
         self.returnUserData()
         self.updateLocation()
-        
-        //var sizeRect = UIScreen.mainScreen().applicationFrame
-        //var width    = sizeRect.size.width
-        
-        //picView = UIImageView(frame:CGRectMake(0, 0, 380, 506 ))//* (width/380)))
-        
+ 
         nameLabel.text = name
         priceLabel.text = "$" + price
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
         
-
-        
-        //self.frontView.addSubview(picView)
-        //self.frontView.sendSubviewToBack(picView)
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
@@ -235,13 +188,21 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         })
     }
     
-    func downloadImage(key: String){
+    func downloadImage(key: String, photoNum: Int){
         
         var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
         
         //downloading image
-        
-        let S3BucketName: String = "knotcompleximages"
+        var S3BucketName : String!
+        if photoNum == 1 {
+            S3BucketName = "knotcompleximages"
+        }
+        if photoNum == 2 {
+            S3BucketName = "knotcompleximage2"
+        }
+        if photoNum == 3 {
+            S3BucketName = "knotcompleximage3"
+        }
         let S3DownloadKeyName: String = key
         
         let expression = AWSS3TransferUtilityDownloadExpression()
@@ -267,10 +228,17 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     NSLog("Error: Failed - Likely due to invalid region / filename")
                     }   */
                 else{
-                    //    self.statusLabel.text = "Success"
                     var newPic = self.cropToSquare(image: UIImage(data: data!)!)
-                    self.itemPic.image = newPic
-                    //self.picView.image = UIImage(data: data!)
+                    if photoNum == 1 {
+                        self.pic = newPic
+                        self.itemPic.image = newPic
+                    }
+                    if photoNum == 2 {
+                        self.picTwo = newPic
+                    }
+                    if photoNum == 3 {
+                        self.picThree = newPic
+                    }
                 }
             })
         }
@@ -434,6 +402,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             viewController.viewMode = kMessagingViewMode
             viewController.messagingTargetUserId = sellerSBID
             viewController.contacted = true
+        }
+        if (segue!.identifier == "multPicsSegue") {
+            let viewController:pageController = segue!.destinationViewController as! pageController
+            
+            viewController.DetailItem = self.DetailItem
         }
         
     }
@@ -675,6 +648,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 
         }
     }
+    @IBAction func multiplePics(sender: AnyObject) {
+        if self.DetailItem.numberOfPics > 1 {
+            self.performSegueWithIdentifier("multPicsSegue", sender: self)
+        }
+    }
     
     //store user data
     func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
@@ -697,19 +675,6 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
         
-        /*
-        let item = sessionData()
-        item.userID = cogID
-        item.itemID = itemId
-        item.timestamp = dateString
-        item.status = itemCondition
-        
-        print(item)
-        let task = mapper.save(item)
-        
-        print("item created, preparing upload")
-        return BFTask(forCompletionOfAllTasks: [task])
- */
         let item = KREData()
         item.userID = cogID
         item.itemID = itemId
@@ -758,141 +723,5 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         return image
     }
-    
-    /*
-    //download iamge
-    func downloadImage(key: String, bucketName: String){
-        
-        var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
-        
-        //downloading image
-        
-        
-        let S3BucketName: String = bucketName
-        let S3DownloadKeyName: String = key
-        
-        let expression = AWSS3TransferUtilityDownloadExpression()
-        expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
-            dispatch_async(dispatch_get_main_queue(), {
-                let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
-                //self.progressView.progress = progress
-                //   self.statusLabel.text = "Downloading..."
-                NSLog("Progress is: %f",progress)
-            })
-        }
-        
-        
-        
-        completionHandler = { (task, location, data, error) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                if ((error) != nil){
-                    NSLog("Failed with error")
-                    NSLog("Error: %@",error!);
-                    //   self.statusLabel.text = "Failed"
-                }
-                    /*
-                    else if(self.progressView.progress != 1.0) {
-                    //    self.statusLabel.text = "Failed"
-                    NSLog("Error: Failed - Likely due to invalid region / filename")
-                    }   */
-                else{
-                    //    self.statusLabel.text = "Success"
-                    self.pageImages.append(UIImage(data: data!)!)
-                }
-            })
-        }
-        
-        let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
-        
-        transferUtility?.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
-            if let error = task.error {
-                NSLog("Error: %@",error.localizedDescription);
-                //  self.statusLabel.text = "Failed"
-            }
-            if let exception = task.exception {
-                NSLog("Exception: %@",exception.description);
-                //  self.statusLabel.text = "Failed"
-            }
-            if let _ = task.result {
-                //    self.statusLabel.text = "Starting Download"
-                //NSLog("Download Starting!")
-                // Do something with uploadTask.
-                
-            }
-            return nil;
-        }
-        
-    }
-    
-    func loadPage(page: Int) {
-        if page < 0 || page >= pageImages.count {
-            // If it's outside the range of what you have to display, then do nothing
-            return
-        }
-        
-        // Load an individual page, first checking if you've already loaded it
-        if let pageView = pageViews[page] {
-            // Do nothing. The view is already loaded.
-        } else {
-            var frame = scrollView.bounds
-            frame.origin.x = frame.size.width * CGFloat(page)
-            frame.origin.y = 0.0
-            frame = CGRectInset(frame, 10.0, 0.0)
-            
-            let newPageView = UIImageView(image: pageImages[page])
-            newPageView.contentMode = .ScaleAspectFit
-            newPageView.frame = frame
-            scrollView.addSubview(newPageView)
-            pageViews[page] = newPageView
-        }
-    }
-    
-    
-    func purgePage(page: Int) {
-        if page < 0 || page >= pageImages.count {
-            // If it's outside the range of what you have to display, then do nothing
-            return
-        }
-        
-        // Remove a page from the scroll view and reset the container array
-        if let pageView = pageViews[page] {
-            pageView.removeFromSuperview()
-            pageViews[page] = nil
-        }
-    }
-    
-    
-    func loadVisiblePages() {
-        // First, determine which page is currently visible
-        let pageWidth = scrollView.frame.size.width
-        let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
-        
-        // Update the page control
-        pageControl.currentPage = page
-        
-        // Work out which pages you want to load
-        let firstPage = page - 1
-        let lastPage = page + 1
-        
-        // Purge anything before the first page
-        for var index = 0; index < firstPage; ++index {
-            purgePage(index)
-        }
-        
-        // Load pages in our range
-        for index in firstPage...lastPage {
-            loadPage(index)
-        }
-        
-        // Purge anything after the last page
-        for var index = lastPage+1; index < pageImages.count; ++index {
-            purgePage(index)
-        }
-    }
-    
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        // Load the pages that are now on screen
-        loadVisiblePages()
-    }
-*/
+
 }
