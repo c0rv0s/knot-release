@@ -18,18 +18,33 @@ class pageController: UIViewController, UIScrollViewDelegate {
     var pic : UIImage!
     var picTwo : UIImage!
     var picThree : UIImage!
+    var picFour : UIImage!
+    
+    //bool to check if first image needs to be downloaded
+    var needToDL = false
     
     var DetailItem  : ListItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pic = UIImage(named: "placeholder-1")
-        picTwo = UIImage(named: "placeholder-1")
-        picThree = UIImage(named: "placeholder-1")
+        //pic = UIImage(named: "placeholder-1")
+        //picTwo = UIImage(named: "placeholder-1")
+        //picThree = UIImage(named: "placeholder-1")
+        picFour = UIImage(named: "placeholder-1")
+        
+        // 1
+        if needToDL {
+            self.downloadImage(self.DetailItem.ID, photoNum: 1)
+        }
+        else {
+            pageImages = [pic]
+            
+            self.initiatePageStuff()
+        }
         
         //grab pictures
-        self.downloadImage(DetailItem.ID, photoNum: 1)
+        //self.downloadImage(DetailItem.ID, photoNum: 1)
         
          if self.DetailItem.numberOfPics > 1 {
             self.downloadImage(self.DetailItem.ID, photoNum: 2)
@@ -38,9 +53,10 @@ class pageController: UIViewController, UIScrollViewDelegate {
             }
          }
         
-        // 1
-        pageImages = [pic, picTwo, picThree]
-        
+
+    }
+    
+    func initiatePageStuff() {
         let pageCount = pageImages.count
         
         // 2
@@ -175,17 +191,27 @@ class pageController: UIViewController, UIScrollViewDelegate {
                      NSLog("Error: Failed - Likely due to invalid region / filename")
                      }   */
                 else{
-                    var newPic = self.cropToSquare(image: UIImage(data: data!)!)
+                    var newPic = UIImage(data: data!)!
                     if photoNum == 1 {
                         self.pic = newPic
-                        //self.itemPic.image = newPic
+                        self.pageImages.append(self.pic)
                     }
                     if photoNum == 2 {
                         self.picTwo = newPic
+                        self.pageImages.append(self.picTwo)
+                        /*
+                        if self.DetailItem.numberOfPics == 2 {
+                            self.initiatePageStuff()
+                        }
+ */
                     }
                     if photoNum == 3 {
                         self.picThree = newPic
+                        self.pageImages.append(self.picThree)
+                        //self.pageImages.append(self.picFour)
+                        //self.initiatePageStuff()
                     }
+                    self.initiatePageStuff()
                 }
             })
         }

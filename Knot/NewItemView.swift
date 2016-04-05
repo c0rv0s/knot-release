@@ -480,6 +480,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 animated: true,
                 completion: nil)
         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
         self.presentViewController(alert, animated: true, completion: nil)
         
         

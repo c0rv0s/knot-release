@@ -48,6 +48,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var DetailItem: ListItem!
     
     var pic : UIImage!
+    var croppedPic : UIImage!
     var picTwo : UIImage!
     var picThree : UIImage!
     
@@ -80,6 +81,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     var longitude: Double = 0.0
     var locCurrent: CLLocation!
     
+    //var to make sure that the first image appears in multi-image view
+    var imgDL = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -94,14 +98,13 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.descript = self.DetailItem.descriptionKnot
         self.condition = self.DetailItem.condition
         self.category = self.DetailItem.category
+        self.numPics = self.DetailItem.numberOfPics
         
         if self.DetailItem.seller == self.appDelegate.cognitoId {
             self.owned = true
         }
         
         self.pic = self.cropToSquare(image: UIImage(named: "placeholder")!)
-        self.picTwo = self.cropToSquare(image: UIImage(named: "placeholder")!)
-        self.picThree = self.cropToSquare(image: UIImage(named: "placeholder")!)
         
         self.scrollView.contentSize = CGSize(width:375, height: 1011)
         
@@ -228,10 +231,13 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     NSLog("Error: Failed - Likely due to invalid region / filename")
                     }   */
                 else{
-                    var newPic = self.cropToSquare(image: UIImage(data: data!)!)
+                    var newPic = UIImage(data: data!)!
+                    var cropNewPic = self.cropToSquare(image: UIImage(data: data!)!)
                     if photoNum == 1 {
                         self.pic = newPic
-                        self.itemPic.image = newPic
+                        self.itemPic.image = cropNewPic
+                        self.croppedPic = cropNewPic
+                        self.imgDL = true
                     }
                     if photoNum == 2 {
                         self.picTwo = newPic
@@ -403,13 +409,50 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             viewController.messagingTargetUserId = sellerSBID
             viewController.contacted = true
         }
-        if (segue!.identifier == "multPicsSegue") {
+        if (segue!.identifier == "ShowPageSegue") {
             let viewController:pageController = segue!.destinationViewController as! pageController
             
             viewController.DetailItem = self.DetailItem
+            if self.imgDL {
+                viewController.pic = self.pic
+            }
+            else {
+                viewController.needToDL = true
+            }
         }
         
     }
+
+    //this is some extra code that could be used for blocking users
+                /*
+                let syncClient = AWSCognito.defaultCognito()
+                let dataset = syncClient.openOrCreateDataset("blockedUsers")
+                //let value = dataset.stringForKey(self.itemSeller)
+                
+                self.appDelegate.mixpanel!.track(
+                    "User Blocked",
+                    properties: ["userID": self.cognitoID, "blockedID": self.itemSeller, "itemID": self.IDNum]
+                )
+                
+                dataset.setString("true", forKey:self.itemSeller)
+                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                    if task.cancelled {
+                        // Task cancelled.
+                        SwiftSpinner.hide()
+                        
+                    } else if task.error != nil {
+                        SwiftSpinner.hide()
+                        // Error while executing task
+                        
+                    } else {
+                        SwiftSpinner.hide()
+                        // Task succeeded. The data was saved in the sync store.
+                        
+                        
+                    }
+                    return nil
+                }
+ */
     
     @IBAction func reportOrEdit(sender: AnyObject) {
         //user id stuff
@@ -461,7 +504,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
-             mail.setToRecipients(["support@knotcomplex.com"])
+            mail.setToRecipients(["support@knotcomplex.com"])
             var body = "Reporting item " + self.IDNum + " for " + why + " (add any other details here)" + "\n Thanks!"
             if why == user {
                 body = "Reporting user " + self.itemSeller + " (add any other details here)" + "\n Thanks!"
@@ -542,7 +585,15 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         }
     }
 
+    //when the picture is tapped check if the item has multiple pictures, if it does segue to the screen where the user can view all of them
+    @IBAction func ShowOtherPics(sender: AnyObject) {
+        if self.numPics > 1 {
+            print("about to segue")
+            self.performSegueWithIdentifier("ShowPageSegue", sender: self)
+        }
+    }
     
+    //currently not being used, would open Apple Maps when the user taps the mini-map
     func openMapForPlace() {
         /*
         var lat1 : NSString = self.latitude
@@ -565,16 +616,21 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
     }
     
+    //when the heart button is tapped this method processes the action
     func tapped(sender: DOFavoriteButton) {
+        
+        //prepare the sync client
         let syncClient = AWSCognito.defaultCognito()
         let dataset = syncClient.openOrCreateDataset("favorites")
         let value = dataset.stringForKey(self.IDNum)
         
+        //track with MixPanel
         self.appDelegate.mixpanel!.track(
             "Favorite Button",
             properties: ["userID": self.cognitoID, "itemID": self.DetailItem.ID]
         )
         
+        //if the item is already favorited then unfavorite the item
         if sender.selected {
             // deselect
             //collect view info
@@ -609,7 +665,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 }
                 return nil
             }
-        } else {
+        }
+            
+        //if the item has not been favorited then add to favorites and perform the heart popping animation
+        else {
             // select with animation
             self.savelabel.text = "Saved!"
             sender.select()
@@ -648,13 +707,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 
         }
     }
-    @IBAction func multiplePics(sender: AnyObject) {
-        if self.DetailItem.numberOfPics > 1 {
-            self.performSegueWithIdentifier("multPicsSegue", sender: self)
-        }
-    }
     
-    //store user data
+    //store user data for KRE
     func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
@@ -688,6 +742,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         return BFTask(forCompletionOfAllTasks: [task])
     }
 
+    //take a UIImage as a parameter and return a cropped version of the picture with just the center square
     func cropToSquare(image originalImage: UIImage) -> UIImage {
         // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
         let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)

@@ -17,15 +17,19 @@ class PhotoStreamViewController: UICollectionViewController {
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
     
-    //distance filters
+    //fav items
     var favItemIDs: Array<String>!
     
+    //distance filters
     var collectionItemsFav: Array<ListItem>!
     var collectionItemsUnder10: Array<ListItem>!
     var collectionItemsUnder50: Array<ListItem>!
     var collectionItemsUnder100: Array<ListItem>!
     var collectionItemsOver100Miles: Array<ListItem>!
     var collectionImages = [String: UIImage]()
+    
+    //blocked users
+    var blockedUsers: Array<String>!
     
     let currentDate = NSDate()
     let dateFormatter = NSDateFormatter()
@@ -76,6 +80,8 @@ class PhotoStreamViewController: UICollectionViewController {
         self.collectionItemsUnder100 = []
         self.collectionItemsOver100Miles = []
         
+        
+        
         lock = NSLock()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
@@ -98,6 +104,9 @@ class PhotoStreamViewController: UICollectionViewController {
             }
             return nil
         }
+        
+        //fetch blocked users
+        
         
         //fetch KRE data
         self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
@@ -236,6 +245,8 @@ class PhotoStreamViewController: UICollectionViewController {
     }
     
     func loadPhotos() {
+        
+        
         if (self.lock?.tryLock() != nil) {
             self.needsToRefresh = true
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true

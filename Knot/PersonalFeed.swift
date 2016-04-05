@@ -137,7 +137,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                         print(item.seller)
                         if item.seller == self.cognitoID {
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
-                            if (secondsUntil > (0 - 60 * 60 * 24 * 7)) {
+                            if (secondsUntil > (0 - 60 * 60 * 24 * 70)) {
                                 self.tableRows?.append(item)
                                 self.downloadImage(item)
                             }
