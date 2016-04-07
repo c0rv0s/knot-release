@@ -28,3 +28,5 @@ To run locally and also before pushing to GitHub be sure to reverse this.
 #other issues
 
 If you experience error messages with "nil" and "NSURL" not being compatable, check the "Link Binaries With Libraries " and remove the Pods_Knot_framework file from the list
+
+Contact at support@knotcomplex.com or engineering@knotcomplex.com
