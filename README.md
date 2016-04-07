@@ -16,6 +16,7 @@ http://stackoverflow.com/questions/27388957/pods-was-rejected-as-an-implicit-dep
 The simulator can’t use location data so go ‘PhotoStreamViewController.swift’, find the two lines commented:   
 
 self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+
 self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
 
 to run on the simulator simply uncomment these lines, for running locally comment them again.
