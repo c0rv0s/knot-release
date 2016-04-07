@@ -33,4 +33,6 @@
 //#import "SBMessageClass.h"
 //#import "MemberTableViewCell.h"
 
+#import "SWRevealViewController.h"
+
 #endif /* Bridging_Header_h */

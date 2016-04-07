@@ -111,7 +111,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         print(error.description)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    //func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        
+        /*
         let apsNotification = userInfo["aps"] as! NSDictionary
         let alertMsg       = apsNotification["alert"] as! String
         let payload         = userInfo["sendbird"] as! NSDictionary
@@ -125,13 +127,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
                 }
             }
         }*/
-        print(alertMsg)
+        print(userInfo)
         
         //GCMService.sharedInstance().appDidReceiveMessage(userInfo);
         NSNotificationCenter.defaultCenter().postNotificationName(alertMsg, object: nil,
             userInfo: userInfo)
         
         completionHandler(UIBackgroundFetchResult.NewData)
+ */
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]){
+        var notifiAlert = UIAlertView()
+        var NotificationMessage : AnyObject? =  userInfo["alert"]
+        notifiAlert.title = "TITLE"
+        notifiAlert.message = "derp"
+        notifiAlert.addButtonWithTitle("OK")
+        notifiAlert.show()
     }
     
     private func convertDeviceTokenToString(deviceToken:NSData) -> String {

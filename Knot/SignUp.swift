@@ -147,7 +147,12 @@ class SignUp: UIViewController, UITextFieldDelegate {
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
+            
             dataset.setString(self.firstNameLabel.text, forKey:"firstName")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
+            
             dataset.setString(self.lastNameLabel.text, forKey:"lastName")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil

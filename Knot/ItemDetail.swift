@@ -99,6 +99,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         self.condition = self.DetailItem.condition
         self.category = self.DetailItem.category
         self.numPics = self.DetailItem.numberOfPics
+        self.sellerSBID = self.DetailItem.sellerSBID
         
         if self.DetailItem.seller == self.appDelegate.cognitoId {
             self.owned = true
@@ -555,6 +556,18 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     "Number Sold": 1,
                     "Gross Revenue":  revenue
                 ])
+                
+                self.dataStash(IDNum, itemCondition: 5).continueWithBlock({
+                    (task: BFTask!) -> BFTask! in
+                    
+                    if (task.error != nil) {
+                        print(task.error!.description)
+                    } else {
+                        print("DynamoDB save succeeded")
+                    }
+                    
+                    return nil;
+                })
                 
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in

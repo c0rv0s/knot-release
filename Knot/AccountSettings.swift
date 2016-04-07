@@ -19,7 +19,9 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     
     @IBOutlet weak var buttonView: UIView!
     
-    @IBOutlet weak var legalButton: UIButton!
+    @IBOutlet weak var privacyButton: UIButton!
+    @IBOutlet weak var termsButton: UIButton!
+    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {

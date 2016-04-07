@@ -1122,7 +1122,6 @@
                         <outlet property="completeProfile" destination="2q3-jN-0gG" id="ND8-8Q-fPy"/>
                         <outlet property="completeProfileAlert" destination="ihI-Y9-Ci1" id="1H7-KT-66o"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="0a1-hY-6qe"/>
-                        <outlet property="legalButton" destination="SUp-Ho-bwJ" id="X2A-No-Mku"/>
                         <outlet property="profCompleteLabel" destination="ICk-Q2-XlK" id="coa-4C-KUE"/>
                         <outlet property="profPic" destination="ozD-3a-JZu" id="RRa-ch-l0X"/>
                         <outlet property="supportButon" destination="4cD-dC-0Dc" id="SWX-RQ-GcE"/>
@@ -1216,15 +1215,13 @@
                                             <action selector="contactSupport:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="QnP-83-uhi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Ho-bwJ">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-nn-QLC">
                                         <rect key="frame" x="8" y="126" width="116" height="30"/>
                                         <state key="normal" title="Terms of Service">
                                             <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="LegalButton:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="J8Q-W0-vkx"/>
-                                            <action selector="LegalButton:" destination="gBp-3q-FPr" eventType="touchUpInside" id="Tkn-cZ-J26"/>
-                                            <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="vfX-VE-I2S"/>
+                                            <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="wSr-LW-UkN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-DI-qsR">
@@ -1233,7 +1230,7 @@
                                             <color key="titleColor" red="0.0" green="0.0006893987713185723" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="ViewPrivacy:" destination="gBp-3q-FPr" eventType="touchUpInside" id="aca-H8-fdF"/>
+                                            <action selector="ViewPrivacy:" destination="gBp-3q-FPr" eventType="touchUpInside" id="R5z-FJ-HOt"/>
                                             <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="3UC-ZI-wgV"/>
                                         </connections>
                                     </button>
@@ -1246,8 +1243,9 @@
                     <connections>
                         <outlet property="buttonView" destination="vH7-q1-fBX" id="sbk-DO-cnL"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="QaO-GJ-5c2"/>
-                        <outlet property="legalButton" destination="SUp-Ho-bwJ" id="PZO-gc-vWO"/>
+                        <outlet property="privacyButton" destination="Vyr-DI-qsR" id="dfO-zF-LAR"/>
                         <outlet property="supportButon" destination="4cD-dC-0Dc" id="FUv-UX-pzN"/>
+                        <outlet property="termsButton" destination="JyH-nn-QLC" id="o5Z-fw-YtR"/>
                         <outlet property="tutButton" destination="IQM-yo-TQc" id="PbZ-xD-K33"/>
                     </connections>
                 </viewController>
@@ -1533,8 +1531,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZxO-bs-lmd"/>
-        <segue reference="vYY-fy-rD9"/>
         <segue reference="7Zm-rD-AiS"/>
         <segue reference="5Ei-1s-dmw"/>
+        <segue reference="0ON-VF-o3k"/>
     </inferredMetricsTieBreakers>
 </document>
