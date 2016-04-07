@@ -3,6 +3,8 @@
 
 download Knot App using the Download Zip button or forking to your local repo.
 
+This page details how to set up your global git username and upload your SSH keys to get access to forking, commits and other Git features.
+
 # Install
 Once you have it added, select “Knot” on the left hand file explorer, select the target, and then go to ‘Build Settings’, then search for ‘Objective-C Bridging Header’ then change the value to the path of the file Bridging-Header.h on your local computer. 
 
@@ -16,6 +18,7 @@ http://stackoverflow.com/questions/27388957/pods-was-rejected-as-an-implicit-dep
 The simulator can’t use location data so go ‘PhotoStreamViewController.swift’, find the two lines commented:   
 
 self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+
 self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
 
 to run on the simulator simply uncomment these lines, for running locally comment them again.
@@ -25,3 +28,5 @@ To run locally and also before pushing to GitHub be sure to reverse this.
 #other issues
 
 If you experience error messages with "nil" and "NSURL" not being compatable, check the "Link Binaries With Libraries " and remove the Pods_Knot_framework file from the list
+
+Contact at support@knotcomplex.com or engineering@knotcomplex.com
