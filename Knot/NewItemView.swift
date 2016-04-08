@@ -77,6 +77,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
 */
         
+        self.picOneView.image = UIImage(named: "camera_ready")
         //user id stuff
         if((FBSDKAccessToken.currentAccessToken()) != nil){
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id"]).startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -541,7 +542,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 addphoto2.hidden = false
                 addphoto1.setTitle("Change", forState: .Normal)
                 one = true
-                picTwoView.image = UIImage(named: "grey")
+                picTwoView.image = UIImage(named: "camera_ready")
             }
             if photoNum == 2 {
                 self.picTwo = chosenImage
@@ -549,7 +550,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 addphoto3.hidden = false
                 addphoto2.setTitle("Change", forState: .Normal)
                 two = true
-                picThreeView.image = UIImage(named: "grey")
+                picThreeView.image = UIImage(named: "camera_ready")
                 
                 //do second photo
                 self.preUploadComplete = false

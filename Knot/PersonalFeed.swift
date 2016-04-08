@@ -10,12 +10,14 @@ import Foundation
 
 import UIKit
 
-class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
-
+    var searchController : UISearchController!
+    
     @IBOutlet weak var tableView: UITableView!
     
     var tableRows: Array<ListItem>?
+    var filterRows: Array<ListItem>?
     var downloadFileURLs = Array<NSURL?>()
     var tableImages = [String: UIImage]()
     var cropImages = [String: UIImage]()
@@ -46,6 +48,20 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        //add search
+        self.searchController = UISearchController(searchResultsController:  nil)
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        
+        self.navigationItem.titleView = searchController.searchBar
+        
+        self.definesPresentationContext = true
         
         //user id stuff
         if self.appDelegate.loggedIn == false {
@@ -119,6 +135,18 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
             self.refreshList(true)
             self.needsToRefresh = false
         }
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filterRows = tableRows!.filter { item in
+            return item.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        
+        tableView.reloadData()
     }
     
     func refreshList(startFromBeginning: Bool)  {
@@ -254,6 +282,9 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     // 2
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return self.filterRows!.count
+        }
         return self.tableRows!.count
     }
     
@@ -263,17 +294,23 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let cell:PersonalTableCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! PersonalTableCell
         
-        cell.nameLabel.text = tableRows![indexPath.row].name
-        cell.priceLabel.text = "$" + tableRows![indexPath.row].price
+        if searchController.active && searchController.searchBar.text != "" {
+            cell.cellItem = self.filterRows![indexPath.row]
+        } else {
+            cell.cellItem = self.tableRows![indexPath.row]
+        }
         
-        cell.pic.image = cropImages[tableRows![indexPath.row].ID]
+        cell.nameLabel.text = cell.cellItem.name
+        cell.priceLabel.text = "$" + cell.cellItem.price
         
-        if tableRows![indexPath.row].sold == "true" {
+        cell.pic.image = cropImages[cell.cellItem.ID]
+        
+        if cell.cellItem.sold == "true" {
             cell.timeLabel.text = "Sold!"
             cell.timeLabel.textColor = UIColor.greenColor()
         }
         else {
-            let overDate = dateFormatter.dateFromString(tableRows![indexPath.row].time)!
+            let overDate = dateFormatter.dateFromString(cell.cellItem.time)!
             let secondsUntil = secondsFrom(currentDate, endDate: overDate)
             if(secondsUntil > 0)
             {

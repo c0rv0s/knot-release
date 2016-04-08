@@ -10,6 +10,8 @@ import UIKit
 
 class PersonalTableCell: UITableViewCell {
     
+    var cellItem : ListItem!
+    
     @IBOutlet weak var pic: UIImageView!
     
     @IBOutlet weak var priceLabel: UILabel!

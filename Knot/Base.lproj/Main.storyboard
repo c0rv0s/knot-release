@@ -257,7 +257,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCX-Xy-JEn">
                                         <rect key="frame" x="126" y="155" width="117" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Add Photo"/>
+                                        <state key="normal" title="Add Photo">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="addphoto2:" destination="7ah-zJ-hsL" eventType="touchUpInside" id="cJ9-eI-AQm"/>
                                         </connections>
@@ -281,7 +283,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjI-na-eAS">
                                         <rect key="frame" x="21" y="156" width="97" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Add Photo"/>
+                                        <state key="normal" title="Add Photo">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="addphoto1:" destination="7ah-zJ-hsL" eventType="touchUpInside" id="EiV-Jd-uAc"/>
                                         </connections>
@@ -298,7 +302,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFv-r0-DTi">
                                         <rect key="frame" x="20" y="13" width="97" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="cancelListing:" destination="7ah-zJ-hsL" eventType="touchUpInside" id="wcT-0n-ziK"/>
                                         </connections>
@@ -330,7 +336,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f77-la-q5A">
                                         <rect key="frame" x="251" y="156" width="98" height="46"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Add Photo"/>
+                                        <state key="normal" title="Add Photo">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="addphoto3:" destination="7ah-zJ-hsL" eventType="touchUpInside" id="fh4-OJ-pmg"/>
                                         </connections>
@@ -370,7 +378,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufp-xV-8HH">
                                         <rect key="frame" x="259" y="20" width="96" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="Done"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="submit:" destination="7ah-zJ-hsL" eventType="touchUpInside" id="A25-UT-e7j"/>
                                         </connections>
@@ -1201,9 +1211,16 @@
                         <barButtonItem key="leftBarButtonItem" image="three" id="bbD-vW-Axb">
                             <color key="tintColor" red="0.93725490196078431" green="0.0" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="filter" id="BbI-mJ-g9e">
+                            <color key="tintColor" red="0.93725490199999995" green="0.0" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="filterButton:" destination="ZnA-cl-Of3" id="uXL-ZI-Qee"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="colView" destination="gc6-KI-npv" id="FvU-RH-seh"/>
+                        <outlet property="filterButton" destination="BbI-mJ-g9e" id="p0k-mV-dr1"/>
                         <outlet property="menuButton" destination="bbD-vW-Axb" id="pEY-hS-1bh"/>
                         <segue destination="No7-vI-DDg" kind="show" identifier="FeedDetailSeg" id="yTs-ay-f60"/>
                     </connections>
@@ -1702,6 +1719,7 @@
         <image name="add139" width="32" height="32"/>
         <image name="avatar83" width="32" height="32"/>
         <image name="chat55" width="32" height="32"/>
+        <image name="filter" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>
         <image name="heart" width="128" height="128"/>
         <image name="home" width="32" height="32"/>

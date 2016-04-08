@@ -10,13 +10,15 @@ import UIKit
 import AVFoundation
 import CoreLocation
 
-class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate{
+class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate{
     var lock:NSLock?
     var lastEvaluatedKey:[NSObject : AnyObject]!
     
+    @IBOutlet weak var filterButton: UIBarButtonItem!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
+    var filterItems: Array<ListItem>!
     
     //fav items
     var favItemIDs: Array<String>!
@@ -56,8 +58,24 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     //data harvesting
     var performHarvest = true
     
+    var searchController : UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //add search
+        self.searchController = UISearchController(searchResultsController:  nil)
+        
+        self.searchController.searchResultsUpdater = self
+        self.searchController.delegate = self
+        self.searchController.searchBar.delegate = self
+        
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.dimsBackgroundDuringPresentation = true
+        
+        self.navigationItem.titleView = searchController.searchBar
+        
+        self.definesPresentationContext = true
         
         /*
         // more testing needed here
@@ -300,6 +318,22 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         task.resume()
     }
     
+    @IBAction func filterButton(sender: AnyObject) {
+        
+        
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    func filterContentForSearchText(searchText: String, scope: String = "All") {
+        filterItems = self.collectionItems.filter { item in
+            return item.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        self.colView.reloadData()
+    }
+    
     func loadPhotos() {
         
         
@@ -499,7 +533,12 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.collectionItems!.count
+        if searchController.active && searchController.searchBar.text != "" {
+            return self.filterItems!.count
+        }
+        else {
+            return self.collectionItems!.count
+        }
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -560,8 +599,12 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
         
+        if searchController.active && searchController.searchBar.text != "" {
+            cell.cellItem = self.filterItems![indexPath.row]
+        } else {
+            cell.cellItem = self.collectionItems![indexPath.row]
+        }
         
-        cell.cellItem = collectionItems![indexPath.row]
         
         cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
 
