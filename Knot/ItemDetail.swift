@@ -107,7 +107,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         self.pic = self.cropToSquare(image: UIImage(named: "placeholder")!)
         
-        self.scrollView.contentSize = CGSize(width:375, height: 1011)
+        self.scrollView.contentSize = CGSize(width:375, height: 1031)
         
         //grab pictures
         self.downloadImage(IDNum, photoNum: 1)
@@ -460,7 +460,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
@@ -527,7 +529,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
@@ -557,7 +561,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     "Gross Revenue":  revenue
                 ])
                 
-                self.dataStash(IDNum, itemCondition: 5).continueWithBlock({
+                self.dataStash(self.IDNum, itemCondition: 5).continueWithBlock({
                     (task: BFTask!) -> BFTask! in
                     
                     if (task.error != nil) {

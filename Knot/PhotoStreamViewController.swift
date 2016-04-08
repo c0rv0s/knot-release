@@ -10,15 +10,22 @@ import UIKit
 import AVFoundation
 import CoreLocation
 
-class PhotoStreamViewController: UICollectionViewController {
+class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate{
     var lock:NSLock?
     var lastEvaluatedKey:[NSObject : AnyObject]!
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
     
     //fav items
     var favItemIDs: Array<String>!
+    
+    //floating button
+    var cells: [LiquidFloatingCell] = []
+    var floatingActionButton: LiquidFloatingActionButton!
+
+    //end button stuff
     
     //distance filters
     var collectionItemsFav: Array<ListItem>!
@@ -107,6 +114,31 @@ class PhotoStreamViewController: UICollectionViewController {
         
         //fetch blocked users
         
+        /*
+        //floating action button
+        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
+            let floatingActionButton = LiquidFloatingActionButton(frame: frame)
+            floatingActionButton.animateStyle = style
+            floatingActionButton.dataSource = self
+            floatingActionButton.delegate = self
+            return floatingActionButton
+        }
+        
+        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
+            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
+        }
+        cells.append(cellFactory("ic_cloud"))
+        cells.append(cellFactory("ic_system"))
+        cells.append(cellFactory("ic_place"))
+        
+        let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
+        let bottomRightButton = createButton(floatingFrame, .Up)
+        
+        let floatingFrame2 = CGRect(x: 16, y: 16, width: 56, height: 56)
+        let topLeftButton = createButton(floatingFrame2, .Down)
+        
+        self.view.addSubview(bottomRightButton)
+ */
         
         //fetch KRE data
         self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
@@ -149,6 +181,15 @@ class PhotoStreamViewController: UICollectionViewController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWasOpened:", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
+        
+        //menu setup
+
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
     }
     
     func appWasOpened(notification: NSNotification!)
@@ -185,9 +226,24 @@ class PhotoStreamViewController: UICollectionViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    //aciton button 
+    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
+        return cells.count
+    }
+    
+    func cellForIndex(index: Int) -> LiquidFloatingCell {
+        return cells[index]
+    }
+    
+    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
+        print("did Tapped! \(index)")
+        liquidFloatingActionButton.close()
+    }
+    
+    /*
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
-    }
+    }*/
     
     func refresh(){
         

@@ -24,6 +24,7 @@ class Messaging: UIViewController, UITextFieldDelegate {
     var sendbirdUserNicknameLabel: UILabel?
     var sendbirdUserNicknameTextField: UITextField?
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     private var messagingUserName: NSString?
     private var messagingUserId: NSString?
     var messagingTargetUserId: NSString = ""
@@ -43,12 +44,20 @@ class Messaging: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         //user id stuff
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
@@ -59,7 +68,7 @@ class Messaging: UIViewController, UITextFieldDelegate {
         }
         else {
         // Do any additional setup after loading the view, typically from a nib.
-        setTabBarVisible(true, animated: true)
+        //setTabBarVisible(true, animated: true)
         
             
         // Retrieve your Amazon Cognito ID
@@ -111,13 +120,13 @@ class Messaging: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         //setTabBarVisible(true, animated: true)
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        //UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "startMessagingWithUser:", name: "open_messaging", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        setTabBarVisible(true, animated: false)
+        //setTabBarVisible(true, animated: false)
         if self.startMessagingFromOpenChat == true {
             let viewController: MessagingTableViewController = MessagingTableViewController()
             viewController.setViewMode(kMessagingViewMode)

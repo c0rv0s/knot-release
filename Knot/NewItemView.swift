@@ -122,9 +122,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             priceField.delegate = self
             priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
             
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
-            
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
             view.addGestureRecognizer(tap)
             
@@ -154,12 +151,16 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
             
             self.scrollView.directionalLockEnabled = true
+            
+            self.registerForKeyboardNotifications()
         }
         
         else {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in
@@ -394,6 +395,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         //Removing notifies on keyboard appearing
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWasShown(notification: NSNotification)
@@ -684,7 +692,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print("Upload successful")
         let alert = UIAlertController(title: "Success", message: "Your upload has completed. It should be visible in the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
@@ -697,8 +707,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
+        /*
         self.tabBarController?.tabBar.hidden = false
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+        self.presentViewController(vc, animated: true, completion: nil)
+ */
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     

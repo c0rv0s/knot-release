@@ -35,7 +35,9 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
             let token = FBSDKAccessToken.currentAccessToken().tokenString
             appDelegate.credentialsProvider.logins = [AWSCognitoLoginProviderKey.Facebook.rawValue: token]
             
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }
         
@@ -95,7 +97,9 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         }
         else {
             print("facebook authentication successful!")
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }
 

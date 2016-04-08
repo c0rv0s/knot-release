@@ -10,14 +10,15 @@ import UIKit
 
 class navsub: UINavigationController {
     
+    let tintColor = UIColor(red: 239, green: 0, blue: 80, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.translucent = false
-        self.navigationBar.tintColor = UIColor.whiteColor()
-        let fontDictionary = [ NSForegroundColorAttributeName:UIColor.whiteColor() ]
-        self.navigationBar.titleTextAttributes = fontDictionary
-        self.navigationBar.setBackgroundImage(imageLayerForGradientBackground(), forBarMetrics: UIBarMetrics.Default)
+        //self.navigationBar.translucent = false
+        self.navigationBar.tintColor = tintColor
+        //let fontDictionary = [ NSForegroundColorAttributeName:UIColor.whiteColor() ]
+        //self.navigationBar.titleTextAttributes = fontDictionary
+        //self.navigationBar.setBackgroundImage(imageLayerForGradientBackground(), forBarMetrics: UIBarMetrics.Default)
     }
     
     private func imageLayerForGradientBackground() -> UIImage {

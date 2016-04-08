@@ -29,6 +29,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
     let currentDate = NSDate()
     let dateFormatter = NSDateFormatter()
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var refreshControl = UIRefreshControl()
     
@@ -40,11 +41,19 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         //user id stuff
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in

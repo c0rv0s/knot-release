@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DA96D1B80EBAC9A7ECB7C31 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8474F1D48A2AE0C7985EA4A6 /* libPods.a */; };
 		430293B51C24F0580071E11D /* listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430293B41C24F0580071E11D /* listing.swift */; };
 		4303762A1C7C543D00B571A1 /* sessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430376291C7C543D00B571A1 /* sessionData.swift */; };
 		430D11B31C6DCA060028AB63 /* tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D11B21C6DCA060028AB63 /* tutorial.swift */; };
@@ -15,6 +14,7 @@
 		430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE11C4E485300C29254 /* PersonalTableCell.swift */; };
 		430D1CE41C4E696C00C29254 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D1CE31C4E696C00C29254 /* AccountView.swift */; };
 		430D4DCA1CB63DA50065E7A0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 430D4DC91CB63DA50065E7A0 /* SWRevealViewController.m */; };
+		430D4DCC1CB657E60065E7A0 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D4DCB1CB657E60065E7A0 /* MenuController.swift */; };
 		430D6B651C922EA100C7A6A7 /* Editlisting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D6B641C922EA100C7A6A7 /* Editlisting.swift */; };
 		430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9071BFAFF3500839F37 /* libsqlite3.tbd */; };
 		430DF90B1BFAFF3500839F37 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 430DF9081BFAFF3500839F37 /* libz.tbd */; };
@@ -106,6 +106,14 @@
 		431F1A561C1127F600EDB1A8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A551C1127F600EDB1A8 /* Accounts.framework */; };
 		431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A571C1127FB00EDB1A8 /* Social.framework */; };
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
+		4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912451CB76A1A00100C64 /* ArrayEx.swift */; };
+		4339124F1CB76A1A00100C64 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912461CB76A1A00100C64 /* CGPointEx.swift */; };
+		433912501CB76A1A00100C64 /* CGRectEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912471CB76A1A00100C64 /* CGRectEx.swift */; };
+		433912511CB76A1A00100C64 /* LiquidFloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912481CB76A1A00100C64 /* LiquidFloatingActionButton.swift */; };
+		433912521CB76A1A00100C64 /* LiquidUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912491CB76A1A00100C64 /* LiquidUtil.swift */; };
+		433912531CB76A1A00100C64 /* LiquittableCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339124A1CB76A1A00100C64 /* LiquittableCircle.swift */; };
+		433912541CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339124B1CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift */; };
+		433912551CB76A1A00100C64 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339124C1CB76A1A00100C64 /* UIColorEx.swift */; };
 		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
 		434C95EF1C6D934200426449 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C95EE1C6D934200426449 /* launchScreen.swift */; };
 		43665D161C702D4E0069A3AA /* SendBirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43665D151C702D4E0069A3AA /* SendBirdSDK.framework */; };
@@ -160,6 +168,7 @@
 		43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */; };
 		43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */; };
 		43F12ADA1C8BF8BA00CE808B /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */; };
+		DCB92AE93E8806C3B41068B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 691BA03F23134477396E3AC6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +180,7 @@
 		430D1CE31C4E696C00C29254 /* AccountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		430D4DC81CB63DA50065E7A0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		430D4DC91CB63DA50065E7A0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		430D4DCB1CB657E60065E7A0 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		430D6B641C922EA100C7A6A7 /* Editlisting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editlisting.swift; sourceTree = "<group>"; };
 		430DF9071BFAFF3500839F37 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		430DF9081BFAFF3500839F37 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -323,6 +333,14 @@
 		431F1A551C1127F600EDB1A8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		431F1A571C1127FB00EDB1A8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
+		433912451CB76A1A00100C64 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
+		433912461CB76A1A00100C64 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
+		433912471CB76A1A00100C64 /* CGRectEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectEx.swift; sourceTree = "<group>"; };
+		433912481CB76A1A00100C64 /* LiquidFloatingActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidFloatingActionButton.swift; sourceTree = "<group>"; };
+		433912491CB76A1A00100C64 /* LiquidUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquidUtil.swift; sourceTree = "<group>"; };
+		4339124A1CB76A1A00100C64 /* LiquittableCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquittableCircle.swift; sourceTree = "<group>"; };
+		4339124B1CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCircleLiquidEngine.swift; sourceTree = "<group>"; };
+		4339124C1CB76A1A00100C64 /* UIColorEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorEx.swift; sourceTree = "<group>"; };
 		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
 		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
 		434C95EE1C6D934200426449 /* launchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
@@ -379,8 +397,8 @@
 		43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
+		691BA03F23134477396E3AC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8474F1D48A2AE0C7985EA4A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A314E474FE13645424E4F251 /* Pods_Knot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,7 +430,7 @@
 				43CF595D1C28C66B0071CCE8 /* FBSDKCoreKit.framework in Frameworks */,
 				430DF90A1BFAFF3500839F37 /* libsqlite3.tbd in Frameworks */,
 				430DF90B1BFAFF3500839F37 /* libz.tbd in Frameworks */,
-				2DA96D1B80EBAC9A7ECB7C31 /* libPods.a in Frameworks */,
+				DCB92AE93E8806C3B41068B7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +464,7 @@
 				430DF9081BFAFF3500839F37 /* libz.tbd */,
 				430DF9091BFAFF3500839F37 /* SystemConfiguration.framework */,
 				A314E474FE13645424E4F251 /* Pods_Knot.framework */,
-				8474F1D48A2AE0C7985EA4A6 /* libPods.a */,
+				691BA03F23134477396E3AC6 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -618,6 +636,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				433912431CB76A1A00100C64 /* Liquid Action Button */,
 				431261851C900A3800A47BFD /* Mixpanel */,
 				43665D171C702FAE0069A3AA /* SendBird */,
 				43F206471C7F8ED300CEEDFF /* Third Party Extensions */,
@@ -641,6 +660,21 @@
 				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 			);
 			path = Knot;
+			sourceTree = "<group>";
+		};
+		433912431CB76A1A00100C64 /* Liquid Action Button */ = {
+			isa = PBXGroup;
+			children = (
+				433912451CB76A1A00100C64 /* ArrayEx.swift */,
+				433912461CB76A1A00100C64 /* CGPointEx.swift */,
+				433912471CB76A1A00100C64 /* CGRectEx.swift */,
+				433912481CB76A1A00100C64 /* LiquidFloatingActionButton.swift */,
+				433912491CB76A1A00100C64 /* LiquidUtil.swift */,
+				4339124A1CB76A1A00100C64 /* LiquittableCircle.swift */,
+				4339124B1CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift */,
+				4339124C1CB76A1A00100C64 /* UIColorEx.swift */,
+			);
+			path = "Liquid Action Button";
 			sourceTree = "<group>";
 		};
 		43665D171C702FAE0069A3AA /* SendBird */ = {
@@ -726,6 +760,7 @@
 				43D1E8BB1C59ED9B00609D37 /* Messaging.swift */,
 				434C95EE1C6D934200426449 /* launchScreen.swift */,
 				430D11B21C6DCA060028AB63 /* tutorial.swift */,
+				430D4DCB1CB657E60065E7A0 /* MenuController.swift */,
 				430D11B41C6E73240028AB63 /* SignUp.swift */,
 				43A31C631C7818B60026D8A2 /* EditProfile.swift */,
 				43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */,
@@ -910,8 +945,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				431262351C900A3A00A47BFD /* MPSurvey.m in Sources */,
+				430D4DCC1CB657E60065E7A0 /* MenuController.swift in Sources */,
 				43665D321C7030370069A3AA /* MessagingFileLinkTableViewCell.swift in Sources */,
 				4312620D1C900A3A00A47BFD /* MPAbstractABTestDesignerMessage.m in Sources */,
+				433912511CB76A1A00100C64 /* LiquidFloatingActionButton.swift in Sources */,
+				433912551CB76A1A00100C64 /* UIColorEx.swift in Sources */,
+				433912501CB76A1A00100C64 /* CGRectEx.swift in Sources */,
 				43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */,
 				4312621E1C900A3A00A47BFD /* MPCGColorRefToNSStringValueTransformer.m in Sources */,
 				431262151C900A3A00A47BFD /* MPABTestDesignerDisconnectMessage.m in Sources */,
@@ -921,6 +960,7 @@
 				43665D2F1C7030370069A3AA /* MessageInputView.swift in Sources */,
 				431262181C900A3A00A47BFD /* MPABTestDesignerTweakRequestMessage.m in Sources */,
 				431262311C900A3A00A47BFD /* MPObjectSerializerContext.m in Sources */,
+				4339124F1CB76A1A00100C64 /* CGPointEx.swift in Sources */,
 				431262121C900A3A00A47BFD /* MPABTestDesignerConnection.m in Sources */,
 				43E295AB1C51886300EB9AF9 /* AnnotatedPhotoCell.swift in Sources */,
 				43A155ED1C9F43DD00AF7B98 /* Reachability.swift in Sources */,
@@ -930,6 +970,7 @@
 				4312623E1C900A3A00A47BFD /* MPTypeDescription.m in Sources */,
 				43665D351C7030370069A3AA /* MessagingMessageTableViewCell.swift in Sources */,
 				4312622F1C900A3A00A47BFD /* MPObjectSerializer.m in Sources */,
+				433912531CB76A1A00100C64 /* LiquittableCircle.swift in Sources */,
 				431262371C900A3A00A47BFD /* MPSurveyNavigationController.m in Sources */,
 				431262481C900A3A00A47BFD /* NSInvocation+MPHelpers.m in Sources */,
 				431262281C900A3A00A47BFD /* MPNotification.m in Sources */,
@@ -939,6 +980,7 @@
 				4312621A1C900A3A00A47BFD /* MPApplicationStateSerializer.m in Sources */,
 				4312624D1C900A3A00A47BFD /* UIImage+MPImageEffects.m in Sources */,
 				431262441C900A3A00A47BFD /* MPUITableViewBinding.m in Sources */,
+				433912541CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift in Sources */,
 				434BE01D1C0CD628007479AB /* string-extension.swift in Sources */,
 				431D13461C6C133400E8D887 /* image-extension.swift in Sources */,
 				43665D311C7030370069A3AA /* MessagingChannelTableViewCell.swift in Sources */,
@@ -990,8 +1032,10 @@
 				4312621F1C900A3A00A47BFD /* MPCGPointToNSDictionaryValueTransformer.m in Sources */,
 				430D6B651C922EA100C7A6A7 /* Editlisting.swift in Sources */,
 				431262191C900A3A00A47BFD /* MPABTestDesignerTweakResponseMessage.m in Sources */,
+				433912521CB76A1A00100C64 /* LiquidUtil.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
 				431942871C4EBB14000373B3 /* AddScene.swift in Sources */,
+				4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */,
 				43665D361C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift in Sources */,
 				43665D371C7030370069A3AA /* MessagingMyMessageTableViewCell.swift in Sources */,
 				4312623A1C900A3A00A47BFD /* MPSwizzler.m in Sources */,
@@ -1176,10 +1220,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Knot Complex (JXF79L68W4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Knot Complex (JXF79L68W4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1237,7 +1281,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplexTheories.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab1c546b-fbf8-4cf4-ad03-359a979d0616";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s";
@@ -1248,10 +1292,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8D0205F3E15E8345F83F768 /* Pods.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_ENTITLEMENTS = Knot/Knot.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Knot Complex (JXF79L68W4)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Knot Complex (JXF79L68W4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1309,7 +1353,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.KnotComplexTheories.Knot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ab1c546b-fbf8-4cf4-ad03-359a979d0616";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Nate/Library/Mobile Documents/com~apple~CloudDocs/knot-app-beta/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s";

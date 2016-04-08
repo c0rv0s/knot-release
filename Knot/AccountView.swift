@@ -24,6 +24,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     @IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var buttonView: UIView!
     
     @IBOutlet weak var legalButton: UIButton!
@@ -35,11 +36,19 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
         self.completeProfile.hidden = true
         self.completeProfileAlert.hidden = true
         
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
         //user id stuff
         if self.appDelegate.loggedIn == false {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                //self.presentViewController(vc, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
             alert.addAction(UIAlertAction(title: "Sign In", style: .Default, handler: { (alertAction) -> Void in

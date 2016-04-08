@@ -157,6 +157,10 @@ class SignUp: UIViewController, UITextFieldDelegate {
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil
             }
+            dataset.setString("true", forKey:"firstUse")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
             /*
             dataset.setString(self.ageLabel.text, forKey:"age")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
@@ -215,7 +219,9 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 
                 let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
-                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                    //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                    //self.presentViewController(vc, animated: true, completion: nil)
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                     self.presentViewController(vc, animated: true, completion: nil)
                 }))
                 alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in

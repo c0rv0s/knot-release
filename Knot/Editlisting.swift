@@ -507,7 +507,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                             dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                                 if self.preUploadComplete {
                                     //self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                                    //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+                                    //self.presentViewController(vc, animated: true, completion: nil)
+                                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                                     self.presentViewController(vc, animated: true, completion: nil)
                                 }
                             }
@@ -519,7 +521,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 //done uploading
             
             }
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }
         
@@ -553,8 +557,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cancelEdit: UIButton!
     
     @IBAction func cancelEdit(sender: AnyObject) {
-        self.tabBarController?.tabBar.hidden = false
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+        //self.tabBarController?.tabBar.hidden = false
+        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+        //self.presentViewController(vc, animated: true, completion: nil)
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
 

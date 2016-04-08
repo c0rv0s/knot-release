@@ -11,6 +11,7 @@ import SendBirdSDK
 import MobileCoreServices
 
 class MessagingTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MessageInputViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UIActionSheetDelegate, UIGestureRecognizerDelegate {
+    
     let kMessageCellIdentifier: String = "MessageReuseIdentifier"
     let kMyMessageCellIdentifier: String = "MyMessageReuseIdentifier"
     let kFileLinkCellIdentifier: String = "FileLinkReuseIdentifier"
@@ -29,6 +30,8 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     //appdelegate, added
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacted = false
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    let tintColor = UIColor(red: 239, green: 0, blue: 80, alpha: 1)
     
     var container: UIView?
     var tableView: UITableView?
@@ -85,6 +88,8 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     
     private var userListQuery: SendBirdUserListQuery?
     
+    
+    
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Landscape
     }
@@ -115,14 +120,14 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.barTintColor = SendBirdUtils.UIColorFromRGB(0x533a9c)
+        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.translucent = false
-        
+        /*
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "aboutSendBird:")
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissModal:")
         self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
-        
+        */
         self.setNavigationButton()
     }
     
@@ -163,6 +168,14 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         self.setNavigationButton()
         self.messagingChannelListTableView?.reloadData()
     }
+    
+    func returnToHome(sender: AnyObject) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window.rootViewController = sb.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+        self.presentViewController(window.rootViewController!, animated: true, completion: nil)
+        
+    }
     /*
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "undoContact") {
@@ -175,6 +188,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         
     }*/
     
+    // TO-DO : the nav stack for this needs to be tweaked so that using go back from a message takes you back to the list
     //modified by Nathan, this goes back to the list view
     func goBack(sender: AnyObject) {
         //setTabBarVisible(true, animated: true)
@@ -186,19 +200,54 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             self.navigationController?.pushViewController(viewController, animated: false)
             print("checkpoint Two")
 */
-                print("checkpoint three")
-                let sb = UIStoryboard(name: "Main", bundle: nil)
-                let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-                window.rootViewController = sb.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-                self.presentViewController(window.rootViewController!, animated: true, completion: nil)
-                print("checkpoint four ")
+            print("checkpoint three")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window.rootViewController = sb.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+            self.presentViewController(window.rootViewController!, animated: true, completion: nil)
+            
+            print("checkpoint four ")
         }
         else {
-           self.navigationController?.pushViewController(Messaging(), animated: false)
+           //self.navigationController?.pushViewController(Messaging(), animated: false)
+            print("checkpoint three")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window.rootViewController = sb.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+            self.presentViewController(window.rootViewController!, animated: true, completion: nil)
+            
+
         }
         
         //setTabBarVisible(true, animated: true)
     }
+ 
+   /*
+    //modified by Nathan, this goes back to the list view
+    func goBack(sender: AnyObject) {
+        //setTabBarVisible(true, animated: true)
+        if contacted {
+            /*
+             print("checkpoint One")
+             let viewController: Messaging = Messaging()
+             viewController.needUndoContact = true
+             self.navigationController?.pushViewController(viewController, animated: false)
+             print("checkpoint Two")
+             */
+            print("checkpoint three")
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            window.rootViewController = sb.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            self.presentViewController(window.rootViewController!, animated: true, completion: nil)
+            print("checkpoint four ")
+        }
+        else {
+            self.navigationController?.pushViewController(Messaging(), animated: false)
+        }
+        
+        //setTabBarVisible(true, animated: true)
+    }
+ */
     
     func leaveChannel(sender: AnyObject) {
         let indexPaths: Array = (self.messagingChannelListTableView?.indexPathsForSelectedRows)!
@@ -286,23 +335,27 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         
         if self.viewMode == kMessagingChannelListViewMode {
             self.navigationItem.rightBarButtonItems = Array()
-            //self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissModal:")
-            //self.navigationItem.leftBarButtonItem!.tintColor = UIColor.whiteColor()
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "three"), style: UIBarButtonItemStyle.Plain, target: self.revealViewController(), action: "revealToggle:")
+            self.navigationItem.leftBarButtonItem!.tintColor = self.tintColor
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_sendbird_btn_list_edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editMessagingChannel:")
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.rightBarButtonItem?.tintColor = self.tintColor
             self.navigationItem.rightBarButtonItem?.enabled = true
+            
+            //self.navigationItem.leftBarButtonItem?.enabled = true
         }
         else if self.viewMode == kMessagingChannelListEditViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             let leaveButtonItem: UIBarButtonItem = UIBarButtonItem.init(title: "Leave", style: UIBarButtonItemStyle.Plain, target: self, action: "leaveChannel:")
-            leaveButtonItem.tintColor = UIColor.whiteColor()
+            //leaveButtonItem.tintColor = self.tintColor
             
             let hideButtonItem: UIBarButtonItem = UIBarButtonItem.init(title: "Hide", style: UIBarButtonItemStyle.Plain, target: self, action: "hideChannel:")
-            hideButtonItem.tintColor = UIColor.whiteColor()
+            hideButtonItem.tintColor = self.tintColor
             
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
-            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
             
             self.navigationItem.rightBarButtonItems = [leaveButtonItem, hideButtonItem]
             leaveButtonItem.enabled = false
@@ -311,19 +364,19 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         else if self.viewMode == kMessagingViewMode || self.viewMode == kMessagingMemberViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "openMenuActionSheet:")
-            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.rightBarButtonItem?.tintColor = self.tintColor
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
-            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
         }
         else if self.viewMode == kMessagingMemberForGroupChatViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             let inviteButtonItem: UIBarButtonItem = UIBarButtonItem.init(title: "Confirm", style: UIBarButtonItemStyle.Plain, target: self, action: "inviteMember:")
-            inviteButtonItem.tintColor = UIColor.whiteColor()
+            inviteButtonItem.tintColor = self.tintColor
             
             self.navigationItem.rightBarButtonItem = inviteButtonItem
             
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissLobbyMemberListForInvite:")
-            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
         }
     }
     
@@ -336,6 +389,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     override func viewDidLoad() {
+        
         updateMessageTs = {(model: SendBirdMessageModel!) -> (Void) in
             if model.hasMessageId() == false {
                 return
@@ -351,7 +405,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         ImageCache.initImageCache()
         SendBird.sharedInstance().taskQueue.cancelAllOperations()
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
         self.imageCache = NSMutableArray()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -1372,7 +1426,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        setTabBarVisible(false, animated: true)
+        //setTabBarVisible(false, animated: true)
         if tableView == self.messagingChannelListTableView {
             if self.viewMode == kMessagingChannelListEditViewMode {
                 tableView.cellForRowAtIndexPath(indexPath)?.selected = true

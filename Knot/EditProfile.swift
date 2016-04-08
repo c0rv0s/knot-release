@@ -90,7 +90,9 @@ class EditProfile: UIViewController {
                 return nil
             }
             
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            //self.presentViewController(vc, animated: true, completion: nil)
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
             
         }
