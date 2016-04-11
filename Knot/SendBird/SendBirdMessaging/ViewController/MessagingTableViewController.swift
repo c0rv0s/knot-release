@@ -121,7 +121,8 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.translucent = false
+        navigationController?.navigationBar.tintColor = self.tintColor
+        self.navigationController?.navigationBar.translucent = true
         /*
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "aboutSendBird:")
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()

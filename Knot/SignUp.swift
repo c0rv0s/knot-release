@@ -49,6 +49,34 @@ class SignUp: UIViewController, UITextFieldDelegate {
         genderLabel.hidden = true
         disclaimerOne.hidden = true
         disclaimerTwo.hidden = true
+        
+        //age label
+        let border = CALayer()
+        let width = CGFloat(2.0)
+        border.borderColor = UIColor.darkGrayColor().CGColor
+        border.frame = CGRect(x: 0, y: ageLabel.frame.size.height - width, width:  ageLabel.frame.size.width, height: ageLabel.frame.size.height)
+        
+        border.borderWidth = width
+        ageLabel.layer.addSublayer(border)
+        ageLabel.layer.masksToBounds = true
+        
+        //first name
+        let borderName = CALayer()
+        borderName.borderColor = UIColor.darkGrayColor().CGColor
+        borderName.frame = CGRect(x: 0, y: firstNameLabel.frame.size.height - width, width:  firstNameLabel.frame.size.width, height: firstNameLabel.frame.size.height)
+        
+        borderName.borderWidth = width
+        firstNameLabel.layer.addSublayer(borderName)
+        firstNameLabel.layer.masksToBounds = true
+        
+        //last name
+        let borderLName = CALayer()
+        borderLName.borderColor = UIColor.darkGrayColor().CGColor
+        borderLName.frame = CGRect(x: 0, y: lastNameLabel.frame.size.height - width, width:  lastNameLabel.frame.size.width, height: lastNameLabel.frame.size.height)
+        
+        borderLName.borderWidth = width
+        lastNameLabel.layer.addSublayer(border)
+        lastNameLabel.layer.masksToBounds = true
 
         self.returnUserData()
     }

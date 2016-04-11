@@ -107,6 +107,8 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("LoginView") as! UIViewController
+        self.presentViewController(vc, animated: false, completion: nil)
     }
     
     @IBAction func ViewTerms(sender: AnyObject) {

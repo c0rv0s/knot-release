@@ -192,8 +192,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                 self.locationManager = nil
             }
             //uncomment these next two lines for running on the simulator
-            //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
-            //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         
@@ -328,10 +328,10 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
-        filterItems = self.collectionItems.filter { item in
+        self.filterItems = self.collectionItems?.filter({  item in
             return item.name.lowercaseString.containsString(searchText.lowercaseString)
-        }
-        self.colView.reloadData()
+        })
+        //self.colView.reloadData()
     }
     
     func loadPhotos() {

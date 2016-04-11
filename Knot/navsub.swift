@@ -10,12 +10,12 @@ import UIKit
 
 class navsub: UINavigationController {
     
-    let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
+    //let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationBar.translucent = false
-        self.navigationBar.tintColor = tintColor
+        self.navigationBar.tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
         //let fontDictionary = [ NSForegroundColorAttributeName:UIColor.whiteColor() ]
         //self.navigationBar.titleTextAttributes = fontDictionary
         //self.navigationBar.setBackgroundImage(imageLayerForGradientBackground(), forBarMetrics: UIBarMetrics.Default)

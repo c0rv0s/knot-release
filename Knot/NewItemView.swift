@@ -77,6 +77,25 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
 */
         
+        //name
+        let borderName = CALayer()
+        let width = CGFloat(2.0)
+        borderName.borderColor = UIColor.darkGrayColor().CGColor
+        borderName.frame = CGRect(x: 0, y: nameField.frame.size.height - width, width:  nameField.frame.size.width, height: nameField.frame.size.height)
+        
+        borderName.borderWidth = width
+        nameField.layer.addSublayer(borderName)
+        nameField.layer.masksToBounds = true
+        
+        //name
+        let borderPrice = CALayer()
+        borderPrice.borderColor = UIColor.darkGrayColor().CGColor
+        borderPrice.frame = CGRect(x: 0, y: priceField.frame.size.height - width, width:  priceField.frame.size.width, height: priceField.frame.size.height)
+        
+        borderPrice.borderWidth = width
+        priceField.layer.addSublayer(borderPrice)
+        priceField.layer.masksToBounds = true
+        
         self.picOneView.image = UIImage(named: "camera_ready")
         //user id stuff
         if((FBSDKAccessToken.currentAccessToken()) != nil){
