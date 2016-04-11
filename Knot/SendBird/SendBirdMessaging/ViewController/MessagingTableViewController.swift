@@ -31,7 +31,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacted = false
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    let tintColor = UIColor(red: 239, green: 0, blue: 80, alpha: 1)
+    let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
     
     var container: UIView?
     var tableView: UITableView?

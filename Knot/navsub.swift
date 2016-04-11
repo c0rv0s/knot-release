@@ -10,7 +10,7 @@ import UIKit
 
 class navsub: UINavigationController {
     
-    let tintColor = UIColor(red: 239, green: 0, blue: 80, alpha: 1)
+    let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
