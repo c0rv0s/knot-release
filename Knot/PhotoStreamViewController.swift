@@ -192,8 +192,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                 self.locationManager = nil
             }
             //uncomment these next two lines for running on the simulator
-            self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
-            self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
+            //self.appDelegate.locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
             self.loadPhotos()
         }
         
@@ -328,11 +328,18 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     }
     
     func filterContentForSearchText(searchText: String, scope: String = "All") {
+        print("begin showing search")
         self.filterItems = self.collectionItems?.filter({  item in
-            return item.name.lowercaseString.containsString(searchText.lowercaseString)
+            var retItem = item.name.lowercaseString.containsString(searchText.lowercaseString)
+            if retItem {
+                print(item.name)
+                filterItems.append(item)
+                self.colView.reloadData()
+            }
+            return retItem
         })
-        //self.colView.reloadData()
     }
+    
     
     func loadPhotos() {
         
@@ -603,10 +610,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
             cell.cellItem = self.filterItems![indexPath.row]
         } else {
             cell.cellItem = self.collectionItems![indexPath.row]
+            cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
         }
-        
-        
-        cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
 
         let overDate = self.dateFormatter.dateFromString(cell.cellItem.time)!
         let secondsUntil = secondsFrom(currentDate, endDate: overDate)
