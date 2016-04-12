@@ -54,6 +54,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     //location
     var locationManager: OneShotLocationManager!
     var locCurrent: CLLocation!
+    var locGiven = true
     
     //data harvesting
     var performHarvest = true
@@ -187,7 +188,22 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                     self.locCurrent = loc
                     self.appDelegate.locCurrent = loc
                 } else if let err = error {
-                    print(err.localizedDescription)
+                    self.locGiven = false
+                    var alertController = UIAlertController (title: "Location Services disabled.", message: "Enabling location services allows Knot to show you listings in your area.", preferredStyle: .Alert)
+                    
+                    var settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
+                        let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
+                        if let url = settingsUrl {
+                            UIApplication.sharedApplication().openURL(url)
+                        }
+                    }
+                    
+                    var cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+                    alertController.addAction(settingsAction)
+                    alertController.addAction(cancelAction)
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil);
+                    //print(err.localizedDescription)
                 }
                 self.locationManager = nil
             }
@@ -332,9 +348,12 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         self.filterItems = self.collectionItems?.filter({  item in
             var retItem = item.name.lowercaseString.containsString(searchText.lowercaseString)
             if retItem {
-                print(item.name)
-                filterItems.append(item)
-                self.colView.reloadData()
+                //print(item.name)
+                print(self.filterItems)
+                self.filterItems.append(item)
+                if self.filterItems.count >= 1 {
+                    self.colView.reloadData()
+                }
             }
             return retItem
         })
@@ -385,6 +404,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                                     }
                                 }
                                if itemFaved == false {
+                                if self.locGiven {
                                     let coordinatesArr = item.location.characters.split{$0 == " "}.map(String.init)
                                     let latitude = Double(coordinatesArr[0])!
                                     let longitude = Double(coordinatesArr[1])!
@@ -405,6 +425,11 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                                     else {
                                         self.collectionItemsOver100Miles.append(item)
                                     }
+                                }
+                                else {
+                                    self.collectionItems.append(item)
+                                }
+                                
                                 }
                             }
                         }
@@ -492,7 +517,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                 }
                 else{
                     
-                    self.collectionImages[S3DownloadKeyName] = UIImage(data: data!)
+                    self.collectionImages[S3DownloadKeyName] = self.cropToSquare(image: UIImage(data: data!)!)
                     
                     if self.needsToRefresh == false {
                         if let count = (self.collectionItems.indexOf(item)) {
@@ -556,7 +581,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "FeedDetailSeg") {
             let viewController:ItemDetail = segue!.destinationViewController as! ItemDetail
-            viewController.hidesBottomBarWhenPushed = true
+            //viewController.hidesBottomBarWhenPushed = true
             
             //viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
             
@@ -606,8 +631,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
         
-        if searchController.active && searchController.searchBar.text != "" {
-            cell.cellItem = self.filterItems![indexPath.row]
+        if searchController.active && searchController.searchBar.text?.characters.count > 1 && self.filterItems.count >= 1 {
+            cell.cellItem = self.filterItems?[indexPath.row]
         } else {
             cell.cellItem = self.collectionItems![indexPath.row]
             cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
@@ -705,6 +730,42 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
+    }
+    
+    func cropToSquare(image originalImage: UIImage) -> UIImage {
+        // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
+        let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
+        
+        // Get the size of the contextImage
+        let contextSize: CGSize = contextImage.size
+        
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
+        
+        // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
     }
 
 }
