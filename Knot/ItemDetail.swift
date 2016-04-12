@@ -555,11 +555,17 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     properties: ["userID": self.appDelegate.cognitoId!, "item": self.IDNum]
                 )
                 
-                let revenue = Int(self.DetailItem.price)!
+                let revenue = (self.DetailItem.price) as! Double
                 self.appDelegate.mixpanel!.people.increment([
                     "Number Sold": 1,
                     "Gross Revenue":  revenue
                 ])
+                
+                var MixRevenue = (revenue * 0.02) as! String
+                self.appDelegate.mixpanel!.track?(
+                    "Revenue to KCT",
+                    properties: ["revenue": MixRevenue]
+                )
                 
                 self.dataStash(self.IDNum, itemCondition: 5).continueWithBlock({
                     (task: BFTask!) -> BFTask! in
@@ -572,6 +578,22 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     
                     return nil;
                 })
+                
+                //store revenue data for user
+                let syncClient = AWSCognito.defaultCognito()
+                let dataset = syncClient.openOrCreateDataset("profileInfo")
+                
+                dataset.setString(self.DetailItem.price, forKey:"revenue")
+                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                    return nil
+                }
+                
+                var grossSold = (dataset.stringForKey("gross")) as! Int
+                grossSold++
+                dataset.setString(grossSold as! String, forKey:"gross")
+                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                    return nil
+                }
                 
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
@@ -598,6 +620,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             
                 //self.navigationController?.pushViewController(viewController, animated: true)
                 self.performSegueWithIdentifier("contactSegue", sender: self)
+                self.appDelegate.mixpanel!.track?("Transaction Initiated", properties: ["senderID": self.appDelegate.cognitoId!, "sellerID" : self.DetailItem.seller, "item": self.DetailItem.ID]
+                )
             }
         }
     }

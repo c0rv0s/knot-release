@@ -723,6 +723,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             "Item Upload",
             properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
         )
+        
+        self.appDelegate.mixpanel!.people.increment(
+            [ "Listings": 1]
+        )
     }
     
     //end upload and submissions

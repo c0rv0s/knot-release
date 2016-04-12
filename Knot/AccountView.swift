@@ -11,6 +11,10 @@ import MessageUI
 
 class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
 
+    //user analytics
+    @IBOutlet weak var revenueLabel: UILabel!
+    @IBOutlet weak var numSoldLabel: UILabel!
+    
     @IBOutlet weak var profCompleteLabel: UILabel!
     @IBOutlet weak var completeProfileAlert: UIImageView!
     @IBOutlet weak var completeProfile: UIButton!
@@ -84,6 +88,13 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             self.completeProfileAlert.hidden = false
             self.profCompleteLabel.text = "Profile Incomplete"
         }
+        
+        //store revenue data for user
+        let value3 = dataset.stringForKey("revenue")
+        self.revenueLabel.text = value3
+        
+        let value4 = dataset.stringForKey("gross")
+        self.numSoldLabel.text = value4
 
     }
     
