@@ -545,27 +545,40 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             //self.performSegueWithIdentifier("paySegue", sender: self)
             let alert = UIAlertController(title: "Are You Sure?", message: "Is this transaction completed?", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
+                var checkpoint = 1
+                print(checkpoint)
+                checkpoint++
                 self.updateSoldStatus("Sold!")
+                print(checkpoint)
+                checkpoint++
                 self.sold = "true"
                 self.timeLabel.text = "Sold!"
                 self.timeLabel.textColor = UIColor.greenColor()
+                print(checkpoint)
+                checkpoint++
                 
                 self.appDelegate.mixpanel!.track?(
                     "Transaction Completed",
                     properties: ["userID": self.appDelegate.cognitoId!, "item": self.IDNum]
                 )
+                print(checkpoint)
+                checkpoint++
                 
-                let revenue = (self.DetailItem.price) as! Double
+                let revenue = Double(self.DetailItem.price)
                 self.appDelegate.mixpanel!.people.increment([
                     "Number Sold": 1,
-                    "Gross Revenue":  revenue
+                    "Gross Revenue":  revenue!
                 ])
+                print(checkpoint)
+                checkpoint++
                 
-                var MixRevenue = (revenue * 0.02) as! String
+                var MixRevenue = String(revenue! * 0.02)
                 self.appDelegate.mixpanel!.track?(
                     "Revenue to KCT",
                     properties: ["revenue": MixRevenue]
                 )
+                print(checkpoint)
+                checkpoint++
                 
                 self.dataStash(self.IDNum, itemCondition: 5).continueWithBlock({
                     (task: BFTask!) -> BFTask! in
@@ -578,6 +591,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     
                     return nil;
                 })
+                print(checkpoint)
+                checkpoint++
                 
                 //store revenue data for user
                 let syncClient = AWSCognito.defaultCognito()
@@ -587,13 +602,27 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
+                print(checkpoint)
+                checkpoint++
                 
-                var grossSold = (dataset.stringForKey("gross")) as! Int
-                grossSold++
-                dataset.setString(grossSold as! String, forKey:"gross")
+                
+                var grossSold = (dataset.stringForKey("gross"))
+                var newgross = 1
+                if (grossSold == nil || grossSold == "") {
+                    newgross = 1
+                    //dataset.setString(String(newgross), forKey:"gross")
+                }
+                else {
+                    newgross = Int(grossSold)!
+                    newgross = newgross + 1
+                }
+                dataset.setString(String(newgross), forKey:"gross")
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
+                print(checkpoint)
+                checkpoint++
+ 
                 
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in

@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         //UIApplication.sharedApplication().statusBarStyle = .LightContent
         // Initialize the Amazon Cognito credentials provider
         
+        mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
+        
         credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
             identityPoolId:"us-east-1:353ba7a2-f7d3-4d16-8064-61bd93fdee7c")
 
@@ -45,13 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         //Instabug.startWithToken("78c16dde6a35093640aa82c7114f0526", invocationEvent: IBGInvocationEventShake)
         
         Buglife.sharedBuglife().startWithAPIKey("KOKYsfFVmcY33qUJZikmMgtt")
-        
-        mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
-        
-        mixpanel!.people.increment(
-            [ "Check In": 1]
-        )
-
         /*
         AWSMobileAnalytics *analytics = [AWSMobileAnalytics
             mobileAnalyticsForAppId: @"8a8ff18d8fa242df8a62add92ba837ab" //Amazon Mobile Analytics App ID
@@ -60,6 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 */
         
         untapped = []
+        
+        mixpanel!.people.increment(
+            [ "Check In": 1]
+        )
         
         //return facebook data
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
