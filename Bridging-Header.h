@@ -35,7 +35,4 @@
 
 #import "SWRevealViewController.h"
 
-#import "OnboardingContentViewController.h"
-#import "OnboardingViewController.h"
-
 #endif /* Bridging_Header_h */
