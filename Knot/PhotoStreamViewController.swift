@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import CoreLocation
 
-class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate, UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate{
+class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate, UISearchControllerDelegate, UISearchBarDelegate{
     var lock:NSLock?
     var lastEvaluatedKey:[NSObject : AnyObject]!
     
@@ -18,7 +18,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
-    var filterItems: Array<ListItem>!
+    var filterItems: Array<ListItem>?
     
     //fav items
     var favItemIDs: Array<String>!
@@ -59,15 +59,22 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     //data harvesting
     var performHarvest = true
     
+    //search
+    var dataSourceForSearchResult:Array<ListItem>?
+    var searchBarActive:Bool = false
+    var searchBarBoundsY:CGFloat?
+    var searchBar:UISearchBar?
     var searchController : UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //add search
+        //search
+        let controller = UISearchController(searchResultsController: nil)
+        //self.colView.tableHeaderView = controller.searchBar
         self.searchController = UISearchController(searchResultsController:  nil)
         
-        self.searchController.searchResultsUpdater = self
+        //self.searchController.searchResultsUpdater = self
         self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         
@@ -77,6 +84,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         self.navigationItem.titleView = searchController.searchBar
         
         self.definesPresentationContext = true
+        
         
         /*
         // more testing needed here
@@ -224,6 +232,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        self.prepareUI()
+        
     }
     
     func appWasOpened(notification: NSNotification!)
@@ -260,7 +270,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    //aciton button 
+    //action button
     func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
         return cells.count
     }
@@ -337,26 +347,6 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     @IBAction func filterButton(sender: AnyObject) {
         
         
-    }
-    
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-    }
-    
-    func filterContentForSearchText(searchText: String, scope: String = "All") {
-        print("begin showing search")
-        self.filterItems = self.collectionItems?.filter({  item in
-            var retItem = item.name.lowercaseString.containsString(searchText.lowercaseString)
-            if retItem {
-                //print(item.name)
-                print(self.filterItems)
-                self.filterItems.append(item)
-                if self.filterItems.count >= 1 {
-                    self.colView.reloadData()
-                }
-            }
-            return retItem
-        })
     }
     
     
@@ -565,8 +555,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if searchController.active && searchController.searchBar.text != "" {
-            return self.filterItems!.count
+        if searchController.active && searchController.searchBar.text != "" && searchController.searchBar.text?.characters.count > 0 {
+            return (self.filterItems?.count)!
         }
         else {
             return self.collectionItems!.count
@@ -628,12 +618,119 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         }
     }
     
+    // MARK: Search
+    func filterContentForSearchText(searchText:String){
+        self.dataSourceForSearchResult = self.collectionItems?.filter({ (item: ListItem) -> Bool in
+            return item.name.containsString(searchText)
+        })
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // user did type something, check our datasource for text that looks the same
+        if searchText.characters.count > 0 {
+            // search and reload data source
+            self.searchBarActive    = true
+            self.filterContentForSearchText(searchText)
+            self.collectionView?.reloadData()
+        }else{
+            // if text lenght == 0
+            // we will consider the searchbar is not active
+            self.searchBarActive = false
+            self.collectionView?.reloadData()
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        self .cancelSearching()
+        self.collectionView?.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        self.searchBarActive = true
+        self.view.endEditing(true)
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        // we used here to set self.searchBarActive = YES
+        // but we'll not do that any more... it made problems
+        // it's better to set self.searchBarActive = YES when user typed something
+        self.searchBar!.setShowsCancelButton(true, animated: true)
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        // this method is being called when search btn in the keyboard tapped
+        // we set searchBarActive = NO
+        // but no need to reloadCollectionView
+        self.searchBarActive = false
+        self.searchBar!.setShowsCancelButton(false, animated: false)
+    }
+    func cancelSearching(){
+        self.searchBarActive = false
+        self.searchBar!.resignFirstResponder()
+        self.searchBar!.text = ""
+    }
+    
+    // MARK: prepareVC
+    func prepareUI(){
+        self.addSearchBar()
+        //self.addRefreshControl()
+    }
+    
+    func addSearchBar(){
+        if self.searchBar == nil{
+            self.searchBarBoundsY = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.sharedApplication().statusBarFrame.size.height
+            
+            self.searchBar = UISearchBar(frame: CGRectMake(0,self.searchBarBoundsY!, UIScreen.mainScreen().bounds.size.width, 44))
+            self.searchBar!.searchBarStyle       = UISearchBarStyle.Minimal
+            self.searchBar!.tintColor            = UIColor.whiteColor()
+            self.searchBar!.barTintColor         = UIColor.whiteColor()
+            self.searchBar!.delegate             = self;
+            self.searchBar!.placeholder          = "search here";
+            
+            self.addObservers()
+        }
+        
+        /*
+        if !self.searchBar!.isDescendantOfView(self.view){
+            self.view .addSubview(self.searchBar!)
+        }
+ */
+    }
+    
+    func addObservers(){
+        let context = UnsafeMutablePointer<UInt8>(bitPattern: 1)
+        self.collectionView?.addObserver(self, forKeyPath: "contentOffset", options: [.New,.Old], context: context)
+    }
+    
+    func removeObservers(){
+        self.collectionView?.removeObserver(self, forKeyPath: "contentOffset")
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?,
+                                         ofObject object: AnyObject?,
+                                                  change: [String : AnyObject]?,
+                                                  context: UnsafeMutablePointer<Void>){
+        if keyPath! == "contentOffset" {
+            if let collectionV:UICollectionView = object as? UICollectionView {
+                self.searchBar?.frame = CGRectMake(
+                    self.searchBar!.frame.origin.x,
+                    self.searchBarBoundsY! + ( (-1 * collectionV.contentOffset.y) - self.searchBarBoundsY!),
+                    self.searchBar!.frame.size.width,
+                    self.searchBar!.frame.size.height
+                )
+            }
+        }
+    }
+    
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
         
-        if searchController.active && searchController.searchBar.text?.characters.count > 1 && self.filterItems.count >= 1 {
+        
+        if searchController.active && searchController.searchBar.text?.characters.count > 1 && self.filterItems!.count >= 1 {
             cell.cellItem = self.filterItems?[indexPath.row]
         } else {
+ 
             cell.cellItem = self.collectionItems![indexPath.row]
             cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
         }

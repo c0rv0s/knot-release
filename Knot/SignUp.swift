@@ -36,7 +36,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
         print("view loaded, signup Bool value is: ")
         print(signUp)
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
+        //self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
         emailLabel.delegate = self;
         genderLabel.delegate = self;
@@ -69,14 +69,16 @@ class SignUp: UIViewController, UITextFieldDelegate {
         firstNameLabel.layer.addSublayer(borderName)
         firstNameLabel.layer.masksToBounds = true
         
+        /*
         //last name
         let borderLName = CALayer()
         borderLName.borderColor = UIColor.darkGrayColor().CGColor
-        borderLName.frame = CGRect(x: 0, y: lastNameLabel.frame.size.height - width, width:  lastNameLabel.frame.size.width, height: lastNameLabel.frame.size.height)
+        borderLName.frame = CGRect(x: 0, y: lastNameLabel.frame.size.height - width, width:  200, height: lastNameLabel.frame.size.height)
         
         borderLName.borderWidth = width
         lastNameLabel.layer.addSublayer(border)
         lastNameLabel.layer.masksToBounds = true
+ */
 
         self.returnUserData()
     }
@@ -222,41 +224,16 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }*/
 
             if self.signUp {
-                
                 self.appDelegate.loggedIn = true
-                //calculate distance
-                //remember to switch this b4 release
-                locationManager = OneShotLocationManager()
-                locationManager!.fetchWithCompletion {location, error in
-                    // fetch location or an error
-                    if let loc = location {
-                        self.appDelegate.locCurrent = loc
-                    } else if let err = error {
-                        print(err.localizedDescription)
-                    }
-                    self.locationManager = nil
-                }
-                
-                self.appDelegate.initializeNotificationServices()
-                
-                
+
                 dataset.setString("true", forKey:"firstUse")
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
                 
-                let alert = UIAlertController(title: "Hey!", message: "Would you like a quick tour of Knot? (you can also find this in the account screen later)", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "Naw", style: .Default, handler: { (alertAction) -> Void in
-                    //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-                    //self.presentViewController(vc, animated: true, completion: nil)
-                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
-                    self.presentViewController(vc, animated: true, completion: nil)
-                }))
-                alert.addAction(UIAlertAction(title: "Sure!", style: .Default, handler: { (alertAction) -> Void in
-                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
-                    self.presentViewController(vc, animated: true, completion: nil)
-                }))
-                self.presentViewController(alert, animated: true, completion: nil)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("StepZero") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+
 
             }
             else {

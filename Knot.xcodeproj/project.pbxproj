@@ -116,6 +116,7 @@
 		433912551CB76A1A00100C64 /* UIColorEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4339124C1CB76A1A00100C64 /* UIColorEx.swift */; };
 		434BE01D1C0CD628007479AB /* string-extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434BE01C1C0CD628007479AB /* string-extension.swift */; };
 		434C95EF1C6D934200426449 /* launchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434C95EE1C6D934200426449 /* launchScreen.swift */; };
+		434EC0941CC780D500DB4966 /* OnboardingTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434EC0931CC780D500DB4966 /* OnboardingTwo.swift */; };
 		43665D161C702D4E0069A3AA /* SendBirdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43665D151C702D4E0069A3AA /* SendBirdSDK.framework */; };
 		43665D191C702FC00069A3AA /* SendBirdCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D181C702FC00069A3AA /* SendBirdCommon.swift */; };
 		43665D211C70302C0069A3AA /* MessagingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43665D201C70302C0069A3AA /* MessagingTableViewController.swift */; };
@@ -344,6 +345,7 @@
 		433F04091C240C6A0011DAF1 /* Knot.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Knot.entitlements; sourceTree = "<group>"; };
 		434BE01C1C0CD628007479AB /* string-extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "string-extension.swift"; sourceTree = "<group>"; };
 		434C95EE1C6D934200426449 /* launchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = launchScreen.swift; sourceTree = "<group>"; };
+		434EC0931CC780D500DB4966 /* OnboardingTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTwo.swift; sourceTree = "<group>"; };
 		43665D151C702D4E0069A3AA /* SendBirdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendBirdSDK.framework; sourceTree = "<group>"; };
 		43665D181C702FC00069A3AA /* SendBirdCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SendBirdCommon.swift; path = SendBird/SendBirdCommon.swift; sourceTree = "<group>"; };
 		43665D201C70302C0069A3AA /* MessagingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagingTableViewController.swift; path = SendBird/SendBirdMessaging/ViewController/MessagingTableViewController.swift; sourceTree = "<group>"; };
@@ -766,6 +768,7 @@
 				43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */,
 				430D6B641C922EA100C7A6A7 /* Editlisting.swift */,
 				4396E67D1CA4A64900655ED9 /* pageController.swift */,
+				434EC0931CC780D500DB4966 /* OnboardingTwo.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				4312622B1C900A3A00A47BFD /* MPNSAttributedStringToNSDictionaryValueTransformer.m in Sources */,
 				4312622E1C900A3A00A47BFD /* MPObjectSelector.m in Sources */,
 				431262221C900A3A00A47BFD /* MPClassDescription.m in Sources */,
+				434EC0941CC780D500DB4966 /* OnboardingTwo.swift in Sources */,
 				4312624E1C900A3A00A47BFD /* UIView+MPHelpers.m in Sources */,
 				43665D381C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift in Sources */,
 				43665D341C7030370069A3AA /* MessagingIndicatorView.swift in Sources */,

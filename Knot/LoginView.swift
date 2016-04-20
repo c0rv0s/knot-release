@@ -25,7 +25,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().statusBarHidden=true
-        self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
+        //self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         //self.loginbutton.layer.borderWidth = 1;
         //self.loginbutton.layer.borderColor = UIColor.whiteColor().CGColor
         

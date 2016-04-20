@@ -508,9 +508,11 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setToRecipients(["support@knotcomplex.com"])
+            mail.setSubject("report item")
             var body = "Reporting item " + self.IDNum + " for " + why + " (add any other details here)" + "\n Thanks!"
             if why == user {
                 body = "Reporting user " + self.itemSeller + " (add any other details here)" + "\n Thanks!"
+                mail.setSubject("report user")
             }
             mail.setMessageBody(body, isHTML: false)
             
