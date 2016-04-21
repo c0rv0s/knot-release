@@ -87,7 +87,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         nameField.layer.addSublayer(borderName)
         nameField.layer.masksToBounds = true
         
-        //name
+        //price
         let borderPrice = CALayer()
         borderPrice.borderColor = UIColor.darkGrayColor().CGColor
         borderPrice.frame = CGRect(x: 0, y: priceField.frame.size.height - width, width:  priceField.frame.size.width, height: priceField.frame.size.height)

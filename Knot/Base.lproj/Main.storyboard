@@ -941,7 +941,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rle-hv-7qp">
-                                <rect key="frame" x="16" y="28" width="343" height="419"/>
+                                <rect key="frame" x="16" y="28" width="343" height="489"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please enter any missing info:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKG-vK-OnD">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="32"/>
@@ -1019,8 +1019,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-MQ-RQf">
+                                        <rect key="frame" x="52" y="369" width="240" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-rm-kKg" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="82" y="369" width="180" height="50"/>
+                                        <rect key="frame" x="82" y="439" width="180" height="50"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-uZ-qmA">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
@@ -1043,10 +1047,10 @@
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="25"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -1088,29 +1092,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-QK-UFL">
-                                <rect key="frame" x="31" y="354" width="210" height="30"/>
-                                <state key="normal" title="Enable Location"/>
-                                <connections>
-                                    <action selector="yesButton:" destination="CbE-gt-RdE" eventType="touchUpInside" id="psF-Sl-dV3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-Hb-rOn">
-                                <rect key="frame" x="249" y="354" width="46" height="30"/>
-                                <state key="normal" title="Skip"/>
-                                <connections>
-                                    <action selector="skipButton:" destination="CbE-gt-RdE" eventType="touchUpInside" id="I44-ZM-27g"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KnotLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="anJ-zG-vh4">
-                                <rect key="frame" x="68" y="48" width="240" height="72"/>
+                                <rect key="frame" x="68" y="28" width="240" height="72"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-D2-pxX">
+                                <rect key="frame" x="76" y="394" width="225" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-QK-UFL">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="46"/>
+                                        <state key="normal" title="Enable Location">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="yesButton:" destination="CbE-gt-RdE" eventType="touchUpInside" id="psF-Sl-dV3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="travel-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Vs-Hu-cKu">
+                                <rect key="frame" x="138" y="270" width="100" height="100"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Do you want to see products near you?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Hg-PPj">
+                                <rect key="frame" x="68" y="123" width="240" height="89"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-lO-La2">
+                                <rect key="frame" x="76" y="448" width="225" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-Hb-rOn">
+                                        <rect key="frame" x="89" y="8" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Skip">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="skipButton:" destination="CbE-gt-RdE" eventType="touchUpInside" id="I44-ZM-27g"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="iconPic" destination="8Vs-Hu-cKu" id="uaM-pF-RQL"/>
                         <outlet property="logoPic" destination="anJ-zG-vh4" id="vCE-vA-ZOS"/>
                         <outlet property="noButton" destination="4vO-Hb-rOn" id="4yL-HZ-D0e"/>
+                        <outlet property="noViewRect" destination="YZY-lO-La2" id="Tfu-qo-72e"/>
+                        <outlet property="textLabel" destination="JhD-Hg-PPj" id="Ew2-I7-Hpk"/>
                         <outlet property="yesButton" destination="zqX-QK-UFL" id="38V-d7-FKZ"/>
                     </connections>
                 </viewController>
@@ -1812,6 +1845,7 @@
         <image name="signs" width="24" height="24"/>
         <image name="three" width="32" height="32"/>
         <image name="tool305" width="32" height="32"/>
+        <image name="travel-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uIL-st-cTj"/>
