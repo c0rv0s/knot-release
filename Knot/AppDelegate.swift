@@ -47,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         //Instabug.startWithToken("78c16dde6a35093640aa82c7114f0526", invocationEvent: IBGInvocationEventShake)
         
         Buglife.sharedBuglife().startWithAPIKey("KOKYsfFVmcY33qUJZikmMgtt")
+        Buglife.sharedBuglife().invocationOptions = .Shake
         /*
         AWSMobileAnalytics *analytics = [AWSMobileAnalytics
             mobileAnalyticsForAppId: @"8a8ff18d8fa242df8a62add92ba837ab" //Amazon Mobile Analytics App ID

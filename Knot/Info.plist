@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationCategoryType</key>
+	<array>
+		<string>Gravity-Bold.otf</string>
+		<string>Gravity-BoldItalic.otf</string>
+		<string>Gravity-Book.otf</string>
+		<string>Gravity-BookItalic.otf</string>
+		<string>Gravity-Italic.otf</string>
+		<string>Gravity-Light.otf</string>
+		<string>Gravity-LightItalic.otf</string>
+		<string>Gravity-Regular.otf</string>
+		<string>Gravity-UltraLight.otf</string>
+		<string>Gravity-UltraLightItalic.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

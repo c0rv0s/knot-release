@@ -31,7 +31,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var contacted = false
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
+    let bartintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
     
     var container: UIView?
     var tableView: UITableView?
@@ -120,8 +120,8 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-        navigationController?.navigationBar.tintColor = self.tintColor
+        self.navigationController?.navigationBar.barTintColor = bartintColor
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.translucent = true
         /*
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "aboutSendBird:")
@@ -337,12 +337,12 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         if self.viewMode == kMessagingChannelListViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "three"), style: UIBarButtonItemStyle.Plain, target: self.revealViewController(), action: "revealToggle:")
-            self.navigationItem.leftBarButtonItem!.tintColor = self.tintColor
+            self.navigationItem.leftBarButtonItem!.tintColor = UIColor.whiteColor()
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
 
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_sendbird_btn_list_edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editMessagingChannel:")
-            self.navigationItem.rightBarButtonItem?.tintColor = self.tintColor
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
             self.navigationItem.rightBarButtonItem?.enabled = true
             
             //self.navigationItem.leftBarButtonItem?.enabled = true
@@ -353,10 +353,10 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             //leaveButtonItem.tintColor = self.tintColor
             
             let hideButtonItem: UIBarButtonItem = UIBarButtonItem.init(title: "Hide", style: UIBarButtonItemStyle.Plain, target: self, action: "hideChannel:")
-            hideButtonItem.tintColor = self.tintColor
+            hideButtonItem.tintColor = UIColor.whiteColor()
             
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
-            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
+            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
             
             self.navigationItem.rightBarButtonItems = [leaveButtonItem, hideButtonItem]
             leaveButtonItem.enabled = false
@@ -365,19 +365,19 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         else if self.viewMode == kMessagingViewMode || self.viewMode == kMessagingMemberViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "openMenuActionSheet:")
-            self.navigationItem.rightBarButtonItem?.tintColor = self.tintColor
+            self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
-            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
+            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         }
         else if self.viewMode == kMessagingMemberForGroupChatViewMode {
             self.navigationItem.rightBarButtonItems = Array()
             let inviteButtonItem: UIBarButtonItem = UIBarButtonItem.init(title: "Confirm", style: UIBarButtonItemStyle.Plain, target: self, action: "inviteMember:")
-            inviteButtonItem.tintColor = self.tintColor
+            inviteButtonItem.tintColor = UIColor.whiteColor()
             
             self.navigationItem.rightBarButtonItem = inviteButtonItem
             
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_close"), style: UIBarButtonItemStyle.Plain, target: self, action: "dismissLobbyMemberListForInvite:")
-            self.navigationItem.leftBarButtonItem?.tintColor = self.tintColor
+            self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         }
     }
     
