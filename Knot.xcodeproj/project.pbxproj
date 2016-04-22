@@ -661,7 +661,6 @@
 				431853541BF9892F000C6ED4 /* Info.plist */,
 				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
 				43DD12101C8F9F730013034E /* itemDetailInfo.xib */,
-				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -729,6 +728,7 @@
 		43F206471C7F8ED300CEEDFF /* Third Party Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 				430D4DC81CB63DA50065E7A0 /* SWRevealViewController.h */,
 				430D4DC91CB63DA50065E7A0 /* SWRevealViewController.m */,
 				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,

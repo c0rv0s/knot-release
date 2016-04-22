@@ -56,9 +56,9 @@ class MessageInputView: UIView {
         self.messageTextField = UITextField()
         self.messageTextField?.translatesAutoresizingMaskIntoConstraints = false
         self.messageTextField?.returnKeyType = UIReturnKeyType.Done
-        self.messageTextField?.placeholder = "What\'s on your mind?"
+        self.messageTextField?.placeholder = "Type your message here..."
         self.messageTextField?.textColor = SendBirdUtils.UIColorFromRGB(0x37434f)
-        self.messageTextField?.attributedPlaceholder = NSAttributedString.init(string: "What\'s on your mind?", attributes: [NSForegroundColorAttributeName : SendBirdUtils.UIColorFromRGB(0xbbc3c9)])
+        self.messageTextField?.attributedPlaceholder = NSAttributedString.init(string: "Type your message here...", attributes: [NSForegroundColorAttributeName : SendBirdUtils.UIColorFromRGB(0xbbc3c9)])
         self.messageTextField?.font = UIFont.systemFontOfSize(kMessageFontSize)
         let paddingLeftView: UIView = UIView.init(frame: CGRectMake(0, 0, 8, 8))
         let paddingRightView: UIView = UIView.init(frame: CGRectMake(0, 0, 48, 8))
@@ -92,7 +92,7 @@ class MessageInputView: UIView {
         self.sendButton?.alpha = 0
         self.sendButton?.enabled = false
         
-        self.addSubview(self.openChannelListButton!)
+        //self.addSubview(self.openChannelListButton!)
         self.addSubview(self.messageTextField!)
         self.addSubview(self.fileAttachButton!)
         self.addSubview(self.sendButton!)
@@ -107,13 +107,13 @@ class MessageInputView: UIView {
         self.addConstraint(NSLayoutConstraint.init(item: self.topLineView!, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint.init(item: self.topLineView!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint.init(item: self.topLineView!, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 1))
-        
+        /*
         // Channel List Button
         self.addConstraint(NSLayoutConstraint.init(item: self.openChannelListButton!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint.init(item: self.openChannelListButton!, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 10))
         self.addConstraint(NSLayoutConstraint.init(item: self.openChannelListButton!, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.fileAttachButton!, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: -10))
         self.addConstraint(NSLayoutConstraint.init(item: self.openChannelListButton!, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 15))
-        
+        */
         // File Attach Button
         self.addConstraint(NSLayoutConstraint.init(item: self.fileAttachButton!, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: self, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint.init(item: self.fileAttachButton!, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 28))

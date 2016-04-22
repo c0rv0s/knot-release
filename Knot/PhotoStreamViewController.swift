@@ -196,6 +196,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                     self.locCurrent = loc
                     self.appDelegate.locCurrent = loc
                 } else if let err = error {
+                    
                     self.locGiven = false
                     var alertController = UIAlertController (title: "Location Services disabled.", message: "Enabling location services allows Knot to show you listings in your area.", preferredStyle: .Alert)
                     

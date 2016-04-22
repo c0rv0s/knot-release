@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var locCurrent: CLLocation!
     
     var mixpanel: AnyObject?
+    
+    var locEnabled = true
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

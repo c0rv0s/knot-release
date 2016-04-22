@@ -61,6 +61,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIApplication.sharedApplication().statusBarHidden = true
+        
         self.scrollView.contentSize = CGSize(width:375, height: 800)
         self.roundedDescrip.layer.borderWidth = 1;
         self.roundedDescrip.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
@@ -88,9 +90,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         priceField.delegate = self
         priceField.keyboardType = UIKeyboardType.NumbersAndPunctuation
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -101,9 +101,14 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.categoryField.text = DetailItem.category
         self.conditionField.text = DetailItem.condition
         self.photoOne.image = self.resizeImage(picOne)
+        
+        self.scrollView.directionalLockEnabled = true
+        
+        self.registerForKeyboardNotifications()
 
         
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
@@ -196,6 +201,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
+    func registerForKeyboardNotifications()
+    {
+        //Adding notifies on keyboard appearing
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
     func keyboardWasShown(notification: NSNotification)
     {
         //Need to calculate keyboard exact size due to Apple suggestions
@@ -244,7 +256,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         activeField = nil
     }
     //end keyboard
-    
     @IBAction func addphoto1(sender: AnyObject) {
         photoNum = 1
         self.showCamera()
@@ -280,6 +291,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 animated: true,
                 completion: nil)
         }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
         self.presentViewController(alert, animated: true, completion: nil)
         
         
@@ -463,6 +475,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            UIApplication.sharedApplication().statusBarHidden = false
             self.insertItem(self.DetailItem.ID).continueWithBlock({
                 (task: BFTask!) -> BFTask! in
                 
@@ -560,6 +573,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         //self.tabBarController?.tabBar.hidden = false
         //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         //self.presentViewController(vc, animated: true, completion: nil)
+        UIApplication.sharedApplication().statusBarHidden = false
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }

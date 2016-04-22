@@ -80,6 +80,7 @@ class OnboardingTwo: UIViewController, UITextFieldDelegate {
     
     @IBAction func skipButton(sender: AnyObject) {
         if first {
+            self.appDelegate.locEnabled = false
             self.yesButton.setTitle("Enable Notifications", forState: UIControlState.Normal)
             self.textLabel.text = "Do you want to be notified when another user sends you a message?"
             self.iconPic.image = UIImage(named: "technology-2")

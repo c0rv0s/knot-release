@@ -33,6 +33,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     @IBOutlet weak var addphoto2: UIButton!
     @IBOutlet weak var addphoto3: UIButton!
     
+    @IBOutlet weak var addPhotoText1: UILabel!
+    @IBOutlet weak var addPhotoText2: UILabel!
+    @IBOutlet weak var addPhotoText3: UILabel!
+    
     @IBOutlet weak var lengthField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var conditionField: UITextField!
@@ -53,7 +57,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var hours = [3,5,12,24,72,120,168, 288]
     var lengthOption = ["3 Hours", "5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
     var conditionOption = ["New", "Manufacturer refurbished", "Seller refurbished", "Used", "For parts or not working"]
-    var categoryOption = ["Art and Antiques", "Baby and Child", "Books, Movies and Music", "Games and Consoles", "Electronics", "Cameras and Photo", "Fashion and Accessories", "Sport and Leisure", "Cars and Motor", "Furniture", "Appliances", "Services", "Other"]
+    var categoryOption = ["Electronics", "Cars and Motors", "Sports", "Toys", "Video Games", "Fashion", "Baby and Kids", "Books", "Furniture", "Art and Home Decor", "Tools", "Movies and Music"]
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -76,6 +80,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(vc, animated: true, completion: nil)
         }
 */
+        UIApplication.sharedApplication().statusBarHidden = true
         
         //name
         let borderName = CALayer()
@@ -117,6 +122,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             // Do any additional setup after loading the view, typically from a nib
             addphoto2.hidden = true
             addphoto3.hidden = true
+            addPhotoText2.hidden = true
+            addPhotoText3.hidden = true
             self.uniqueID = randomStringWithLength(16) as String
             
             nameField.delegate = self;
@@ -559,7 +566,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 addphoto2.hidden = false
-                addphoto1.setTitle("Change", forState: .Normal)
+                addPhotoText2.hidden = false
+                addPhotoText1.text = "Change"
+                //addphoto1.setTitle("Change", forState: .Normal)
                 one = true
                 picTwoView.image = UIImage(named: "camera_ready")
             }
@@ -567,7 +576,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 self.picTwo = chosenImage
                 picTwoView.image = self.cropToSquare(image: chosenImage)
                 addphoto3.hidden = false
-                addphoto2.setTitle("Change", forState: .Normal)
+                addPhotoText3.hidden = false
+                //addphoto2.setTitle("Change", forState: .Normal)
+                addPhotoText2.text = "Change"
                 two = true
                 picThreeView.image = UIImage(named: "camera_ready")
                 
@@ -595,7 +606,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             if photoNum == 3 {
                 self.picThree = chosenImage
                 self.picThreeView.image = self.cropToSquare(image: chosenImage)
-                addphoto3.setTitle("Change", forState: .Normal)
+                //addphoto3.setTitle("Change", forState: .Normal)
+                addPhotoText3.text = "Change"
                 three = true
                 
                 //do third photo
@@ -634,6 +646,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            UIApplication.sharedApplication().statusBarHidden = false
             SwiftSpinner.show("Uploading \(self.nameField.text!)")
             
             /*
@@ -736,6 +749,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
  */
+        UIApplication.sharedApplication().statusBarHidden = true
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
