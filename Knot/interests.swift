@@ -15,14 +15,14 @@ class Interests: UIViewController, UICollectionViewDelegate, UICollectionViewDat
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descripText: UITextView!
     var interests = ["Electronics", "Cars and Motors", "Sports", "Toys", "Video Games", "Fashion", "Baby and Kids", "Books", "Furniture", "Art and Home Decor", "Tools", "Movies and Music"]
-    var selected: Array<String>!
+    var selected: [Int:String]!
     
     
     @IBOutlet weak var DoneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.selected = []
+        selected = [:]
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 150, left: 0, bottom: 50, right: 0)
@@ -49,9 +49,15 @@ class Interests: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        cell?.backgroundColor = UIColor.lightGrayColor()
-        print(interests[indexPath.row])
-        self.selected.append(interests[indexPath.row])
+        if cell?.backgroundColor == UIColor.lightGrayColor() {
+            cell?.backgroundColor = UIColor.whiteColor()
+            self.selected[indexPath.row] = nil
+        }
+        else {
+            cell?.backgroundColor = UIColor.lightGrayColor()
+            print(interests[indexPath.row])
+            self.selected[indexPath.row] = interests[indexPath.row]
+        }
     }
 
 
@@ -62,9 +68,10 @@ class Interests: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         }
         else {
             var interestString = ""
-            for interest in selected {
-                interestString = interestString + interest + ","
+            for (key, value) in selected {
+                interestString = interestString + value + ","
             }
+            print(interestString)
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")

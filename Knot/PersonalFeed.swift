@@ -174,7 +174,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                         print(item.seller)
                         if item.seller == self.cognitoID {
                             var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
-                            if (secondsUntil > (0 - 60 * 60 * 24 * 70)) {
+                            if (secondsUntil > (0 - 60 * 60 * 24 * 60)) {
                                 self.tableRows?.append(item)
                                 self.downloadImage(item)
                             }
@@ -301,7 +301,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         
         cell.nameLabel.text = cell.cellItem.name
-        cell.priceLabel.text = "$" + cell.cellItem.price
+        //cell.priceLabel.text = "$" + cell.cellItem.price
         
         cell.pic.image = cropImages[cell.cellItem.ID]
         

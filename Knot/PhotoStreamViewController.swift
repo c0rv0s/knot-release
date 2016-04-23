@@ -141,7 +141,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
 
         
         //fetch KRE data
-        self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
+        self.post(self.cognitoID, url: "https://b2stmb5f89.execute-api.us-east-1.amazonaws.com/prod/KREAPI2_0") { (succeeded: Bool, msg: String) -> () in
             //var alert = UIAlertView(title: "Success!", message: msg, delegate: nil, cancelButtonTitle: "Okay.")
             if(succeeded) {
                 //alert.title = "Success!"
@@ -288,8 +288,14 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                 let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
                 if let results = json["result"] as? [[String: AnyObject]] {
                     for result in results {
-                        if let item = result["itemID"] as? String {
-                            self.favItemIDs.append(item)
+                        if let score = result["predictedScore"] as? Double {
+                            print(score)
+                            if score >= 0.65 {
+                                if let item = result["itemID"] as? String {
+                                    print(item)
+                                    self.favItemIDs.append(item)
+                                }
+                            }
                         }
                     }
                 }

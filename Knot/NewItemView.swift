@@ -151,7 +151,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             addphoto3.hidden = true
             addPhotoText2.hidden = true
             addPhotoText3.hidden = true
-            self.uniqueID = randomStringWithLength(16) as String
+            self.uniqueID = randomStringWithLength(32) as String
             
             nameField.delegate = self;
             
@@ -271,7 +271,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     func randomStringWithLength (len : Int) -> NSString {
         
-        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let letters : NSString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         
         let randomString : NSMutableString = NSMutableString(capacity: len)
         
@@ -786,7 +786,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             //else {
               //  print("error")} */
         }
-        if nameField.text == "pride" {
+        if nameField.text == "Pride" {
             self.appDelegate.prideOn = true
         }
         

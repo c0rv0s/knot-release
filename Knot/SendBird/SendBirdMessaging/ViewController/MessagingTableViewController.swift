@@ -502,7 +502,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         if self.viewMode == kMessagingChannelListViewMode {
             //self.title = "Message"
             //self.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-            self.messageInputView?.hidden = true//setInputEnable(false)
+            self.messageInputView?.hidden = false//setInputEnable(false)
         }
         else if self.viewMode == kMessagingMemberViewMode {
             self.title = "Users"
