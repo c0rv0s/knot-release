@@ -106,6 +106,7 @@
 		431F1A561C1127F600EDB1A8 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A551C1127F600EDB1A8 /* Accounts.framework */; };
 		431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A571C1127FB00EDB1A8 /* Social.framework */; };
 		432FC62C1CCAF859008EDDC6 /* PITouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */; };
+		432FC62E1CCB1C43008EDDC6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC62D1CCB1C43008EDDC6 /* FloatRatingView.swift */; };
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912451CB76A1A00100C64 /* ArrayEx.swift */; };
 		4339124F1CB76A1A00100C64 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912461CB76A1A00100C64 /* CGPointEx.swift */; };
@@ -336,6 +337,7 @@
 		431F1A551C1127F600EDB1A8 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		431F1A571C1127FB00EDB1A8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PITouchIDManager.swift; sourceTree = "<group>"; };
+		432FC62D1CCB1C43008EDDC6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		433912451CB76A1A00100C64 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		433912461CB76A1A00100C64 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
@@ -730,6 +732,7 @@
 		43F206471C7F8ED300CEEDFF /* Third Party Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				432FC62D1CCB1C43008EDDC6 /* FloatRatingView.swift */,
 				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 				430D4DC81CB63DA50065E7A0 /* SWRevealViewController.h */,
 				430D4DC91CB63DA50065E7A0 /* SWRevealViewController.m */,
@@ -1056,6 +1059,7 @@
 				4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */,
 				431262451C900A3A00A47BFD /* MPVariant.m in Sources */,
 				4396E6841CAC9C9300655ED9 /* onlineListing.swift in Sources */,
+				432FC62E1CCB1C43008EDDC6 /* FloatRatingView.swift in Sources */,
 				43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */,
 				431262271C900A3A00A47BFD /* MPEventBinding.m in Sources */,
 				4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */,

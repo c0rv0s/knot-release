@@ -107,11 +107,15 @@
                                                     <rect key="frame" x="8" y="10" width="80" height="80"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-CB-Mmw">
-                                                    <rect key="frame" x="96" y="39" width="222" height="21"/>
+                                                    <rect key="frame" x="96" y="21" width="222" height="21"/>
                                                     <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tIn-oK-nwn" customClass="FloatRatingView" customModule="Knot" customModuleProvider="target">
+                                                    <rect key="frame" x="96" y="50" width="143" height="25"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.39215686274509803" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
@@ -237,6 +241,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="floatRatingView" destination="tIn-oK-nwn" id="4TM-MA-gm7"/>
                         <outlet property="nameLabel" destination="eW3-CB-Mmw" id="aoJ-Hm-3pb"/>
                         <outlet property="profPic" destination="11R-UW-4J8" id="hQc-hI-XYF"/>
                     </connections>
@@ -1014,15 +1019,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rle-hv-7qp">
-                                <rect key="frame" x="37" y="20" width="288" height="460"/>
+                                <rect key="frame" x="37" y="20" width="300" height="461"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please confirm your info:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKG-vK-OnD">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please confirm your info:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKG-vK-OnD">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="26"/>
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McP-D1-H4l" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="41" width="112" height="112"/>
+                                        <rect key="frame" x="94" y="42" width="112" height="112"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDc-Nt-ON5">
                                                 <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
@@ -1036,7 +1041,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name                   " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IzJ-RF-HQi">
-                                        <rect key="frame" x="71" y="163" width="146" height="17"/>
+                                        <rect key="frame" x="77" y="164" width="146" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1044,7 +1049,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name                    " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhp-xb-vpp">
-                                        <rect key="frame" x="70" y="190" width="149" height="17"/>
+                                        <rect key="frame" x="76" y="191" width="149" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1052,7 +1057,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email                        " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-1h-zca">
-                                        <rect key="frame" x="44" y="217" width="200" height="17"/>
+                                        <rect key="frame" x="50" y="218" width="200" height="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1061,13 +1066,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="We won't send you emails unless you ask us to!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtZ-uP-ld1">
-                                        <rect key="frame" x="40" y="244" width="209" height="11"/>
+                                        <rect key="frame" x="46" y="245" width="209" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-bn-sfc">
-                                        <rect key="frame" x="118" y="265" width="52" height="17"/>
+                                        <rect key="frame" x="124" y="266" width="52" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1075,7 +1080,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="myS-OC-ZuM">
-                                        <rect key="frame" x="129" y="292" width="30" height="17"/>
+                                        <rect key="frame" x="135" y="293" width="30" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -1083,16 +1088,16 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="These help us find stuff you'll like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-7p-wUq">
-                                        <rect key="frame" x="77" y="319" width="134" height="11"/>
+                                        <rect key="frame" x="81" y="320" width="139" height="11"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FZL-MQ-RQf">
-                                        <rect key="frame" x="24" y="340" width="240" height="60"/>
+                                        <rect key="frame" x="30" y="341" width="240" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gwd-rm-kKg" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="54" y="410" width="180" height="50"/>
+                                        <rect key="frame" x="60" y="411" width="180" height="50"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vU-uZ-qmA">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
@@ -1410,8 +1415,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Profile Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-Q2-XlK">
+                                <rect key="frame" x="136" y="129" width="158" height="21"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
+                                <color key="textColor" red="0.36616161616161613" green="0.36616161616161613" blue="0.36616161616161613" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="og2-eV-gW7" customClass="FloatRatingView" customModule="Knot" customModuleProvider="target">
+                                <rect key="frame" x="136" y="158" width="179" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q3-jN-0gG">
-                                <rect key="frame" x="136" y="158" width="147" height="30"/>
+                                <rect key="frame" x="16" y="204" width="147" height="30"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                 <state key="normal" title="Complete Profile">
                                     <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1420,38 +1435,32 @@
                                     <segue destination="Yn6-Mw-DUA" kind="show" id="vYY-fy-rD9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Profile Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICk-Q2-XlK">
-                                <rect key="frame" x="136" y="129" width="158" height="21"/>
-                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                <color key="textColor" red="0.36616161616161613" green="0.36616161616161613" blue="0.36616161616161613" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of items sold: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n19-8s-dl1">
-                                <rect key="frame" x="16" y="217" width="177" height="21"/>
+                                <rect key="frame" x="17" y="252" width="177" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gross Revenue:               $" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df2-hY-X1l">
-                                <rect key="frame" x="15" y="246" width="191" height="21"/>
+                                <rect key="frame" x="16" y="281" width="191" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4T-bW-mco">
-                                <rect key="frame" x="207" y="217" width="76" height="21"/>
+                                <rect key="frame" x="208" y="252" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-JG-IVp">
-                                <rect key="frame" x="207" y="246" width="76" height="21"/>
+                                <rect key="frame" x="208" y="281" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="signs" translatesAutoresizingMaskIntoConstraints="NO" id="ihI-Y9-Ci1">
-                                <rect key="frame" x="305" y="164" width="18" height="18"/>
+                                <rect key="frame" x="157" y="210" width="18" height="18"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1488,6 +1497,7 @@
                         <outlet property="completeProfile" destination="2q3-jN-0gG" id="ND8-8Q-fPy"/>
                         <outlet property="completeProfileAlert" destination="ihI-Y9-Ci1" id="1H7-KT-66o"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="0a1-hY-6qe"/>
+                        <outlet property="floatRatingView" destination="og2-eV-gW7" id="d5N-Gp-Bew"/>
                         <outlet property="menuButton" destination="2nf-aZ-Eg5" id="gjl-46-kxz"/>
                         <outlet property="numSoldLabel" destination="q4T-bW-mco" id="5r6-aC-JNo"/>
                         <outlet property="profCompleteLabel" destination="ICk-Q2-XlK" id="coa-4C-KUE"/>
@@ -1538,6 +1548,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usZ-v2-PBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3032.5" y="3538.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hOe-aM-eJ6">
+            <objects>
+                <viewController id="Mr1-6S-gBS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JUx-Fw-gFk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dcl-Nx-4jJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LNK-6B-PJh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZJt-ji-vBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3012" y="4606"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="gHF-68-XOf">

@@ -34,11 +34,19 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     @IBOutlet weak var legalButton: UIButton!
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    // Float rating view params
+    @IBOutlet var floatRatingView: FloatRatingView!
+    var starRating = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.completeProfile.hidden = true
         self.completeProfileAlert.hidden = true
+        
+        self.floatRatingView.emptyImage = UIImage(named: "empty-star")
+        self.floatRatingView.fullImage = UIImage(named: "full-star")
+        self.floatRatingView.editable = false
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
@@ -108,6 +116,10 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
                 let lName = dataset.stringForKey("lastName")
                 self.Name.text = fName + " " + lName
             }
+        }
+        if (dataset.stringForKey("rating") != nil) {
+            self.starRating = Int(dataset.stringForKey("rating"))!
+            self.floatRatingView.rating = Float(starRating)
         }
         
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])

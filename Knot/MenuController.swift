@@ -12,9 +12,17 @@ class MenuController: UITableViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profPic: UIImageView!
+    
+    // Float rating view params
+    @IBOutlet var floatRatingView: FloatRatingView!
+    var starRating = 5
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.floatRatingView.emptyImage = UIImage(named: "empty-star")
+        self.floatRatingView.fullImage = UIImage(named: "full-star")
+        self.floatRatingView.editable = false
         self.returnUserDataForProf()
         
         // Uncomment the following line to preserve selection between presentations
@@ -39,6 +47,10 @@ class MenuController: UITableViewController {
                 var lName = dataset.stringForKey("lastName")
                 self.nameLabel.text = fName + " " + lName
             }
+        }
+        if (dataset.stringForKey("rating") != nil) {
+            self.starRating = Int(dataset.stringForKey("rating"))!
+            self.floatRatingView.rating = Float(starRating)
         }
         
         

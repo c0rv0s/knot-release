@@ -189,6 +189,10 @@ class SignUp: UIViewController, UITextFieldDelegate {
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil
             }
+            dataset.setString("5", forKey:"rating")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
             /*
             dataset.setString(self.ageLabel.text, forKey:"age")
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
