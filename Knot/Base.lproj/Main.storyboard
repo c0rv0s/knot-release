@@ -3,10 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Gravity-Regular.otf">
+            <string>Gravity-Regular</string>
+            <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
@@ -1171,8 +1174,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KnotLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="anJ-zG-vh4">
                                 <rect key="frame" x="67" y="34" width="240" height="72"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="travel-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Vs-Hu-cKu">
+                                <rect key="frame" x="137" y="276" width="100" height="100"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Do you want to see products nearby you?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Hg-PPj">
+                                <rect key="frame" x="67" y="129" width="240" height="89"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYS-D2-pxX">
-                                <rect key="frame" x="75" y="400" width="225" height="45"/>
+                                <rect key="frame" x="75" y="461" width="225" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-QK-UFL">
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="46"/>
@@ -1187,17 +1199,8 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="travel-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Vs-Hu-cKu">
-                                <rect key="frame" x="137" y="276" width="100" height="100"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Do you want to see products nearby you?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Hg-PPj">
-                                <rect key="frame" x="67" y="129" width="240" height="89"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-lO-La2">
-                                <rect key="frame" x="75" y="454" width="225" height="45"/>
+                                <rect key="frame" x="75" y="515" width="225" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-Hb-rOn">
                                         <rect key="frame" x="0.0" y="-7" width="225" height="57"/>
@@ -1963,68 +1966,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell Us Your Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-z2-4QB">
-                                <rect key="frame" x="20" y="20" width="239" height="41"/>
-                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Please choose at least 5 so we can create the best possible experience for you" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VSA-tn-6UD">
-                                <rect key="frame" x="20" y="69" width="240" height="65"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Please choose at least 5 so we can create the best possible experience for you" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VSA-tn-6UD">
+                                <rect key="frame" x="67" y="69" width="240" height="65"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yOJ-EM-Jvd">
-                                <rect key="frame" x="0.0" y="149" width="370" height="460"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ESh-iD-yak">
-                                    <size key="itemSize" width="106" height="38"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQy-h3-vyC">
+                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="24"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButton:" destination="FEn-du-guO" eventType="touchUpInside" id="AI0-Bu-Yje"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tell Us Your Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-z2-4QB">
+                                <rect key="frame" x="68" y="20" width="239" height="41"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5O-k0-4mm">
+                                <rect key="frame" x="0.0" y="153" width="375" height="436"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXf-Qn-3WL">
+                                    <size key="itemSize" width="160" height="40"/>
+                                    <size key="headerReferenceSize" width="10" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestsCell" id="6HI-Kz-6le" customClass="InterestsCell" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="38"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestsCell" id="vkY-Vf-e72" customClass="InterestsCell" customModule="Knot" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="5" width="160" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="106" height="38"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO1-uw-Yjg">
-                                                    <rect key="frame" x="8" y="8" width="90" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-uU-Srf">
+                                                    <rect key="frame" x="8" y="11" width="144" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="cellLabel" destination="SO1-uw-Yjg" id="WAE-GM-lu6"/>
+                                            <outlet property="cellLabel" destination="hFL-uU-Srf" id="zIJ-HQ-xAl"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="e01-Zz-0Ou">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="FEn-du-guO" id="M3R-yn-JyW"/>
-                                    <outlet property="delegate" destination="FEn-du-guO" id="hYA-33-NJ0"/>
+                                    <outlet property="dataSource" destination="FEn-du-guO" id="Q4d-Uy-udH"/>
+                                    <outlet property="delegate" destination="FEn-du-guO" id="EXk-qs-blh"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQy-h3-vyC">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
-                                <state key="normal" title="Done"/>
-                                <connections>
-                                    <action selector="doneButton:" destination="FEn-du-guO" eventType="touchUpInside" id="AI0-Bu-Yje"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vhn-yY-Ilr" firstAttribute="top" secondItem="tQy-h3-vyC" secondAttribute="bottom" id="Jtx-kQ-nEN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tQy-h3-vyC" secondAttribute="trailing" constant="-20" id="Tk2-Fb-kHC"/>
+                            <constraint firstItem="cDZ-z2-4QB" firstAttribute="top" secondItem="eQP-c9-4IW" secondAttribute="bottom" id="WMR-dc-1po"/>
+                            <constraint firstItem="VSA-tn-6UD" firstAttribute="top" secondItem="cDZ-z2-4QB" secondAttribute="bottom" constant="8" id="bkq-BM-hdN"/>
+                            <constraint firstItem="k5O-k0-4mm" firstAttribute="top" secondItem="VSA-tn-6UD" secondAttribute="bottom" constant="19" id="jRg-99-NwK"/>
+                            <constraint firstItem="tQy-h3-vyC" firstAttribute="leading" secondItem="tm1-2R-tbo" secondAttribute="leadingMargin" constant="-20" id="pma-QE-Lx7"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="DoneButton" destination="tQy-h3-vyC" id="Vfd-j8-MDJ"/>
-                        <outlet property="colView" destination="yOJ-EM-Jvd" id="wFS-HL-L74"/>
+                        <outlet property="collectionView" destination="k5O-k0-4mm" id="sSV-pC-UfU"/>
                         <outlet property="descripText" destination="VSA-tn-6UD" id="QY7-Ad-bjB"/>
                         <outlet property="titleLabel" destination="cDZ-z2-4QB" id="HFJ-dP-uCx"/>
                     </connections>

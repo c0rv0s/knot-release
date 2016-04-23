@@ -584,7 +584,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        self .cancelSearching()
+        self.cancelSearching()
         self.collectionView?.reloadData()
     }
     
@@ -672,7 +672,6 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         if searchController.active && searchController.searchBar.text?.characters.count > 0 {
             cell.cellItem = self.filterItems?[indexPath.row]
         } else {
- 
             cell.cellItem = self.collectionItems![indexPath.row]
             cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
         }

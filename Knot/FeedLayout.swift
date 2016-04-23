@@ -8,7 +8,6 @@
 
 import UIKit
 
-import UIKit
 protocol FeedLayoutDelegate {
     // 1. Method to ask the delegate for the height of the image
     func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath:NSIndexPath , withWidth:CGFloat) -> CGFloat

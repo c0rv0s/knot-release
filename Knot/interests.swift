@@ -9,41 +9,51 @@
 import Foundation
 import UIKit
 
-class Interests: UIViewController, UICollectionViewDelegate {
+class Interests: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    @IBOutlet weak var colView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descripText: UITextView!
     var interests = ["Electronics", "Cars and Motors", "Sports", "Toys", "Video Games", "Fashion", "Baby and Kids", "Books", "Furniture", "Art and Home Decor", "Tools", "Movies and Music"]
     var selected: Array<String>!
     
+    
     @IBOutlet weak var DoneButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.selected = []
         
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 150, left: 0, bottom: 50, right: 0)
+        layout.itemSize = CGSize(width: 120, height: 40)
+        
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.interests.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        self.selected.append(interests[indexPath.row])
-        var cell : UICollectionViewCell = collectionView.cellForItemAtIndexPath(indexPath)!
-        cell.backgroundColor = UIColor.yellowColor()
-    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return interests.count}
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("InterestsCell", forIndexPath: indexPath) as! InterestsCell
-        
         cell.cellLabel.text = self.interests[indexPath.row]
-        
-        UICollectionViewCell.animateWithDuration(0.25, animations: { cell.alpha = 1 })
-        
-        
+        cell.cellLabel.textColor = UIColor.blackColor()
+        cell.backgroundColor = UIColor.whiteColor()
+        cell.layer.borderColor = UIColor.grayColor().CGColor
+        cell.layer.borderWidth = 1
         return cell
     }
+    
+    // MARK: - UICollectionViewDelegate protocol
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // handle tap events
+        print("You selected cell #\(indexPath.item)!")
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        cell?.backgroundColor = UIColor.lightGrayColor()
+        print(interests[indexPath.row])
+        self.selected.append(interests[indexPath.row])
+    }
+
 
     @IBAction func doneButton(sender: AnyObject) {
         if selected.count < 5 {
@@ -69,5 +79,6 @@ class Interests: UIViewController, UICollectionViewDelegate {
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }
-    
 }
+
+

@@ -83,24 +83,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     //notifications
     func initializeNotificationServices() -> Void {
-        //let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
+        let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
         let application = UIApplication.sharedApplication()
-        //application.registerUserNotificationSettings(settings)
+        application.registerUserNotificationSettings(settings)
         
-        // This is an asynchronous method to retrieve a Device Token
-        // Callbacks are in AppDelegate.swift
-        // Success = didRegisterForRemoteNotificationsWithDeviceToken
-        // Fail = didFailToRegisterForRemoteNotificationsWithError
-        //UIApplication.sharedApplication().registerForRemoteNotifications()
-        if application.respondsToSelector("registerUserNotificationSettings:") {
-            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
-            application.registerUserNotificationSettings(settings)
-            application.registerForRemoteNotifications()
-        }
-        else {
-            application.registerForRemoteNotifications()
-            //application.registerUserNotificationSettings()//[.Alert, .Sound, .Badge]
-        }
+        application.registerForRemoteNotifications()
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
