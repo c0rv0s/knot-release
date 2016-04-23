@@ -74,11 +74,11 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
-                  timestampString = "483068460.460641"
+                  timestampString = "483071629.586381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "811"
-                  endingLineNumber = "811"
+                  startingLineNumber = "817"
+                  endingLineNumber = "817"
                   offsetFromSymbolStart = "224">
                </Location>
                <Location
@@ -89,11 +89,11 @@
                   moduleName = "Knot"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
-                  timestampString = "483068460.460844"
+                  timestampString = "483071629.58668"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "812"
-                  endingLineNumber = "812"
+                  startingLineNumber = "818"
+                  endingLineNumber = "818"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>
@@ -112,6 +112,22 @@
             startingLineNumber = "809"
             endingLineNumber = "809"
             landmarkName = "showPasswordAlert()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/PhotoStreamViewController.swift"
+            timestampString = "483071510.243"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "post(_:url:postCompleted:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -70,7 +70,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         super.viewDidLoad()
         
         //search
-        let controller = UISearchController(searchResultsController: nil)
+        _ = UISearchController(searchResultsController: nil)
         //self.colView.tableHeaderView = controller.searchBar
         self.searchController = UISearchController(searchResultsController:  nil)
         
@@ -122,7 +122,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         colView.addSubview(refreshControl)
         
         // When activated, invoke our refresh function
-        self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: #selector(AWSIdentityProvider.refresh), forControlEvents: UIControlEvents.ValueChanged)
         //self.cognitoID = self.appDelegate.cognitoId!
         
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
@@ -171,16 +171,16 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                 } else if let err = error {
                     
                     self.locGiven = false
-                    var alertController = UIAlertController (title: "Location Services disabled.", message: "Enabling location services allows Knot to show you listings in your area.", preferredStyle: .Alert)
+                    let alertController = UIAlertController (title: "Location Services disabled.", message: "Enabling location services allows Knot to show you listings in your area.", preferredStyle: .Alert)
                     
-                    var settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
+                    let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in
                         let settingsUrl = NSURL(string: UIApplicationOpenSettingsURLString)
                         if let url = settingsUrl {
                             UIApplication.sharedApplication().openURL(url)
                         }
                     }
                     
-                    var cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .Default, handler: nil)
                     alertController.addAction(settingsAction)
                     alertController.addAction(cancelAction)
                     
@@ -195,14 +195,14 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             self.loadPhotos()
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "appWasOpened:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PhotoStreamViewController.appWasOpened(_:)), name: UIApplicationWillEnterForegroundNotification, object: nil)
         
         
         //menu setup
 
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
@@ -255,7 +255,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         // This is where you'll make requests to an API, reload data, or process information
         self.loadPhotos()
         let delayInSeconds = 3.0;
-        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
             // When done requesting/reloading/processing invoke endRefreshing, to close the control
             self.refreshControl.endRefreshing()
@@ -267,8 +267,8 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     func post(param : String, url : String, postCompleted : (succeeded: Bool, msg: String) -> ()) {
         self.favItemIDs = []
         self.collectionItemsFav = []
-        var request = NSMutableURLRequest(URL: NSURL(string: url)!)
-        var session = NSURLSession.sharedSession()
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         
         var err: NSError?
@@ -278,9 +278,9 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("w0CrbxlfvCzf6xvOQ35q1wcFXGTO1NY2Ff3mIZjb", forHTTPHeaderField: "x-api-key")
         
-        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
             print("Response: \(response)")
-            var strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("Body: \(strData)")
             var err: NSError?
 
@@ -338,7 +338,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                     for item in paginatedOutput.items as! [ListItem] {
                         if item.sold == "false" {
-                            var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
+                            let secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
                             if (secondsUntil > (0 - 5 * 60)) {
                                 self.downloadImage(item)
                                 
@@ -472,7 +472,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                     if self.needsToRefresh == false {
                         
                         if let count = (self.collectionItems.indexOf(item)) {
-                            var indexPath = NSIndexPath(forItem: count, inSection: 0)
+                            let indexPath = NSIndexPath(forItem: count, inSection: 0)
                             if self.colView.cellForItemAtIndexPath(indexPath) != nil {
                                 self.colView.reloadItemsAtIndexPaths([indexPath])
                             }
@@ -695,7 +695,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         }
         
         if cell.cellItem.authenticated {
-            cell.thumbImage.image = UIImage(named: "thumbprint")
+            //cell.thumbImage.image = UIImage(named: "thumbprint")
         }
         
         cell.titleLabel.text = cell.cellItem.name

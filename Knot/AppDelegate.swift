@@ -73,10 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
-        
+        /*
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             self.loggedIn = true
-        }
+        }*/
     }
     
     //notifications
@@ -96,7 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             application.registerForRemoteNotifications()
         }
         else {
-            application.registerForRemoteNotificationTypes([.Alert, .Sound, .Badge])
+            application.registerForRemoteNotifications()
+            //application.registerUserNotificationSettings()//[.Alert, .Sound, .Badge]
         }
     }
     
@@ -231,7 +232,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
-            dict[NSUnderlyingErrorKey] = error as! NSError
+            dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             // Replace this with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.

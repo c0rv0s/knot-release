@@ -343,7 +343,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_sendbird_btn_list_edit"), style: UIBarButtonItemStyle.Plain, target: self, action: "editMessagingChannel:")
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
-            self.navigationItem.rightBarButtonItem?.enabled = true
+            self.navigationItem.rightBarButtonItem?.enabled = false
             
             //self.navigationItem.leftBarButtonItem?.enabled = true
         }
@@ -366,6 +366,7 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             self.navigationItem.rightBarButtonItems = Array()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_setting"), style: UIBarButtonItemStyle.Plain, target: self, action: "openMenuActionSheet:")
             self.navigationItem.rightBarButtonItem?.tintColor = UIColor.whiteColor()
+            self.navigationItem.rightBarButtonItem?.enabled = false
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "_btn_back"), style: UIBarButtonItemStyle.Plain, target: self, action: "goBack:")
             self.navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         }
@@ -1432,9 +1433,9 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         if tableView == self.messagingChannelListTableView {
             if self.viewMode == kMessagingChannelListEditViewMode {
                 tableView.cellForRowAtIndexPath(indexPath)?.selected = true
-                self.navigationItem.rightBarButtonItem?.enabled = true
+                self.navigationItem.rightBarButtonItem?.enabled = false
                 for item in self.navigationItem.rightBarButtonItems! {
-                    (item as UIBarButtonItem).enabled = true
+                    //(item as UIBarButtonItem).enabled = true
                 }
             }
             else {
@@ -1472,9 +1473,9 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
             if self.viewMode == kMessagingChannelListEditViewMode || self.viewMode == kMessagingMemberForGroupChatViewMode {
                 tableView.cellForRowAtIndexPath(indexPath)?.selected = false
                 if tableView.indexPathsForSelectedRows?.count > 0 {
-                    self.navigationItem.rightBarButtonItem?.enabled = true
+                    self.navigationItem.rightBarButtonItem?.enabled = false
                     for item in self.navigationItem.rightBarButtonItems! {
-                        item.enabled = true
+                        item.enabled = false
                     }
                 }
                 else {

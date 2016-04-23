@@ -30,6 +30,18 @@ class MenuController: UITableViewController {
     }
     
     func returnUserDataForProf() {
+        //get name
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("profileInfo")
+        if (dataset.stringForKey("firstName") != nil) {
+            var fName = dataset.stringForKey("firstName")
+            if (dataset.stringForKey("lastName") != nil) {
+                var lName = dataset.stringForKey("lastName")
+                self.nameLabel.text = fName + " " + lName
+            }
+        }
+        
+        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
@@ -41,8 +53,8 @@ class MenuController: UITableViewController {
             else
             {
                 print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                self.nameLabel.text = userName as String
+                //let userName : NSString = result.valueForKey("name") as! NSString
+                //self.nameLabel.text = userName as String
                 
                 if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
                     if let data = NSData(contentsOfURL: url){

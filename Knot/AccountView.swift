@@ -99,6 +99,17 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     }
     
     func returnUserDataForProf() {
+        //get name
+        let syncClient = AWSCognito.defaultCognito()
+        let dataset = syncClient.openOrCreateDataset("profileInfo")
+        if (dataset.stringForKey("firstName") != nil) {
+            let fName = dataset.stringForKey("firstName")
+            if (dataset.stringForKey("lastName") != nil) {
+                let lName = dataset.stringForKey("lastName")
+                self.Name.text = fName + " " + lName
+            }
+        }
+        
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
             
@@ -110,12 +121,12 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             else
             {
                 print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                self.Name.text = userName as String
+                //let userName : NSString = result.valueForKey("name") as! NSString
+                //self.Name.text = userName as String
                 
                 if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
                     if let data = NSData(contentsOfURL: url){
-                        var profilePicture = UIImage(data: data)
+                        let profilePicture = UIImage(data: data)
                         
                         self.profPic.image = profilePicture
 

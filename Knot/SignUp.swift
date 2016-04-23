@@ -148,7 +148,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
             self.lastNameLabel.text = dataset.stringForKey("lastName")
         }
         if (dataset.stringForKey("SBID") != nil) {
-            print(dataset.stringForKey("lastName"))
+            print(dataset.stringForKey("SBID"))
         }
         /*
         if (dataset.stringForKey("email") != nil) {
