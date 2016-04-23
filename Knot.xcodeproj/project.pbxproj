@@ -107,6 +107,13 @@
 		431F1A581C1127FB00EDB1A8 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 431F1A571C1127FB00EDB1A8 /* Social.framework */; };
 		432FC62C1CCAF859008EDDC6 /* PITouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */; };
 		432FC62E1CCB1C43008EDDC6 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC62D1CCB1C43008EDDC6 /* FloatRatingView.swift */; };
+		432FC6301CCB2D80008EDDC6 /* interestsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC62F1CCB2D80008EDDC6 /* interestsCell.swift */; };
+		432FC6341CCB426F008EDDC6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 432FC6311CCB426F008EDDC6 /* GameScene.sks */; };
+		432FC6351CCB426F008EDDC6 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC6321CCB426F008EDDC6 /* GameScene.swift */; };
+		432FC6361CCB426F008EDDC6 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FC6331CCB426F008EDDC6 /* GameViewController.swift */; };
+		432FC6391CCB429E008EDDC6 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 432FC6381CCB429D008EDDC6 /* bird.atlas */; };
+		432FC63B1CCB45A5008EDDC6 /* Rick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */; };
+		432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */; };
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912451CB76A1A00100C64 /* ArrayEx.swift */; };
 		4339124F1CB76A1A00100C64 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912461CB76A1A00100C64 /* CGPointEx.swift */; };
@@ -338,6 +345,13 @@
 		431F1A571C1127FB00EDB1A8 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PITouchIDManager.swift; sourceTree = "<group>"; };
 		432FC62D1CCB1C43008EDDC6 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		432FC62F1CCB2D80008EDDC6 /* interestsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = interestsCell.swift; sourceTree = "<group>"; };
+		432FC6311CCB426F008EDDC6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		432FC6321CCB426F008EDDC6 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		432FC6331CCB426F008EDDC6 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		432FC6381CCB429D008EDDC6 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
+		432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rick.mp3; sourceTree = "<group>"; };
+		432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Erasure Always.mp3"; sourceTree = "<group>"; };
 		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		433912451CB76A1A00100C64 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		433912461CB76A1A00100C64 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
@@ -644,6 +658,10 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
+				432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */,
+				432FC6381CCB429D008EDDC6 /* bird.atlas */,
+				432FC6371CCB427B008EDDC6 /* Flappy */,
 				433912431CB76A1A00100C64 /* Liquid Action Button */,
 				431261851C900A3800A47BFD /* Mixpanel */,
 				43665D171C702FAE0069A3AA /* SendBird */,
@@ -654,6 +672,7 @@
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
 				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
 				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
+				432FC62F1CCB2D80008EDDC6 /* interestsCell.swift */,
 				43C924941C0818220006E181 /* Bridging-Header.h */,
 				43F206491C7F8F5300CEEDFF /* viewcontrollers */,
 				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
@@ -667,6 +686,16 @@
 				43DD12101C8F9F730013034E /* itemDetailInfo.xib */,
 			);
 			path = Knot;
+			sourceTree = "<group>";
+		};
+		432FC6371CCB427B008EDDC6 /* Flappy */ = {
+			isa = PBXGroup;
+			children = (
+				432FC6311CCB426F008EDDC6 /* GameScene.sks */,
+				432FC6321CCB426F008EDDC6 /* GameScene.swift */,
+				432FC6331CCB426F008EDDC6 /* GameViewController.swift */,
+			);
+			name = Flappy;
 			sourceTree = "<group>";
 		};
 		433912431CB76A1A00100C64 /* Liquid Action Button */ = {
@@ -894,9 +923,13 @@
 				43DD12111C8F9F730013034E /* itemDetailInfo.xib in Resources */,
 				43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
+				432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
 				431262291C900A3A00A47BFD /* MPNotification.storyboard in Resources */,
+				432FC6341CCB426F008EDDC6 /* GameScene.sks in Resources */,
+				432FC63B1CCB45A5008EDDC6 /* Rick.mp3 in Resources */,
+				432FC6391CCB429E008EDDC6 /* bird.atlas in Resources */,
 				431262361C900A3A00A47BFD /* MPSurvey.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1052,9 +1085,11 @@
 				431942871C4EBB14000373B3 /* AddScene.swift in Sources */,
 				4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */,
 				43665D361C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift in Sources */,
+				432FC6351CCB426F008EDDC6 /* GameScene.swift in Sources */,
 				43665D371C7030370069A3AA /* MessagingMyMessageTableViewCell.swift in Sources */,
 				4312623A1C900A3A00A47BFD /* MPSwizzler.m in Sources */,
 				4312623F1C900A3A00A47BFD /* MPUIColorToNSStringValueTransformer.m in Sources */,
+				432FC6361CCB426F008EDDC6 /* GameViewController.swift in Sources */,
 				431262341C900A3A00A47BFD /* MPSequenceGenerator.m in Sources */,
 				4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */,
 				431262451C900A3A00A47BFD /* MPVariant.m in Sources */,
@@ -1075,6 +1110,7 @@
 				4312624B1C900A3A00A47BFD /* UIColor+MPColor.m in Sources */,
 				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
 				431262211C900A3A00A47BFD /* MPCGSizeToNSDictionaryValueTransformer.m in Sources */,
+				432FC6301CCB2D80008EDDC6 /* interestsCell.swift in Sources */,
 				43665D391C7030370069A3AA /* TypingNowView.swift in Sources */,
 				431262411C900A3A00A47BFD /* MPUIEdgeInsetsToNSDictionaryValueTransformer.m in Sources */,
 				43665D2E1C7030370069A3AA /* MemberTableViewCell.swift in Sources */,

@@ -14,6 +14,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     //user analytics
     @IBOutlet weak var revenueLabel: UILabel!
     @IBOutlet weak var numSoldLabel: UILabel!
+    var flappyScore = ""
     
     @IBOutlet weak var profCompleteLabel: UILabel!
     @IBOutlet weak var completeProfileAlert: UIImageView!
@@ -121,6 +122,10 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             self.starRating = Int(dataset.stringForKey("rating"))!
             self.floatRatingView.rating = Float(starRating)
         }
+        if (dataset.stringForKey("flappyScore") != nil) {
+            self.flappyScore = dataset.stringForKey("flappyScore")
+        }
+        
         
         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
         graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
@@ -168,6 +173,11 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
                 print("User Name is: \(userName)")
             }
         })
+    }
+    @IBAction func scoreButton(sender: AnyObject) {
+        //var alert = UIAlertView(title: "High Score", message: flappyScore, delegate: nil, cancelButtonTitle: "OK")
+        //alert.show()
+        self.Name.text = flappyScore
     }
     
     func imageFadeIn(imageView: UIImageView, image: UIImage) {

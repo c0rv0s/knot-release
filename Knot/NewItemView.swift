@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import LocalAuthentication
+import AVKit
+import AVFoundation
 
 class NewItemView: UIViewController, UITextFieldDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
@@ -70,6 +72,28 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //location
     var locString = ""
+    
+    //stuff
+    var erasure : AVAudioPlayer?
+    var rick : AVAudioPlayer?
+    
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+        //1
+        let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+        let url = NSURL.fileURLWithPath(path!)
+        
+        //2
+        var audioPlayer:AVAudioPlayer?
+        
+        // 3
+        do {
+            try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+        } catch {
+            print("Player not available")
+        }
+        
+        return audioPlayer
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -423,6 +447,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -713,6 +738,59 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
         self.presentViewController(vc, animated: true, completion: nil)
  */
+        if nameField.text == "Booty" {
+            if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        if nameField.text == "Studmuffin" {
+            if let url = NSURL(string: "https://www.facebook.com/nathan.mueller2") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        if nameField.text == "Suicide" {
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("GameView") as! UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+        if nameField.text == "Oniichan" {
+            if let url = NSURL(string: "https://soundcloud.com/shinobusuki/must-die-onii-chanaire-remix") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        }
+        if nameField.text == "Easter" {
+            if let music = self.setupAudioPlayerWithFile("Rick", type:"mp3") {
+                self.rick = music
+            }
+            rick?.volume = 0.5
+            rick?.play()
+        }
+        if nameField.text == "Love" {
+            if let backgroundMusic = self.setupAudioPlayerWithFile("Erasure Always", type:"mp3") {
+                self.erasure = backgroundMusic
+            }
+            erasure?.volume = 0.5
+            erasure?.play()
+        }
+        if nameField.text == "Dunky" {
+            /*
+            let phoneNumber = "6509697272"
+             let callNumber = phoneNumber {
+                
+                let aURL = NSURL(string: "telprompt://\(callNumber)")
+                if UIApplication.sharedApplication().canOpenURL(aURL) {
+                    UIApplication.sharedApplication().openURL(aURL)
+                } else {
+                    print("error")
+                }
+            //}
+            //else {
+              //  print("error")} */
+        }
+        if nameField.text == "pride" {
+            self.appDelegate.prideOn = true
+        }
+        
+        
         UIApplication.sharedApplication().statusBarHidden = true
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)

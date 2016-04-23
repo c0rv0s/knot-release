@@ -11,12 +11,19 @@ import UIKit
 class navsub: UINavigationController {
     
     //let tintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
+    let del = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationBar.translucent = false
         self.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationBar.barTintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
+        if self.del.prideOn {
+            self.navigationBar.barTintColor = UIColor.purpleColor()
+        }
+        else {
+            self.navigationBar.barTintColor = UIColor(red: 1, green: 175/255, blue: 35/255, alpha: 1)
+        }
+        
 
         //let fontDictionary = [ NSForegroundColorAttributeName:UIColor.whiteColor() ]
         //self.navigationBar.titleTextAttributes = fontDictionary

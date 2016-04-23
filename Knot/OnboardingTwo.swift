@@ -73,7 +73,7 @@ class OnboardingTwo: UIViewController, UITextFieldDelegate {
             }))
             self.presentViewController(alert, animated: true, completion: nil)
  */
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Interests") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }
