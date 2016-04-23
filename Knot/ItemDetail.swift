@@ -14,6 +14,7 @@ import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
     
+    @IBOutlet weak var thumbImage: UIImageView!
     @IBOutlet weak var multiplePics: UIButton!
     //@IBOutlet weak var pageControl: UIPageControl!
     //@IBOutlet weak var imageScroll: UIScrollView!
@@ -160,6 +161,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         priceLabel.text = "$" + price
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
+        
+        if DetailItem.authenticated {
+            self.thumbImage.image = UIImage(named: "thumbprint")
+        }
         
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)

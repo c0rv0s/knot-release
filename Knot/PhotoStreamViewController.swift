@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import CoreLocation
 
-class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActionButtonDataSource, LiquidFloatingActionButtonDelegate, UISearchControllerDelegate, UISearchBarDelegate{
+class PhotoStreamViewController: UICollectionViewController, UISearchControllerDelegate, UISearchBarDelegate{
     var lock:NSLock?
     var lastEvaluatedKey:[NSObject : AnyObject]!
     
@@ -114,8 +114,6 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         self.collectionItemsUnder100 = []
         self.collectionItemsOver100Miles = []
         
-        
-        
         lock = NSLock()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
@@ -140,32 +138,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         }
         
         //fetch blocked users
-        
-        /*
-        //floating action button
-        let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
-            let floatingActionButton = LiquidFloatingActionButton(frame: frame)
-            floatingActionButton.animateStyle = style
-            floatingActionButton.dataSource = self
-            floatingActionButton.delegate = self
-            return floatingActionButton
-        }
-        
-        let cellFactory: (String) -> LiquidFloatingCell = { (iconName) in
-            return LiquidFloatingCell(icon: UIImage(named: iconName)!)
-        }
-        cells.append(cellFactory("ic_cloud"))
-        cells.append(cellFactory("ic_system"))
-        cells.append(cellFactory("ic_place"))
-        
-        let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
-        let bottomRightButton = createButton(floatingFrame, .Up)
-        
-        let floatingFrame2 = CGRect(x: 16, y: 16, width: 56, height: 56)
-        let topLeftButton = createButton(floatingFrame2, .Down)
-        
-        self.view.addSubview(bottomRightButton)
- */
+
         
         //fetch KRE data
         self.post(self.cognitoID, url: "https://n30y3ya59k.execute-api.us-east-1.amazonaws.com/prod/KREapi") { (succeeded: Bool, msg: String) -> () in
@@ -269,20 +242,6 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    //action button
-    func numberOfCells(liquidFloatingActionButton: LiquidFloatingActionButton) -> Int {
-        return cells.count
-    }
-    
-    func cellForIndex(index: Int) -> LiquidFloatingCell {
-        return cells[index]
-    }
-    
-    func liquidFloatingActionButton(liquidFloatingActionButton: LiquidFloatingActionButton, didSelectItemAtIndex index: Int) {
-        print("did Tapped! \(index)")
-        liquidFloatingActionButton.close()
     }
     
     /*
@@ -511,11 +470,11 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
                     self.collectionImages[S3DownloadKeyName] = self.cropToSquare(image: UIImage(data: data!)!)
                     
                     if self.needsToRefresh == false {
+                        
                         if let count = (self.collectionItems.indexOf(item)) {
                             var indexPath = NSIndexPath(forItem: count, inSection: 0)
                             if self.colView.cellForItemAtIndexPath(indexPath) != nil {
                                 self.colView.reloadItemsAtIndexPaths([indexPath])
-                                
                             }
                         }
                             
@@ -556,7 +515,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if searchController.active && searchController.searchBar.text != "" && searchController.searchBar.text?.characters.count > 0 {
+        if searchController.active && searchController.searchBar.text != "" {
             return (self.filterItems?.count)!
         }
         else {
@@ -572,26 +531,8 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "FeedDetailSeg") {
             let viewController:ItemDetail = segue!.destinationViewController as! ItemDetail
-            //viewController.hidesBottomBarWhenPushed = true
-            
-            //viewController.pic = collectionImages[collectionItems![self.selectedRow].ID]!
             
             viewController.DetailItem = collectionItems![self.selectedRow]
-/*
-            viewController.name = collectionItems![self.selectedRow].name
-            viewController.price = collectionItems![self.selectedRow].price
-            viewController.time = collectionItems![self.selectedRow].time
-            viewController.IDNum = collectionItems![self.selectedRow].ID
-            viewController.itemSeller = collectionItems![self.selectedRow].seller
-            viewController.location = collectionItems![self.selectedRow].location
-            viewController.sold = collectionItems![self.selectedRow].sold
-            viewController.fbID = collectionItems![self.selectedRow].sellerFBID
-            viewController.descript = collectionItems![self.selectedRow].descriptionKnot
-            viewController.condition = collectionItems![self.selectedRow].condition
-            //viewController.category = collectionItems![self.selectedRow].category
-            viewController.numPics = collectionItems![self.selectedRow].numberOfPics
-            viewController.sellerSBID = collectionItems![self.selectedRow].sellerSBID
- */
             
             if self.cognitoID == collectionItems![self.selectedRow].seller {
                 viewController.owned = true
@@ -632,12 +573,12 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
             // search and reload data source
             self.searchBarActive    = true
             self.filterContentForSearchText(searchText)
-            self.collectionView?.reloadData()
+            self.colView.reloadData()
         }else{
             // if text lenght == 0
             // we will consider the searchbar is not active
             self.searchBarActive = false
-            self.collectionView?.reloadData()
+            self.colView?.reloadData()
         }
         
     }
@@ -666,6 +607,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
         self.searchBarActive = false
         self.searchBar!.setShowsCancelButton(false, animated: false)
     }
+    
     func cancelSearching(){
         self.searchBarActive = false
         self.searchBar!.resignFirstResponder()
@@ -727,8 +669,7 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
         
-        
-        if searchController.active && searchController.searchBar.text?.characters.count > 1 && self.filterItems!.count >= 1 {
+        if searchController.active && searchController.searchBar.text?.characters.count > 0 {
             cell.cellItem = self.filterItems?[indexPath.row]
         } else {
  
@@ -752,6 +693,11 @@ class PhotoStreamViewController: UICollectionViewController, LiquidFloatingActio
             cell.countdownLabel.textColor = UIColor.redColor()
             cell.countdownLabel.text = "Ended"
         }
+        
+        if cell.cellItem.authenticated {
+            cell.thumbImage.image = UIImage(named: "thumbprint")
+        }
+        
         cell.titleLabel.text = cell.cellItem.name
         cell.imageView.image = cell.cellPic
         cell.alpha = 0

@@ -764,7 +764,7 @@
                                         <blurEffect style="light"/>
                                     </visualEffectView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-rw-427">
-                                        <rect key="frame" x="8" y="383" width="323" height="44"/>
+                                        <rect key="frame" x="8" y="383" width="308" height="44"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -826,6 +826,9 @@
                                             <action selector="ShowOtherPics:" destination="No7-vI-DDg" eventType="touchUpInside" id="aBo-BA-T7K"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tn-6g-JDx">
+                                        <rect key="frame" x="323" y="383" width="44" height="44"/>
+                                    </imageView>
                                 </subviews>
                                 <connections>
                                     <outlet property="delegate" destination="No7-vI-DDg" id="p5l-uL-FDB"/>
@@ -877,6 +880,7 @@
                         <outlet property="savelabel" destination="qxe-3g-jLb" id="CDS-dD-1Ca"/>
                         <outlet property="scrollView" destination="9kf-b3-a9c" id="Jq8-kw-8mI"/>
                         <outlet property="sellerName" destination="zF7-d4-PZp" id="Dmh-az-fCG"/>
+                        <outlet property="thumbImage" destination="5tn-6g-JDx" id="hSf-az-S0y"/>
                         <outlet property="timeLabel" destination="fqN-zo-Vf5" id="e5K-Ma-NYz"/>
                         <segue destination="h3w-g6-Cxi" kind="presentation" identifier="editListing" id="FCL-aZ-MqM"/>
                         <segue destination="vvZ-zI-IKU" kind="show" identifier="contactSegue" id="5Ei-1s-dmw"/>
@@ -1179,7 +1183,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="travel-1" translatesAutoresizingMaskIntoConstraints="NO" id="8Vs-Hu-cKu">
                                 <rect key="frame" x="137" y="276" width="100" height="100"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Do you want to see products near you?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Hg-PPj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Do you want to see products nearby you?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-Hg-PPj">
                                 <rect key="frame" x="67" y="129" width="240" height="89"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
@@ -1323,6 +1327,9 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6H-xv-cmJ">
+                                                    <rect key="frame" x="143" y="143" width="32" height="32"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
@@ -1339,6 +1346,7 @@
                                     <outlet property="countdownLabel" destination="kII-rZ-mIN" id="Vku-Yk-5IG"/>
                                     <outlet property="imageView" destination="rI8-Z3-6va" id="Pw9-VK-Nqm"/>
                                     <outlet property="roundCornersView" destination="Djh-5F-ngW" id="6EK-3E-SNp"/>
+                                    <outlet property="thumbImage" destination="K6H-xv-cmJ" id="Uu9-ho-Eki"/>
                                     <outlet property="titleLabel" destination="PMH-ed-y6j" id="Oal-jL-KNc"/>
                                 </connections>
                             </collectionViewCell>
@@ -1940,14 +1948,14 @@
         <image name="travel-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZxO-bs-lmd"/>
-        <segue reference="uIL-st-cTj"/>
-        <segue reference="y1g-Rx-8Dr"/>
-        <segue reference="62l-zR-q1q"/>
-        <segue reference="kyH-4W-YAm"/>
         <segue reference="QDv-Ff-5zX"/>
+        <segue reference="ZxO-bs-lmd"/>
+        <segue reference="kyH-4W-YAm"/>
+        <segue reference="62l-zR-q1q"/>
+        <segue reference="y1g-Rx-8Dr"/>
+        <segue reference="uIL-st-cTj"/>
         <segue reference="vYY-fy-rD9"/>
-        <segue reference="kQM-Sl-uHn"/>
-        <segue reference="Drj-3A-paX"/>
+        <segue reference="yTs-ay-f60"/>
+        <segue reference="5Ei-1s-dmw"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,7 @@ class ListItem : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var international : Bool = false
     var numberOfPics : Int = 1
     var sellerSBID : String = "0"
+    var authenticated : Bool = false
     
     /*
     override init!() { super.init() }

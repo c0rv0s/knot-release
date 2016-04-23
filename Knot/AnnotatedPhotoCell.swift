@@ -10,6 +10,7 @@ import UIKit
 
 class AnnotatedPhotoCell: UICollectionViewCell {
   
+    @IBOutlet weak var thumbImage: UIImageView!
     @IBOutlet weak var countdownLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!

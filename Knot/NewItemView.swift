@@ -8,9 +8,12 @@
 
 import UIKit
 import CoreLocation
+import LocalAuthentication
 
 class NewItemView: UIViewController, UITextFieldDelegate,
 UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+    
+    var limitLength = 20
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -205,6 +208,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.preUploadComplete = false
     }
     
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.characters.count + string.characters.count - range.length
+        return newLength <= limitLength
+    }
+    
     func makeScrambledLocation(location: CLLocation) {
         var newLat = location.coordinate.latitude
         var newLon = location.coordinate.longitude
@@ -250,7 +259,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         return randomString
     }
     
-    func insertItem(uniqueID: String) -> BFTask! {
+    func insertItem(uniqueID: String, auth: Bool) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
         /***CONVERT FROM NSDate to String ****/
@@ -282,6 +291,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }*/
         
         let item = ListItem()
+        
+        if auth {
+            item.authenticated = true
+        }
         
         item.name  = self.nameField.text!
         item.ID   = uniqueID
@@ -646,70 +659,21 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
-            UIApplication.sharedApplication().statusBarHidden = false
-            SwiftSpinner.show("Uploading \(self.nameField.text!)")
-            
-            /*
-            self.appDelegate.mixpanel!.track(
-                "New Upload",
-                properties: ["userID": self.cognitoID, "itemID": self.uniqueID]
-            )
- */
-            
-            self.insertItem(uniqueID).continueWithBlock({
-                (task: BFTask!) -> BFTask! in
-                
-                if (task.error != nil) {
-                    print(task.error!.description)
-                } else {
-                    print("DynamoDB save succeeded")
+            let userPrice = Int(self.priceField.text!)
+            if userPrice != nil {
+                if userPrice >= 50 {
+                    print("Valid Integer")
+                    let alert = UIAlertController(title: "Hey", message: "We noticed you're listing something fairly pricey. Would you like to sign that it is an authentic item? This will set buyers at ease about contacting you.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
+                        self.loadData(false)
+                    }))
+                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+                        self.authenticateUser()
+                    }))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
-                
-                return nil;
-            })
-            print("hello")
-            //upload image
-            let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-            
-            //
-            //
-            var success1 = 0
-            var success2 = 0
-            var success3 = 0
-            
-            //upload thumbnail
-            SwiftSpinner.show("Finishing Upload")
-            self.thumbnail = self.resizeImage(self.picOne)
-            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-            let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
-            dataThumb!.writeToURL(testFileURL1, atomically: true)
-            uploadRequest1.bucket = "knotcomplexthumbnails"
-            uploadRequest1.key = self.uniqueID
-            uploadRequest1.body = testFileURL1
-            let task1 = transferManager.upload(uploadRequest1)
-            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-                if task1.error != nil {
-                    print("Error: \(task1.error)")
-                } else {
-                    print("thumbnail added")
-                    self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                    
-                    repeat {
-                        var delayInSeconds = 1.0;
-                        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                            if self.preUploadComplete {
-                                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
-                            }
-                        }
-                    }
-                    while(self.preUploadComplete == false)
- 
-                }
-                return nil
             }
-            //done uploading
+
         }
     }
     
@@ -840,4 +804,129 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             //viewController.startApp = true
         }
     }
+    
+    //touch id
+    func showPasswordAlert() {
+    }
+    
+    func authenticateUser() {
+        let context : LAContext = LAContext()
+        var error : NSError?
+        var myLocalizedReasonString : NSString = "Authentication is required"
+        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
+                if success {
+                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                        self.loadData(true)
+                    })
+                }
+                else {
+                    // Authentification failed
+                    print(evaluationError?.localizedDescription)
+                    
+                    switch evaluationError!.code {
+                    case LAError.SystemCancel.rawValue:
+                        print("Authentication cancelled by the system")
+                    case LAError.UserCancel.rawValue:
+                        print("Authentication cancelled by the user")
+                    case LAError.UserFallback.rawValue:
+                        print("User wants to use a password")
+                        // We show the alert view in the main thread (always update the UI in the main thread)
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            self.showPasswordAlert()
+                        })
+                    default:
+                        print("Authentication failed")
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            self.showPasswordAlert()
+                        })
+                    }
+                }
+            })
+
+        }
+        else {
+            switch error!.code {
+            case LAError.TouchIDNotEnrolled.rawValue:
+                print("TouchID not enrolled")
+            case LAError.PasscodeNotSet.rawValue:
+                print("Passcode not set")
+            default:
+                print("TouchID not available")
+            }
+            self.showPasswordAlert()
+        }
+    }
+        //end touch id
+    
+    func loadData(auth: Bool) {
+        // Do whatever you want
+        UIApplication.sharedApplication().statusBarHidden = false
+        SwiftSpinner.show("Uploading \(self.nameField.text!)")
+        
+        /*
+         self.appDelegate.mixpanel!.track(
+         "New Upload",
+         properties: ["userID": self.cognitoID, "itemID": self.uniqueID]
+         )
+         */
+        
+        self.insertItem(uniqueID, auth: auth).continueWithBlock({
+            (task: BFTask!) -> BFTask! in
+            
+            if (task.error != nil) {
+                print(task.error!.description)
+            } else {
+                print("DynamoDB save succeeded")
+            }
+            
+            return nil;
+        })
+        print("hello")
+        //upload image
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        
+        //
+        //
+        var success1 = 0
+        var success2 = 0
+        var success3 = 0
+        
+        //upload thumbnail
+        SwiftSpinner.show("Finishing Upload")
+        self.thumbnail = self.resizeImage(self.picOne)
+        let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+        let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+        let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
+        dataThumb!.writeToURL(testFileURL1, atomically: true)
+        uploadRequest1.bucket = "knotcomplexthumbnails"
+        uploadRequest1.key = self.uniqueID
+        uploadRequest1.body = testFileURL1
+        let task1 = transferManager.upload(uploadRequest1)
+        task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if task1.error != nil {
+                print("Error: \(task1.error)")
+            } else {
+                print("thumbnail added")
+                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                
+                repeat {
+                    var delayInSeconds = 1.0;
+                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        if self.preUploadComplete {
+                            self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                        }
+                    }
+                }
+                    while(self.preUploadComplete == false)
+                
+            }
+            return nil
+        }
+        //done uploading
+
+        print("Load data")
+    }
+
 }
