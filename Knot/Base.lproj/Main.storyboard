@@ -635,20 +635,20 @@
                                             <action selector="cancelEdit:" destination="h3w-g6-Cxi" eventType="touchUpInside" id="doO-y1-fpm"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OD-CG-HBS">
-                                        <rect key="frame" x="40" y="224" width="63" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OD-CG-HBS">
+                                        <rect key="frame" x="19" y="224" width="110" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.68627450980392157" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-rr-VvE">
-                                        <rect key="frame" x="154" y="224" width="65" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZu-rr-VvE">
+                                        <rect key="frame" x="135" y="224" width="110" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.68627450980392157" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-cY-XRT">
-                                        <rect key="frame" x="273" y="224" width="66" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0JX-cY-XRT">
+                                        <rect key="frame" x="253" y="224" width="110" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.68627450980392157" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -677,7 +677,9 @@
                         <outlet property="nameField" destination="OYP-NB-7Ap" id="IUf-u8-Lxe"/>
                         <outlet property="photoOne" destination="OEC-K4-X21" id="ekg-bs-ya3"/>
                         <outlet property="photoThree" destination="jMf-mW-znI" id="F7f-Oa-5aE"/>
+                        <outlet property="photoThreeLabel" destination="0JX-cY-XRT" id="Vta-o2-GOj"/>
                         <outlet property="photoTwo" destination="A5j-bV-uSs" id="G4r-4r-9B8"/>
+                        <outlet property="photoTwoLabel" destination="EZu-rr-VvE" id="1gR-Un-6S2"/>
                         <outlet property="priceField" destination="mPz-1s-2Dd" id="Czb-6r-HsY"/>
                         <outlet property="roundedDescrip" destination="Zjc-v6-s0K" id="NNg-ab-oCt"/>
                         <outlet property="scrollView" destination="Gk4-qS-mAm" id="swM-hj-VEm"/>

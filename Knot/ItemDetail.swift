@@ -136,7 +136,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         //set button state
         if self.owned {
-            self.alternatingButton.setTitle("Mark As Sold", forState: .Normal)
+            self.alternatingButton.setTitle("Mark As Sold/Delete", forState: .Normal)
             self.reportSlashEdit.title = "Edit"
         }
         else {
@@ -599,41 +599,31 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             //self.performSegueWithIdentifier("paySegue", sender: self)
             let alert = UIAlertController(title: "Are You Sure?", message: "Is this transaction completed?", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
-                var checkpoint = 1
-                print(checkpoint)
-                checkpoint++
+
                 self.updateSoldStatus("Sold!")
-                print(checkpoint)
-                checkpoint++
+
                 self.sold = "true"
                 self.timeLabel.text = "Sold!"
                 self.timeLabel.textColor = UIColor.greenColor()
-                print(checkpoint)
-                checkpoint++
+
                 
                 self.appDelegate.mixpanel!.track?(
                     "Transaction Completed",
                     properties: ["userID": self.appDelegate.cognitoId!, "item": self.IDNum]
                 )
-                print(checkpoint)
-                checkpoint++
                 
                 let revenue = Double(self.DetailItem.price)
                 self.appDelegate.mixpanel!.people.increment([
                     "Number Sold": 1,
                     "Gross Revenue":  revenue!
                 ])
-                print(checkpoint)
-                checkpoint++
                 
                 var MixRevenue = String(revenue! * 0.02)
                 self.appDelegate.mixpanel!.track?(
                     "Revenue to KCT",
                     properties: ["revenue": MixRevenue]
                 )
-                print(checkpoint)
-                checkpoint++
-                
+
                 self.dataStash(self.IDNum, itemCondition: 5).continueWithBlock({
                     (task: BFTask!) -> BFTask! in
                     
@@ -645,9 +635,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                     
                     return nil;
                 })
-                print(checkpoint)
-                checkpoint++
-                
+
                 //store revenue data for user
                 let syncClient = AWSCognito.defaultCognito()
                 let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -656,10 +644,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
-                print(checkpoint)
-                checkpoint++
-                
-                
+
                 var grossSold = (dataset.stringForKey("gross"))
                 var newgross = 1
                 if (grossSold == nil || grossSold == "") {
@@ -674,15 +659,15 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
-                print(checkpoint)
-                checkpoint++
- 
-                
+
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
                 
+            }))
+            alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (alertAction) -> Void in
+                self.updateSoldStatus("deleted")
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in
             }))

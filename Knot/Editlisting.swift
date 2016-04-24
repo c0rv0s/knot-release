@@ -22,6 +22,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var picThree: UIImage!
     var thumbnail: UIImage!
     
+    @IBOutlet weak var photoTwoLabel: UILabel!
+    @IBOutlet weak var photoThreeLabel: UILabel!
     @IBOutlet weak var changePhotoOne: UIButton!
     
     @IBOutlet weak var changePhotoTwo: UIButton!
@@ -70,10 +72,15 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         picker.delegate = self
         // Do any additional setup after loading the view, typically from a nib
-        photoTwo.hidden = true
-        photoThree.hidden = true
-        changePhotoTwo.hidden = true
-        changePhotoThree.hidden = true
+        switch DetailItem.numberOfPics {
+        case 1:
+            photoTwoLabel.text = "Add Photo"
+        case 2:
+            photoThreeLabel.text = "Add Photo"
+        default:
+            photoTwoLabel.text = "Change"
+        }
+        
         
         nameField.delegate = self;
         
