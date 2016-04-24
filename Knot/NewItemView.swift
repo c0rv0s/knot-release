@@ -49,6 +49,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     @IBOutlet weak var descripFieldView: RoundedCornersView!
     
+    var authenticated = false
+    
     var photoNum : Int = 1
     let picker = UIImagePickerController()
     var fbID = "error"
@@ -686,7 +688,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             if userPrice != nil {
                 if userPrice >= 50 {
                     print("Valid Integer")
-                    let alert = UIAlertController(title: "Hey", message: "We noticed you're listing something fairly pricey. Would you like to sign that it is an authentic item? This will set buyers at ease about contacting you.", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false)
                     }))
@@ -710,10 +712,15 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
         
         print("Upload successful")
-        let alert = UIAlertController(title: "Success", message: "Your upload has completed. It should be visible in the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
+        var alertString = ""
+        if authenticated {
+            alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
+        }
+        else {
+            alertString = "This will be listed in the Knot Store in a few moments."
+        }
+        let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-            //self.presentViewController(vc, animated: true, completion: nil)
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
         }))
@@ -888,7 +895,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     func authenticateUser() {
         let context : LAContext = LAContext()
         var error : NSError?
-        var myLocalizedReasonString : NSString = "Authentication is required"
+        var myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
                 if success {

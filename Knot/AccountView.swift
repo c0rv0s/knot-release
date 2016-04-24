@@ -208,18 +208,15 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UIImag
     func showCamera() {
         let alert = UIAlertController(title: "Select Option:", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (alertAction) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
-                    self.picker.allowsEditing = false
-                    self.picker.sourceType = UIImagePickerControllerSourceType.Camera
-                    self.picker.cameraCaptureMode = .Photo
-                    self.picker.modalPresentationStyle = .FullScreen
-                    self.presentViewController(self.picker,
-                        animated: true,
-                        completion: nil)
-                }
-            })
-            
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                self.picker.allowsEditing = false
+                self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                self.picker.cameraCaptureMode = .Photo
+                self.picker.modalPresentationStyle = .FullScreen
+                self.presentViewController(self.picker,
+                    animated: true,
+                    completion: nil)
+            }
             
         }))
         alert.addAction(UIAlertAction(title: "Photos", style: .Default, handler: { (alertAction) -> Void in
@@ -229,15 +226,6 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UIImag
             self.presentViewController(self.picker,
                 animated: true,
                 completion: nil)
-            dispatch_async(dispatch_get_main_queue(), {
-                self.picker.allowsEditing = true
-                self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-                self.picker.modalPresentationStyle = .FullScreen
-                self.presentViewController(self.picker,
-                    animated: true,
-                    completion: nil)
-            })
-            
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
         self.presentViewController(alert, animated: true, completion: nil)
