@@ -322,9 +322,36 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             item.authenticated = true
         }
         
+        //parse to get just the first decimal point and two characters after
+        var priceString = ""
+        let priceArray = self.priceField.text!.componentsSeparatedByString(".")
+        if priceArray[0] == "" {
+            priceString = "0"
+        }
+        else {
+            priceString = priceArray[0]
+        }
+        for i in priceString.characters {
+            if (i == "0" || i == "1" || i == "2" || i == "3" || i == "4" || i == "5" || i == "6" || i == "7" || i == "8" || i == "9"){}
+            else {
+                priceString = String(priceString.characters.dropFirst())
+            }
+        }
+        for i in priceString.characters {
+            if i == "0" {
+                priceString = String(priceString.characters.dropFirst())
+            }
+            else {
+                break
+            }
+        }
+        print("priceString")
+        print(priceString)
+
+        
         item.name  = self.nameField.text!
         item.ID   = uniqueID
-        item.price   = self.priceField.text!
+        item.price   = priceString
         item.location =  locString
         item.time  = dateString
         item.sold = "false"
@@ -449,7 +476,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
-        
+
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -678,12 +705,41 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func submit(sender: AnyObject) {
+        //parse to get just the first decimal point and two characters after
+        var priceString = ""
+        let priceArray = self.priceField.text!.componentsSeparatedByString(".")
+        if priceArray[0] == "" {
+            priceString = "0"
+        }
+        else {
+            priceString = priceArray[0]
+        }
+        for i in priceString.characters {
+            if (i == "0" || i == "1" || i == "2" || i == "3" || i == "4" || i == "5" || i == "6" || i == "7" || i == "8" || i == "9"){}
+            else {
+                let alert = UIAlertController(title: "Attention", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+        for i in priceString.characters {
+            if i == "0" {
+                priceString = String(priceString.characters.dropFirst())
+            }
+            else {
+                break
+            }
+        }
+        print("priceString")
+        print(priceString)
+        
         if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "" || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition" || self.picOne == nil) {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
         else {
+            
             let userPrice = Int(self.priceField.text!)
             if userPrice != nil {
                 if userPrice >= 50 {

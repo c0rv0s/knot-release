@@ -136,7 +136,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         //set button state
         if self.owned {
-            self.alternatingButton.setTitle("Mark As Sold/Delete", forState: .Normal)
+            self.alternatingButton.setTitle("Mark As Sold or Delete", forState: .Normal)
             self.reportSlashEdit.title = "Edit"
         }
         else {

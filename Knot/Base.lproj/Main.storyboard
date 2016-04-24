@@ -57,6 +57,7 @@
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
+            <string>Gravity-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -1035,6 +1036,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDc-Nt-ON5">
                                         <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCu-0X-qDo">
+                                        <rect key="frame" x="-14" y="0.0" width="145" height="147"/>
+                                        <connections>
+                                            <action selector="changePicButton:" destination="xN7-XG-DRQ" eventType="touchUpInside" id="ACw-nn-35F"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -1043,13 +1050,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wV-8p-1UR">
-                                <rect key="frame" x="170" y="180" width="35" height="35"/>
-                                <state key="normal" image="camera_ready"/>
-                                <connections>
-                                    <action selector="changePicButton:" destination="xN7-XG-DRQ" eventType="touchUpInside" id="hOP-Sq-ag3"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rle-hv-7qp">
                                 <rect key="frame" x="67" y="231" width="240" height="297"/>
                                 <subviews>
@@ -1143,6 +1143,12 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-Y6-D9T">
+                                <rect key="frame" x="144" y="180" width="86" height="21"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1461,20 +1467,6 @@
                                 <rect key="frame" x="97" y="272" width="179" height="38"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KL-r2-kGK">
-                                <rect key="frame" x="330" y="164" width="30" height="30"/>
-                                <state key="normal" image="camera_ready"/>
-                                <connections>
-                                    <action selector="changeHeaderPhoto:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="Mqz-TL-A3B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTQ-U0-UUn">
-                                <rect key="frame" x="213" y="205" width="30" height="30"/>
-                                <state key="normal" image="camera_ready"/>
-                                <connections>
-                                    <action selector="changeProfPic:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="ZHL-3C-3Z3"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1502,7 +1494,6 @@
                     <connections>
                         <outlet property="Name" destination="geJ-zz-sjA" id="Ff3-db-euc"/>
                         <outlet property="buttonView" destination="vH7-q1-fBX" id="sC2-fS-RhL"/>
-                        <outlet property="changeProfPic" destination="kTQ-U0-UUn" id="KnF-fU-111"/>
                         <outlet property="completeProfile" destination="2q3-jN-0gG" id="ND8-8Q-fPy"/>
                         <outlet property="completeProfileAlert" destination="ihI-Y9-Ci1" id="1H7-KT-66o"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="0a1-hY-6qe"/>
@@ -1701,7 +1692,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-Yj-niw">
-                                <rect key="frame" x="16" y="98" width="343" height="30"/>
+                                <rect key="frame" x="20" y="139" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1709,7 +1700,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bja-kG-uYm">
-                                <rect key="frame" x="16" y="148" width="343" height="30"/>
+                                <rect key="frame" x="20" y="189" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1717,7 +1708,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0z4-Jx-are">
-                                <rect key="frame" x="16" y="249" width="97" height="30"/>
+                                <rect key="frame" x="20" y="290" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1725,7 +1716,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-yU-8dm">
-                                <rect key="frame" x="160" y="312" width="54" height="30"/>
+                                <rect key="frame" x="164" y="353" width="54" height="30"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.0" green="0.39215686274509803" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1734,7 +1725,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OFX-kt-dN9">
-                                <rect key="frame" x="16" y="198" width="343" height="30"/>
+                                <rect key="frame" x="20" y="239" width="343" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1742,13 +1733,31 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ezc-dg-I1n">
-                                <rect key="frame" x="290" y="249" width="69" height="30"/>
+                                <rect key="frame" x="294" y="290" width="69" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Yn6-Mw-DUA" id="Euh-JN-TfI"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pyD-Ui-eHh">
+                                <rect key="frame" x="27" y="81" width="149" height="30"/>
+                                <state key="normal" title="Edit Profile Picture">
+                                    <color key="titleColor" red="0.0" green="0.39215686274509803" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfPic:" destination="Yn6-Mw-DUA" eventType="touchUpInside" id="MHd-sg-DEq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWx-Wk-Kvp">
+                                <rect key="frame" x="231" y="81" width="124" height="30"/>
+                                <state key="normal" title="Edit Header">
+                                    <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeHeaderPhoto:" destination="Yn6-Mw-DUA" eventType="touchUpInside" id="WbT-q6-hNC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1764,7 +1773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jEG-6x-pYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674.0625" y="5200.8802816901407"/>
+            <point key="canvasLocation" x="673.5" y="5200.5"/>
         </scene>
         <!--Messaging-->
         <scene sceneID="fRB-S2-MH5">
@@ -1983,7 +1992,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tQy-h3-vyC">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="93"/>
                                 <color key="backgroundColor" red="1" green="0.68627450980392157" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="24"/>
                                 <state key="normal" title="Save">
@@ -2000,7 +2009,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5O-k0-4mm">
-                                <rect key="frame" x="0.0" y="153" width="375" height="436"/>
+                                <rect key="frame" x="0.0" y="153" width="375" height="413"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rXf-Qn-3WL">
                                     <size key="itemSize" width="160" height="40"/>
@@ -2086,7 +2095,6 @@
         <image name="KnotLogo-1" width="958" height="286"/>
         <image name="add139" width="32" height="32"/>
         <image name="avatar83" width="32" height="32"/>
-        <image name="camera_ready" width="205" height="205"/>
         <image name="chat55" width="32" height="32"/>
         <image name="filter" width="32" height="32"/>
         <image name="food-store" width="32" height="32"/>

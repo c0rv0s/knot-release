@@ -83,12 +83,7 @@ class MenuController: UITableViewController {
                     NSLog("Error: %@",error!);
                 }
                 else{
-                    if bucket == "user-prof-photos" {
-                        self.profPic.image = UIImage(data: data!)
-                    }
-                    if bucket == "header-photos" {
-                        //self.profPic = self.cropToSquare(image: UIImage(data: data!)!)
-                    }
+                    self.imageFadeIn(self.profPic, image: UIImage(data: data!)!)
                 }
             })
             
@@ -111,6 +106,22 @@ class MenuController: UITableViewController {
         
     }
 
+    func imageFadeIn(imageView: UIImageView, image: UIImage) {
+        
+        let secondImageView = UIImageView(image: image)
+        secondImageView.frame = imageView.frame
+        secondImageView.alpha = 0.0
+        
+        view.insertSubview(secondImageView, aboveSubview: imageView)
+        
+        UIView.animateWithDuration(0.33, delay: 0, options: .CurveEaseOut, animations: {
+            secondImageView.alpha = 1.0
+            }, completion: {_ in
+                imageView.image = secondImageView.image
+                secondImageView.removeFromSuperview()
+        })
+        
+    }
     
     // MARK: - Table view data source
     
