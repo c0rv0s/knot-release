@@ -8,13 +8,16 @@
 
 import Foundation
 import MessageUI
+import MobileCoreServices
 
-class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
+class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var headerPhoto: UIImageView!
+    @IBOutlet weak var changeProfPic: UIButton!
     //user analytics
     @IBOutlet weak var revenueLabel: UILabel!
     @IBOutlet weak var numSoldLabel: UILabel!
-    var flappyScore = ""
+    //var flappyScore = ""
     
     @IBOutlet weak var profCompleteLabel: UILabel!
     @IBOutlet weak var completeProfileAlert: UIImageView!
@@ -39,8 +42,14 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
     @IBOutlet var floatRatingView: FloatRatingView!
     var starRating = 5
     
+    let picker = UIImagePickerController()
+    
+    var whichPhoto = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.delegate = self
         
         self.completeProfile.hidden = true
         self.completeProfileAlert.hidden = true
@@ -99,11 +108,13 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
         }
         
         //store revenue data for user
-        let value3 = dataset.stringForKey("revenue")
-        self.revenueLabel.text = value3
+        if let value3 = dataset.stringForKey("revenue") {
+            self.revenueLabel.text = value3
+        }
         
-        let value4 = dataset.stringForKey("gross")
-        self.numSoldLabel.text = value4
+        if let value4 = dataset.stringForKey("gross") {
+            self.numSoldLabel.text = "$ " + value4
+        }
 
     }
     
@@ -122,62 +133,263 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate  {
             self.starRating = Int(dataset.stringForKey("rating"))!
             self.floatRatingView.rating = Float(starRating)
         }
+        /*
         if (dataset.stringForKey("flappyScore") != nil) {
             self.flappyScore = dataset.stringForKey("flappyScore")
-        }
+        }*/
         
-        
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                //let userName : NSString = result.valueForKey("name") as! NSString
-                //self.Name.text = userName as String
-                
-                if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
-                    if let data = NSData(contentsOfURL: url){
-                        let profilePicture = UIImage(data: data)
-                        
-                        self.profPic.image = profilePicture
-
-                        //self.imageFadeIn(self.profPic, image: profilePicture!)
-                        
-                    }
-                }
-
-            }
-        })
+        downloadImage(appDelegate.cognitoId!, bucket: "user-prof-photos")
+        downloadImage(appDelegate.cognitoId!, bucket: "header-photos")
     }
     
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: nil)
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+    func downloadImage(key: String, bucket: String) {
+        
+        var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+        
+        let S3BucketName: String = bucket
+        let S3DownloadKeyName: String = key
+        
+        let expression = AWSS3TransferUtilityDownloadExpression()
+        expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
+            dispatch_async(dispatch_get_main_queue(), {
+                let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+                //self.progressView.progress = progress
+                //   self.statusLabel.text = "Downloading..."
+                NSLog("Progress is: %f",progress)
+            })
+        }
+        
+        completionHandler = { (task, location, data, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                if ((error) != nil){
+                    NSLog("Failed with error")
+                    NSLog("Error: %@",error!);
+                }
+                else{
+                    if bucket == "user-prof-photos" {
+                        self.profPic.image = UIImage(data: data!)
+                    }
+                    if bucket == "header-photos" {
+                        self.headerPhoto.image = UIImage(data: data!)!
+                    }
+                }
+            })
             
-            if ((error) != nil)
+        }
+        
+        let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
+        
+        transferUtility.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
+            if let error = task.error {
+                NSLog("Error: %@",error.localizedDescription);
+            }
+            if let exception = task.exception {
+                NSLog("Exception: %@",exception.description);
+            }
+            if let _ = task.result {
+                
+            }
+            return nil;
+        }
+        
+    }
+    
+    @IBAction func changeProfPic(sender: AnyObject) {
+        whichPhoto = "profile"
+        showCamera()
+    }
+    
+    
+    @IBAction func changeHeaderPhoto(sender: AnyObject) {
+        whichPhoto = "header"
+        showCamera()
+    }
+    
+    func showCamera() {
+        let alert = UIAlertController(title: "Select Option:", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (alertAction) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                    self.picker.allowsEditing = false
+                    self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                    self.picker.cameraCaptureMode = .Photo
+                    self.picker.modalPresentationStyle = .FullScreen
+                    self.presentViewController(self.picker,
+                        animated: true,
+                        completion: nil)
+                }
+            })
+            
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Photos", style: .Default, handler: { (alertAction) -> Void in
+            self.picker.allowsEditing = true
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.picker.modalPresentationStyle = .FullScreen
+            self.presentViewController(self.picker,
+                animated: true,
+                completion: nil)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.picker.allowsEditing = true
+                self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+                self.picker.modalPresentationStyle = .FullScreen
+                self.presentViewController(self.picker,
+                    animated: true,
+                    completion: nil)
+            })
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            picker.modalPresentationStyle = .FullScreen
+            presentViewController(picker,
+                                  animated: true,
+                                  completion: nil)
+        }
+
+    }
+    
+    //MARK: - Delegates
+    //What to do when the picker returns with a photo
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        print("picker returns")
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        var picOne : UIImage!
+        var bucket : String!
+        if whichPhoto == "profile" {
+            picOne = self.resizeImage(self.cropToSquare(image: chosenImage))
+            bucket = "user-prof-photos"
+        }
+        else {
+            picOne = self.resizeImage(chosenImage)
+            bucket = "header-photos"
+        }
+        //myImageView.contentMode = .ScaleAspectFit //3
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        print("resize image")
+        
+        
+            //upload pic
+            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+            dataOne!.writeToURL(testFileURL1, atomically: true)
+            uploadRequest1.bucket = bucket
+            uploadRequest1.key = self.appDelegate.cognitoId
+            uploadRequest1.body = testFileURL1
+            let task1 = transferManager.upload(uploadRequest1)
+            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                if task1.error != nil {
+                    print("Error: \(task1.error)")
+                } else {
+                    //self.preUploadComplete = true
+                    print("photo one done")
+                }
+                return nil
+            }
+            //done uploading
+        print("download done, image set")
+        
+        if whichPhoto == "profile" {
+            self.profPic.image = picOne
+        }
+        else {
+            self.headerPhoto.image = picOne
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil) //5
+    }
+    //What to do if the image picker cancels.
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true,
+                                      completion: nil)
+    }
+    
+    func resizeImage(image: UIImage) -> UIImage {
+        var actualHeight = CGFloat(image.size.height)
+        var actualWidth = CGFloat(image.size.width)
+        var maxHeight = CGFloat(400.0)
+        var maxWidth = CGFloat(400.00)
+        var imgRatio = CGFloat(actualWidth/actualHeight)
+        var maxRatio = CGFloat(maxWidth/maxHeight)
+        var compressionQuality = CGFloat(0.95)//40 percent compressio
+        
+        if (actualHeight > maxHeight || actualWidth > maxWidth)
+        {
+            if(imgRatio < maxRatio)
             {
-                // Process error
-                print("Error: \(error)")
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight;
+                actualWidth = imgRatio * actualWidth;
+                actualHeight = maxHeight;
+            }
+            else if(imgRatio > maxRatio)
+            {
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth;
+                actualHeight = imgRatio * actualHeight;
+                actualWidth = maxWidth;
             }
             else
             {
-                print("fetched user: \(result)")
-                let userName : NSString = result.valueForKey("name") as! NSString
-                print("User Name is: \(userName)")
+                actualHeight = maxHeight;
+                actualWidth = maxWidth;
             }
-        })
+        }
+        
+        let rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+        UIGraphicsBeginImageContext(rect.size);
+        image.drawInRect(rect)
+        //[image drawInRect:rect];
+        let img = UIGraphicsGetImageFromCurrentImageContext();
+        let imageData = UIImageJPEGRepresentation(img, compressionQuality);
+        UIGraphicsEndImageContext();
+        
+        return UIImage(data:imageData!)!
+        
     }
-    @IBAction func scoreButton(sender: AnyObject) {
-        //var alert = UIAlertView(title: "High Score", message: flappyScore, delegate: nil, cancelButtonTitle: "OK")
-        //alert.show()
-        self.Name.text = flappyScore
+
+    
+    func cropToSquare(image originalImage: UIImage) -> UIImage {
+        // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
+        let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
+        
+        // Get the size of the contextImage
+        let contextSize: CGSize = contextImage.size
+        
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
+        
+        // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
     }
     
     func imageFadeIn(imageView: UIImageView, image: UIImage) {

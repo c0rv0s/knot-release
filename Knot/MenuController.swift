@@ -17,6 +17,8 @@ class MenuController: UITableViewController {
     @IBOutlet var floatRatingView: FloatRatingView!
     var starRating = 5
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,35 +56,61 @@ class MenuController: UITableViewController {
         }
         
         
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large)"])
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-                //let userName : NSString = result.valueForKey("name") as! NSString
-                //self.nameLabel.text = userName as String
-                
-                if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
-                    if let data = NSData(contentsOfURL: url){
-                        var profilePicture = UIImage(data: data)
-                        
-                        self.profPic.image = profilePicture
-                        
-                        //self.imageFadeIn(self.profPic, image: profilePicture!)
-                        
-                    }
-                }
-                
-            }
-        })
+        self.downloadImage(self.appDelegate.cognitoId!, bucket: "user-prof-photos")
     }
     
+    func downloadImage(key: String, bucket: String) {
+        
+        var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+        
+        let S3BucketName: String = bucket
+        let S3DownloadKeyName: String = key
+        
+        let expression = AWSS3TransferUtilityDownloadExpression()
+        expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
+            dispatch_async(dispatch_get_main_queue(), {
+                let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+                //self.progressView.progress = progress
+                //   self.statusLabel.text = "Downloading..."
+                NSLog("Progress is: %f",progress)
+            })
+        }
+        
+        completionHandler = { (task, location, data, error) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                if ((error) != nil){
+                    NSLog("Failed with error")
+                    NSLog("Error: %@",error!);
+                }
+                else{
+                    if bucket == "user-prof-photos" {
+                        self.profPic.image = UIImage(data: data!)
+                    }
+                    if bucket == "header-photos" {
+                        //self.profPic = self.cropToSquare(image: UIImage(data: data!)!)
+                    }
+                }
+            })
+            
+        }
+        
+        let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
+        
+        transferUtility.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
+            if let error = task.error {
+                NSLog("Error: %@",error.localizedDescription);
+            }
+            if let exception = task.exception {
+                NSLog("Exception: %@",exception.description);
+            }
+            if let _ = task.result {
+                
+            }
+            return nil;
+        }
+        
+    }
+
     
     // MARK: - Table view data source
     

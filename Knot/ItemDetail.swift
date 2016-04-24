@@ -184,17 +184,64 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 print("fetched user: \(result)")
                 let userName : NSString = result.valueForKey("name") as! NSString
                 self.sellerName.text = userName as String
-
+                /*
                 if let url = NSURL(string: result.valueForKey("picture")?.objectForKey("data")?.objectForKey("url") as! String) {
                     if let data = NSData(contentsOfURL: url){
                         var profilePicture = UIImage(data: data)
                         
                         self.profPic.image = profilePicture
                     }
-                }
+                }*/
                 
             }
         })
+            
+            var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?
+            
+            let S3BucketName: String = "user-prof-photos"
+            let S3DownloadKeyName: String = itemSeller
+            
+            let expression = AWSS3TransferUtilityDownloadExpression()
+            expression.downloadProgress = {(task: AWSS3TransferUtilityTask, bytesSent: Int64, totalBytesSent: Int64, totalBytesExpectedToSend: Int64) in
+                dispatch_async(dispatch_get_main_queue(), {
+                    let progress = Float(totalBytesSent) / Float(totalBytesExpectedToSend)
+                    //self.progressView.progress = progress
+                    //   self.statusLabel.text = "Downloading..."
+                    NSLog("Progress is: %f",progress)
+                })
+            }
+            
+            completionHandler = { (task, location, data, error) -> Void in
+                dispatch_async(dispatch_get_main_queue(), {
+                    if ((error) != nil){
+                        NSLog("Failed with error")
+                        NSLog("Error: %@",error!);
+                    }
+                    else{
+                        //if bucket == "user-prof-photos" {
+                            self.profPic.image = UIImage(data: data!)
+                       // }
+                    }
+                })
+                
+            }
+            
+            let transferUtility = AWSS3TransferUtility.defaultS3TransferUtility()
+            
+            transferUtility.downloadToURL(nil, bucket: S3BucketName, key: S3DownloadKeyName, expression: expression, completionHander: completionHandler).continueWithBlock { (task) -> AnyObject! in
+                if let error = task.error {
+                    NSLog("Error: %@",error.localizedDescription);
+                }
+                if let exception = task.exception {
+                    NSLog("Exception: %@",exception.description);
+                }
+                if let _ = task.result {
+                    
+                }
+                return nil;
+            }
+            
+        
     }
     
     func downloadImage(key: String, photoNum: Int){

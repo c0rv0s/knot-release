@@ -11,9 +11,11 @@ import UIKit
 import SendBirdSDK
 import CoreLocation
 
-class SignUp: UIViewController, UITextFieldDelegate {
+class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let picker = UIImagePickerController()
     
     @IBOutlet weak var profPicView: UIImageView!
     @IBOutlet weak var genderLabel: UITextField!
@@ -37,6 +39,8 @@ class SignUp: UIViewController, UITextFieldDelegate {
         print(signUp)
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
+        
+        self.picker.delegate = self
         
         emailLabel.delegate = self;
         genderLabel.delegate = self;
@@ -172,6 +176,29 @@ class SignUp: UIViewController, UITextFieldDelegate {
         }
         else {
             SwiftSpinner.show("Completing Profile")
+            
+            let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+            
+            let picOne = self.resizeImage(self.cropToSquare(image: self.profPicView.image!))
+            //upload pic
+            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+            dataOne!.writeToURL(testFileURL1, atomically: true)
+            uploadRequest1.bucket = "user-prof-photos"
+            uploadRequest1.key = self.appDelegate.cognitoId
+            uploadRequest1.body = testFileURL1
+            let task1 = transferManager.upload(uploadRequest1)
+            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                if task1.error != nil {
+                    print("Error: \(task1.error)")
+                } else {
+                    //self.preUploadComplete = true
+                    print("photo one done")
+                }
+                return nil
+            }
+
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -251,10 +278,86 @@ class SignUp: UIViewController, UITextFieldDelegate {
             SwiftSpinner.hide()
             
         }
-        
-
-        
     }
+    
+    @IBAction func changePicButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "Select Option:", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Camera", style: .Default, handler: { (alertAction) -> Void in
+            if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+                self.picker.allowsEditing = false
+                self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+                self.picker.cameraCaptureMode = .Photo
+                self.picker.modalPresentationStyle = .FullScreen
+                self.presentViewController(self.picker,
+                    animated: true,
+                    completion: nil)
+            }
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Photos", style: .Default, handler: { (alertAction) -> Void in
+            self.picker.allowsEditing = true
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.picker.modalPresentationStyle = .FullScreen
+            self.presentViewController(self.picker,
+                animated: true,
+                completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
+        if UIImagePickerController.availableCaptureModesForCameraDevice(.Rear) != nil {
+            picker.allowsEditing = false
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraCaptureMode = .Photo
+            picker.modalPresentationStyle = .FullScreen
+            presentViewController(picker,
+                                  animated: true,
+                                  completion: nil)
+        }
+    }
+    
+    //MARK: - Delegates
+    //What to do when the picker returns with a photo
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        print("picker returns")
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+        //myImageView.contentMode = .ScaleAspectFit //3
+        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+        print("resize image")
+        let picOne = self.resizeImage(self.cropToSquare(image: chosenImage))
+        
+        //upload pic
+        let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+        let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+        let dataOne = UIImageJPEGRepresentation(picOne, 0.5)
+        dataOne!.writeToURL(testFileURL1, atomically: true)
+        uploadRequest1.bucket = "user-prof-photos"
+        uploadRequest1.key = self.appDelegate.cognitoId
+        uploadRequest1.body = testFileURL1
+        let task1 = transferManager.upload(uploadRequest1)
+        task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+            if task1.error != nil {
+                print("Error: \(task1.error)")
+            } else {
+                //self.preUploadComplete = true
+                print("photo one done")
+            }
+            return nil
+        }
+        //done uploading
+        print("download done, image set")
+        self.profPicView.image = picOne
+        
+        dismissViewControllerAnimated(true, completion: nil) //5
+    }
+    //What to do if the image picker cancels.
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true,
+                                      completion: nil)
+    }
+
+    
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -278,5 +381,87 @@ class SignUp: UIViewController, UITextFieldDelegate {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    func resizeImage(image: UIImage) -> UIImage {
+        var actualHeight = CGFloat(image.size.height)
+        var actualWidth = CGFloat(image.size.width)
+        var maxHeight = CGFloat(300.0)
+        var maxWidth = CGFloat(500.00)
+        var imgRatio = CGFloat(actualWidth/actualHeight)
+        var maxRatio = CGFloat(maxWidth/maxHeight)
+        var compressionQuality = CGFloat(0.75)//40 percent compressio
+        
+        if (actualHeight > maxHeight || actualWidth > maxWidth)
+        {
+            if(imgRatio < maxRatio)
+            {
+                //adjust width according to maxHeight
+                imgRatio = maxHeight / actualHeight;
+                actualWidth = imgRatio * actualWidth;
+                actualHeight = maxHeight;
+            }
+            else if(imgRatio > maxRatio)
+            {
+                //adjust height according to maxWidth
+                imgRatio = maxWidth / actualWidth;
+                actualHeight = imgRatio * actualHeight;
+                actualWidth = maxWidth;
+            }
+            else
+            {
+                actualHeight = maxHeight;
+                actualWidth = maxWidth;
+            }
+        }
+        
+        let rect = CGRectMake(0.0, 0.0, actualWidth, actualHeight);
+        UIGraphicsBeginImageContext(rect.size);
+        image.drawInRect(rect)
+        //[image drawInRect:rect];
+        let img = UIGraphicsGetImageFromCurrentImageContext();
+        let imageData = UIImageJPEGRepresentation(img, compressionQuality);
+        UIGraphicsEndImageContext();
+        
+        return UIImage(data:imageData!)!
+        
+    }
+    
+    
+    func cropToSquare(image originalImage: UIImage) -> UIImage {
+        // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
+        let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
+        
+        // Get the size of the contextImage
+        let contextSize: CGSize = contextImage.size
+        
+        let posX: CGFloat
+        let posY: CGFloat
+        let width: CGFloat
+        let height: CGFloat
+        
+        // Check to see which length is the longest and create the offset based on that length, then set the width and height of our rect
+        if contextSize.width > contextSize.height {
+            posX = ((contextSize.width - contextSize.height) / 2)
+            posY = 0
+            width = contextSize.height
+            height = contextSize.height
+        } else {
+            posX = 0
+            posY = ((contextSize.height - contextSize.width) / 2)
+            width = contextSize.width
+            height = contextSize.width
+        }
+        
+        let rect: CGRect = CGRectMake(posX, posY, width, height)
+        
+        // Create bitmap image from context using the rect
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        
+        // Create a new image based on the imageRef and rotate back to the original orientation
+        let image: UIImage = UIImage(CGImage: imageRef, scale: originalImage.scale, orientation: originalImage.imageOrientation)
+        
+        return image
+    }
+
     
 }

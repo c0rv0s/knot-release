@@ -570,10 +570,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //MARK: - Delegates
     //What to do when the picker returns with a photo
-    func imagePickerController(
-        picker: UIImagePickerController,
-        didFinishPickingMediaWithInfo info: [String : AnyObject]){
-            let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
+    func imagePickerController(picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
             //myImageView.contentMode = .ScaleAspectFit //3
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         
