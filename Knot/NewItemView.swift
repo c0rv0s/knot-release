@@ -153,7 +153,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             addphoto3.hidden = true
             addPhotoText2.hidden = true
             addPhotoText3.hidden = true
-            self.uniqueID = randomStringWithLength(32) as String
+            self.uniqueID = randomStringWithLength(24) as String
             
             nameField.delegate = self;
             

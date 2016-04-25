@@ -22,10 +22,6 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     //fav items
     var favItemIDs: Array<String>!
-    
-    //floating button
-    var cells: [LiquidFloatingCell] = []
-    var floatingActionButton: LiquidFloatingActionButton!
 
     //end button stuff
     
@@ -525,7 +521,12 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if searchController.active && searchController.searchBar.text != "" {
-            return (self.filterItems?.count)!
+            if (self.filterItems?.count != nil) {
+                return (self.filterItems?.count)!
+            }
+            else {
+                return 0
+            }
         }
         else {
             return self.collectionItems!.count
@@ -572,6 +573,11 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     // MARK: Search
     func filterContentForSearchText(searchText:String){
         self.dataSourceForSearchResult = self.collectionItems?.filter({ (item: ListItem) -> Bool in
+            if (item.name.containsString(searchText)) {
+                self.filterItems?.append(item)
+                print("filtered array: ")
+                print(self.filterItems)
+            }
             return item.name.containsString(searchText)
         })
     }
