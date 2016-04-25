@@ -10,6 +10,7 @@ import UIKit
 
 class MenuController: UITableViewController {
     
+    //@IBOutlet var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profPic: UIImageView!
     
@@ -18,6 +19,9 @@ class MenuController: UITableViewController {
     var starRating = 5
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    let normalColor = UIColor(red: 0, green: 100/255, blue: 118/255, alpha: 1)
+    let selectColor = UIColor(red: 0, green: 53/255, blue: 62/255, alpha: 1)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +125,20 @@ class MenuController: UITableViewController {
                 secondImageView.removeFromSuperview()
         })
         
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var selectedCell:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        selectedCell.contentView.backgroundColor = selectColor
+    }
+    
+    // if tableView is set in attribute inspector with selection to multiple Selection it should work.
+    
+    // Just set it back in deselect
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        var cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cellToDeSelect.contentView.backgroundColor = normalColor
     }
     
     // MARK: - Table view data source

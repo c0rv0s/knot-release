@@ -93,11 +93,13 @@
         <scene sceneID="PwQ-i5-wJb">
             <objects>
                 <tableViewController id="KEi-Zk-5cM" customClass="MenuController" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FN9-zL-5Tl">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FN9-zL-5Tl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.15318439411146384" blue="0.17991681521093283" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="Jwd-E5-d34">
                                 <cells>
@@ -228,11 +230,11 @@
                                             <segue destination="qP0-zv-SaE" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="62l-zR-q1q"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="391" id="aUw-Dd-MmJ">
-                                        <rect key="frame" x="0.0" y="320" width="600" height="391"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="459" id="Uae-kd-QxC">
+                                        <rect key="frame" x="0.0" y="320" width="600" height="459"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aUw-Dd-MmJ" id="aLY-0W-g2h">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="390"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uae-kd-QxC" id="TMd-2P-goG">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="458"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.39215686274509803" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,10 +247,12 @@
                             <outlet property="delegate" destination="KEi-Zk-5cM" id="qIy-k6-2la"/>
                         </connections>
                     </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="floatRatingView" destination="tIn-oK-nwn" id="4TM-MA-gm7"/>
                         <outlet property="nameLabel" destination="eW3-CB-Mmw" id="aoJ-Hm-3pb"/>
                         <outlet property="profPic" destination="11R-UW-4J8" id="hQc-hI-XYF"/>
+                        <outlet property="tableView" destination="FN9-zL-5Tl" id="0Ae-ym-KId"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8J-a9-MH7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +270,7 @@
                     <view key="view" contentMode="scaleToFill" id="LQa-AH-AFy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <segue destination="KEi-Zk-5cM" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="rII-ot-IBP"/>
@@ -1688,7 +1692,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LQC-qg-Ulw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yjl-Vz-Uqa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-Yj-niw">
@@ -2113,9 +2117,9 @@
         <segue reference="kyH-4W-YAm"/>
         <segue reference="QDv-Ff-5zX"/>
         <segue reference="62l-zR-q1q"/>
+        <segue reference="Kxk-Vc-s6w"/>
         <segue reference="y1g-Rx-8Dr"/>
         <segue reference="uIL-st-cTj"/>
-        <segue reference="vYY-fy-rD9"/>
         <segue reference="yTs-ay-f60"/>
         <segue reference="5Ei-1s-dmw"/>
     </inferredMetricsTieBreakers>

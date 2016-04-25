@@ -212,6 +212,9 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     func appWasOpened(notification: NSNotification!)
     {
+        //this would refresh the feed if the app is reloaded from the background
+        //right now it crashes everytime so this is being disabled
+        /*
         if needsToRefresh == false {
             print("app was opened")
             //reset aray
@@ -226,7 +229,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             self.loadPhotos()
 
         }
-
+*/
     }
     
     override func viewWillAppear(animated: Bool) {
