@@ -1153,7 +1153,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6J-Y6-D9T">
                                 <rect key="frame" x="144" y="180" width="86" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1281,13 +1281,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyz-ZU-BQC">
                                             <rect key="frame" x="8" y="182" width="159" height="21"/>
                                             <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-j3-3CW">
                                             <rect key="frame" x="8" y="210" width="159" height="21"/>
                                             <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -1419,7 +1419,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2q3-jN-0gG">
-                                <rect key="frame" x="105" y="309" width="147" height="30"/>
+                                <rect key="frame" x="114" y="205" width="147" height="30"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                 <state key="normal" title="Complete Profile">
                                     <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1429,7 +1429,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signs" translatesAutoresizingMaskIntoConstraints="NO" id="ihI-Y9-Ci1">
-                                <rect key="frame" x="247" y="314" width="20" height="20"/>
+                                <rect key="frame" x="256" y="210" width="20" height="20"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozD-3a-JZu">
                                 <rect key="frame" x="131" y="123" width="112" height="112"/>
@@ -1439,7 +1439,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EDV-NS-7Q7">
-                                <rect key="frame" x="0.0" y="405" width="375" height="262"/>
+                                <rect key="frame" x="0.0" y="382" width="375" height="285"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Dik-Ra-Gc8" id="e6x-ye-uLx"/>
@@ -1447,25 +1447,25 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of items sold: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n19-8s-dl1">
-                                <rect key="frame" x="54" y="347" width="177" height="21"/>
+                                <rect key="frame" x="54" y="324" width="177" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gross Revenue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df2-hY-X1l">
-                                <rect key="frame" x="53" y="376" width="140" height="21"/>
+                                <rect key="frame" x="53" y="353" width="140" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4T-bW-mco">
-                                <rect key="frame" x="245" y="347" width="76" height="21"/>
+                                <rect key="frame" x="245" y="324" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-JG-IVp">
-                                <rect key="frame" x="245" y="376" width="76" height="21"/>
+                                <rect key="frame" x="245" y="353" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1572,7 +1572,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please rate your transaction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noa-E5-Ig2">
                                 <rect key="frame" x="59" y="50" width="241" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D4-9K-341">
@@ -1606,7 +1606,7 @@
                             <stackView opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-5u-GAa">
                                 <rect key="frame" x="118" y="120" width="134" height="198"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
                                         <rect key="frame" x="0.0" y="0.0" width="134" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="View Tutorial Again">
@@ -1617,7 +1617,7 @@
                                             <action selector="viewTutorial:" destination="gBp-3q-FPr" eventType="touchUpInside" id="SkH-uV-qHQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
                                         <rect key="frame" x="13" y="42" width="108" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Edit Profile Info">
@@ -1628,7 +1628,7 @@
                                             <segue destination="Yn6-Mw-DUA" kind="show" id="0ON-VF-o3k"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
                                         <rect key="frame" x="10" y="84" width="115" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Contact Support">
@@ -1639,7 +1639,7 @@
                                             <action selector="contactSupport:" destination="Dik-Ra-Gc8" eventType="touchUpInside" id="QnP-83-uhi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-nn-QLC">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-nn-QLC">
                                         <rect key="frame" x="9" y="126" width="117" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Terms of Service">
@@ -1649,7 +1649,7 @@
                                             <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="wSr-LW-UkN"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-DI-qsR">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-DI-qsR">
                                         <rect key="frame" x="18" y="168" width="98" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Privacy Policy">
@@ -1998,7 +1998,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tell Us Your Interests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-z2-4QB">
                                 <rect key="frame" x="68" y="20" width="239" height="41"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="23"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="k5O-k0-4mm">
@@ -2021,7 +2021,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFL-uU-Srf">
                                                     <rect key="frame" x="8" y="11" width="144" height="21"/>
                                                     <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
