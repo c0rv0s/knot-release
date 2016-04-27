@@ -92,8 +92,9 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
         var bucket = "authentication-docs"
-        ImgOne.image = self.cropToSquare(image: chosenImage)
+
         if photoNum == 1 {
+            ImgOne.image = self.cropToSquare(image: chosenImage)
             var ID = self.item.ID + "-1"
             //upload pic
             let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))

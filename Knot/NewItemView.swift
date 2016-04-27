@@ -57,8 +57,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     var three = false
     
     var timeHoursInt = 288
-    var hours = [3,5,12,24,72,120,168, 288]
-    var lengthOption = ["3 Hours", "5 Hours", "12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
+    var hours = [12,24,72,120,168, 288]
+    var lengthOption = ["12 Hours", "24 Hours", "3 Days", "5 Days", "7 Days", "12 Days"]
     var conditionOption = ["New", "Manufacturer refurbished", "Seller refurbished", "Used", "For parts or not working"]
     var categoryOption = ["Electronics", "Cars and Motors", "Sports", "Toys", "Video Games", "Fashion", "Baby and Kids", "Books", "Furniture", "Art and Home Decor", "Tools", "Movies and Music"]
     
@@ -365,7 +365,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     }
     
     func calcTimeHoursInt() {
-        //[1,3,5,12,24,72,120,168]
+        //[12,24,72,120,168]
         if lengthField.text == lengthOption[0] {
             self.timeHoursInt = hours[0]
         }
@@ -384,9 +384,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         if lengthField.text == lengthOption[5] {
             self.timeHoursInt = hours[5]
         }
+        /*
         if lengthField.text == lengthOption[6] {
             self.timeHoursInt = hours[6]
         }
+        */
+        print("checkin timehoursint")
         print(timeHoursInt)
     }
     
@@ -408,8 +411,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView.tag == 0 {
-            //print(row)
+            print(row)
             //timeHoursInt = hours[row]
+            self.calcTimeHoursInt()
             return lengthOption[row]
         }
         if pickerView.tag == 1 {
