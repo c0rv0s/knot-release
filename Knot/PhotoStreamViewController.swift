@@ -18,7 +18,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet var colView: UICollectionView!
     var collectionItems: Array<ListItem>!
-    var filterItems: Array<ListItem>?
+    var filterItems: Array<ListItem>!
     
     //fav items
     var favItemIDs: Array<String>!
@@ -65,6 +65,8 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.filterItems = []
+        /*
         //search
         _ = UISearchController(searchResultsController: nil)
         //self.colView.tableHeaderView = controller.searchBar
@@ -80,7 +82,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         self.navigationItem.titleView = searchController.searchBar
         
         self.definesPresentationContext = true
-        
+        */
         
         /*
         // more testing needed here
@@ -99,7 +101,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             print("delegated")
             layout.delegate = self
         }
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        colView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
         
         //reset aray
         self.favItemIDs = []
@@ -202,7 +204,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        self.prepareUI()
+        //self.prepareUI()
         
     }
     
@@ -486,6 +488,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                         else {
                             self.colView.reloadData()
                         }
+ 
                     }
                 }
             })
@@ -520,17 +523,18 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        /*
         if searchController.active && searchController.searchBar.text != "" {
-            if (self.filterItems?.count != nil) {
+            if (self.filterItems?.count > 0) {
                 return (self.filterItems?.count)!
             }
             else {
                 return 0
             }
         }
-        else {
+        else { */
             return self.collectionItems!.count
-        }
+        //}
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -538,6 +542,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         self.performSegueWithIdentifier("FeedDetailSeg", sender: self)
     }
     
+    //update for search
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "FeedDetailSeg") {
             let viewController:ItemDetail = segue!.destinationViewController as! ItemDetail
@@ -572,42 +577,44 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     // MARK: Search
     func filterContentForSearchText(searchText:String){
-        self.dataSourceForSearchResult = self.collectionItems?.filter({ (item: ListItem) -> Bool in
-            if (item.name.containsString(searchText)) {
-                self.filterItems?.append(item)
-                print("filtered array: ")
-                print(self.filterItems)
+        self.filterItems = self.collectionItems.filter { item in
+            print("filtered array: ")
+            print("checking")
+            print(item.name)
+            print(self.filterItems)
+            if item.name.lowercaseString.containsString(searchText.lowercaseString) {
+                print("adding: ")
+                print(item.name)
+                filterItems.append(item)
             }
-            return item.name.containsString(searchText)
-        })
+            return item.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        // user did type something, check our datasource for text that looks the same
-        if searchText.characters.count > 0 {
-            // search and reload data source
+        // When there is no text, filteredData is the same as the original data
+        if searchText.isEmpty {
+            print("search bar empty")
+            self.filterItems = self.collectionItems
+        }
+        else {
+            print("search bar not empty")
             self.searchBarActive    = true
             self.filterContentForSearchText(searchText)
             self.colView.reloadData()
-        }else{
-            // if text lenght == 0
-            // we will consider the searchbar is not active
-            self.searchBarActive = false
-            self.colView?.reloadData()
         }
-        
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         self.cancelSearching()
-        self.collectionView?.reloadData()
+        self.colView?.reloadData()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.searchBarActive = true
         self.view.endEditing(true)
     }
-    
+    /*
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         // we used here to set self.searchBarActive = YES
         // but we'll not do that any more... it made problems
@@ -621,7 +628,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
         // but no need to reloadCollectionView
         self.searchBarActive = false
         self.searchBar!.setShowsCancelButton(false, animated: false)
-    }
+    }*/
     
     func cancelSearching(){
         self.searchBarActive = false
@@ -658,11 +665,11 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     func addObservers(){
         let context = UnsafeMutablePointer<UInt8>(bitPattern: 1)
-        self.collectionView?.addObserver(self, forKeyPath: "contentOffset", options: [.New,.Old], context: context)
+        self.colView?.addObserver(self, forKeyPath: "contentOffset", options: [.New,.Old], context: context)
     }
     
     func removeObservers(){
-        self.collectionView?.removeObserver(self, forKeyPath: "contentOffset")
+        self.colView?.removeObserver(self, forKeyPath: "contentOffset")
     }
     
     override func observeValueForKeyPath(keyPath: String?,
@@ -683,13 +690,13 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("AnnotatedPhotoCell", forIndexPath: indexPath) as! AnnotatedPhotoCell
-        
-        if searchController.active && searchController.searchBar.text?.characters.count > 0 {
-            cell.cellItem = self.filterItems?[indexPath.row]
-        } else {
+        /*
+        if searchController.active && searchController.searchBar.text != "" {
+            cell.cellItem = self.filterItems?[0]
+        } else { */
             cell.cellItem = self.collectionItems![indexPath.row]
             cell.cellPic = collectionImages[collectionItems![indexPath.row].ID]
-        }
+        //}
 
         let overDate = self.dateFormatter.dateFromString(cell.cellItem.time)!
         let secondsUntil = secondsFrom(currentDate, endDate: overDate)

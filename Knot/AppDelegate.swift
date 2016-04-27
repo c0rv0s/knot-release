@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var locEnabled = true
     
     var prideOn = false
+    
+    var item : ListItem!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

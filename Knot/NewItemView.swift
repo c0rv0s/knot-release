@@ -38,10 +38,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     @IBOutlet weak var addphoto2: UIButton!
     @IBOutlet weak var addphoto3: UIButton!
     
-    @IBOutlet weak var addPhotoText1: UILabel!
-    @IBOutlet weak var addPhotoText2: UILabel!
-    @IBOutlet weak var addPhotoText3: UILabel!
-    
     @IBOutlet weak var lengthField: UITextField!
     @IBOutlet weak var categoryField: UITextField!
     @IBOutlet weak var conditionField: UITextField!
@@ -151,8 +147,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             // Do any additional setup after loading the view, typically from a nib
             addphoto2.hidden = true
             addphoto3.hidden = true
-            addPhotoText2.hidden = true
-            addPhotoText3.hidden = true
+            //addPhotoText2.hidden = true
+            //addPhotoText3.hidden = true
             self.uniqueID = randomStringWithLength(24) as String
             
             nameField.delegate = self;
@@ -214,8 +210,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         else {
             let alert = UIAlertController(title:"Attention", message: "You need to sign in to access these features", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Never Mind", style: .Default, handler: { (alertAction) -> Void in
-                //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-                //self.presentViewController(vc, animated: true, completion: nil)
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
@@ -363,6 +357,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.sellerSBID = self.SBID
         item.numberOfPics = self.photoNum
         print(item)
+        self.appDelegate.item = item
         let task = mapper.save(item)
         
         print("item created, preparing upload")
@@ -631,8 +626,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 
                 picOneView.image = self.cropToSquare(image: chosenImage)
                 addphoto2.hidden = false
-                addPhotoText2.hidden = false
-                addPhotoText1.text = "Change"
+               // addPhotoText2.hidden = false
+               // addPhotoText1.text = "Change"
                 //addphoto1.setTitle("Change", forState: .Normal)
                 one = true
                 picTwoView.image = UIImage(named: "camera_ready")
@@ -641,9 +636,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 self.picTwo = chosenImage
                 picTwoView.image = self.cropToSquare(image: chosenImage)
                 addphoto3.hidden = false
-                addPhotoText3.hidden = false
+               // addPhotoText3.hidden = false
                 //addphoto2.setTitle("Change", forState: .Normal)
-                addPhotoText2.text = "Change"
+                //addPhotoText2.text = "Change"
                 two = true
                 picThreeView.image = UIImage(named: "camera_ready")
                 
@@ -672,7 +667,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 self.picThree = chosenImage
                 self.picThreeView.image = self.cropToSquare(image: chosenImage)
                 //addphoto3.setTitle("Change", forState: .Normal)
-                addPhotoText3.text = "Change"
+                //addPhotoText3.text = "Change"
                 three = true
                 
                 //do third photo
@@ -742,14 +737,23 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
             let userPrice = Int(self.priceField.text!)
             if userPrice != nil {
-                if userPrice >= 50 {
+                if userPrice >= 99 {
                     print("Valid Integer")
                     let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false)
                     }))
                     alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
-                        self.authenticateUser()
+                        self.loadData(false)
+                        let delayInSeconds = 1.0;
+                        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            // When done requesting/reloading/processing invoke endRefreshing, to close the control
+                            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
+                            self.presentViewController(vc, animated: true, completion: nil)
+                        }
+                        
+
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
@@ -939,64 +943,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "returnHome") {
-            let viewController:HomeTabBarController = segue!.destinationViewController as! HomeTabBarController
-            //viewController.startApp = true
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
         }
     }
-    
-    //touch id
-    func showPasswordAlert() {
-    }
-    
-    func authenticateUser() {
-        let context : LAContext = LAContext()
-        var error : NSError?
-        var myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
-                if success {
-                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                        self.loadData(true)
-                    })
-                }
-                else {
-                    // Authentification failed
-                    print(evaluationError?.localizedDescription)
-                    
-                    switch evaluationError!.code {
-                    case LAError.SystemCancel.rawValue:
-                        print("Authentication cancelled by the system")
-                    case LAError.UserCancel.rawValue:
-                        print("Authentication cancelled by the user")
-                    case LAError.UserFallback.rawValue:
-                        print("User wants to use a password")
-                        // We show the alert view in the main thread (always update the UI in the main thread)
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            self.showPasswordAlert()
-                        })
-                    default:
-                        print("Authentication failed")
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            self.showPasswordAlert()
-                        })
-                    }
-                }
-            })
-
-        }
-        else {
-            switch error!.code {
-            case LAError.TouchIDNotEnrolled.rawValue:
-                print("TouchID not enrolled")
-            case LAError.PasscodeNotSet.rawValue:
-                print("Passcode not set")
-            default:
-                print("TouchID not available")
-            }
-            self.showPasswordAlert()
-        }
-    }
-        //end touch id
     
     func loadData(auth: Bool) {
         // Do whatever you want
@@ -1021,6 +971,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
             return nil;
         })
+        
         print("hello")
         //upload image
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()

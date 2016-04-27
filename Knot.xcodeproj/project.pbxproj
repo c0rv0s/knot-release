@@ -154,6 +154,8 @@
 		4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */; };
 		4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6811CAC9B2C00655ED9 /* collection.swift */; };
 		4396E6841CAC9C9300655ED9 /* onlineListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6831CAC9C9300655ED9 /* onlineListing.swift */; };
+		4397C4711CCFFF9200186EFC /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397C4701CCFFF9200186EFC /* AuthScreen.swift */; };
+		4397C4731CD004F700186EFC /* ListingUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4397C4721CD004F700186EFC /* ListingUpload.swift */; };
 		43A155ED1C9F43DD00AF7B98 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A155EC1C9F43DD00AF7B98 /* Reachability.swift */; };
 		43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43A31C611C7808580026D8A2 /* TimeoutView.xib */; };
 		43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A31C631C7818B60026D8A2 /* EditProfile.swift */; };
@@ -170,8 +172,6 @@
 		43CF595F1C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */; };
 		43CF59601C28C66B0071CCE8 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */; };
 		43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D1E8BB1C59ED9B00609D37 /* Messaging.swift */; };
-		43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */; };
-		43DD12111C8F9F730013034E /* itemDetailInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD12101C8F9F730013034E /* itemDetailInfo.xib */; };
 		43DD8EC81C6F3F2A00F9D8A1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */; };
 		43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */; };
 		43DD8ECC1C7007AB00F9D8A1 /* savedListings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */; };
@@ -393,6 +393,8 @@
 		4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KCRE-data.swift"; sourceTree = "<group>"; };
 		4396E6811CAC9B2C00655ED9 /* collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
 		4396E6831CAC9C9300655ED9 /* onlineListing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onlineListing.swift; sourceTree = "<group>"; };
+		4397C4701CCFFF9200186EFC /* AuthScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		4397C4721CD004F700186EFC /* ListingUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingUpload.swift; sourceTree = "<group>"; };
 		43A155EC1C9F43DD00AF7B98 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		43A31C611C7808580026D8A2 /* TimeoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeoutView.xib; sourceTree = "<group>"; };
 		43A31C631C7818B60026D8A2 /* EditProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
@@ -410,8 +412,6 @@
 		43CF59591C28C66B0071CCE8 /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		43CF595A1C28C66B0071CCE8 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		43D1E8BB1C59ED9B00609D37 /* Messaging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Messaging.swift; sourceTree = "<group>"; };
-		43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
-		43DD12101C8F9F730013034E /* itemDetailInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = itemDetailInfo.xib; sourceTree = "<group>"; };
 		43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
 		43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = savedListings.swift; sourceTree = "<group>"; };
@@ -660,30 +660,26 @@
 			children = (
 				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
 				432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */,
+				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
+				43C924941C0818220006E181 /* Bridging-Header.h */,
+				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
 				432FC6381CCB429D008EDDC6 /* bird.atlas */,
+				4397C46F1CCFFA0500186EFC /* Cell Files */,
+				43F206481C7F8F0A00CEEDFF /* data extensions */,
+				43F2064A1C7F8FC000CEEDFF /* dynamoData */,
 				432FC6371CCB427B008EDDC6 /* Flappy */,
 				433912431CB76A1A00100C64 /* Liquid Action Button */,
 				431261851C900A3800A47BFD /* Mixpanel */,
+				43F2064B1C7F8FD400CEEDFF /* nav controllers */,
 				43665D171C702FAE0069A3AA /* SendBird */,
 				43F206471C7F8ED300CEEDFF /* Third Party Extensions */,
-				43F206481C7F8F0A00CEEDFF /* data extensions */,
-				43F2064B1C7F8FD400CEEDFF /* nav controllers */,
-				43F2064A1C7F8FC000CEEDFF /* dynamoData */,
-				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
-				43D8A1081C1B8EB3002F43BE /* HomeTabBarController.swift */,
-				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
-				432FC62F1CCB2D80008EDDC6 /* interestsCell.swift */,
-				43C924941C0818220006E181 /* Bridging-Header.h */,
 				43F206491C7F8F5300CEEDFF /* viewcontrollers */,
-				4318534F1BF9892F000C6ED4 /* Assets.xcassets */,
 				43C924951C084BA40006E181 /* Main.storyboard */,
 				43DD8EC71C6F3F2A00F9D8A1 /* LaunchScreen.xib */,
-				43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */,
 				43A31C611C7808580026D8A2 /* TimeoutView.xib */,
 				433F04091C240C6A0011DAF1 /* Knot.entitlements */,
 				431853541BF9892F000C6ED4 /* Info.plist */,
 				4318534C1BF9892F000C6ED4 /* Knot.xcdatamodeld */,
-				43DD12101C8F9F730013034E /* itemDetailInfo.xib */,
 			);
 			path = Knot;
 			sourceTree = "<group>";
@@ -758,6 +754,18 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
+		4397C46F1CCFFA0500186EFC /* Cell Files */ = {
+			isa = PBXGroup;
+			children = (
+				43A3EFBD1C4DF3DE006B9952 /* storeTableCell.xib */,
+				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
+				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
+				430D1CE11C4E485300C29254 /* PersonalTableCell.swift */,
+				432FC62F1CCB2D80008EDDC6 /* interestsCell.swift */,
+			);
+			name = "Cell Files";
+			sourceTree = "<group>";
+		};
 		43F206471C7F8ED300CEEDFF /* Third Party Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -765,13 +773,12 @@
 				43A155EC1C9F43DD00AF7B98 /* Reachability.swift */,
 				430D4DC81CB63DA50065E7A0 /* SWRevealViewController.h */,
 				430D4DC91CB63DA50065E7A0 /* SWRevealViewController.m */,
-				43E295A91C51886300EB9AF9 /* AnnotatedPhotoCell.swift */,
-				43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */,
 				436F5D511C4FC62B009CFCE3 /* FeedLayout.swift */,
 				43DD8EC91C6FEA6F00F9D8A1 /* DOFavoriteButton.swift */,
 				433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */,
 				43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */,
 				432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */,
+				4397C4721CD004F700186EFC /* ListingUpload.swift */,
 			);
 			name = "Third Party Extensions";
 			sourceTree = "<group>";
@@ -807,6 +814,7 @@
 				4396E67D1CA4A64900655ED9 /* pageController.swift */,
 				434EC0931CC780D500DB4966 /* OnboardingTwo.swift */,
 				434332331CC87732001A4394 /* interests.swift */,
+				4397C4701CCFFF9200186EFC /* AuthScreen.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -920,7 +928,6 @@
 				43DD8EC81C6F3F2A00F9D8A1 /* LaunchScreen.xib in Resources */,
 				43CF595C1C28C66B0071CCE8 /* FacebookSDKStrings.bundle in Resources */,
 				431262091C900A3A00A47BFD /* Media.xcassets in Resources */,
-				43DD12111C8F9F730013034E /* itemDetailInfo.xib in Resources */,
 				43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */,
@@ -1049,7 +1056,6 @@
 				4312620C1C900A3A00A47BFD /* MixpanelWatchOS.m in Sources */,
 				431262081C900A3A00A47BFD /* _MPTweakBindObserver.m in Sources */,
 				4312622C1C900A3A00A47BFD /* MPNSNumberToCGFloatValueTransformer.m in Sources */,
-				43D8A1091C1B8EB3002F43BE /* HomeTabBarController.swift in Sources */,
 				434332341CC87732001A4394 /* interests.swift in Sources */,
 				43A31C641C7818B60026D8A2 /* EditProfile.swift in Sources */,
 				4312622A1C900A3A00A47BFD /* MPNotificationViewController.m in Sources */,
@@ -1058,6 +1064,7 @@
 				431262461C900A3A00A47BFD /* MPWebSocket.m in Sources */,
 				4318534E1BF9892F000C6ED4 /* Knot.xcdatamodeld in Sources */,
 				431262251C900A3A00A47BFD /* MPDesignerTrackMessage.m in Sources */,
+				4397C4731CD004F700186EFC /* ListingUpload.swift in Sources */,
 				43DD8ECA1C6FEA6F00F9D8A1 /* DOFavoriteButton.swift in Sources */,
 				4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */,
 				431262381C900A3A00A47BFD /* MPSurveyQuestion.m in Sources */,
@@ -1079,6 +1086,7 @@
 				430D11B51C6E73240028AB63 /* SignUp.swift in Sources */,
 				4312621F1C900A3A00A47BFD /* MPCGPointToNSDictionaryValueTransformer.m in Sources */,
 				430D6B651C922EA100C7A6A7 /* Editlisting.swift in Sources */,
+				4397C4711CCFFF9200186EFC /* AuthScreen.swift in Sources */,
 				431262191C900A3A00A47BFD /* MPABTestDesignerTweakResponseMessage.m in Sources */,
 				433912521CB76A1A00100C64 /* LiquidUtil.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
