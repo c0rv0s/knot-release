@@ -323,10 +323,14 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func loadData(auth: Bool) {
-        // Do whatever you want
+        //ethereum code goes here
+        
+        //end ethereum
+    
         UIApplication.sharedApplication().statusBarHidden = false
         //SwiftSpinner.show("Uploading...")
         
+        //update the authenticated data point on Dynamo to say true
         self.insertItem(self.item.ID, auth: auth).continueWithBlock({
             (task: BFTask!) -> BFTask! in
             

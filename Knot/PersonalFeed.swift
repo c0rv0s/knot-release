@@ -59,7 +59,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.dimsBackgroundDuringPresentation = true
         
-        self.navigationItem.titleView = searchController.searchBar
+        //self.navigationItem.titleView = searchController.searchBar
         
         self.definesPresentationContext = true
         
@@ -92,9 +92,6 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         //self.cognitoID = appDelegate.cognitoId!
         
-        
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
-        
         // set up the refresh control
         refreshControl = UIRefreshControl()
         tableView.addSubview(refreshControl)
@@ -108,6 +105,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         self.automaticallyAdjustsScrollViewInsets = false
         
         //download data
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         tableRows = []
         lock = NSLock()
         self.refreshList(true)
@@ -376,26 +374,8 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         if (segue!.identifier == "PersonalDetailSeg") {
             let viewController:ItemDetail = segue!.destinationViewController as! ItemDetail
             let indexPath = self.tableView.indexPathForSelectedRow
-            viewController.hidesBottomBarWhenPushed = true
-            
-            //viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
-            
             viewController.DetailItem = tableRows![indexPath!.row]
             
-            /*
-            viewController.name = tableRows![indexPath!.row].name
-            viewController.price = tableRows![indexPath!.row].price
-            viewController.time = tableRows![indexPath!.row].time
-            viewController.IDNum = tableRows![indexPath!.row].ID
-            viewController.itemSeller = tableRows![indexPath!.row].seller
-            //viewController.location = tableRows![indexPath!.row].location
-            viewController.sold = tableRows![indexPath!.row].sold
-            viewController.fbID = tableRows![indexPath!.row].sellerFBID
-            viewController.descript = tableRows![indexPath!.row].descriptionKnot
-            viewController.condition = tableRows![indexPath!.row].condition
-            //viewController.category = tableRows![indexPath!.row].category
-*/
-            //viewController.owned = true
         }
         
     }
@@ -403,27 +383,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     // 4
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemDetail") as! ItemDetail
-        let indexPath = self.tableView.indexPathForSelectedRow
-        //viewController.hidesBottomBarWhenPushed = true
-        
-        viewController.pic = tableImages[tableRows![indexPath!.row].ID]!
-        
-        viewController.name = tableRows![indexPath!.row].name
-        viewController.price = tableRows![indexPath!.row].price
-        viewController.time = tableRows![indexPath!.row].time
-        viewController.IDNum = tableRows![indexPath!.row].ID
-        viewController.itemSeller = tableRows![indexPath!.row].seller
-        viewController.location = tableRows![indexPath!.row].location
-        viewController.sold = tableRows![indexPath!.row].sold
-        viewController.fbID = tableRows![indexPath!.row].sellerFBID
-        viewController.descript = tableRows![indexPath!.row].descriptionKnot
-        viewController.condition = tableRows![indexPath!.row].condition
-        viewController.category = tableRows![indexPath!.row].category
-        viewController.owned = true
-        self.presentViewController(viewController, animated: true, completion: nil)
-        */
+
         self.performSegueWithIdentifier("PersonalDetailSeg", sender: tableView)
         
     }
