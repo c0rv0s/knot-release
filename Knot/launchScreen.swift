@@ -16,6 +16,7 @@ class launchScreen: UIViewController {
     var cognitoID : String!
     
     var selfRating : [String]!
+    var lastEvaluatedKey:[NSObject : AnyObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,7 @@ class launchScreen: UIViewController {
         let dataset = syncClient.openOrCreateDataset("profileInfo")
 
         if (dataset.stringForKey("rating") != nil) {
-            self.selfRating = (dataset.stringForKey("rating")).split{$0 == ","}.map(String.init)
+            self.selfRating = (dataset.stringForKey("rating")).characters.split{$0 == ","}.map(String.init)
         }
 
     }
@@ -80,8 +81,8 @@ class launchScreen: UIViewController {
     func checkRatings() {
         
         
-        if (self.lock?.tryLock() != nil) {
-            self.needsToRefresh = true
+        //if (self.lock?.tryLock() != nil) {
+          //  self.needsToRefresh = true
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             print("finna fetch those ratings")
             
@@ -91,37 +92,31 @@ class launchScreen: UIViewController {
             queryExpression.limit = 50;
             
             dynamoDBObjectMapper.scan(NewStars.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
-                
+                var starTotal = 5
                 if task.result != nil {
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                     for item in paginatedOutput.items as! [NewStars] {
-                        var starTotal = item.stars
+                        starTotal = item.stars
                         if item.userID == self.cognitoID {
-                            for star in selfRating {
-                                starTotal += star
+                            for star in self.selfRating {
+                                starTotal += Int(star)!
                             }
-                            self.appDelegate.selfRating = starTotal/(selfRating.count + 1)
                         }
                     }
                     
                     self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
                 }
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.organizeData()
-                    //self.colView.reloadData()
-                })
-                
+                self.appDelegate.selfRating = starTotal/(self.selfRating.count)
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
                 if ((task.error) != nil) {
                     print("Error: \(task.error)")
-                    self.loadPhotos()
+                   // self.loadPhotos()
                 }
                 return nil
             })
             
-        }
+        //}
         //self.colView.reloadData()
     }
     

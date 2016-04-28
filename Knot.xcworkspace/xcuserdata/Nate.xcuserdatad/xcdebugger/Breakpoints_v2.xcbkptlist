@@ -122,7 +122,55 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "refreshList(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/AccountView.swift"
+            timestampString = "483518650.114699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "refreshList(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/AccountView.swift"
+            timestampString = "483518650.114699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
+            landmarkName = "refreshList(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/AccountView.swift"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -138,23 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
-            landmarkName = "refreshList(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "228"
@@ -170,23 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "refreshList(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "231"
@@ -202,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
@@ -234,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483422785.269426"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"
@@ -250,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -266,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,27 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
+            timestampString = "483518650.114699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "refreshList(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Knot/AccountView.swift"
-            timestampString = "483476345.44401"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "refreshList(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -545,6 +545,757 @@
             endingLineNumber = "128"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518838.101884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518838.675125"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518839.305623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518839.911396"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518840.553052"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.launchScreen.checkRatings () -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/launchScreen.swift"
+                  timestampString = "483520802.857518"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "612">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.launchScreen.(checkRatings () -&gt; ()).(closure #1)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/launchScreen.swift"
+                  timestampString = "483520802.857709"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518841.251567"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518841.81311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518842.406665"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518842.952141"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483518843.481958"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483519141.540897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483519141.540897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483519141.540897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/launchScreen.swift"
+            timestampString = "483519141.540897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "checkRatings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "953"
+            endingLineNumber = "953"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "958"
+            endingLineNumber = "958"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.866258"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "963"
+                  endingLineNumber = "963"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.866435"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "966"
+                  endingLineNumber = "966"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "963"
+            endingLineNumber = "963"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.86867"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "963"
+                  endingLineNumber = "963"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.868879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "966"
+                  endingLineNumber = "966"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "969"
+            endingLineNumber = "969"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "976"
+            endingLineNumber = "976"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "981"
+            endingLineNumber = "981"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.871272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "981"
+                  endingLineNumber = "981"
+                  offsetFromSymbolStart = "1608">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()).(closure #2)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.871454"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "981"
+                  endingLineNumber = "981"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(loadData (Swift.Bool, lastScreen : Swift.Bool) -&gt; ()).(closure #2).(closure #1)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.871621"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "981"
+                  endingLineNumber = "981"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "986"
+            endingLineNumber = "986"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "994"
+            endingLineNumber = "994"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1001"
+            endingLineNumber = "1001"
+            landmarkName = "loadData(_:lastScreen:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520547.892641"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "718"
+            endingLineNumber = "718"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "733"
+            endingLineNumber = "733"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "743"
+            endingLineNumber = "743"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "747"
+            endingLineNumber = "747"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.submit (Swift.AnyObject) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.878159"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "747"
+                  endingLineNumber = "747"
+                  offsetFromSymbolStart = "10148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(submit (Swift.AnyObject) -&gt; ()).(closure #2)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.878354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "748"
+                  endingLineNumber = "748"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "752"
+            endingLineNumber = "752"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "758"
+            endingLineNumber = "758"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.submit (Swift.AnyObject) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.879891"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "758"
+                  endingLineNumber = "758"
+                  offsetFromSymbolStart = "10312">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(submit (Swift.AnyObject) -&gt; ()).(closure #2)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.88007"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "758"
+                  endingLineNumber = "758"
+                  offsetFromSymbolStart = "620">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "760"
+            endingLineNumber = "760"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "762"
+            endingLineNumber = "762"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Knot/NewItemView.swift"
+            timestampString = "483520801.397515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "755"
+            endingLineNumber = "755"
+            landmarkName = "submit(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.submit (Swift.AnyObject) -&gt; ()"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.883286"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "758"
+                  endingLineNumber = "758"
+                  offsetFromSymbolStart = "10312">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Knot.NewItemView.(submit (Swift.AnyObject) -&gt; ()).(closure #2)"
+                  moduleName = "Knot"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Nate/Library/Mobile%20Documents/com~apple~CloudDocs/knot-app-beta/Knot/NewItemView.swift"
+                  timestampString = "483520802.883467"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "758"
+                  endingLineNumber = "758"
+                  offsetFromSymbolStart = "620">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

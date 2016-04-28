@@ -721,14 +721,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
-        for i in priceString.characters {
-            if i == "0" {
-                priceString = String(priceString.characters.dropFirst())
-            }
-            else {
-                break
-            }
+        repeat {
+            priceString = String(priceString.characters.dropFirst())
         }
+        while ( Array(priceString.characters)[0] == "0")
+
         print("priceString")
         print(priceString)
         
@@ -745,10 +742,10 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     print("Valid Integer")
                     let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
-                        self.loadData(false)
+                        self.loadData(false, lastScreen: true)
                     }))
                     alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
-                        self.loadData(false)
+                        self.loadData(false, lastScreen: false)
                         //let delayInSeconds = 1.0;
                         //let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                         //dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
@@ -761,12 +758,15 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
+                else {
+                    self.loadData(false, lastScreen: true)
+                }
             }
 
         }
     }
     
-    func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
+    func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int, lastScreen: Bool) {
         SwiftSpinner.hide()
         if /*succ1 == 2 || succ2 == 2 || succ3 == 2 ||*/ self.preUploadComplete == false {
             let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
@@ -774,22 +774,16 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        /*
-        print("Upload successful")
-        var alertString = ""
-        if authenticated {
-            alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
+        if lastScreen {
+            print("Upload successful")
+            var alertString = "Your listing will appear in the Knot Store in a few moments."
+            let alert = UIAlertController(title: "Success!", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
         }
-        else {
-            alertString = "This will be listed in the Knot Store in a few moments."
-        }
-        let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
-            self.presentViewController(vc, animated: true, completion: nil)
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
-        */
         self.appDelegate.mixpanel!.track?(
             "Item Upload",
             properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
@@ -798,6 +792,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.appDelegate.mixpanel!.people.increment(
             [ "Listings": 1]
         )
+        
+
     }
     
     //end upload and submissions
@@ -952,7 +948,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
     }
     
-    func loadData(auth: Bool) {
+    func loadData(auth: Bool, lastScreen: Bool) {
         // Do whatever you want
         UIApplication.sharedApplication().statusBarHidden = false
         SwiftSpinner.show("Uploading \(self.nameField.text!)")
@@ -1002,18 +998,18 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 print("Error: \(task1.error)")
             } else {
                 print("thumbnail added")
-                self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                self.wrapUpSubmission(success1, succ2: success2, succ3: success3, lastScreen: lastScreen)
                 
                 repeat {
                     var delayInSeconds = 1.0;
                     let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                     dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                         if self.preUploadComplete {
-                            self.wrapUpSubmission(success1, succ2: success2, succ3: success3)
+                            self.wrapUpSubmission(success1, succ2: success2, succ3: success3, lastScreen: lastScreen)
                         }
                     }
                 }
-                    while(self.preUploadComplete == false)
+                while(self.preUploadComplete == false)
                 
             }
             return nil

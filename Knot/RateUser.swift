@@ -22,6 +22,8 @@ class RateUser: UIViewController {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    var credentialsProvider = AWSCognitoCredentialsProvider()
+    
     var cognitoID : String!
     
     var selfRating : [String]!
@@ -78,7 +80,7 @@ class RateUser: UIViewController {
         item.userID = otherParty
         item.raterID = cogID
         item.timestamp = dateString
-        item.stars = self.floatRatingView.rating
+        item.stars = Int(self.floatRatingView.rating)
         item.comment = self.commentView.text
         
         print(item)

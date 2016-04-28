@@ -166,15 +166,19 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if DetailItem.authenticated {
             self.thumbImage.image = UIImage(named: "thumbprint")
         }
- 
+ */
         //switch for authentication. this will line up which badge to use
         switch DetailItem.authenticated {
         case 0:
-            something
+            break
+        case 1:
+            self.thumbImage.image = UIImage(named: "thumbprint")
+        case 2:
+            self.thumbImage.image = UIImage(named: "thumbprint")
         default:
-            nothing
+            break
         }
- */
+ 
         
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
