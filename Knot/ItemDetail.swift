@@ -13,6 +13,10 @@ import MessageUI
 import SendBirdSDK
 
 class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrollViewDelegate, MKMapViewDelegate {
+    //stars
+    var sellerStars : Int!
+    @IBOutlet weak var floatRatingView: FloatRatingView!
+    var lastEvaluatedKey:[NSObject : AnyObject]!
     
     @IBOutlet weak var thumbImage: UIImageView!
     @IBOutlet weak var multiplePics: UIButton!
@@ -179,6 +183,10 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             break
         }
  
+        //stars
+        self.floatRatingView.emptyImage = UIImage(named: "empty-star")
+        self.floatRatingView.fullImage = UIImage(named: "full-star")
+        self.floatRatingView.editable = false
         
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
@@ -254,10 +262,38 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 }
                 return nil;
             }
-            
+        
+        self.downloadStar()
         
     }
     
+    func downloadStar() {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        print("finna fetch those ratings")
+        
+        let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        let queryExpression = AWSDynamoDBScanExpression()
+        queryExpression.exclusiveStartKey = self.lastEvaluatedKey
+        
+        dynamoDBObjectMapper.scan(CurrentStars.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
+            if task.result != nil {
+                let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
+                for item in paginatedOutput.items as! [CurrentStars] {
+                    if item.userID == self.itemSeller {
+                        self.sellerStars = item.stars
+                        self.floatRatingView.rating = Float(self.sellerStars)
+                    }
+                }
+                
+                self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
+            }
+            if ((task.error) != nil) {
+                print("Error: \(task.error)")
+            }
+            return nil
+        })
+    }
+
     func downloadImage(key: String, photoNum: Int){
         
         var completionHandler: AWSS3TransferUtilityDownloadCompletionHandlerBlock?

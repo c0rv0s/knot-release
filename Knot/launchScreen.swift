@@ -101,12 +101,15 @@ class launchScreen: UIViewController {
                             for star in self.selfRating {
                                 starTotal += Int(star)!
                             }
+                            self.selfRating.append(String(item.stars))
+                            self.deleteStar(item)
                         }
                     }
                     
                     self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
                 }
                 self.appDelegate.selfRating = starTotal/(self.selfRating.count)
+                self.postPublicStar(self.appDelegate.selfRating)
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
                 if ((task.error) != nil) {
@@ -126,6 +129,58 @@ class launchScreen: UIViewController {
             //let viewController:HomeTabBarController = segue!.destinationViewController as! HomeTabBarController
             //viewController.startApp = true
         }
+    }
+    
+    func deleteStar(item: NewStars) {
+        //update the authenticated data point on Dynamo to say true
+        self.performDelete(item).continueWithBlock({
+            (task: BFTask!) -> BFTask! in
+            
+            if (task.error != nil) {
+                print(task.error!.description)
+            } else {
+                print("DynamoDB save succeeded")
+            }
+            
+            return nil;
+        })
+    }
+    
+    func performDelete(item: NewStars) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        let task = mapper.remove(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
+    }
+    
+    func postPublicStar(rating: Int) {
+        //update the authenticated data point on Dynamo to say true
+        self.uploadStar(rating).continueWithBlock({
+            (task: BFTask!) -> BFTask! in
+            
+            if (task.error != nil) {
+                print(task.error!.description)
+            } else {
+                print("DynamoDB save succeeded")
+            }
+            
+            return nil;
+        })
+
+    }
+    
+    func uploadStar(rating: Int) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        let item = CurrentStars()
+        item.stars = rating
+        item.userID = self.cognitoID
+        let task = mapper.save(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
     }
  
 }

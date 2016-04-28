@@ -114,6 +114,8 @@
 		432FC6391CCB429E008EDDC6 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 432FC6381CCB429D008EDDC6 /* bird.atlas */; };
 		432FC63B1CCB45A5008EDDC6 /* Rick.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */; };
 		432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */; };
+		433019351CD20B7100104E36 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433019341CD20B7100104E36 /* notifications.swift */; };
+		433019391CD2BB3800104E36 /* current-stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433019381CD2BB3800104E36 /* current-stars.swift */; };
 		433758A91C4CEB5A003D8339 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */; };
 		4339124E1CB76A1A00100C64 /* ArrayEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912451CB76A1A00100C64 /* ArrayEx.swift */; };
 		4339124F1CB76A1A00100C64 /* CGPointEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433912461CB76A1A00100C64 /* CGPointEx.swift */; };
@@ -354,6 +356,8 @@
 		432FC6381CCB429D008EDDC6 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 		432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rick.mp3; sourceTree = "<group>"; };
 		432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Erasure Always.mp3"; sourceTree = "<group>"; };
+		433019341CD20B7100104E36 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
+		433019381CD2BB3800104E36 /* current-stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "current-stars.swift"; sourceTree = "<group>"; };
 		433758A81C4CEB5A003D8339 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		433912451CB76A1A00100C64 /* ArrayEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEx.swift; sourceTree = "<group>"; };
 		433912461CB76A1A00100C64 /* CGPointEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointEx.swift; sourceTree = "<group>"; };
@@ -820,6 +824,7 @@
 				434332331CC87732001A4394 /* interests.swift */,
 				4397C4701CCFFF9200186EFC /* AuthScreen.swift */,
 				439210FF1CD19A8100DCAD90 /* RateUser.swift */,
+				433019341CD20B7100104E36 /* notifications.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 				4396E6811CAC9B2C00655ED9 /* collection.swift */,
 				4396E6831CAC9C9300655ED9 /* onlineListing.swift */,
 				439211011CD1B39A00DCAD90 /* new-stars.swift */,
+				433019381CD2BB3800104E36 /* current-stars.swift */,
 			);
 			name = dynamoData;
 			sourceTree = "<group>";
@@ -1114,11 +1120,13 @@
 				43665D301C7030370069A3AA /* MessagingBroadcastMessageTableViewCell.swift in Sources */,
 				431262271C900A3A00A47BFD /* MPEventBinding.m in Sources */,
 				4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */,
+				433019351CD20B7100104E36 /* notifications.swift in Sources */,
 				4312620A1C900A3A00A47BFD /* Mixpanel.m in Sources */,
 				43D1E8BC1C59ED9B00609D37 /* Messaging.swift in Sources */,
 				4312620F1C900A3A00A47BFD /* MPABTestDesignerChangeResponseMessage.m in Sources */,
 				431262201C900A3A00A47BFD /* MPCGRectToNSDictionaryValueTransformer.m in Sources */,
 				431262421C900A3A00A47BFD /* MPUIFontToNSDictionaryValueTransformer.m in Sources */,
+				433019391CD2BB3800104E36 /* current-stars.swift in Sources */,
 				4312621B1C900A3A00A47BFD /* MPBOOLToNSNumberValueTransformer.m in Sources */,
 				4312624C1C900A3A00A47BFD /* UIImage+MPAverageColor.m in Sources */,
 				43869C611C052E07008E6056 /* LoginView.swift in Sources */,
