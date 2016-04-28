@@ -313,7 +313,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let item = ListItem()
         
         if auth {
-            item.authenticated = true
+            item.authenticated = 2
         }
         
         //parse to get just the first decimal point and two characters after
@@ -749,13 +749,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     }))
                     alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false)
-                        let delayInSeconds = 1.0;
-                        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                        //let delayInSeconds = 1.0;
+                        //let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        //dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                             // When done requesting/reloading/processing invoke endRefreshing, to close the control
                             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
                             self.presentViewController(vc, animated: true, completion: nil)
-                        }
+                        //}
                         
 
                     }))
@@ -774,7 +774,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        
+        /*
         print("Upload successful")
         var alertString = ""
         if authenticated {
@@ -789,7 +789,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(vc, animated: true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
-        
+        */
         self.appDelegate.mixpanel!.track?(
             "Item Upload",
             properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
@@ -1006,7 +1006,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 
                 repeat {
                     var delayInSeconds = 1.0;
-                    var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
                     dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
                         if self.preUploadComplete {
                             self.wrapUpSubmission(success1, succ2: success2, succ3: success3)

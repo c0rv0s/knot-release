@@ -715,7 +715,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             cell.countdownLabel.text = "Ended"
         }
         
-        if cell.cellItem.authenticated {
+        if cell.cellItem.authenticated  == 2 {
             //cell.thumbImage.image = UIImage(named: "thumbprint")
         }
         

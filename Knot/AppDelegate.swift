@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var prideOn = false
     
     var item : ListItem!
+    
+    var selfRating : Int!
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -85,11 +87,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     //notifications
     func initializeNotificationServices() -> Void {
-        let settings = UIUserNotificationSettings(forTypes: [.Sound, .Alert, .Badge], categories: nil)
         let application = UIApplication.sharedApplication()
-        application.registerUserNotificationSettings(settings)
-        
-        application.registerForRemoteNotifications()
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            let settings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }
+        else {
+            application.registerForRemoteNotificationTypes([.Alert, .Sound, .Badge])
+        }
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -129,13 +135,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         
         completionHandler(UIBackgroundFetchResult.NewData)
  */
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]){
-        var notifiAlert = UIAlertView()
-        var NotificationMessage : AnyObject? =  userInfo["alert"]
-        notifiAlert.title = "TITLE"
-        notifiAlert.message = "derp"
-        notifiAlert.addButtonWithTitle("OK")
-        notifiAlert.show()
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject: AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        /*
+        let apsNotification = userInfo["aps"] as! NSDictionary
+        let alertMsg       = apsNotification["alert"] as! String
+        let payload         = userInfo["sendbird"] as! NSDictionary*/
+        // Your custom way to parse data
+        print("before completionhandler")
+        completionHandler(UIBackgroundFetchResult.NewData)
+        print("notification received")
     }
     
     private func convertDeviceTokenToString(deviceToken:NSData) -> String {

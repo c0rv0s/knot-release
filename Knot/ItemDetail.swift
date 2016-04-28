@@ -162,9 +162,19 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
         
+        /*
         if DetailItem.authenticated {
             self.thumbImage.image = UIImage(named: "thumbprint")
         }
+ 
+        //switch for authentication. this will line up which badge to use
+        switch DetailItem.authenticated {
+        case 0:
+            something
+        default:
+            nothing
+        }
+ */
         
         self.secondsUntil = secondsFrom(NSDate(), endDate: dateFormatter.dateFromString(time)!)
         var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)

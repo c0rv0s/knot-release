@@ -54,11 +54,7 @@ class MenuController: UITableViewController {
                 self.nameLabel.text = fName + " " + lName
             }
         }
-        if (dataset.stringForKey("rating") != nil) {
-            self.starRating = Int(dataset.stringForKey("rating"))!
-            self.floatRatingView.rating = Float(starRating)
-        }
-        
+        self.floatRatingView.rating = Float(self.appDelegate.selfRating)
         
         self.downloadImage(self.appDelegate.cognitoId!, bucket: "user-prof-photos")
     }

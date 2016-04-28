@@ -240,6 +240,8 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 if success {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.loadData(true)
+                        //ping the ethereum purchasing server here
+                        
                     })
                 }
                 else {
@@ -284,7 +286,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func insertItem(uniqueID: String, auth: Bool) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
-        item.authenticated = true
+        item.authenticated = 2
 
         let task = mapper.save(item)
         

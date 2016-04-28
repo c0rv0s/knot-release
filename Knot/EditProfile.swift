@@ -32,6 +32,49 @@ class EditProfile: UIViewController, UIImagePickerControllerDelegate, UINavigati
         super.viewDidLoad()
         picker.delegate = self
         self.fillFields()
+        
+        //name
+        let borderFName = CALayer()
+        let width = CGFloat(2.0)
+        borderFName.borderColor = UIColor.darkGrayColor().CGColor
+        borderFName.frame = CGRect(x: 0, y: firstNameLabel.frame.size.height - width, width:  firstNameLabel.frame.size.width, height: firstNameLabel.frame.size.height)
+        
+        borderFName.borderWidth = width
+        firstNameLabel.layer.addSublayer(borderFName)
+        firstNameLabel.layer.masksToBounds = true
+        //last name
+        let borderLName = CALayer()
+        borderLName.borderColor = UIColor.darkGrayColor().CGColor
+        borderLName.frame = CGRect(x: 0, y: lastNameLabel.frame.size.height - width, width:  lastNameLabel.frame.size.width, height: lastNameLabel.frame.size.height)
+        
+        borderLName.borderWidth = width
+        lastNameLabel.layer.addSublayer(borderLName)
+        lastNameLabel.layer.masksToBounds = true
+        //age label
+        let borderAge = CALayer()
+        borderAge.borderColor = UIColor.darkGrayColor().CGColor
+        borderAge.frame = CGRect(x: 0, y: ageLabel.frame.size.height - width, width:  ageLabel.frame.size.width, height: ageLabel.frame.size.height)
+        
+        borderAge.borderWidth = width
+        ageLabel.layer.addSublayer(borderAge)
+        ageLabel.layer.masksToBounds = true
+        
+        //email
+        let borderEmail = CALayer()
+        borderEmail.borderColor = UIColor.darkGrayColor().CGColor
+        borderEmail.frame = CGRect(x: 0, y: emailLabel.frame.size.height - width, width:  emailLabel.frame.size.width, height: emailLabel.frame.size.height)
+        
+        borderEmail.borderWidth = width
+        emailLabel.layer.addSublayer(borderEmail)
+        emailLabel.layer.masksToBounds = true
+        //gender
+        let borderGender = CALayer()
+        borderGender.borderColor = UIColor.darkGrayColor().CGColor
+        borderGender.frame = CGRect(x: 0, y: genderLabel.frame.size.height - width, width:  genderLabel.frame.size.width, height: genderLabel.frame.size.height)
+        
+        borderGender.borderWidth = width
+        genderLabel.layer.addSublayer(borderGender)
+        genderLabel.layer.masksToBounds = true
     }
     
     @IBAction func saveAction(sender: AnyObject) {
@@ -92,9 +135,7 @@ class EditProfile: UIViewController, UIImagePickerControllerDelegate, UINavigati
                 }
                 return nil
             }
-            
-            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-            //self.presentViewController(vc, animated: true, completion: nil)
+
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
             self.presentViewController(vc, animated: true, completion: nil)
             
@@ -309,5 +350,11 @@ class EditProfile: UIViewController, UIImagePickerControllerDelegate, UINavigati
         
         return image
     }
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
     
 }

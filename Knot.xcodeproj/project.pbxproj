@@ -150,6 +150,8 @@
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
+		439211001CD19A8100DCAD90 /* RateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439210FF1CD19A8100DCAD90 /* RateUser.swift */; };
+		439211021CD1B39A00DCAD90 /* new-stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439211011CD1B39A00DCAD90 /* new-stars.swift */; };
 		4396E67E1CA4A64900655ED9 /* pageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67D1CA4A64900655ED9 /* pageController.swift */; };
 		4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */; };
 		4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6811CAC9B2C00655ED9 /* collection.swift */; };
@@ -389,6 +391,8 @@
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		439210FF1CD19A8100DCAD90 /* RateUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateUser.swift; sourceTree = "<group>"; };
+		439211011CD1B39A00DCAD90 /* new-stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "new-stars.swift"; sourceTree = "<group>"; };
 		4396E67D1CA4A64900655ED9 /* pageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pageController.swift; sourceTree = "<group>"; };
 		4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KCRE-data.swift"; sourceTree = "<group>"; };
 		4396E6811CAC9B2C00655ED9 /* collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
@@ -815,6 +819,7 @@
 				434EC0931CC780D500DB4966 /* OnboardingTwo.swift */,
 				434332331CC87732001A4394 /* interests.swift */,
 				4397C4701CCFFF9200186EFC /* AuthScreen.swift */,
+				439210FF1CD19A8100DCAD90 /* RateUser.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -828,6 +833,7 @@
 				4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */,
 				4396E6811CAC9B2C00655ED9 /* collection.swift */,
 				4396E6831CAC9C9300655ED9 /* onlineListing.swift */,
+				439211011CD1B39A00DCAD90 /* new-stars.swift */,
 			);
 			name = dynamoData;
 			sourceTree = "<group>";
@@ -1040,6 +1046,7 @@
 				4312622B1C900A3A00A47BFD /* MPNSAttributedStringToNSDictionaryValueTransformer.m in Sources */,
 				4312622E1C900A3A00A47BFD /* MPObjectSelector.m in Sources */,
 				431262221C900A3A00A47BFD /* MPClassDescription.m in Sources */,
+				439211001CD19A8100DCAD90 /* RateUser.swift in Sources */,
 				434EC0941CC780D500DB4966 /* OnboardingTwo.swift in Sources */,
 				4312624E1C900A3A00A47BFD /* UIView+MPHelpers.m in Sources */,
 				43665D381C7030370069A3AA /* MessagingSystemMessageTableViewCell.swift in Sources */,
@@ -1095,6 +1102,7 @@
 				43665D361C7030370069A3AA /* MessagingMyFileLinkTableViewCell.swift in Sources */,
 				432FC6351CCB426F008EDDC6 /* GameScene.swift in Sources */,
 				43665D371C7030370069A3AA /* MessagingMyMessageTableViewCell.swift in Sources */,
+				439211021CD1B39A00DCAD90 /* new-stars.swift in Sources */,
 				4312623A1C900A3A00A47BFD /* MPSwizzler.m in Sources */,
 				4312623F1C900A3A00A47BFD /* MPUIColorToNSStringValueTransformer.m in Sources */,
 				432FC6361CCB426F008EDDC6 /* GameViewController.swift in Sources */,

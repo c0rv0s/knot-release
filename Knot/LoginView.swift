@@ -8,13 +8,17 @@
 
 import Foundation
 import UIKit
+import SendBirdSDK
+import WebKit
 
-class LoginView: UIViewController, FBSDKLoginButtonDelegate {
+class LoginView: UIViewController, FBSDKLoginButtonDelegate, WKNavigationDelegate {
     
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     @IBOutlet weak var buttonView: UIView!
+    
+    var webView: WKWebView?
     
     //fb data
     var fbname = ""
@@ -46,7 +50,23 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
         loginView.center = buttonView.center
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
+        
+        // Creating actual WebView object. You can make it accessible
+        // globally and used by other view controllers / objects
+        webView = WKWebView()
+        
+        // Adding subview to the current interface. It’s not visible.
+        view.addSubview(webView!)
+        // Load web-page that contains web3.js library
+        webView!.loadRequest(NSURLRequest(URL: NSURL(string:
+            "file:///www/eth/web3.html")!))
+        webView!.navigationDelegate = self
 
+    }
+    
+    // Called when web-page is loaded
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        print("Web.js is here!")
     }
     
     @IBAction func SeeTerms(sender: AnyObject) {
@@ -83,6 +103,23 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate {
                 self.appDelegate.cognitoId = task.result as! String
                 print("Cognito ID: ")
                 print (self.appDelegate.cognitoId)
+                
+                //fetch SendBird ID
+                let syncClient = AWSCognito.defaultCognito()
+                let dataset = syncClient.openOrCreateDataset("profileInfo")
+                var value = dataset.stringForKey("SBID")
+                //if nothing
+                if value == nil || value == "" {
+                    dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+                    dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                        return nil
+                    }
+                    print("new SBID uploaded")
+                    print(SendBird.deviceUniqueID())
+                }
+                
+                //ethereum
+                
             }
             return nil
         }

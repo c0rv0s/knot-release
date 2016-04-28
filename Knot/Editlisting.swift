@@ -67,6 +67,25 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.roundedDescrip.layer.borderWidth = 1;
         self.roundedDescrip.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
+        //name
+        let borderName = CALayer()
+        let width = CGFloat(2.0)
+        borderName.borderColor = UIColor.darkGrayColor().CGColor
+        borderName.frame = CGRect(x: 0, y: nameField.frame.size.height - width, width:  nameField.frame.size.width, height: nameField.frame.size.height)
+        
+        borderName.borderWidth = width
+        nameField.layer.addSublayer(borderName)
+        nameField.layer.masksToBounds = true
+        //
+        //price
+        let borderPrice = CALayer()
+        borderPrice.borderColor = UIColor.darkGrayColor().CGColor
+        borderPrice.frame = CGRect(x: 0, y: priceField.frame.size.height - width, width: priceField.frame.size.width, height: priceField.frame.size.height)
+        
+        borderPrice.borderWidth = width
+        priceField.layer.addSublayer(borderPrice)
+        priceField.layer.masksToBounds = true
+        //
         
         picker.delegate = self
 

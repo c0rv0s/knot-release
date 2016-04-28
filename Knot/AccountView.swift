@@ -118,7 +118,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UITabl
         if (value2 == nil) {
             self.completeProfile.hidden = false
             self.completeProfileAlert.hidden = false
-            self.profCompleteLabel.text = "Profile Incomplete"
+            //self.profCompleteLabel.text = "Profile Incomplete"
         }
         
         //store revenue data for user
@@ -154,10 +154,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UITabl
                 self.Name.text = fName + " " + lName
             }
         }
-        if (dataset.stringForKey("rating") != nil) {
-            self.starRating = Int(dataset.stringForKey("rating"))!
-            self.floatRatingView.rating = Float(starRating)
-        }
+        self.floatRatingView.rating = Float(self.appDelegate.selfRating)
         /*
         if (dataset.stringForKey("flappyScore") != nil) {
             self.flappyScore = dataset.stringForKey("flappyScore")
@@ -240,6 +237,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UITabl
                     for item in paginatedOutput.items as! [ListItem] {
                         print(item.seller)
                         if item.seller == self.appDelegate.cognitoId {
+                            print(item.sold)
                             if item.sold == "false" {
                                 var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
                                 if (secondsUntil > (0 - 60 * 60 * 24 * 12)) {
