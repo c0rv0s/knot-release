@@ -64,9 +64,6 @@
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
-            <string>Gravity-Regular</string>
-            <string>Gravity-Regular</string>
-            <string>Gravity-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -218,43 +215,8 @@
                                             <segue destination="b5W-76-OeN" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="uIL-st-cTj"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XsT-hf-qZi">
-                                        <rect key="frame" x="0.0" y="276" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XsT-hf-qZi" id="hui-5q-Jal">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVj-9Q-nAB">
-                                                    <rect key="frame" x="8" y="11" width="109" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                                    <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red circle" translatesAutoresizingMaskIntoConstraints="NO" id="ip2-R8-mKz">
-                                                    <rect key="frame" x="125" y="7" width="30" height="30"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4E-qv-GG9">
-                                                    <rect key="frame" x="119" y="11" width="43" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                                    <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="     &gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zge-vd-SX1">
-                                                    <rect key="frame" x="182" y="11" width="44" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                                    <color key="textColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <segue destination="frO-fK-0Qq" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="m2A-aZ-GuN"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ggh-8K-8zd">
-                                        <rect key="frame" x="0.0" y="320" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="276" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggh-8K-8zd" id="MOX-3C-c7T">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -274,7 +236,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="459" id="Uae-kd-QxC">
-                                        <rect key="frame" x="0.0" y="364" width="600" height="459"/>
+                                        <rect key="frame" x="0.0" y="320" width="600" height="459"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uae-kd-QxC" id="TMd-2P-goG">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="458"/>
@@ -324,7 +286,6 @@
                         <segue destination="b5W-76-OeN" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="nkK-lo-MWo"/>
                         <segue destination="qP0-zv-SaE" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="BnQ-fV-bFj"/>
                         <segue destination="Yn6-Mw-DUA" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Q0o-Ta-V3K"/>
-                        <segue destination="frO-fK-0Qq" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="gPe-Tf-eBj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3DD-4N-pWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1138,7 +1099,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="These help us find stuff you'll like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-7p-wUq">
-                                        <rect key="frame" x="51" y="156" width="139" height="11"/>
+                                        <rect key="frame" x="53" y="156" width="134" height="11"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2046,42 +2007,6 @@
             </objects>
             <point key="canvasLocation" x="468.5" y="2812.5"/>
         </scene>
-        <!--Notifications-->
-        <scene sceneID="1AD-NC-oBV">
-            <objects>
-                <tableViewController id="4e7-UI-L43" customClass="Notifications" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xgm-32-Djz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UvP-XK-r6Q">
-                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UvP-XK-r6Q" id="05i-CA-gfe">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="4e7-UI-L43" id="jwk-bB-yQI"/>
-                            <outlet property="delegate" destination="4e7-UI-L43" id="D8Q-2Z-Ojp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="vNq-dO-QMm">
-                        <barButtonItem key="leftBarButtonItem" image="three" id="f2C-TJ-pod">
-                            <color key="tintColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="f2C-TJ-pod" id="sXg-DN-gzg"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aL8-t7-RFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1662" y="-916"/>
-        </scene>
         <!--Navsub-->
         <scene sceneID="j3X-St-9FU">
             <objects>
@@ -2244,24 +2169,6 @@
             </objects>
             <point key="canvasLocation" x="-2984" y="-1116"/>
         </scene>
-        <!--Navsub-->
-        <scene sceneID="7HS-3q-SwD">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="frO-fK-0Qq" customClass="navsub" customModule="Knot" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="afQ-6z-VDr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4e7-UI-L43" kind="relationship" relationship="rootViewController" id="TwQ-hW-ZAx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zgU-GE-Man" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="850" y="-916"/>
-        </scene>
     </scenes>
     <resources>
         <image name="KnotLogo-1" width="958" height="286"/>
@@ -2273,7 +2180,6 @@
         <image name="heart" width="128" height="128"/>
         <image name="house158" width="32" height="32"/>
         <image name="placeholder" width="170" height="213"/>
-        <image name="red circle" width="32" height="32"/>
         <image name="shapes" width="32" height="32"/>
         <image name="signs" width="24" height="24"/>
         <image name="three" width="32" height="32"/>
@@ -2282,12 +2188,11 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="62l-zR-q1q"/>
-        <segue reference="uIL-st-cTj"/>
         <segue reference="y1g-Rx-8Dr"/>
-        <segue reference="m2A-aZ-GuN"/>
-        <segue reference="QDv-Ff-5zX"/>
         <segue reference="kyH-4W-YAm"/>
         <segue reference="Kxk-Vc-s6w"/>
+        <segue reference="QDv-Ff-5zX"/>
+        <segue reference="uIL-st-cTj"/>
         <segue reference="1fN-SU-fVL"/>
         <segue reference="5Ei-1s-dmw"/>
     </inferredMetricsTieBreakers>

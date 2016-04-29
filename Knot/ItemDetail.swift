@@ -394,7 +394,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         else {
             updateSoldStatus("ended")
             timeLabel.text = "Ended"
-            self.alternatingButton.hidden = true
+            //self.alternatingButton.hidden = true
         }
 
     }
@@ -476,7 +476,23 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
     }
     
+    //change item sold status or delete
     func updateSoldStatus(type: String) {
+        if type == "deleted" {
+            self.performDelete(self.DetailItem).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB delete succeeded")
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
+                
+                return nil;
+            })
+        }
         var hashValue: AWSDynamoDBAttributeValue = AWSDynamoDBAttributeValue()
         hashValue.S = self.IDNum
         var otherValue: AWSDynamoDBAttributeValue = AWSDynamoDBAttributeValue()
@@ -493,9 +509,106 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         updateInput.attributeUpdates = ["sold": valueUpdate]
         updateInput.returnValues = AWSDynamoDBReturnValue.UpdatedNew
         
-        self.sold = "Sold!"
+        self.sold = type
         AWSDynamoDB.defaultDynamoDB().updateItem(updateInput).waitUntilFinished()
     }
+    
+    //deletion helper method
+    func performDelete(item: ListItem) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        let task = mapper.remove(item)
+        
+        print("item removed")
+        return BFTask(forCompletionOfAllTasks: [task])
+    }
+    
+    //relist item
+    func updateTimeStatus() {
+        let alert = UIAlertController(title: "How Long?", message: "Select a relist time length:", preferredStyle: UIAlertControllerStyle.Alert)
+        var length = 72
+        alert.addAction(UIAlertAction(title: "Three Days", style: .Default, handler: { (alertAction) -> Void in
+            self.insertItem(length).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Five Days", style: .Default, handler: { (alertAction) -> Void in
+            length = 120
+            self.insertItem(length).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Twelve Days", style: .Default, handler: { (alertAction) -> Void in
+            length = 288
+            self.insertItem(length).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+        }))
+        alert.addAction(UIAlertAction(title: "Eighteen Days", style: .Default, handler: { (alertAction) -> Void in
+            length = 432
+            self.insertItem(length).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+        }))
+
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    //relist helper method
+    
+    //relist helper method
+    func insertItem(length: Int) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        /***CONVERT FROM NSDate to String ****/
+        let currentDate = NSDate()
+
+        let overDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: length, toDate: currentDate, options: NSCalendarOptions.init(rawValue: 0))
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        let dateString = dateFormatter.stringFromDate(overDate!)
+        
+        var item = self.DetailItem
+        item.time  = dateString
+
+        let task = mapper.save(item)
+        
+        print("item created, preparing upload")
+        return BFTask(forCompletionOfAllTasks: [task])
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
         if (segue!.identifier == "editListing") {
@@ -648,7 +761,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         if owned {
             //self.performSegueWithIdentifier("paySegue", sender: self)
             let alert = UIAlertController(title: "Are You Sure?", message: "Is this transaction completed?", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
+            alert.addAction(UIAlertAction(title: "Mark as Sold", style: .Default, handler: { (alertAction) -> Void in
 
                 self.updateSoldStatus("Sold!")
 
@@ -715,6 +828,9 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
                 
+            }))
+            alert.addAction(UIAlertAction(title: "Relist", style: .Default, handler: { (alertAction) -> Void in
+                self.updateTimeStatus()
             }))
             alert.addAction(UIAlertAction(title: "Delete", style: .Default, handler: { (alertAction) -> Void in
                 self.updateSoldStatus("deleted")

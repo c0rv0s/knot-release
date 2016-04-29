@@ -738,7 +738,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             
             let userPrice = Int(self.priceField.text!)
             if userPrice != nil {
-                if userPrice >= 99 {
+                if userPrice >= 49 {
                     print("Valid Integer")
                     let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
@@ -762,7 +762,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                     self.loadData(false, lastScreen: true)
                 }
             }
-
+            else {
+                let alert = UIAlertController(title: "Attention", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            }
         }
     }
     
@@ -798,11 +802,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
-        /*
-        self.tabBarController?.tabBar.hidden = false
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainRootView") as! UITabBarController
-        self.presentViewController(vc, animated: true, completion: nil)
- */
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
                 UIApplication.sharedApplication().openURL(url)
@@ -836,27 +835,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             erasure?.volume = 0.5
             erasure?.play()
         }
-        if nameField.text == "Dunky" {
-            /*
-            let phoneNumber = "6509697272"
-             let callNumber = phoneNumber {
-                
-                let aURL = NSURL(string: "telprompt://\(callNumber)")
-                if UIApplication.sharedApplication().canOpenURL(aURL) {
-                    UIApplication.sharedApplication().openURL(aURL)
-                } else {
-                    print("error")
-                }
-            //}
-            //else {
-              //  print("error")} */
-        }
+
         if nameField.text == "Pride" {
             self.appDelegate.prideOn = true
         }
-        
-        
-        UIApplication.sharedApplication().statusBarHidden = true
+
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }

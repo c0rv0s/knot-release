@@ -225,7 +225,7 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UITabl
             let dynamoDBObjectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
             let queryExpression = AWSDynamoDBScanExpression()
             queryExpression.exclusiveStartKey = self.lastEvaluatedKey
-            queryExpression.limit = 20;
+            queryExpression.limit = 100;
             dynamoDBObjectMapper.scan(ListItem.self, expression: queryExpression).continueWithExecutor(AWSExecutor.mainThreadExecutor(), withBlock: { (task:AWSTask!) -> AnyObject! in
                 
                 if self.lastEvaluatedKey == nil {
@@ -235,12 +235,11 @@ class AccountView: UIViewController, MFMailComposeViewControllerDelegate, UITabl
                 if task.result != nil {
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
                     for item in paginatedOutput.items as! [ListItem] {
-                        print(item.seller)
                         if item.seller == self.appDelegate.cognitoId {
-                            print(item.sold)
+                            print(item.name)
                             if item.sold == "false" {
                                 var secondsUntil = self.secondsFrom(self.currentDate, endDate: self.dateFormatter.dateFromString(item.time)!)
-                                if (secondsUntil > (0 - 60 * 60 * 24 * 12)) {
+                                if (secondsUntil > (0 - 60 * 60 * 24 * 30)) {
                                     self.tableRows?.append(item)
                                     self.downloadImage(item)
                                 }
