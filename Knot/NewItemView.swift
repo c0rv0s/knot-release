@@ -805,9 +805,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("SelectUser") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-        /*
+
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
                 UIApplication.sharedApplication().openURL(url)
@@ -848,7 +846,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
 
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
- */
+ 
     }
     
     func resizeImage(image: UIImage) -> UIImage {

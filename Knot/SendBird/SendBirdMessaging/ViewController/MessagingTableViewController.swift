@@ -177,17 +177,6 @@ class MessagingTableViewController: UIViewController, UITableViewDataSource, UIT
         self.presentViewController(window.rootViewController!, animated: true, completion: nil)
         
     }
-    /*
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        if (segue!.identifier == "undoContact") {
-            let viewController:ItemDetail = segue!.destinationViewController as! Messaging
-            
-            viewController.viewMode = kMessagingViewMode
-            viewController.messagingTargetUserId = sellerSBID
-            viewController.contacted = true
-        }
-        
-    }*/
     
     // TO-DO : the nav stack for this needs to be tweaked so that using go back from a message takes you back to the list
     //modified by Nathan, this goes back to the list view

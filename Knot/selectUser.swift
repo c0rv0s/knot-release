@@ -7,6 +7,10 @@
 //
 
 import Foundation
+import UIKit
+import SendBirdSDK
+import MobileCoreServices
+
 
 class SelectUser: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -14,6 +18,11 @@ class SelectUser: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableRows : Array<String>?
     @IBOutlet weak var question: UILabel!
     var credentialsProvider = AWSCognitoCredentialsProvider()
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    private var messagingChannelListQuery: SendBirdMessagingChannelListQuery?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +32,12 @@ class SelectUser: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.registerNib(nib, forCellReuseIdentifier: "cell")
         self.automaticallyAdjustsScrollViewInsets = false
         
+        self.startSendBird("derp")
+        
+        self.messagingChannelListQuery = SendBird.queryMessagingChannelList()
+        
         getUsers()
-        tableRows = ["der", "berp", "lerp"]
+        tableRows = []
         tableView.reloadData()
     }
     
@@ -65,9 +78,35 @@ class SelectUser: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 50
     }
     
-    //get lsit of users
-    func getUsers() {
+    private func startSendBird(userName: String) {
+        let APP_ID: String = "6D1F1F00-D8E0-4574-A738-4BDB61AF0411"
+        let USER_ID: String = self.appDelegate.SBID!
+        let USER_NAME: String = userName
+        
+        print("SendBirdUserID in auth = " + USER_ID)
+
+        SendBird.initAppId(APP_ID, withDeviceId: USER_ID)
         
     }
     
+    //get list of users
+    func getUsers() {
+        self.messagingChannelListQuery = SendBird.queryMessagingChannelList()
+        self.messagingChannelListQuery?.setLimit(15)
+        if self.messagingChannelListQuery?.hasNext() == true {
+            self.messagingChannelListQuery?.nextWithResultBlock({ (queryResult) -> Void in
+                for user in queryResult {
+                    print(user)
+                    self.tableRows?.append(user as! String)
+                }
+                
+                }, endBlock: { (code) -> Void in
+                    
+            })
+        }
+        self.tableView.reloadData()
+    }
+    
 }
+
+
