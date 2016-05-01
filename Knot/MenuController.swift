@@ -18,6 +18,9 @@ class MenuController: UITableViewController {
     @IBOutlet var floatRatingView: FloatRatingView!
     var starRating = 5
     
+    var selfRatingArray : [String]!
+    var lastEvaluatedKey:[NSObject : AnyObject]!
+    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     let normalColor = UIColor(red: 0, green: 100/255, blue: 118/255, alpha: 1)
@@ -26,9 +29,12 @@ class MenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //selfRatingArray = []
+        
         self.floatRatingView.emptyImage = UIImage(named: "empty-star")
         self.floatRatingView.fullImage = UIImage(named: "full-star")
         self.floatRatingView.editable = false
+        self.floatRatingView.rating = Float(self.appDelegate.selfRating)
         self.returnUserDataForProf()
         
         // Uncomment the following line to preserve selection between presentations
@@ -54,7 +60,7 @@ class MenuController: UITableViewController {
                 self.nameLabel.text = fName + " " + lName
             }
         }
-        self.floatRatingView.rating = Float(self.appDelegate.selfRating)
+        //self.checkRatings()
         
         self.downloadImage(self.appDelegate.cognitoId!, bucket: "user-prof-photos")
     }
@@ -136,6 +142,8 @@ class MenuController: UITableViewController {
         var cellToDeSelect:UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
         cellToDeSelect.contentView.backgroundColor = normalColor
     }
+    
+    
     
     // MARK: - Table view data source
     

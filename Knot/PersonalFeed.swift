@@ -168,7 +168,7 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
                 
                 if task.result != nil {
                     let paginatedOutput = task.result as! AWSDynamoDBPaginatedOutput
-                    for item in paginatedOutput.items as! [ListItem] {
+                    for item in paginatedOutput.items as! [ListItem] { 
                         print(item.seller)
                         if item.seller == self.cognitoID {
                             if item.sold != "deleted" {
@@ -334,27 +334,6 @@ class PersonalFeed: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
         
     }
-    
-/*
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            //tableRows.removeAtIndex(indexPath)
-            
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            self.insertItem(indexPath).continueWithBlock({
-                (task: BFTask!) -> BFTask! in
-                
-                if (task.error != nil) {
-                    print(task.error!.description)
-                } else {
-                    print("DynamoDB save succeeded")
-                }
-                
-                return nil;
-            })
-        }
-    }
- */
     
     func insertItem(indexPath: NSIndexPath) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()

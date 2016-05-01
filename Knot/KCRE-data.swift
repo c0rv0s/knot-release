@@ -8,6 +8,7 @@
 
 import Foundation
 
+//KCRE data points, to be used
 class KCREData : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"

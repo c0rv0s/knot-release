@@ -8,6 +8,7 @@
 
 import Foundation
 
+//new listing
 class ListItem : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var ID   : String = "placeholder"

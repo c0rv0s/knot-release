@@ -8,6 +8,7 @@
 
 import Foundation
 
+//when a star is left this is the data to use
 class NewStars : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"

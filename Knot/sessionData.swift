@@ -8,6 +8,7 @@
 
 import Foundation
 
+//user data for actions stored during the session get these to dynamo
 class sessionData : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"

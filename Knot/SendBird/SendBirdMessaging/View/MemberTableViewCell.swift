@@ -98,6 +98,7 @@ class MemberTableViewCell: UITableViewCell {
         
         self.nicknameLabel?.text = model.nickname
         
+        //TODO: get AWS photos for these avatars
         SendBirdUtils.loadImage(model.picture, imageView: self.profileImageView!, width: 40, height: 40)
     }
 }

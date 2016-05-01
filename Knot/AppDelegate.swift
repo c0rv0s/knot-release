@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var window: UIWindow?
     var credentialsProvider = AWSCognitoCredentialsProvider()
     var cognitoId: String?
+    var SBID : String?
     
     var startApp = false
     var loggedIn = false
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     
     var item : ListItem!
     
-    var selfRating : Int!
+    var selfRating = 0
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -267,6 +268,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     }
     
     //store user data
+    //used for getting the stored data about user habits in to dynamo for the KRE
     func dataStash(itemId: String, itemCondition: Int) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         

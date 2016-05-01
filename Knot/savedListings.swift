@@ -10,6 +10,8 @@ import Foundation
 
 import UIKit
 
+//table for favorited listings
+
 class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     

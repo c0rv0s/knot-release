@@ -8,6 +8,7 @@
 
 import Foundation
 
+//to get updated stars in dynamo for proessing
 class CurrentStars : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"

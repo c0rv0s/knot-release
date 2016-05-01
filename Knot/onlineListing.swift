@@ -8,6 +8,7 @@
 
 import Foundation
 
+// a piece of a collection, coming soon
 class OnineItem : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var ID   : String = "placeholder"

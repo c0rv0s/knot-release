@@ -8,6 +8,7 @@
 
 import Foundation
 
+//KRE data points
 class KREData : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var userID   : String = "placeholder"

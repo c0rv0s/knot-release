@@ -822,11 +822,16 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
                 }
-
+                
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("RateUser") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+                /*
                 let alert = UIAlertController(title: "Congrats!", message: "You're listing will disappear from the store feed in a few minutes.", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
                 }))
                 self.presentViewController(alert, animated: true, completion: nil)
+ */
                 
             }))
             alert.addAction(UIAlertAction(title: "Relist", style: .Default, handler: { (alertAction) -> Void in

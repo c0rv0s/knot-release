@@ -283,7 +283,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
         /***CONVERT FROM NSDate to String ****/
-        print(timeHoursInt)
+        //print(timeHoursInt)
         let currentDate = NSDate()
         //get over hours
         self.calcTimeHoursInt()
@@ -331,6 +331,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 priceString = String(priceString.characters.dropFirst())
             }
         }
+        
         for i in priceString.characters {
             if i == "0" {
                 priceString = String(priceString.characters.dropFirst())
@@ -389,8 +390,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.timeHoursInt = hours[6]
         }
         */
-        print("checkin timehoursint")
-        print(timeHoursInt)
+        //print("checkin timehoursint")
+        //print(timeHoursInt)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -721,10 +722,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
+        /*
         repeat {
             priceString = String(priceString.characters.dropFirst())
         }
         while ( Array(priceString.characters)[0] == "0")
+ */
 
         print("priceString")
         print(priceString)
@@ -802,6 +805,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("SelectUser") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+        /*
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
                 UIApplication.sharedApplication().openURL(url)
@@ -842,6 +848,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
 
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
+ */
     }
     
     func resizeImage(image: UIImage) -> UIImage {

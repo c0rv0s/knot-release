@@ -24,8 +24,6 @@ class RateUser: UIViewController {
     
     var credentialsProvider = AWSCognitoCredentialsProvider()
     
-    var cognitoID : String!
-    
     var selfRating : [String]!
 
     override func viewDidLoad() {
@@ -38,6 +36,9 @@ class RateUser: UIViewController {
         
         self.descripFieldView.layer.borderWidth = 1;
         self.descripFieldView.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
+        
+        //get potential users
+        
 
     }
     
@@ -53,23 +54,13 @@ class RateUser: UIViewController {
                 
                 return nil;
             })
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     //store star for future averaging
     func dataStash() -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        
-        var cogID = ""
-        credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if (task.error != nil) {
-                print("Error: " + task.error!.localizedDescription)
-            }
-            else {
-                // the task result will contain the identity id
-                cogID = task.result as! String
-            }
-            return nil
-        }
         
         /***CONVERT FROM NSDate to String ****/
         let dateFormatter = NSDateFormatter()
@@ -78,7 +69,7 @@ class RateUser: UIViewController {
         
         let item = NewStars()
         item.userID = otherParty
-        item.raterID = cogID
+        item.raterID = self.appDelegate.cognitoId!
         item.timestamp = dateString
         item.stars = Int(self.floatRatingView.rating)
         item.comment = self.commentView.text

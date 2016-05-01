@@ -8,6 +8,7 @@
 
 import Foundation
 
+//collection item: a future feature
 class CollectionItem : AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var ID   : String = "placeholder"
