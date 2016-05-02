@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var loggedIn = false
     var untapped: Array<String>!
     
-    var locCurrent: CLLocation!
+    //var locCurrent: CLLocation!
     
     var mixpanel: AnyObject?
     
@@ -37,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var item : ListItem!
     
     var selfRating = 0
-
+    
+    var locCurrent = CLLocation(latitude: 37.8051478737647, longitude: -122.426909426833)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         

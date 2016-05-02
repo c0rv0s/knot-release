@@ -169,6 +169,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
                 } else if let err = error {
                     
                     self.locGiven = false
+                    self.locCurrent = self.appDelegate.locCurrent
                     let alertController = UIAlertController (title: "Location Services disabled.", message: "Enabling location services allows Knot to show you listings in your area.", preferredStyle: .Alert)
                     
                     let settingsAction = UIAlertAction(title: "Settings", style: .Default) { (_) -> Void in

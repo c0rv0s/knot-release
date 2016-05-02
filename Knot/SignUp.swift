@@ -81,6 +81,13 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         borderLast.borderWidth = width
         lastNameLabel.layer.addSublayer(borderLast)
         lastNameLabel.layer.masksToBounds = true
+        
+        let alert = UIAlertController(title: "Would you like to see listings from your Facebook friends?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
+        }))
+        alert.addAction(UIAlertAction(title: "Not Now", style: .Default, handler: { (alertAction) -> Void in
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
 
         self.returnUserData()
     }

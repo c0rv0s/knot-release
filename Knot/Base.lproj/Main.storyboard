@@ -279,6 +279,7 @@
                         <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="KEi-Zk-5cM" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="rII-ot-IBP"/>
                         <segue destination="gOh-Dv-xNd" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="0LM-uP-bxa"/>

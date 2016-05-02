@@ -11,12 +11,15 @@ import CoreLocation
 import LocalAuthentication
 import AVKit
 import AVFoundation
+import WebKit
 
-class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate {
+class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, WKNavigationDelegate {
 
     let picker = UIImagePickerController()
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    var webView: WKWebView?
     
     @IBOutlet weak var IntroText: UITextView!
     
@@ -33,6 +36,55 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         super.viewDidLoad()
         self.picker.delegate = self
         item  = self.appDelegate.item
+        
+        // Creating actual WebView object. You can make it accessible
+        // globally and used by other view controllers / objects
+        webView = WKWebView()
+        
+        // Adding subview to the current interface. It’s not visible.
+        view.addSubview(webView!)
+        // Load web-page that contains web3.js library
+        webView!.loadRequest(NSURLRequest(URL: NSURL(string:
+            "file:///www/eth/web3.html")!))
+        webView!.navigationDelegate = self
+    }
+    
+    // Called when web-page is loaded
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!)
+    {
+        print("Web.js is here!")
+        webView.evaluateJavaScript("web3.isConnected()", completionHandler: {(res: AnyObject?, error: NSError?) in
+            if let connected = res where connected as! NSInteger == 1
+            {
+                print("Connected to ethereum node")
+            }
+            else
+            {
+                print("Unable to connect to the node. Check the setup.")
+            }
+            
+        })
+    }
+    
+    func setOwner() {
+        if let owner = self.appDelegate.cognitoId
+        {
+            webView!.evaluateJavaScript("Car.setOwner(\"\(owner)\")", completionHandler: {(res: AnyObject?, error: NSError?) in
+                print("Transaction: \(res!)");
+            })
+        }
+    }
+    
+    func getOwner()
+    {
+        webView!.evaluateJavaScript("getNameAndOwner()", completionHandler: {(res: AnyObject?, error: NSError?) in
+            if let carData = res as? NSDictionary
+            {
+            /*
+                 self.requestResult.text = "The owner of the \"\(carData["name"]!)\" car is \"\(carData[“owner"]!)\""
+            */
+            }
+        })
     }
     
     @IBAction func DoneButton(sender: AnyObject) {
@@ -150,11 +202,11 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func resizeImage(image: UIImage) -> UIImage {
         var actualHeight = CGFloat(image.size.height)
         var actualWidth = CGFloat(image.size.width)
-        var maxHeight = CGFloat(1000.0)
-        var maxWidth = CGFloat(600.00)
+        let maxHeight = CGFloat(1000.0)
+        let maxWidth = CGFloat(600.00)
         var imgRatio = CGFloat(actualWidth/actualHeight)
-        var maxRatio = CGFloat(maxWidth/maxHeight)
-        var compressionQuality = CGFloat(0.25)//25 percent compression
+        let maxRatio = CGFloat(maxWidth/maxHeight)
+        let compressionQuality = CGFloat(0.25)//25 percent compression
         
         if (actualHeight > maxHeight || actualWidth > maxWidth)
         {
@@ -296,15 +348,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     
     func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
-        //SwiftSpinner.hide()
-        /*
-        if /*succ1 == 2 || succ2 == 2 || succ3 == 2 ||*/ self.preUploadComplete == false {
-            let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
-        */
         print("Upload successful")
         var alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
         let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
