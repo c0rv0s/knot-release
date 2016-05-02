@@ -468,30 +468,18 @@
                         <viewControllerLayoutGuide type="bottom" id="aUf-qD-MwG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FRD-Bk-7Jy">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-vY-4Af">
-                                <rect key="frame" x="36" y="28" width="240" height="117"/>
+                                <rect key="frame" x="63" y="28" width="240" height="117"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Tap to upload documents indicating authenticity. This includes receipts, manufacturer's documents, signatures from the original artists or letters of genuinuity.</string>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="zZL-wH-l2i">
-                                <rect key="frame" x="12" y="160" width="125" height="125"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-SX-gNH">
-                                <rect key="frame" x="173" y="160" width="125" height="125"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-Pk-WBC">
-                                <rect key="frame" x="163" y="153" width="145" height="140"/>
-                                <connections>
-                                    <action selector="ImgButtonTwo:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="KfT-U0-PaT"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
-                                <rect key="frame" x="65" y="367" width="183" height="47"/>
+                                <rect key="frame" x="92" y="367" width="183" height="47"/>
                                 <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
@@ -500,11 +488,32 @@
                                     <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fif-gJ-Wdk">
+                                <rect key="frame" x="32" y="164" width="138" height="140"/>
+                                <connections>
+                                    <action selector="ImgButtonOne:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="Ixu-a4-FXI"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="zZL-wH-l2i">
+                                <rect key="frame" x="39" y="171" width="125" height="125"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-SX-gNH">
+                                <rect key="frame" x="200" y="171" width="125" height="125"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-Pk-WBC">
+                                <rect key="frame" x="190" y="164" width="145" height="140"/>
+                                <connections>
+                                    <action selector="ImgButtonTwo:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="KfT-U0-PaT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="600"/>
                     <connections>
-                        <outlet property="ImgButtonTwo" destination="wqU-Pk-WBC" id="nLB-pr-b5L"/>
+                        <outlet property="ImgButtonOne" destination="fif-gJ-Wdk" id="XgW-Yw-qIb"/>
+                        <outlet property="ImgButtonTwo" destination="wqU-Pk-WBC" id="iD9-WW-wwU"/>
                         <outlet property="ImgOne" destination="zZL-wH-l2i" id="zZ7-Ep-afk"/>
                         <outlet property="ImgTwo" destination="8mf-SX-gNH" id="4qp-Kv-22G"/>
                         <outlet property="IntroText" destination="Iq0-vY-4Af" id="RpM-lG-HC6"/>
@@ -512,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlZ-ZR-Mu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2764" y="1862"/>
+            <point key="canvasLocation" x="2763.5" y="1862"/>
         </scene>
         <!--Edit Listing-->
         <scene sceneID="xrz-x9-D1d">
@@ -2230,12 +2239,12 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eRe-hd-sWy"/>
-        <segue reference="uIL-st-cTj"/>
-        <segue reference="y1g-Rx-8Dr"/>
-        <segue reference="62l-zR-q1q"/>
-        <segue reference="QDv-Ff-5zX"/>
-        <segue reference="kyH-4W-YAm"/>
-        <segue reference="Kxk-Vc-s6w"/>
+        <segue reference="nkK-lo-MWo"/>
+        <segue reference="D0b-0y-c8N"/>
+        <segue reference="0LM-uP-bxa"/>
+        <segue reference="BnQ-fV-bFj"/>
+        <segue reference="Q0o-Ta-V3K"/>
+        <segue reference="aHn-RY-HGy"/>
         <segue reference="5Ei-1s-dmw"/>
     </inferredMetricsTieBreakers>
 </document>
