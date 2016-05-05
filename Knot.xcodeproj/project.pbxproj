@@ -185,6 +185,7 @@
 		43FF94C01CD5522400FC150E /* selectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94BF1CD5522400FC150E /* selectUser.swift */; };
 		43FF94C21CD55BE100FC150E /* selectUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43FF94C11CD55BE100FC150E /* selectUserCell.xib */; };
 		43FF94C41CD55C5A00FC150E /* selectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94C31CD55C5A00FC150E /* selectUserCell.swift */; };
+		43FF94C61CD9AB3600FC150E /* web3.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FF94C51CD9AB3600FC150E /* web3.html */; };
 		DCB92AE93E8806C3B41068B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 691BA03F23134477396E3AC6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -431,6 +432,7 @@
 		43FF94BF1CD5522400FC150E /* selectUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUser.swift; sourceTree = "<group>"; };
 		43FF94C11CD55BE100FC150E /* selectUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = selectUserCell.xib; sourceTree = "<group>"; };
 		43FF94C31CD55C5A00FC150E /* selectUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUserCell.swift; sourceTree = "<group>"; };
+		43FF94C51CD9AB3600FC150E /* web3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = web3.html; sourceTree = "<group>"; };
 		691BA03F23134477396E3AC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A314E474FE13645424E4F251 /* Pods_Knot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -670,6 +672,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				43FF94C51CD9AB3600FC150E /* web3.html */,
 				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
 				432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
@@ -951,6 +954,7 @@
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
+				43FF94C61CD9AB3600FC150E /* web3.html in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
 				431262291C900A3A00A47BFD /* MPNotification.storyboard in Resources */,
 				432FC6341CCB426F008EDDC6 /* GameScene.sks in Resources */,

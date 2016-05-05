@@ -31,24 +31,37 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var photoNum = 0
     
     var item : ListItem!
+    var cogID : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.picker.delegate = self
         item  = self.appDelegate.item
+        print(item.name)
+        
+        cogID = self.appDelegate.cognitoId! as String
+        
+        /***CONVERT FROM NSDate to String ****/
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "ddMMyyyyHHmmss"
+        let dateInt = Int(dateFormatter.stringFromDate(NSDate()))
         
         // Creating actual WebView object. You can make it accessible
         // globally and used by other view controllers / objects
         webView = WKWebView()
-        
+
         // Adding subview to the current interface. It’s not visible.
         view.addSubview(webView!)
-        // Load web-page that contains web3.js library
-        webView!.loadRequest(NSURLRequest(URL: NSURL(string:
-            "file:///www/eth/web3.html")!))
+        
+        webView!.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("web3", withExtension: "html")!))
         webView!.navigationDelegate = self
+        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\")",
+                                    completionHandler: {(res: AnyObject?, error: NSError?) in
+                                        print("Transaction: ")
+                                        print(res)
+        })
+        
     }
-    
     // Called when web-page is loaded
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!)
     {
@@ -63,27 +76,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 print("Unable to connect to the node. Check the setup.")
             }
             
-        })
-    }
-    
-    func setOwner() {
-        if let owner = self.appDelegate.cognitoId
-        {
-            webView!.evaluateJavaScript("Car.setOwner(\"\(owner)\")", completionHandler: {(res: AnyObject?, error: NSError?) in
-                print("Transaction: \(res!)");
-            })
-        }
-    }
-    
-    func getOwner()
-    {
-        webView!.evaluateJavaScript("getNameAndOwner()", completionHandler: {(res: AnyObject?, error: NSError?) in
-            if let carData = res as? NSDictionary
-            {
-            /*
-                 self.requestResult.text = "The owner of the \"\(carData["name"]!)\" car is \"\(carData[“owner"]!)\""
-            */
-            }
         })
     }
     
@@ -143,11 +135,11 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func imagePickerController(picker: UIImagePickerController,didFinishPickingMediaWithInfo info: [String : AnyObject]){
         let chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage //2
         let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        var bucket = "authentication-docs"
+        let bucket = "authentication-docs"
 
         if photoNum == 1 {
             ImgOne.image = self.cropToSquare(image: chosenImage)
-            var ID = self.item.ID + "-1"
+            let ID = self.item.ID + "-1"
             //upload pic
             let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
             let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
@@ -169,7 +161,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
            
         }
         if photoNum == 2 {
-            var ID = self.item.ID + "-2"
+            let ID = self.item.ID + "-2"
             ImgTwo.image = self.cropToSquare(image: chosenImage)
             
             //do second photo
@@ -286,14 +278,12 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func authenticateUser() {
         let context : LAContext = LAContext()
         var error : NSError?
-        var myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
+        let myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
         if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
                 if success {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.loadData(true)
-                        //ping the ethereum purchasing server here
-                        
                     })
                 }
                 else {
@@ -346,19 +336,17 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         return BFTask(forCompletionOfAllTasks: [task])
     }
     
-    
     func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int) {
         print("Upload successful")
-        var alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
+        let alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
         let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") 
             self.presentViewController(vc, animated: true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)
         
-        self.appDelegate.mixpanel!.track?(
-            "Item Upload",
+        self.appDelegate.mixpanel!.track?("Item Upload",
             properties: ["userID": self.appDelegate.cognitoId!, "item": self.item.ID]
         )
         
@@ -368,13 +356,10 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func loadData(auth: Bool) {
-        //ethereum code goes here
-        
-        //end ethereum
     
         UIApplication.sharedApplication().statusBarHidden = false
         //SwiftSpinner.show("Uploading...")
-        
+        print("begin auth update")
         //update the authenticated data point on Dynamo to say true
         self.insertItem(self.item.ID, auth: auth).continueWithBlock({
             (task: BFTask!) -> BFTask! in
@@ -391,7 +376,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.wrapUpSubmission(0, succ2: 0, succ3: 0)
         print("Load data")
     }
-
 
 }
   

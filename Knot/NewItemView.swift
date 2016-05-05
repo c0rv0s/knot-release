@@ -71,6 +71,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     //location
     var locString = ""
     
+    //store price
+    var userPrice = 0
+    
     //stuff
     var erasure : AVAudioPlayer?
     var rick : AVAudioPlayer?
@@ -739,37 +742,30 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
         else {
             
-            let userPrice = Int(self.priceField.text!)
-            if userPrice != nil {
+            self.userPrice = Int(self.priceField.text!)!
+            //if self.userPrice != nil {
                 if userPrice >= 49 {
                     print("Valid Integer")
-                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot?", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot (this may incur service fees)?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false, lastScreen: true)
                     }))
                     alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false, lastScreen: false)
-                        //let delayInSeconds = 1.0;
-                        //let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                        //dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                            // When done requesting/reloading/processing invoke endRefreshing, to close the control
-                            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
-                            self.presentViewController(vc, animated: true, completion: nil)
-                        //}
-                        
-
                     }))
                     self.presentViewController(alert, animated: true, completion: nil)
                 }
                 else {
                     self.loadData(false, lastScreen: true)
                 }
-            }
+            //}
+            /*
             else {
                 let alert = UIAlertController(title: "Attention", message: "Please enter a valid price", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
             }
+ */
         }
     }
     
@@ -781,6 +777,14 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+        self.appDelegate.mixpanel!.track?(
+            "Item Upload",
+            properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
+        )
+        
+        self.appDelegate.mixpanel!.people.increment(
+            [ "Listings": 1]
+        )
         if lastScreen {
             print("Upload successful")
             var alertString = "Your listing will appear in the Knot Store in a few moments."
@@ -791,16 +795,16 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             }))
             self.presentViewController(alert, animated: true, completion: nil)
         }
-        self.appDelegate.mixpanel!.track?(
-            "Item Upload",
-            properties: ["userID": self.appDelegate.cognitoId!, "item": self.uniqueID]
-        )
-        
-        self.appDelegate.mixpanel!.people.increment(
-            [ "Listings": 1]
-        )
-        
-
+        else {
+            print("auth time")
+            var delayInSeconds = 0.25;
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+            dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+            
+        }
     }
     
     //end upload and submissions
