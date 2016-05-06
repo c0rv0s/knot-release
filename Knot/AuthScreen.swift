@@ -53,13 +53,11 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // Adding subview to the current interface. It’s not visible.
         view.addSubview(webView!)
         
+        //load the url and call the init function for creating the contract
         let url = NSBundle.mainBundle().URLForResource("web3", withExtension:"html")
         webView!.loadRequest(NSURLRequest(URL: url!))
         webView!.navigationDelegate = self
-        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\" )",
-                                    completionHandler: {(res: AnyObject?, error: NSError?) in
-                                        print(res)
-        })
+        
         
     }
     // Called when web-page is loaded
@@ -284,6 +282,10 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 if success {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.loadData(true)
+                        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\" )",
+                            completionHandler: {(res: AnyObject?, error: NSError?) in
+                                print(res)
+                        })
                     })
                 }
                 else {
