@@ -1,0 +1,26 @@
+
+<!doctype>
+<html>
+    <head>
+        <script type="text/javascript" src="web3.js"></script>
+        <script type="text/javascript">
+            var web3 = new Web3();
+            web3.setProvider(
+                // Geth instance address
+                new web3.providers.HttpProvider("http://54.84.157.95:8545")
+            );
+                
+            var abi = [{"constant":false,"inputs":[{"name":"iid","type":"string"},{"name":"uid","type":"string"},{"name":"tstamp","type":"uint256"}],"name":"init","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"tstamp","type":"uint256"}],"name":"renewtimestamp","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"gettimestamp","outputs":[{"name":"retVal","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"getitemid","outputs":[{"name":"retVal","type":"string"}],"type":"function"},{"constant":true,"inputs":[],"name":"getuserid","outputs":[{"name":"retVal","type":"string"}],"type":"function"}]
+                             
+            var contractAddress = "0xb13f9b0a1c96de5865439a2e8cdb3468fa4b1cf4";
+            var itemRegister = web3.eth.contract(abi).at(contractAddress);
+        
+            function renewtimestamp(uint tstamp){
+                timestamp = tstamp;
+            }
+        
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
