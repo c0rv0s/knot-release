@@ -41,11 +41,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         cogID = self.appDelegate.cognitoId! as String
         
-        /***CONVERT FROM NSDate to String ****/
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "ddMMyyyyHHmmss"
-        let dateInt = Int(dateFormatter.stringFromDate(NSDate()))
-        
         // Creating actual WebView object. You can make it accessible
         // globally and used by other view controllers / objects
         webView = WKWebView()
@@ -282,7 +277,12 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 if success {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.loadData(true)
-                        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\" )",
+                        
+                        /***CONVERT FROM NSDate to String ****/
+                        let dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "ddMMyyyyHHmmss"
+                        let dateInt = Int(dateFormatter.stringFromDate(NSDate()))
+                        self.webView!.evaluateJavaScript("itemRegister.init(\"\(self.cogID, self.item.ID, dateInt!)\" )",
                             completionHandler: {(res: AnyObject?, error: NSError?) in
                                 print(res)
                         })
