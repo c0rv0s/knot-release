@@ -53,11 +53,11 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         // Adding subview to the current interface. It’s not visible.
         view.addSubview(webView!)
         
-        webView!.loadRequest(NSURLRequest(URL: NSBundle.mainBundle().URLForResource("web3", withExtension: "html")!))
+        let url = NSBundle.mainBundle().URLForResource("web3", withExtension:"html")
+        webView!.loadRequest(NSURLRequest(URL: url!))
         webView!.navigationDelegate = self
-        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\")",
+        webView!.evaluateJavaScript("itemRegister.init(\"\(cogID, self.item.ID, dateInt!)\" )",
                                     completionHandler: {(res: AnyObject?, error: NSError?) in
-                                        print("Transaction: ")
                                         print(res)
         })
         
@@ -359,7 +359,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
         UIApplication.sharedApplication().statusBarHidden = false
         //SwiftSpinner.show("Uploading...")
-        print("begin auth update")
+        print("begin auth doc post")
         //update the authenticated data point on Dynamo to say true
         self.insertItem(self.item.ID, auth: auth).continueWithBlock({
             (task: BFTask!) -> BFTask! in
@@ -374,7 +374,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         })
 
         self.wrapUpSubmission(0, succ2: 0, succ3: 0)
-        print("Load data")
     }
 
 }

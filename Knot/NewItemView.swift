@@ -809,6 +809,30 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
+        
+        //some auth testing code
+        self.appDelegate.item = ListItem()
+        
+        self.appDelegate.item.name  = "derp"
+        self.appDelegate.item.ID   = "derp"
+        self.appDelegate.item.price   = "derp"
+        self.appDelegate.item.location =  "derp"
+        self.appDelegate.item.time  = "30-04-1999 08:26:15"
+        self.appDelegate.item.sold = "false"
+        self.appDelegate.item.seller = self.appDelegate.cognitoId! as String
+        self.appDelegate.item.sellerFBID = "derp"
+        self.appDelegate.item.descriptionKnot = "derp"
+        self.appDelegate.item.category = "derp"
+        self.appDelegate.item.condition = "derp"
+        self.appDelegate.item.sellerSBID = "derp"
+        self.appDelegate.item.numberOfPics = 1
+        
+        
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+        //end test code
+        
+        /*
 
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
@@ -850,6 +874,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
 
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
+ */
  
     }
     

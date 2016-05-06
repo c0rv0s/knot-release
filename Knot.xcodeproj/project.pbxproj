@@ -148,6 +148,7 @@
 		4385683F1CA36C840066EEDD /* KRE-data-2.0.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */; };
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
 		43869C611C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
+		4386AA891CDBDB5700347B3C /* web3.html in Resources */ = {isa = PBXBuildFile; fileRef = 4386AA881CDBDB5700347B3C /* web3.html */; };
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
@@ -185,7 +186,6 @@
 		43FF94C01CD5522400FC150E /* selectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94BF1CD5522400FC150E /* selectUser.swift */; };
 		43FF94C21CD55BE100FC150E /* selectUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43FF94C11CD55BE100FC150E /* selectUserCell.xib */; };
 		43FF94C41CD55C5A00FC150E /* selectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94C31CD55C5A00FC150E /* selectUserCell.swift */; };
-		43FF94C61CD9AB3600FC150E /* web3.html in Resources */ = {isa = PBXBuildFile; fileRef = 43FF94C51CD9AB3600FC150E /* web3.html */; };
 		DCB92AE93E8806C3B41068B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 691BA03F23134477396E3AC6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -394,6 +394,7 @@
 		4385683E1CA36C840066EEDD /* KRE-data-2.0.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KRE-data-2.0.swift"; sourceTree = "<group>"; };
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		43869C601C052E07008E6056 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4386AA881CDBDB5700347B3C /* web3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = web3.html; sourceTree = "<group>"; };
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -432,7 +433,6 @@
 		43FF94BF1CD5522400FC150E /* selectUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUser.swift; sourceTree = "<group>"; };
 		43FF94C11CD55BE100FC150E /* selectUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = selectUserCell.xib; sourceTree = "<group>"; };
 		43FF94C31CD55C5A00FC150E /* selectUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUserCell.swift; sourceTree = "<group>"; };
-		43FF94C51CD9AB3600FC150E /* web3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = web3.html; sourceTree = "<group>"; };
 		691BA03F23134477396E3AC6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1EE80F15CFA3842F849A93 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A314E474FE13645424E4F251 /* Pods_Knot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -672,7 +672,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
-				43FF94C51CD9AB3600FC150E /* web3.html */,
+				4386AA881CDBDB5700347B3C /* web3.html */,
 				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
 				432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */,
 				431853451BF9892F000C6ED4 /* AppDelegate.swift */,
@@ -954,7 +954,7 @@
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
-				43FF94C61CD9AB3600FC150E /* web3.html in Resources */,
+				4386AA891CDBDB5700347B3C /* web3.html in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
 				431262291C900A3A00A47BFD /* MPNotification.storyboard in Resources */,
 				432FC6341CCB426F008EDDC6 /* GameScene.sks in Resources */,
