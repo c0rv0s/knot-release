@@ -20,3 +20,5 @@ pod 'AWSCognito', '2.3.5'
 
 pod 'Buglife'
 pod 'AFNetworking'
+
+pod 'Stripe', '~> 4.0'

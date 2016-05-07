@@ -810,7 +810,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     //end upload and submissions
     @IBAction func cancelListing(sender: AnyObject) {
         
-        /*
+        
         //some auth testing code
         self.appDelegate.item = ListItem()
         
@@ -833,7 +833,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.presentViewController(vc, animated: true, completion: nil)
         //end test code
         
-        */
+ 
 
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
@@ -873,8 +873,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.appDelegate.prideOn = true
         }
 
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+       // let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+        //self.presentViewController(vc, animated: true, completion: nil)
  
  
     }

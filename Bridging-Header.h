@@ -35,4 +35,7 @@
 
 #import "SWRevealViewController.h"
 
+#import <Stripe/Stripe.h>
+
 #endif /* Bridging_Header_h */
+

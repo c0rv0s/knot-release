@@ -46,6 +46,12 @@ PODS:
   - AWSSQS (2.3.5):
     - AWSCore (= 2.3.5)
   - Buglife (1.0.1)
+  - Stripe (4.0.3):
+    - Stripe/Checkout (= 4.0.3)
+    - Stripe/Core (= 4.0.3)
+  - Stripe/Checkout (4.0.3):
+    - Stripe/Core
+  - Stripe/Core (4.0.3)
 
 DEPENDENCIES:
   - AFNetworking
@@ -66,6 +72,7 @@ DEPENDENCIES:
   - AWSSNS (= 2.3.5)
   - AWSSQS (= 2.3.5)
   - Buglife
+  - Stripe (~> 4.0)
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -86,5 +93,6 @@ SPEC CHECKSUMS:
   AWSSNS: d95b17f039776ec0dd9cd9237313779d174b0215
   AWSSQS: f7a6f8cf225d469313150f8070e07bd7137218dd
   Buglife: 13e632b01f6d1d3eb31bc3df7f751ab987bb07e3
+  Stripe: 43a4307dc789483a61668d187c4a917d1348b0b6
 
 COCOAPODS: 0.39.0

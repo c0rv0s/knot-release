@@ -149,6 +149,7 @@
 		43869C5B1C03CE36008E6056 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C5A1C03CE36008E6056 /* NewItemView.swift */; };
 		43869C611C052E07008E6056 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43869C601C052E07008E6056 /* LoginView.swift */; };
 		4386AA891CDBDB5700347B3C /* web3.html in Resources */ = {isa = PBXBuildFile; fileRef = 4386AA881CDBDB5700347B3C /* web3.html */; };
+		4386AA8B1CDDDA3100347B3C /* web3.js in Resources */ = {isa = PBXBuildFile; fileRef = 4386AA8A1CDDDA3100347B3C /* web3.js */; };
 		438E058C1C646F2F00856C52 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058B1C646F2F00856C52 /* MobileCoreServices.framework */; };
 		438E058E1C646F4E00856C52 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058D1C646F4E00856C52 /* AdSupport.framework */; };
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
@@ -395,6 +396,7 @@
 		43869C5A1C03CE36008E6056 /* NewItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		43869C601C052E07008E6056 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4386AA881CDBDB5700347B3C /* web3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = web3.html; sourceTree = "<group>"; };
+		4386AA8A1CDDDA3100347B3C /* web3.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = web3.js; sourceTree = "<group>"; };
 		438E058B1C646F2F00856C52 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		438E058D1C646F4E00856C52 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
@@ -672,6 +674,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				4386AA8A1CDDDA3100347B3C /* web3.js */,
 				4386AA881CDBDB5700347B3C /* web3.html */,
 				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
 				432FC63A1CCB45A5008EDDC6 /* Rick.mp3 */,
@@ -953,6 +956,7 @@
 				43A31C621C7808580026D8A2 /* TimeoutView.xib in Resources */,
 				43A3EFBE1C4DF3DE006B9952 /* storeTableCell.xib in Resources */,
 				432FC63D1CCB468D008EDDC6 /* Erasure Always.mp3 in Resources */,
+				4386AA8B1CDDDA3100347B3C /* web3.js in Resources */,
 				43C924971C084BA40006E181 /* Main.storyboard in Resources */,
 				4386AA891CDBDB5700347B3C /* web3.html in Resources */,
 				431853501BF9892F000C6ED4 /* Assets.xcassets in Resources */,
