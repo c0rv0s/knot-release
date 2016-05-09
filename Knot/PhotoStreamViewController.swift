@@ -558,7 +558,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             }
             
             //remove item from untapped
-            appDelegate.untapped.removeAtIndex(self.selectedRow)
+            //appDelegate.untapped.removeAtIndex(self.selectedRow)
             
             //collect view info
             self.dataStash(collectionItems![self.selectedRow].ID, itemCondition: 2).continueWithBlock({

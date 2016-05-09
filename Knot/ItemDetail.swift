@@ -166,19 +166,17 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         categoryLabel.text = self.DetailItem.category
         conditionLabel.text = self.condition
         
-        /*
-        if DetailItem.authenticated {
-            self.thumbImage.image = UIImage(named: "thumbprint")
-        }
- */
+
         //switch for authentication. this will line up which badge to use
         switch DetailItem.authenticated {
         case 0:
             break
         case 1:
-            self.thumbImage.image = UIImage(named: "thumbprint")
+            self.thumbImage.image = UIImage(named: "fingerprint_bronze")
         case 2:
-            self.thumbImage.image = UIImage(named: "thumbprint")
+            self.thumbImage.image = UIImage(named: "fingerprint_silver")
+        case 3:
+            self.thumbImage.image = UIImage(named: "fingerprint_gold")
         default:
             break
         }

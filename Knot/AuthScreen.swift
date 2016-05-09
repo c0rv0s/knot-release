@@ -333,7 +333,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func insertItem(uniqueID: String, auth: Bool) -> BFTask! {
         let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
         
-        item.authenticated = 2
+        item.authenticated = 1
 
         let task = mapper.save(item)
         
