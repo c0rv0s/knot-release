@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LYu-mU-Nvn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LYu-mU-Nvn">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1110,7 +1110,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="These help us find stuff you'll like" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruL-7p-wUq">
-                                        <rect key="frame" x="51" y="156" width="139" height="11"/>
+                                        <rect key="frame" x="53" y="156" width="134" height="11"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="9"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1606,10 +1606,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4x4-5u-GAa">
-                                <rect key="frame" x="118" y="120" width="134" height="198"/>
+                                <rect key="frame" x="118" y="120" width="127" height="240"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQM-yo-TQc">
-                                        <rect key="frame" x="0.0" y="0.0" width="134" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="127" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="View Tutorial Again">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1620,7 +1620,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxE-fU-heu">
-                                        <rect key="frame" x="13" y="42" width="108" height="30"/>
+                                        <rect key="frame" x="13" y="42" width="102" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Edit Profile Info">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1631,7 +1631,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-dC-0Dc">
-                                        <rect key="frame" x="10" y="84" width="115" height="30"/>
+                                        <rect key="frame" x="8" y="84" width="112" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Contact Support">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1642,7 +1642,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JyH-nn-QLC">
-                                        <rect key="frame" x="9" y="126" width="117" height="30"/>
+                                        <rect key="frame" x="8" y="126" width="112" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Terms of Service">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1652,7 +1652,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-DI-qsR">
-                                        <rect key="frame" x="18" y="168" width="98" height="30"/>
+                                        <rect key="frame" x="17" y="168" width="94" height="30"/>
                                         <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1660,6 +1660,16 @@
                                         <connections>
                                             <action selector="ViewPrivacy:" destination="gBp-3q-FPr" eventType="touchUpInside" id="R5z-FJ-HOt"/>
                                             <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="3UC-ZI-wgV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-PS-Eb2">
+                                        <rect key="frame" x="49" y="210" width="30" height="30"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="FAQ">
+                                            <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="FAQButtonAction:" destination="gBp-3q-FPr" eventType="touchUpInside" id="nTn-pQ-FeX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1673,6 +1683,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZTJ-nP-NfU"/>
                     <connections>
+                        <outlet property="FAQButton" destination="v6r-PS-Eb2" id="ByZ-Fg-1Ob"/>
                         <outlet property="buttonView" destination="vH7-q1-fBX" id="sbk-DO-cnL"/>
                         <outlet property="editProfile" destination="HxE-fU-heu" id="QaO-GJ-5c2"/>
                         <outlet property="privacyButton" destination="Vyr-DI-qsR" id="dfO-zF-LAR"/>
@@ -1694,7 +1705,7 @@
                         <viewControllerLayoutGuide type="bottom" id="LQC-qg-Ulw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yjl-Vz-Uqa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PrV-Yj-niw">
@@ -1860,7 +1871,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who did you sell to?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnY-Qa-ZhF">
                                 <rect key="frame" x="99" y="38" width="163" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Tw-ko-im5">
@@ -2238,13 +2249,13 @@
         <image name="travel-1" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eRe-hd-sWy"/>
+        <segue reference="0LM-uP-bxa"/>
         <segue reference="nkK-lo-MWo"/>
         <segue reference="D0b-0y-c8N"/>
-        <segue reference="0LM-uP-bxa"/>
-        <segue reference="BnQ-fV-bFj"/>
-        <segue reference="Q0o-Ta-V3K"/>
         <segue reference="aHn-RY-HGy"/>
+        <segue reference="BnQ-fV-bFj"/>
+        <segue reference="eRe-hd-sWy"/>
         <segue reference="5Ei-1s-dmw"/>
+        <segue reference="0ON-VF-o3k"/>
     </inferredMetricsTieBreakers>
 </document>

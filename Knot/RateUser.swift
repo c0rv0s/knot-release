@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RateUser: UIViewController {
+class RateUser: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var titleText: UITextView!
     @IBOutlet weak var saveButton: UIButton!
@@ -34,12 +34,22 @@ class RateUser: UIViewController {
         self.floatRatingView.editable = true
         self.floatRatingView.rating = 0
         
+        self.commentView.delegate = self
         self.descripFieldView.layer.borderWidth = 1;
         self.descripFieldView.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
         //get potential users
-        
+    
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
 
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func saveButton(sender: AnyObject) {
@@ -66,6 +76,8 @@ class RateUser: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.stringFromDate(NSDate())
+        
+        otherParty = "placeholder"
         
         let item = NewStars()
         item.userID = otherParty

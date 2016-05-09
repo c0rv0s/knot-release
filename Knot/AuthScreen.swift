@@ -39,6 +39,8 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         item  = self.appDelegate.item
         print(item.name)
         
+        self.IntroText.editable = false
+        
         cogID = self.appDelegate.cognitoId! as String
         
         // Creating actual WebView object. You can make it accessible

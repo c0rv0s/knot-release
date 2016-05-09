@@ -22,6 +22,7 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     @IBOutlet weak var privacyButton: UIButton!
     @IBOutlet weak var termsButton: UIButton!
     
+    @IBOutlet weak var FAQButton: UIButton!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -120,6 +121,12 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     
     @IBAction func ViewPrivacy(sender: AnyObject) {
         if let url = NSURL(string: "http://www.knotcomplex.com/Privacy.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
+    @IBAction func FAQButtonAction(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/FAQ.html") {
             UIApplication.sharedApplication().openURL(url)
         }
     }

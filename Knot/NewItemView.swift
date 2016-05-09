@@ -832,7 +832,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
         //end test code
-        
  
 
         if nameField.text == "Booty" {
@@ -873,7 +872,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.appDelegate.prideOn = true
         }
 
-       // let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
         //self.presentViewController(vc, animated: true, completion: nil)
  
  
