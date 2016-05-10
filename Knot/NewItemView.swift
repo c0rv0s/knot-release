@@ -315,13 +315,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         let item = ListItem()
         
-        if auth {
-            item.authenticated = 2
-        }
-        else {
-            item.authenticated = 0
-        }
-        
         //parse to get just the first decimal point and two characters after
         var priceString = ""
         let priceArray = self.priceField.text!.componentsSeparatedByString(".")
@@ -363,6 +356,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.condition = conditionField.text!
         item.sellerSBID = self.SBID
         item.numberOfPics = self.photoNum
+        item.authenticated = 0
         print(item)
         self.appDelegate.item = item
         let task = mapper.save(item)
