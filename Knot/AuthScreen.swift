@@ -453,6 +453,13 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
         self.wrapUpSubmission(0, succ2: 0, succ3: 0)
     }
+    
+    
+    @IBAction func examplesButton(sender: AnyObject) {
+        if let url = NSURL(string: "http://www.knotcomplex.com/Auth-Help.html") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
 
 }
   

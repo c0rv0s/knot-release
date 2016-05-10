@@ -828,8 +828,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AuthScreen") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
-        //end test code
  */
+        //end test code
+ 
 
         if nameField.text == "Booty" {
             if let url = NSURL(string: "http://i.imgur.com/JpolRoC.gif") {
