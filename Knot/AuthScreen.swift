@@ -230,6 +230,12 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
     }
     
+    
+    @IBAction func cancelButton(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
     func cropToSquare(image originalImage: UIImage) -> UIImage {
         // Create a copy of the image without the imageOrientation property so it is in its native orientation (landscape)
         let contextImage: UIImage = UIImage(CGImage: originalImage.CGImage!)
@@ -372,7 +378,8 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
         let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") 
+            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("CCInfo")
             self.presentViewController(vc, animated: true, completion: nil)
         }))
         self.presentViewController(alert, animated: true, completion: nil)

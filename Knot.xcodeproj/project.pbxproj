@@ -184,6 +184,7 @@
 		43E295AC1C51886300EB9AF9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */; };
 		43E761C31C4AEF5B0051E060 /* OneShotLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */; };
 		43F12ADA1C8BF8BA00CE808B /* AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */; };
+		43F611911CE1D4A7004509A0 /* CCInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F611901CE1D4A7004509A0 /* CCInfo.swift */; };
 		43FF94C01CD5522400FC150E /* selectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94BF1CD5522400FC150E /* selectUser.swift */; };
 		43FF94C21CD55BE100FC150E /* selectUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43FF94C11CD55BE100FC150E /* selectUserCell.xib */; };
 		43FF94C41CD55C5A00FC150E /* selectUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FF94C31CD55C5A00FC150E /* selectUserCell.swift */; };
@@ -432,6 +433,7 @@
 		43E295AA1C51886300EB9AF9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneShotLocationManager.swift; sourceTree = "<group>"; };
 		43F12AD91C8BF8BA00CE808B /* AccountSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettings.swift; sourceTree = "<group>"; };
+		43F611901CE1D4A7004509A0 /* CCInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCInfo.swift; sourceTree = "<group>"; };
 		43FF94BF1CD5522400FC150E /* selectUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUser.swift; sourceTree = "<group>"; };
 		43FF94C11CD55BE100FC150E /* selectUserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = selectUserCell.xib; sourceTree = "<group>"; };
 		43FF94C31CD55C5A00FC150E /* selectUserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selectUserCell.swift; sourceTree = "<group>"; };
@@ -837,6 +839,7 @@
 				4397C4701CCFFF9200186EFC /* AuthScreen.swift */,
 				439210FF1CD19A8100DCAD90 /* RateUser.swift */,
 				43FF94BF1CD5522400FC150E /* selectUser.swift */,
+				43F611901CE1D4A7004509A0 /* CCInfo.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -1149,6 +1152,7 @@
 				43665D191C702FC00069A3AA /* SendBirdCommon.swift in Sources */,
 				4312624B1C900A3A00A47BFD /* UIColor+MPColor.m in Sources */,
 				430D1CE21C4E485300C29254 /* PersonalTableCell.swift in Sources */,
+				43F611911CE1D4A7004509A0 /* CCInfo.swift in Sources */,
 				431262211C900A3A00A47BFD /* MPCGSizeToNSDictionaryValueTransformer.m in Sources */,
 				432FC6301CCB2D80008EDDC6 /* interestsCell.swift in Sources */,
 				43665D391C7030370069A3AA /* TypingNowView.swift in Sources */,

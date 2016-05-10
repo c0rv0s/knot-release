@@ -732,7 +732,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print("priceString")
         print(priceString)
         
-        if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "" || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition" || self.picOne == nil) {
+        if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "" || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition") {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
@@ -766,9 +766,9 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         }
     }
     
-    func wrapUpSubmission(succ1: Int, succ2: Int, succ3: Int, lastScreen: Bool) {
+    func wrapUpSubmission( lastScreen: Bool) {
         SwiftSpinner.hide()
-        if /*succ1 == 2 || succ2 == 2 || succ3 == 2 ||*/ self.preUploadComplete == false {
+        if self.preUploadComplete == false {
             let alert = UIAlertController(title: "Uh Oh", message: "Something went wrong, shake to contact support or try again", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
             }))
@@ -966,72 +966,73 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     func loadData(auth: Bool, lastScreen: Bool) {
         // Do whatever you want
         UIApplication.sharedApplication().statusBarHidden = false
-        SwiftSpinner.show("Uploading \(self.nameField.text!)")
         
-        /*
-         self.appDelegate.mixpanel!.track(
-         "New Upload",
-         properties: ["userID": self.cognitoID, "itemID": self.uniqueID]
-         )
-         */
-        
-        self.insertItem(uniqueID, auth: auth).continueWithBlock({
-            (task: BFTask!) -> BFTask! in
-            
-            if (task.error != nil) {
-                print(task.error!.description)
-            } else {
-                print("DynamoDB save succeeded")
-            }
-            
-            return nil;
-        })
-        
-        print("hello")
-        //upload image
-        let transferManager = AWSS3TransferManager.defaultS3TransferManager()
-        
-        //
-        //
-        var success1 = 0
-        var success2 = 0
-        var success3 = 0
-        
-        //upload thumbnail
-        SwiftSpinner.show("Finishing Upload")
-        self.thumbnail = self.resizeImage(self.picOne)
-        let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
-        let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
-        let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
-        dataThumb!.writeToURL(testFileURL1, atomically: true)
-        uploadRequest1.bucket = "knotcomplexthumbnails"
-        uploadRequest1.key = self.uniqueID
-        uploadRequest1.body = testFileURL1
-        let task1 = transferManager.upload(uploadRequest1)
-        task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if task1.error != nil {
-                print("Error: \(task1.error)")
-            } else {
-                print("thumbnail added")
-                self.wrapUpSubmission(success1, succ2: success2, succ3: success3, lastScreen: lastScreen)
+        if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
+            self.wrapUpSubmission(lastScreen)
+        }
+        else {
+            SwiftSpinner.show("Uploading \(self.nameField.text!)")
+            self.insertItem(uniqueID, auth: auth).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
                 
-                repeat {
-                    var delayInSeconds = 1.0;
-                    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
-                    dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-                        if self.preUploadComplete {
-                            self.wrapUpSubmission(success1, succ2: success2, succ3: success3, lastScreen: lastScreen)
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+            
+            print("hello")
+            //upload image
+            let transferManager = AWSS3TransferManager.defaultS3TransferManager()
+            
+            //
+            //
+            var success1 = 0
+            var success2 = 0
+            var success3 = 0
+            
+            //upload thumbnail
+            SwiftSpinner.show("Finishing Upload")
+            self.thumbnail = self.resizeImage(self.picOne)
+            let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
+            let uploadRequest1 : AWSS3TransferManagerUploadRequest = AWSS3TransferManagerUploadRequest()
+            let dataThumb = UIImageJPEGRepresentation(thumbnail, 0.5)
+            dataThumb!.writeToURL(testFileURL1, atomically: true)
+            uploadRequest1.bucket = "knotcomplexthumbnails"
+            uploadRequest1.key = self.uniqueID
+            uploadRequest1.body = testFileURL1
+            let task1 = transferManager.upload(uploadRequest1)
+            task1.continueWithBlock { (task: AWSTask!) -> AnyObject! in
+                if task1.error != nil {
+                    print("Error: \(task1.error)")
+                } else {
+                    print("thumbnail added")
+                    self.wrapUpSubmission(lastScreen)
+                    
+                    repeat {
+                        var delayInSeconds = 1.0;
+                        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+                        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                            if self.preUploadComplete {
+                                self.wrapUpSubmission(lastScreen)
+                            }
                         }
                     }
+                        while(self.preUploadComplete == false)
+                    
                 }
-                while(self.preUploadComplete == false)
-                
+                return nil
             }
-            return nil
+            //done uploading
+            
+            print("Load data")
         }
-        //done uploading
-
-        print("Load data")
+       
+        
+        
     }
 
 }
