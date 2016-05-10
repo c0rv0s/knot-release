@@ -271,6 +271,10 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func authenticateUser() {
+        /***CONVERT FROM NSDate to String ****/
+        
+        
+        
         let context : LAContext = LAContext()
         var error : NSError?
         let myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
@@ -280,15 +284,37 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                         self.loadData(true)
                         
-                        /***CONVERT FROM NSDate to String ****/
+                        //create a contract
+                        //This "res" may contains an address to contract, but this is not returned immidately.
+                        //so far, it created successfully, but it spends long time to get address because mine speed is too slow.
+                        //for test, address is defined manually right now.
+                        //In public chain, we can get address in 30 seconds, but this is also too slow.
+                        //we need to make some empty contacts before this process and stock them.
+                        let contractAddress: String = "0x5528ddffca8c3de266aa020f87139dd0d5e3163a"
+                        self.webView!.evaluateJavaScript("contractmaker()",
+                            completionHandler: {(res: AnyObject?, error: NSError?) in
+                                print(error)
+                                print(res)
+                                //contractAddress = res
+                                
+                        })
+                        
+                        //init the contract
                         let dateFormatter = NSDateFormatter()
                         dateFormatter.dateFormat = "ddMMyyyyHHmmss"
-                        let dateInt = Int(dateFormatter.stringFromDate(NSDate()))
-                        self.webView!.evaluateJavaScript("itemRegister.init(\"\(self.cogID, self.item.ID, dateInt!)\" )",
+                        //we need string, not Int.
+                        let dateString = String(dateFormatter.stringFromDate(NSDate()))
+                        /*self.webView!.evaluateJavaScript("contract.renewtimestamp.sendTransaction(\(dateString), {from: \"0xc8ca03fd80f08188520422431853b382e0df348e\", gas: 900000})",
+                         completionHandler: {(res: AnyObject?, error: NSError?) in
+                         print(error)
+                         print(res)
+                         })*/
+                        self.webView!.evaluateJavaScript("contractinit(\"\(contractAddress)\",\"\(self.item.ID)\",\"\(self.cogID)\",\(dateString))",
                             completionHandler: {(res: AnyObject?, error: NSError?) in
+                                print(error)
                                 print(res)
                         })
-                        //self.payFee()
+                        
                     })
                 }
                 else {
