@@ -49,6 +49,8 @@ PODS:
   - Stripe (4.0.3):
     - Stripe/Checkout (= 4.0.3)
     - Stripe/Core (= 4.0.3)
+  - Stripe/ApplePay (4.0.3):
+    - Stripe/Core
   - Stripe/Checkout (4.0.3):
     - Stripe/Core
   - Stripe/Core (4.0.3)
@@ -72,7 +74,8 @@ DEPENDENCIES:
   - AWSSNS (= 2.3.5)
   - AWSSQS (= 2.3.5)
   - Buglife
-  - Stripe (~> 4.0)
+  - Stripe
+  - Stripe/ApplePay
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93

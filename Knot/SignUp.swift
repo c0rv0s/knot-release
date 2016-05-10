@@ -32,7 +32,6 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     //location
     var locationManager: OneShotLocationManager!
-
     
     override func viewDidLoad() {
         print("view loaded, signup Bool value is: ")
@@ -81,13 +80,6 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         borderLast.borderWidth = width
         lastNameLabel.layer.addSublayer(borderLast)
         lastNameLabel.layer.masksToBounds = true
-        
-        let alert = UIAlertController(title: "Would you like to see listings from your Facebook friends?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
-        }))
-        alert.addAction(UIAlertAction(title: "Not Now", style: .Default, handler: { (alertAction) -> Void in
-        }))
-        self.presentViewController(alert, animated: true, completion: nil)
 
         self.returnUserData()
     }
@@ -176,6 +168,20 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
 
     @IBAction func doneButtonAction(sender: AnyObject) {
         
+        //ask if user would like to see listings from friends
+        let alert = UIAlertController(title: "Would you like to see listings from your Facebook friends?", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction) -> Void in
+            self.finishProf(true)
+        }))
+        alert.addAction(UIAlertAction(title: "Not Now", style: .Default, handler: { (alertAction) -> Void in
+            self.finishProf(false)
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+    }
+    
+    func finishProf(friends: Bool) {
+        //check that all fields are filled
         if (self.firstNameLabel.text == "" || self.lastNameLabel.text == "" /*|| self.genderLabel.text == "" || self.ageLabel.text == "" || emailLabel.text == ""*/ ) {
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
@@ -186,6 +192,7 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             
             let transferManager = AWSS3TransferManager.defaultS3TransferManager()
             
+            //upload prof pic
             let picOne = self.resizeImage(self.cropToSquare(image: self.profPicView.image!))
             //upload pic
             let testFileURL1 = NSURL(fileURLWithPath: NSTemporaryDirectory().stringByAppendingPathComponent("temp"))
@@ -205,7 +212,7 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                 }
                 return nil
             }
-
+            
             //upload profile
             let syncClient = AWSCognito.defaultCognito()
             let dataset = syncClient.openOrCreateDataset("profileInfo")
@@ -227,41 +234,45 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                 return nil
             }
+            dataset.setString(String(friends), forKey:"SeeFriends")
+            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+                return nil
+            }
             /*
-            dataset.setString(self.ageLabel.text, forKey:"age")
-            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                return nil
-            }
-            dataset.setString(self.genderLabel.text, forKey:"gender")
-            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                return nil
-            }
-            dataset.setString(self.emailLabel.text, forKey:"email")
-            dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                return nil
-            }
-*/
+             dataset.setString(self.ageLabel.text, forKey:"age")
+             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+             return nil
+             }
+             dataset.setString(self.genderLabel.text, forKey:"gender")
+             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+             return nil
+             }
+             dataset.setString(self.emailLabel.text, forKey:"email")
+             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+             return nil
+             }
+             */
             /*
-            print("Now lets take a look at the SendBird ID")
-            //set SendBird ID
-            //if let currentSBID = dataset.stringForKey("SBID") {
-            let value = dataset.stringForKey("SBID")
-            if value != nil {
-                print("dataset shows: " + value)
-
-            }
-            else {
-                dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
-                dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
-                    return nil
-                }
-                print("new SBID uploaded")
-                print(SendBird.deviceUniqueID())
-            }*/
-
+             print("Now lets take a look at the SendBird ID")
+             //set SendBird ID
+             //if let currentSBID = dataset.stringForKey("SBID") {
+             let value = dataset.stringForKey("SBID")
+             if value != nil {
+             print("dataset shows: " + value)
+             
+             }
+             else {
+             dataset.setString(SendBird.deviceUniqueID(), forKey:"SBID")
+             dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
+             return nil
+             }
+             print("new SBID uploaded")
+             print(SendBird.deviceUniqueID())
+             }*/
+            
             if self.signUp {
                 self.appDelegate.loggedIn = true
-
+                
                 dataset.setString("true", forKey:"firstUse")
                 dataset.synchronize().continueWithBlock {(task) -> AnyObject! in
                     return nil
@@ -269,8 +280,8 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                 
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("StepZero") as! UIViewController
                 self.presentViewController(vc, animated: true, completion: nil)
-
-
+                
+                
             }
             else {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController

@@ -13,7 +13,7 @@ import AVKit
 import AVFoundation
 import WebKit
 
-class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, WKNavigationDelegate {
+class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, WKNavigationDelegate, PKPaymentAuthorizationViewControllerDelegate {
 
     let picker = UIImagePickerController()
     
@@ -29,6 +29,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var ImgButtonTwo: UIButton!
     
     var photoNum = 0
+    var fee = 0.01
     
     var item : ListItem!
     var cogID : String!
@@ -42,6 +43,8 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.IntroText.editable = false
         
         cogID = self.appDelegate.cognitoId! as String
+        
+        fee = Double(appDelegate.item.price)! * 0.04
         
         // Creating actual WebView object. You can make it accessible
         // globally and used by other view controllers / objects
@@ -75,7 +78,28 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func DoneButton(sender: AnyObject) {
-        authenticateUser()
+        //if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
+            self.authenticateUser()
+        //}
+        //else {
+            //apple pay
+            
+            guard let request = Stripe.paymentRequestWithMerchantIdentifier("JBMX4N8785.merchant.com.knotcomplex") else {
+                // request will be nil if running on < iOS8
+                return
+            }
+            request.paymentSummaryItems = [
+                PKPaymentSummaryItem(label: "Authorization for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
+            ]
+            
+            if (Stripe.canSubmitPaymentRequest(request)) {
+                let paymentController = PKPaymentAuthorizationViewController(paymentRequest: request)
+                presentViewController(paymentController, animated: true, completion: nil)
+            } else {
+                // Show the user your own credit card form (see options 2 or 3)
+            }
+       // }
+        
     }
     
     @IBAction func ImgButtonOne(sender: AnyObject) {
@@ -278,7 +302,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     func authenticateUser() {
         /***CONVERT FROM NSDate to String ****/
-        
+        /*
         
         
         let context : LAContext = LAContext()
@@ -288,6 +312,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
                 if success {
                     NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+ */
                         self.loadData(true)
                         
                         //create a contract
@@ -320,8 +345,9 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                 print(error)
                                 print(res)
                         })
-                        
+                        /*
                     })
+    
                 }
                 else {
                     // Authentification failed
@@ -359,6 +385,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             }
             self.showPasswordAlert()
         }
+ */
     }
     //end touch id
     
@@ -379,6 +406,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
             //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
+            
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("CCInfo")
             self.presentViewController(vc, animated: true, completion: nil)
         }))
@@ -394,71 +422,78 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     //stripe code, coming next round
-    /*
-    func payFee() {
-        
-        // Initiate the card
-        var stripCard = STPCard()
-        
-        // Split the expiration date to extract Month & Year
-        if self.expireDateTextField.text.isEmpty == false {
-            let expirationDate = self.expireDateTextField.text.componentsSeparatedByString("/")
-            let expMonth = UInt(expirationDate[0].toInt()!)
-            let expYear = UInt(expirationDate[1].toInt()!)
-            
-            // Send the card info to Strip to get the token
-            stripCard.number = self.cardNumberTextField.text
-            stripCard.cvc = self.cvcTextField.text
-            stripCard.expMonth = expMonth
-            stripCard.expYear = expYear
-        }
-        
-        var underlyingError: NSError?
-        stripCard.validateCardReturningError(&underlyingError)
-        if underlyingError != nil {
-            self.spinner.stopAnimating()
-            self.handleError(underlyingError!)
-            return
-        }
-        
-        STPAPIClient.sharedClient().createTokenWithCard(stripCard, completion: { (token, error) -> Void in
-            
-            if error != nil {
-                self.handleError(error!)
-                return
-            }
-            
-            self.postStripeToken(token!)
-        })
+    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: (PKPaymentAuthorizationStatus) -> Void) {
+        /*
+         We'll implement this method below in 'Creating a single-use token'.
+         Note that we've also been given a block that takes a
+         PKPaymentAuthorizationStatus. We'll call this function with either
+         PKPaymentAuthorizationStatusSuccess or PKPaymentAuthorizationStatusFailure
+         after all of our asynchronous code is finished executing. This is how the
+         PKPaymentAuthorizationViewController knows when and how to update its UI.
+         */
+        handlePaymentAuthorizationWithPayment(payment, completion: completion)
     }
     
-    func handleError(error: NSError) {
-        UIAlertView(title: "Please Try Again",
-                    message: error.localizedDescription,
-                    delegate: nil,
-                    cancelButtonTitle: "OK").show()
-        
+    func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
+    
+    func handlePaymentAuthorizationWithPayment(payment: PKPayment, completion: PKPaymentAuthorizationStatus -> ()) {
+        STPAPIClient.sharedClient().createTokenWithPayment(payment) { (token, error) -> Void in
+            if error != nil {
+                completion(PKPaymentAuthorizationStatus.Failure)
+                return
+            }
+            /*
+             We'll implement this below in "Sending the token to your server".
+             Notice that we're passing the completion block through.
+             See the above comment in didAuthorizePayment to learn why.
+             */
+            self.createBackendChargeWithToken(token!, completion: completion)
+        }
+    }
+    
+    func createBackendChargeWithToken(token: STPToken, completion: PKPaymentAuthorizationStatus -> ()) {
+        let url = NSURL(string: "https://example.com/token")!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        let body = "stripeToken=(token.tokenId)"
+        request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        let session = NSURLSession(configuration: configuration)
+        let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
+            if error != nil {
+                completion(PKPaymentAuthorizationStatus.Failure)
+            }
+            else {
+                completion(PKPaymentAuthorizationStatus.Success)
+            }
+        }
+        task.resume()
+    }
+    //end stripe
+    
     func loadData(auth: Bool) {
     
         UIApplication.sharedApplication().statusBarHidden = false
         //SwiftSpinner.show("Uploading...")
         print("begin auth doc post")
         //update the authenticated data point on Dynamo to say true
-        self.insertItem(self.item.ID, auth: auth).continueWithBlock({
-            (task: BFTask!) -> BFTask! in
-            
-            if (task.error != nil) {
-                print(task.error!.description)
-            } else {
-                print("DynamoDB save succeeded")
-            }
-            
-            return nil;
-        })
-
-        self.wrapUpSubmission(0, succ2: 0, succ3: 0)
+        if (item.name == "Test" || item.name == "test" || item.name == "Demo" || item.name == "demo") {}
+        else {
+            self.insertItem(self.item.ID, auth: auth).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB save succeeded")
+                }
+                
+                return nil;
+            })
+        }
+        //self.wrapUpSubmission(0, succ2: 0, succ3: 0)
     }
     
     

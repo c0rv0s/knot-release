@@ -19,10 +19,7 @@
 
 - (stp_nonnull instancetype)initWithCheckoutViewController:(stp_nonnull STPCheckoutViewController *)checkoutViewController;
 
-//new line, this implements only one property to maintain integrity
-@property (weak, nonatomic, readonly) STPCheckoutViewController *checkoutController;
-//old line, nonull and weak are mutually exclusive
-//@property (weak, nonatomic, readonly, stp_nonnull) STPCheckoutViewController *checkoutController;
+@property (strong, nonatomic, readonly, stp_nonnull) STPCheckoutViewController *checkoutController;
 @property (weak, nonatomic, readonly, stp_nullable) UIView *webView;
 @property (nonatomic, stp_nonnull) STPCheckoutOptions *options;
 @property (nonatomic, weak, stp_nullable) id<STPCheckoutViewControllerDelegate> delegate;

@@ -917,6 +917,9 @@
 							com.apple.Keychain = {
 								enabled = 0;
 							};
+							com.apple.OMC = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};

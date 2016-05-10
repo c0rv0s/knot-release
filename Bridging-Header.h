@@ -36,6 +36,7 @@
 #import "SWRevealViewController.h"
 
 #import <Stripe/Stripe.h>
+#import <Stripe/Stripe+ApplePay.h>
 
 #endif /* Bridging_Header_h */
 

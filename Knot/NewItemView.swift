@@ -301,17 +301,6 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         // Create a record in a dataset and synchronize with the server
         // Retrieve your Amazon Cognito ID
         var cognitoID = appDelegate.cognitoId
-        /*
-        appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in
-            if (task.error != nil) {
-                print("Error: " + task.error!.localizedDescription)
-            }
-            else {
-                // the task result will contain the identity id
-                cognitoID = task.result as! String
-            }
-            return nil
-        }*/
         
         let item = ListItem()
         
@@ -363,6 +352,71 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         
         print("item created, preparing upload")
         return BFTask(forCompletionOfAllTasks: [task])
+    }
+    
+    func demoInsert(uniqueID: String, auth: Bool) {
+        /***CONVERT FROM NSDate to String ****/
+        //print(timeHoursInt)
+        let currentDate = NSDate()
+        //get over hours
+        self.calcTimeHoursInt()
+        let overDate = NSCalendar.currentCalendar().dateByAddingUnit(NSCalendarUnit.Hour, value: timeHoursInt, toDate: currentDate, options: NSCalendarOptions.init(rawValue: 0))
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        let dateString = dateFormatter.stringFromDate(overDate!)
+        
+        self.makeScrambledLocation(self.appDelegate.locCurrent)
+        
+        
+        // Create a record in a dataset and synchronize with the server
+        // Retrieve your Amazon Cognito ID
+        var cognitoID = appDelegate.cognitoId
+        
+        let item = ListItem()
+        
+        //parse to get just the first decimal point and two characters after
+        var priceString = ""
+        let priceArray = self.priceField.text!.componentsSeparatedByString(".")
+        if priceArray[0] == "" {
+            priceString = "0"
+        }
+        else {
+            priceString = priceArray[0]
+        }
+        for i in priceString.characters {
+            if (i == "0" || i == "1" || i == "2" || i == "3" || i == "4" || i == "5" || i == "6" || i == "7" || i == "8" || i == "9"){}
+            else {
+                priceString = String(priceString.characters.dropFirst())
+            }
+        }
+        
+        for i in priceString.characters {
+            if i == "0" {
+                priceString = String(priceString.characters.dropFirst())
+            }
+            else {
+                break
+            }
+        }
+        print("priceString")
+        print(priceString)
+        
+        item.name  = self.nameField.text!
+        item.ID   = uniqueID
+        item.price   = priceString
+        item.location =  locString
+        item.time  = dateString
+        item.sold = "false"
+        item.seller = cognitoID!
+        item.sellerFBID = self.fbID
+        item.descriptionKnot = self.descriptionField.text
+        item.category = categoryField.text!
+        item.condition = conditionField.text!
+        item.sellerSBID = self.SBID
+        item.numberOfPics = self.photoNum
+        item.authenticated = 0
+        print(item)
+        self.appDelegate.item = item
     }
     
     func calcTimeHoursInt() {
@@ -968,6 +1022,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         UIApplication.sharedApplication().statusBarHidden = false
         
         if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
+            self.preUploadComplete = true
+            self.demoInsert(uniqueID, auth: auth)
             self.wrapUpSubmission(lastScreen)
         }
         else {
