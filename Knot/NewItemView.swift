@@ -1024,7 +1024,12 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
             self.preUploadComplete = true
             self.demoInsert(uniqueID, auth: auth)
-            self.wrapUpSubmission(lastScreen)
+            var delayInSeconds = 0.25;
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+            dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+                self.wrapUpSubmission(lastScreen)
+            }
+            
         }
         else {
             SwiftSpinner.show("Uploading \(self.nameField.text!)")

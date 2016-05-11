@@ -79,12 +79,12 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     @IBAction func DoneButton(sender: AnyObject) {
         //if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
-            self.authenticateUser()
+        
         //}
         //else {
             //apple pay
             
-            guard let request = Stripe.paymentRequestWithMerchantIdentifier("JBMX4N8785.merchant.com.knotcomplex") else {
+            guard let request = Stripe.paymentRequestWithMerchantIdentifier("merchant.com.knotcomplex") else {
                 // request will be nil if running on < iOS8
                 return
             }
@@ -93,10 +93,12 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             ]
             
             if (Stripe.canSubmitPaymentRequest(request)) {
+                print("success!")
                 let paymentController = PKPaymentAuthorizationViewController(paymentRequest: request)
                 presentViewController(paymentController, animated: true, completion: nil)
             } else {
                 // Show the user your own credit card form (see options 2 or 3)
+                print("derp")
             }
        // }
         
@@ -435,7 +437,14 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
+        self.authenticateUser()
         dismissViewControllerAnimated(true, completion: nil)
+        var delayInSeconds = 0.25;
+        let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
+        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     func handlePaymentAuthorizationWithPayment(payment: PKPayment, completion: PKPaymentAuthorizationStatus -> ()) {
@@ -454,10 +463,14 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func createBackendChargeWithToken(token: STPToken, completion: PKPaymentAuthorizationStatus -> ()) {
-        let url = NSURL(string: "https://example.com/token")!
+        
+        let url = NSURL(string: "https://xr0qhxlt19.execute-api.us-east-1.amazonaws.com/prod/KnotStripeAccess")!
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
-        let body = "stripeToken=(token.tokenId)"
+        let bodyOne = "{\"stripeToken\": \""  + token.tokenId
+        let bodyTwo = "\",\n\"amount_cent\": \"\(self.fee)"
+        let bodyThree = "\",\n\"currency\": \"usd\",\n\"description\": \"test\"}"
+        let body = bodyOne + bodyTwo + bodyThree
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
         let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
