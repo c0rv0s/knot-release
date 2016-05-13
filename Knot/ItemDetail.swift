@@ -112,7 +112,7 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
         
         self.pic = self.cropToSquare(image: UIImage(named: "placeholder")!)
         
-        self.scrollView.contentSize = CGSize(width:375, height: 1031)
+        self.scrollView.contentSize = CGSize(width:375, height: 1085)
         
         //grab pictures
         self.downloadImage(IDNum, photoNum: 1)

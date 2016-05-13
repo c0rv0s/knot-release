@@ -830,7 +830,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kf-b3-a9c">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1031"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1085"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-Oy-t3b">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -1785,7 +1785,7 @@
                                             <action selector="ViewTerms:" destination="gBp-3q-FPr" eventType="touchUpInside" id="3UC-ZI-wgV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-PS-Eb2">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v6r-PS-Eb2">
                                         <rect key="frame" x="49" y="210" width="30" height="30"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <state key="normal" title="FAQ">
