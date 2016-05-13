@@ -26,9 +26,20 @@ class Interests: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 150, left: 0, bottom: 50, right: 0)
-        layout.itemSize = CGSize(width: 120, height: 40)
+
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
         
-        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        var sideInset : CGFloat
+        if screenSize.width > 380 {
+            sideInset = screenSize.width * 0.0875
+        }
+        else {
+            sideInset = screenSize.width * 0.013
+        }
+        
+        layout.itemSize = CGSize(width: screenSize.width * 0.32, height: 40)
+        
+        collectionView!.contentInset = UIEdgeInsets(top: 23, left: sideInset, bottom: 10, right: 5)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {return interests.count}

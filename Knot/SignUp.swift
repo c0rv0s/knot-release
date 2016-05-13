@@ -18,16 +18,16 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     let picker = UIImagePickerController()
     
     @IBOutlet weak var profPicView: UIImageView!
-    @IBOutlet weak var genderLabel: UITextField!
-    @IBOutlet weak var ageLabel: UITextField!
-    @IBOutlet weak var emailLabel: UITextField!
+    //@IBOutlet weak var genderLabel: UITextField!
+    //@IBOutlet weak var ageLabel: UITextField!
+    //@IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var firstNameLabel: UITextField!
     @IBOutlet weak var lastNameLabel: UITextField!
     
     @IBOutlet weak var doneButton: UIButton!
     
-    @IBOutlet weak var disclaimerTwo: UILabel!
-    @IBOutlet weak var disclaimerOne: UILabel!
+    //@IBOutlet weak var disclaimerTwo: UILabel!
+    //@IBOutlet weak var disclaimerOne: UILabel!
     var signUp = true
     
     //location
@@ -40,7 +40,7 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         //self.view.backgroundColor = UIColor(patternImage: self.imageLayerForGradientBackground())
         
         self.picker.delegate = self
-        
+        /*
         emailLabel.delegate = self;
         genderLabel.delegate = self;
         ageLabel.delegate = self;
@@ -52,18 +52,19 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         genderLabel.hidden = true
         disclaimerOne.hidden = true
         disclaimerTwo.hidden = true
-        
+ 
         //age label
         let border = CALayer()
-        let width = CGFloat(2.0)
+        
         border.borderColor = UIColor.darkGrayColor().CGColor
         border.frame = CGRect(x: 0, y: ageLabel.frame.size.height - width, width:  ageLabel.frame.size.width, height: ageLabel.frame.size.height)
         
         border.borderWidth = width
         ageLabel.layer.addSublayer(border)
         ageLabel.layer.masksToBounds = true
-        
+ 
         //first name
+        let width = CGFloat(2.0)
         let borderName = CALayer()
         borderName.borderColor = UIColor.darkGrayColor().CGColor
         borderName.frame = CGRect(x: 0, y: firstNameLabel.frame.size.height - width, width:  firstNameLabel.frame.size.width, height: firstNameLabel.frame.size.height)
@@ -80,7 +81,7 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         borderLast.borderWidth = width
         lastNameLabel.layer.addSublayer(borderLast)
         lastNameLabel.layer.masksToBounds = true
-
+*/
         self.returnUserData()
     }
         

@@ -26,14 +26,17 @@ class OnboardingTwo: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var noViewRect: UIView!
     var first = true
     
+    @IBOutlet weak var secondImage: UIImageView!
     //location
     var locationManager: OneShotLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        noViewRect.layer.borderColor = UIColor.blackColor().CGColor
-        noViewRect.layer.borderWidth = 2.0
+        secondImage.hidden = true
+        
+        noButton.layer.borderColor = UIColor.blackColor().CGColor
+        noButton.layer.borderWidth = 1.0
 
     }
     
@@ -41,7 +44,9 @@ class OnboardingTwo: UIViewController, UITextFieldDelegate {
         if first {
             self.yesButton.setTitle("Enable Notifications", forState: UIControlState.Normal)
             self.textLabel.text = "Do you want to be notified when another user sends you a message?"
-            self.iconPic.image = UIImage(named: "technology-2")
+            self.iconPic.hidden = true
+            
+            self.secondImage.hidden = false
             
             self.locationManager = OneShotLocationManager()
             self.locationManager!.fetchWithCompletion {location, error in
@@ -83,7 +88,9 @@ class OnboardingTwo: UIViewController, UITextFieldDelegate {
             self.appDelegate.locEnabled = false
             self.yesButton.setTitle("Enable Notifications", forState: UIControlState.Normal)
             self.textLabel.text = "Do you want to be notified when another user sends you a message?"
-            self.iconPic.image = UIImage(named: "\technology-2")
+            self.iconPic.hidden = true
+            
+            self.secondImage.hidden = false
             self.first = false
         }
         else {
