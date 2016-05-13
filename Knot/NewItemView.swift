@@ -415,6 +415,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         item.sellerSBID = self.SBID
         item.numberOfPics = self.photoNum
         item.authenticated = 0
+
         print(item)
         self.appDelegate.item = item
     }
@@ -787,9 +788,11 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         print(priceString)
         
         if (self.nameField.text == "" || self.priceField.text == "" || self.descriptionField.text == "" || self.categoryField.text == "Category" || self.lengthField.text == "Length of Listing" || self.conditionField.text == "Item Condition") {
+            
             let alert = UIAlertController(title: "Attention", message: "Please enter the missing values.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+ 
         }
         else {
             
