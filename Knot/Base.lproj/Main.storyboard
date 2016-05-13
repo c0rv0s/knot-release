@@ -473,7 +473,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
                                 <rect key="frame" x="96" y="409" width="183" height="47"/>
                                 <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Done">
@@ -483,7 +483,7 @@
                                     <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fif-gJ-Wdk">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fif-gJ-Wdk">
                                 <rect key="frame" x="36" y="206" width="138" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="138" id="2N5-fg-Ig4"/>
@@ -505,7 +505,7 @@
                                     <action selector="ImgButtonOne:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="Ixu-a4-FXI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="zZL-wH-l2i">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="zZL-wH-l2i">
                                 <rect key="frame" x="43" y="213" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="hYi-OJ-5Np"/>
@@ -524,7 +524,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-SX-gNH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera_ready" translatesAutoresizingMaskIntoConstraints="NO" id="8mf-SX-gNH">
                                 <rect key="frame" x="204" y="213" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="WQU-Wj-7IU"/>
@@ -543,7 +543,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-Pk-WBC">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqU-Pk-WBC">
                                 <rect key="frame" x="194" y="206" width="145" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="3g1-qI-gOM"/>
@@ -565,7 +565,7 @@
                                     <action selector="ImgButtonTwo:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="KfT-U0-PaT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGG-g6-we2">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGG-g6-we2">
                                 <rect key="frame" x="96" y="361" width="183" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Tap here for examples">
@@ -575,7 +575,7 @@
                                     <action selector="examplesButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="ADz-bH-by3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJW-Cn-nxg">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJW-Cn-nxg">
                                 <rect key="frame" x="30" y="28" width="68" height="30"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -584,7 +584,7 @@
                                     <action selector="cancelButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="EKy-7O-MAN"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-vY-4Af">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iq0-vY-4Af">
                                 <rect key="frame" x="67" y="88" width="240" height="117"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -975,153 +975,258 @@
                         <viewControllerLayoutGuide type="bottom" id="if3-mD-BBv"/>
                     </layoutGuides>
                     <view key="view" contentMode="top" id="3if-3e-9oH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1135"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1085"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kf-b3-a9c">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1085"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-Oy-t3b">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                        <gestureRecognizers/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-El-hu4">
-                                        <rect key="frame" x="24" y="604" width="327" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF7-d4-PZp">
-                                        <rect key="frame" x="24" y="914" width="327" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-Av-Vl2">
-                                        <rect key="frame" x="0.0" y="668" width="375" height="151"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="No7-vI-DDg" id="aFM-sP-KRw"/>
-                                        </connections>
-                                    </mapView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-TC-w8L">
-                                        <rect key="frame" x="24" y="633" width="327" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-43-9Av" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="145" y="790" width="85" height="85"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnp-qG-nde">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-u0-kIR">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QnP-Oy-t3b">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                 <gestureRecognizers/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                </variation>
                                             </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="42"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-3g-jLb">
-                                        <rect key="frame" x="290" y="442" width="62" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-zo-Vf5">
-                                        <rect key="frame" x="8" y="442" width="222" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfW-K2-En9">
-                                        <rect key="frame" x="252" y="336" width="123" height="39"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="8Ac-lG-8dT">
-                                            <rect key="frame" x="0.0" y="0.0" width="123" height="39"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX8-Hz-rsP">
-                                                    <rect key="frame" x="15" y="3" width="109" height="28"/>
-                                                    <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="20"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <blurEffect style="light"/>
-                                    </visualEffectView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-rw-427">
-                                        <rect key="frame" x="8" y="383" width="308" height="44"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHp-37-8tx" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="488" width="339" height="108"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xy5-dd-Hb5">
-                                                <rect key="frame" x="0.0" y="0.0" width="339" height="108"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUP-El-hu4">
+                                                <rect key="frame" x="24" y="604" width="327" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="24" y="661" width="327" height="26"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF7-d4-PZp">
+                                                <rect key="frame" x="24" y="914" width="327" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="24" y="902" width="327" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-Av-Vl2">
+                                                <rect key="frame" x="0.0" y="668" width="375" height="151"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="723" width="375" height="151"/>
+                                                </variation>
                                                 <connections>
-                                                    <outlet property="delegate" destination="No7-vI-DDg" id="VAM-NL-v22"/>
+                                                    <outlet property="delegate" destination="No7-vI-DDg" id="aFM-sP-KRw"/>
                                                 </connections>
-                                            </textView>
+                                            </mapView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0w-TC-w8L">
+                                                <rect key="frame" x="24" y="633" width="327" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="24" y="632" width="327" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxe-3g-jLb">
+                                                <rect key="frame" x="290" y="442" width="62" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="295" y="444" width="62" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqN-zo-Vf5">
+                                                <rect key="frame" x="8" y="442" width="222" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="428" width="222" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFw-rw-427">
+                                                <rect key="frame" x="8" y="383" width="308" height="44"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="25"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="8" y="383" width="308" height="44"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-uL-zQp">
+                                                <rect key="frame" x="30" y="943" width="315" height="21"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="30" y="968" width="315" height="21"/>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3z-Ib-hra" customClass="DOFavoriteButton" customModule="Knot" customModuleProvider="target">
+                                                <rect key="frame" x="242" y="433" width="40" height="40"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="heart"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
+                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
+                                                        <color key="value" red="0.5727193813" green="0.5727193813" blue="0.5727193813" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="247" y="435" width="40" height="40"/>
+                                                </variation>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tn-6g-JDx">
+                                                <rect key="frame" x="323" y="383" width="44" height="44"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="323" y="383" width="44" height="44"/>
+                                                </variation>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPE-TE-YM1" customClass="FloatRatingView" customModule="Knot" customModuleProvider="target">
+                                                <rect key="frame" x="99" y="877" width="177" height="29"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="92" y="931" width="177" height="29"/>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZHp-37-8tx" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="488" width="339" height="108"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xy5-dd-Hb5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="108"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="No7-vI-DDg" id="VAM-NL-v22"/>
+                                                        </connections>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="18" y="489" width="339" height="108"/>
+                                                </variation>
+                                            </view>
+                                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfW-K2-En9">
+                                                <rect key="frame" x="252" y="336" width="123" height="39"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="8Ac-lG-8dT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="39"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX8-Hz-rsP">
+                                                            <rect key="frame" x="15" y="3" width="109" height="28"/>
+                                                            <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="20"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </view>
+                                                <blurEffect style="light"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="252" y="336" width="123" height="39"/>
+                                                </variation>
+                                            </visualEffectView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3z9-43-9Av" customClass="RoundedCornersView" customModule="Knot" customModuleProvider="target">
+                                                <rect key="frame" x="145" y="790" width="85" height="85"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-u0-kIR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                                        <gestureRecognizers/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="42"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="145" y="812" width="85" height="85"/>
+                                                </variation>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wG-Db-GFL">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="ShowOtherPics:" destination="No7-vI-DDg" eventType="touchUpInside" id="aBo-BA-T7K"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="14"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9h-uL-zQp">
-                                        <rect key="frame" x="30" y="943" width="315" height="21"/>
-                                        <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3z-Ib-hra" customClass="DOFavoriteButton" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="242" y="433" width="40" height="40"/>
-                                        <state key="normal">
-                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="heart"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
-                                                <color key="value" red="0.5727193813" green="0.5727193813" blue="0.5727193813" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
-                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wG-Db-GFL">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
-                                        <connections>
-                                            <action selector="ShowOtherPics:" destination="No7-vI-DDg" eventType="touchUpInside" id="aBo-BA-T7K"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5tn-6g-JDx">
-                                        <rect key="frame" x="323" y="383" width="44" height="44"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPE-TE-YM1" customClass="FloatRatingView" customModule="Knot" customModuleProvider="target">
-                                        <rect key="frame" x="99" y="877" width="177" height="29"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="QnP-Oy-t3b"/>
+                                                <exclude reference="CUP-El-hu4"/>
+                                                <exclude reference="zF7-d4-PZp"/>
+                                                <exclude reference="fuK-Av-Vl2"/>
+                                                <exclude reference="y0w-TC-w8L"/>
+                                                <exclude reference="qxe-3g-jLb"/>
+                                                <exclude reference="fqN-zo-Vf5"/>
+                                                <exclude reference="LFw-rw-427"/>
+                                                <exclude reference="D9h-uL-zQp"/>
+                                                <exclude reference="v3z-Ib-hra"/>
+                                                <exclude reference="5tn-6g-JDx"/>
+                                                <exclude reference="pPE-TE-YM1"/>
+                                                <exclude reference="ZHp-37-8tx"/>
+                                                <exclude reference="nfW-K2-En9"/>
+                                                <exclude reference="3z9-43-9Av"/>
+                                                <exclude reference="0wG-Db-GFL"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="1085"/>
+                                            <mask key="subviews">
+                                                <include reference="QnP-Oy-t3b"/>
+                                                <include reference="CUP-El-hu4"/>
+                                                <include reference="zF7-d4-PZp"/>
+                                                <include reference="fuK-Av-Vl2"/>
+                                                <include reference="y0w-TC-w8L"/>
+                                                <include reference="qxe-3g-jLb"/>
+                                                <include reference="fqN-zo-Vf5"/>
+                                                <include reference="LFw-rw-427"/>
+                                                <include reference="D9h-uL-zQp"/>
+                                                <include reference="v3z-Ib-hra"/>
+                                                <include reference="5tn-6g-JDx"/>
+                                                <include reference="pPE-TE-YM1"/>
+                                                <include reference="ZHp-37-8tx"/>
+                                                <include reference="nfW-K2-En9"/>
+                                                <include reference="3z9-43-9Av"/>
+                                                <include reference="0wG-Db-GFL"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="Rnp-qG-nde"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Rnp-qG-nde"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="No7-vI-DDg" id="p5l-uL-FDB"/>
                                 </connections>
@@ -1200,7 +1305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKp-z6-pBU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3716.5" y="119.5"/>
+            <point key="canvasLocation" x="3716.25" y="118.875"/>
         </scene>
         <!--Page Controller-->
         <scene sceneID="H1o-wf-gzy">
@@ -1238,7 +1343,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8V5-z7-LKa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4550.25" y="-56.625"/>
+            <point key="canvasLocation" x="4505.25" y="-37.875"/>
         </scene>
         <!--Login View-->
         <scene sceneID="EMn-uU-yz8">
