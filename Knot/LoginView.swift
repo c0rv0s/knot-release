@@ -47,7 +47,7 @@ class LoginView: UIViewController, FBSDKLoginButtonDelegate, WKNavigationDelegat
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
         self.view.addSubview(loginView)
-        loginView.center = buttonView.center
+        loginView.center = view.center
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
         

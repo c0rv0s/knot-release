@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,11 +12,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="KnotLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-F0-150">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="KnotLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="KO7-F0-150">
                     <rect key="frame" x="67" y="298" width="240" height="72"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="KO7-F0-150" secondAttribute="height" multiplier="10:3" id="WbD-aW-C4j"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="KO7-F0-150" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="67" id="IAU-Je-aYg"/>
+                <constraint firstAttribute="trailing" secondItem="KO7-F0-150" secondAttribute="trailing" constant="68" id="MgC-sx-eva"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
