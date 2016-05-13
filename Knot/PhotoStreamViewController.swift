@@ -101,7 +101,16 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             print("delegated")
             layout.delegate = self
         }
-        colView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        var sideInset : CGFloat
+        if screenSize.width > 380 {
+            sideInset = screenSize.width * 0.035
+        }
+        else {
+            sideInset = screenSize.width * 0.013
+        }
+        colView!.contentInset = UIEdgeInsets(top: 23, left: sideInset, bottom: 10, right: 5)
         
         //reset aray
         self.favItemIDs = []
