@@ -100,6 +100,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
                 self.presentViewController(vc, animated: true, completion: nil)
             }))
+            self.presentViewController(alert, animated: true, completion: nil)
             print("derp")
         }
  
