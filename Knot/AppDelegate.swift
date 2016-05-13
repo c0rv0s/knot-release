@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         mixpanel = Mixpanel.sharedInstanceWithToken("e61631c23ceca034477df1105320a7f9")
         
         // Stripe Configuration
-        Stripe.setDefaultPublishableKey("pk_test_VGIWsdQ4enJouOZbWF5zqis8")
+        Stripe.setDefaultPublishableKey("pk_test_6tXYwgLe4iggNiUVNdqWvfdG")
         
         credentialsProvider = AWSCognitoCredentialsProvider(regionType:.USEast1,
             identityPoolId:"us-east-1:353ba7a2-f7d3-4d16-8064-61bd93fdee7c")

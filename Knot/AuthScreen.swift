@@ -78,30 +78,31 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     @IBAction func DoneButton(sender: AnyObject) {
-        //if (nameField.text == "Test" || nameField.text == "test" || nameField.text == "Demo" || nameField.text == "demo") {
         
-        //}
-        //else {
-            //apple pay
-            
-            guard let request = Stripe.paymentRequestWithMerchantIdentifier("merchant.com.knotcomplex") else {
-                // request will be nil if running on < iOS8
-                return
-            }
-            request.paymentSummaryItems = [
-                PKPaymentSummaryItem(label: "Authorization for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
-            ]
-            
-            if (Stripe.canSubmitPaymentRequest(request)) {
-                print("success!")
-                let paymentController = PKPaymentAuthorizationViewController(paymentRequest: request)
-                presentViewController(paymentController, animated: true, completion: nil)
-            } else {
-                // Show the user your own credit card form (see options 2 or 3)
-                print("derp")
-            }
-       // }
+        //apple pay
+        guard let request = Stripe.paymentRequestWithMerchantIdentifier("merchant.com.knotcomplex") else {
+            // request will be nil if running on < iOS8
+            return
+        }
+        request.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "Authorization for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
+        ]
         
+        if (Stripe.canSubmitPaymentRequest(request)) {
+            print("success! le guard")
+            let paymentController = PKPaymentAuthorizationViewController(paymentRequest: request)
+            paymentController.delegate = self
+            self.presentViewController(paymentController, animated: true, completion: nil)
+        } else {
+            // Tell user error info
+            let alert = UIAlertController(title: "Sorry", message: "At this time we only accept Apple Pay as a payment form. We are working hard to add support for more channels. In the meantime, please open the \"Wallet\" App and add a payment card to use the Knot Authorization service.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
+                self.presentViewController(vc, animated: true, completion: nil)
+            }))
+            print("derp")
+        }
+ 
     }
     
     @IBAction func ImgButtonOne(sender: AnyObject) {
@@ -407,8 +408,6 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let alertString = "Congratulations on authenticating your item! This will be listed in the Knot Store in a few moments."
         let alert = UIAlertController(title: "Success", message: alertString, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Awesome!", style: .Default, handler: { (alertAction) -> Void in
-            //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
-            
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("CCInfo")
             self.presentViewController(vc, animated: true, completion: nil)
         }))
@@ -423,22 +422,37 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         )
     }
     
-    //stripe code, coming next round
-    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: (PKPaymentAuthorizationStatus) -> Void) {
-        /*
-         We'll implement this method below in 'Creating a single-use token'.
-         Note that we've also been given a block that takes a
-         PKPaymentAuthorizationStatus. We'll call this function with either
-         PKPaymentAuthorizationStatusSuccess or PKPaymentAuthorizationStatusFailure
-         after all of our asynchronous code is finished executing. This is how the
-         PKPaymentAuthorizationViewController knows when and how to update its UI.
-         */
-        handlePaymentAuthorizationWithPayment(payment, completion: completion)
+    //stripe code + apple pay
+    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
+        print("yay")
+        let apiClient = STPAPIClient(publishableKey: "pk_test_6tXYwgLe4iggNiUVNdqWvfdG")
+        apiClient.createTokenWithPayment(payment, completion: { (token, error) -> Void in
+            if error == nil {
+                if let token = token {
+                    self.createBackendChargeWithToken(token, completion: { (result) -> Void in
+                        //if result == STPBackendChargeResult.Success {
+                            completion(PKPaymentAuthorizationStatus.Success)
+                        //}
+                        //else {
+                            //completion(PKPaymentAuthorizationStatus.Failure)
+                        //}
+                    })
+                }
+            }
+            else {
+                completion(PKPaymentAuthorizationStatus.Failure)
+            }
+        })
     }
     
     func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
+        //authenticate the user
         self.authenticateUser()
+        
+        //get ridof the apple pay view
         dismissViewControllerAnimated(true, completion: nil)
+        
+        //wait for the animation to end and then return to the store feed
         var delayInSeconds = 0.25;
         let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)));
         dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
@@ -450,6 +464,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     func handlePaymentAuthorizationWithPayment(payment: PKPayment, completion: PKPaymentAuthorizationStatus -> ()) {
         STPAPIClient.sharedClient().createTokenWithPayment(payment) { (token, error) -> Void in
             if error != nil {
+                print("check hande")
                 completion(PKPaymentAuthorizationStatus.Failure)
                 return
             }
@@ -458,6 +473,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
              Notice that we're passing the completion block through.
              See the above comment in didAuthorizePayment to learn why.
              */
+            print("get ready for backend")
             self.createBackendChargeWithToken(token!, completion: completion)
         }
     }
@@ -467,18 +483,26 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let url = NSURL(string: "https://xr0qhxlt19.execute-api.us-east-1.amazonaws.com/prod/KnotStripeAccess")!
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
+        
         let bodyOne = "{\"stripeToken\": \""  + token.tokenId
-        let bodyTwo = "\",\n\"amount_cent\": \"\(self.fee)"
+        let bodyTwo = "\",\n\"amount_cent\": \"\(self.fee * 100)"
         let bodyThree = "\",\n\"currency\": \"usd\",\n\"description\": \"test\"}"
         let body = bodyOne + bodyTwo + bodyThree
+        print(body)
+        
         request.HTTPBody = body.dataUsingEncoding(NSUTF8StringEncoding)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("WnceGNhrqN8pVw1KjqwaR2vQLNtKw8MP9qWMYt5e", forHTTPHeaderField: "x-api-key")
+        
         let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
         let task = session.dataTaskWithRequest(request) { (data, response, error) -> Void in
             if error != nil {
+                print("Apple PAy Stripe failure")
                 completion(PKPaymentAuthorizationStatus.Failure)
             }
             else {
+                print("Apple PAy Stripe success")
                 completion(PKPaymentAuthorizationStatus.Success)
             }
         }
@@ -517,4 +541,3 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
 
 }
-  
