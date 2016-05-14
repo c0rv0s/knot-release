@@ -426,7 +426,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     //stripe code + apple pay
     func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
         print("yay")
-        let apiClient = STPAPIClient(publishableKey: "pk_test_6tXYwgLe4iggNiUVNdqWvfdG")
+        let apiClient = STPAPIClient(publishableKey: "pk_live_Mr7JHG6BknjaupMyWU2U6c8a")
         apiClient.createTokenWithPayment(payment, completion: { (token, error) -> Void in
             if error == nil {
                 if let token = token {
@@ -485,9 +485,14 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "POST"
         
+        var testOrLive = "live"
+        if (item.name == "Test" || item.name == "test" || item.name == "Demo" || item.name == "demo") {
+            testOrLive = "test"
+        }
+        
         let bodyOne = "{\"stripeToken\": \""  + token.tokenId
         let bodyTwo = "\",\n\"amount_cent\": \"\(self.fee * 100)"
-        let bodyThree = "\",\n\"currency\": \"usd\",\n\"description\": \"test\"}"
+        let bodyThree = "\",\n\"currency\": \"usd\",\n\"description\": \"\(testOrLive)\"}"
         let body = bodyOne + bodyTwo + bodyThree
         print(body)
         

@@ -473,16 +473,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
-                                <rect key="frame" x="96" y="409" width="183" height="47"/>
-                                <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Done">
-                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <connections>
-                                    <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fif-gJ-Wdk">
                                 <rect key="frame" x="36" y="206" width="138" height="140"/>
                                 <constraints>
@@ -608,14 +598,28 @@
                                     </mask>
                                 </variation>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
+                                <rect key="frame" x="96" y="409" width="183" height="47"/>
+                                <color key="backgroundColor" red="1" green="0.68627450980000004" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="75" y="413" width="225" height="46"/>
+                                </variation>
+                                <connections>
+                                    <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8mf-SX-gNH" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="193" id="0j3-X5-KaG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iGG-g6-we2" secondAttribute="trailing" constant="76" id="1nH-Ob-SOz"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="76" id="92p-n0-y4N"/>
-                            <constraint firstItem="pCu-NV-5lY" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="76" id="Dh3-Gf-Uld"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pCu-NV-5lY" secondAttribute="trailing" constant="55" id="9Xe-vI-ixQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8mf-SX-gNH" secondAttribute="trailing" constant="26" id="Jgc-jK-XcP"/>
+                            <constraint firstItem="pCu-NV-5lY" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="393" id="KCx-E0-ghU"/>
                             <constraint firstItem="aJW-Cn-nxg" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="8" id="PQc-w8-6cp"/>
                             <constraint firstItem="aJW-Cn-nxg" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="10" id="e4i-fZ-dKa"/>
                             <constraint firstItem="Iq0-vY-4Af" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="67" id="eQr-Kv-BNU"/>
@@ -623,13 +627,12 @@
                             <constraint firstItem="zZL-wH-l2i" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="193" id="gyW-tK-NNx"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="341" id="hfX-HT-I9H"/>
                             <constraint firstItem="Iq0-vY-4Af" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="24" id="nFu-ie-l40"/>
-                            <constraint firstItem="pCu-NV-5lY" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="389" id="sCd-Ht-6mr"/>
                             <constraint firstItem="wqU-Pk-WBC" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="186" id="sh8-9Q-rMw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Iq0-vY-4Af" secondAttribute="trailing" constant="25" id="xri-Kf-g2P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wqU-Pk-WBC" secondAttribute="trailing" constant="16" id="y1T-Vq-vxj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pCu-NV-5lY" secondAttribute="trailing" constant="76" id="yEq-hM-l9l"/>
                             <constraint firstItem="zZL-wH-l2i" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="23" id="ycZ-IR-ktA"/>
                             <constraint firstItem="fif-gJ-Wdk" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="16" id="ywF-cc-MAj"/>
+                            <constraint firstItem="pCu-NV-5lY" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="55" id="zWr-Wl-Go4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -649,9 +652,9 @@
                                 <exclude reference="1nH-Ob-SOz"/>
                                 <exclude reference="92p-n0-y4N"/>
                                 <exclude reference="hfX-HT-I9H"/>
-                                <exclude reference="Dh3-Gf-Uld"/>
-                                <exclude reference="sCd-Ht-6mr"/>
-                                <exclude reference="yEq-hM-l9l"/>
+                                <exclude reference="9Xe-vI-ixQ"/>
+                                <exclude reference="KCx-E0-ghU"/>
+                                <exclude reference="zWr-Wl-Go4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -672,9 +675,9 @@
                                 <include reference="1nH-Ob-SOz"/>
                                 <include reference="92p-n0-y4N"/>
                                 <include reference="hfX-HT-I9H"/>
-                                <include reference="Dh3-Gf-Uld"/>
-                                <include reference="sCd-Ht-6mr"/>
-                                <include reference="yEq-hM-l9l"/>
+                                <include reference="9Xe-vI-ixQ"/>
+                                <include reference="KCx-E0-ghU"/>
+                                <include reference="zWr-Wl-Go4"/>
                             </mask>
                         </variation>
                     </view>
@@ -3197,7 +3200,7 @@
                                     <constraint firstAttribute="height" constant="61" id="ANN-mO-NZJ"/>
                                     <constraint firstAttribute="width" constant="239" id="Lrt-Qe-Men"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="15"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
@@ -3207,7 +3210,8 @@
                                         <exclude reference="Lrt-Qe-Men"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="64" y="499" width="225" height="46"/>
                                     <mask key="constraints">
                                         <include reference="ANN-mO-NZJ"/>
                                         <include reference="Lrt-Qe-Men"/>
