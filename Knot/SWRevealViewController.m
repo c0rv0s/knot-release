@@ -81,6 +81,10 @@ static CGFloat scaledValue( CGFloat v1, CGFloat min2, CGFloat max2, CGFloat min1
     return result;
 }
 
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 
 - (id)initWithFrame:(CGRect)frame controller:(SWRevealViewController*)controller
 {
