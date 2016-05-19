@@ -799,15 +799,31 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.userPrice = Int(self.priceField.text!)!
             //if self.userPrice != nil {
                 if userPrice >= 49 {
-                    print("Valid Integer")
-                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot (this will incur a 4% service fee)?", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
+                    
+                    //apple pay
+                    guard let request = Stripe.paymentRequestWithMerchantIdentifier("merchant.com.knotcomplex") else {
+                        // request will be nil if running on < iOS8
+                        return
+                    }
+                    request.paymentSummaryItems = [
+                        PKPaymentSummaryItem(label: "checking for Apple Pay", amount: NSDecimalNumber(double: 0.01))
+                    ]
+                    
+                    if (Stripe.canSubmitPaymentRequest(request)) {
+                        let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot (this will incur a 4% service fee)?", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
+                            self.loadData(false, lastScreen: true)
+                        }))
+                        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+                            self.loadData(false, lastScreen: false)
+                        }))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        
+                    }
+                    else {
+                    
                         self.loadData(false, lastScreen: true)
-                    }))
-                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
-                        self.loadData(false, lastScreen: false)
-                    }))
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    }
                 }
                 else {
                     self.loadData(false, lastScreen: true)

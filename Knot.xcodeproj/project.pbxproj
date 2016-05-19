@@ -157,6 +157,17 @@
 		439211021CD1B39A00DCAD90 /* new-stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439211011CD1B39A00DCAD90 /* new-stars.swift */; };
 		4392A1B21CED6EF900786122 /* DeviceKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392A1B11CED6EF900786122 /* DeviceKitExtension.swift */; };
 		4392A1B41CED725700786122 /* SmallLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392A1B31CED725700786122 /* SmallLogin.swift */; };
+		4392A1C11CEE5B8600786122 /* Gravity_License.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1B61CEE5B8600786122 /* Gravity_License.pdf */; };
+		4392A1CC1CEE5BC500786122 /* Gravity-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1B71CEE5B8600786122 /* Gravity-Bold.otf */; };
+		4392A1CD1CEE5BC500786122 /* Gravity-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1B81CEE5B8600786122 /* Gravity-Regular.otf */; };
+		4392A1CE1CEE5BC500786122 /* Gravity-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1B91CEE5B8600786122 /* Gravity-Book.otf */; };
+		4392A1CF1CEE5BC500786122 /* Gravity-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BA1CEE5B8600786122 /* Gravity-Light.otf */; };
+		4392A1D01CEE5BC500786122 /* Gravity-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BB1CEE5B8600786122 /* Gravity-UltraLight.otf */; };
+		4392A1D11CEE5BC500786122 /* Gravity-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BC1CEE5B8600786122 /* Gravity-BoldItalic.otf */; };
+		4392A1D21CEE5BC500786122 /* Gravity-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BD1CEE5B8600786122 /* Gravity-BookItalic.otf */; };
+		4392A1D31CEE5BC500786122 /* Gravity-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BE1CEE5B8600786122 /* Gravity-Italic.otf */; };
+		4392A1D41CEE5BC500786122 /* Gravity-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1BF1CEE5B8600786122 /* Gravity-LightItalic.otf */; };
+		4392A1D51CEE5BC500786122 /* Gravity-UltraLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4392A1C01CEE5B8600786122 /* Gravity-UltraLightItalic.otf */; };
 		4396E67E1CA4A64900655ED9 /* pageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67D1CA4A64900655ED9 /* pageController.swift */; };
 		4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */; };
 		4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6811CAC9B2C00655ED9 /* collection.swift */; };
@@ -407,6 +418,17 @@
 		439211011CD1B39A00DCAD90 /* new-stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "new-stars.swift"; sourceTree = "<group>"; };
 		4392A1B11CED6EF900786122 /* DeviceKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKitExtension.swift; sourceTree = "<group>"; };
 		4392A1B31CED725700786122 /* SmallLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallLogin.swift; sourceTree = "<group>"; };
+		4392A1B61CEE5B8600786122 /* Gravity_License.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Gravity_License.pdf; path = gravity/Gravity_License.pdf; sourceTree = "<group>"; };
+		4392A1B71CEE5B8600786122 /* Gravity-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-Bold.otf"; path = "gravity/Gravity-Bold.otf"; sourceTree = "<group>"; };
+		4392A1B81CEE5B8600786122 /* Gravity-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-Regular.otf"; path = "gravity/Gravity-Regular.otf"; sourceTree = "<group>"; };
+		4392A1B91CEE5B8600786122 /* Gravity-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-Book.otf"; path = "gravity/Gravity-Book.otf"; sourceTree = "<group>"; };
+		4392A1BA1CEE5B8600786122 /* Gravity-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-Light.otf"; path = "gravity/Gravity-Light.otf"; sourceTree = "<group>"; };
+		4392A1BB1CEE5B8600786122 /* Gravity-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-UltraLight.otf"; path = "gravity/Gravity-UltraLight.otf"; sourceTree = "<group>"; };
+		4392A1BC1CEE5B8600786122 /* Gravity-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-BoldItalic.otf"; path = "gravity/Gravity-BoldItalic.otf"; sourceTree = "<group>"; };
+		4392A1BD1CEE5B8600786122 /* Gravity-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-BookItalic.otf"; path = "gravity/Gravity-BookItalic.otf"; sourceTree = "<group>"; };
+		4392A1BE1CEE5B8600786122 /* Gravity-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-Italic.otf"; path = "gravity/Gravity-Italic.otf"; sourceTree = "<group>"; };
+		4392A1BF1CEE5B8600786122 /* Gravity-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-LightItalic.otf"; path = "gravity/Gravity-LightItalic.otf"; sourceTree = "<group>"; };
+		4392A1C01CEE5B8600786122 /* Gravity-UltraLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Gravity-UltraLightItalic.otf"; path = "gravity/Gravity-UltraLightItalic.otf"; sourceTree = "<group>"; };
 		4396E67D1CA4A64900655ED9 /* pageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pageController.swift; sourceTree = "<group>"; };
 		4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KCRE-data.swift"; sourceTree = "<group>"; };
 		4396E6811CAC9B2C00655ED9 /* collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
@@ -680,6 +702,7 @@
 		431853441BF9892F000C6ED4 /* Knot */ = {
 			isa = PBXGroup;
 			children = (
+				4392A1B51CEE5AF900786122 /* Gravity */,
 				4386AA8A1CDDDA3100347B3C /* web3.js */,
 				4386AA881CDBDB5700347B3C /* web3.html */,
 				432FC63C1CCB468D008EDDC6 /* Erasure Always.mp3 */,
@@ -776,6 +799,24 @@
 				43665D201C70302C0069A3AA /* MessagingTableViewController.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		4392A1B51CEE5AF900786122 /* Gravity */ = {
+			isa = PBXGroup;
+			children = (
+				4392A1B61CEE5B8600786122 /* Gravity_License.pdf */,
+				4392A1B71CEE5B8600786122 /* Gravity-Bold.otf */,
+				4392A1B81CEE5B8600786122 /* Gravity-Regular.otf */,
+				4392A1B91CEE5B8600786122 /* Gravity-Book.otf */,
+				4392A1BA1CEE5B8600786122 /* Gravity-Light.otf */,
+				4392A1BB1CEE5B8600786122 /* Gravity-UltraLight.otf */,
+				4392A1BC1CEE5B8600786122 /* Gravity-BoldItalic.otf */,
+				4392A1BD1CEE5B8600786122 /* Gravity-BookItalic.otf */,
+				4392A1BE1CEE5B8600786122 /* Gravity-Italic.otf */,
+				4392A1BF1CEE5B8600786122 /* Gravity-LightItalic.otf */,
+				4392A1C01CEE5B8600786122 /* Gravity-UltraLightItalic.otf */,
+			);
+			name = Gravity;
 			sourceTree = "<group>";
 		};
 		4397C46F1CCFFA0500186EFC /* Cell Files */ = {
@@ -959,6 +1000,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4392A1CC1CEE5BC500786122 /* Gravity-Bold.otf in Resources */,
+				4392A1CD1CEE5BC500786122 /* Gravity-Regular.otf in Resources */,
+				4392A1CE1CEE5BC500786122 /* Gravity-Book.otf in Resources */,
+				4392A1CF1CEE5BC500786122 /* Gravity-Light.otf in Resources */,
+				4392A1D01CEE5BC500786122 /* Gravity-UltraLight.otf in Resources */,
+				4392A1D11CEE5BC500786122 /* Gravity-BoldItalic.otf in Resources */,
+				4392A1D21CEE5BC500786122 /* Gravity-BookItalic.otf in Resources */,
+				4392A1D31CEE5BC500786122 /* Gravity-Italic.otf in Resources */,
+				4392A1D41CEE5BC500786122 /* Gravity-LightItalic.otf in Resources */,
+				4392A1D51CEE5BC500786122 /* Gravity-UltraLightItalic.otf in Resources */,
 				431262491C900A3A00A47BFD /* snapshot_config.json in Resources */,
 				4312624A1C900A3A00A47BFD /* test_variant.json in Resources */,
 				43FF94C21CD55BE100FC150E /* selectUserCell.xib in Resources */,
@@ -976,6 +1027,7 @@
 				432FC6341CCB426F008EDDC6 /* GameScene.sks in Resources */,
 				432FC63B1CCB45A5008EDDC6 /* Rick.mp3 in Resources */,
 				432FC6391CCB429E008EDDC6 /* bird.atlas in Resources */,
+				4392A1C11CEE5B8600786122 /* Gravity_License.pdf in Resources */,
 				431262361C900A3A00A47BFD /* MPSurvey.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>FacebookAppID</key>
 	<string>1681360178745346</string>
 	<key>FacebookDisplayName</key>
@@ -117,6 +117,19 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to know your location to help find listings near you</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Gravity-Bold.otf</string>
+		<string>Gravity-BoldItalic.otf</string>
+		<string>Gravity-Book.otf</string>
+		<string>Gravity-BookItalic.otf</string>
+		<string>Gravity-Italic.otf</string>
+		<string>Gravity-Light.otf</string>
+		<string>Gravity-LightItalic.otf</string>
+		<string>Gravity-Regular.otf</string>
+		<string>Gravity-UltraLight.otf</string>
+		<string>Gravity-UltraLightItalic.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
