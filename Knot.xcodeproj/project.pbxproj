@@ -155,6 +155,8 @@
 		438E05901C646F9600856C52 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 438E058F1C646F9600856C52 /* libicucore.tbd */; };
 		439211001CD19A8100DCAD90 /* RateUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439210FF1CD19A8100DCAD90 /* RateUser.swift */; };
 		439211021CD1B39A00DCAD90 /* new-stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439211011CD1B39A00DCAD90 /* new-stars.swift */; };
+		4392A1B21CED6EF900786122 /* DeviceKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392A1B11CED6EF900786122 /* DeviceKitExtension.swift */; };
+		4392A1B41CED725700786122 /* SmallLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4392A1B31CED725700786122 /* SmallLogin.swift */; };
 		4396E67E1CA4A64900655ED9 /* pageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67D1CA4A64900655ED9 /* pageController.swift */; };
 		4396E6801CAC9AF100655ED9 /* KCRE-data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */; };
 		4396E6821CAC9B2C00655ED9 /* collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396E6811CAC9B2C00655ED9 /* collection.swift */; };
@@ -403,6 +405,8 @@
 		438E058F1C646F9600856C52 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		439210FF1CD19A8100DCAD90 /* RateUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateUser.swift; sourceTree = "<group>"; };
 		439211011CD1B39A00DCAD90 /* new-stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "new-stars.swift"; sourceTree = "<group>"; };
+		4392A1B11CED6EF900786122 /* DeviceKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceKitExtension.swift; sourceTree = "<group>"; };
+		4392A1B31CED725700786122 /* SmallLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmallLogin.swift; sourceTree = "<group>"; };
 		4396E67D1CA4A64900655ED9 /* pageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pageController.swift; sourceTree = "<group>"; };
 		4396E67F1CAC9AF100655ED9 /* KCRE-data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "KCRE-data.swift"; sourceTree = "<group>"; };
 		4396E6811CAC9B2C00655ED9 /* collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = collection.swift; sourceTree = "<group>"; };
@@ -801,6 +805,7 @@
 				43E761C21C4AEF5B0051E060 /* OneShotLocationManager.swift */,
 				432FC62B1CCAF859008EDDC6 /* PITouchIDManager.swift */,
 				4397C4721CD004F700186EFC /* ListingUpload.swift */,
+				4392A1B11CED6EF900786122 /* DeviceKitExtension.swift */,
 			);
 			name = "Third Party Extensions";
 			sourceTree = "<group>";
@@ -819,6 +824,7 @@
 			isa = PBXGroup;
 			children = (
 				43DD8ECB1C7007AB00F9D8A1 /* savedListings.swift */,
+				4392A1B31CED725700786122 /* SmallLogin.swift */,
 				43869C601C052E07008E6056 /* LoginView.swift */,
 				43A4FC381BF996F00003748E /* ItemDetail.swift */,
 				43869C5A1C03CE36008E6056 /* NewItemView.swift */,
@@ -1065,6 +1071,7 @@
 				4312623D1C900A3A00A47BFD /* MPTweakStore.m in Sources */,
 				43665D211C70302C0069A3AA /* MessagingTableViewController.swift in Sources */,
 				4312621A1C900A3A00A47BFD /* MPApplicationStateSerializer.m in Sources */,
+				4392A1B21CED6EF900786122 /* DeviceKitExtension.swift in Sources */,
 				4312624D1C900A3A00A47BFD /* UIImage+MPImageEffects.m in Sources */,
 				431262441C900A3A00A47BFD /* MPUITableViewBinding.m in Sources */,
 				433912541CB76A1A00100C64 /* SimpleCircleLiquidEngine.swift in Sources */,
@@ -1122,6 +1129,7 @@
 				4312621F1C900A3A00A47BFD /* MPCGPointToNSDictionaryValueTransformer.m in Sources */,
 				430D6B651C922EA100C7A6A7 /* Editlisting.swift in Sources */,
 				4397C4711CCFFF9200186EFC /* AuthScreen.swift in Sources */,
+				4392A1B41CED725700786122 /* SmallLogin.swift in Sources */,
 				431262191C900A3A00A47BFD /* MPABTestDesignerTweakResponseMessage.m in Sources */,
 				433912521CB76A1A00100C64 /* LiquidUtil.swift in Sources */,
 				436F5D501C4FC318009CFCE3 /* PhotoStreamViewController.swift in Sources */,
@@ -1329,7 +1337,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Knot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1401,7 +1409,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Knot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

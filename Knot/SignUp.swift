@@ -279,10 +279,14 @@ class SignUp: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                     return nil
                 }
                 
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("StepZero") as! UIViewController
-                self.presentViewController(vc, animated: true, completion: nil)
-                
-                
+                if self.appDelegate.smallDevice {
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
+                else {
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("StepZero") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
             }
             else {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("AccountView") as! UIViewController

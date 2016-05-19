@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     var loggedIn = false
     var untapped: Array<String>!
     
+    var smallDevice = false
+    
     //var locCurrent: CLLocation!
     
     var mixpanel: AnyObject?
