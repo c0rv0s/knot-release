@@ -561,6 +561,9 @@
                                 <state key="normal" title="Tap here for examples">
                                     <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="24" y="312" width="155" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="examplesButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="ADz-bH-by3"/>
                                 </connections>
@@ -591,31 +594,13 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="44" y="66" width="286" height="90"/>
+                                    <rect key="frame" x="44" y="57" width="286" height="77"/>
                                     <mask key="constraints">
                                         <include reference="iP9-EE-Sjd"/>
                                         <include reference="uaY-gB-aDi"/>
                                     </mask>
                                 </variation>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4% Service Fee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3U-Ho-JmH">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="32" y="350" width="132" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjU-RG-8ne">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="172" y="350" width="111" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
                                 <rect key="frame" x="96" y="409" width="183" height="47"/>
                                 <constraints>
@@ -645,6 +630,36 @@
                                     <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4% Service Fee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3U-Ho-JmH">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="32" y="350" width="132" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjU-RG-8ne">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="172" y="350" width="111" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9F-2L-HPQ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="How this works">
+                                    <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="204" y="312" width="133" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="ExplanationButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="ssi-LR-74C"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -652,7 +667,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="iGG-g6-we2" secondAttribute="trailing" constant="76" id="1nH-Ob-SOz"/>
                             <constraint firstItem="B3U-Ho-JmH" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="12" id="64T-lx-cKT"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="76" id="92p-n0-y4N"/>
-                            <constraint firstItem="Iq0-vY-4Af" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="46" id="9N9-gN-f4R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pCu-NV-5lY" secondAttribute="trailing" constant="55" id="9Xe-vI-ixQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kjU-RG-8ne" secondAttribute="trailing" constant="72" id="HMH-mZ-6Fa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8mf-SX-gNH" secondAttribute="trailing" constant="26" id="Jgc-jK-XcP"/>
@@ -666,6 +680,7 @@
                             <constraint firstItem="B3U-Ho-JmH" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="330" id="jiJ-2X-YAZ"/>
                             <constraint firstItem="kjU-RG-8ne" firstAttribute="leading" secondItem="B3U-Ho-JmH" secondAttribute="trailing" constant="8" id="lI6-zy-gOn"/>
                             <constraint firstItem="Iq0-vY-4Af" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="24" id="nFu-ie-l40"/>
+                            <constraint firstItem="Iq0-vY-4Af" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="37" id="oJv-EC-FmP"/>
                             <constraint firstItem="kjU-RG-8ne" firstAttribute="leading" secondItem="B3U-Ho-JmH" secondAttribute="trailing" constant="8" id="w8B-oC-Ygh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Iq0-vY-4Af" secondAttribute="trailing" constant="25" id="xri-Kf-g2P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wqU-Pk-WBC" secondAttribute="trailing" constant="16" id="y1T-Vq-vxj"/>
@@ -678,12 +693,13 @@
                             <mask key="subviews">
                                 <exclude reference="B3U-Ho-JmH"/>
                                 <exclude reference="kjU-RG-8ne"/>
+                                <exclude reference="r9F-2L-HPQ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="PQc-w8-6cp"/>
                                 <exclude reference="e4i-fZ-dKa"/>
-                                <exclude reference="9N9-gN-f4R"/>
                                 <exclude reference="nFu-ie-l40"/>
+                                <exclude reference="oJv-EC-FmP"/>
                                 <exclude reference="xri-Kf-g2P"/>
                                 <exclude reference="N71-Gj-NpC"/>
                                 <exclude reference="ywF-cc-MAj"/>
@@ -711,12 +727,13 @@
                             <mask key="subviews">
                                 <include reference="B3U-Ho-JmH"/>
                                 <include reference="kjU-RG-8ne"/>
+                                <include reference="r9F-2L-HPQ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="PQc-w8-6cp"/>
                                 <include reference="e4i-fZ-dKa"/>
-                                <include reference="9N9-gN-f4R"/>
                                 <include reference="nFu-ie-l40"/>
+                                <include reference="oJv-EC-FmP"/>
                                 <include reference="xri-Kf-g2P"/>
                                 <include reference="N71-Gj-NpC"/>
                                 <include reference="ywF-cc-MAj"/>
@@ -744,6 +761,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="600"/>
                     <connections>
+                        <outlet property="ExplanationButton" destination="r9F-2L-HPQ" id="hzT-KE-ofZ"/>
                         <outlet property="ImgButtonOne" destination="fif-gJ-Wdk" id="XgW-Yw-qIb"/>
                         <outlet property="ImgButtonTwo" destination="wqU-Pk-WBC" id="iD9-WW-wwU"/>
                         <outlet property="ImgOne" destination="zZL-wH-l2i" id="zZ7-Ep-afk"/>

@@ -31,6 +31,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var photoNum = 0
     var fee = 0.01
     
+    @IBOutlet weak var ExplanationButton: UIButton!
     @IBOutlet weak var priceField: UILabel!
     var item : ListItem!
     var cogID : String!
@@ -78,6 +79,14 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             }
             
         })
+    }
+    
+    
+    @IBAction func ExplanationButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "How we Authenticate", message: "Knot sends the pictures you upload to verified 3rd parties who review the documents and confirm their authenticity. Please vist our FAQ buy tapping the gear icon on the account screen for more details.", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (alertAction) -> Void in
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     @IBAction func DoneButton(sender: AnyObject) {
