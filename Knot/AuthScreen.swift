@@ -31,6 +31,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     var photoNum = 0
     var fee = 0.01
     
+    @IBOutlet weak var priceField: UILabel!
     var item : ListItem!
     var cogID : String!
     
@@ -58,6 +59,8 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         webView!.loadRequest(NSURLRequest(URL: url!))
         webView!.navigationDelegate = self
         
+        var price = "$" + String(fee)
+        priceField.text = price
         
     }
     // Called when web-page is loaded
@@ -85,7 +88,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             return
         }
         request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Authorization for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
+            PKPaymentSummaryItem(label: "Verification fee for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
         ]
         
         if (Stripe.canSubmitPaymentRequest(request)) {
@@ -305,18 +308,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
     
     func authenticateUser() {
-        /***CONVERT FROM NSDate to String ****/
-        /*
-        
-        
-        let context : LAContext = LAContext()
-        var error : NSError?
-        let myLocalizedReasonString : NSString = "Authenticate your item with Touch ID"
-        if context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
-            context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: { (success : Bool, evaluationError : NSError?) -> Void in
-                if success {
-                    NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
- */
+
                         self.loadData(true)
                         
                         //create a contract
@@ -339,57 +331,13 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                         dateFormatter.dateFormat = "ddMMyyyyHHmmss"
                         //we need string, not Int.
                         let dateString = String(dateFormatter.stringFromDate(NSDate()))
-                        /*self.webView!.evaluateJavaScript("contract.renewtimestamp.sendTransaction(\(dateString), {from: \"0xc8ca03fd80f08188520422431853b382e0df348e\", gas: 900000})",
-                         completionHandler: {(res: AnyObject?, error: NSError?) in
-                         print(error)
-                         print(res)
-                         })*/
+
                         self.webView!.evaluateJavaScript("contractinit(\"\(contractAddress)\",\"\(self.item.ID)\",\"\(self.cogID)\",\(dateString))",
                             completionHandler: {(res: AnyObject?, error: NSError?) in
                                 print(error)
                                 print(res)
                         })
-                        /*
-                    })
-    
-                }
-                else {
-                    // Authentification failed
-                    print(evaluationError?.localizedDescription)
-                    
-                    switch evaluationError!.code {
-                    case LAError.SystemCancel.rawValue:
-                        print("Authentication cancelled by the system")
-                    case LAError.UserCancel.rawValue:
-                        print("Authentication cancelled by the user")
-                    case LAError.UserFallback.rawValue:
-                        print("User wants to use a password")
-                        // We show the alert view in the main thread (always update the UI in the main thread)
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            self.showPasswordAlert()
-                        })
-                    default:
-                        print("Authentication failed")
-                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                            self.showPasswordAlert()
-                        })
-                    }
-                }
-            })
-            
-        }
-        else {
-            switch error!.code {
-            case LAError.TouchIDNotEnrolled.rawValue:
-                print("TouchID not enrolled")
-            case LAError.PasscodeNotSet.rawValue:
-                print("Passcode not set")
-            default:
-                print("TouchID not available")
-            }
-            self.showPasswordAlert()
-        }
- */
+
     }
     //end touch id
     

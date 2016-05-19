@@ -800,7 +800,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             //if self.userPrice != nil {
                 if userPrice >= 49 {
                     print("Valid Integer")
-                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot (this may incur service fees)?", preferredStyle: UIAlertControllerStyle.Alert)
+                    let alert = UIAlertController(title: "Hey", message: "We recomend that you verify and authenticate items that have value. This sets buyers at ease about higher priced items and often helps them sell faster. Would you like to authenticate your item with Knot (this will incur a 4% service fee)?", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "No Thanks", style: .Default, handler: { (alertAction) -> Void in
                         self.loadData(false, lastScreen: true)
                     }))

@@ -95,6 +95,7 @@ class PhotoStreamViewController: UICollectionViewController, UISearchControllerD
             alert.show()
         }
 */
+        self.locCurrent = self.appDelegate.locCurrent
         
          // Set the PinterestLayout delegate
         if let layout = self.colView.collectionViewLayout as? FeedLayout {
