@@ -126,30 +126,10 @@ class launchScreen: UIViewController {
                         
                         self.newStars.append(Int(item.stars))
                         starTotal += Int(item.stars)
-                        /*
-                        starTotal = item.stars
-                        print("cras2")
-                        if item.userID == self.appDelegate.SBID {
-                            print("adjusting rating")
-                            for star in self.selfRatingArray {
-                                starTotal += Int(star)!
-                                print("starTotal is ")
-                                print(starTotal)
-                            }
-                            self.selfRatingArray.append(String(item.stars))
-                            self.deleteStar(item)
-                        }
- */
+
                         self.deleteStar(item)
                     }
-                    /*
-                    if self.selfRatingArray.count > 0 {
-                        self.appDelegate.selfRating = Int(starTotal/(self.selfRatingArray.count))
-                    }
-                    else {
-                        self.appDelegate.selfRating = starTotal
-                    }
- */
+
                     self.lastEvaluatedKey = paginatedOutput.lastEvaluatedKey
                 }
                 
