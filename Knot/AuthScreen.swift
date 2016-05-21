@@ -97,7 +97,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
             return
         }
         request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Verification fee for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
+            PKPaymentSummaryItem(label: "Knot service fee for \(self.item.name)", amount: NSDecimalNumber(double: self.fee))
         ]
         
         if (Stripe.canSubmitPaymentRequest(request)) {

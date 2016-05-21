@@ -50,6 +50,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     @IBOutlet weak var distanceLabel: UILabel!
     
+    @IBOutlet weak var AlternatingButtonSmall: UIButton!
+    
     var DetailItem: ListItem!
     
     var pic : UIImage!
@@ -91,6 +93,8 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        AlternatingButtonSmall.hidden = true
         
         self.name = self.DetailItem.name
         self.price = self.DetailItem.price
@@ -134,17 +138,20 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
             self.savelabel.text = "Saved!"
             
         }
+        
+        if self.appDelegate.smallDevice {
+            self.AlternatingButtonSmall.hidden = false
+        }
 
-        
-        
-        
         //set button state
         if self.owned {
+            self.AlternatingButtonSmall.setTitle("Mark As Sold or Delete", forState: .Normal)
             self.alternatingButton.setTitle("Mark As Sold or Delete", forState: .Normal)
             self.reportSlashEdit.title = "Edit"
         }
         else {
             self.alternatingButton.setTitle("Contact", forState: .Normal)
+            self.AlternatingButtonSmall.setTitle("Contact", forState: .Normal)
         }
         
         if self.sold != "false" {
@@ -447,14 +454,19 @@ class ItemDetail: UIViewController, MFMailComposeViewControllerDelegate, UIScrol
 
         centerMapOnLocation(location)
         
-        //find the distance
-        let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
-        var stringFormat = String(format: "%.0f", distanceBetween + 1)
-        if stringFormat == "1" {
-            self.distanceLabel.text = "About " + stringFormat + " mile away"
+        if self.appDelegate.locEnabled {
+            //find the distance
+            let distanceBetween = initialLocation.distanceFromLocation(self.locCurrent) * 0.000621371
+            var stringFormat = String(format: "%.0f", distanceBetween + 1)
+            if stringFormat == "1" {
+                self.distanceLabel.text = "About " + stringFormat + " mile away"
+            }
+            else {
+                self.distanceLabel.text = "About " + stringFormat + " miles away"
+            }
         }
         else {
-            self.distanceLabel.text = "About " + stringFormat + " miles away"
+            self.distanceLabel.text = " "
         }
         
         //now print out the address

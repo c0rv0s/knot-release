@@ -48,6 +48,8 @@ class SmallLogin: UIViewController, FBSDKLoginButtonDelegate, WKNavigationDelega
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
         
+        self.appDelegate.locEnabled = false
+        
         // Creating actual WebView object. You can make it accessible
         // globally and used by other view controllers / objects
         webView = WKWebView()

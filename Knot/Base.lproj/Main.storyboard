@@ -75,6 +75,7 @@
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
             <string>Gravity-Regular</string>
+            <string>Gravity-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -434,6 +435,9 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="980"/>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="7ah-zJ-hsL" id="ib5-Lr-fay"/>
                                 </connections>
@@ -447,7 +451,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="780"/>
+                    <size key="freeformSize" width="375" height="980"/>
                     <connections>
                         <outlet property="addphoto1" destination="09j-l0-8Bo" id="O6g-Eh-1UR"/>
                         <outlet property="addphoto2" destination="L8d-4D-7IB" id="fQB-cA-Bee"/>
@@ -467,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5BT-rx-S2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1616.5" y="1829"/>
+            <point key="canvasLocation" x="1470.75" y="1812"/>
         </scene>
         <!--Auth Screen-->
         <scene sceneID="6QL-Hi-lzj">
@@ -616,7 +620,7 @@
                                     <constraint firstAttribute="height" constant="65" id="m4y-JF-2uN"/>
                                     <constraint firstAttribute="width" secondItem="pCu-NV-5lY" secondAttribute="height" multiplier="20:13" id="nJe-zA-raN"/>
                                 </constraints>
-                                <state key="normal" image="NFC-AP-logos">
+                                <state key="normal" image="apple-pay-logo">
                                     <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
@@ -705,6 +709,12 @@
                                 <exclude reference="r9F-2L-HPQ"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="64T-lx-cKT"/>
+                                <exclude reference="jiJ-2X-YAZ"/>
+                                <exclude reference="HMH-mZ-6Fa"/>
+                                <exclude reference="j26-01-yNh"/>
+                                <exclude reference="lI6-zy-gOn"/>
+                                <exclude reference="w8B-oC-Ygh"/>
                                 <exclude reference="PQc-w8-6cp"/>
                                 <exclude reference="e4i-fZ-dKa"/>
                                 <exclude reference="nFu-ie-l40"/>
@@ -721,12 +731,6 @@
                                 <exclude reference="1nH-Ob-SOz"/>
                                 <exclude reference="92p-n0-y4N"/>
                                 <exclude reference="TuG-3j-QhI"/>
-                                <exclude reference="64T-lx-cKT"/>
-                                <exclude reference="jiJ-2X-YAZ"/>
-                                <exclude reference="HMH-mZ-6Fa"/>
-                                <exclude reference="j26-01-yNh"/>
-                                <exclude reference="lI6-zy-gOn"/>
-                                <exclude reference="w8B-oC-Ygh"/>
                                 <exclude reference="9Xe-vI-ixQ"/>
                                 <exclude reference="e87-jq-rW1"/>
                                 <exclude reference="zWr-Wl-Go4"/>
@@ -739,6 +743,12 @@
                                 <include reference="r9F-2L-HPQ"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="64T-lx-cKT"/>
+                                <include reference="jiJ-2X-YAZ"/>
+                                <include reference="HMH-mZ-6Fa"/>
+                                <include reference="j26-01-yNh"/>
+                                <include reference="lI6-zy-gOn"/>
+                                <include reference="w8B-oC-Ygh"/>
                                 <include reference="PQc-w8-6cp"/>
                                 <include reference="e4i-fZ-dKa"/>
                                 <include reference="nFu-ie-l40"/>
@@ -755,12 +765,6 @@
                                 <include reference="1nH-Ob-SOz"/>
                                 <include reference="92p-n0-y4N"/>
                                 <include reference="TuG-3j-QhI"/>
-                                <include reference="64T-lx-cKT"/>
-                                <include reference="jiJ-2X-YAZ"/>
-                                <include reference="HMH-mZ-6Fa"/>
-                                <include reference="j26-01-yNh"/>
-                                <include reference="lI6-zy-gOn"/>
-                                <include reference="w8B-oC-Ygh"/>
                                 <include reference="9Xe-vI-ixQ"/>
                                 <include reference="e87-jq-rW1"/>
                                 <include reference="zWr-Wl-Go4"/>
@@ -781,7 +785,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlZ-ZR-Mu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762.25" y="1861.5"/>
+            <point key="canvasLocation" x="2717.25" y="1860.75"/>
         </scene>
         <!--Info-->
         <scene sceneID="4o0-15-Ol2">
@@ -1263,6 +1267,20 @@
                                                     <rect key="frame" x="145" y="812" width="85" height="85"/>
                                                 </variation>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUB-LR-xdE">
+                                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="18"/>
+                                                <state key="normal" title="Alternate">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                    <rect key="frame" x="0.0" y="1014" width="375" height="71"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="alternatingButton:" destination="No7-vI-DDg" eventType="touchUpInside" id="JGM-S6-4v3"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <variation key="default">
@@ -1283,6 +1301,7 @@
                                                 <exclude reference="D9h-uL-zQp"/>
                                                 <exclude reference="pPE-TE-YM1"/>
                                                 <exclude reference="3z9-43-9Av"/>
+                                                <exclude reference="KUB-LR-xdE"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -1304,6 +1323,7 @@
                                                 <include reference="D9h-uL-zQp"/>
                                                 <include reference="pPE-TE-YM1"/>
                                                 <include reference="3z9-43-9Av"/>
+                                                <include reference="KUB-LR-xdE"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -1399,6 +1419,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1085"/>
                     <connections>
+                        <outlet property="AlternatingButtonSmall" destination="KUB-LR-xdE" id="44w-ZJ-XLp"/>
                         <outlet property="alternatingButton" destination="wHK-mB-Qil" id="x42-CL-Ran"/>
                         <outlet property="categoryLabel" destination="CUP-El-hu4" id="zMA-Sf-UFq"/>
                         <outlet property="conditionLabel" destination="y0w-TC-w8L" id="W2y-gQ-Azf"/>
@@ -1473,6 +1494,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tue-ls-dAh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0mV-IJ-pjY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KnotLogo-1" translatesAutoresizingMaskIntoConstraints="NO" id="gLk-mY-wn6">
@@ -1790,8 +1812,7 @@
                                         <exclude reference="KPB-ZO-YTn"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="124" y="59" width="118" height="118"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Dh1-bV-gi1"/>
                                         <include reference="KPB-ZO-YTn"/>
@@ -1821,8 +1842,7 @@
                                         <exclude reference="kW1-Zy-vA9"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="111" y="59" width="144" height="163"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="DUF-mb-Fru"/>
                                         <include reference="Wfm-4c-He3"/>
@@ -1850,8 +1870,7 @@
                                         <exclude reference="cum-3N-mjX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="71" y="394" width="225" height="46"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="WZy-H3-mFn"/>
                                         <include reference="cum-3N-mjX"/>
@@ -1875,8 +1894,7 @@
                                         <exclude reference="rez-7W-gpF"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="114" y="280" width="140" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="WMg-G1-QVm"/>
                                         <include reference="rez-7W-gpF"/>
@@ -1900,8 +1918,7 @@
                                         <exclude reference="BsG-RX-m8W"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="113" y="319" width="140" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="62g-vC-DTH"/>
                                         <include reference="BsG-RX-m8W"/>
@@ -1946,28 +1963,28 @@
                                 <exclude reference="Qhp-xb-vpp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="982-Kx-uQ0"/>
-                                <exclude reference="boG-xi-EiA"/>
-                                <exclude reference="zDS-B4-VyT"/>
-                                <exclude reference="j6n-n8-sOf"/>
-                                <exclude reference="mub-WV-I6J"/>
-                                <exclude reference="oCa-9a-ATx"/>
+                                <exclude reference="0Ef-V7-wfZ"/>
+                                <exclude reference="lcC-PG-Ff9"/>
+                                <exclude reference="rgC-Xu-cHU"/>
+                                <exclude reference="AWR-83-k7k"/>
+                                <exclude reference="Bg8-2d-Cu8"/>
+                                <exclude reference="VcV-LR-laR"/>
+                                <exclude reference="9HV-U5-ABv"/>
+                                <exclude reference="VyS-mQ-eLq"/>
+                                <exclude reference="zyP-jP-8FO"/>
                                 <exclude reference="XPG-Md-cGn"/>
                                 <exclude reference="w9h-dN-ABi"/>
                                 <exclude reference="xoM-xM-ezR"/>
+                                <exclude reference="j6n-n8-sOf"/>
+                                <exclude reference="mub-WV-I6J"/>
+                                <exclude reference="oCa-9a-ATx"/>
+                                <exclude reference="982-Kx-uQ0"/>
+                                <exclude reference="boG-xi-EiA"/>
+                                <exclude reference="zDS-B4-VyT"/>
                                 <exclude reference="5Q0-V4-OF9"/>
                                 <exclude reference="FPJ-0o-pU1"/>
                                 <exclude reference="J00-tT-z1T"/>
                                 <exclude reference="cTe-A2-ENe"/>
-                                <exclude reference="0Ef-V7-wfZ"/>
-                                <exclude reference="lcC-PG-Ff9"/>
-                                <exclude reference="rgC-Xu-cHU"/>
-                                <exclude reference="9HV-U5-ABv"/>
-                                <exclude reference="VyS-mQ-eLq"/>
-                                <exclude reference="zyP-jP-8FO"/>
-                                <exclude reference="AWR-83-k7k"/>
-                                <exclude reference="Bg8-2d-Cu8"/>
-                                <exclude reference="VcV-LR-laR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1979,28 +1996,28 @@
                                 <include reference="Qhp-xb-vpp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="982-Kx-uQ0"/>
-                                <include reference="boG-xi-EiA"/>
-                                <include reference="zDS-B4-VyT"/>
-                                <include reference="j6n-n8-sOf"/>
-                                <include reference="mub-WV-I6J"/>
-                                <include reference="oCa-9a-ATx"/>
+                                <include reference="0Ef-V7-wfZ"/>
+                                <include reference="lcC-PG-Ff9"/>
+                                <include reference="rgC-Xu-cHU"/>
+                                <include reference="AWR-83-k7k"/>
+                                <include reference="Bg8-2d-Cu8"/>
+                                <include reference="VcV-LR-laR"/>
+                                <include reference="9HV-U5-ABv"/>
+                                <include reference="VyS-mQ-eLq"/>
+                                <include reference="zyP-jP-8FO"/>
                                 <include reference="XPG-Md-cGn"/>
                                 <include reference="w9h-dN-ABi"/>
                                 <include reference="xoM-xM-ezR"/>
+                                <include reference="j6n-n8-sOf"/>
+                                <include reference="mub-WV-I6J"/>
+                                <include reference="oCa-9a-ATx"/>
+                                <include reference="982-Kx-uQ0"/>
+                                <include reference="boG-xi-EiA"/>
+                                <include reference="zDS-B4-VyT"/>
                                 <include reference="5Q0-V4-OF9"/>
                                 <include reference="FPJ-0o-pU1"/>
                                 <include reference="J00-tT-z1T"/>
                                 <include reference="cTe-A2-ENe"/>
-                                <include reference="0Ef-V7-wfZ"/>
-                                <include reference="lcC-PG-Ff9"/>
-                                <include reference="rgC-Xu-cHU"/>
-                                <include reference="9HV-U5-ABv"/>
-                                <include reference="VyS-mQ-eLq"/>
-                                <include reference="zyP-jP-8FO"/>
-                                <include reference="AWR-83-k7k"/>
-                                <include reference="Bg8-2d-Cu8"/>
-                                <include reference="VcV-LR-laR"/>
                             </mask>
                         </variation>
                     </view>
@@ -2518,36 +2535,24 @@
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="324" width="173" height="20"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gross Revenue:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df2-hY-X1l">
                                 <rect key="frame" x="53" y="353" width="140" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="49" y="353" width="121" height="20"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4T-bW-mco">
                                 <rect key="frame" x="245" y="324" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="237" y="324" width="10" height="20"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Djc-JG-IVp">
                                 <rect key="frame" x="245" y="353" width="76" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="222" y="353" width="10" height="20"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2776,7 +2781,7 @@
                                         <state key="normal" title="View Tutorial Again">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="134" height="30"/>
                                         </variation>
                                         <connections>
@@ -2790,7 +2795,7 @@
                                         <state key="normal" title="Edit Profile Info">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="13" y="42" width="108" height="30"/>
                                         </variation>
                                         <connections>
@@ -2804,7 +2809,7 @@
                                         <state key="normal" title="Contact Support">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="10" y="84" width="115" height="30"/>
                                         </variation>
                                         <connections>
@@ -2818,7 +2823,7 @@
                                         <state key="normal" title="Terms of Service">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="9" y="126" width="117" height="30"/>
                                         </variation>
                                         <connections>
@@ -2831,7 +2836,7 @@
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="18" y="168" width="98" height="30"/>
                                         </variation>
                                         <connections>
@@ -2845,7 +2850,7 @@
                                         <state key="normal" title="FAQ">
                                             <color key="titleColor" red="0.0" green="0.3921568627" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
                                             <rect key="frame" x="52" y="210" width="30" height="30"/>
                                         </variation>
                                         <connections>
@@ -3517,8 +3522,8 @@
     </scenes>
     <resources>
         <image name="KnotLogo-1" width="958" height="286"/>
-        <image name="NFC-AP-logos" width="100" height="65"/>
         <image name="add139" width="32" height="32"/>
+        <image name="apple-pay-logo" width="155" height="100"/>
         <image name="avatar83" width="32" height="32"/>
         <image name="camera_ready" width="205" height="205"/>
         <image name="chat55" width="32" height="32"/>
@@ -3535,13 +3540,13 @@
         <image name="travel-1" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="7Zm-rD-AiS"/>
         <segue reference="BnQ-fV-bFj"/>
-        <segue reference="Q0o-Ta-V3K"/>
         <segue reference="0LM-uP-bxa"/>
+        <segue reference="Q0o-Ta-V3K"/>
         <segue reference="aHn-RY-HGy"/>
         <segue reference="D0b-0y-c8N"/>
         <segue reference="nkK-lo-MWo"/>
-        <segue reference="yTs-ay-f60"/>
         <segue reference="5Ei-1s-dmw"/>
     </inferredMetricsTieBreakers>
 </document>

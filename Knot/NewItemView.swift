@@ -108,6 +108,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
             self.presentViewController(vc, animated: true, completion: nil)
         }
 */
+
         UIApplication.sharedApplication().statusBarHidden = true
         
         //name
@@ -139,7 +140,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
                 }
             })
             
-            self.scrollView.contentSize = CGSize(width:375, height: 800)
+            self.scrollView.contentSize = CGSize(width:375, height: 980)
             self.tabBarController?.tabBar.hidden = true
             
             self.descripFieldView.layer.borderWidth = 1;

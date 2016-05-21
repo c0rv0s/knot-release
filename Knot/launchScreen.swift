@@ -60,7 +60,7 @@ class launchScreen: UIViewController {
         super.viewDidAppear(animated)
         
         let modelName = UIDevice.currentDevice().modelName
-        if (modelName == "iPad 2" || modelName == "iPad 3" || modelName == "iPad 4" || modelName == "iPad Air" || modelName == "iPad Air 2" || modelName == "iPad Mini" || modelName == "iPad Mini 2" || modelName == "iPad Mini 3" || modelName == "iPad Mini 4" || modelName == "Simulator") {
+        if (modelName == "iPad 2" || modelName == "iPad 3" || modelName == "iPad 4" || modelName == "iPad Air" || modelName == "iPad Air 2" || modelName == "iPad Mini" || modelName == "iPad Mini 2" || modelName == "iPad Mini 3" || modelName == "iPad Mini 4" || modelName == "Simulator" ) {
             self.appDelegate.smallDevice = true
         }
 
