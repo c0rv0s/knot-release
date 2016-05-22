@@ -613,35 +613,6 @@
                                     </mask>
                                 </variation>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
-                                <rect key="frame" x="96" y="409" width="183" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="LxA-A1-SzO"/>
-                                    <constraint firstAttribute="height" constant="65" id="m4y-JF-2uN"/>
-                                    <constraint firstAttribute="width" secondItem="pCu-NV-5lY" secondAttribute="height" multiplier="20:13" id="nJe-zA-raN"/>
-                                </constraints>
-                                <state key="normal" image="apple-pay-logo">
-                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="LxA-A1-SzO"/>
-                                        <exclude reference="m4y-JF-2uN"/>
-                                        <exclude reference="nJe-zA-raN"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="133" y="394" width="100" height="65"/>
-                                    <mask key="constraints">
-                                        <include reference="LxA-A1-SzO"/>
-                                        <include reference="m4y-JF-2uN"/>
-                                        <include reference="nJe-zA-raN"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4% Service Fee:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3U-Ho-JmH">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Gravity-Regular" family="Gravity" pointSize="17"/>
@@ -673,13 +644,24 @@
                                     <action selector="ExplanationButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="ssi-LR-74C"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-NV-5lY">
+                                <rect key="frame" x="96" y="409" width="183" height="47"/>
+                                <state key="normal" image="apple_pay_small_button_2x">
+                                    <color key="titleColor" name="alternateSelectedControlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="106" y="408" width="162" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="DoneButton:" destination="H4G-r1-Rg9" eventType="touchUpInside" id="b7X-0H-Nc6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8mf-SX-gNH" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="151" id="1mY-LX-0aG"/>
                             <constraint firstItem="B3U-Ho-JmH" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="12" id="64T-lx-cKT"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="76" id="92p-n0-y4N"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pCu-NV-5lY" secondAttribute="trailing" constant="55" id="9Xe-vI-ixQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kjU-RG-8ne" secondAttribute="trailing" constant="72" id="HMH-mZ-6Fa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8mf-SX-gNH" secondAttribute="trailing" constant="26" id="Jgc-jK-XcP"/>
                             <constraint firstItem="fif-gJ-Wdk" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="144" id="N71-Gj-NpC"/>
@@ -687,22 +669,23 @@
                             <constraint firstItem="aJW-Cn-nxg" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="8" id="PQc-w8-6cp"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="292" id="TuG-3j-QhI"/>
                             <constraint firstItem="aJW-Cn-nxg" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="10" id="e4i-fZ-dKa"/>
-                            <constraint firstItem="pCu-NV-5lY" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="374" id="e87-jq-rW1"/>
                             <constraint firstItem="iGG-g6-we2" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="4" id="fza-Ar-9w8"/>
                             <constraint firstItem="kjU-RG-8ne" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="330" id="j26-01-yNh"/>
                             <constraint firstItem="B3U-Ho-JmH" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="330" id="jiJ-2X-YAZ"/>
+                            <constraint firstItem="pCu-NV-5lY" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="67" id="lFO-Lr-H0M"/>
                             <constraint firstItem="kjU-RG-8ne" firstAttribute="leading" secondItem="B3U-Ho-JmH" secondAttribute="trailing" constant="8" id="lI6-zy-gOn"/>
                             <constraint firstItem="Iq0-vY-4Af" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="24" id="nFu-ie-l40"/>
                             <constraint firstItem="Iq0-vY-4Af" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="37" id="oJv-EC-FmP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pCu-NV-5lY" secondAttribute="trailing" constant="68" id="sTV-oc-jFu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="r9F-2L-HPQ" secondAttribute="trailing" constant="18" id="sVZ-tF-kbQ"/>
                             <constraint firstItem="r9F-2L-HPQ" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="292" id="szO-p5-RAT"/>
+                            <constraint firstItem="pCu-NV-5lY" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="388" id="v5C-fa-1Gi"/>
                             <constraint firstItem="kjU-RG-8ne" firstAttribute="leading" secondItem="B3U-Ho-JmH" secondAttribute="trailing" constant="8" id="w8B-oC-Ygh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Iq0-vY-4Af" secondAttribute="trailing" constant="25" id="xri-Kf-g2P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wqU-Pk-WBC" secondAttribute="trailing" constant="16" id="y1T-Vq-vxj"/>
                             <constraint firstItem="zZL-wH-l2i" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="23" id="ycZ-IR-ktA"/>
                             <constraint firstItem="fif-gJ-Wdk" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="16" id="ywF-cc-MAj"/>
                             <constraint firstItem="wqU-Pk-WBC" firstAttribute="top" secondItem="Nv2-GQ-6BM" secondAttribute="bottom" constant="144" id="zCi-41-pZY"/>
-                            <constraint firstItem="pCu-NV-5lY" firstAttribute="leading" secondItem="FRD-Bk-7Jy" secondAttribute="leadingMargin" constant="55" id="zWr-Wl-Go4"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -735,9 +718,9 @@
                                 <exclude reference="j26-01-yNh"/>
                                 <exclude reference="lI6-zy-gOn"/>
                                 <exclude reference="w8B-oC-Ygh"/>
-                                <exclude reference="9Xe-vI-ixQ"/>
-                                <exclude reference="e87-jq-rW1"/>
-                                <exclude reference="zWr-Wl-Go4"/>
+                                <exclude reference="lFO-Lr-H0M"/>
+                                <exclude reference="sTV-oc-jFu"/>
+                                <exclude reference="v5C-fa-1Gi"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -771,9 +754,9 @@
                                 <include reference="j26-01-yNh"/>
                                 <include reference="lI6-zy-gOn"/>
                                 <include reference="w8B-oC-Ygh"/>
-                                <include reference="9Xe-vI-ixQ"/>
-                                <include reference="e87-jq-rW1"/>
-                                <include reference="zWr-Wl-Go4"/>
+                                <include reference="lFO-Lr-H0M"/>
+                                <include reference="sTV-oc-jFu"/>
+                                <include reference="v5C-fa-1Gi"/>
                             </mask>
                         </variation>
                     </view>
@@ -3541,7 +3524,7 @@
     <resources>
         <image name="KnotLogo-1" width="958" height="286"/>
         <image name="add139" width="32" height="32"/>
-        <image name="apple-pay-logo" width="155" height="100"/>
+        <image name="apple_pay_small_button_2x" width="180" height="62"/>
         <image name="avatar83" width="32" height="32"/>
         <image name="camera_ready" width="205" height="205"/>
         <image name="chat55" width="32" height="32"/>

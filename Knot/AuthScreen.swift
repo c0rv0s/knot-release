@@ -150,7 +150,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                 animated: true,
                 completion: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: { (alertAction) -> Void in}))
         self.presentViewController(alert, animated: true, completion: nil)
         
         
@@ -163,6 +163,35 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
                                   animated: true,
                                   completion: nil)
         }
+    }
+    
+    //change item sold status or delete
+    func updateSoldStatus(type: String) {
+        if type == "deleted" {
+            self.performDelete(self.appDelegate.item).continueWithBlock({
+                (task: BFTask!) -> BFTask! in
+                
+                if (task.error != nil) {
+                    print(task.error!.description)
+                } else {
+                    print("DynamoDB delete succeeded")
+                    let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller") as! UIViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }
+                
+                return nil;
+            })
+        }
+    }
+    
+    //deletion helper method
+    func performDelete(item: ListItem) -> BFTask! {
+        let mapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        
+        let task = mapper.remove(item)
+        
+        print("item removed")
+        return BFTask(forCompletionOfAllTasks: [task])
     }
     
     //MARK: - Delegates
@@ -272,6 +301,7 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     
     @IBAction func cancelButton(sender: AnyObject) {
+        self.updateSoldStatus("deleted")
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("Reveal View Controller")
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -383,7 +413,11 @@ class AuthScreen: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     //stripe code + apple pay
     func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
         print("yay")
-        let apiClient = STPAPIClient(publishableKey: "pk_live_Mr7JHG6BknjaupMyWU2U6c8a")
+        var apiClient = STPAPIClient(publishableKey: "pk_live_Mr7JHG6BknjaupMyWU2U6c8a")
+        if self.appDelegate.item.name == "Demo" || self.appDelegate.item.name == "Test" {
+            apiClient = STPAPIClient(publishableKey: "pk_test_6tXYwgLe4iggNiUVNdqWvfdG")
+        }
+        
         apiClient.createTokenWithPayment(payment, completion: { (token, error) -> Void in
             if error == nil {
                 if let token = token {
