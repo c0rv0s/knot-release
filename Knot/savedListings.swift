@@ -39,9 +39,18 @@ class savedListings: UIViewController, UITableViewDelegate, UITableViewDataSourc
     
     let syncClient = AWSCognito.defaultCognito()
     
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     // 1
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         /*
         appDelegate.credentialsProvider.getIdentityId().continueWithBlock { (task: AWSTask!) -> AnyObject! in

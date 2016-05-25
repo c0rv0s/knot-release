@@ -149,7 +149,15 @@ class MenuController: UITableViewController {
         cellToDeSelect.contentView.backgroundColor = normalColor
     }
     
+
+    @IBAction func shareButton(sender: AnyObject) {
+        displayShareSheet("Check out Knot Complex on the App Store, buy and sell authentic goods! https://itunes.apple.com/us/app/knot-complex/id1101502916?mt=8")
+    }
     
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
+    }
     
     // MARK: - Table view data source
     

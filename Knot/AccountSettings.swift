@@ -8,13 +8,15 @@
 
 import Foundation
 import MessageUI
+import Social
+import UIKit
 
 class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailComposeViewControllerDelegate  {
     
     @IBOutlet weak var supportButon: UIButton!
     @IBOutlet weak var editProfile: UIButton!
     @IBOutlet weak var savedButton: UIButton!
-    @IBOutlet weak var tutButton: UIButton!
+    //@IBOutlet weak var tutButton: UIButton!
     @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     @IBOutlet weak var buttonView: UIView!
@@ -25,26 +27,23 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
     @IBOutlet weak var FAQButton: UIButton!
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        self.tutButton.layer.borderWidth = 1;
-        self.tutButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
-
-        self.legalButton.layer.borderWidth = 1;
-        self.legalButton.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
         
-        self.editProfile.layer.borderWidth = 1;
-        self.editProfile.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
-        
-        self.supportButon.layer.borderWidth = 1;
-        self.supportButon.layer.borderColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0).CGColor
-*/
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+ 
         self.editProfile.hidden = true
-        self.tutButton.hidden = true
+        //self.tutButton.hidden = true
         
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
-        self.view.addSubview(loginView)
+        //self.view.addSubview(loginView)
         loginView.center = buttonView.center
         loginView.readPermissions = ["user_friends"]
         loginView.delegate = self
@@ -131,10 +130,12 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
         }
     }
     
+    /*
     @IBAction func viewTutorial(sender: AnyObject) {
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("tutorial") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
+    */
     
     @IBAction func contactSupport(sender: AnyObject) {
         if MFMailComposeViewController.canSendMail() {
@@ -171,5 +172,16 @@ class AccountSettings: UIViewController, FBSDKLoginButtonDelegate,  MFMailCompos
         })
         
     }
+    
+    func displayShareSheet(shareContent:String) {
+        let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: {})
+    }
+    
+    @IBAction func ShareKnot(sender: AnyObject) {
+
+        displayShareSheet("Check out Knot Complex on the App Store, buy and sell authentic goods! https://itunes.apple.com/us/app/knot-complex/id1101502916?mt=8")
+    }
+    
     
 }

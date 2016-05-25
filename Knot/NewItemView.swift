@@ -497,6 +497,7 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+        self.scrollView.scrollEnabled = true
     }
     
     func keyboardWillShow(sender: NSNotification) {
@@ -527,12 +528,13 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
+        self.scrollView.becomeFirstResponder()
         return false
     }
     
     @IBAction func userTappedBackground(sender: AnyObject) {
         view.endEditing(true)
-
+        self.scrollView.becomeFirstResponder()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -588,7 +590,8 @@ UIPickerViewDataSource, UIPickerViewDelegate, UIImagePickerControllerDelegate, U
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
         self.view.endEditing(true)
-        self.scrollView.scrollEnabled = false
+        self.scrollView.becomeFirstResponder()
+        //self.scrollView.scrollEnabled = false
         
     }
     
